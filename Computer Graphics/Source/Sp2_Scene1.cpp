@@ -168,9 +168,20 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 11), 1.f, 1.f);
 	
-	meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJs//Firefly.obj");
+	meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJ//Firefly.obj");
 	meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
 
+	meshList[GEO_MOONROVER] = MeshBuilder::GenerateOBJ("moonRover", "OBJ//moonRover.obj");
+	meshList[GEO_MOONROVER]->textureID = LoadTGA("Image//MoonRover.tga");
+
+	meshList[GEO_ENEMYVEHICLE] = MeshBuilder::GenerateOBJ("enemyVehicle", "OBJ//enemyVehicle.obj");
+	meshList[GEO_ENEMYVEHICLE]->textureID = LoadTGA("enemyVehicle.tga");
+
+	meshList[GEO_ENEMY2] = MeshBuilder::GenerateOBJ("Enemy2", "OBJ//Enemy2.obj");
+	meshList[GEO_ENEMY2]->textureID = LoadTGA("Image//Enemy2.tga");
+
+	meshList[GEO_NPCLEPUSMAG] = MeshBuilder::GenerateOBJ("NPCLEPUSMAG","OBJ//NPCLEPUSMAG.obj");
+	meshList[GEO_NPCLEPUSMAG]->textureID = LoadTGA("Image//NPCLEPUSMAG.tga");
 
 	b_enabletps = false;
 	b_tpsDebounce = false;
@@ -371,6 +382,34 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.Rotate(0, 1, 0, 0);
 	modelStack.Scale(1,1,1);
 	RenderMesh(meshList[GEO_FIREFLY], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(20, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(2, 2, 2);
+	RenderMesh(meshList[GEO_MOONROVER], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(40, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(2, 2, 2);
+	RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(60, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(3, 3, 3);
+	RenderMesh(meshList[GEO_ENEMY2], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(80, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(4, 4, 4);
+	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
 	modelStack.PopMatrix();
 	
 	modelStack.PushMatrix();
