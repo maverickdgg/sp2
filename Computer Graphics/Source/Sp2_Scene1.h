@@ -43,7 +43,7 @@ public:
 
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
-
+		GEO_FIREFLY,
 		NUM_GEOMETRY,
 	};
 
