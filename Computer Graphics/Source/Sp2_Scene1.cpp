@@ -175,7 +175,7 @@ void Sp2_Scene1::Init()
 	meshList[GEO_MOONROVER]->textureID = LoadTGA("Image//MoonRover.tga");
 
 	meshList[GEO_ENEMYVEHICLE] = MeshBuilder::GenerateOBJ("enemyVehicle", "OBJ//enemyVehicle.obj");
-	meshList[GEO_ENEMYVEHICLE]->textureID = LoadTGA("enemyVehicle.tga");
+	meshList[GEO_ENEMYVEHICLE]->textureID = LoadTGA("Image//enemyVehicle.tga");
 
 	meshList[GEO_ENEMY2] = MeshBuilder::GenerateOBJ("Enemy2", "OBJ//Enemy2.obj");
 	meshList[GEO_ENEMY2]->textureID = LoadTGA("Image//Enemy2.tga");
