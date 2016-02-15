@@ -44,6 +44,14 @@ public:
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
 
+		/*<---Studio Project 2>*/
+		GEO_SECOND,
+		GEO_THIRD,
+		GEO_FOURTH,
+		GEO_FIFTH,
+		GEO_MOTOR,
+		GEO_ROVER,
+
 		NUM_GEOMETRY,
 	};
 

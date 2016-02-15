@@ -168,6 +168,25 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 11), 1.f, 1.f);
 
+	/*<---Studio Project 2--->*/
+	meshList[GEO_SECOND] = MeshBuilder::GenerateOBJ("secondplayercontrolled", "OBJ//SecondPlayerControlledAircraft.obj");
+	meshList[GEO_SECOND]->textureID = LoadTGA("Image//SecondPlayerControlledAircraft.tga");
+
+	meshList[GEO_THIRD] = MeshBuilder::GenerateOBJ("thirdplayercontrolled", "OBJ//ThirdPlayerControlled.obj");
+	meshList[GEO_THIRD]->textureID = LoadTGA("Image//ThirdPlayerControlled.tga");
+
+	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
+	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
+
+	meshList[GEO_FIFTH] = MeshBuilder::GenerateOBJ("fifthplayercontrolled", "OBJ//FifthPlayerControlled.obj");
+	meshList[GEO_FIFTH]->textureID = LoadTGA("Image//FifthPlayerControlled.tga");
+
+	meshList[GEO_MOTOR] = MeshBuilder::GenerateOBJ("motorlandvehicle", "OBJ//MotorLandVehicle.obj");
+	meshList[GEO_MOTOR]->textureID = LoadTGA("Image//MotorLandVehicle.tga");
+
+	meshList[GEO_ROVER] = MeshBuilder::GenerateOBJ("roverlandvehicle", "OBJ//RoverLandVehicle.obj");
+	meshList[GEO_ROVER]->textureID = LoadTGA("Image//RoverLandVehicle.tga");
+
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
@@ -569,6 +588,48 @@ void Sp2_Scene1::Render()
 			);
 		Rendertps();
 	}
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_SECOND], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 3, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_THIRD], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 12, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_FOURTH], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 20, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_FIFTH], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 50, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_MOTOR], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 60, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_ROVER], false);
+	modelStack.PopMatrix();
 }
 
 
