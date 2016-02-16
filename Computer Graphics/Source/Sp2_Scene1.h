@@ -115,6 +115,15 @@ public:
 
 	SpaceVehicles ff;
 
+	/**/
+
+	SpaceVehicles spc;
+	SpaceVehicles tpc;
+	SpaceVehicles frpc;
+	SpaceVehicles fifpc;
+	SpaceVehicles mtv;
+	SpaceVehicles rov;
+
 private:
 	unsigned m_vertexArrayID;
 	unsigned m_vertexBuffer[NUM_GEOMETRY];
@@ -129,7 +138,12 @@ private:
 
 	void RenderMesh(Mesh* mesh, bool enableLight);
 	void RenderSkybox(Camera3 camera);
-	void RenderSpaceVehicles(Camera3 camera);
+	//void RenderSpaceVehicles(Camera3 camera);
+
+	/**/
+	void RenderSPC(SpaceVehicles spc);
+
+	/**/
 
 	void Renderfps();
 	void Rendertps();
