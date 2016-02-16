@@ -43,6 +43,7 @@ public:
 
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
+<<<<<<< HEAD
 
 		/*<---Studio Project 2>*/
 		GEO_SECOND,
@@ -52,6 +53,9 @@ public:
 		GEO_MOTOR,
 		GEO_ROVER,
 
+=======
+		GEO_FIREFLY,
+>>>>>>> origin/master
 		NUM_GEOMETRY,
 	};
 

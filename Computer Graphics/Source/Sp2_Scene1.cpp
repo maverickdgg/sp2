@@ -167,6 +167,10 @@ void Sp2_Scene1::Init()
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 11), 1.f, 1.f);
+	
+	meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJs//Firefly.obj");
+	meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
+
 
 	/*<---Studio Project 2--->*/
 	meshList[GEO_SECOND] = MeshBuilder::GenerateOBJ("secondplayercontrolled", "OBJ//SecondPlayerControlledAircraft.obj");
@@ -380,6 +384,14 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 void Sp2_Scene1::RenderSkybox(Camera3 camera)
 {
 
+	
+	modelStack.PushMatrix();
+	modelStack.Translate(0,0,0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1,1,1);
+	RenderMesh(meshList[GEO_FIREFLY], false);
+	modelStack.PopMatrix();
+	
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -10, 0);
 

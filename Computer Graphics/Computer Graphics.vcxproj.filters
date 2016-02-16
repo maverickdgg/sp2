@@ -95,5 +95,8 @@
     <ClInclude Include="Source\Sp2_Scene1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
