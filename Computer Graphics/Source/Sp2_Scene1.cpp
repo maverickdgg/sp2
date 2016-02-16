@@ -1,4 +1,5 @@
 #include "Sp2_Scene1.h"
+#include "Human.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
@@ -169,6 +170,7 @@ void Sp2_Scene1::Init()
 	
 	/*<---Studio Project 2 OBJs--->*/
 
+	/*<---Space Vehicles--->*/
 	meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJ//Firefly.obj");
 	meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
 
@@ -203,16 +205,15 @@ void Sp2_Scene1::Init()
 	meshList[GEO_ROVER] = MeshBuilder::GenerateOBJ("roverlandvehicle", "OBJ//RoverLandVehicle.obj");
 	meshList[GEO_ROVER]->textureID = LoadTGA("Image//RoverLandVehicle.tga");
 
+	/*<---NPC--->*/
+	meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("npc1", "OBJ//doorman.obj");
+	meshList[GEO_NPC1]->textureID = LoadTGA("Image//doorman.tga");
+
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
 
-
 	/**/
-
-	//ffposition.x = 0;
-	//ffposition.y = 0;
-	//ffposition.z = 0;
 
 	ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
 	mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
@@ -229,6 +230,15 @@ void Sp2_Scene1::Init()
 	mtv = SpaceVehicles("motorvehicle", 0, 30, Vector3(85, 0, 100));
 	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120));
 
+	/**/
+
+	npc1 = Human("npc", 0, 30, Vector3(120, -30, 125));
+
+	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
+	objects[NPC].State = objects[NPC].patrol;
+	objects[NPC].Message = "Welcome to Space Race";
+
+	Timer = 0;
 }
 
 
@@ -368,6 +378,11 @@ void Sp2_Scene1::Update(double dt)
 			b_tpsDebounce = false;
 			tpsTimer = 0;
 		}
+	}
+	Timer++;
+	if (Timer % 10 == 0)
+	{
+		RenderNPC1(npc1);
 	}
 }
 
@@ -589,6 +604,65 @@ void Sp2_Scene1::RenderROV(SpaceVehicles rov)
 	modelStack.PopMatrix();
 }
 
+void Sp2_Scene1::RenderNPC1(Human npc1)
+{
+	/*modelStack.PushMatrix();
+	modelStack.Translate(npc1.pos.x, npc1.pos.y, npc1.pos.z);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(8, 8, 8);
+	RenderMesh(meshList[GEO_NPC1], false);
+	modelStack.PopMatrix();*/
+
+	modelStack.PushMatrix();
+	modelStack.Translate(objects[NPC].position.x, objects[NPC].position.y, objects[NPC].position.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(8, 8, 8);
+	RenderMesh(meshList[GEO_NPC1], false);
+	// Text for NPC Interaction
+	if (objects[NPC].State == objects[NPC].target && Application::IsKeyPressed('E'))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		//modelStack.Rotate(0, 1, 0, 0);
+		//modelStack.Scale(20, 20, 20);
+		RenderTextOnScreen(meshList[GEO_TEXT], objects[NPC].Message, Color(0, 1, 0),3,1,10);
+		modelStack.PopMatrix();
+	}
+	modelStack.PopMatrix();
+	if (objects[NPC].State == objects[NPC].target)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		//modelStack.Rotate(0, 1, 0, 0);
+		//modelStack.Scale(20, 20, 20);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
+
+	/**/
+
+	for (size_t i = 0; i < Num_Obj; i++)
+	{
+		float x = camera.position.x - objects[i].position.x;
+		float z = camera.position.z - objects[i].position.z;
+		float distance = (sqrt((x*x) + (z*z))) / 10;
+		if (distance <= 10)
+		{
+			objects[i].State = objects[i].target;
+		}
+		else
+		{
+			objects[i].State = objects[i].patrol;
+		}
+	}
+	//// NPC Action
+	//if (objects[NPC].State == objects[NPC].patrol)
+	//{
+	//	objects[NPC].position.x += rand() % 30 - 15;
+	//	objects[NPC].position.z += rand() % 30 - 15;
+	//}
+}
+
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -685,6 +759,7 @@ void Sp2_Scene1::Renderfps()
 	RenderMTV(mtv);
 	RenderROV(rov);
 	/**/
+	RenderNPC1(npc1);
 	RenderMesh(meshList[GEO_AXES], false);
 
 

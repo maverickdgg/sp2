@@ -15,7 +15,28 @@
 #include "GameObject.h"
 #include "SpaceVehicles.h"
 #include "Buildings.h"
+#include "Human.h"
 
+
+class Object
+{
+public:
+	Position position;
+	int State;
+	std::string Message;
+
+	enum States
+	{
+		patrol,
+		target,
+	};
+};
+
+enum Objects
+{
+	NPC,
+	Num_Obj,
+};
 
 class Sp2_Scene1 : public Scene
 {
@@ -46,7 +67,8 @@ public:
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
 
-		/*<---Studio Project 2>*/
+		/*<---Studio Project 2--->*/
+		/*<---Space Vehicles--->*/
 		GEO_SECOND,
 		GEO_THIRD,
 		GEO_FOURTH,
@@ -58,6 +80,8 @@ public:
 		GEO_MOONROVER,
 		GEO_ENEMY2,
 		GEO_NPCLEPUSMAG,
+		/*<---NPC--->*/
+		GEO_NPC1,
 		NUM_GEOMETRY,
 	};
 
@@ -128,6 +152,13 @@ public:
 	SpaceVehicles mtv;
 	SpaceVehicles rov;
 
+	Human npc1;
+
+public:
+	/**/
+	Object objects[Num_Obj];
+	int Timer;
+
 private:
 	unsigned m_vertexArrayID;
 	unsigned m_vertexBuffer[NUM_GEOMETRY];
@@ -158,6 +189,8 @@ private:
 	void RenderMTV(SpaceVehicles mtv);
 	void RenderROV(SpaceVehicles rov);
 	/**/
+	void RenderNPC1(Human npc1);
+
 	void Renderfps();
 	void Rendertps();
 
