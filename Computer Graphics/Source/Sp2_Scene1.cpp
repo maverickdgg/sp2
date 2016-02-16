@@ -220,6 +220,15 @@ void Sp2_Scene1::Init()
 	e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
 	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
 
+	/**/
+
+	spc = SpaceVehicles("second", 0, 30, Vector3(25, 0, 20));
+	tpc = SpaceVehicles("third", 0, 30, Vector3(40, 0, 40));
+	frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
+	fifpc = SpaceVehicles("fifth", 0, 30, Vector3(70, 0, 80));
+	mtv = SpaceVehicles("motorvehicle", 0, 30, Vector3(85, 0, 100));
+	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120));
+
 }
 
 
@@ -519,6 +528,67 @@ void Sp2_Scene1::Rendernp(SpaceVehicles np)
 	modelStack.PopMatrix();
 }
 
+/**/
+
+void Sp2_Scene1::RenderSPC(SpaceVehicles spc)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(spc.pos.x, spc.pos.y, spc.pos.z);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_SECOND], false);
+	modelStack.PopMatrix();
+}
+void Sp2_Scene1::RenderTPC(SpaceVehicles tpc)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(tpc.pos.x, tpc.pos.y, tpc.pos.z);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(0.8, 0.8, 0.8);
+	RenderMesh(meshList[GEO_THIRD], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(frpc.pos.x, frpc.pos.y, frpc.pos.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_FOURTH], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderFIFPC(SpaceVehicles fifpc)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(fifpc.pos.x, fifpc.pos.y, fifpc.pos.z);
+	modelStack.Rotate(270, 0, 1, 0);
+	modelStack.Scale(0.5, 0.5, 0.5);
+	RenderMesh(meshList[GEO_FIFTH], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderMTV(SpaceVehicles mtv)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(mtv.pos.x, mtv.pos.y, mtv.pos.z);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(0.5, 0.5, 0.5);
+	RenderMesh(meshList[GEO_MOTOR], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderROV(SpaceVehicles rov)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(rov.pos.x, rov.pos.y, rov.pos.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(3, 3, 3);
+	RenderMesh(meshList[GEO_ROVER], false);
+	modelStack.PopMatrix();
+}
+
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -607,6 +677,14 @@ void Sp2_Scene1::Renderfps()
 	Renderev(ev);
 	Rendere2(e2);
 	Rendernp(np);
+	/**/
+	RenderSPC(spc);
+	RenderTPC(tpc);
+	RenderFRPC(frpc);
+	RenderFIFPC(fifpc);
+	RenderMTV(mtv);
+	RenderROV(rov);
+	/**/
 	RenderMesh(meshList[GEO_AXES], false);
 
 

@@ -151,7 +151,13 @@ private:
 	void Rendere2(SpaceVehicles e2);
 	void Rendernp(SpaceVehicles np);
 	/**/
-
+	void RenderSPC(SpaceVehicles spc);
+	void RenderTPC(SpaceVehicles tpc);
+	void RenderFRPC(SpaceVehicles frpc);
+	void RenderFIFPC(SpaceVehicles fifpc);
+	void RenderMTV(SpaceVehicles mtv);
+	void RenderROV(SpaceVehicles rov);
+	/**/
 	void Renderfps();
 	void Rendertps();
 
