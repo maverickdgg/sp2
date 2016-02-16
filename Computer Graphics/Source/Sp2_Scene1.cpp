@@ -3,9 +3,11 @@
 
 #include "shader.hpp"
 #include "LoadTGA.h"
+#include "Collision.h"
 
 #include "Application.h"
 extern GLFWwindow* m_window;
+
 
 
 
@@ -133,7 +135,7 @@ void Sp2_Scene1::Init()
 
 	//geom init
 
-	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 180);
+	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 800);
 	//camera2.Init(Vector3(0, 0, 50), camera.position, Vector3(0, 1, 0), 500);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
@@ -214,7 +216,6 @@ void Sp2_Scene1::Update(double dt)
 {
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);
-
 	camera.view = (camera.target - camera.position).Normalized();
 	camera.right = camera.view.Cross(camera.defaultUp);
 	camera.right.y = 0;

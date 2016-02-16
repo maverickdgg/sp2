@@ -12,7 +12,7 @@
 #include"Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
-
+#include "SpaceVehicles.h"
 
 
 class Sp2_Scene1 : public Scene
@@ -109,6 +109,7 @@ public:
 	bool b_enabletps;
 	bool b_tpsDebounce;
 	float tpsTimer;
+
 
 private:
 	unsigned m_vertexArrayID;
