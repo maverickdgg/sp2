@@ -4,9 +4,11 @@
 
 #include "shader.hpp"
 #include "LoadTGA.h"
+#include "Collision.h"
 
 #include "Application.h"
 extern GLFWwindow* m_window;
+
 
 
 
@@ -246,7 +248,6 @@ void Sp2_Scene1::Update(double dt)
 {
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);
-
 	camera.view = (camera.target - camera.position).Normalized();
 	camera.right = camera.view.Cross(camera.defaultUp);
 	camera.right.y = 0;

@@ -173,7 +173,7 @@ private:
 
 	void RenderMesh(Mesh* mesh, bool enableLight);
 	void RenderSkybox(Camera3 camera);
-	//void RenderSpaceVehicles(Camera3 camera);
+	void RenderSpaceVehicles(Camera3 camera);
 
 	/**/
 	void Renderff(SpaceVehicles ff);
