@@ -12,7 +12,9 @@
 #include"Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
+#include "GameObject.h"
 #include "SpaceVehicles.h"
+#include "Buildings.h"
 
 
 class Sp2_Scene1 : public Scene
@@ -109,7 +111,22 @@ public:
 	bool b_enabletps;
 	bool b_tpsDebounce;
 	float tpsTimer;
+	Vector3 ffposition;
 
+	SpaceVehicles ff;
+	SpaceVehicles mr;
+	SpaceVehicles ev;
+	SpaceVehicles e2;
+	SpaceVehicles np;
+
+	/**/
+
+	SpaceVehicles spc;
+	SpaceVehicles tpc;
+	SpaceVehicles frpc;
+	SpaceVehicles fifpc;
+	SpaceVehicles mtv;
+	SpaceVehicles rov;
 
 private:
 	unsigned m_vertexArrayID;
@@ -127,6 +144,20 @@ private:
 	void RenderSkybox(Camera3 camera);
 	void RenderSpaceVehicles(Camera3 camera);
 
+	/**/
+	void Renderff(SpaceVehicles ff);
+	void RenderMR(SpaceVehicles mr);
+	void Renderev(SpaceVehicles ev);
+	void Rendere2(SpaceVehicles e2);
+	void Rendernp(SpaceVehicles np);
+	/**/
+	void RenderSPC(SpaceVehicles spc);
+	void RenderTPC(SpaceVehicles tpc);
+	void RenderFRPC(SpaceVehicles frpc);
+	void RenderFIFPC(SpaceVehicles fifpc);
+	void RenderMTV(SpaceVehicles mtv);
+	void RenderROV(SpaceVehicles rov);
+	/**/
 	void Renderfps();
 	void Rendertps();
 

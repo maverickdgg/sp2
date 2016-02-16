@@ -1,5 +1,5 @@
-#ifndef SPACE_VEHICLES_H_H
-#define SPACE_VEHICLES_H_H
+#ifndef SPACE_VEHICLES_H
+#define SPACE_VEHICLES_H
 #include "GameObject.h"
 
 class SpaceVehicles : public GameObject
