@@ -114,6 +114,10 @@ public:
 	Vector3 ffposition;
 
 	SpaceVehicles ff;
+	SpaceVehicles mr;
+	SpaceVehicles ev;
+	SpaceVehicles e2;
+	SpaceVehicles np;
 
 	/**/
 
@@ -141,13 +145,11 @@ private:
 	//void RenderSpaceVehicles(Camera3 camera);
 
 	/**/
-	void RenderSPC(SpaceVehicles spc);
-	void RenderTPC(SpaceVehicles tpc);
-	void RenderFRPC(SpaceVehicles frpc);
-	void RenderFIFPC(SpaceVehicles fifpc);
-	void RenderMTV(SpaceVehicles mtv);
-	void RenderROV(SpaceVehicles rov);
-
+	void Renderff(SpaceVehicles ff);
+	void RenderMR(SpaceVehicles mr);
+	void Renderev(SpaceVehicles ev);
+	void Rendere2(SpaceVehicles e2);
+	void Rendernp(SpaceVehicles np);
 	/**/
 
 	void Renderfps();
