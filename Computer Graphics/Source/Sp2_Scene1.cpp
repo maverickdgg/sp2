@@ -478,79 +478,57 @@ void Sp2_Scene1::RenderSPC(SpaceVehicles spc)
 	modelStack.Scale(1, 1, 1);
 	RenderMesh(meshList[GEO_SECOND], false);
 	modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(tpc.pos.x, tpc.pos.y, tpc.pos.z);
-	//modelStack.Rotate(0, 1, 0, 0);
-	//modelStack.Scale(0.8, 0.8, 0.8);
-	//RenderMesh(meshList[GEO_THIRD], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(frpc.pos.x, frpc.pos.y, frpc.pos.z);
-	//modelStack.Rotate(180, 0, 1, 0);
-	//modelStack.Scale(1, 1, 1);
-	//RenderMesh(meshList[GEO_FOURTH], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(fifpc.pos.x, fifpc.pos.y, fifpc.pos.z);
-	//modelStack.Rotate(270, 0, 1, 0);
-	//modelStack.Scale(0.5, 0.5, 0.5);
-	//RenderMesh(meshList[GEO_FIFTH], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(mtv.pos.x, mtv.pos.y, mtv.pos.z);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(0.5, 0.5, 0.5);
-	//RenderMesh(meshList[GEO_MOTOR], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(rov.pos.x, rov.pos.y, rov.pos.z);
-	//modelStack.Rotate(180, 0, 1, 0);
-	//modelStack.Scale(3, 3, 3);
-	//RenderMesh(meshList[GEO_ROVER], false);
-	//modelStack.PopMatrix();
-
-	///**/
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(ff.pos.x, ff.pos.y, ff.pos.z);
-	//modelStack.Rotate(0, 1, 0, 0);
-	//modelStack.Scale(0.2, 0.2, 0.2);
-	//RenderMesh(meshList[GEO_FIREFLY], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(20, 0, 0);
-	//modelStack.Rotate(0, 1, 0, 0);
-	//modelStack.Scale(2, 2, 2);
-	//RenderMesh(meshList[GEO_MOONROVER], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(40, 0, 0);
-	//modelStack.Rotate(0, 1, 0, 0);
-	//modelStack.Scale(2, 2, 2);
-	//RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(60, 0, 0);
-	//modelStack.Rotate(0, 1, 0, 0);
-	//modelStack.Scale(3, 3, 3);
-	//RenderMesh(meshList[GEO_ENEMY2], false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(80, 0, 0);
-	//modelStack.Rotate(0, 1, 0, 0);
-	//modelStack.Scale(4, 4, 4);
-	//RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
-	//modelStack.PopMatrix();
 }
+void Sp2_Scene1::RenderTPC(SpaceVehicles tpc)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(tpc.pos.x, tpc.pos.y, tpc.pos.z);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(0.8, 0.8, 0.8);
+	RenderMesh(meshList[GEO_THIRD], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(frpc.pos.x, frpc.pos.y, frpc.pos.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_FOURTH], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderFIFPC(SpaceVehicles fifpc)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(fifpc.pos.x, fifpc.pos.y, fifpc.pos.z);
+	modelStack.Rotate(270, 0, 1, 0);
+	modelStack.Scale(0.5, 0.5, 0.5);
+	RenderMesh(meshList[GEO_FIFTH], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderMTV(SpaceVehicles mtv)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(mtv.pos.x, mtv.pos.y, mtv.pos.z);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(0.5, 0.5, 0.5);
+	RenderMesh(meshList[GEO_MOTOR], false);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderROV(SpaceVehicles rov)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(rov.pos.x, rov.pos.y, rov.pos.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(3, 3, 3);
+	RenderMesh(meshList[GEO_ROVER], false);
+	modelStack.PopMatrix();
+}
+
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -637,6 +615,11 @@ void Sp2_Scene1::Renderfps()
 	RenderSkybox(camera);
 	//RenderSpaceVehicles(camera);
 	RenderSPC(spc);
+	RenderTPC(tpc);
+	RenderFRPC(frpc);
+	RenderFIFPC(fifpc);
+	RenderMTV(mtv);
+	RenderROV(rov);
 
 	RenderMesh(meshList[GEO_AXES], false);
 
