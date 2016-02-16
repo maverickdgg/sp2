@@ -2,7 +2,7 @@
 
 bool collision(GameObject x, GameObject y)
 {
-	Vector3 distance = x.pos + y.pos;
+	Vector3 distance = x.pos - y.pos;
 	float length = distance.Length();
 	if (length > x.boundary + y.boundary)
 	{
