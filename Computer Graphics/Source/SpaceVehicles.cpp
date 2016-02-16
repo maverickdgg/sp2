@@ -11,8 +11,6 @@ SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, 
 {
 	pos.x = 0;
 	pos.y = 0;
-{
-
 }
 
 SpaceVehicles::~SpaceVehicles()

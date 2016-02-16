@@ -16,6 +16,7 @@
 #include "SpaceVehicles.h"
 #include "Buildings.h"
 #include "Human.h"
+#include "Alien.h"
 
 
 class Object
@@ -82,6 +83,7 @@ public:
 		GEO_NPCLEPUSMAG,
 		/*<---NPC--->*/
 		GEO_NPC1,
+		GEO_NPC2,
 		NUM_GEOMETRY,
 	};
 
@@ -153,6 +155,7 @@ public:
 	SpaceVehicles rov;
 
 	Human npc1;
+	Alien npc2;
 
 public:
 	/**/
@@ -190,6 +193,7 @@ private:
 	void RenderROV(SpaceVehicles rov);
 	/**/
 	void RenderNPC1(Human npc1);
+	void RenderNPC2(Alien npc2);
 
 	void Renderfps();
 	void Rendertps();

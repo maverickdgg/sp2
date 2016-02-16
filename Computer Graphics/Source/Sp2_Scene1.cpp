@@ -1,5 +1,6 @@
 #include "Sp2_Scene1.h"
 #include "Human.h"
+#include "Alien.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
@@ -208,8 +209,11 @@ void Sp2_Scene1::Init()
 	meshList[GEO_ROVER]->textureID = LoadTGA("Image//RoverLandVehicle.tga");
 
 	/*<---NPC--->*/
-	meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("npc1", "OBJ//doorman.obj");
-	meshList[GEO_NPC1]->textureID = LoadTGA("Image//doorman.tga");
+	meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("npc1", "OBJ//guard.obj");
+	meshList[GEO_NPC1]->textureID = LoadTGA("Image//guard.tga");
+
+	meshList[GEO_NPC2] = MeshBuilder::GenerateOBJ("npc2", "OBJ//mike.obj");
+	meshList[GEO_NPC2]->textureID = LoadTGA("Image//mike.tga");
 
 	b_enabletps = false;
 	b_tpsDebounce = false;
@@ -235,6 +239,7 @@ void Sp2_Scene1::Init()
 	/**/
 
 	npc1 = Human("npc", 0, 30, Vector3(120, -30, 125));
+	npc2 = Alien("npc2", 0, 30, Vector3(220, -30, 125));
 
 	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
 	objects[NPC].State = objects[NPC].patrol;
@@ -617,7 +622,7 @@ void Sp2_Scene1::RenderNPC1(Human npc1)
 	modelStack.PushMatrix();
 	modelStack.Translate(objects[NPC].position.x, objects[NPC].position.y, objects[NPC].position.z);
 	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Scale(8, 8, 8);
+	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_NPC1], false);
 	// Text for NPC Interaction
 	if (objects[NPC].State == objects[NPC].target && Application::IsKeyPressed('E'))
@@ -662,6 +667,16 @@ void Sp2_Scene1::RenderNPC1(Human npc1)
 	//	objects[NPC].position.x += rand() % 30 - 15;
 	//	objects[NPC].position.z += rand() % 30 - 15;
 	//}
+}
+
+void Sp2_Scene1::RenderNPC2(Alien npc2)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(npc2.pos.x, npc2.pos.y, npc2.pos.z);
+	modelStack.Rotate(270, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_NPC2], false);
+	modelStack.PopMatrix();
 }
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
@@ -744,8 +759,6 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 
 void Sp2_Scene1::Renderfps()
 {
-
-
 	RenderSkybox(camera);
 	Renderff(ff);
 	RenderMR(mr);
@@ -761,9 +774,9 @@ void Sp2_Scene1::Renderfps()
 	RenderROV(rov);
 	/**/
 	RenderNPC1(npc1);
+	RenderNPC2(npc2);
 	RenderMesh(meshList[GEO_AXES], false);
-
-
+	/**/
 	modelStack.PushMatrix();
 	RenderMesh(meshList[GEO_SPHERE], false);
 	modelStack.PopMatrix();
