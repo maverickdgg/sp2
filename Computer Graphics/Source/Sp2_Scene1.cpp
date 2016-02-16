@@ -395,11 +395,54 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 void Sp2_Scene1::RenderSkybox(Camera3 camera)
 {
 
-	
 	modelStack.PushMatrix();
-	modelStack.Translate(0,0,0);
+	modelStack.Translate(0, 0, 0);
 	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1,1,1);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_SECOND], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 3, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_THIRD], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 12, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_FOURTH], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 20, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_FIFTH], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 50, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_MOTOR], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 60, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_ROVER], false);
+	modelStack.PopMatrix();
+
+	/**/
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
 	RenderMesh(meshList[GEO_FIREFLY], false);
 	modelStack.PopMatrix();
 
@@ -430,6 +473,7 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.Scale(4, 4, 4);
 	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
 	modelStack.PopMatrix();
+	
 	
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -10, 0);
@@ -490,6 +534,8 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
+
+
 }
 
 
@@ -640,50 +686,8 @@ void Sp2_Scene1::Render()
 		Rendertps();
 	}
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_SECOND], false);
-	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 3, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_THIRD], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 12, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_FOURTH], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 20, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_FIFTH], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 50, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_MOTOR], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 60, 0);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_ROVER], false);
-	modelStack.PopMatrix();
 }
-
-
 
 void Sp2_Scene1::Exit()
 {

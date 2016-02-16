@@ -43,7 +43,6 @@ public:
 
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
-<<<<<<< HEAD
 
 		/*<---Studio Project 2>*/
 		GEO_SECOND,
@@ -52,10 +51,11 @@ public:
 		GEO_FIFTH,
 		GEO_MOTOR,
 		GEO_ROVER,
-
-=======
 		GEO_FIREFLY,
->>>>>>> origin/master
+		GEO_ENEMYVEHICLE,
+		GEO_MOONROVER,
+		GEO_ENEMY2,
+		GEO_NPCLEPUSMAG,
 		NUM_GEOMETRY,
 	};
 
@@ -124,6 +124,7 @@ private:
 
 	void RenderMesh(Mesh* mesh, bool enableLight);
 	void RenderSkybox(Camera3 camera);
+	void RenderSpaceVehicles(Camera3 camera);
 
 	void Renderfps();
 	void Rendertps();
