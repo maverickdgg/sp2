@@ -691,6 +691,8 @@ void Sp2_Scene1::Render()
 
 }
 
+
+
 void Sp2_Scene1::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
