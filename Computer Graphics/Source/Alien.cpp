@@ -1,6 +1,6 @@
 #include "Alien.h"
 
-Alien::Alien(string name, float viewAngle, float posX, float posY) : GameChar(name, viewAngle, posX, posY)
+Alien::Alien(string object_name, int boundary, float viewAngle, Vector3 pos) : GameChar(object_name,boundary,viewAngle,pos )
 {
 }
 

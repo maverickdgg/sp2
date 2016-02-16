@@ -2,7 +2,7 @@
 
 size_t GameChar::count = 0;
 
-GameChar::GameChar(string name, float viewAngle, float posX, float posY) : GameObject(name, viewAngle, posX, posY)
+GameChar::GameChar(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos)
 {
     count = 0;
 }

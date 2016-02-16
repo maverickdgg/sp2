@@ -5,7 +5,7 @@
 class Human : public GameChar
 {
 public:
-    Human(string object_name, float viewAngle = 0, float positionX = 0, float positionY = 0);
+	Human(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0));
     ~Human();
     static size_t count;
 };

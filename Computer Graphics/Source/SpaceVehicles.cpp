@@ -2,7 +2,7 @@
 
 size_t SpaceVehicles::SV_count = 0;
 
-SpaceVehicles::SpaceVehicles(string name, float viewAngle, float posX, float posY) : GameObject(name, viewAngle, posX, posY)
+SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos)
 {
 
 }

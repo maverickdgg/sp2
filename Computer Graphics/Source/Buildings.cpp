@@ -2,7 +2,7 @@
 
 size_t Buildings::b_count = 0;
 
-Buildings::Buildings(string name, float viewAngle, float posX, float posY) : GameObject(name, viewAngle, posX, posY)
+Buildings::Buildings(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos)
 {
 }
 

@@ -1,17 +1,20 @@
 #include "GameObject.h"
 
+size_t GameObject::count = 0;
 
 GameObject::GameObject()
 {
 }
 
-GameObject::GameObject(string object_name, float viewAngle, float positionX, float positionY)
+GameObject::GameObject(string object_name,int boundary, float viewAngle, Vector3 pos)
 {
-    object_name = name;
-    positionX = 0;
-    positionY = 0;
+	this->boundary = boundary;
+	this->name = object_name;
+	this->pos = pos;
+	
 }
 
 GameObject::~GameObject()
 {
+	
 }

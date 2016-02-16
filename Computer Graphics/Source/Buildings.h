@@ -7,7 +7,7 @@ using std::vector;
 class Buildings : public GameObject
 {
 public:
-	Buildings(string object_name, float viewAngle = 0, float positionX = 0, float positionY = 0);
+	Buildings(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0));
 	~Buildings();
 	static size_t b_count;
 	vector<GameObject> allOBJS;

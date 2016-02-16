@@ -5,8 +5,7 @@
 *.obj
 *.tga
 *.tlog
-Debug/
 Common Library/Debug/
 Computer Graphics/Debug/
-Computer Graphics/OBJ/
-Computer Graphics/Image/
+*.vcxproj
+*.vcxprog.filters

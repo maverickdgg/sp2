@@ -1,6 +1,8 @@
 #include "Human.h"
 
-Human::Human(string name, float viewAngle, float posX, float posY) : GameChar(name, viewAngle, posX, posY)
+size_t Human::count = 0;
+
+Human::Human(string object_name, int boundary, float viewAngle, Vector3 pos) : GameChar(object_name, boundary, viewAngle, pos)
 {
 }
 

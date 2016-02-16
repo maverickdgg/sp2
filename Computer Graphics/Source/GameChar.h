@@ -5,7 +5,7 @@
 class GameChar : public GameObject
 {
 public:
-    GameChar(string object_name, float viewAngle = 0, float positionX = 0, float positionY = 0);
+	GameChar(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0));
     ~GameChar();
     static size_t count;
 };
