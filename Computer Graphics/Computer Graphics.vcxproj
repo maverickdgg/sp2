@@ -89,6 +89,7 @@
     <ClCompile Include="Source\Camera3.cpp" />
     <ClCompile Include="Source\GameChar.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
+    <ClCompile Include="Source\Gun.cpp" />
     <ClCompile Include="Source\Human.cpp" />
     <ClCompile Include="Source\Light.cpp" />
     <ClCompile Include="Source\LoadOBJ.cpp" />
@@ -100,6 +101,7 @@
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Sp2_Scene1.cpp" />
     <ClCompile Include="Source\SpaceVehicles.cpp" />
+    <ClCompile Include="Source\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Alien.h" />
@@ -109,6 +111,7 @@
     <ClInclude Include="Source\Camera3.h" />
     <ClInclude Include="Source\GameChar.h" />
     <ClInclude Include="Source\GameObject.h" />
+    <ClInclude Include="Source\Gun.h" />
     <ClInclude Include="Source\Human.h" />
     <ClInclude Include="Source\Light.h" />
     <ClInclude Include="Source\LoadOBJ.h" />
@@ -122,6 +125,7 @@
     <ClInclude Include="Source\SpaceVehicles.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />
+    <ClInclude Include="Source\Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
