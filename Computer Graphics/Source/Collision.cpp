@@ -14,6 +14,34 @@ bool collision(GameObject x, GameObject y)
 	}
 }
 
+bool collision(GameObject x, Vector3 y,int boundary)
+{
+	Vector3 distance = x.pos - y;
+	float length = distance.Length();
+	if (length > boundary)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool collision(Vector3 x, Vector3 y, int boundary)
+{
+	Vector3 distance = x - y;
+	float length = distance.Length();
+	if (length > boundary)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
 bool collision(GameObject x, vector<GameObject> y)
 {
 	for (vector<GameObject>::iterator it = y.begin(); it != y.end(); ++it)
