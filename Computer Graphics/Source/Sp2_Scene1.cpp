@@ -168,6 +168,8 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 11), 1.f, 1.f);
 	
+	/*<---Studio Project 2 OBJs--->*/
+
 	meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJ//Firefly.obj");
 	meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
 
@@ -183,7 +185,7 @@ void Sp2_Scene1::Init()
 	meshList[GEO_NPCLEPUSMAG] = MeshBuilder::GenerateOBJ("NPCLEPUSMAG","OBJ//NPCLEPUSMAG.obj");
 	meshList[GEO_NPCLEPUSMAG]->textureID = LoadTGA("Image//NPCLEPUSMAG.tga");
 
-	/*<---Studio Project 2--->*/
+
 	meshList[GEO_SECOND] = MeshBuilder::GenerateOBJ("secondplayercontrolled", "OBJ//SecondPlayerControlledAircraft.obj");
 	meshList[GEO_SECOND]->textureID = LoadTGA("Image//SecondPlayerControlledAircraft.tga");
 
