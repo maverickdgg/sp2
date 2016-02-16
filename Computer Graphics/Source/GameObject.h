@@ -9,7 +9,7 @@ class GameObject
 {
 private:
     string name;
-    static size_t count;
+    static size_t GO_count;
 	int boundary;
 	Vector3 pos;
 public:

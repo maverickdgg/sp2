@@ -1,9 +1,10 @@
 #include "GameObject.h"
 
-size_t GameObject::count = 0;
+size_t GameObject::GO_count = 0;
 
 GameObject::GameObject()
 {
+	++GO_count;
 }
 
 GameObject::GameObject(string object_name,int boundary, float viewAngle, Vector3 pos)
@@ -11,10 +12,10 @@ GameObject::GameObject(string object_name,int boundary, float viewAngle, Vector3
 	this->boundary = boundary;
 	this->name = object_name;
 	this->pos = pos;
-	
+	++GO_count;
 }
 
 GameObject::~GameObject()
 {
-	
+	--GO_count;
 }
