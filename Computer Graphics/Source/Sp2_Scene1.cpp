@@ -207,9 +207,15 @@ void Sp2_Scene1::Init()
 	b_tpsDebounce = false;
 	tpsTimer = 0;
 
-	ffposition.x = 0;
-	ffposition.y = 0;
-	ffposition.z = 0;
+
+	/**/
+
+	//ffposition.x = 0;
+	//ffposition.y = 0;
+	//ffposition.z = 0;
+
+	ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
+
 }
 
 
@@ -470,77 +476,77 @@ void Sp2_Scene1::RenderSpaceVehicles(Camera3 camera)
 	RenderMesh(meshList[GEO_SECOND], false);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 3, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_THIRD], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, 3, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(1, 1, 1);
+	//RenderMesh(meshList[GEO_THIRD], false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 12, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_FOURTH], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, 12, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(1, 1, 1);
+	//RenderMesh(meshList[GEO_FOURTH], false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 20, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_FIFTH], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, 20, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(1, 1, 1);
+	//RenderMesh(meshList[GEO_FIFTH], false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 50, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_MOTOR], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, 50, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(1, 1, 1);
+	//RenderMesh(meshList[GEO_MOTOR], false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 60, 0);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_ROVER], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, 60, 0);
+	//modelStack.Rotate(90, 0, 1, 0);
+	//modelStack.Scale(10, 10, 10);
+	//RenderMesh(meshList[GEO_ROVER], false);
+	//modelStack.PopMatrix();
 
 	/**/
 
 	modelStack.PushMatrix();
-	modelStack.Translate(ffposition.x, ffposition.y, ffposition.z);
+	modelStack.Translate(ff.pos.x, ff.pos.y, ff.pos.z);
 	modelStack.Rotate(0, 1, 0, 0);
 	modelStack.Scale(1, 1, 1);
 	RenderMesh(meshList[GEO_FIREFLY], false);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(20, 0, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(2, 2, 2);
-	RenderMesh(meshList[GEO_MOONROVER], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(20, 0, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(2, 2, 2);
+	//RenderMesh(meshList[GEO_MOONROVER], false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(40, 0, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(2, 2, 2);
-	RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(40, 0, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(2, 2, 2);
+	//RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(60, 0, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(3, 3, 3);
-	RenderMesh(meshList[GEO_ENEMY2], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(60, 0, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(3, 3, 3);
+	//RenderMesh(meshList[GEO_ENEMY2], false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(80, 0, 0);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(4, 4, 4);
-	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(80, 0, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(4, 4, 4);
+	//RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
+	//modelStack.PopMatrix();
 }
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)

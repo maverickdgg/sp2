@@ -113,6 +113,8 @@ public:
 	float tpsTimer;
 	Vector3 ffposition;
 
+	SpaceVehicles ff;
+
 private:
 	unsigned m_vertexArrayID;
 	unsigned m_vertexBuffer[NUM_GEOMETRY];

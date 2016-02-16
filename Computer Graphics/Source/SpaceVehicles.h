@@ -5,6 +5,7 @@
 class SpaceVehicles : public GameObject
 {
 public:
+	SpaceVehicles();
 	SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos);
 	~SpaceVehicles();
 	static size_t SV_count;
