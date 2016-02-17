@@ -16,13 +16,12 @@ public:
     smaller magCap; // capacity of clip
     smaller maxAmmo; // max of all guns(clip should not be more than max)
     Vector3 view;
-    Vector3 direction; // where snout of barrel is pointing
-    Vector3 position;
-    Vector3 bulletVec;
-    float viewAngle2;
+    float viewAngleX;
     float findAngle(Vector3 view = Vector3(0, 0, 0)); // used to store angle based on view vector and direction gun is pointing
-    bool fire(Vector3 view, float deltaTime); // rotate to viewangle and trans based on view vector
-    vector<Bullet> magazine;
+    void fire(float deltaTime); // rotate to viewangle and trans based on view vector
+	vector<Bullet>::iterator despawnBullet(vector<Bullet>::iterator it);
+	void updateBullet(float dt);
+    vector<Bullet> bulletVec;
 };
 
 #endif

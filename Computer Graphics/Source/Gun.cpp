@@ -2,17 +2,15 @@
 
 size_t Gun::G_count = 0;
 
-Gun::Gun() : totalAmmo(1), currAmmo(1), magCap(30), maxAmmo(200), position(Vector3(0, 0, 0))
+Gun::Gun() : totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 {
+	this->pos = Vector3(0, 0, 0);
     ++G_count;
 }
 
-Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos), totalAmmo(1), currAmmo(1), magCap(30), maxAmmo(200), position(Vector3(0, 0, 0))
+Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos), totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 {
-    for (int i = 0; i < 30; ++i)
-    {
-        magazine.push_back(Bullet(2, 0, Vector3(2000, 2000, 2000)));
-    }
+	this->pos = pos;
     ++G_count;
 }
 
@@ -21,15 +19,31 @@ Gun::~Gun()
     --G_count;
 }
 
-bool Gun::fire(Vector3 view, float dt)
+void Gun::fire( float dt)
 {
-    if ((VK_LBUTTON)& 0x80)
-    {
-        bulletVec = view;
-        view.Normalize();
-        position += view  * dt * attackSpeed;
-        return true;
-    }
+	bulletVec.push_back(Bullet(5, this->pos + this->view *25,this->view ,viewAngle, viewAngleX));
+}
+
+vector<Bullet>::iterator Gun::despawnBullet(vector<Bullet>::iterator it)
+{
+	return bulletVec.erase(it);
+}
+
+void Gun::updateBullet(float dt)
+{
+	for (vector<Bullet>::iterator it = bulletVec.begin(); it != bulletVec.end();)
+	{
+		it->bulletUpdate(dt);
+		
+		if (it->despawnTimer <= 0)
+		{
+			it = despawnBullet(it);
+		}
+		else 
+		{
+			++it;
+		}
+	}
 }
 
 float Gun::findAngle(Vector3 view)

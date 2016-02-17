@@ -226,7 +226,7 @@ void Sp2_Scene1::Init()
 	tpsTimer = 0;
 
 	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
-    laserRifle = Gun("laser rifle", 0, camera.position);
+    laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y -5 ,camera.position.z));
 
 	/**/
 
@@ -396,19 +396,20 @@ void Sp2_Scene1::Update(double dt)
 		}
 	}
 
+	//gun update
+
     laserRifle.view = camera.view;
-    laserRifle.viewAngle =camera.cameraRotationY;
-	laserRifle.viewAngle2 = camera.cameraRotationX;
-    //laserRifle.viewAngle2 = camera.cameraRotationX;
-    //laserRifle.viewAngle2 = laserRifle.findAngle(laserRifle.view);
-    laserRifle.pos = camera.position;
+	laserRifle.viewAngleX = camera.cameraRotationX;
+    laserRifle.viewAngle = camera.cameraRotationY;
+	laserRifle.pos = Vector3(camera.position.x, camera.position.y - 5, camera.position.z);
 
-    if ((VK_LBUTTON)& 0x80)
-        if (laserRifle.fire(laserRifle.view, dt));
-        {
-            laserRifle.bulletVec;
+	if (Application::IsKeyPressed(VK_LBUTTON))
+	{
+		laserRifle.fire(dt);
+	}
+	laserRifle.updateBullet(dt);
 
-        }
+
 	Timer++;
 	if (Timer % 10 == 0)
 	{
@@ -807,19 +808,24 @@ void Sp2_Scene1::Renderfps()
 	modelStack.PopMatrix();
 
     modelStack.PushMatrix();
-    modelStack.Translate(laserRifle.pos.x, laserRifle.pos.y-5, laserRifle.pos.z);
+    modelStack.Translate(laserRifle.pos.x, laserRifle.pos.y, laserRifle.pos.z);
  
     modelStack.Rotate(laserRifle.viewAngle, 0, 1, 0);
-	modelStack.Rotate(laserRifle.viewAngle2, 0, 0, 1);
+	modelStack.Rotate(laserRifle.viewAngleX, 0, 0, 1);
     modelStack.Scale(80, 80, 80);
     RenderMesh(meshList[GEO_SNIPERRIFLE], true);
     modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Translate(laserRifle.bulletVec.x, laserRifle.bulletVec.y, laserRifle.bulletVec.z);
-    //modelStack.Rotate(90, 0, 1, 0);
-    RenderMesh(meshList[GEO_DART], true);
-    modelStack.PopMatrix();
+	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(it->pos.x, it->pos.y, it->pos.z);
+		modelStack.Rotate(it->angleY, 0, 1, 0);
+		modelStack.Rotate(it->angleX, 0, 0, 1);
+		RenderMesh(meshList[GEO_DART], true);
+		modelStack.PopMatrix();
+	}
+
 }
 
 void Sp2_Scene1::Rendertps()
