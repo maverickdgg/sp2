@@ -210,8 +210,7 @@ void Sp2_Scene1::Init()
 
 
     meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
-    meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
-    meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
+
 
 	/*<---NPC--->*/
 	meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("npc1", "OBJ//guard.obj");
@@ -397,7 +396,8 @@ void Sp2_Scene1::Update(double dt)
 	}
 
     laserRifle.view = camera.view;
-    laserRifle.viewAngle = laserRifle.findAngle(laserRifle.view);
+    laserRifle.viewAngle =camera.cameraRotationY;
+	laserRifle.viewAngle2 = camera.cameraRotationX;
     //laserRifle.viewAngle2 = camera.cameraRotationX;
     //laserRifle.viewAngle2 = laserRifle.findAngle(laserRifle.view);
     laserRifle.pos = camera.position;
@@ -413,7 +413,6 @@ void Sp2_Scene1::Update(double dt)
 	{
 		RenderNPC1(npc1);
 	}
->>>>>>> origin/master
 }
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
@@ -807,17 +806,18 @@ void Sp2_Scene1::Renderfps()
 
     modelStack.PushMatrix();
     modelStack.Translate(laserRifle.pos.x, laserRifle.pos.y-5, laserRifle.pos.z);
-    //modelStack.Rotate(-laserRifle.viewAngle2, 0, 0, 1);
+ 
     modelStack.Rotate(laserRifle.viewAngle, 0, 1, 0);
+	modelStack.Rotate(laserRifle.viewAngle2, 0, 0, 1);
     modelStack.Scale(80, 80, 80);
     RenderMesh(meshList[GEO_SNIPERRIFLE], true);
     modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Translate(laserRifle.bulletVec.x, laserRifle.bulletVec.y, laserRifle.bulletVec.z);
-    //modelStack.Rotate(90, 0, 1, 0);
-    RenderMesh(meshList[GEO_DART], true);
-    modelStack.PopMatrix();
+    //modelStack.PushMatrix();
+    //modelStack.Translate(laserRifle.bulletVec.x, laserRifle.bulletVec.y, laserRifle.bulletVec.z);
+    ////modelStack.Rotate(90, 0, 1, 0);
+    //RenderMesh(meshList[GEO_DART], true);
+    //modelStack.PopMatrix();
 }
 
 void Sp2_Scene1::Rendertps()
