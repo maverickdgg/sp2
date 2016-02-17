@@ -88,6 +88,7 @@
     <ClCompile Include="Source\Bullet.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
+    <ClCompile Include="Source\Collision.cpp" />
     <ClCompile Include="Source\GameChar.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\Gun.cpp" />
@@ -111,6 +112,7 @@
     <ClInclude Include="Source\Bullet.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />
+    <ClInclude Include="Source\Collision.h" />
     <ClInclude Include="Source\GameChar.h" />
     <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\Gun.h" />

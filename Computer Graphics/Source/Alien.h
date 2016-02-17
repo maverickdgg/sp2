@@ -5,9 +5,10 @@
 class Alien : public GameChar
 {
 public:
-    Alien(string object_name, int boundary, float viewAngle, Vector3 pos);
+	Alien();
+	Alien(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0,0,0));
     ~Alien();
-    static size_t alien_count;
+	static size_t alien_count;
 };
 
 #endif

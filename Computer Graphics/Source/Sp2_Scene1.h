@@ -15,8 +15,33 @@
 #include "GameObject.h"
 #include "SpaceVehicles.h"
 #include "Buildings.h"
+
 #include "Gun.h"
 
+#include "Human.h"
+#include "Alien.h"
+
+
+
+class Object
+{
+public:
+	Position position;
+	int State;
+	std::string Message;
+
+	enum States
+	{
+		patrol,
+		target,
+	};
+};
+
+enum Objects
+{
+	NPC,
+	Num_Obj,
+};
 
 class Sp2_Scene1 : public Scene
 {
@@ -47,7 +72,8 @@ public:
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
 
-		/*<---Studio Project 2>*/
+		/*<---Studio Project 2--->*/
+		/*<---Space Vehicles--->*/
 		GEO_SECOND,
 		GEO_THIRD,
 		GEO_FOURTH,
@@ -59,8 +85,14 @@ public:
 		GEO_MOONROVER,
 		GEO_ENEMY2,
 		GEO_NPCLEPUSMAG,
+
         GEO_SNIPERRIFLE,
         GEO_DART,
+
+		/*<---NPC--->*/
+		GEO_NPC1,
+		GEO_NPC2,
+
 		NUM_GEOMETRY,
 	};
 
@@ -119,6 +151,27 @@ public:
     Vector3 trajectory;
 
 	SpaceVehicles ff;
+	SpaceVehicles mr;
+	SpaceVehicles ev;
+	SpaceVehicles e2;
+	SpaceVehicles np;
+
+	/**/
+
+	SpaceVehicles spc;
+	SpaceVehicles tpc;
+	SpaceVehicles frpc;
+	SpaceVehicles fifpc;
+	SpaceVehicles mtv;
+	SpaceVehicles rov;
+
+	Human npc1;
+	Alien npc2;
+
+public:
+	/**/
+	Object objects[Num_Obj];
+	int Timer;
 
 private:
 	unsigned m_vertexArrayID;
@@ -135,6 +188,23 @@ private:
 	void RenderMesh(Mesh* mesh, bool enableLight);
 	void RenderSkybox(Camera3 camera);
 	void RenderSpaceVehicles(Camera3 camera);
+
+	/**/
+	void Renderff(SpaceVehicles ff);
+	void RenderMR(SpaceVehicles mr);
+	void Renderev(SpaceVehicles ev);
+	void Rendere2(SpaceVehicles e2);
+	void Rendernp(SpaceVehicles np);
+	/**/
+	void RenderSPC(SpaceVehicles spc);
+	void RenderTPC(SpaceVehicles tpc);
+	void RenderFRPC(SpaceVehicles frpc);
+	void RenderFIFPC(SpaceVehicles fifpc);
+	void RenderMTV(SpaceVehicles mtv);
+	void RenderROV(SpaceVehicles rov);
+	/**/
+	void RenderNPC1(Human npc1);
+	void RenderNPC2(Alien npc2);
 
 	void Renderfps();
 	void Rendertps();
