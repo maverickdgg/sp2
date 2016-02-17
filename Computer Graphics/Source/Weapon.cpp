@@ -2,7 +2,12 @@
 
 size_t Weapon::W_count = 0;
 
-Weapon::Weapon(string name, float viewAngle, float posX, float posY) : GameObject(name, viewAngle, posX, posY)
+Weapon::Weapon()
+{
+    ++W_count;
+}
+
+Weapon::Weapon(string name, int boundary, float viewAngle, Vector3 pos) : GameObject(name, boundary, viewAngle, pos)
 {
     ++W_count;
 }

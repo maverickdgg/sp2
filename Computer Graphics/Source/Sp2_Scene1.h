@@ -12,7 +12,10 @@
 #include"Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
-
+#include "GameObject.h"
+#include "SpaceVehicles.h"
+#include "Buildings.h"
+#include "Gun.h"
 
 
 class Sp2_Scene1 : public Scene
@@ -56,6 +59,8 @@ public:
 		GEO_MOONROVER,
 		GEO_ENEMY2,
 		GEO_NPCLEPUSMAG,
+        GEO_SNIPERRIFLE,
+        GEO_DART,
 		NUM_GEOMETRY,
 	};
 
@@ -109,6 +114,11 @@ public:
 	bool b_enabletps;
 	bool b_tpsDebounce;
 	float tpsTimer;
+	Vector3 ffposition;
+    Gun laserRifle;
+    Vector3 trajectory;
+
+	SpaceVehicles ff;
 
 private:
 	unsigned m_vertexArrayID;
