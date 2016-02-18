@@ -458,8 +458,6 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
-
-
 }
 
 
@@ -783,6 +781,34 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 	glEnable(GL_DEPTH_TEST);
 }
 
+
+void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale , Vector3 rotate )
+{
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -100, 100); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Translate(translate.x, translate.y, 10);
+	modelStack.Scale(scale.x, scale.y, scale.z);
+	modelStack.Rotate(rotate.x, 1, 0, 0);
+	modelStack.Rotate(rotate.y, 0, 1, 0);
+	modelStack.Rotate(rotate.z, 0, 0, 1);
+
+	RenderMesh(mesh, b_lightEnabled);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
+
+
+}
+
+
 void Sp2_Scene1::Renderfps()
 {
 	RenderSkybox(camera);
@@ -801,20 +827,14 @@ void Sp2_Scene1::Renderfps()
 	/**/
 	RenderNPC1(npc1);
 	RenderNPC2(npc2);
-	RenderMesh(meshList[GEO_AXES], false);
-	/**/
-	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_SPHERE], false);
-	modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_AXES], false); 
+	
+	RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
 
-    modelStack.PushMatrix();
-    modelStack.Translate(laserRifle.pos.x, laserRifle.pos.y, laserRifle.pos.z);
- 
-    modelStack.Rotate(laserRifle.viewAngle, 0, 1, 0);
-	modelStack.Rotate(laserRifle.viewAngleX, 0, 0, 1);
-    modelStack.Scale(80, 80, 80);
-    RenderMesh(meshList[GEO_SNIPERRIFLE], true);
-    modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Scale(0.3, 0.3, 0.3);
+	RenderMesh(meshList[GEO_SNIPERRIFLE], true);
+	modelStack.PopMatrix();
 
 	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
 	{

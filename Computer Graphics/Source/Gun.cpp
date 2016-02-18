@@ -21,7 +21,7 @@ Gun::~Gun()
 
 void Gun::fire( float dt)
 {
-	bulletVec.push_back(Bullet(5, this->pos + this->view *25,this->view ,viewAngle, viewAngleX));
+	bulletVec.push_back(Bullet(5, this->pos + this->view *15 + Vector3(0,1,0),this->view ,viewAngle, viewAngleX));
 }
 
 vector<Bullet>::iterator Gun::despawnBullet(vector<Bullet>::iterator it)
