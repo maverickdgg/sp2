@@ -2,8 +2,6 @@
 #define HUMAN_H
 #include "GameChar.h"
 
-
-
 class Human : public GameChar
 {
 public:

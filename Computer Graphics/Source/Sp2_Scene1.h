@@ -19,9 +19,8 @@
 #include "Alien.h"
 
 
-class Object
+struct Object
 {
-public:
 	Position position;
 	int State;
 	std::string Message;
@@ -36,6 +35,7 @@ public:
 enum Objects
 {
 	NPC,
+	GUIDENPC,
 	Num_Obj,
 };
 
@@ -138,12 +138,12 @@ public:
 	bool b_tpsDebounce;
 	float tpsTimer;
 	Vector3 ffposition;
+	ifstream inData;
 
 	SpaceVehicles ff;
 	SpaceVehicles mr;
 	SpaceVehicles ev;
 	SpaceVehicles e2;
-	SpaceVehicles np;
 
 	/**/
 
@@ -183,7 +183,7 @@ private:
 	void RenderMR(SpaceVehicles mr);
 	void Renderev(SpaceVehicles ev);
 	void Rendere2(SpaceVehicles e2);
-	void Rendernp(SpaceVehicles np);
+	void Rendernp();
 	/**/
 	void RenderSPC(SpaceVehicles spc);
 	void RenderTPC(SpaceVehicles tpc);
@@ -200,7 +200,6 @@ private:
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-
 };
 
 #endif

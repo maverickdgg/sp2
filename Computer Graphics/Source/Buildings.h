@@ -1,8 +1,6 @@
 #ifndef BUILDINGS_H
 #define BUILDINGS_H
 #include "GameObject.h"
-#include <vector>
-using std::vector;
 
 class Buildings : public GameObject
 {

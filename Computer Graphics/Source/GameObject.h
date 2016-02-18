@@ -1,7 +1,14 @@
 #ifndef GAME_OBJECT_H
 #define GAME_OBJECT_H
 #include <string>
+#include <vector>
+#include <fstream>
 #include "Vector3.h"
+
+using std::ifstream;
+using std::ofstream;
+
+using std::vector;
 
 using std::string;
 

@@ -225,7 +225,6 @@ void Sp2_Scene1::Init()
 	mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
 	ev = SpaceVehicles("enemyVehicles", 0, 30, Vector3(-30, 0, 0));
 	e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
-	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
 
 	/**/
 
@@ -237,14 +236,13 @@ void Sp2_Scene1::Init()
 	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120));
 
 	/**/
-
-	npc1 = Human("npc", 0, 30, Vector3(120, -30, 125));
 	npc2 = Alien("npc2", 0, 30, Vector3(220, -30, 125));
 
 	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
 	objects[NPC].State = objects[NPC].patrol;
 	objects[NPC].Message = "Welcome to Space Race";
 
+	inData.open("Image//Robotdialogue.txt");
 	Timer = 0;
 }
 
@@ -539,15 +537,6 @@ void Sp2_Scene1::Rendere2(SpaceVehicles e2)
 	RenderMesh(meshList[GEO_ENEMY2], false);
 	modelStack.PopMatrix();
 }
-void Sp2_Scene1::Rendernp(SpaceVehicles np)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(np.pos.x, np.pos.y, np.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(7, 7, 7);
-	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
-	modelStack.PopMatrix();
-}
 
 /**/
 
@@ -679,6 +668,57 @@ void Sp2_Scene1::RenderNPC2(Alien npc2)
 	modelStack.PopMatrix();
 }
 
+void Sp2_Scene1::Rendernp()
+{
+	GameChar np("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+	modelStack.PushMatrix();
+	modelStack.Translate(np.pos.x, np.pos.y, np.pos.z);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(7, 7, 7);
+	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
+	modelStack.PopMatrix();
+		//
+		//if (objects[GUIDENPC].State == objects[GUIDENPC].target && Application::IsKeyPressed('E'))
+		//{
+
+		//}
+
+	vector<string> vec_dialog;
+	vector<string>::iterator dialogIT;
+	string data;
+	if (inData.is_open())
+	{
+	if (!inData.eof())
+	{
+		//inData.open(link); // associate & open files
+		//if (inData.get() != ';')
+		//{
+		//	data = inData.get();
+		//	vec_dialog.push_back(data);
+		//}
+		std::getline(inData, data);
+		vec_dialog.push_back(data);
+	}
+	}
+	inData.close();
+	//vector<string> text = np.ReadFromTxt("Image//Robotdialog.txt", txtfile);
+	//modelStack.Rotate(0, 1, 0, 0);
+	//modelStack.Scale(20, 20, 20);
+	//data = vec_dialog[0];
+	dialogIT = vec_dialog.begin();
+	//RenderTextOnScreen(meshList[GEO_TEXT],*dialogIT , Color(1, 1, 1), 3, 1, 10);
+
+		if (objects[GUIDENPC].State == objects[GUIDENPC].target)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(2, 6, 0);
+			//modelStack.Rotate(0, 1, 0, 0);
+			//modelStack.Scale(20, 20, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
+			modelStack.PopMatrix();
+		}
+}
+
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -764,7 +804,7 @@ void Sp2_Scene1::Renderfps()
 	RenderMR(mr);
 	Renderev(ev);
 	Rendere2(e2);
-	Rendernp(np);
+	Rendernp();
 	/**/
 	RenderSPC(spc);
 	RenderTPC(tpc);
