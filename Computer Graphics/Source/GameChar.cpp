@@ -1,4 +1,8 @@
 #include "GameChar.h"
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 size_t GameChar::GC_count = 0;
 
@@ -17,22 +21,25 @@ GameChar::~GameChar()
 	--GC_count;
 }
 
-vector<string> GameChar::ReadFromTxt(string link, ifstream inData)
+vector<string> GameChar::ReadFromTxt(string link)
 {
-	inData.open("Image//Robotdialog.txt");
-	//if (inData.is_open())
-	//{
-	string data;
-		if (!inData.eof())
+	ifstream inData;
+	inData.open(link,std::ifstream::in);
+	
+	if (!inData)
+	{
+		cout << "Error Opening" << link << endl;
+		exit(1);
+	}
+		if (inData.good())
 		{
-			//inData.open(link); // associate & open files
-			//if (inData.get() != ';')
-			//{
-			//	data = inData.get();
-			//	vec_dialog.push_back(data);
-			//}
-			std::getline(inData, data);
-			vec_dialog.push_back(data);
+			while (inData.good())
+			{
+				string data;
+				std::getline(inData, data);
+				vec_dialog.push_back(data);
+			}
+
 		}
 	//}
 	inData.close();

@@ -169,6 +169,7 @@ public:
 
 	Human npc1;
 	Alien npc2;
+	GameChar test;
 
 public:
 	/**/
@@ -196,7 +197,7 @@ private:
 	//void RenderMR(SpaceVehicles mr);
 	//void Renderev(SpaceVehicles ev);
 	//void Rendere2(SpaceVehicles e2);
-	void Rendernp();
+	void Rendernp(GameChar np);
 	/**/
 	//void RenderSPC(SpaceVehicles spc);
 	//void RenderTPC(SpaceVehicles tpc);

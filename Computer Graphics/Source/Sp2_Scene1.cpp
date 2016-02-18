@@ -236,6 +236,9 @@ void Sp2_Scene1::Init()
 	//e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
 	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
 
+	test = GameChar("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+	test.ReadFromTxt("Image//Robotdialogue.txt");
+
 	/**/
 
 	//spc = SpaceVehicles("second", 0, 30, Vector3(25, 0, 20));
@@ -701,9 +704,9 @@ void Sp2_Scene1::RenderNPC2(Alien npc2)
 	modelStack.PopMatrix();
 }
 
-void Sp2_Scene1::Rendernp()
+void Sp2_Scene1::Rendernp(GameChar np)
 {
-	GameChar np("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+	
 	modelStack.PushMatrix();
 	modelStack.Translate(np.pos.x, np.pos.y, np.pos.z);
 	modelStack.Rotate(0, 1, 0, 0);
@@ -716,30 +719,32 @@ void Sp2_Scene1::Rendernp()
 
 		//}
 
-	vector<string> vec_dialog;
-	vector<string>::iterator dialogIT;
-	string data;
-	if (inData.is_open())
-	{
-	if (!inData.eof())
-	{
-		//inData.open(link); // associate & open files
-		//if (inData.get() != ';')
-		//{
-		//	data = inData.get();
-		//	vec_dialog.push_back(data);
-		//}
-		std::getline(inData, data);
-		vec_dialog.push_back(data);
-	}
-	}
-	inData.close();
+	//vector<string> vec_dialog;
+	//vector<string>::iterator dialogIT;
+	//string data;
+	//if (inData.is_open())
+	//{
+	//if (!inData.eof())
+	//{
+	//	//inData.open(link); // associate & open files
+	//	//if (inData.get() != ';')
+	//	//{
+	//	//	data = inData.get();
+	//	//	vec_dialog.push_back(data);
+	//	//}
+	//	std::getline(inData, data);
+	//	vec_dialog.push_back(data);
+	//}
+	//}
+	//inData.close();
 	//vector<string> text = np.ReadFromTxt("Image//Robotdialog.txt", txtfile);
 	//modelStack.Rotate(0, 1, 0, 0);
 	//modelStack.Scale(20, 20, 20);
 	//data = vec_dialog[0];
-	dialogIT = vec_dialog.begin();
-	RenderTextOnScreen(meshList[GEO_TEXT],*dialogIT , Color(1, 1, 1), 3, 1, 10);
+
+	//dialogIT = vec_dialog.begin();
+
+	RenderTextOnScreen(meshList[GEO_TEXT],np.vec_dialog[0] , Color(1, 1, 1), 3, 1, 10);
 
 		if (objects[GUIDENPC].State == objects[GUIDENPC].target)
 		{
@@ -869,7 +874,7 @@ void Sp2_Scene1::Renderfps()
 	Rendernp();
 
 	Rendere2(e2);*/
-	Rendernp();
+	Rendernp(test);
 
 	/**/
 	//RenderSPC(spc);

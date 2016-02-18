@@ -11,7 +11,7 @@ public:
     ~GameChar();
     static size_t GC_count;
 	vector<string> vec_dialog;
-	vector<string> ReadFromTxt(string link, ifstream inData);
+	vector<string> ReadFromTxt(string link);
 };
 
 #endif
