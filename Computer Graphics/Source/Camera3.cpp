@@ -33,7 +33,7 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up,
 
 }
 
-void Camera3::updateRotation(float CameraSpeed)
+void Camera3::updateRotation(float CameraSpeed) // camerarotationx and y, 38 to 48
 {
 	int screenSizeX, screenSizeY;
 	int midScreenX, midScreenY;
@@ -59,9 +59,9 @@ void Camera3::updateRotation(float CameraSpeed)
 		cameraRotationY = 0;
 	}
 
-	target = Vector3
+	target = Vector3 // position
 		(
-		cos(Math::DegreeToRadian(cameraRotationY)) * cos(Math::DegreeToRadian(cameraRotationX))+ this->position.x,
+		cos(Math::DegreeToRadian(cameraRotationY)) * cos(Math::DegreeToRadian(cameraRotationX))+ this->position.x, // target.x // position + Math...
 		sin(Math::DegreeToRadian(cameraRotationX))+this->position.y,
 		-sin(Math::DegreeToRadian(cameraRotationY))  * cos(Math::DegreeToRadian(cameraRotationX)) + this->position.z
 		);

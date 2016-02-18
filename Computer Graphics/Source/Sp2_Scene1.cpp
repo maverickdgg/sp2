@@ -137,7 +137,8 @@ void Sp2_Scene1::Init()
 	//geom init
 
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 800);
-	//camera2.Init(Vector3(0, 0, 50), camera.position, Vector3(0, 1, 0), 500);
+    frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
+    camera2.Init(Vector3(0, 10, 20), Vector3(0, 1, 0), frpc.pos);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
@@ -240,7 +241,6 @@ void Sp2_Scene1::Init()
 
 	//spc = SpaceVehicles("second", 0, 30, Vector3(25, 0, 20));
 	//tpc = SpaceVehicles("third", 0, 30, Vector3(40, 0, 40));
-	frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
 /*	fifpc = SpaceVehicles("fifth", 0, 30, Vector3(70, 0, 80));
 	mtv = SpaceVehicles("motorvehicle", 0, 30, Vector3(85, 0, 100));
 	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120))*/;
@@ -262,7 +262,9 @@ void Sp2_Scene1::Init()
 void Sp2_Scene1::Update(double dt)
 {
 	//camera.Update(dt);
-	//camera2.tpsUpdate(camera, dt);
+    //camera2.tpsUpdate(camera, dt);
+    // if (is in vehicle)
+    camera2.tpsUpdateVec(frpc.pos);
 	camera.view = (camera.target - camera.position).Normalized();
 	camera.right = camera.view.Cross(camera.defaultUp);
 	camera.right.y = 0;
@@ -363,7 +365,7 @@ void Sp2_Scene1::Update(double dt)
 	{
 		camera.position.z = -camera.boundary;
 	}
-	if (!Application::IsKeyPressed(VK_MENU))
+	if (!Application::IsKeyPressed(VK_MENU)) // && is in vehicle == false
 	{
 		camera.updateRotation(0.3);
 		ShowCursor(FALSE);
@@ -848,11 +850,11 @@ void Sp2_Scene1::Render()
 
 	viewStack.LoadIdentity();
 
-	//set View position to camera
+	//set View position to camera // if inVehicle, run camera2 viewstack
 	viewStack.LookAt(
-		camera.position.x, camera.position.y, camera.position.z,
-		camera.target.x, camera.target.y, camera.target.z,
-		camera.up.x, camera.up.y, camera.up.z
+		camera2.position.x, camera2.position.y, camera2.position.z,
+		camera2.target.x, camera2.target.y, camera2.target.z,
+		camera2.up.x, camera2.up.y, camera2.up.z
 		);
 
 	Renderfps();

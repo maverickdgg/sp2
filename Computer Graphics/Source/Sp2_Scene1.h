@@ -5,6 +5,7 @@
 #include"Mtx44.h"
 #include "Application.h"
 #include "Camera3.h"
+#include "CameraTPS.h"
 #include"Mesh.h"
 #include"MeshBuilder.h"
 #include "MatrixStack.h"
@@ -137,7 +138,7 @@ public:
 	float scaleAll;
 
 	Camera3 camera;
-	Camera3 camera2;
+	CameraTPS camera2;
 
 	float LSPEED;
 	bool b_lightEnabled;
@@ -208,6 +209,8 @@ private:
 
 	void Renderfps();
 	void Rendertps();
+
+
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
