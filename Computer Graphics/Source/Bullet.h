@@ -16,8 +16,5 @@ public:
     ~Bullet();
 	void bulletUpdate(float dt);
     static size_t bullet_count;
-	
-
 };
-
 #endif

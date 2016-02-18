@@ -30,5 +30,4 @@ protected:
 	GameObject(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0));
 
 };
-
 #endif

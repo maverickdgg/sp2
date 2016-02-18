@@ -5,18 +5,18 @@ size_t Gun::G_count = 0;
 Gun::Gun() : totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 {
 	this->pos = Vector3(0, 0, 0);
-    ++G_count;
+	G_count++;
 }
 
 Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos), totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 {
 	this->pos = pos;
-    ++G_count;
+	G_count++;
 }
 
 Gun::~Gun()
 {
-    --G_count;
+	G_count--;
 }
 
 void Gun::fire( float dt)
@@ -41,7 +41,7 @@ void Gun::updateBullet(float dt)
 		}
 		else 
 		{
-			++it;
+			it++;
 		}
 	}
 }

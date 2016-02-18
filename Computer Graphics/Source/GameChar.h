@@ -13,5 +13,4 @@ public:
 	vector<string> vec_dialog;
 	vector<string> ReadFromTxt(string link);
 };
-
 #endif

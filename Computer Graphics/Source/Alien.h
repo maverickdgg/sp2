@@ -10,5 +10,4 @@ public:
     ~Alien();
 	static size_t alien_count;
 };
-
 #endif

@@ -22,5 +22,4 @@ struct Material
 	Material();
 	~Material();
 };
-
 #endif

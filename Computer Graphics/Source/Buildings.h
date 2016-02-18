@@ -10,5 +10,4 @@ public:
 	static size_t b_count;
 	vector<GameObject> allOBJS;
 };
-
 #endif

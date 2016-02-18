@@ -23,5 +23,4 @@ public:
 	void updateBullet(float dt);
     vector<Bullet> bulletVec;
 };
-
 #endif

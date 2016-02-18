@@ -10,5 +10,4 @@ public:
     ~Human();
     static size_t h_count;
 };
-
 #endif

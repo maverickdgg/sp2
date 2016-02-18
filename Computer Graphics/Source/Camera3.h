@@ -3,7 +3,6 @@
 
 #include "Camera.h"
 
-
 class Camera3 : public Camera
 {
 public:
@@ -35,5 +34,4 @@ public:
 	virtual void Update(double dt);
 	virtual void Reset();
 };
-
 #endif

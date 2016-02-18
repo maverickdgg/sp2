@@ -1,7 +1,6 @@
 #include "MeshBuilder.h"
 #include <GL\glew.h>
 
-
 /******************************************************************************/
 /*!
 \brief
@@ -18,8 +17,6 @@ Then generate the VBO/IBO and store them in Mesh object
 /******************************************************************************/
 Mesh* MeshBuilder::GenerateAxes(const std::string &meshName, float lengthX, float lengthY, float lengthZ)
 {
-
-
 	vector<Vertex> vertex_buffer_data;
 	vector<GLuint> index_buffer_data;
 	Vertex v;
@@ -111,7 +108,6 @@ Then generate the VBO/IBO and store them in Mesh object
 /******************************************************************************/
 Mesh* MeshBuilder::GenerateCube(const std::string &meshName,  Color color)
 {
-
 	vector<Vertex> vertex_buffer_data;
 	vector<GLuint> index_buffer_data;
 	Vertex v;
@@ -371,8 +367,6 @@ Mesh* MeshBuilder::GenerateCylinder(const string& meshName, Color color, float t
 		index_buffer_data.push_back(2 * slice+1);
 		index_buffer_data.push_back(2 * (numSlice + 1) + 1);
 	}
-	
-
 	
 	Mesh *mesh = new Mesh(meshName);
 
@@ -637,7 +631,6 @@ Mesh* MeshBuilder::GenerateText(const std::string &meshName, unsigned numRow, un
 			offset += 4;
 		}
 	}
-
 
 	Mesh *mesh = new Mesh(meshName);
 
