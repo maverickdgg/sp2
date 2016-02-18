@@ -144,22 +144,22 @@ void Sp2_Scene1::Init()
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//color2.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f, 1.f);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//Assn3_front.tga");
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//purplenebula_ft.tga");
 
 	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1.f, 1.f);
 	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//Assn3_bottom.tga");
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1.f, 1.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//Assn3_back.tga");
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//purplenebula_bk.tga");
 
 	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1.f, 1.f);
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//Assn3_top.tga");
+	meshList[GEO_TOP]->textureID = LoadTGA("Image//purplenebula_up.tga");
 
-	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f, 1.f);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//Assn3_left.tga");
+    meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f, 1.f);
+    meshList[GEO_LEFT]->textureID = LoadTGA("Image//purplenebula_lf.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f, 1.f);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//Assn3_right.tga");
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//purplenebula_rt.tga");
 
 	meshList[GEO_SPHERE] = MeshBuilder::GenerateSphere("sphere", Color(1, 0, 0));
 	
@@ -174,39 +174,44 @@ void Sp2_Scene1::Init()
 	/*<---Studio Project 2 OBJs--->*/
 
 	/*<---Space Vehicles--->*/
-	meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJ//Firefly.obj");
-	meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
+	//meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJ//Firefly.obj");
+	//meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
 
-	meshList[GEO_MOONROVER] = MeshBuilder::GenerateOBJ("moonRover", "OBJ//moonRover.obj");
-	meshList[GEO_MOONROVER]->textureID = LoadTGA("Image//MoonRover.tga");
+	//meshList[GEO_MOONROVER] = MeshBuilder::GenerateOBJ("moonRover", "OBJ//moonRover.obj");
+	//meshList[GEO_MOONROVER]->textureID = LoadTGA("Image//MoonRover.tga");
 
-	meshList[GEO_ENEMYVEHICLE] = MeshBuilder::GenerateOBJ("enemyVehicle", "OBJ//enemyVehicle.obj");
-	meshList[GEO_ENEMYVEHICLE]->textureID = LoadTGA("Image//enemyVehicle.tga");
+	//meshList[GEO_ENEMYVEHICLE] = MeshBuilder::GenerateOBJ("enemyVehicle", "OBJ//enemyVehicle.obj");
+	//meshList[GEO_ENEMYVEHICLE]->textureID = LoadTGA("Image//enemyVehicle.tga");
 
-	meshList[GEO_ENEMY2] = MeshBuilder::GenerateOBJ("Enemy2", "OBJ//Enemy2.obj");
-	meshList[GEO_ENEMY2]->textureID = LoadTGA("Image//Enemy2.tga");
+	//meshList[GEO_ENEMY2] = MeshBuilder::GenerateOBJ("Enemy2", "OBJ//Enemy2.obj");
+	//meshList[GEO_ENEMY2]->textureID = LoadTGA("Image//Enemy2.tga");
 
 	meshList[GEO_NPCLEPUSMAG] = MeshBuilder::GenerateOBJ("NPCLEPUSMAG","OBJ//NPCLEPUSMAG.obj");
 	meshList[GEO_NPCLEPUSMAG]->textureID = LoadTGA("Image//NPCLEPUSMAG.tga");
 
 
-	meshList[GEO_SECOND] = MeshBuilder::GenerateOBJ("secondplayercontrolled", "OBJ//SecondPlayerControlledAircraft.obj");
-	meshList[GEO_SECOND]->textureID = LoadTGA("Image//SecondPlayerControlledAircraft.tga");
+	//meshList[GEO_SECOND] = MeshBuilder::GenerateOBJ("secondplayercontrolled", "OBJ//SecondPlayerControlledAircraft.obj");
+	//meshList[GEO_SECOND]->textureID = LoadTGA("Image//SecondPlayerControlledAircraft.tga");
 
-	meshList[GEO_THIRD] = MeshBuilder::GenerateOBJ("thirdplayercontrolled", "OBJ//ThirdPlayerControlled.obj");
-	meshList[GEO_THIRD]->textureID = LoadTGA("Image//ThirdPlayerControlled.tga");
+	//meshList[GEO_THIRD] = MeshBuilder::GenerateOBJ("thirdplayercontrolled", "OBJ//ThirdPlayerControlled.obj");
+	//meshList[GEO_THIRD]->textureID = LoadTGA("Image//ThirdPlayerControlled.tga");
 
 	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
 	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
 
-	meshList[GEO_FIFTH] = MeshBuilder::GenerateOBJ("fifthplayercontrolled", "OBJ//FifthPlayerControlled.obj");
-	meshList[GEO_FIFTH]->textureID = LoadTGA("Image//FifthPlayerControlled.tga");
+	//meshList[GEO_FIFTH] = MeshBuilder::GenerateOBJ("fifthplayercontrolled", "OBJ//FifthPlayerControlled.obj");
+	//meshList[GEO_FIFTH]->textureID = LoadTGA("Image//FifthPlayerControlled.tga");
 
-	meshList[GEO_MOTOR] = MeshBuilder::GenerateOBJ("motorlandvehicle", "OBJ//MotorLandVehicle.obj");
-	meshList[GEO_MOTOR]->textureID = LoadTGA("Image//MotorLandVehicle.tga");
+	//meshList[GEO_MOTOR] = MeshBuilder::GenerateOBJ("motorlandvehicle", "OBJ//MotorLandVehicle.obj");
+	//meshList[GEO_MOTOR]->textureID = LoadTGA("Image//MotorLandVehicle.tga");
 
-	meshList[GEO_ROVER] = MeshBuilder::GenerateOBJ("roverlandvehicle", "OBJ//RoverLandVehicle.obj");
-	meshList[GEO_ROVER]->textureID = LoadTGA("Image//RoverLandVehicle.tga");
+	//meshList[GEO_ROVER] = MeshBuilder::GenerateOBJ("roverlandvehicle", "OBJ//RoverLandVehicle.obj");
+	//meshList[GEO_ROVER]->textureID = LoadTGA("Image//RoverLandVehicle.tga");
+
+
+    meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
+    meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
+    meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
 	/*<---NPC--->*/
 	meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("npc1", "OBJ//guard.obj");
@@ -215,27 +220,34 @@ void Sp2_Scene1::Init()
 	meshList[GEO_NPC2] = MeshBuilder::GenerateOBJ("npc2", "OBJ//mike.obj");
 	meshList[GEO_NPC2]->textureID = LoadTGA("Image//mike.tga");
 
+
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
 
-	/**/
-
-	ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
-	mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
-	ev = SpaceVehicles("enemyVehicles", 0, 30, Vector3(-30, 0, 0));
-	e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
+	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
+    laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y -5 ,camera.position.z));
 
 	/**/
 
-	spc = SpaceVehicles("second", 0, 30, Vector3(25, 0, 20));
-	tpc = SpaceVehicles("third", 0, 30, Vector3(40, 0, 40));
+	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
+	//mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
+	//ev = SpaceVehicles("enemyVehicles", 0, 30, Vector3(-30, 0, 0));
+	//e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
+	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+
+	/**/
+
+	//spc = SpaceVehicles("second", 0, 30, Vector3(25, 0, 20));
+	//tpc = SpaceVehicles("third", 0, 30, Vector3(40, 0, 40));
 	frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
-	fifpc = SpaceVehicles("fifth", 0, 30, Vector3(70, 0, 80));
+/*	fifpc = SpaceVehicles("fifth", 0, 30, Vector3(70, 0, 80));
 	mtv = SpaceVehicles("motorvehicle", 0, 30, Vector3(85, 0, 100));
-	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120));
+	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120))*/;
 
 	/**/
+
+	npc1 = Human("npc", 0, 30, Vector3(120, -30, 125));
 	npc2 = Alien("npc2", 0, 30, Vector3(220, -30, 125));
 
 	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
@@ -244,6 +256,7 @@ void Sp2_Scene1::Init()
 
 	inData.open("Image//Robotdialogue.txt");
 	Timer = 0;
+
 }
 
 
@@ -383,11 +396,27 @@ void Sp2_Scene1::Update(double dt)
 			tpsTimer = 0;
 		}
 	}
+
+	//gun update
+
+    laserRifle.view = camera.view;
+	laserRifle.viewAngleX = camera.cameraRotationX;
+    laserRifle.viewAngle = camera.cameraRotationY;
+	laserRifle.pos = Vector3(camera.position.x, camera.position.y - 5, camera.position.z);
+
+	if (Application::IsKeyPressed(VK_LBUTTON))
+	{
+		laserRifle.fire(dt);
+	}
+	laserRifle.updateBullet(dt);
+
+
 	Timer++;
 	if (Timer % 10 == 0)
 	{
 		RenderNPC1(npc1);
 	}
+
 }
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
@@ -430,8 +459,6 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
-
-
 }
 
 
@@ -499,65 +526,71 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 
 }
 
+//
+//	modelStack.PopMatrix();
+//
+//
+//}
 
-void Sp2_Scene1::Renderff(SpaceVehicles ff)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(ff.pos.x, ff.pos.y, ff.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(0.5, 0.5, 0.5);
-	RenderMesh(meshList[GEO_FIREFLY], false);
-	modelStack.PopMatrix();
-}
 
-void Sp2_Scene1::RenderMR(SpaceVehicles mr)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(mr.pos.x, mr.pos.y, mr.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(3, 3, 3);
-	RenderMesh(meshList[GEO_MOONROVER], false);
-	modelStack.PopMatrix();
-}
-void Sp2_Scene1::Renderev(SpaceVehicles ev)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(ev.pos.x, ev.pos.y, ev.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(2, 2, 2);
-	RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
-	modelStack.PopMatrix();
-}
-void Sp2_Scene1::Rendere2(SpaceVehicles e2)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(e2.pos.x, e2.pos.y, e2.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(6, 6, 6);
-	RenderMesh(meshList[GEO_ENEMY2], false);
-	modelStack.PopMatrix();
-}
+//void Sp2_Scene1::Renderff(SpaceVehicles ff)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(ff.pos.x, ff.pos.y, ff.pos.z);
+//	modelStack.Rotate(0, 1, 0, 0);
+//	modelStack.Scale(0.5, 0.5, 0.5);
+//	RenderMesh(meshList[GEO_FIREFLY], false);
+//	modelStack.PopMatrix();
+//}
+//
+//void Sp2_Scene1::RenderMR(SpaceVehicles mr)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(mr.pos.x, mr.pos.y, mr.pos.z);
+//	modelStack.Rotate(0, 1, 0, 0);
+//	modelStack.Scale(3, 3, 3);
+//	RenderMesh(meshList[GEO_MOONROVER], false);
+//	modelStack.PopMatrix();
+//}
+//void Sp2_Scene1::Renderev(SpaceVehicles ev)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(ev.pos.x, ev.pos.y, ev.pos.z);
+//	modelStack.Rotate(0, 1, 0, 0);
+//	modelStack.Scale(2, 2, 2);
+//	RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
+//	modelStack.PopMatrix();
+//}
+//void Sp2_Scene1::Rendere2(SpaceVehicles e2)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(e2.pos.x, e2.pos.y, e2.pos.z);
+//	modelStack.Rotate(0, 1, 0, 0);
+//	modelStack.Scale(6, 6, 6);
+//	RenderMesh(meshList[GEO_ENEMY2], false);
+//	modelStack.PopMatrix();
+//}
 
 /**/
 
-void Sp2_Scene1::RenderSPC(SpaceVehicles spc)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(spc.pos.x, spc.pos.y, spc.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_SECOND], false);
-	modelStack.PopMatrix();
-}
-void Sp2_Scene1::RenderTPC(SpaceVehicles tpc)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(tpc.pos.x, tpc.pos.y, tpc.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(0.8, 0.8, 0.8);
-	RenderMesh(meshList[GEO_THIRD], false);
-	modelStack.PopMatrix();
-}
+//void Sp2_Scene1::RenderSPC(SpaceVehicles spc)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(spc.pos.x, spc.pos.y, spc.pos.z);
+//	modelStack.Rotate(0, 1, 0, 0);
+//	modelStack.Scale(1, 1, 1);
+//	RenderMesh(meshList[GEO_SECOND], false);
+//	modelStack.PopMatrix();
+//}
+//void Sp2_Scene1::RenderTPC(SpaceVehicles tpc)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(tpc.pos.x, tpc.pos.y, tpc.pos.z);
+//	modelStack.Rotate(0, 1, 0, 0);
+//	modelStack.Scale(0.8, 0.8, 0.8);
+//	RenderMesh(meshList[GEO_THIRD], false);
+//	modelStack.PopMatrix();
+//}
 
 void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
 {
@@ -569,35 +602,35 @@ void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
 	modelStack.PopMatrix();
 }
 
-void Sp2_Scene1::RenderFIFPC(SpaceVehicles fifpc)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(fifpc.pos.x, fifpc.pos.y, fifpc.pos.z);
-	modelStack.Rotate(270, 0, 1, 0);
-	modelStack.Scale(0.5, 0.5, 0.5);
-	RenderMesh(meshList[GEO_FIFTH], false);
-	modelStack.PopMatrix();
-}
-
-void Sp2_Scene1::RenderMTV(SpaceVehicles mtv)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(mtv.pos.x, mtv.pos.y, mtv.pos.z);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(0.5, 0.5, 0.5);
-	RenderMesh(meshList[GEO_MOTOR], false);
-	modelStack.PopMatrix();
-}
-
-void Sp2_Scene1::RenderROV(SpaceVehicles rov)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(rov.pos.x, rov.pos.y, rov.pos.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Scale(3, 3, 3);
-	RenderMesh(meshList[GEO_ROVER], false);
-	modelStack.PopMatrix();
-}
+//void Sp2_Scene1::RenderFIFPC(SpaceVehicles fifpc)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(fifpc.pos.x, fifpc.pos.y, fifpc.pos.z);
+//	modelStack.Rotate(270, 0, 1, 0);
+//	modelStack.Scale(0.5, 0.5, 0.5);
+//	RenderMesh(meshList[GEO_FIFTH], false);
+//	modelStack.PopMatrix();
+//}
+//
+//void Sp2_Scene1::RenderMTV(SpaceVehicles mtv)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(mtv.pos.x, mtv.pos.y, mtv.pos.z);
+//	modelStack.Rotate(90, 0, 1, 0);
+//	modelStack.Scale(0.5, 0.5, 0.5);
+//	RenderMesh(meshList[GEO_MOTOR], false);
+//	modelStack.PopMatrix();
+//}
+//
+//void Sp2_Scene1::RenderROV(SpaceVehicles rov)
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(rov.pos.x, rov.pos.y, rov.pos.z);
+//	modelStack.Rotate(180, 0, 1, 0);
+//	modelStack.Scale(3, 3, 3);
+//	RenderMesh(meshList[GEO_ROVER], false);
+//	modelStack.PopMatrix();
+//}
 
 void Sp2_Scene1::RenderNPC1(Human npc1)
 {
@@ -706,7 +739,7 @@ void Sp2_Scene1::Rendernp()
 	//modelStack.Scale(20, 20, 20);
 	//data = vec_dialog[0];
 	dialogIT = vec_dialog.begin();
-	//RenderTextOnScreen(meshList[GEO_TEXT],*dialogIT , Color(1, 1, 1), 3, 1, 10);
+	RenderTextOnScreen(meshList[GEO_TEXT],*dialogIT , Color(1, 1, 1), 3, 1, 10);
 
 		if (objects[GUIDENPC].State == objects[GUIDENPC].target)
 		{
@@ -797,29 +830,76 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 	glEnable(GL_DEPTH_TEST);
 }
 
+
+void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale , Vector3 rotate )
+{
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -100, 100); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Translate(translate.x, translate.y, 10);
+	modelStack.Scale(scale.x, scale.y, scale.z);
+	modelStack.Rotate(rotate.x, 1, 0, 0);
+	modelStack.Rotate(rotate.y, 0, 1, 0);
+	modelStack.Rotate(rotate.z, 0, 0, 1);
+
+	RenderMesh(mesh, b_lightEnabled);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
+
+
+}
+
+
 void Sp2_Scene1::Renderfps()
 {
 	RenderSkybox(camera);
-	Renderff(ff);
+	/*Renderff(ff);
 	RenderMR(mr);
 	Renderev(ev);
+
 	Rendere2(e2);
 	Rendernp();
+
+	Rendere2(e2);*/
+	Rendernp();
+
 	/**/
-	RenderSPC(spc);
-	RenderTPC(tpc);
+	//RenderSPC(spc);
+	//RenderTPC(tpc);
 	RenderFRPC(frpc);
-	RenderFIFPC(fifpc);
-	RenderMTV(mtv);
-	RenderROV(rov);
+	//RenderFIFPC(fifpc);
+	//RenderMTV(mtv);
+	//RenderROV(rov);
 	/**/
 	RenderNPC1(npc1);
 	RenderNPC2(npc2);
-	RenderMesh(meshList[GEO_AXES], false);
-	/**/
+	RenderMesh(meshList[GEO_AXES], false); 
+	
+	RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
+
 	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_SPHERE], false);
+	modelStack.Scale(0.3, 0.3, 0.3);
+	RenderMesh(meshList[GEO_SNIPERRIFLE], true);
 	modelStack.PopMatrix();
+
+	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(it->pos.x, it->pos.y, it->pos.z);
+		modelStack.Rotate(it->angleY, 0, 1, 0);
+		modelStack.Rotate(it->angleX, 0, 0, 1);
+		RenderMesh(meshList[GEO_DART], true);
+		modelStack.PopMatrix();
+	}
+
 }
 
 void Sp2_Scene1::Rendertps()
@@ -848,8 +928,8 @@ void Sp2_Scene1::Render()
 
 	projectionStack.LoadMatrix(projection);
 
-
 	viewStack.LoadIdentity();
+
 	//set View position to camera
 	viewStack.LookAt(
 		camera.position.x, camera.position.y, camera.position.z,

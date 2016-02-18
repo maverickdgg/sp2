@@ -15,6 +15,9 @@
 #include "GameObject.h"
 #include "SpaceVehicles.h"
 #include "Buildings.h"
+
+#include "Gun.h"
+
 #include "Human.h"
 #include "Alien.h"
 
@@ -70,20 +73,25 @@ public:
 
 		/*<---Studio Project 2--->*/
 		/*<---Space Vehicles--->*/
-		GEO_SECOND,
-		GEO_THIRD,
+		//GEO_SECOND,
+		//GEO_THIRD,
 		GEO_FOURTH,
-		GEO_FIFTH,
-		GEO_MOTOR,
-		GEO_ROVER,
-		GEO_FIREFLY,
-		GEO_ENEMYVEHICLE,
-		GEO_MOONROVER,
-		GEO_ENEMY2,
+		//GEO_FIFTH,
+		//GEO_MOTOR,
+		//GEO_ROVER,
+		//GEO_FIREFLY,
+		//GEO_ENEMYVEHICLE,
+		//GEO_MOONROVER,
+		//GEO_ENEMY2,
 		GEO_NPCLEPUSMAG,
+
+        GEO_SNIPERRIFLE,
+        GEO_DART,
+
 		/*<---NPC--->*/
 		GEO_NPC1,
 		GEO_NPC2,
+
 		NUM_GEOMETRY,
 	};
 
@@ -140,19 +148,24 @@ public:
 	Vector3 ffposition;
 	ifstream inData;
 
-	SpaceVehicles ff;
-	SpaceVehicles mr;
-	SpaceVehicles ev;
-	SpaceVehicles e2;
+    Gun laserRifle;
+    Vector3 trajectory;
+
+	//SpaceVehicles ff;
+	//SpaceVehicles mr;
+	//SpaceVehicles ev;
+	//SpaceVehicles e2;
+	SpaceVehicles np;
+
 
 	/**/
 
-	SpaceVehicles spc;
-	SpaceVehicles tpc;
+	//SpaceVehicles spc;
+	//SpaceVehicles tpc;
 	SpaceVehicles frpc;
-	SpaceVehicles fifpc;
-	SpaceVehicles mtv;
-	SpaceVehicles rov;
+	//SpaceVehicles fifpc;
+	//SpaceVehicles mtv;
+	//SpaceVehicles rov;
 
 	Human npc1;
 	Alien npc2;
@@ -179,18 +192,18 @@ private:
 	void RenderSpaceVehicles(Camera3 camera);
 
 	/**/
-	void Renderff(SpaceVehicles ff);
-	void RenderMR(SpaceVehicles mr);
-	void Renderev(SpaceVehicles ev);
-	void Rendere2(SpaceVehicles e2);
+	//void Renderff(SpaceVehicles ff);
+	//void RenderMR(SpaceVehicles mr);
+	//void Renderev(SpaceVehicles ev);
+	//void Rendere2(SpaceVehicles e2);
 	void Rendernp();
 	/**/
-	void RenderSPC(SpaceVehicles spc);
-	void RenderTPC(SpaceVehicles tpc);
+	//void RenderSPC(SpaceVehicles spc);
+	//void RenderTPC(SpaceVehicles tpc);
 	void RenderFRPC(SpaceVehicles frpc);
-	void RenderFIFPC(SpaceVehicles fifpc);
-	void RenderMTV(SpaceVehicles mtv);
-	void RenderROV(SpaceVehicles rov);
+	//void RenderFIFPC(SpaceVehicles fifpc);
+	//void RenderMTV(SpaceVehicles mtv);
+	//void RenderROV(SpaceVehicles rov);
 	/**/
 	void RenderNPC1(Human npc1);
 	void RenderNPC2(Alien npc2);
@@ -200,6 +213,7 @@ private:
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+	void RenderMeshOnScreen(Mesh* mesh, Vector3 translate = Vector3(0, 0, 0), Vector3 scale = Vector3(1,1,1), Vector3 rotate = Vector3(0, 0, 0));
 };
 
 #endif
