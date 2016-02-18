@@ -177,8 +177,8 @@ void Sp2_Scene1::Init()
 	/*<---Render Functions--->*/
     laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y -5 ,camera.position.z));
 	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
-	test = GameChar("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
-	test.ReadFromTxt("Image//Robotdialogue.txt");
+	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+	whale.ReadFromTxt("Image//Robotdialogue.txt");
 	frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
 	npc1 = Human("npc", 0, 30, Vector3(120, -30, 125));
 	npc2 = Alien("npc2", 0, 30, Vector3(220, -30, 125));
@@ -189,8 +189,9 @@ void Sp2_Scene1::Init()
 	/*<---Miscellaneous--->*/
 	inData.open("Image//Robotdialogue.txt");
 	Timer = 0;
+	//isPressed = false;
+	index = 0;
 }
-
 
 void Sp2_Scene1::Update(double dt)
 {
@@ -329,6 +330,25 @@ void Sp2_Scene1::Update(double dt)
 	{
 		RenderNPC1(npc1);
 	}
+
+	//// NPC Text Indexing
+	//if (Application::IsKeyPressed('E') && whale.b_indexDebounce == false)
+	//{
+	//	whale.b_indexDebounce = true;
+	//	isPressed = true;
+	//	++whale.dialogue_index;
+	//	if (whale.dialogue_index >= whale.vec_dialog.size())
+	//	{
+	//		whale.dialogue_index = 0;
+	//	}
+	//}
+	//// NPC Text Reset
+	//if (!Application::IsKeyPressed('E') && whale.b_indexDebounce == true)
+	//{
+	//	whale.b_indexDebounce = false;
+	//}
+
+	whale.chat_update(camera.position);
 }
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
@@ -510,8 +530,10 @@ void Sp2_Scene1::Rendernp(GameChar np)
 	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
 	modelStack.PopMatrix();
 
-	RenderTextOnScreen(meshList[GEO_TEXT],np.vec_dialog[0] , Color(1, 1, 1), 3, 1, 10);
-
+	if (objects[GUIDENPC].State == objects[GUIDENPC].target && whale.isPressed == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], np.vec_dialog[np.dialogue_index], Color(1, 1, 1), 3, 1, 10);
+	}
 	if (objects[GUIDENPC].State == objects[GUIDENPC].target)
 	{
 		modelStack.PushMatrix();
@@ -630,7 +652,7 @@ void Sp2_Scene1::Renderfps()
 	/*<---Sky Box--->*/
 	RenderSkybox(camera);
 	/*<---Space Vehicles>*/
-	Rendernp(test);
+	Rendernp(whale);
 	RenderFRPC(frpc);
 	/*<---NPC--->*/
 	RenderNPC1(npc1);

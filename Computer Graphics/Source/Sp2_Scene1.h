@@ -126,6 +126,8 @@ public:
 	Vector3 tempPos;
 	bool b_enabletps;
 	bool b_tpsDebounce;
+	//bool isPressed;
+	smaller index;
 	float tpsTimer;
 	Vector3 ffposition;
 	ifstream inData;
@@ -138,7 +140,7 @@ public:
 
 	Human npc1;
 	Alien npc2;
-	GameChar test;
+	Human whale;
 
 public:
 	Object objects[Num_Obj];

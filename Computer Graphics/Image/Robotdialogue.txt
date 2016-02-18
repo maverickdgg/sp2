@@ -1,1 +1,3 @@
 Robot: Welcome pilot.
+Human: Nice to meet you^_^
+                              
