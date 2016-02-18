@@ -2,9 +2,6 @@
 #define COLLISION_H
 
 #include "GameObject.h"
-#include <vector>
-
-using std::vector;
 
 bool collision(GameObject x, GameObject y);
 bool collision(GameObject x, vector<GameObject> y);

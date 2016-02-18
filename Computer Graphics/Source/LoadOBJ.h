@@ -20,5 +20,4 @@ void IndexVBO(
 	std::vector<unsigned> & out_indices,
 	std::vector<Vertex> & out_vertices
 );
-
 #endif

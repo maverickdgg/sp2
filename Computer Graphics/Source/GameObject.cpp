@@ -4,7 +4,7 @@ size_t GameObject::GO_count = 0;
 
 GameObject::GameObject()
 {
-	++GO_count;
+	GO_count++;
 }
 
 GameObject::GameObject(string object_name, int boundary, float viewAngle, Vector3 pos)
@@ -13,10 +13,10 @@ GameObject::GameObject(string object_name, int boundary, float viewAngle, Vector
 	this->name = object_name;
 	this->pos = pos;
     this->viewAngle = viewAngle;
-	++GO_count;
+	GO_count++;
 }
 
 GameObject::~GameObject()
 {
-	--GO_count;
+	GO_count--;
 }

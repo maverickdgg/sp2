@@ -1,4 +1,3 @@
-
 #include "Mesh.h"
 #include "GL\glew.h"
 
@@ -17,7 +16,6 @@ Mesh::Mesh(const std::string &meshName)
 	glGenBuffers(1,&vertexBuffer);
 	glGenBuffers(1,&indexBuffer);
 	textureID = 0;
-
 }
 
 /******************************************************************************/
@@ -32,7 +30,6 @@ Mesh::~Mesh()
 	glDeleteBuffers(1, &indexBuffer);
 	if (textureID > 0)
 		glDeleteTextures(1, &textureID);
-
 }
 
 /******************************************************************************/
@@ -77,7 +74,6 @@ void Mesh::Render()
 	{
 		glDisableVertexAttribArray(3);
 	}
-
 }
 
 void Mesh::Render(unsigned offset, unsigned count)

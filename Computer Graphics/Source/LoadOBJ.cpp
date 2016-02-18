@@ -4,7 +4,8 @@
 
 #include "LoadOBJ.h"
 
-bool LoadOBJ(
+bool LoadOBJ
+(
 	const char *file_path, 
 	std::vector<Position> & out_vertices, 
 	std::vector<TexCoord> & out_uvs, 

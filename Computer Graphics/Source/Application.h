@@ -1,4 +1,3 @@
-
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
@@ -8,7 +7,6 @@
 
 //Include GLFW
 #include <GLFW/glfw3.h>
-
 
 class Application
 {
@@ -24,7 +22,5 @@ private:
 
 	//Declare a window object
 	StopWatch m_timer;
-
 };
-
 #endif

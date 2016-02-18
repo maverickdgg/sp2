@@ -10,9 +10,6 @@
 #include "Application.h"
 extern GLFWwindow* m_window;
 
-
-
-
 Sp2_Scene1::Sp2_Scene1()
 {
 }
@@ -23,7 +20,6 @@ Sp2_Scene1::~Sp2_Scene1()
 
 void Sp2_Scene1::Init()
 {
-
 	ShowCursor(FALSE);
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -44,7 +40,6 @@ void Sp2_Scene1::Init()
 	glGenBuffers(NUM_GEOMETRY, &m_vertexBuffer[0]);
 	glGenBuffers(NUM_GEOMETRY, &m_indexBuffer[0]);
 	glGenBuffers(NUM_GEOMETRY, &m_colorBuffer[0]);
-
 
 	glfwGetWindowSize(m_window, &screenWidth, &screenHeight);
 
@@ -82,15 +77,11 @@ void Sp2_Scene1::Init()
 	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
 	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
 	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
-
-
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
-
 
 	//handler for text
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
-
 
 	glUseProgram(m_programID);
 
@@ -101,8 +92,7 @@ void Sp2_Scene1::Init()
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
 
-
-	//make sure you pass uniform parameters after glUseProgram()
+	// Make sure you pass uniform parameters after glUseProgram()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 5);
 	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
 	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
@@ -110,7 +100,7 @@ void Sp2_Scene1::Init()
 	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
 	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
 
-	//spot light
+	// Spot light
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(0, 200, 0);
 	light[0].color.Set(1, 1, 1);
@@ -124,8 +114,7 @@ void Sp2_Scene1::Init()
 	light[0].spotDirection.Set(0.f, 1.f, 0.f);
 
 	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1,
-		&light[0].color.r);
+	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
 	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
 	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
@@ -134,8 +123,7 @@ void Sp2_Scene1::Init()
 	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
-	//geom init
-
+	// Initialize Camera
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 800);
     frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
     camera2.Init(Vector3(0, 10, 20), Vector3(0, 1, 0), frpc.pos);
@@ -160,10 +148,7 @@ void Sp2_Scene1::Init()
     meshList[GEO_LEFT]->textureID = LoadTGA("Image//purplenebula_lf.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f, 1.f);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//purplenebula_rt.tga");
-
-	meshList[GEO_SPHERE] = MeshBuilder::GenerateSphere("sphere", Color(1, 0, 0));
-	
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//purplenebula_rt.tga");	
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("LIGHTBALL", Color(1, 0, 1));
 
@@ -172,92 +157,43 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 11), 1.f, 1.f);
 	
-	/*<---Studio Project 2 OBJs--->*/
-
+	/*<---Studio Project 2--->*/
 	/*<---Space Vehicles--->*/
-	//meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJ//Firefly.obj");
-	//meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
-
-	//meshList[GEO_MOONROVER] = MeshBuilder::GenerateOBJ("moonRover", "OBJ//moonRover.obj");
-	//meshList[GEO_MOONROVER]->textureID = LoadTGA("Image//MoonRover.tga");
-
-	//meshList[GEO_ENEMYVEHICLE] = MeshBuilder::GenerateOBJ("enemyVehicle", "OBJ//enemyVehicle.obj");
-	//meshList[GEO_ENEMYVEHICLE]->textureID = LoadTGA("Image//enemyVehicle.tga");
-
-	//meshList[GEO_ENEMY2] = MeshBuilder::GenerateOBJ("Enemy2", "OBJ//Enemy2.obj");
-	//meshList[GEO_ENEMY2]->textureID = LoadTGA("Image//Enemy2.tga");
-
 	meshList[GEO_NPCLEPUSMAG] = MeshBuilder::GenerateOBJ("NPCLEPUSMAG","OBJ//NPCLEPUSMAG.obj");
 	meshList[GEO_NPCLEPUSMAG]->textureID = LoadTGA("Image//NPCLEPUSMAG.tga");
-
-
-	//meshList[GEO_SECOND] = MeshBuilder::GenerateOBJ("secondplayercontrolled", "OBJ//SecondPlayerControlledAircraft.obj");
-	//meshList[GEO_SECOND]->textureID = LoadTGA("Image//SecondPlayerControlledAircraft.tga");
-
-	//meshList[GEO_THIRD] = MeshBuilder::GenerateOBJ("thirdplayercontrolled", "OBJ//ThirdPlayerControlled.obj");
-	//meshList[GEO_THIRD]->textureID = LoadTGA("Image//ThirdPlayerControlled.tga");
-
 	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
 	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
-
-	//meshList[GEO_FIFTH] = MeshBuilder::GenerateOBJ("fifthplayercontrolled", "OBJ//FifthPlayerControlled.obj");
-	//meshList[GEO_FIFTH]->textureID = LoadTGA("Image//FifthPlayerControlled.tga");
-
-	//meshList[GEO_MOTOR] = MeshBuilder::GenerateOBJ("motorlandvehicle", "OBJ//MotorLandVehicle.obj");
-	//meshList[GEO_MOTOR]->textureID = LoadTGA("Image//MotorLandVehicle.tga");
-
-	//meshList[GEO_ROVER] = MeshBuilder::GenerateOBJ("roverlandvehicle", "OBJ//RoverLandVehicle.obj");
-	//meshList[GEO_ROVER]->textureID = LoadTGA("Image//RoverLandVehicle.tga");
-
-
+	/*<---Weapons--->*/
     meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
     meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
     meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
-
 	/*<---NPC--->*/
 	meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("npc1", "OBJ//guard.obj");
 	meshList[GEO_NPC1]->textureID = LoadTGA("Image//guard.tga");
-
 	meshList[GEO_NPC2] = MeshBuilder::GenerateOBJ("npc2", "OBJ//mike.obj");
 	meshList[GEO_NPC2]->textureID = LoadTGA("Image//mike.tga");
-
-
+	/*<---Do Not Touch--->*/
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
-
-	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
-    laserRifle = Gun("laser rifle", 0, camera.position);
-
-	/**/
-
-	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
-	//mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
-	//ev = SpaceVehicles("enemyVehicles", 0, 30, Vector3(-30, 0, 0));
-	//e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
+	/*<---Render Functions--->*/
+    laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y -5 ,camera.position.z));
 	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
-
-	/**/
-
-	//spc = SpaceVehicles("second", 0, 30, Vector3(25, 0, 20));
-	//tpc = SpaceVehicles("third", 0, 30, Vector3(40, 0, 40));
-/*	fifpc = SpaceVehicles("fifth", 0, 30, Vector3(70, 0, 80));
-	mtv = SpaceVehicles("motorvehicle", 0, 30, Vector3(85, 0, 100));
-	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120))*/;
-
-	/**/
-
+	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+	whale.ReadFromTxt("Image//Robotdialogue.txt");
+	frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
 	npc1 = Human("npc", 0, 30, Vector3(120, -30, 125));
 	npc2 = Alien("npc2", 0, 30, Vector3(220, -30, 125));
-
-	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
+	/*<---Set the position of the NPC--->*/
+	objects[NPC].position.Set(130, -30, 130);
 	objects[NPC].State = objects[NPC].patrol;
 	objects[NPC].Message = "Welcome to Space Race";
-
+	/*<---Miscellaneous--->*/
+	inData.open("Image//Robotdialogue.txt");
 	Timer = 0;
-
+	//isPressed = false;
+	index = 0;
 }
-
 
 void Sp2_Scene1::Update(double dt)
 {
@@ -271,7 +207,6 @@ void Sp2_Scene1::Update(double dt)
 	camera.right.Normalize();
 	this->camera.up = camera.right.Cross(camera.view).Normalized();
 
-	
 	if (Application::IsKeyPressed('1'))
 	{
 		glEnable(GL_CULL_FACE);
@@ -289,25 +224,15 @@ void Sp2_Scene1::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
 
-	
 	if (Application::IsKeyPressed('W'))
 	{
-		
-		//cam movement
-		
 		camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
 		camera.position += camera.view *(float)(camera.movementSpeed * dt);
-
 	}
 	if (Application::IsKeyPressed('S'))
 	{
-		
-		//cam movement
 		camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
 		camera.position -= camera.view *(float)(camera.movementSpeed * dt);
-
-
-		
 	}
 
 	if (Application::IsKeyPressed('A'))
@@ -319,7 +244,6 @@ void Sp2_Scene1::Update(double dt)
 	{
 		camera.position += camera.right * (camera.movementSpeed / 45);
 	}
-
 
 	if (Application::IsKeyPressed(VK_SPACE) && camera.b_jumping == false)
 	{
@@ -375,8 +299,6 @@ void Sp2_Scene1::Update(double dt)
 	{
 		ShowCursor(TRUE);
 	}
-
-	//camera2.tpsUpdate(camera, dt);
 	
 	if (Application::IsKeyPressed('M') && b_enabletps == true && b_tpsDebounce == false)
 	{
@@ -399,23 +321,40 @@ void Sp2_Scene1::Update(double dt)
 	}
 
     laserRifle.view = camera.view;
-    laserRifle.viewAngle = laserRifle.findAngle(laserRifle.view);
-    //laserRifle.viewAngle2 = camera.cameraRotationX;
-    //laserRifle.viewAngle2 = laserRifle.findAngle(laserRifle.view);
-    laserRifle.pos = camera.position;
+	laserRifle.viewAngleX = camera.cameraRotationX;
+    laserRifle.viewAngle = camera.cameraRotationY;
+	laserRifle.pos = Vector3(camera.position.x, camera.position.y - 5, camera.position.z);
 
-    if ((VK_LBUTTON)& 0x80)
-        if (laserRifle.fire(laserRifle.view, dt));
-        {
-            laserRifle.bulletVec;
+	if (Application::IsKeyPressed(VK_LBUTTON))
+	{
+		laserRifle.fire(dt);
+	}
+	laserRifle.updateBullet(dt);
 
-        }
 	Timer++;
 	if (Timer % 10 == 0)
 	{
 		RenderNPC1(npc1);
 	}
 
+	//// NPC Text Indexing
+	//if (Application::IsKeyPressed('E') && whale.b_indexDebounce == false)
+	//{
+	//	whale.b_indexDebounce = true;
+	//	isPressed = true;
+	//	++whale.dialogue_index;
+	//	if (whale.dialogue_index >= whale.vec_dialog.size())
+	//	{
+	//		whale.dialogue_index = 0;
+	//	}
+	//}
+	//// NPC Text Reset
+	//if (!Application::IsKeyPressed('E') && whale.b_indexDebounce == true)
+	//{
+	//	whale.b_indexDebounce = false;
+	//}
+
+	whale.chat_update(camera.position);
 }
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
@@ -458,8 +397,6 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
-
-
 }
 
 
@@ -523,78 +460,7 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
-
-
 }
-
-
-//void Sp2_Scene1::Renderff(SpaceVehicles ff)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(ff.pos.x, ff.pos.y, ff.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(0.5, 0.5, 0.5);
-//	RenderMesh(meshList[GEO_FIREFLY], false);
-//	modelStack.PopMatrix();
-//}
-//
-//void Sp2_Scene1::RenderMR(SpaceVehicles mr)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(mr.pos.x, mr.pos.y, mr.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(3, 3, 3);
-//	RenderMesh(meshList[GEO_MOONROVER], false);
-//	modelStack.PopMatrix();
-//}
-//void Sp2_Scene1::Renderev(SpaceVehicles ev)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(ev.pos.x, ev.pos.y, ev.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(2, 2, 2);
-//	RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
-//	modelStack.PopMatrix();
-//}
-//void Sp2_Scene1::Rendere2(SpaceVehicles e2)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(e2.pos.x, e2.pos.y, e2.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(6, 6, 6);
-//	RenderMesh(meshList[GEO_ENEMY2], false);
-//	modelStack.PopMatrix();
-//}
-void Sp2_Scene1::Rendernp(SpaceVehicles np)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(np.pos.x, np.pos.y, np.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(7, 7, 7);
-	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
-	modelStack.PopMatrix();
-}
-
-/**/
-
-//void Sp2_Scene1::RenderSPC(SpaceVehicles spc)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(spc.pos.x, spc.pos.y, spc.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(1, 1, 1);
-//	RenderMesh(meshList[GEO_SECOND], false);
-//	modelStack.PopMatrix();
-//}
-//void Sp2_Scene1::RenderTPC(SpaceVehicles tpc)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(tpc.pos.x, tpc.pos.y, tpc.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(0.8, 0.8, 0.8);
-//	RenderMesh(meshList[GEO_THIRD], false);
-//	modelStack.PopMatrix();
-//}
 
 void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
 {
@@ -606,45 +472,8 @@ void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
 	modelStack.PopMatrix();
 }
 
-//void Sp2_Scene1::RenderFIFPC(SpaceVehicles fifpc)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(fifpc.pos.x, fifpc.pos.y, fifpc.pos.z);
-//	modelStack.Rotate(270, 0, 1, 0);
-//	modelStack.Scale(0.5, 0.5, 0.5);
-//	RenderMesh(meshList[GEO_FIFTH], false);
-//	modelStack.PopMatrix();
-//}
-//
-//void Sp2_Scene1::RenderMTV(SpaceVehicles mtv)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(mtv.pos.x, mtv.pos.y, mtv.pos.z);
-//	modelStack.Rotate(90, 0, 1, 0);
-//	modelStack.Scale(0.5, 0.5, 0.5);
-//	RenderMesh(meshList[GEO_MOTOR], false);
-//	modelStack.PopMatrix();
-//}
-//
-//void Sp2_Scene1::RenderROV(SpaceVehicles rov)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(rov.pos.x, rov.pos.y, rov.pos.z);
-//	modelStack.Rotate(180, 0, 1, 0);
-//	modelStack.Scale(3, 3, 3);
-//	RenderMesh(meshList[GEO_ROVER], false);
-//	modelStack.PopMatrix();
-//}
-
 void Sp2_Scene1::RenderNPC1(Human npc1)
 {
-	/*modelStack.PushMatrix();
-	modelStack.Translate(npc1.pos.x, npc1.pos.y, npc1.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(8, 8, 8);
-	RenderMesh(meshList[GEO_NPC1], false);
-	modelStack.PopMatrix();*/
-
 	modelStack.PushMatrix();
 	modelStack.Translate(objects[NPC].position.x, objects[NPC].position.y, objects[NPC].position.z);
 	modelStack.Rotate(180, 0, 1, 0);
@@ -671,8 +500,6 @@ void Sp2_Scene1::RenderNPC1(Human npc1)
 		modelStack.PopMatrix();
 	}
 
-	/**/
-
 	for (size_t i = 0; i < Num_Obj; i++)
 	{
 		float x = camera.position.x - objects[i].position.x;
@@ -687,12 +514,6 @@ void Sp2_Scene1::RenderNPC1(Human npc1)
 			objects[i].State = objects[i].patrol;
 		}
 	}
-	//// NPC Action
-	//if (objects[NPC].State == objects[NPC].patrol)
-	//{
-	//	objects[NPC].position.x += rand() % 30 - 15;
-	//	objects[NPC].position.z += rand() % 30 - 15;
-	//}
 }
 
 void Sp2_Scene1::RenderNPC2(Alien npc2)
@@ -703,6 +524,31 @@ void Sp2_Scene1::RenderNPC2(Alien npc2)
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_NPC2], false);
 	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::Rendernp(GameChar np)
+{
+	
+	modelStack.PushMatrix();
+	modelStack.Translate(np.pos.x, np.pos.y, np.pos.z);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(7, 7, 7);
+	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
+	modelStack.PopMatrix();
+
+	if (objects[GUIDENPC].State == objects[GUIDENPC].target && whale.isPressed == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], np.vec_dialog[np.dialogue_index], Color(1, 1, 1), 3, 1, 10);
+	}
+	if (objects[GUIDENPC].State == objects[GUIDENPC].target)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		//modelStack.Rotate(0, 1, 0, 0);
+		//modelStack.Scale(20, 20, 20);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
 }
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
@@ -721,7 +567,7 @@ void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 	for (unsigned i = 0; i < text.length(); ++i)
 	{
 		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 1.0f + 0.5f, 0.5f, 0); //1.0f is the spacing of each character, you may change this value
+		characterSpacing.SetToTranslation(i * 1.0f + 0.5f, 0.5f, 0); // 1.0f is the spacing of each character, you may edit this value.
 		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -730,9 +576,7 @@ void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
-
 }
-
 
 void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
@@ -783,68 +627,75 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 	glEnable(GL_DEPTH_TEST);
 }
 
+
+void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale , Vector3 rotate )
+{
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -100, 100); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Translate(translate.x, translate.y, 10);
+	modelStack.Scale(scale.x, scale.y, scale.z);
+	modelStack.Rotate(rotate.x, 1, 0, 0);
+	modelStack.Rotate(rotate.y, 0, 1, 0);
+	modelStack.Rotate(rotate.z, 0, 0, 1);
+
+	RenderMesh(mesh, b_lightEnabled);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
+
 void Sp2_Scene1::Renderfps()
 {
+	/*<---Sky Box--->*/
 	RenderSkybox(camera);
-	/*Renderff(ff);
-	RenderMR(mr);
-	Renderev(ev);
-	Rendere2(e2);*/
-	Rendernp(np);
-	/**/
-	//RenderSPC(spc);
-	//RenderTPC(tpc);
+	/*<---Space Vehicles>*/
+	Rendernp(whale);
 	RenderFRPC(frpc);
-	//RenderFIFPC(fifpc);
-	//RenderMTV(mtv);
-	//RenderROV(rov);
-	/**/
+	/*<---NPC--->*/
 	RenderNPC1(npc1);
 	RenderNPC2(npc2);
-	RenderMesh(meshList[GEO_AXES], false);
-	/**/
+	RenderMesh(meshList[GEO_AXES], false); 
+	/*<---Weapons--->*/
+	RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
+	/*<---Render Sniper Rifle--->*/
 	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_SPHERE], false);
+	modelStack.Scale(0.3, 0.3, 0.3);
+	RenderMesh(meshList[GEO_SNIPERRIFLE], true);
 	modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Translate(laserRifle.pos.x, laserRifle.pos.y-5, laserRifle.pos.z);
-    //modelStack.Rotate(-laserRifle.viewAngle2, 0, 0, 1);
-    modelStack.Rotate(laserRifle.viewAngle, 0, 1, 0);
-    modelStack.Scale(80, 80, 80);
-    RenderMesh(meshList[GEO_SNIPERRIFLE], true);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    modelStack.Translate(laserRifle.bulletVec.x, laserRifle.bulletVec.y, laserRifle.bulletVec.z);
-    //modelStack.Rotate(90, 0, 1, 0);
-    RenderMesh(meshList[GEO_DART], true);
-    modelStack.PopMatrix();
+	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(it->pos.x, it->pos.y, it->pos.z);
+		modelStack.Rotate(it->angleY, 0, 1, 0);
+		modelStack.Rotate(it->angleX, 0, 0, 1);
+		RenderMesh(meshList[GEO_DART], true);
+		modelStack.PopMatrix();
+	}
 }
 
 void Sp2_Scene1::Rendertps()
 {
-
-
+	// Renders third person camera
 	RenderSkybox(camera);
-	
-
 	RenderMesh(meshList[GEO_AXES], false);
-
-
 }
 
 void Sp2_Scene1::Render()
 {
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	Mtx44 projection;
-
-
-	//glViewport(0, 0, screenWidth*2/3, screenHeight);
 	glViewport(0, 0, screenWidth, screenHeight);
 	projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
-
 
 	projectionStack.LoadMatrix(projection);
 
@@ -876,12 +727,7 @@ void Sp2_Scene1::Render()
 			);
 		Rendertps();
 	}
-
-
-
 }
-
-
 
 void Sp2_Scene1::Exit()
 {

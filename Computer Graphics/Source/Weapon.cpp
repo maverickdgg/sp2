@@ -14,5 +14,5 @@ Weapon::Weapon(string name, int boundary, float viewAngle, Vector3 pos) : GameOb
 
 Weapon::~Weapon()
 {
-    --W_count;
+	--W_count;
 }

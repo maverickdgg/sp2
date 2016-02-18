@@ -2,8 +2,6 @@
 #define HUMAN_H
 #include "GameChar.h"
 
-
-
 class Human : public GameChar
 {
 public:
@@ -12,5 +10,4 @@ public:
     ~Human();
     static size_t h_count;
 };
-
 #endif

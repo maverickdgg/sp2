@@ -17,5 +17,4 @@ public:
 	void Reset();
 	void Update(double dt);
 };
-
 #endif

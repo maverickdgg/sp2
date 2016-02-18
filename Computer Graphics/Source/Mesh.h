@@ -34,5 +34,4 @@ public:
 	Material material;
 	unsigned textureID;
 };
-
 #endif

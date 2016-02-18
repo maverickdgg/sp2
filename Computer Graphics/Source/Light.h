@@ -23,5 +23,4 @@ struct Light
 	float exponent;
 	Light();
 };
-
-#endif // light.h
+#endif

@@ -3,13 +3,14 @@
 #include "Mtx44.h"
 extern GLFWwindow* m_window;
 
-
 Camera3::Camera3()
 {
+
 }
 
 Camera3::~Camera3()
 {
+
 }
 
 void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, float bound)
@@ -40,7 +41,7 @@ void Camera3::updateRotation(float CameraSpeed) // camerarotationx and y, 38 to 
 	glfwGetWindowSize(m_window,&screenSizeX,&screenSizeY);
 	midScreenX = screenSizeX / 2;
 	midScreenY = screenSizeY / 2;
-	//checking for the position of the mouse cursor and resetting it every frame
+	// Checking for the position of the mouse cursor and resetting it every frame
 	POINT mousePos;
 	GetCursorPos(&mousePos);
 	SetCursorPos(midScreenX, midScreenY);
@@ -65,20 +66,11 @@ void Camera3::updateRotation(float CameraSpeed) // camerarotationx and y, 38 to 
 		sin(Math::DegreeToRadian(cameraRotationX))+this->position.y,
 		-sin(Math::DegreeToRadian(cameraRotationY))  * cos(Math::DegreeToRadian(cameraRotationX)) + this->position.z
 		);
-	
 }
 
 void Camera3::Update(double dt)
 {
-
-
-	static const float CAMERA_SPEED = 50.f;
-
-	
-	//else
-	//{
-	//	boundary = 800;
-	//}
+	static const float CAMERA_SPEED = 50.f;	
 	view = (target - position).Normalized();
 	right = view.Cross(defaultUp);
 	right.y = 0;
@@ -144,7 +136,6 @@ void Camera3::Update(double dt)
 		}
 	}
 
-
 	if (Application::IsKeyPressed('R'))
 	{
 		Reset();
@@ -154,7 +145,6 @@ void Camera3::Update(double dt)
 
 void Camera3::updateRotationTps(float cameraSpeed)
 {
-
 	int screenSizeX, screenSizeY;
 	int midScreenX, midScreenY;
 	glfwGetWindowSize(m_window, &screenSizeX, &screenSizeY);

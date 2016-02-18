@@ -10,5 +10,4 @@ public:
 	~SpaceVehicles();
 	static size_t SV_count;
 };
-
 #endif

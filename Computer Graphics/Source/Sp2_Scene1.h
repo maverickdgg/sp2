@@ -22,11 +22,8 @@
 #include "Human.h"
 #include "Alien.h"
 
-
-
-class Object
+struct Object
 {
-public:
 	Position position;
 	int State;
 	std::string Message;
@@ -41,6 +38,7 @@ public:
 enum Objects
 {
 	NPC,
+	GUIDENPC,
 	Num_Obj,
 };
 
@@ -57,43 +55,31 @@ public:
 
 	enum GEOMETRY_TYPE
 	{
+		/*<---Studio Project 2--->*/
+		/*---Essentials---*/
 		GEO_AXES,
 		GEO_QUAD,
 		GEO_LIGHTBALL,
-
+		/*---Scene Skybox---*/
 		GEO_LEFT,
 		GEO_RIGHT,
 		GEO_TOP,
 		GEO_BOTTOM,
 		GEO_FRONT,
 		GEO_BACK,
-
-		GEO_SPHERE,
-
+		/*<---Text--->*/
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
-
-		/*<---Studio Project 2--->*/
 		/*<---Space Vehicles--->*/
-		//GEO_SECOND,
-		//GEO_THIRD,
 		GEO_FOURTH,
-		//GEO_FIFTH,
-		//GEO_MOTOR,
-		//GEO_ROVER,
-		//GEO_FIREFLY,
-		//GEO_ENEMYVEHICLE,
-		//GEO_MOONROVER,
-		//GEO_ENEMY2,
 		GEO_NPCLEPUSMAG,
-
+		/*<---Weapons--->*/
         GEO_SNIPERRIFLE,
         GEO_DART,
-
 		/*<---NPC--->*/
 		GEO_NPC1,
 		GEO_NPC2,
-
+		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
 
@@ -113,21 +99,16 @@ public:
 		U_LIGHT0_KL,
 		U_LIGHT0_KQ,
 		U_LIGHTENABLED,
-
 		U_LIGHT0_TYPE,
 		U_LIGHT0_SPOTDIRECTION,
 		U_LIGHT0_COSCUTOFF,
 		U_LIGHT0_COSINNER,
 		U_LIGHT0_EXPONENT,
-
 		U_NUMLIGHTS,
-
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
-
 		U_TEXT_ENABLED,
 		U_TEXT_COLOR,
-
 		U_TOTAL,
 	};
 
@@ -146,31 +127,23 @@ public:
 	Vector3 tempPos;
 	bool b_enabletps;
 	bool b_tpsDebounce;
+	//bool isPressed;
+	smaller index;
 	float tpsTimer;
 	Vector3 ffposition;
+	ifstream inData;
+
     Gun laserRifle;
     Vector3 trajectory;
 
-	//SpaceVehicles ff;
-	//SpaceVehicles mr;
-	//SpaceVehicles ev;
-	//SpaceVehicles e2;
 	SpaceVehicles np;
-
-	/**/
-
-	//SpaceVehicles spc;
-	//SpaceVehicles tpc;
 	SpaceVehicles frpc;
-	//SpaceVehicles fifpc;
-	//SpaceVehicles mtv;
-	//SpaceVehicles rov;
 
 	Human npc1;
 	Alien npc2;
+	Human whale;
 
 public:
-	/**/
 	Object objects[Num_Obj];
 	int Timer;
 
@@ -190,20 +163,10 @@ private:
 	void RenderSkybox(Camera3 camera);
 	void RenderSpaceVehicles(Camera3 camera);
 
-	/**/
-	//void Renderff(SpaceVehicles ff);
-	//void RenderMR(SpaceVehicles mr);
-	//void Renderev(SpaceVehicles ev);
-	//void Rendere2(SpaceVehicles e2);
-	void Rendernp(SpaceVehicles np);
-	/**/
-	//void RenderSPC(SpaceVehicles spc);
-	//void RenderTPC(SpaceVehicles tpc);
+	void Rendernp(GameChar np);
+
 	void RenderFRPC(SpaceVehicles frpc);
-	//void RenderFIFPC(SpaceVehicles fifpc);
-	//void RenderMTV(SpaceVehicles mtv);
-	//void RenderROV(SpaceVehicles rov);
-	/**/
+
 	void RenderNPC1(Human npc1);
 	void RenderNPC2(Alien npc2);
 
@@ -214,7 +177,6 @@ private:
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-
+	void RenderMeshOnScreen(Mesh* mesh, Vector3 translate = Vector3(0, 0, 0), Vector3 scale = Vector3(1,1,1), Vector3 rotate = Vector3(0, 0, 0));
 };
-
 #endif
