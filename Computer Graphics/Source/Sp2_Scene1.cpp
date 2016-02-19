@@ -227,7 +227,7 @@ void Sp2_Scene1::Init()
 	tpsTimer = 0;
 
 	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
-    laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y -5 ,camera.position.z));
+    laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y ,camera.position.z));
 
 	/**/
 
@@ -235,9 +235,9 @@ void Sp2_Scene1::Init()
 	//mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
 	//ev = SpaceVehicles("enemyVehicles", 0, 30, Vector3(-30, 0, 0));
 	//e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
-	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-200, 0, 0));
+	np = SpaceVehicles("NPCLEPUSMAG", 0, 20, Vector3(-80, 0, 0));
 
-	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-200, 0, 200));
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
 
 	/**/
@@ -251,6 +251,7 @@ void Sp2_Scene1::Init()
 
 	/**/
 
+
 	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));	// Default NPC is here only for the interaction codes and not the butler NPC. Do not delete the default npc function.
 	/*<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->*/
 	npc2 = Alien("npc2", 0, 30, Vector3(500, 0, 125));	// Mike Wazowski
@@ -258,6 +259,9 @@ void Sp2_Scene1::Init()
 
 	npc3 = Human("npc3", 0, 30, Vector3(-500, 0, -125));	// Storm Trooper
 	npc3.ReadFromTxt("Image//Stormtrooper.txt");
+
+	npc1 = Human("npc", 0, 30, Vector3(200, -30, 200));
+
 
 	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
 	objects[NPC].State = objects[NPC].patrol;
@@ -279,7 +283,7 @@ void Sp2_Scene1::Update(double dt)
 	camera.right.y = 0;
 	camera.right.Normalize();
 	this->camera.up = camera.right.Cross(camera.view).Normalized();
-
+	Vector3 tempPos = camera.position;
 	
 	if (Application::IsKeyPressed('1'))
 	{
@@ -301,32 +305,35 @@ void Sp2_Scene1::Update(double dt)
 	
 	if (Application::IsKeyPressed('W'))
 	{
-		
 		//cam movement
 		
-		camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-		camera.position += camera.view *(float)(camera.movementSpeed * dt);
-
+		Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
+		tempPos += temp_view *(float)(camera.movementSpeed * dt);
+		bool colliding = collision(tempPos, frpc.allGameObj);
+		if (collision(tempPos,frpc.allGameObj)==false)
+			camera.position = tempPos;
 	}
 	if (Application::IsKeyPressed('S'))
-	{
-		
+	{		
 		//cam movement
-		camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-		camera.position -= camera.view *(float)(camera.movementSpeed * dt);
-
-
-		
+		Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
+		tempPos -= temp_view *(float)(camera.movementSpeed * dt);
+		if (collision(tempPos, frpc.allGameObj) == false)
+			camera.position = tempPos;
 	}
 
 	if (Application::IsKeyPressed('A'))
 	{
-		camera.position -= camera.right * (camera.movementSpeed / 45);	
+		tempPos -= camera.right * (camera.movementSpeed ) * dt;
+		if (collision(tempPos, frpc.allGameObj) == false)
+			camera.position = tempPos;
 	}
 
 	if (Application::IsKeyPressed('D'))
 	{
-		camera.position += camera.right * (camera.movementSpeed / 45);
+		tempPos += camera.right * (camera.movementSpeed )*dt;
+		if (collision(tempPos, frpc.allGameObj) == false)
+			camera.position = tempPos;
 	}
 
 
@@ -941,11 +948,11 @@ void Sp2_Scene1::Render()
 	viewStack.LoadIdentity();
 
 	//set View position to camera
-	//viewStack.LookAt(
-	//	camera2.position.x, camera2.position.y, camera2.position.z,
-	//	camera2.target.x, camera2.target.y, camera2.target.z,
-	//	camera2.up.x, camera2.up.y, camera2.up.z
-	//	);
+	/*viewStack.LookAt(
+		camera2.position.x, camera2.position.y, camera2.position.z,
+		camera2.target.x, camera2.target.y, camera2.target.z,
+		camera2.up.x, camera2.up.y, camera2.up.z
+		);*/
 	viewStack.LookAt(
 		camera.position.x, camera.position.y, camera.position.z,
 		camera.target.x, camera.target.y, camera.target.z,
