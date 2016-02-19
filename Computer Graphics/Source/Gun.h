@@ -21,6 +21,8 @@ public:
     void fire(float deltaTime); // rotate to viewangle and trans based on view vector
 	vector<Bullet>::iterator despawnBullet(vector<Bullet>::iterator it);
 	void updateBullet(float dt);
+	float fireDebounceTimer;
+	int fireRate;
     vector<Bullet> bulletVec;
 };
 #endif
