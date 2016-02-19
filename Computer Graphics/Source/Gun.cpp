@@ -13,6 +13,8 @@ Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos
 	this->pos = pos;
 	G_count++;
 	allGameObj.pop_back();
+	fireRate = 1;
+	fireDebounceTimer = 1/fireRate;
 }
 
 Gun::~Gun()
@@ -22,7 +24,11 @@ Gun::~Gun()
 
 void Gun::fire( float dt)
 {
-	bulletVec.push_back(Bullet(5, this->pos + this->view *15 + Vector3(0,1,0),this->view ,viewAngle, viewAngleX));
+	if (fireDebounceTimer == 0)
+	{
+		bulletVec.push_back(Bullet(5, this->pos + this->view * 15 + Vector3(0, 1, 0), this->view, viewAngle, viewAngleX));
+		fireDebounceTimer = 1 / fireRate;
+	}
 }
 
 vector<Bullet>::iterator Gun::despawnBullet(vector<Bullet>::iterator it)
@@ -32,6 +38,11 @@ vector<Bullet>::iterator Gun::despawnBullet(vector<Bullet>::iterator it)
 
 void Gun::updateBullet(float dt)
 {
+	fireDebounceTimer -= dt;
+	if (fireDebounceTimer < 0)
+	{
+		fireDebounceTimer = 0;
+	}
 	for (vector<Bullet>::iterator it = bulletVec.begin(); it != bulletVec.end();)
 	{
 		it->bulletUpdate(dt);
