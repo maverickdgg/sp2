@@ -39,6 +39,7 @@ enum Objects
 {
 	NPC,
 	GUIDENPC,
+	MIKENPC,
 	Num_Obj,
 };
 
@@ -77,8 +78,9 @@ public:
         GEO_SNIPERRIFLE,
         GEO_DART,
 		/*<---NPC--->*/
-		GEO_NPC1,
-		GEO_NPC2,
+		GEO_DEFAULTNPC,	// Default (Pure Interaction Codes, no NPC)
+		GEO_NPC2,	// Mike Wazowski
+		GEO_NPC3,	// Storm Trooper
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -139,9 +141,10 @@ public:
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 
-	Human npc1;
+	Human defaultnpc;
 	Alien npc2;
 	Human whale;
+	Human npc3;
 
 public:
 	Object objects[Num_Obj];
@@ -167,13 +170,12 @@ private:
 
 	void RenderFRPC(SpaceVehicles frpc);
 
-	void RenderNPC1(Human npc1);
-	void RenderNPC2(Alien npc2);
+	void RenderDefaultNPC(Human defaultnpc);
+	void RenderNPC2(GameChar npc2);
+	void RenderNPC3(GameChar npc3);
 
 	void Renderfps();
 	void Rendertps();
-
-
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);

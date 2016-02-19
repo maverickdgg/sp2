@@ -212,11 +212,14 @@ void Sp2_Scene1::Init()
     meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
 	/*<---NPC--->*/
-	meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("npc1", "OBJ//guard.obj");
-	meshList[GEO_NPC1]->textureID = LoadTGA("Image//guard.tga");
+	meshList[GEO_DEFAULTNPC] = MeshBuilder::GenerateOBJ("npc1", "OBJ//guard.obj");
+	meshList[GEO_DEFAULTNPC]->textureID = LoadTGA("Image//guard.tga");
 
 	meshList[GEO_NPC2] = MeshBuilder::GenerateOBJ("npc2", "OBJ//mike.obj");
 	meshList[GEO_NPC2]->textureID = LoadTGA("Image//mike.tga");
+
+	meshList[GEO_NPC3] = MeshBuilder::GenerateOBJ("npc3", "OBJ//Stormtrooper.obj");
+	meshList[GEO_NPC3]->textureID = LoadTGA("Image//Stormtrooper.tga");
 
 
 	b_enabletps = false;
@@ -232,7 +235,7 @@ void Sp2_Scene1::Init()
 	//mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
 	//ev = SpaceVehicles("enemyVehicles", 0, 30, Vector3(-30, 0, 0));
 	//e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
-	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
+	np = SpaceVehicles("NPCLEPUSMAG", 0, 30, Vector3(-200, 0, 0));
 
 	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-80, 0, 0));
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
@@ -248,16 +251,22 @@ void Sp2_Scene1::Init()
 
 	/**/
 
-	npc1 = Human("npc", 0, 30, Vector3(120, -30, 125));
-	npc2 = Alien("npc2", 0, 30, Vector3(220, -30, 125));
+	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));	// Default NPC is here only for the interaction codes and not the butler NPC. Do not delete the default npc function.
+	/*<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->*/
+	npc2 = Alien("npc2", 0, 30, Vector3(500, 0, 125));	// Mike Wazowski
+	npc2.ReadFromTxt("Image//mikechat.txt");
+
+	npc3 = Human("npc3", 0, 30, Vector3(-500, 0, -125));	// Storm Trooper
+	npc3.ReadFromTxt("Image//Stormtrooper.txt");
 
 	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
 	objects[NPC].State = objects[NPC].patrol;
 	objects[NPC].Message = "Welcome to Space Race";
 
 	inData.open("Image//Robotdialogue.txt");
+	inData.open("Image//mikechat.txt");
+	inData.open("Image//Stormtrooper.txt");
 	Timer = 0;
-
 }
 
 
@@ -367,8 +376,8 @@ void Sp2_Scene1::Update(double dt)
 	}
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-		//camera.updateRotation(0.3);
-		camera2.tpsUpdateVec(frpc.pos);
+		camera.updateRotation(0.3);
+		//camera2.tpsUpdateVec(frpc.pos);
 		ShowCursor(FALSE);
 	}
 
@@ -416,9 +425,12 @@ void Sp2_Scene1::Update(double dt)
 	Timer++;
 	if (Timer % 10 == 0)
 	{
-		RenderNPC1(npc1);
+		RenderDefaultNPC(defaultnpc);
 	}
 
+	whale.chat_update(camera.position);
+	npc2.chat_update(camera.position);
+	npc3.chat_update(camera.position);
 }
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
@@ -524,8 +536,6 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
-
-
 }
 
 //
@@ -634,43 +644,8 @@ void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
 //	modelStack.PopMatrix();
 //}
 
-void Sp2_Scene1::RenderNPC1(Human npc1)
+void Sp2_Scene1::RenderDefaultNPC(Human defaultnpc)
 {
-	/*modelStack.PushMatrix();
-	modelStack.Translate(npc1.pos.x, npc1.pos.y, npc1.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(8, 8, 8);
-	RenderMesh(meshList[GEO_NPC1], false);
-	modelStack.PopMatrix();*/
-
-	modelStack.PushMatrix();
-	modelStack.Translate(objects[NPC].position.x, objects[NPC].position.y, objects[NPC].position.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_NPC1], false);
-	// Text for NPC Interaction
-	if (objects[NPC].State == objects[NPC].target && Application::IsKeyPressed('E'))
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(2, 6, 0);
-		//modelStack.Rotate(0, 1, 0, 0);
-		//modelStack.Scale(20, 20, 20);
-		RenderTextOnScreen(meshList[GEO_TEXT], objects[NPC].Message, Color(0, 1, 0),3,1,10);
-		modelStack.PopMatrix();
-	}
-	modelStack.PopMatrix();
-	if (objects[NPC].State == objects[NPC].target)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(2, 6, 0);
-		//modelStack.Rotate(0, 1, 0, 0);
-		//modelStack.Scale(20, 20, 20);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
-		modelStack.PopMatrix();
-	}
-
-	/**/
-
 	for (size_t i = 0; i < Num_Obj; i++)
 	{
 		float x = camera.position.x - objects[i].position.x;
@@ -685,27 +660,58 @@ void Sp2_Scene1::RenderNPC1(Human npc1)
 			objects[i].State = objects[i].patrol;
 		}
 	}
-	//// NPC Action
-	//if (objects[NPC].State == objects[NPC].patrol)
-	//{
-	//	objects[NPC].position.x += rand() % 30 - 15;
-	//	objects[NPC].position.z += rand() % 30 - 15;
-	//}
 }
 
-void Sp2_Scene1::RenderNPC2(Alien npc2)
+void Sp2_Scene1::RenderNPC2(GameChar npc2)
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(npc2.pos.x, npc2.pos.y, npc2.pos.z);
+	modelStack.Translate(npc2.pos.x, npc2.pos.y -30, npc2.pos.z);
 	modelStack.Rotate(270, 0, 1, 0);
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_NPC2], false);
 	modelStack.PopMatrix();
+
+	if (collision(npc2.pos, camera.position, 70) && npc2.isPressed == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], npc2.vec_dialog[npc2.dialogue_index], Color(1, 1, 1), 3, 1, 10);
+	}
+	if (collision(npc2.pos,camera.position,70))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		//modelStack.Rotate(0, 1, 0, 0);
+		//modelStack.Scale(20, 20, 20);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
 }
 
-void Sp2_Scene1::Rendernp(GameChar np)
+void Sp2_Scene1::RenderNPC3(GameChar npc3)
 {
-	
+	modelStack.PushMatrix();
+	modelStack.Translate(npc3.pos.x, npc3.pos.y - 30, npc3.pos.z);
+	modelStack.Rotate(270, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_NPC3], false);
+	modelStack.PopMatrix();
+
+	if (collision(npc3.pos, camera.position, 70) && npc3.isPressed == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], npc3.vec_dialog[npc3.dialogue_index], Color(1, 1, 1), 3, 1, 10);
+	}
+	if (collision(npc3.pos, camera.position, 70))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		//modelStack.Rotate(0, 1, 0, 0);
+		//modelStack.Scale(20, 20, 20);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
+}
+
+void Sp2_Scene1::Rendernp(GameChar np)	// Mr Whale
+{
 	modelStack.PushMatrix();
 	modelStack.Translate(np.pos.x, np.pos.y, np.pos.z);
 	modelStack.Rotate(0, 1, 0, 0);
@@ -742,17 +748,19 @@ void Sp2_Scene1::Rendernp(GameChar np)
 	//data = vec_dialog[0];
 
 	//dialogIT = vec_dialog.begin();
-	RenderTextOnScreen(meshList[GEO_TEXT],np.vec_dialog[0] , Color(1, 1, 1), 3, 1, 10);
-
-		if (objects[GUIDENPC].State == objects[GUIDENPC].target)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(2, 6, 0);
-			//modelStack.Rotate(0, 1, 0, 0);
-			//modelStack.Scale(20, 20, 20);
-			RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
-			modelStack.PopMatrix();
-		}
+	if (objects[GUIDENPC].State == objects[GUIDENPC].target && whale.isPressed == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], np.vec_dialog[np.dialogue_index], Color(1, 1, 1), 3, 1, 10);
+	}
+	if (objects[GUIDENPC].State == objects[GUIDENPC].target)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		//modelStack.Rotate(0, 1, 0, 0);
+		//modelStack.Scale(20, 20, 20);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
 }
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
@@ -856,8 +864,6 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 	projectionStack.PopMatrix();
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
-
-
 }
 
 
@@ -882,8 +888,9 @@ void Sp2_Scene1::Renderfps()
 	//RenderMTV(mtv);
 	//RenderROV(rov);
 	/**/
-	RenderNPC1(npc1);
+	RenderDefaultNPC(defaultnpc);
 	RenderNPC2(npc2);
+	RenderNPC3(npc3);
 	RenderMesh(meshList[GEO_AXES], false); 
 	
 	RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
@@ -934,16 +941,16 @@ void Sp2_Scene1::Render()
 	viewStack.LoadIdentity();
 
 	//set View position to camera
-	viewStack.LookAt(
-		camera2.position.x, camera2.position.y, camera2.position.z,
-		camera2.target.x, camera2.target.y, camera2.target.z,
-		camera2.up.x, camera2.up.y, camera2.up.z
-		);
 	//viewStack.LookAt(
-	//	camera.position.x, camera.position.y, camera.position.z,
-	//	camera.target.x, camera.target.y, camera.target.z,
-	//	camera.up.x, camera.up.y, camera.up.z
+	//	camera2.position.x, camera2.position.y, camera2.position.z,
+	//	camera2.target.x, camera2.target.y, camera2.target.z,
+	//	camera2.up.x, camera2.up.y, camera2.up.z
 	//	);
+	viewStack.LookAt(
+		camera.position.x, camera.position.y, camera.position.z,
+		camera.target.x, camera.target.y, camera.target.z,
+		camera.up.x, camera.up.y, camera.up.z
+		);
 	Renderfps();
 
 	if (b_enabletps == true)
@@ -963,9 +970,6 @@ void Sp2_Scene1::Render()
 			);
 		Rendertps();
 	}
-
-
-
 }
 
 
