@@ -76,8 +76,10 @@ public:
 		/*<---Weapons--->*/
         GEO_SNIPERRIFLE,
         GEO_DART,
-		/*<---NPC--->*/
-		GEO_NPC1,
+        /*<---Humans--->*/
+		GEO_SUIT,
+        GEO_HELM,
+        /*<---NPCs--->*/
 		GEO_NPC2,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
@@ -127,7 +129,7 @@ public:
 	Vector3 tempPos;
 	bool b_enabletps;
 	bool b_tpsDebounce;
-	//bool isPressed;
+    bool b_isWorn;
 	smaller index;
 	float tpsTimer;
 	Vector3 ffposition;
@@ -139,7 +141,7 @@ public:
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 
-	Human npc1;
+	Human suit;
 	Alien npc2;
 	Human whale;
 
@@ -167,7 +169,7 @@ private:
 
 	void RenderFRPC(SpaceVehicles frpc);
 
-	void RenderNPC1(Human npc1);
+	void RenderSuit();
 	void RenderNPC2(Alien npc2);
 
 	void Renderfps();
