@@ -260,7 +260,7 @@ void Sp2_Scene1::Init()
 	npc3 = Human("npc3", 0, 30, Vector3(-500, 0, -125));	// Storm Trooper
 	npc3.ReadFromTxt("Image//Stormtrooper.txt");
 
-	npc1 = Human("npc", 0, 30, Vector3(200, -30, 200));
+	//npc1 = Human("npc", 0, 30, Vector3(200, -30, 200));
 
 
 	objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
