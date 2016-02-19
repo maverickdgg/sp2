@@ -295,16 +295,18 @@ void Sp2_Scene1::Update(double dt)
 		
 		//cam movement
 		
-		camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-		camera.position += camera.view *(float)(camera.movementSpeed * dt);
+		Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
+		//if (collision(camera.position + temp_view *(float)(camera.movementSpeed * dt),frpc.allGameObj)==false)
+		camera.position += temp_view *(float)(camera.movementSpeed * dt);
 
 	}
 	if (Application::IsKeyPressed('S'))
 	{
 		
 		//cam movement
-		camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-		camera.position -= camera.view *(float)(camera.movementSpeed * dt);
+		Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
+		//if (collision(camera.position - temp_view *(float)(camera.movementSpeed * dt), frpc.allGameObj) == false)
+		camera.position -= temp_view *(float)(camera.movementSpeed * dt);
 
 
 		
@@ -312,11 +314,13 @@ void Sp2_Scene1::Update(double dt)
 
 	if (Application::IsKeyPressed('A'))
 	{
-		camera.position -= camera.right * (camera.movementSpeed / 45);	
+		//if (collision(camera.position - camera.right * (camera.movementSpeed / 45) * dt, frpc.allGameObj) == false)
+		camera.position -= camera.right * (camera.movementSpeed / 45) * dt;	
 	}
 
 	if (Application::IsKeyPressed('D'))
 	{
+		//if (collision(camera.position + camera.right * (camera.movementSpeed / 45) * dt, frpc.allGameObj) == false)
 		camera.position += camera.right * (camera.movementSpeed / 45);
 	}
 
@@ -367,8 +371,8 @@ void Sp2_Scene1::Update(double dt)
 	}
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-		//camera.updateRotation(0.3);
-		camera2.tpsUpdateVec(frpc.pos);
+		camera.updateRotation(0.3);
+		//camera2.tpsUpdateVec(frpc.pos);
 		ShowCursor(FALSE);
 	}
 
@@ -863,6 +867,7 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 
 void Sp2_Scene1::Renderfps()
 {
+	std::cout << frpc.allGameObj.size()<<std::endl;
 	RenderSkybox(camera);
 	/*Renderff(ff);
 	RenderMR(mr);
@@ -934,16 +939,16 @@ void Sp2_Scene1::Render()
 	viewStack.LoadIdentity();
 
 	//set View position to camera
-	viewStack.LookAt(
+	/*viewStack.LookAt(
 		camera2.position.x, camera2.position.y, camera2.position.z,
 		camera2.target.x, camera2.target.y, camera2.target.z,
 		camera2.up.x, camera2.up.y, camera2.up.z
+		);*/
+	viewStack.LookAt(
+		camera.position.x, camera.position.y, camera.position.z,
+		camera.target.x, camera.target.y, camera.target.z,
+		camera.up.x, camera.up.y, camera.up.z
 		);
-	//viewStack.LookAt(
-	//	camera.position.x, camera.position.y, camera.position.z,
-	//	camera.target.x, camera.target.y, camera.target.z,
-	//	camera.up.x, camera.up.y, camera.up.z
-	//	);
 	Renderfps();
 
 	if (b_enabletps == true)

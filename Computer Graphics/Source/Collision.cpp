@@ -54,6 +54,21 @@ bool collision(GameObject x, vector<GameObject> y)
 	return false;
 }
 
+bool collision(Vector3 x, vector<GameObject> y)
+{
+	for (vector<GameObject>::iterator it = y.begin(); it != y.end(); ++it)
+	{
+		if (it->pos != x)
+		{
+			if (collision(*it,x,10) == true)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 vector<GameObject> collisionElimination(GameObject x, vector<GameObject> y)
 {
 	vector<GameObject> result;
