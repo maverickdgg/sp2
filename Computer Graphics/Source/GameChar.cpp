@@ -8,7 +8,7 @@ size_t GameChar::GC_count = 0;
 
 GameChar::GameChar()
 {
-	chat_boundary = 15;
+	chat_boundary = 100;
 	GC_count++;
 	b_indexDebounce = false;
 	dialogue_index = 0;
@@ -16,7 +16,7 @@ GameChar::GameChar()
 
 GameChar::GameChar(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos)
 {
-	chat_boundary = 15;
+	chat_boundary = 100;
 	++GC_count;
 	dialogue_index = 0;
 	b_indexDebounce = false;
@@ -45,7 +45,6 @@ vector<string> GameChar::ReadFromTxt(string link)
 			std::getline(inData, data);
 			vec_dialog.push_back(data);
 		}
-
 	}
 	{inData.close();
 	return vec_dialog;
