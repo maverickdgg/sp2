@@ -130,6 +130,7 @@ public:
 	bool b_enabletps;
 	bool b_tpsDebounce;
     bool b_isWorn;
+    bool b_isFly;
 	smaller index;
 	float tpsTimer;
 	Vector3 ffposition;

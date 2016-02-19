@@ -13,13 +13,14 @@ CameraTPS::~CameraTPS()
 
 void CameraTPS::Init(const Vector3& pos, const Vector3& up, const Vector3& vehiclePos)
 {
-    this->position = pos;
+    this->defaultOffset = pos;
     this->target = vehiclePos;
+	this->position = target + defaultOffset;
     this->view = (target - position).Normalized();
-    right = view.Cross(up);
-    right.y = 0;
-    right.Normalize();
-    defaultUp = right.Cross(view).Normalized();
+	right = view.Cross(up);
+	right.y = 0;
+	right.Normalize();
+	this->up = defaultUp = right.Cross(view).Normalized();
     cameraRotationX = 0.0f;
     cameraRotationY = 0.0f;
 }
@@ -50,23 +51,25 @@ void CameraTPS::tpsUpdateRotation(float speed)
         cameraRotationY = 0;
     }
 
-    position = Vector3 // position
-        (
-        cos(Math::DegreeToRadian(cameraRotationY)) * cos(Math::DegreeToRadian(cameraRotationX)) + this->target.x, // target.x // position + Math...
-        sin(Math::DegreeToRadian(cameraRotationX)) + this->target.y,
-        -sin(Math::DegreeToRadian(cameraRotationY))  * cos(Math::DegreeToRadian(cameraRotationX)) + this->target.z
+	position = Vector3 // position
+		(
+		cos(Math::DegreeToRadian(cameraRotationY)) * defaultOffset.x + this->target.x, // target.x // position + Math...
+		//sin(Math::DegreeToRadian(cameraRotationX)) * defaultOffset.y  + this->target.y,
+		defaultOffset.y + this->target.y,
+		sin(Math::DegreeToRadian(cameraRotationY))* defaultOffset.z + this->target.z
         );
 
 }
 
 void CameraTPS::tpsUpdateVec(Vector3 targetVec)
 {
+
     this->target = targetVec;
-    tpsUpdateRotation(50);
+    tpsUpdateRotation(1);
     //this->position = (Vector3(vec.x, vec.y + 20, vec.z) - (Vector3(cam.view.x, 0, cam.view.z).Normalized()) * 80);
-    view = target - position;
-    right = view.Cross(defaultUp);
-    right.y = 0;
-    right.Normalize();
-    this->up = right.Cross(view).Normalized();
+	view = (target - position).Normalized();
+	right = view.Cross(defaultUp);
+	right.y = 0;
+	right.Normalize();
+	this->up = right.Cross(view).Normalized();
 }

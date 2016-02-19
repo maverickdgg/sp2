@@ -8,6 +8,7 @@ class CameraTPS : public Camera
 public:
     float cameraRotationX;
     float cameraRotationY;
+	Vector3 defaultOffset;
     Vector3 defaultUp;
     Vector3 right;
     Vector3 view;
