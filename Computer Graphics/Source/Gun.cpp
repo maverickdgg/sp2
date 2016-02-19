@@ -12,6 +12,7 @@ Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos
 {
 	this->pos = pos;
 	G_count++;
+	allGameObj.pop_back();
 }
 
 Gun::~Gun()
