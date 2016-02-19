@@ -7,7 +7,7 @@ SpaceVehicles::SpaceVehicles() : max_speed(25)
 	SV_count++;
 }
 
-SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos), acceleration(10), speed(0), max_speed(100), rotateAngle(30)
+SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos), acceleration(25), speed(0), max_speed(100), rotateAngle(30)
 {
 }
 
@@ -16,7 +16,7 @@ SpaceVehicles::~SpaceVehicles()
 	SV_count--;
 }
 
-void SpaceVehicles::updateVehicle(bool isPressedW ,bool isPressedS, bool isPressedA, bool isPressedD, float deltaTime)
+void SpaceVehicles::updateVehicle(bool isPressedW ,bool isPressedS, bool isPressedA, bool isPressedD, double deltaTime)
 {
     if (isPressedW == true && isPressedS == false)
     {

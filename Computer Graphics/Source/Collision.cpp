@@ -18,7 +18,7 @@ bool collision(GameObject x, Vector3 y,int boundary)
 {
 	Vector3 distance = x.pos - y;
 	float length = distance.Length();
-	if (length > boundary)
+	if (length > boundary + x.boundary)
 	{
 		return false;
 	}
@@ -49,6 +49,21 @@ bool collision(GameObject x, vector<GameObject> y)
 		if (collision(x, *it) == true)
 		{
 			return true;
+		}
+	}
+	return false;
+}
+
+bool collision(Vector3 x, vector<GameObject> y)
+{
+	for (vector<GameObject>::iterator it = y.begin(); it != y.end(); ++it)
+	{
+		if (it->pos != x)
+		{
+			if (collision(*it,x,10) == true)
+			{
+				return true;
+			}
 		}
 	}
 	return false;

@@ -10,7 +10,7 @@ public:
 	~SpaceVehicles();
 	static size_t SV_count;
     int speed;
-    void updateVehicle(bool isPressedW, bool isPressedS, bool isPressedA, bool isPressedD, float deltaTime);
+    void updateVehicle(bool isPressedW, bool isPressedS, bool isPressedA, bool isPressedD, double deltaTime);
 private:
     int acceleration;
     float rotateAngle;
