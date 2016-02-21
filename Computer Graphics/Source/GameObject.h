@@ -5,6 +5,7 @@
 #include <fstream>
 #include "MyMath.h"
 #include "Vector3.h"
+#include <algorithm>
 
 using std::ifstream;
 using std::ofstream;
@@ -25,8 +26,7 @@ public:
 	int boundary;
 	Vector3 pos;
     float viewAngle;
-	static vector<GameObject> allGameObj;
-
+	static vector<GameObject*> allGameObj;
 protected:
     GameObject();
 	GameObject(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0));

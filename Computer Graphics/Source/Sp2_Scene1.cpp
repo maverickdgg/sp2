@@ -253,8 +253,7 @@ void Sp2_Scene1::Init()
 
 
 	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));	// Default NPC is here only for the interaction codes and not the butler NPC. Do not delete the default npc function.
-	/*<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->*/
-	npc2 = Alien("npc2", 0, 30, Vector3(500, 0, 125));	// Mike Wazowski
+	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));	// Mike Wazowski
 	npc2.ReadFromTxt("Image//mikechat.txt");
 
 	npc3 = Human("npc3", 0, 30, Vector3(-500, 0, -125));	// Storm Trooper
@@ -309,7 +308,6 @@ void Sp2_Scene1::Update(double dt)
 		
 		Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
 		tempPos += temp_view *(float)(camera.movementSpeed * dt);
-		bool colliding = collision(tempPos, frpc.allGameObj);
 		if (collision(tempPos,frpc.allGameObj)==false)
 			camera.position = tempPos;
 	}
