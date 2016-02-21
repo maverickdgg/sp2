@@ -2,8 +2,6 @@
 #define WEAPON_H
 #include "GameObject.h"
 
-typedef unsigned short smaller;
-
 class Weapon : public GameObject
 {
 public:

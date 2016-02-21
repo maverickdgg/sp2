@@ -15,6 +15,8 @@ using std::vector;
 using std::string;
 using std::vector;
 
+typedef unsigned short smaller;
+
 class GameObject
 {
 private:

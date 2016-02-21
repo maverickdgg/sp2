@@ -77,10 +77,15 @@ public:
 		/*<---Weapons--->*/
         GEO_SNIPERRIFLE,
         GEO_DART,
+        /*<---Humans--->*/
+		GEO_SUIT,
+        GEO_HELM,
+        /*<---NPCs--->*/
+		GEO_NPC2,// Mike Wazowski
 		/*<---NPC--->*/
-		GEO_DEFAULTNPC,	// Default (Pure Interaction Codes, no NPC)
-		GEO_NPC2,	// Mike Wazowski
+		GEO_DEFAULTNPC,	// Default (Pure Interaction Codes, no NPC)	
 		GEO_NPC3,	// Storm Trooper
+        GEO_FLIGHTUI,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -129,7 +134,9 @@ public:
 	Vector3 tempPos;
 	bool b_enabletps;
 	bool b_tpsDebounce;
-	//bool isPressed;
+    bool b_isWorn;
+    bool b_isFly;
+    bool b_isInFRPC;
 	smaller index;
 	float tpsTimer;
 	Vector3 ffposition;
@@ -141,7 +148,11 @@ public:
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 
+
+	Human suit;
+
 	Human defaultnpc;
+
 	Alien npc2;
 	Human whale;
 	Human npc3;
@@ -170,6 +181,8 @@ private:
 
 	void RenderFRPC(SpaceVehicles frpc);
 
+	void RenderSuit();
+	//void RenderNPC2(Alien npc2);
 	void RenderDefaultNPC(Human defaultnpc);
 	void RenderNPC2(GameChar npc2);
 	void RenderNPC3(GameChar npc3);
