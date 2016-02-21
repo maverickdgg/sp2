@@ -141,7 +141,6 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
-	//meshList[GEO_QUAD]->textureID = LoadTGA("Image//color2.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f, 1.f);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//purplenebula_ft.tga");
@@ -170,42 +169,12 @@ void Sp2_Scene1::Init()
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 11), 1.f, 1.f);
 	
 	/*<---Studio Project 2 OBJs--->*/
-
-	/*<---Space Vehicles--->*/
-	//meshList[GEO_FIREFLY] = MeshBuilder::GenerateOBJ("Firefly","OBJ//Firefly.obj");
-	//meshList[GEO_FIREFLY]->textureID = LoadTGA("Image//Firefly.tga");
-
-	//meshList[GEO_MOONROVER] = MeshBuilder::GenerateOBJ("moonRover", "OBJ//moonRover.obj");
-	//meshList[GEO_MOONROVER]->textureID = LoadTGA("Image//MoonRover.tga");
-
-	//meshList[GEO_ENEMYVEHICLE] = MeshBuilder::GenerateOBJ("enemyVehicle", "OBJ//enemyVehicle.obj");
-	//meshList[GEO_ENEMYVEHICLE]->textureID = LoadTGA("Image//enemyVehicle.tga");
-
-	//meshList[GEO_ENEMY2] = MeshBuilder::GenerateOBJ("Enemy2", "OBJ//Enemy2.obj");
-	//meshList[GEO_ENEMY2]->textureID = LoadTGA("Image//Enemy2.tga");
-
+	
 	meshList[GEO_NPCLEPUSMAG] = MeshBuilder::GenerateOBJ("NPCLEPUSMAG","OBJ//NPCLEPUSMAG.obj");
 	meshList[GEO_NPCLEPUSMAG]->textureID = LoadTGA("Image//NPCLEPUSMAG.tga");
 
-
-	//meshList[GEO_SECOND] = MeshBuilder::GenerateOBJ("secondplayercontrolled", "OBJ//SecondPlayerControlledAircraft.obj");
-	//meshList[GEO_SECOND]->textureID = LoadTGA("Image//SecondPlayerControlledAircraft.tga");
-
-	//meshList[GEO_THIRD] = MeshBuilder::GenerateOBJ("thirdplayercontrolled", "OBJ//ThirdPlayerControlled.obj");
-	//meshList[GEO_THIRD]->textureID = LoadTGA("Image//ThirdPlayerControlled.tga");
-
 	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
 	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
-
-	//meshList[GEO_FIFTH] = MeshBuilder::GenerateOBJ("fifthplayercontrolled", "OBJ//FifthPlayerControlled.obj");
-	//meshList[GEO_FIFTH]->textureID = LoadTGA("Image//FifthPlayerControlled.tga");
-
-	//meshList[GEO_MOTOR] = MeshBuilder::GenerateOBJ("motorlandvehicle", "OBJ//MotorLandVehicle.obj");
-	//meshList[GEO_MOTOR]->textureID = LoadTGA("Image//MotorLandVehicle.tga");
-
-	//meshList[GEO_ROVER] = MeshBuilder::GenerateOBJ("roverlandvehicle", "OBJ//RoverLandVehicle.obj");
-	//meshList[GEO_ROVER]->textureID = LoadTGA("Image//RoverLandVehicle.tga");
-
 
     meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
     meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
@@ -227,49 +196,26 @@ void Sp2_Scene1::Init()
 	meshList[GEO_NPC3] = MeshBuilder::GenerateOBJ("npc3", "OBJ//Stormtrooper.obj");
 	meshList[GEO_NPC3]->textureID = LoadTGA("Image//Stormtrooper.tga");
 
-
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
 
-	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
     laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y ,camera.position.z));
-
-	/**/
-
-	//ff = SpaceVehicles("firefly", 0, 30, Vector3(10,0,0));
-	//mr = SpaceVehicles("MoonRover", 0, 30, Vector3(-10, 0, 0));
-	//ev = SpaceVehicles("enemyVehicles", 0, 30, Vector3(-30, 0, 0));
-	//e2 = SpaceVehicles("Enemy2", 0, 30, Vector3(-60, 0, 0));
-	np = SpaceVehicles("NPCLEPUSMAG", 0, 20, Vector3(-80, 0, 0));
 
 	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-200, 0, 200));
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
 
-
 	frpc = SpaceVehicles("fourth", 0, 0, Vector3(55, 0, 60));
 	suit = Human("spacesuit", 30, 30, Vector3(150, 0, 130));
+
 	/*<---Set the position of the NPC--->*/
 	objects[NPC].Message = "Press 'E' to wear HEV suit";
 	/*<---Miscellaneous--->*/
-	inData.open("Image//Robotdialogue.txt");
+	//inData.open("Image//Robotdialogue.txt");
 	Timer = 0;
 	//isPressed = false;
-	index = 0;
     b_isWorn = false;
     b_isInFRPC = false;
-
-	/**/
-
-	//spc = SpaceVehicles("second", 0, 30, Vector3(25, 0, 20));
-	//tpc = SpaceVehicles("third", 0, 30, Vector3(40, 0, 40));
-
-/*	fifpc = SpaceVehicles("fifth", 0, 30, Vector3(70, 0, 80));
-	mtv = SpaceVehicles("motorvehicle", 0, 30, Vector3(85, 0, 100));
-	rov = SpaceVehicles("rover", 0, 30, Vector3(100, 0, 120))*/;
-
-	/**/
-
 
 	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));	// Default NPC is here only for the interaction codes and not the butler NPC. Do not delete the default npc function.
 	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));	// Mike Wazowski
@@ -278,17 +224,6 @@ void Sp2_Scene1::Init()
 	npc3 = Human("npc3", 0, 30, Vector3(-500, 0, -125));	// Storm Trooper
 	npc3.ReadFromTxt("Image//Stormtrooper.txt");
 
-	//npc1 = Human("npc", 0, 30, Vector3(200, -30, 200));
-
-
-	//objects[NPC].position.Set(130, -30, 130); // Edit the position of the NPC
-	//objects[NPC].State = objects[NPC].patrol;
-	//objects[NPC].Message = "Welcome to Space Race";
-
-
-	inData.open("Image//Robotdialogue.txt");
-	inData.open("Image//mikechat.txt");
-	inData.open("Image//Stormtrooper.txt");
 	Timer = 0;
 }
 
@@ -350,73 +285,7 @@ void Sp2_Scene1::Update(double dt)
 	if (Application::IsKeyPressed('D'))
 	{
 
- //       //cam movement
-
- //       //camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
- //       //camera.position += camera.view *(float)(camera.movementSpeed * dt);
- //       b_isFly = true;
- //   }
- //   else
- //   {
- //       b_isFly = false;
- //   }
-
-	//if (Application::IsKeyPressed('W'))
-	//{
-	//	//cam movement
-	//	
-	//	Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-	//	tempPos += temp_view *(float)(camera.movementSpeed * dt);
-	//	bool colliding = collision(tempPos, frpc.allGameObj);
-	//	if (collision(tempPos,frpc.allGameObj)==false)
-	//		camera.position = tempPos;
-	//}
-	//if (Application::IsKeyPressed('S'))
-	//{		
-	//	//cam movement
-	//	//camera.view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-	//	//camera.position -= camera.view *(float)(camera.movementSpeed * dt);
- //       b_isFly = true;
-	//	Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-	//	tempPos -= temp_view *(float)(camera.movementSpeed * dt);
-	//	if (collision(tempPos, frpc.allGameObj) == false)
-	//		camera.position = tempPos;
-	//}
- //   else
- //   {
- //       b_isFly = false;
- //   }
-
-	//if (Application::IsKeyPressed('A'))
-	//{
-	//	//.position -= camera.right * (camera.movementSpeed / 45);	
- //       b_isFly = true;
-	//	tempPos -= camera.right * (camera.movementSpeed ) * dt;
-	//	if (collision(tempPos, frpc.allGameObj) == false)
-	//		camera.position = tempPos;
-	//}
- //   else
- //   {
- //       b_isFly = false;
- //   }
-
-	//if (Application::IsKeyPressed('D'))
-	//{
-	//	//camera.position += camera.right * (camera.movementSpeed / 45
- //       b_isFly = true;
-	//	tempPos += camera.right * (camera.movementSpeed )*dt;
-	//	if (collision(tempPos, frpc.allGameObj) == false)
-	//		camera.position = tempPos;
-	//}
- //   else
- //   {
- //       b_isFly = false;
- //   }
-
-    //if (Application::IsKeyPressed('W') || Application::IsKeyPressed('A') || Application::IsKeyPressed('S') || Application::IsKeyPressed('D'))
-    //    b_isFly = true;
-    //else
-    //    b_isFly = false;
+	}
 
 	if (Application::IsKeyPressed(VK_SPACE) && camera.b_jumping == false)
 	{
@@ -464,8 +333,8 @@ void Sp2_Scene1::Update(double dt)
 	}
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-		//camera.updateRotation(0.3);
-		camera2.tpsUpdateVec(frpc.pos);
+		camera.updateRotation(0.3);
+		//camera2.tpsUpdateVec(frpc.pos);
 		ShowCursor(FALSE);
 	}
 
@@ -474,8 +343,6 @@ void Sp2_Scene1::Update(double dt)
 		ShowCursor(TRUE);
 	}
 
-	
-	
 	if (Application::IsKeyPressed('M') && b_enabletps == true && b_tpsDebounce == false)
 	{
 		b_tpsDebounce = true;
@@ -516,30 +383,10 @@ void Sp2_Scene1::Update(double dt)
 		RenderSuit();
 	}
 
-	//// NPC Text Indexing
-	//if (Application::IsKeyPressed('E') && whale.b_indexDebounce == false)
-	//{
-	//	whale.b_indexDebounce = true;
-	//	isPressed = true;
-	//	++whale.dialogue_index;
-	//	if (whale.dialogue_index >= whale.vec_dialog.size())
-	//	{
-	//		whale.dialogue_index = 0;
-	//	}
-	//}
-	//// NPC Text Reset
-	//if (!Application::IsKeyPressed('E') && whale.b_indexDebounce == true)
-	//{
-	//	whale.b_indexDebounce = false;
-	//}
-
-    if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
-        b_isWorn = true;
+ /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
+        b_isWorn = true;*/
     frpc.updateVehicle(Application::IsKeyPressed('W'), Application::IsKeyPressed('S'), Application::IsKeyPressed('A'), Application::IsKeyPressed('D'), dt);
-    //frpc.pos.x += frpc.speed * dt;
-    //frpc.pos.z += frpc.speed * dt;
-		RenderDefaultNPC(defaultnpc);
-	}
+		//RenderDefaultNPC(defaultnpc);
 
 	whale.chat_update(camera.position);
 	npc2.chat_update(camera.position);
@@ -651,83 +498,6 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 }
 
-//
-//	modelStack.PopMatrix();
-//
-//
-//}
-
-
-//void Sp2_Scene1::Renderff(SpaceVehicles ff)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(ff.pos.x, ff.pos.y, ff.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(0.5, 0.5, 0.5);
-//	RenderMesh(meshList[GEO_FIREFLY], false);
-//	modelStack.PopMatrix();
-//}
-//
-//void Sp2_Scene1::RenderMR(SpaceVehicles mr)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(mr.pos.x, mr.pos.y, mr.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(3, 3, 3);
-//	RenderMesh(meshList[GEO_MOONROVER], false);
-//	modelStack.PopMatrix();
-//}
-//void Sp2_Scene1::Renderev(SpaceVehicles ev)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(ev.pos.x, ev.pos.y, ev.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(2, 2, 2);
-//	RenderMesh(meshList[GEO_ENEMYVEHICLE], false);
-//	modelStack.PopMatrix();
-//}
-//void Sp2_Scene1::Rendere2(SpaceVehicles e2)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(e2.pos.x, e2.pos.y, e2.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(6, 6, 6);
-//	RenderMesh(meshList[GEO_ENEMY2], false);
-//	modelStack.PopMatrix();
-//}
-
-/**/
-
-//void Sp2_Scene1::RenderSPC(SpaceVehicles spc)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(spc.pos.x, spc.pos.y, spc.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(1, 1, 1);
-//	RenderMesh(meshList[GEO_SECOND], false);
-//	modelStack.PopMatrix();
-//}
-//void Sp2_Scene1::RenderTPC(SpaceVehicles tpc)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(tpc.pos.x, tpc.pos.y, tpc.pos.z);
-//	modelStack.Rotate(0, 1, 0, 0);
-//	modelStack.Scale(0.8, 0.8, 0.8);
-//	RenderMesh(meshList[GEO_THIRD], false);
-//	modelStack.PopMatrix();
-//}
-
-void Sp2_Scene1::RenderFRPC(SpaceVehicles frpc)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(frpc.pos.x, frpc.pos.y, frpc.pos.z);
-    modelStack.Rotate(frpc.viewAngle,0,1,0);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_FOURTH], false);
-	modelStack.PopMatrix();
-}
-
 void Sp2_Scene1::RenderSuit()
 {
     modelStack.PushMatrix();
@@ -755,169 +525,35 @@ void Sp2_Scene1::RenderSuit()
         //modelStack.PopMatrix();
         RenderMeshOnScreen(meshList[GEO_HELM], Vector3(75, -15, -10), Vector3(20, 20, 20), Vector3(0, 0, 0));
     }
-
-    //for (size_t i = 0; i < Num_Obj; i++)
-    //{
-    //	float x = camera.position.x - objects[i].position.x;
-    //	float z = camera.position.z - objects[i].position.z;
-    //	float distance = (sqrt((x*x) + (z*z))) / 10;
-    //	if (distance <= 10)
-    //	{
-    //		objects[i].State = objects[i].target;
-    //	}
-    //	else
-    //	{
-    //		objects[i].State = objects[i].patrol;
-    //	}
-    //}
 }
 
-//void Sp2_Scene1::RenderFIFPC(SpaceVehicles fifpc)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(fifpc.pos.x, fifpc.pos.y, fifpc.pos.z);
-//	modelStack.Rotate(270, 0, 1, 0);
-//	modelStack.Scale(0.5, 0.5, 0.5);
-//	RenderMesh(meshList[GEO_FIFTH], false);
-//	modelStack.PopMatrix();
-//}
-//
-//void Sp2_Scene1::RenderMTV(SpaceVehicles mtv)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(mtv.pos.x, mtv.pos.y, mtv.pos.z);
-//	modelStack.Rotate(90, 0, 1, 0);
-//	modelStack.Scale(0.5, 0.5, 0.5);
-//	RenderMesh(meshList[GEO_MOTOR], false);
-//	modelStack.PopMatrix();
-//}
-//
-//void Sp2_Scene1::RenderROV(SpaceVehicles rov)
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(rov.pos.x, rov.pos.y, rov.pos.z);
-//	modelStack.Rotate(180, 0, 1, 0);
-//	modelStack.Scale(3, 3, 3);
-//	RenderMesh(meshList[GEO_ROVER], false);
-//	modelStack.PopMatrix();
-//}
-
-void Sp2_Scene1::RenderDefaultNPC(Human defaultnpc)
+void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,Vector3 scale)
 {
-	for (size_t i = 0; i < Num_Obj; i++)
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Rotate(x.viewAngle, 0, 1, 0);
+	modelStack.Scale(scale.x,scale.y,scale.z);
+	RenderMesh(mesh,enableLight);
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, float chatBoundary, bool enableLight, Vector3 scale)
+{
+	RenderGameObj(x, mesh, enableLight, scale);
+
+	if (x.vec_dialog.empty() == false)
 	{
-		float x = camera.position.x - objects[i].position.x;
-		float z = camera.position.z - objects[i].position.z;
-		float distance = (sqrt((x*x) + (z*z))) / 10;
-		if (distance <= 10)
+		if (collision(x.pos, camera.position, chatBoundary) && x.isPressed == true)
 		{
-			objects[i].State = objects[i].target;
+			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(1, 1, 1), 3, 1, 10);
 		}
-		else
+		if (collision(x.pos, camera.position, chatBoundary))
 		{
-			objects[i].State = objects[i].patrol;
+			modelStack.PushMatrix();
+			modelStack.Translate(2, 6, 0);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
+			modelStack.PopMatrix();
 		}
-	}
-}
-
-void Sp2_Scene1::RenderNPC2(GameChar npc2)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(npc2.pos.x, npc2.pos.y -30, npc2.pos.z);
-	modelStack.Rotate(270, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_NPC2], false);
-	modelStack.PopMatrix();
-
-	if (collision(npc2.pos, camera.position, 70) && npc2.isPressed == true)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], npc2.vec_dialog[npc2.dialogue_index], Color(1, 1, 1), 3, 1, 10);
-	}
-	if (collision(npc2.pos,camera.position,70))
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(2, 6, 0);
-		//modelStack.Rotate(0, 1, 0, 0);
-		//modelStack.Scale(20, 20, 20);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
-		modelStack.PopMatrix();
-	}
-}
-
-void Sp2_Scene1::RenderNPC3(GameChar npc3)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(npc3.pos.x, npc3.pos.y - 30, npc3.pos.z);
-	modelStack.Rotate(270, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_NPC3], false);
-	modelStack.PopMatrix();
-
-	if (collision(npc3.pos, camera.position, 70) && npc3.isPressed == true)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], npc3.vec_dialog[npc3.dialogue_index], Color(1, 1, 1), 3, 1, 10);
-	}
-	if (collision(npc3.pos, camera.position, 70))
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(2, 6, 0);
-		//modelStack.Rotate(0, 1, 0, 0);
-		//modelStack.Scale(20, 20, 20);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
-		modelStack.PopMatrix();
-	}
-}
-
-void Sp2_Scene1::Rendernp(GameChar np)	// Mr Whale
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(np.pos.x, np.pos.y, np.pos.z);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(7, 7, 7);
-	RenderMesh(meshList[GEO_NPCLEPUSMAG], false);
-	modelStack.PopMatrix();
-		//
-		//if (objects[GUIDENPC].State == objects[GUIDENPC].target && Application::IsKeyPressed('E'))
-		//{
-
-		//}
-
-	//vector<string> vec_dialog;
-	//vector<string>::iterator dialogIT;
-	//string data;
-	//if (inData.is_open())
-	//{
-	//if (!inData.eof())
-	//{
-	//	//inData.open(link); // associate & open files
-	//	//if (inData.get() != ';')
-	//	//{
-	//	//	data = inData.get();
-	//	//	vec_dialog.push_back(data);
-	//	//}
-	//	std::getline(inData, data);
-	//	vec_dialog.push_back(data);
-	//}
-	//}
-	//inData.close();
-	//vector<string> text = np.ReadFromTxt("Image//Robotdialog.txt", txtfile);
-	//modelStack.Rotate(0, 1, 0, 0);
-	//modelStack.Scale(20, 20, 20);
-	//data = vec_dialog[0];
-
-	//dialogIT = vec_dialog.begin();
-	if (objects[GUIDENPC].State == objects[GUIDENPC].target && whale.isPressed == true)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], np.vec_dialog[np.dialogue_index], Color(1, 1, 1), 3, 1, 10);
-	}
-	if (objects[GUIDENPC].State == objects[GUIDENPC].target)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(2, 6, 0);
-		//modelStack.Rotate(0, 1, 0, 0);
-		//modelStack.Scale(20, 20, 20);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
-		modelStack.PopMatrix();
 	}
 }
 
@@ -1028,41 +664,20 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 void Sp2_Scene1::Renderfps()
 {
 	RenderSkybox(camera);
-	/*Renderff(ff);
-	RenderMR(mr);
-	Renderev(ev);
 
-	Rendere2(e2);
-	Rendernp();
-
-	Rendere2(e2);*/
-	Rendernp(whale);
-
-	/**/
-	//RenderSPC(spc);
-	//RenderTPC(tpc);
-	RenderFRPC(frpc);
+	RenderGameObj(frpc, meshList[GEO_FOURTH]);
 
 	/*<---NPC--->*/
 	RenderSuit();
 
-	//RenderFIFPC(fifpc);
-	//RenderMTV(mtv);
-	//RenderROV(rov);
-	/**/
-	RenderDefaultNPC(defaultnpc);
-
-	RenderNPC2(npc2);
-	RenderNPC3(npc3);
+	RenderGameChar(defaultnpc, meshList[GEO_DEFAULTNPC],70);
+	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], 70);
+	RenderGameChar(npc2, meshList[GEO_NPC2], 70);
+	RenderGameChar(npc3, meshList[GEO_NPC3], 70);
 	RenderMesh(meshList[GEO_AXES], false); 
 	/*<---Weapons--->*/
     if (b_isWorn == false) // b_isInFRPC == false
 	    RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
-	/*<---Render Sniper Rifle--->*/
-	modelStack.PushMatrix();
-	modelStack.Scale(0.3, 0.3, 0.3);
-	RenderMesh(meshList[GEO_SNIPERRIFLE], true);
-	modelStack.PopMatrix();
 
 	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
 	{
@@ -1073,13 +688,10 @@ void Sp2_Scene1::Renderfps()
 		RenderMesh(meshList[GEO_DART], true);
 		modelStack.PopMatrix();
 	}
-
 }
 
 void Sp2_Scene1::Rendertps()
 {
-
-
 	RenderSkybox(camera);
 	
 
@@ -1105,16 +717,16 @@ void Sp2_Scene1::Render()
 	viewStack.LoadIdentity();
 
 	//set View position to camera
-	viewStack.LookAt(
-		camera2.position.x, camera2.position.y, camera2.position.z,
-		camera2.target.x, camera2.target.y, camera2.target.z,
-		camera2.up.x, camera2.up.y, camera2.up.z
-		);
 	//viewStack.LookAt(
-	//	camera.position.x, camera.position.y, camera.position.z,
-	//	camera.target.x, camera.target.y, camera.target.z,
-	//	camera.up.x, camera.up.y, camera.up.z
+	//	camera2.position.x, camera2.position.y, camera2.position.z,
+	//	camera2.target.x, camera2.target.y, camera2.target.z,
+	//	camera2.up.x, camera2.up.y, camera2.up.z
 	//	);
+	viewStack.LookAt(
+		camera.position.x, camera.position.y, camera.position.z,
+		camera.target.x, camera.target.y, camera.target.z,
+		camera.up.x, camera.up.y, camera.up.z
+		);
 	Renderfps();
 
 	if (b_enabletps == true)

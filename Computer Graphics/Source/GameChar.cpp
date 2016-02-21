@@ -54,28 +54,32 @@ vector<string> GameChar::ReadFromTxt(string link)
 void GameChar::chat_update(Vector3 player_pos)
 {
 	// NPC Text Indexing
-	if (Application::IsKeyPressed('E') && b_indexDebounce == false && collision(player_pos, pos, chat_boundary) == true)
+	if (vec_dialog.empty() == false)
 	{
-		if (isPressed == true)
+		if (Application::IsKeyPressed('E') && b_indexDebounce == false && collision(player_pos, pos, chat_boundary) == true)
 		{
-		++dialogue_index;
-		if (dialogue_index >= vec_dialog.size())
-		{
-			dialogue_index = 0;
-		}
-		}
-		b_indexDebounce = true;
-		isPressed = true;
+			if (isPressed == true)
+			{
+				++dialogue_index;
+				if (dialogue_index >= vec_dialog.size())
+				{
+					dialogue_index = 0;
+				}
+			}
+			b_indexDebounce = true;
+			isPressed = true;
 
 
+		}
+		// NPC Text Reset
+		if ((!Application::IsKeyPressed('E') && b_indexDebounce == true) || collision(player_pos, pos, chat_boundary) == false)
+		{
+			b_indexDebounce = false;
+		}
+		if (collision(player_pos, pos, chat_boundary) == false)
+		{
+			isPressed = false;
+		}
 	}
-	// NPC Text Reset
-	if ((!Application::IsKeyPressed('E') && b_indexDebounce == true) || collision(player_pos, pos, chat_boundary) == false)
-	{
-		b_indexDebounce = false;
-	}
-	if (collision(player_pos, pos, chat_boundary) == false)
-	{
-		isPressed = false;
-	}
+	
 }

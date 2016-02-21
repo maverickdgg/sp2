@@ -5,7 +5,7 @@ vector<GameObject*> GameObject::allGameObj;
 
 GameObject::GameObject()
 {
-	//allGameObj.push_back(*this);
+	//allGameObj.push_back(this);
 	GO_count++;
 }
 
@@ -16,7 +16,7 @@ GameObject::GameObject(string object_name, int boundary, float viewAngle, Vector
 	this->pos = pos;
     this->viewAngle = viewAngle;
 	GO_count++;
-	allGameObj.push_back(this);
+	//allGameObj.push_back(this);
 }
 
 GameObject::~GameObject()

@@ -134,25 +134,15 @@ public:
 	Vector3 tempPos;
 	bool b_enabletps;
 	bool b_tpsDebounce;
-    bool b_isWorn;
-    bool b_isFly;
+	bool b_isWorn;
     bool b_isInFRPC;
-	smaller index;
 	float tpsTimer;
-	Vector3 ffposition;
-	ifstream inData;
 
     Gun laserRifle;
-    Vector3 trajectory;
-
 	SpaceVehicles np;
 	SpaceVehicles frpc;
-
-
 	Human suit;
-
 	Human defaultnpc;
-
 	Alien npc2;
 	Human whale;
 	Human npc3;
@@ -177,15 +167,10 @@ private:
 	void RenderSkybox(Camera3 camera);
 	void RenderSpaceVehicles(Camera3 camera);
 
-	void Rendernp(GameChar np);
-
-	void RenderFRPC(SpaceVehicles frpc);
-
 	void RenderSuit();
-	//void RenderNPC2(Alien npc2);
-	void RenderDefaultNPC(Human defaultnpc);
-	void RenderNPC2(GameChar npc2);
-	void RenderNPC3(GameChar npc3);
+
+	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true,Vector3 scale = Vector3(1,1,1));
+	void RenderGameChar(GameChar x, Mesh* mesh, float chatBoundary, bool enableLight = true, Vector3 scale = Vector3(1, 1, 1));
 
 	void Renderfps();
 	void Rendertps();
