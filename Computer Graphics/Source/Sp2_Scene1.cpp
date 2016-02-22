@@ -196,6 +196,23 @@ void Sp2_Scene1::Init()
 	meshList[GEO_NPC3] = MeshBuilder::GenerateOBJ("npc3", "OBJ//Stormtrooper.obj");
 	meshList[GEO_NPC3]->textureID = LoadTGA("Image//Stormtrooper.tga");
 
+	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
+	
+	meshList[GEO_SPONGEBOBHAND1] = MeshBuilder::GenerateOBJ("spongebobHand1", "OBJ//spongebobHand1.obj");
+	meshList[GEO_SPONGEBOBHAND1]->textureID = LoadTGA("Image//spongebob.tga");
+
+	meshList[GEO_SPONGEBOBHAND2] = MeshBuilder::GenerateOBJ("spongebobHand2", "OBJ//spongebobHand2.obj");
+	meshList[GEO_SPONGEBOBHAND2]->textureID = LoadTGA("Image//spongebob.tga");
+
+	meshList[GEO_SPONGEBOBLEG1] = MeshBuilder::GenerateOBJ("spongebobLeg1", "OBJ//spongebobLeg1.obj");
+	meshList[GEO_SPONGEBOBLEG1]->textureID = LoadTGA("Image//spongebob.tga");
+
+	meshList[GEO_SPONGEBOBLEG2] = MeshBuilder::GenerateOBJ("spongebobLeg2", "OBJ//spongebobLeg2.obj");
+	meshList[GEO_SPONGEBOBLEG2]->textureID = LoadTGA("Image//spongebob.tga");
+
+	meshList[GEO_SPONGEBOBBODY] = MeshBuilder::GenerateOBJ("spongebobBody", "OBJ//spongebobBody.obj");
+	meshList[GEO_SPONGEBOBBODY]->textureID = LoadTGA("Image//spongebob.tga");
+	
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
@@ -206,6 +223,7 @@ void Sp2_Scene1::Init()
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
 
 	frpc = SpaceVehicles("fourth", 0, 0, Vector3(55, 0, 60));
+	station = Human("spaceshuttle", 10, 0, Vector3(100, -30, 0));
 	suit = Human("spacesuit", 30, 30, Vector3(150, 0, 130));
 
 	/*<---Set the position of the NPC--->*/
@@ -224,6 +242,12 @@ void Sp2_Scene1::Init()
 	npc3.ReadFromTxt("Image//Stormtrooper.txt");
 
 	Timer = 0;
+
+	spongebobLeg1 = Human("spongebobLeg1", 10, 0, Vector3(-60, -37.1 , 125));
+	spongebobLeg2 = Human("spongebobLeg2", 10, 0, Vector3(-60, -37.1 , 125));
+	spongebobHand1 = Human("spongebobHand1", 10, 0, Vector3(-60, -37.1 , 125));
+	spongebobHand2 = Human("spongebobHand2", 10, 0, Vector3(-60, -37.1 , 125));
+	spongebobBody = Human("spongebobBody", 10, 0, Vector3(-60, -37.1 , 125)); 
 }
 
 
@@ -696,6 +720,13 @@ void Sp2_Scene1::Renderfps()
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], 70);
 	RenderGameChar(npc2, meshList[GEO_NPC2], 70);
 	RenderGameChar(npc3, meshList[GEO_NPC3], 70);
+	RenderGameChar(station, meshList[GEO_STATION], 70);
+	RenderGameChar(spongebobLeg1, meshList[GEO_SPONGEBOBLEG1],70, false ,Vector3(10,10,10));
+	RenderGameChar(spongebobLeg2, meshList[GEO_SPONGEBOBLEG2], 70, false, Vector3(10, 10, 10));
+	RenderGameChar(spongebobHand1, meshList[GEO_SPONGEBOBHAND1], 70, false, Vector3(10, 10, 10));
+	RenderGameChar(spongebobHand2, meshList[GEO_SPONGEBOBHAND2], 70, false, Vector3(10, 10, 10));
+	RenderGameChar(spongebobBody, meshList[GEO_SPONGEBOBBODY], 70, false, Vector3(10, 10, 10));
+
 	RenderMesh(meshList[GEO_AXES], false); 
 	/*<---Weapons--->*/
     if (b_isWorn == false) // b_isInVehicle == false

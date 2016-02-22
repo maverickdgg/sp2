@@ -74,14 +74,21 @@ public:
 		/*<---Space Vehicles--->*/
 		GEO_FOURTH,
 		GEO_NPCLEPUSMAG,
+		GEO_STATION, // SpaceShuttle
 		/*<---Weapons--->*/
-        GEO_SNIPERRIFLE,
-        GEO_DART,
-        /*<---Humans--->*/
+		GEO_SNIPERRIFLE,
+		GEO_DART,
+		/*<---Humans--->*/
 		GEO_SUIT,
-        GEO_HELM,
-        /*<---NPCs--->*/
+		GEO_HELM,
+		/*<---NPCs--->*/
 		GEO_NPC2,// Mike Wazowski
+		GEO_SPONGEBOBLEG1,
+		GEO_SPONGEBOBLEG2,
+		GEO_SPONGEBOBHAND1,
+		GEO_SPONGEBOBHAND2,
+		GEO_SPONGEBOBBODY,
+		GEO_MARTIN,
 		/*<---NPC--->*/
 		GEO_DEFAULTNPC,	// Default (Pure Interaction Codes, no NPC)	
 		GEO_NPC3,	// Storm Trooper
@@ -136,12 +143,18 @@ public:
     Gun laserRifle;
 	SpaceVehicles np;
 	SpaceVehicles frpc;
+	Human station;
 	Human suit;
 	Human defaultnpc;
 	Alien npc2;
 	Human whale;
 	Human npc3;
-
+	Human spongebobLeg1;
+	Human spongebobLeg2;
+	Human spongebobHand1;
+	Human spongebobHand2;
+	Human spongebobBody;
+	Human martin;
 public:
 	Object objects[Num_Obj];
 	int Timer;
@@ -164,7 +177,7 @@ private:
 
 	void RenderSuit();
 
-	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true,bool hasInteraction = false,Vector3 scale = Vector3(1,1,1));
+	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1,1,1));
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
 
 	void Renderfps();
