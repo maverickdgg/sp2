@@ -135,7 +135,7 @@ void Sp2_Scene1::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//geom init
-	frpc = SpaceVehicles("fourth", 0, 30, Vector3(55, 0, 60));
+	frpc = SpaceVehicles("fourth", 20, 30, Vector3(55, 0, 60));
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 800);
 	camera2.Init(Vector3(50,20, 50), Vector3(0,1,0), frpc.pos);
 
@@ -159,7 +159,6 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f, 1.f);
 	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//purplenebula_rt.tga");
-	
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("LIGHTBALL", Color(1, 0, 1));
 
@@ -178,6 +177,7 @@ void Sp2_Scene1::Init()
 
     meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
     meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
+
     meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
     meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
@@ -215,7 +215,6 @@ void Sp2_Scene1::Init()
 	Timer = 0;
 	//isPressed = false;
     b_isWorn = false;
-    b_isInFRPC = false;
 
 	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));	// Default NPC is here only for the interaction codes and not the butler NPC. Do not delete the default npc function.
 	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));	// Mike Wazowski
@@ -232,12 +231,7 @@ void Sp2_Scene1::Update(double dt)
 {
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);
-	camera.view = (camera.target - camera.position).Normalized();
-	camera.right = camera.view.Cross(camera.defaultUp);
-	camera.right.y = 0;
-	camera.right.Normalize();
-	this->camera.up = camera.right.Cross(camera.view).Normalized();
-	Vector3 tempPos = camera.position;
+
 	
 	if (Application::IsKeyPressed('1'))
 	{
@@ -255,86 +249,104 @@ void Sp2_Scene1::Update(double dt)
 	{
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
-
-	
-	if (Application::IsKeyPressed('W'))
-	{
-		//cam movement
-		
-		Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-		tempPos += temp_view *(float)(camera.movementSpeed * dt);
-		if (collision(tempPos,frpc.allGameObj)==false)
-			camera.position = tempPos;
-	}
-	if (Application::IsKeyPressed('S'))
-	{		
-		//cam movement
-		Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-		tempPos -= temp_view *(float)(camera.movementSpeed * dt);
-		if (collision(tempPos, frpc.allGameObj) == false)
-			camera.position = tempPos;
-	}
-
-	if (Application::IsKeyPressed('A'))
-	{
-		tempPos -= camera.right * (camera.movementSpeed ) * dt;
-		if (collision(tempPos, frpc.allGameObj) == false)
-			camera.position = tempPos;
-	}
-
-	if (Application::IsKeyPressed('D'))
+	if (frpc.b_isInVehicle == false)
 	{
 
-	}
+		camera.view = (camera.target - camera.position).Normalized();
+		camera.right = camera.view.Cross(camera.defaultUp);
+		camera.right.y = 0;
+		camera.right.Normalize();
+		this->camera.up = camera.right.Cross(camera.view).Normalized();
+		Vector3 tempPos = camera.position;
 
-	if (Application::IsKeyPressed(VK_SPACE) && camera.b_jumping == false)
-	{
-		camera.b_jumpUP = true;
-		camera.b_jumping = true;
-	}
-
-	if (camera.b_jumpUP == true && camera.b_jumping == true)
-	{
-		camera.f_jumpSpeed -= camera.f_jumpAcceleration * dt;
-		camera.position += Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
-		if (camera.f_jumpSpeed <= 0.0f)
+		if (Application::IsKeyPressed('W'))
 		{
-			camera.b_jumpUP = false;
+			//cam movement
+
+			Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
+			tempPos += temp_view *(float)(camera.movementSpeed * dt);
+			//if (collision(tempPos, frpc.allGameObj) == false)
+				camera.position = tempPos;
 		}
-	}
-
-	else if (camera.b_jumpUP == false && camera.b_jumping == true)
-	{
-		camera.f_jumpSpeed += camera.f_jumpAcceleration * dt;
-		camera.position -= Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
-		if (camera.f_jumpSpeed >= 50.0f)
+		if (Application::IsKeyPressed('S'))
 		{
-			camera.position.y = 13;
+			//cam movement
+			Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
+			tempPos -= temp_view *(float)(camera.movementSpeed * dt);
+			//if (collision(tempPos, frpc.allGameObj) == false)
+				camera.position = tempPos;
+		}
+
+		if (Application::IsKeyPressed('A'))
+		{
+			tempPos -= camera.right * (camera.movementSpeed) * dt;
+			//if (collision(tempPos, frpc.allGameObj) == false)
+				camera.position = tempPos;
+		}
+
+		if (Application::IsKeyPressed('D'))
+		{
+			tempPos += camera.right * (camera.movementSpeed) * dt;
+			//if (collision(tempPos, frpc.allGameObj) == false)
+				camera.position = tempPos;
+		}
+
+		if (Application::IsKeyPressed(VK_SPACE) && camera.b_jumping == false)
+		{
 			camera.b_jumpUP = true;
-			camera.b_jumping = false;
+			camera.b_jumping = true;
+		}
+
+		if (camera.b_jumpUP == true && camera.b_jumping == true)
+		{
+			camera.f_jumpSpeed -= camera.f_jumpAcceleration * dt;
+			camera.position += Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
+			if (camera.f_jumpSpeed <= 0.0f)
+			{
+				camera.b_jumpUP = false;
+			}
+		}
+
+		else if (camera.b_jumpUP == false && camera.b_jumping == true)
+		{
+			camera.f_jumpSpeed += camera.f_jumpAcceleration * dt;
+			camera.position -= Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
+			if (camera.f_jumpSpeed >= 50.0f)
+			{
+				camera.position.y = 0;
+				camera.b_jumpUP = true;
+				camera.b_jumping = false;
+			}
+		}
+
+		if (camera.position.x > camera.boundary)
+		{
+			camera.position.x = camera.boundary;
+		}
+		if (camera.position.x < -camera.boundary)
+		{
+			camera.position.x = -camera.boundary;
+		}
+		if (camera.position.z > camera.boundary)
+		{
+			camera.position.z = camera.boundary;
+		}
+		if (camera.position.z < -camera.boundary)
+		{
+			camera.position.z = -camera.boundary;
 		}
 	}
-
-	if (camera.position.x > camera.boundary)
-	{
-		camera.position.x = camera.boundary;
-	}
-	if (camera.position.x < -camera.boundary)
-	{
-		camera.position.x = -camera.boundary;
-	}
-	if (camera.position.z > camera.boundary)
-	{
-		camera.position.z = camera.boundary;
-	}
-	if (camera.position.z < -camera.boundary)
-	{
-		camera.position.z = -camera.boundary;
-	}
+	
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-		camera.updateRotation(0.3);
-		//camera2.tpsUpdateVec(frpc.pos);
+		if (frpc.b_isInVehicle == false)
+		{
+			camera.updateRotation(0.3);
+		}
+		else if (frpc.b_isInVehicle == true)
+		{
+			camera2.tpsUpdateVec(frpc.pos);
+		}
 		ShowCursor(FALSE);
 	}
 
@@ -385,13 +397,18 @@ void Sp2_Scene1::Update(double dt)
 
  /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
         b_isWorn = true;*/
-    frpc.updateVehicle(Application::IsKeyPressed('W'), Application::IsKeyPressed('S'), Application::IsKeyPressed('A'), Application::IsKeyPressed('D'), dt);
-		//RenderDefaultNPC(defaultnpc);
+	if (frpc.b_isInVehicle == true)
+	{
+		frpc.updateVehicle(Application::IsKeyPressed('W'), Application::IsKeyPressed('S'), Application::IsKeyPressed('A'), Application::IsKeyPressed('D'), dt);
+	}
 
+	//npc chat updates
 	whale.chat_update(camera.position);
 	npc2.chat_update(camera.position);
 	npc3.chat_update(camera.position);
-}
+	
+	frpc.enterVehicleUpdate();
+} 
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 {
@@ -527,7 +544,7 @@ void Sp2_Scene1::RenderSuit()
     }
 }
 
-void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,Vector3 scale)
+void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,bool hasInteractions,Vector3 scale)
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
@@ -535,25 +552,30 @@ void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,Vector3
 	modelStack.Scale(scale.x,scale.y,scale.z);
 	RenderMesh(mesh,enableLight);
 	modelStack.PopMatrix();
-}
 
-void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, float chatBoundary, bool enableLight, Vector3 scale)
-{
-	RenderGameObj(x, mesh, enableLight, scale);
-
-	if (x.vec_dialog.empty() == false)
+	if (hasInteractions == true)
 	{
-		if (collision(x.pos, camera.position, chatBoundary) && x.isPressed == true)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(1, 1, 1), 3, 1, 10);
-		}
-		if (collision(x.pos, camera.position, chatBoundary))
+		if (collision(x.pos, camera.position, (x.boundary + 15)))
 		{
 			modelStack.PushMatrix();
 			modelStack.Translate(2, 6, 0);
 			RenderTextOnScreen(meshList[GEO_TEXT], "Hold 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
 			modelStack.PopMatrix();
 		}
+	}
+}
+
+void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool hasInteractions, Vector3 scale)
+{
+	RenderGameObj(x, mesh, enableLight,hasInteractions ,scale);
+
+	if (x.vec_dialog.empty() == false)
+	{
+		if (collision(x.pos, camera.position, (x.boundary + 15)) && x.isPressed == true)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(1, 1, 1), 3, 1, 10);
+		}
+
 	}
 }
 
@@ -665,7 +687,7 @@ void Sp2_Scene1::Renderfps()
 {
 	RenderSkybox(camera);
 
-	RenderGameObj(frpc, meshList[GEO_FOURTH]);
+	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
 
 	/*<---NPC--->*/
 	RenderSuit();
@@ -676,7 +698,7 @@ void Sp2_Scene1::Renderfps()
 	RenderGameChar(npc3, meshList[GEO_NPC3], 70);
 	RenderMesh(meshList[GEO_AXES], false); 
 	/*<---Weapons--->*/
-    if (b_isWorn == false) // b_isInFRPC == false
+    if (b_isWorn == false) // b_isInVehicle == false
 	    RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
 
 	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
@@ -717,16 +739,24 @@ void Sp2_Scene1::Render()
 	viewStack.LoadIdentity();
 
 	//set View position to camera
-	//viewStack.LookAt(
-	//	camera2.position.x, camera2.position.y, camera2.position.z,
-	//	camera2.target.x, camera2.target.y, camera2.target.z,
-	//	camera2.up.x, camera2.up.y, camera2.up.z
-	//	);
-	viewStack.LookAt(
-		camera.position.x, camera.position.y, camera.position.z,
-		camera.target.x, camera.target.y, camera.target.z,
-		camera.up.x, camera.up.y, camera.up.z
+	if (frpc.b_isInVehicle == true)
+	{
+		viewStack.LookAt(
+		camera2.position.x, camera2.position.y, camera2.position.z,
+		camera2.target.x, camera2.target.y, camera2.target.z,
+		camera2.up.x, camera2.up.y, camera2.up.z
 		);
+	}
+	
+	else if (frpc.b_isInVehicle == false)
+	{
+		viewStack.LookAt(
+			camera.position.x, camera.position.y, camera.position.z,
+			camera.target.x, camera.target.y, camera.target.z,
+			camera.up.x, camera.up.y, camera.up.z
+			);
+	}
+
 	Renderfps();
 
 	if (b_enabletps == true)

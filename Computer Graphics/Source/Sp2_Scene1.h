@@ -121,10 +121,6 @@ public:
 
 	unsigned m_parameters[U_TOTAL];
 
-	float rotateAngle;
-	float translateX;
-	float scaleAll;
-
 	Camera3 camera;
 	CameraTPS camera2;
 
@@ -135,7 +131,6 @@ public:
 	bool b_enabletps;
 	bool b_tpsDebounce;
 	bool b_isWorn;
-    bool b_isInFRPC;
 	float tpsTimer;
 
     Gun laserRifle;
@@ -169,8 +164,8 @@ private:
 
 	void RenderSuit();
 
-	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true,Vector3 scale = Vector3(1,1,1));
-	void RenderGameChar(GameChar x, Mesh* mesh, float chatBoundary, bool enableLight = true, Vector3 scale = Vector3(1, 1, 1));
+	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true,bool hasInteraction = false,Vector3 scale = Vector3(1,1,1));
+	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
 
 	void Renderfps();
 	void Rendertps();

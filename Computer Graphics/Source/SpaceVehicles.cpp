@@ -5,10 +5,14 @@ size_t SpaceVehicles::SV_count = 0;
 SpaceVehicles::SpaceVehicles() : max_speed(25)
 {
 	SV_count++;
+	b_vehDebounce = false;
+	b_isInVehicle = false;
 }
 
-SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos), acceleration(25), speed(0), max_speed(100), rotateAngle(30)
+SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos), acceleration(50), speed(0), max_speed(250), rotateAngle(30)
 {
+	b_vehDebounce = false;
+	b_isInVehicle = false;
 }
 
 SpaceVehicles::~SpaceVehicles()
@@ -22,7 +26,7 @@ void SpaceVehicles::updateVehicle(bool isPressedW ,bool isPressedS, bool isPress
     {
         if (speed < max_speed)
         {
-            speed += acceleration;
+            speed += acceleration ;
         }
     }
 
@@ -30,18 +34,17 @@ void SpaceVehicles::updateVehicle(bool isPressedW ,bool isPressedS, bool isPress
     {
         if (speed > -max_speed)
         {
-            speed -= acceleration;
+            speed -= acceleration ;
         }
     }
     else if (isPressedW == false && isPressedS == false)
     {
         if (speed > 0)
         speed -= acceleration;
-        else if (speed < 0)
-        {
-            if (speed != 0)
-                ++speed;
-        }
+		if (speed < 0)
+		{
+			speed += acceleration;
+		}
     }
    
     if (isPressedA == true && isPressedD == false)
@@ -52,6 +55,24 @@ void SpaceVehicles::updateVehicle(bool isPressedW ,bool isPressedS, bool isPress
     {
         viewAngle -= rotateAngle * deltaTime;
     }
-        pos.x -= sin(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
-        pos.z -= cos(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+        pos.x += sin(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+        pos.z += cos(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+}
+
+void SpaceVehicles::enterVehicleUpdate()
+{
+	if (Application::IsKeyPressed('E') && b_vehDebounce == false && b_isInVehicle ==false)
+	{
+		b_isInVehicle = true;
+		b_vehDebounce = true;
+	}
+	else if (Application::IsKeyPressed('E') && b_vehDebounce == false && b_isInVehicle == true)
+	{
+		b_isInVehicle = false;
+		b_vehDebounce = true;
+	}
+	if (!Application::IsKeyPressed('E') && b_vehDebounce == true)
+	{
+		b_vehDebounce = false;
+	}
 }

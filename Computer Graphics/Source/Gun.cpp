@@ -11,8 +11,6 @@ Gun::Gun() : totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos), totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 {
 	this->pos = pos;
-	G_count++;
-	//allGameObj.pop_back();
 	fireRate = 1;
 	fireDebounceTimer = 1/fireRate;
 }
