@@ -2,16 +2,12 @@
 #include "Human.h"
 #include "Alien.h"
 #include "GL\glew.h"
-
 #include "shader.hpp"
 #include "LoadTGA.h"
 #include "Collision.h"
-
 #include "Application.h"
+
 extern GLFWwindow* m_window;
-
-
-
 
 Sp2_Scene1::Sp2_Scene1()
 {
@@ -294,101 +290,15 @@ void Sp2_Scene1::Update(double dt)
 	{
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
-	if (frpc.b_isInVehicle == false)
-	{
-
-		camera.view = (camera.target - camera.position).Normalized();
-		camera.right = camera.view.Cross(camera.defaultUp);
-		camera.right.y = 0;
-		camera.right.Normalize();
-		this->camera.up = camera.right.Cross(camera.view).Normalized();
-		Vector3 tempPos = camera.position;
-
-		if (Application::IsKeyPressed('W'))
-		{
-			//cam movement
-
-			Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-			tempPos += temp_view *(float)(camera.movementSpeed * dt);
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-		if (Application::IsKeyPressed('S'))
-		{
-			//cam movement
-			Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-			tempPos -= temp_view *(float)(camera.movementSpeed * dt);
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-
-		if (Application::IsKeyPressed('A'))
-		{
-			tempPos -= camera.right * (camera.movementSpeed) * dt;
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-
-		if (Application::IsKeyPressed('D'))
-		{
-			tempPos += camera.right * (camera.movementSpeed) * dt;
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-
-		if (Application::IsKeyPressed(VK_SPACE) && camera.b_jumping == false)
-		{
-			camera.b_jumpUP = true;
-			camera.b_jumping = true;
-		}
-
-		if (camera.b_jumpUP == true && camera.b_jumping == true)
-		{
-			camera.f_jumpSpeed -= camera.f_jumpAcceleration * dt;
-			camera.position += Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
-			if (camera.f_jumpSpeed <= 0.0f)
-			{
-				camera.b_jumpUP = false;
-			}
-		}
-
-		else if (camera.b_jumpUP == false && camera.b_jumping == true)
-		{
-			camera.f_jumpSpeed += camera.f_jumpAcceleration * dt;
-			camera.position -= Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
-			if (camera.f_jumpSpeed >= 50.0f)
-			{
-				camera.position.y = 0;
-				camera.b_jumpUP = true;
-				camera.b_jumping = false;
-			}
-		}
-
-		if (camera.position.x > camera.boundary)
-		{
-			camera.position.x = camera.boundary;
-		}
-		if (camera.position.x < -camera.boundary)
-		{
-			camera.position.x = -camera.boundary;
-		}
-		if (camera.position.z > camera.boundary)
-		{
-			camera.position.z = camera.boundary;
-		}
-		if (camera.position.z < -camera.boundary)
-		{
-			camera.position.z = -camera.boundary;
-		}
-	}
 	
+
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
 		if (frpc.b_isInVehicle == false)
 		{
-			camera.updateRotation(0.3);
+			player.movementUpdate(camera, dt);
 		}
-		else if (frpc.b_isInVehicle == true)
+		 if (frpc.b_isInVehicle == true)
 		{
 			camera2.tpsUpdateVec(frpc.pos);
 		}
@@ -422,9 +332,9 @@ void Sp2_Scene1::Update(double dt)
 
 	//gun update
 
-    laserRifle.view = camera.view;
+	laserRifle.view = camera.view;
 	laserRifle.viewAngleX = camera.cameraRotationX;
-    laserRifle.viewAngle = camera.cameraRotationY;
+	laserRifle.viewAngle = camera.cameraRotationY;
 	laserRifle.pos = Vector3(camera.position.x, camera.position.y - 5, camera.position.z);
 
 	if (Application::IsKeyPressed(VK_LBUTTON))
@@ -432,7 +342,6 @@ void Sp2_Scene1::Update(double dt)
 		laserRifle.fire(dt);
 	}
 	laserRifle.updateBullet(dt);
-
 
 	Timer++;
 	if (Timer % 10 == 0)
@@ -620,7 +529,6 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool 
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(1, 1, 1), 3, 1, 10);
 		}
-
 	}
 }
 

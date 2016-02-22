@@ -20,7 +20,7 @@ Gun::~Gun()
 	G_count--;
 }
 
-void Gun::fire( float dt)
+void Gun::fire( double dt)
 {
 	if (fireDebounceTimer == 0)
 	{
@@ -34,7 +34,7 @@ vector<Bullet>::iterator Gun::despawnBullet(vector<Bullet>::iterator it)
 	return bulletVec.erase(it);
 }
 
-void Gun::updateBullet(float dt)
+void Gun::updateBullet(double dt)
 {
 	fireDebounceTimer -= dt;
 	if (fireDebounceTimer < 0)
@@ -65,3 +65,5 @@ float Gun::findAngle(Vector3 view)
         viewAngle = Math::RadianToDegree(atan(view.x/view.z)) - 180 -90;
     return viewAngle;
 }
+
+

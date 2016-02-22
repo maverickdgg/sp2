@@ -21,6 +21,7 @@
 
 #include "Human.h"
 #include "Alien.h"
+#include "Player.h"
 
 struct Object
 {
@@ -165,6 +166,9 @@ public:
 	Alien BB8H;
 	Alien BB8B;
 	Alien Pingu;
+
+	//player
+	Player player;
 public:
 	Object objects[Num_Obj];
 	int Timer;
