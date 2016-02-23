@@ -1,18 +1,17 @@
 #include "Sp2_Scene1.h"
 #include "Human.h"
 #include "Alien.h"
+#include "BB-8.h"
+#include "Pingu.h"
 #include "GL\glew.h"
 #include "Buildings.h"
 
 #include "shader.hpp"
 #include "LoadTGA.h"
 #include "Collision.h"
-
 #include "Application.h"
+
 extern GLFWwindow* m_window;
-
-
-
 
 Sp2_Scene1::Sp2_Scene1()
 {
@@ -223,6 +222,7 @@ void Sp2_Scene1::Init()
 	tpsTimer = 0;
 
     laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y ,camera.position.z));
+	player.assignGun(&laserRifle);
 
 	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-200, 0, 200));
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
@@ -268,100 +268,15 @@ void Sp2_Scene1::Update(double dt)
 	{
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
-	if (frpc.b_isInVehicle == false)
-	{
-		camera.view = (camera.target - camera.position).Normalized();
-		camera.right = camera.view.Cross(camera.defaultUp);
-		camera.right.y = 0;
-		camera.right.Normalize();
-		this->camera.up = camera.right.Cross(camera.view).Normalized();
-		Vector3 tempPos = camera.position;
 
-		if (Application::IsKeyPressed('W'))
-		{
-			//cam movement
-
-			Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-			tempPos += temp_view *(float)(camera.movementSpeed * dt);
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-		if (Application::IsKeyPressed('S'))
-		{
-			//cam movement
-			Vector3 temp_view = (Vector3(camera.target.x, 0, camera.target.z) - Vector3(camera.position.x, 0, camera.position.z)).Normalized();
-			tempPos -= temp_view *(float)(camera.movementSpeed * dt);
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-
-		if (Application::IsKeyPressed('A'))
-		{
-			tempPos -= camera.right * (camera.movementSpeed) * dt;
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-
-		if (Application::IsKeyPressed('D'))
-		{
-			tempPos += camera.right * (camera.movementSpeed) * dt;
-			//if (collision(tempPos, frpc.allGameObj) == false)
-				camera.position = tempPos;
-		}
-
-		if (Application::IsKeyPressed(VK_SPACE) && camera.b_jumping == false)
-		{
-			camera.b_jumpUP = true;
-			camera.b_jumping = true;
-		}
-
-		if (camera.b_jumpUP == true && camera.b_jumping == true)
-		{
-			camera.f_jumpSpeed -= camera.f_jumpAcceleration * dt;
-			camera.position += Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
-			if (camera.f_jumpSpeed <= 0.0f)
-			{
-				camera.b_jumpUP = false;
-			}
-		}
-
-		else if (camera.b_jumpUP == false && camera.b_jumping == true)
-		{
-			camera.f_jumpSpeed += camera.f_jumpAcceleration * dt;
-			camera.position -= Vector3(0, camera.f_jumpSpeed + 13, 0) * (float)dt;
-			if (camera.f_jumpSpeed >= 50.0f)
-			{
-				camera.position.y = 0;
-				camera.b_jumpUP = true;
-				camera.b_jumping = false;
-			}
-		}
-
-		if (camera.position.x > camera.boundary)
-		{
-			camera.position.x = camera.boundary;
-		}
-		if (camera.position.x < -camera.boundary)
-		{
-			camera.position.x = -camera.boundary;
-		}
-		if (camera.position.z > camera.boundary)
-		{
-			camera.position.z = camera.boundary;
-		}
-		if (camera.position.z < -camera.boundary)
-		{
-			camera.position.z = -camera.boundary;
-		}
-	}
-	
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
 		if (frpc.b_isInVehicle == false)
 		{
-			camera.updateRotation(0.3);
+			player.movementUpdate(camera, dt);
+			player.gunUpdate(camera,dt);
 		}
-		else if (frpc.b_isInVehicle == true)
+		 if (frpc.b_isInVehicle == true)
 		{
 			camera2.tpsUpdateVec(frpc.pos);
 		}
@@ -395,16 +310,6 @@ void Sp2_Scene1::Update(double dt)
 
 	//gun update
 
-    laserRifle.view = camera.view;
-	laserRifle.viewAngleX = camera.cameraRotationX;
-    laserRifle.viewAngle = camera.cameraRotationY;
-	laserRifle.pos = Vector3(camera.position.x, camera.position.y - 5, camera.position.z);
-
-	if (Application::IsKeyPressed(VK_LBUTTON))
-	{
-		laserRifle.fire(dt);
-	}
-	laserRifle.updateBullet(dt);
 
 
 	Timer++;
@@ -412,6 +317,9 @@ void Sp2_Scene1::Update(double dt)
 	{
 	
 	}
+
+ /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
+        b_isWorn = true;*/
 	if (frpc.b_isInVehicle == true)
 	{
 		frpc.updateVehicle(Application::IsKeyPressed('W'), Application::IsKeyPressed('S'), Application::IsKeyPressed('A'), Application::IsKeyPressed('D'), dt);
@@ -421,7 +329,7 @@ void Sp2_Scene1::Update(double dt)
 	whale.chat_update(camera.position);
 	npc2.chat_update(camera.position);
 	
-	frpc.enterVehicleUpdate();
+	frpc.enterVehicleUpdate(player);
 } 
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
@@ -563,7 +471,6 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool 
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(1, 1, 1), 3, 1, 10);
 		}
-
 	}
 }
 
@@ -600,20 +507,22 @@ void Sp2_Scene1::RenderPingu()
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_PINGUBODY], true);	// True false rfers to on/off light respectively
 
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
+	modelStack.Translate(50, -30, -125);
 	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
+	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_PINGULH], true);
 
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
+	modelStack.Translate(50, -30, -125);
 	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
+	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_PINGURH], true);
 
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 
@@ -625,13 +534,14 @@ void Sp2_Scene1::RenderBB8()
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8H], true);	// True false rfers to on/off light respectively
 
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	//modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
+	modelStack.Translate(-50, -30, 125);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8B], true);
 
-	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 
