@@ -84,6 +84,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Alien.cpp" />
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\BB-8.cpp" />
     <ClCompile Include="Source\Buildings.cpp" />
     <ClCompile Include="Source\Bullet.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
@@ -101,6 +102,7 @@
     <ClCompile Include="Source\Material.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
+    <ClCompile Include="Source\Pingu.cpp" />
     <ClCompile Include="Source\PinkKnight.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Quest.cpp" />
@@ -112,6 +114,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Alien.h" />
     <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\BB-8.h" />
     <ClInclude Include="Source\Buildings.h" />
     <ClInclude Include="Source\Bullet.h" />
     <ClInclude Include="Source\Camera.h" />
@@ -128,6 +131,7 @@
     <ClInclude Include="Source\Material.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
+    <ClInclude Include="Source\Pingu.h" />
     <ClInclude Include="Source\PinkKnight.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Quest.h" />

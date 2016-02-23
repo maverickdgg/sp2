@@ -22,6 +22,8 @@
 #include "Human.h"
 #include "Alien.h"
 #include "Player.h"
+#include "BB-8.h"
+#include "Pingu.h"
 
 struct Object
 {
@@ -152,9 +154,8 @@ public:
 	Human PinkKnightLeg1;
 	Human PinkKnightLeg2;
 	Human PinkKnightBody;
-	Alien BB8H;
-	Alien BB8B;
-	Alien Pingu;
+	BB8 BB8_;
+	Pingu Pingu_;
 
 	//player
 	Player player;

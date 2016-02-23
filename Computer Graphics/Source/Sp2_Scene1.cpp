@@ -1,6 +1,8 @@
 #include "Sp2_Scene1.h"
 #include "Human.h"
 #include "Alien.h"
+#include "BB-8.h"
+#include "Pingu.h"
 #include "GL\glew.h"
 #include "Buildings.h"
 
@@ -505,20 +507,22 @@ void Sp2_Scene1::RenderPingu()
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_PINGUBODY], true);	// True false rfers to on/off light respectively
 
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
+	modelStack.Translate(50, -30, -125);
 	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
+	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_PINGULH], true);
 
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
+	modelStack.Translate(50, -30, -125);
 	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
+	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_PINGURH], true);
 
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 
@@ -530,13 +534,14 @@ void Sp2_Scene1::RenderBB8()
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8H], true);	// True false rfers to on/off light respectively
 
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	//modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(1, 1, 1);
+	modelStack.Translate(-50, -30, 125);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8B], true);
 
-	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 
