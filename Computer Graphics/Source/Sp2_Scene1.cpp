@@ -196,22 +196,14 @@ void Sp2_Scene1::Init()
 	meshList[GEO_NPC3] = MeshBuilder::GenerateOBJ("npc3", "OBJ//Stormtrooper.obj");
 	meshList[GEO_NPC3]->textureID = LoadTGA("Image//Stormtrooper.tga");
 
-	//meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
+	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
 	
-	//meshList[GEO_SPONGEBOBHAND1] = MeshBuilder::GenerateOBJ("spongebobHand1", "OBJ//spongebobHand1.obj");
-	//meshList[GEO_SPONGEBOBHAND1]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBHAND2] = MeshBuilder::GenerateOBJ("spongebobHand2", "OBJ//spongebobHand2.obj");
-	//meshList[GEO_SPONGEBOBHAND2]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBLEG1] = MeshBuilder::GenerateOBJ("spongebobLeg1", "OBJ//spongebobLeg1.obj");
-	//meshList[GEO_SPONGEBOBLEG1]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBLEG2] = MeshBuilder::GenerateOBJ("spongebobLeg2", "OBJ//spongebobLeg2.obj");
-	//meshList[GEO_SPONGEBOBLEG2]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBBODY] = MeshBuilder::GenerateOBJ("spongebobBody", "OBJ//spongebobBody.obj");
-	//meshList[GEO_SPONGEBOBBODY]->textureID = LoadTGA("Image//spongebob.tga");
+	meshList[GEO_SPONGEBOBHAND1] = MeshBuilder::GenerateOBJ("spongebobHand1", "OBJ//spongebobHand1.obj");
+	meshList[GEO_SPONGEBOBHAND2] = MeshBuilder::GenerateOBJ("spongebobhand2", "OBJ//spongebobhand2.obj");
+	meshList[GEO_SPONGEBOBLEG1] = MeshBuilder::GenerateOBJ("spongebobleg1", "OBJ//spongebobleg1.obj");
+	meshList[GEO_SPONGEBOBLEG2] = MeshBuilder::GenerateOBJ("spongebobleg2", "OBJ//spongebobleg2.obj");
+	meshList[GEO_SPONGEBOBBODY] = MeshBuilder::GenerateOBJ("spongebobbody", "OBJ//spongebobbody.obj");
+	meshList[GEO_SPONGEBOBBODY]->textureID = LoadTGA("Image//spongebob.tga");
 
 	meshList[GEO_TRANSFORMER] = MeshBuilder::GenerateOBJ("transformer", "OBJ//transformer.obj");
 	meshList[GEO_TRANSFORMER]->textureID = LoadTGA("Image//transformer.tga");
@@ -227,7 +219,15 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_PINGU] = MeshBuilder::GenerateOBJ("pingu", "OBJ//Pingu.obj");
 	meshList[GEO_PINGU]->textureID = LoadTGA("Image//Pingu.tga");
-	
+
+	meshList[GEO_GREENKNIGHT] = MeshBuilder::GenerateOBJ("greenKnight", "OBJ//GreenKnight.obj");
+	meshList[GEO_GREENKNIGHT]->textureID = LoadTGA("Image//GreenKnight.tga");
+
+	meshList[GEO_PINKKNIGHTLEG1] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinkKnightLeg1.obj");
+	meshList[GEO_PINKKNIGHTLEG2] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinkKnightLeg2.obj");
+	meshList[GEO_PINKKNIGHTBODY] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinkKnightBody.obj");
+	meshList[GEO_PINKKNIGHTBODY]->textureID = LoadTGA("Image//PinkKnight.tga");
+
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
@@ -238,7 +238,7 @@ void Sp2_Scene1::Init()
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
 
 	frpc = SpaceVehicles("fourth", 0, 0, Vector3(55, 0, 60));
-	//station = Human("spaceshuttle", 10, 0, Vector3(100, -30, 0));
+	station = Human("spaceshuttle", 10, 0, Vector3(100, -30, 0));
 	suit = Human("spacesuit", 30, 30, Vector3(150, 0, 130));
 
 	/*<---Set the position of the NPC--->*/
@@ -258,17 +258,21 @@ void Sp2_Scene1::Init()
 
 	Timer = 0;
 
-	//spongebobLeg1 = Human("spongebobLeg1", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobLeg2 = Human("spongebobLeg2", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobHand1 = Human("spongebobHand1", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobHand2 = Human("spongebobHand2", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobBody = Human("spongebobBody", 10, 0, Vector3(-60, -37.1 , 125)); 
-
+	spongebobLeg1 = Human("spongebobLeg1", 10, 0, Vector3(-20, -30 , 125));
+	spongebobLeg2 = Human("spongebobLeg2", 10, 0, Vector3(-20, -30 , 125));
+	spongebobHand1 = Human("spongebobHand1", 10, 0, Vector3(-20, -30 , 125));
+	spongebobHand2 = Human("spongebobHand2", 10, 0, Vector3(-20, -30 , 125));
+	spongebobBody = Human("spongebobBody", 10, 0, Vector3(-20, -30 , 125)); 
+	GreenKnight = Human("greenknight", 10, 0, Vector3(-90, -30, 125));
+	PinkKnightLeg1 = Human("PinkKnightLeg1", 10, 0, Vector3(-160, -30, 125));
+	PinkKnightLeg2 = Human("PinkKnightLeg2", 10, 0, Vector3(-160, -30, 125));
+	PinkKnightBody = Human("PinkKnightBody", 10, 0, Vector3(-160, -30, 125));
 	transformer = Alien("transformer", 10, 0, Vector3(-500, -30, -300));
 	KC = Alien("krustycrab", 10, 0, Vector3(-400, -30, 200));
 	BB8H = Alien("bb8head", 10, 0, Vector3(-50, -30, 125));
 	BB8B = Alien("bb8body", 10, 0, Vector3(-50, -30, 125));
 	Pingu = Alien("pingu", 10, 0, Vector3(50, -30, -125));
+
 }
 
 
@@ -741,14 +745,17 @@ void Sp2_Scene1::Renderfps()
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], 70);
 	RenderGameChar(npc2, meshList[GEO_NPC2], 70);
 	RenderGameChar(npc3, meshList[GEO_NPC3], 70);
-	//RenderGameChar(station, meshList[GEO_STATION], 70);
-	//RenderGameChar(spongebobLeg1, meshList[GEO_SPONGEBOBLEG1],70, false ,Vector3(10,10,10));
-	//RenderGameChar(spongebobLeg2, meshList[GEO_SPONGEBOBLEG2], 70, false, Vector3(10, 10, 10));
-	//RenderGameChar(spongebobHand1, meshList[GEO_SPONGEBOBHAND1], 70, false, Vector3(10, 10, 10));
-	//RenderGameChar(spongebobHand2, meshList[GEO_SPONGEBOBHAND2], 70, false, Vector3(10, 10, 10));
-	//RenderGameChar(spongebobBody, meshList[GEO_SPONGEBOBBODY], 70, false, Vector3(10, 10, 10));
-
-	RenderGameChar(transformer, meshList[GEO_TRANSFORMER], 70, true, Vector3(10, 10, 10));
+	RenderGameChar(station, meshList[GEO_STATION], 70,false,Vector3(1,1,1));
+	RenderGameChar(spongebobLeg1, meshList[GEO_SPONGEBOBLEG1],70, false ,Vector3(10,10,10));
+	RenderGameChar(spongebobLeg2, meshList[GEO_SPONGEBOBLEG2], 70, false, Vector3(10, 10, 10));
+	RenderGameChar(spongebobHand1, meshList[GEO_SPONGEBOBHAND1], 70, false, Vector3(10, 10, 10));
+	RenderGameChar(spongebobHand2, meshList[GEO_SPONGEBOBHAND2], 70, false, Vector3(10, 10, 10));
+	RenderGameChar(spongebobBody, meshList[GEO_SPONGEBOBBODY], 70, false, Vector3(10, 10, 10));
+	RenderGameChar(GreenKnight, meshList[GEO_GREENKNIGHT], 70, false, Vector3(0.25, 0.25, 0.25));
+	RenderGameChar(PinkKnightLeg1, meshList[GEO_PINKKNIGHTLEG1], 70, false, Vector3(0.4, 0.4, 0.4));
+	RenderGameChar(PinkKnightLeg2, meshList[GEO_PINKKNIGHTLEG2], 70, false, Vector3(0.4, 0.4, 0.4));
+	RenderGameChar(PinkKnightBody, meshList[GEO_PINKKNIGHTBODY], 70, false, Vector3(0.4, 0.4, 0.4));
+	RenderGameChar(transformer, meshList[GEO_TRANSFORMER], 70, true, Vector3(5, 5, 5));
 	RenderGameChar(KC, meshList[GEO_KC], 70, true, Vector3(50, 50, 50));
 	RenderGameChar(BB8H, meshList[GEO_BB8H], 70, true, Vector3(10, 10, 10));
 	RenderGameChar(BB8B, meshList[GEO_BB8B], 70, true, Vector3(10, 10, 10));

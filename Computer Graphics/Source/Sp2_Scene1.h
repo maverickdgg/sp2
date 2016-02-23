@@ -83,11 +83,11 @@ public:
 		GEO_HELM,
 		/*<---NPCs--->*/
 		GEO_NPC2,// Mike Wazowski
-		//GEO_SPONGEBOBLEG1,
-		//GEO_SPONGEBOBLEG2,
-		//GEO_SPONGEBOBHAND1,
-		//GEO_SPONGEBOBHAND2,
-		//GEO_SPONGEBOBBODY,
+		GEO_SPONGEBOBLEG1,
+		GEO_SPONGEBOBLEG2,
+		GEO_SPONGEBOBHAND1,
+		GEO_SPONGEBOBHAND2,
+		GEO_SPONGEBOBBODY,
 		GEO_MARTIN,
 		/*<---NPC--->*/
 		GEO_DEFAULTNPC,	// Default (Pure Interaction Codes, no NPC)	
@@ -98,6 +98,10 @@ public:
 		GEO_BB8H,	// BB-8 Head
 		GEO_BB8B,	// BB-8 Body
 		GEO_PINGU,
+		GEO_GREENKNIGHT,
+		GEO_PINKKNIGHTLEG1,
+		GEO_PINKKNIGHTLEG2,
+		GEO_PINKKNIGHTBODY,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -159,7 +163,10 @@ public:
 	Human spongebobHand1;
 	Human spongebobHand2;
 	Human spongebobBody;
-	Human martin;
+	Human GreenKnight;
+	Human PinkKnightLeg1;
+	Human PinkKnightLeg2;
+	Human PinkKnightBody;
 	Alien transformer;
 	Alien KC;
 	Alien BB8H;
