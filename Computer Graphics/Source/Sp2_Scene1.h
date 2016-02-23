@@ -29,11 +29,6 @@ struct Object
 	int State;
 	std::string Message;
 
-	enum States
-	{
-		patrol,
-		target,
-	};
 };
 
 enum Objects
@@ -79,26 +74,26 @@ public:
 		/*<---Weapons--->*/
 		GEO_SNIPERRIFLE,
 		GEO_DART,
+		GEO_CROSSHAIR,
 		/*<---Humans--->*/
-		GEO_SUIT,
 		GEO_HELM,
 		/*<---NPCs--->*/
 		GEO_NPC2,// Mike Wazowski
-		//GEO_SPONGEBOBLEG1,
-		//GEO_SPONGEBOBLEG2,
-		//GEO_SPONGEBOBHAND1,
-		//GEO_SPONGEBOBHAND2,
-		//GEO_SPONGEBOBBODY,
-		GEO_MARTIN,
 		/*<---NPC--->*/
 		GEO_DEFAULTNPC,	// Default (Pure Interaction Codes, no NPC)	
 		GEO_NPC3,	// Storm Trooper
         GEO_FLIGHTUI,	// Astronaut Suit
-		GEO_TRANSFORMER,	// Transformer
-		GEO_KC,	// Krusty Crab
 		GEO_BB8H,	// BB-8 Head
 		GEO_BB8B,	// BB-8 Body
 		GEO_PINGU,
+		GEO_GREENKNIGHT,
+		GEO_PINKKNIGHTLEG1,
+		GEO_PINKKNIGHTLEG2,
+		GEO_PINKKNIGHTBODY,
+
+		GEO_PINGUBODY,
+		GEO_PINGULH,
+		GEO_PINGURH,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -149,20 +144,14 @@ public:
     Gun laserRifle;
 	SpaceVehicles np;
 	SpaceVehicles frpc;
-	Human station;
-	Human suit;
+	Buildings station;
 	Human defaultnpc;
 	Alien npc2;
 	Human whale;
-	Human npc3;
-	Human spongebobLeg1;
-	Human spongebobLeg2;
-	Human spongebobHand1;
-	Human spongebobHand2;
-	Human spongebobBody;
-	Human martin;
-	Alien transformer;
-	Alien KC;
+	Human GreenKnight;
+	Human PinkKnightLeg1;
+	Human PinkKnightLeg2;
+	Human PinkKnightBody;
 	Alien BB8H;
 	Alien BB8B;
 	Alien Pingu;
@@ -189,7 +178,9 @@ private:
 	void RenderSkybox(Camera3 camera);
 	void RenderSpaceVehicles(Camera3 camera);
 
-	void RenderSuit();
+	void RenderPinkKnight();
+	void RenderPingu();
+	void RenderBB8();
 
 	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1,1,1));
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));

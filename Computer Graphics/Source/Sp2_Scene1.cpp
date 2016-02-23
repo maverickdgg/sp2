@@ -2,6 +2,8 @@
 #include "Human.h"
 #include "Alien.h"
 #include "GL\glew.h"
+#include "Buildings.h"
+
 #include "shader.hpp"
 #include "LoadTGA.h"
 #include "Collision.h"
@@ -171,59 +173,48 @@ void Sp2_Scene1::Init()
 	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
 	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
 
+	/*<--- GUN --->*/
     meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
     meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
 
     meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
     meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
-    //meshList[GEO_HELM] = MeshBuilder::GenerateOBJ("helmet", "OBJ//MKV.obj");
-	/*<---NPC--->*/
-	meshList[GEO_SUIT] = MeshBuilder::GenerateOBJ("npc1", "OBJ//astronautsuit.obj");
-    meshList[GEO_SUIT]->textureID = LoadTGA("Image//0001_npcmastronautworker_c.tg4d.tga");
-	//meshList[GEO_SUIT]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
 
+	//meshList[GEO_CROSSHAIR] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
+	//meshList[GEO_CROSSHAIR]->textureID = LoadTGA("Image//CrossHair.tga");
+
+
+	/*<---NPC--->*/
 	meshList[GEO_DEFAULTNPC] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
 	meshList[GEO_DEFAULTNPC]->textureID = LoadTGA("Image//mike.tga");
 
 	meshList[GEO_NPC2] = MeshBuilder::GenerateOBJ("npc2", "OBJ//mike.obj");
 	meshList[GEO_NPC2]->textureID = LoadTGA("Image//mike.tga");
 
-	meshList[GEO_NPC3] = MeshBuilder::GenerateOBJ("npc3", "OBJ//Stormtrooper.obj");
-	meshList[GEO_NPC3]->textureID = LoadTGA("Image//Stormtrooper.tga");
-
-	//meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
+	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
 	
-	//meshList[GEO_SPONGEBOBHAND1] = MeshBuilder::GenerateOBJ("spongebobHand1", "OBJ//spongebobHand1.obj");
-	//meshList[GEO_SPONGEBOBHAND1]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBHAND2] = MeshBuilder::GenerateOBJ("spongebobHand2", "OBJ//spongebobHand2.obj");
-	//meshList[GEO_SPONGEBOBHAND2]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBLEG1] = MeshBuilder::GenerateOBJ("spongebobLeg1", "OBJ//spongebobLeg1.obj");
-	//meshList[GEO_SPONGEBOBLEG1]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBLEG2] = MeshBuilder::GenerateOBJ("spongebobLeg2", "OBJ//spongebobLeg2.obj");
-	//meshList[GEO_SPONGEBOBLEG2]->textureID = LoadTGA("Image//spongebob.tga");
-
-	//meshList[GEO_SPONGEBOBBODY] = MeshBuilder::GenerateOBJ("spongebobBody", "OBJ//spongebobBody.obj");
-	//meshList[GEO_SPONGEBOBBODY]->textureID = LoadTGA("Image//spongebob.tga");
-
-	meshList[GEO_TRANSFORMER] = MeshBuilder::GenerateOBJ("transformer", "OBJ//transformer.obj");
-	meshList[GEO_TRANSFORMER]->textureID = LoadTGA("Image//transformer.tga");
-
-	meshList[GEO_KC] = MeshBuilder::GenerateOBJ("krustycrab", "OBJ//KC.obj");
-	meshList[GEO_KC]->textureID = LoadTGA("Image//KC.tga");
-
 	meshList[GEO_BB8H] = MeshBuilder::GenerateOBJ("bb8head", "OBJ//BB8H.obj");
 	meshList[GEO_BB8H]->textureID = LoadTGA("Image//BB8H.tga");
 
 	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB8B.obj");
 	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB8B.tga");
 
-	meshList[GEO_PINGU] = MeshBuilder::GenerateOBJ("pingu", "OBJ//Pingu.obj");
-	meshList[GEO_PINGU]->textureID = LoadTGA("Image//Pingu.tga");
-	
+	meshList[GEO_GREENKNIGHT] = MeshBuilder::GenerateOBJ("greenKnight", "OBJ//GreenKnight.obj");
+	meshList[GEO_GREENKNIGHT]->textureID = LoadTGA("Image//GreenKnight.tga");
+
+	meshList[GEO_PINKKNIGHTLEG1] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinkKnightLeg1.obj");
+	meshList[GEO_PINKKNIGHTLEG2] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinkKnightLeg2.obj");
+	meshList[GEO_PINKKNIGHTBODY] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinkKnightBody.obj");
+	meshList[GEO_PINKKNIGHTBODY]->textureID = LoadTGA("Image//PinkKnight.tga");
+
+	meshList[GEO_PINGUBODY] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinguBody.obj");
+	meshList[GEO_PINGUBODY]->textureID = LoadTGA("Image//Pingu.tga");
+	meshList[GEO_PINGULH] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinguLH.obj");
+	meshList[GEO_PINGULH]->textureID = LoadTGA("Image//Pingu.tga");
+	meshList[GEO_PINGURH] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinguRH.obj");
+	meshList[GEO_PINGURH]->textureID = LoadTGA("Image//Pingu.tga");
+
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
@@ -235,37 +226,22 @@ void Sp2_Scene1::Init()
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
 
 	frpc = SpaceVehicles("fourth", 0, 0, Vector3(55, 0, 60));
-	//station = Human("spaceshuttle", 10, 0, Vector3(100, -30, 0));
-	suit = Human("spacesuit", 30, 30, Vector3(150, 0, 130));
+	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 300));
 
 	/*<---Set the position of the NPC--->*/
 	objects[NPC].Message = "Press 'E' to wear HEV suit";
-	/*<---Miscellaneous--->*/
-	//inData.open("Image//Robotdialogue.txt");
 	Timer = 0;
-	//isPressed = false;
     b_isWorn = false;
 
-	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));	// Default NPC is here only for the interaction codes and not the butler NPC. Do not delete the default npc function.
-	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));	// Mike Wazowski
+	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));
+	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));
 	npc2.ReadFromTxt("Image//mikechat.txt");
 
-	npc3 = Human("npc3", 0, 30, Vector3(-500, 0, -125));	// Storm Trooper
-	npc3.ReadFromTxt("Image//Stormtrooper.txt");
+
 
 	Timer = 0;
 
-	//spongebobLeg1 = Human("spongebobLeg1", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobLeg2 = Human("spongebobLeg2", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobHand1 = Human("spongebobHand1", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobHand2 = Human("spongebobHand2", 10, 0, Vector3(-60, -37.1 , 125));
-	//spongebobBody = Human("spongebobBody", 10, 0, Vector3(-60, -37.1 , 125)); 
-
-	transformer = Alien("transformer", 10, 0, Vector3(-500, -30, -300));
-	KC = Alien("krustycrab", 10, 0, Vector3(-400, -30, 200));
-	BB8H = Alien("bb8head", 10, 0, Vector3(-50, -30, 125));
-	BB8B = Alien("bb8body", 10, 0, Vector3(-50, -30, 125));
-	Pingu = Alien("pingu", 10, 0, Vector3(50, -30, -125));
+	GreenKnight = Human("greenknight", 10, 0, Vector3(-90, -30, 125));
 }
 
 
@@ -274,7 +250,6 @@ void Sp2_Scene1::Update(double dt)
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);
 
-	
 	if (Application::IsKeyPressed('1'))
 	{
 		glEnable(GL_CULL_FACE);
@@ -291,7 +266,6 @@ void Sp2_Scene1::Update(double dt)
 	{
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
-	
 
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
@@ -339,7 +313,7 @@ void Sp2_Scene1::Update(double dt)
 	Timer++;
 	if (Timer % 10 == 0)
 	{
-		RenderSuit();
+	
 	}
 
  /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
@@ -352,7 +326,6 @@ void Sp2_Scene1::Update(double dt)
 	//npc chat updates
 	whale.chat_update(camera.position);
 	npc2.chat_update(camera.position);
-	npc3.chat_update(camera.position);
 	
 	frpc.enterVehicleUpdate(player);
 } 
@@ -460,36 +433,10 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
+
+	
 }
 
-void Sp2_Scene1::RenderSuit()
-{
-    modelStack.PushMatrix();
-    modelStack.Translate(suit.pos.x, suit.pos.y - 30, suit.pos.z);
-    modelStack.Rotate(180, 0, 1, 0);
-    modelStack.Scale(0.5, 0.5, 0.5);
-    RenderMesh(meshList[GEO_SUIT], true);
-    // Text for NPC Interaction
-    modelStack.PopMatrix();
-    if (collision(suit.pos, camera.position, suit.boundary))
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(2, 6, 0);
-        //modelStack.Rotate(0, 1, 0, 0);
-        //modelStack.Scale(20, 20, 20);
-        RenderTextOnScreen(meshList[GEO_TEXT], objects[NPC].Message, Color(1, 1, 0), 3, 1, 8);
-        modelStack.PopMatrix();
-    }
-
-    if (b_isWorn == true)
-    {
-        //modelStack.PushMatrix();
-        //modelStack.Scale(10, 10, 10);
-        //RenderMesh(meshList[GEO_RIGHTARM], true);
-        //modelStack.PopMatrix();
-        RenderMeshOnScreen(meshList[GEO_HELM], Vector3(75, -15, -10), Vector3(20, 20, 20), Vector3(0, 0, 0));
-    }
-}
 
 void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,bool hasInteractions,Vector3 scale)
 {
@@ -524,6 +471,75 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool 
 		}
 	}
 }
+
+void Sp2_Scene1::RenderPinkKnight()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(-160, -35.5, 125);
+	modelStack.Rotate(180,0,1,0);
+	modelStack.Scale(0.35,0.35,0.35);
+	RenderMesh(meshList[GEO_PINKKNIGHTBODY], true);	// True false rfers to on/off light respectively
+	
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	/*modelStack.Rotate(0,1,0,0);*/
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_PINKKNIGHTLEG1], true);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	/*modelStack.Rotate(0,1,0,0);*/
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_PINKKNIGHTLEG2], true);
+
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderPingu()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(50, -30, -125);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_PINGUBODY], true);	// True false rfers to on/off light respectively
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_PINGULH], true);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_PINGURH], true);
+
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderBB8()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(-50, -30, 125);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_BB8H], true);	// True false rfers to on/off light respectively
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_BB8B], true);
+
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -636,28 +652,20 @@ void Sp2_Scene1::Renderfps()
 	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
 
 	/*<---NPC--->*/
-	RenderSuit();
+
+	RenderPinkKnight();
+	RenderPingu();
+	RenderBB8();
 
 	RenderGameChar(defaultnpc, meshList[GEO_DEFAULTNPC],70);
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], 70);
 	RenderGameChar(npc2, meshList[GEO_NPC2], 70);
-	RenderGameChar(npc3, meshList[GEO_NPC3], 70);
-	//RenderGameChar(station, meshList[GEO_STATION], 70);
-	//RenderGameChar(spongebobLeg1, meshList[GEO_SPONGEBOBLEG1],70, false ,Vector3(10,10,10));
-	//RenderGameChar(spongebobLeg2, meshList[GEO_SPONGEBOBLEG2], 70, false, Vector3(10, 10, 10));
-	//RenderGameChar(spongebobHand1, meshList[GEO_SPONGEBOBHAND1], 70, false, Vector3(10, 10, 10));
-	//RenderGameChar(spongebobHand2, meshList[GEO_SPONGEBOBHAND2], 70, false, Vector3(10, 10, 10));
-	//RenderGameChar(spongebobBody, meshList[GEO_SPONGEBOBBODY], 70, false, Vector3(10, 10, 10));
-
-	RenderGameChar(transformer, meshList[GEO_TRANSFORMER], 70, true, Vector3(10, 10, 10));
-	RenderGameChar(KC, meshList[GEO_KC], 70, true, Vector3(50, 50, 50));
-	RenderGameChar(BB8H, meshList[GEO_BB8H], 70, true, Vector3(10, 10, 10));
-	RenderGameChar(BB8B, meshList[GEO_BB8B], 70, true, Vector3(10, 10, 10));
-	RenderGameChar(Pingu, meshList[GEO_PINGU], 70, true, Vector3(10, 10, 10));
+	RenderGameChar(station, meshList[GEO_STATION], 70,false,Vector3(3.5 ,7,3.5));
+	RenderGameChar(GreenKnight, meshList[GEO_GREENKNIGHT], 70, false, Vector3(0.25, 0.25, 0.25));
 
 	RenderMesh(meshList[GEO_AXES], false); 
 	/*<---Weapons--->*/
-    if (b_isWorn == false) // b_isInVehicle == false
+    if (b_isWorn == false)
 	    RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
 
 	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
@@ -674,11 +682,7 @@ void Sp2_Scene1::Renderfps()
 void Sp2_Scene1::Rendertps()
 {
 	RenderSkybox(camera);
-	
-
 	RenderMesh(meshList[GEO_AXES], false);
-
-
 }
 
 void Sp2_Scene1::Render()
