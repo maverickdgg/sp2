@@ -183,6 +183,7 @@ void Sp2_Scene1::Init()
     meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
     meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
+	//meshList[GEO_CROSSHAIR] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
 	//meshList[GEO_CROSSHAIR]->textureID = LoadTGA("Image//CrossHair.tga");
 
 	/*<---NPC--->*/
@@ -194,9 +195,6 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_NPC2] = MeshBuilder::GenerateOBJ("npc2", "OBJ//mike.obj");
 	meshList[GEO_NPC2]->textureID = LoadTGA("Image//mike.tga");
-
-	meshList[GEO_NPC3] = MeshBuilder::GenerateOBJ("npc3", "OBJ//Stormtrooper.obj");
-	meshList[GEO_NPC3]->textureID = LoadTGA("Image//Stormtrooper.tga");
 
 	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
 	
@@ -228,7 +226,7 @@ void Sp2_Scene1::Init()
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
 
 	frpc = SpaceVehicles("fourth", 0, 0, Vector3(55, 0, 60));
-	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 0));
+	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 300));
 
 	/*<---Set the position of the NPC--->*/
 	objects[NPC].Message = "Press 'E' to wear HEV suit";
@@ -242,8 +240,6 @@ void Sp2_Scene1::Init()
 	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));	// Mike Wazowski
 	npc2.ReadFromTxt("Image//mikechat.txt");
 
-	npc3 = Human("npc3", 0, 30, Vector3(-500, 0, -125));	// Storm Trooper
-	npc3.ReadFromTxt("Image//Stormtrooper.txt");
 
 	Timer = 0;
 
@@ -436,7 +432,6 @@ void Sp2_Scene1::Update(double dt)
 	//npc chat updates
 	whale.chat_update(camera.position);
 	npc2.chat_update(camera.position);
-	npc3.chat_update(camera.position);
 	
 	frpc.enterVehicleUpdate();
 } 
@@ -544,6 +539,8 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
+
+	
 }
 
 
@@ -585,21 +582,21 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool 
 void Sp2_Scene1::RenderPinkKnight()
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(-160, -30, 125);
-	modelStack.Rotate(0,1,0,0);
-	modelStack.Scale(0.4,0.4,0.4);
+	modelStack.Translate(-160, -35.5, 125);
+	modelStack.Rotate(180,0,1,0);
+	modelStack.Scale(0.35,0.35,0.35);
 	RenderMesh(meshList[GEO_PINKKNIGHTBODY], true);	// True false rfers to on/off light respectively
 	
 	modelStack.PushMatrix();
-	modelStack.Translate(-160, -30, 125);
-	modelStack.Rotate(0,1,0,0);
-	modelStack.Scale(0.4, 0.4, 0.4);
+	modelStack.Translate(0, 0, 0);
+	/*modelStack.Rotate(0,1,0,0);*/
+	modelStack.Scale(1, 1, 1);
 	RenderMesh(meshList[GEO_PINKKNIGHTLEG1], true);
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-160, -30, 125);
-	modelStack.Rotate(0,1,0,0);
-	modelStack.Scale(0.4, 0.4, 0.4);
+	modelStack.Translate(0, 0, 0);
+	/*modelStack.Rotate(0,1,0,0);*/
+	modelStack.Scale(1, 1, 1);
 	RenderMesh(meshList[GEO_PINKKNIGHTLEG2], true);
 
 	modelStack.PopMatrix();
@@ -725,8 +722,7 @@ void Sp2_Scene1::Renderfps()
 	RenderGameChar(defaultnpc, meshList[GEO_DEFAULTNPC],70);
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], 70);
 	RenderGameChar(npc2, meshList[GEO_NPC2], 70);
-	RenderGameChar(npc3, meshList[GEO_NPC3], 70);
-	RenderGameChar(station, meshList[GEO_STATION], 70,false,Vector3(5,7,5));
+	RenderGameChar(station, meshList[GEO_STATION], 70,false,Vector3(3.5 ,7,3.5));
 	RenderGameChar(GreenKnight, meshList[GEO_GREENKNIGHT], 70, false, Vector3(0.25, 0.25, 0.25));
 	/*RenderGameChar(PinkKnightLeg1, meshList[GEO_PINKKNIGHTLEG1], 70, false, Vector3(0.4, 0.4, 0.4));
 	RenderGameChar(PinkKnightLeg2, meshList[GEO_PINKKNIGHTLEG2], 70, false, Vector3(0.4, 0.4, 0.4));

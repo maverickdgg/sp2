@@ -73,7 +73,7 @@ public:
 		/*<---Weapons--->*/
 		GEO_SNIPERRIFLE,
 		GEO_DART,
-		//GEO_CROSSHAIR,
+		GEO_CROSSHAIR,
 		/*<---Humans--->*/
 		GEO_HELM,
 		/*<---NPCs--->*/
@@ -143,7 +143,6 @@ public:
 	Human defaultnpc;
 	Alien npc2;
 	Human whale;
-	Human npc3;
 	Human GreenKnight;
 	Human PinkKnightLeg1;
 	Human PinkKnightLeg2;
