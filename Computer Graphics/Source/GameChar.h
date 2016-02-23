@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include "Application.h"
 #include "Collision.h"
+#include "Quest.h"
 
 class GameChar : public GameObject
 {
@@ -21,5 +22,9 @@ public:
 	vector<string> ReadFromTxt(string link);
 	void chat_update(Vector3 player_pos);
 	int chat_boundary;
+
+	Quest* quest;
+
+	void assignQuest(Quest* q);
 };
 #endif

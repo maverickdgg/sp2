@@ -32,5 +32,9 @@ public:
 
 	void assignGun(Gun* newGun);
 	void movementUpdate(Camera3& cam, double dt);
+	void gunUpdate(Camera3 cam, double dt);
+	bool receiveQuest(Quest* q);
+	bool receiveQuest(GameChar& x);
+	bool questCompleted(Quest* q);
 };
 #endif

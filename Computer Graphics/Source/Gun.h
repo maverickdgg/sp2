@@ -7,8 +7,18 @@
 class Gun : public Weapon
 {
 public:
+
+	enum GUN_TYPE
+	{
+		SNIPER_RIFLE,
+
+		EMPTY,
+
+		MAX_GUNSTATE,
+	};
+
     Gun();
-    Gun(string object_name, int boundary, Vector3 pos = Vector3(0, 0, 0));
+	Gun(string object_name, int boundary, Vector3 pos = Vector3(0, 0, 0));
     ~Gun();
     static size_t G_count;
     smaller totalAmmo;
@@ -25,6 +35,8 @@ public:
     void fire(double deltaTime); // rotate to viewangle and trans based on view vector
 	vector<Bullet>::iterator despawnBullet(vector<Bullet>::iterator it);
 	void updateBullet(double dt);
+	bool reload();
+	void receiveAmmo(int ammo);
 
 };
 #endif

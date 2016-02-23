@@ -83,3 +83,8 @@ void GameChar::chat_update(Vector3 player_pos)
 	}
 	
 }
+
+void GameChar::assignQuest(Quest* q)
+{
+	quest = q;
+}

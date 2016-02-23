@@ -229,6 +229,7 @@ void Sp2_Scene1::Init()
 	tpsTimer = 0;
 
     laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y ,camera.position.z));
+	player.assignGun(&laserRifle);
 
 	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-200, 0, 200));
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
@@ -297,6 +298,7 @@ void Sp2_Scene1::Update(double dt)
 		if (frpc.b_isInVehicle == false)
 		{
 			player.movementUpdate(camera, dt);
+			player.gunUpdate(camera,dt);
 		}
 		 if (frpc.b_isInVehicle == true)
 		{
@@ -332,16 +334,7 @@ void Sp2_Scene1::Update(double dt)
 
 	//gun update
 
-	laserRifle.view = camera.view;
-	laserRifle.viewAngleX = camera.cameraRotationX;
-	laserRifle.viewAngle = camera.cameraRotationY;
-	laserRifle.pos = Vector3(camera.position.x, camera.position.y - 5, camera.position.z);
 
-	if (Application::IsKeyPressed(VK_LBUTTON))
-	{
-		laserRifle.fire(dt);
-	}
-	laserRifle.updateBullet(dt);
 
 	Timer++;
 	if (Timer % 10 == 0)
@@ -361,7 +354,7 @@ void Sp2_Scene1::Update(double dt)
 	npc2.chat_update(camera.position);
 	npc3.chat_update(camera.position);
 	
-	frpc.enterVehicleUpdate();
+	frpc.enterVehicleUpdate(player);
 } 
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)

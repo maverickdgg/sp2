@@ -15,6 +15,11 @@ Player::Player()
 	f_jumpSpeed = 50;
 	f_gravity = 25;
 	f_initialJumpSpeed = 50;
+
+	for (int i = 0; i < 5; ++i)
+	{
+		questList.push_back(nullptr);
+	}
 }
 
 Player::~Player()
@@ -104,4 +109,56 @@ void Player::movementUpdate(Camera3& cam , double dt)
 
 	cam.position = this->pos;
 	cam.updateRotation(0.3);
+}
+
+void Player::gunUpdate(Camera3 cam, double dt)
+{
+	if (currGun == nullptr)
+	{
+		return;
+	}
+	currGun->view = cam.view;
+	currGun->viewAngleX = cam.cameraRotationX;
+	currGun->viewAngle = cam.cameraRotationY;
+	currGun->pos = Vector3(cam.position.x, cam.position.y - 5, cam.position.z);
+
+	if (Application::IsKeyPressed(VK_LBUTTON) && currGun->currAmmo >0)
+	{
+		currGun->fire(dt);
+	}
+	currGun->updateBullet(dt);
+}
+
+bool Player::receiveQuest(Quest* q)
+{
+	for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
+	{
+		if (*it == nullptr)
+		{
+			*it = q;
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Player::receiveQuest(GameChar& x)
+{
+	return receiveQuest(x.quest);
+}
+
+bool Player::questCompleted(Quest* q)
+{
+	if (q->questComplete() == true)
+	{
+		for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
+		{
+			if (*it == q)
+			{
+				*it = nullptr;
+				return true;
+			}
+		}
+	}
+	return false;
 }

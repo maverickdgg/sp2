@@ -11,7 +11,7 @@ Gun::Gun() : totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos), totalAmmo(100), currAmmo(30), magCap(30), maxAmmo(200)
 {
 	this->pos = pos;
-	fireRate = 1;
+	fireRate = 2;
 	fireDebounceTimer = 1/fireRate;
 }
 
@@ -25,7 +25,7 @@ void Gun::fire( double dt)
 	if (fireDebounceTimer == 0)
 	{
 		bulletVec.push_back(Bullet(5, this->pos + this->view * 15 + Vector3(0, 1, 0), this->view, viewAngle, viewAngleX));
-		fireDebounceTimer = 1 / fireRate;
+		fireDebounceTimer = 1.f / fireRate;
 	}
 }
 
@@ -67,3 +67,31 @@ float Gun::findAngle(Vector3 view)
 }
 
 
+bool Gun::reload()
+{
+	if (totalAmmo < 0)
+	{
+		return false;
+	}
+	else if (totalAmmo > magCap)
+	{
+		currAmmo = magCap;
+		totalAmmo -= magCap;
+		return true;
+	}
+	else if (totalAmmo<magCap && totalAmmo>0)
+	{
+		currAmmo = totalAmmo;
+		totalAmmo = 0;
+		return true;
+	}
+}
+
+void Gun::receiveAmmo(int ammo)
+{
+	totalAmmo += ammo;
+	if (totalAmmo > maxAmmo)
+	{
+		totalAmmo = maxAmmo;
+	}
+}
