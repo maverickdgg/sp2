@@ -83,14 +83,11 @@ void Sp2_Scene1::Init()
 	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
 	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
 
-
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
-
 
 	//handler for text
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
-
 
 	glUseProgram(m_programID);
 
@@ -100,7 +97,6 @@ void Sp2_Scene1::Init()
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-
 
 	//make sure you pass uniform parameters after glUseProgram()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 5);
@@ -180,12 +176,7 @@ void Sp2_Scene1::Init()
     meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
 
     meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
-    meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
-
-
-	//meshList[GEO_CROSSHAIR] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
-	//meshList[GEO_CROSSHAIR]->textureID = LoadTGA("Image//CrossHair.tga");
-
+	meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
 	/*<---NPC--->*/
 	meshList[GEO_DEFAULTNPC] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
@@ -239,11 +230,12 @@ void Sp2_Scene1::Init()
 	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));
 	npc2.ReadFromTxt("Image//mikechat.txt");
 
-
-
 	Timer = 0;
 
 	GreenKnight = Human("greenknight", 10, 0, Vector3(-90, -30, 125));
+	BB8_.quest = new Quest();
+	BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
+	BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
 }
 
 
@@ -435,8 +427,6 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
-
-	
 }
 
 

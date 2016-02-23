@@ -88,3 +88,4 @@ void GameChar::assignQuest(Quest* q)
 {
 	quest = q;
 }
+

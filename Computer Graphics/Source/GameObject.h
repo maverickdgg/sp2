@@ -17,6 +17,9 @@ using std::vector;
 
 typedef unsigned short smaller;
 
+using std::cout;
+using std::endl;
+
 class GameObject
 {
 private:
