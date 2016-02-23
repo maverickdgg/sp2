@@ -89,6 +89,10 @@ public:
 		GEO_PINKKNIGHTLEG1,
 		GEO_PINKKNIGHTLEG2,
 		GEO_PINKKNIGHTBODY,
+
+		GEO_PINGUBODY,
+		GEO_PINGULH,
+		GEO_PINGURH,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -171,6 +175,8 @@ private:
 	void RenderSpaceVehicles(Camera3 camera);
 
 	void RenderPinkKnight();
+	void RenderPingu();
+	void RenderBB8();
 
 	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1,1,1));
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));

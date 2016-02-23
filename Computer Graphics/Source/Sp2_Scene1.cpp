@@ -183,13 +183,12 @@ void Sp2_Scene1::Init()
     meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
     meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
+
 	//meshList[GEO_CROSSHAIR] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
 	//meshList[GEO_CROSSHAIR]->textureID = LoadTGA("Image//CrossHair.tga");
 
+
 	/*<---NPC--->*/
-
-
-
 	meshList[GEO_DEFAULTNPC] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
 	meshList[GEO_DEFAULTNPC]->textureID = LoadTGA("Image//mike.tga");
 
@@ -198,15 +197,11 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
 	
-
 	meshList[GEO_BB8H] = MeshBuilder::GenerateOBJ("bb8head", "OBJ//BB8H.obj");
 	meshList[GEO_BB8H]->textureID = LoadTGA("Image//BB8H.tga");
 
 	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB8B.obj");
 	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB8B.tga");
-
-	meshList[GEO_PINGU] = MeshBuilder::GenerateOBJ("pingu", "OBJ//Pingu.obj");
-	meshList[GEO_PINGU]->textureID = LoadTGA("Image//Pingu.tga");
 
 	meshList[GEO_GREENKNIGHT] = MeshBuilder::GenerateOBJ("greenKnight", "OBJ//GreenKnight.obj");
 	meshList[GEO_GREENKNIGHT]->textureID = LoadTGA("Image//GreenKnight.tga");
@@ -215,6 +210,13 @@ void Sp2_Scene1::Init()
 	meshList[GEO_PINKKNIGHTLEG2] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinkKnightLeg2.obj");
 	meshList[GEO_PINKKNIGHTBODY] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinkKnightBody.obj");
 	meshList[GEO_PINKKNIGHTBODY]->textureID = LoadTGA("Image//PinkKnight.tga");
+
+	meshList[GEO_PINGUBODY] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinguBody.obj");
+	meshList[GEO_PINGUBODY]->textureID = LoadTGA("Image//Pingu.tga");
+	meshList[GEO_PINGULH] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinguLH.obj");
+	meshList[GEO_PINGULH]->textureID = LoadTGA("Image//Pingu.tga");
+	meshList[GEO_PINGURH] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinguRH.obj");
+	meshList[GEO_PINGURH]->textureID = LoadTGA("Image//Pingu.tga");
 
 	b_enabletps = false;
 	b_tpsDebounce = false;
@@ -230,27 +232,18 @@ void Sp2_Scene1::Init()
 
 	/*<---Set the position of the NPC--->*/
 	objects[NPC].Message = "Press 'E' to wear HEV suit";
-	/*<---Miscellaneous--->*/
-	//inData.open("Image//Robotdialogue.txt");
 	Timer = 0;
-	//isPressed = false;
     b_isWorn = false;
 
-	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));	// Default NPC is here only for the interaction codes and not the butler NPC. Do not delete the default npc function.
-	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));	// Mike Wazowski
+	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));
+	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));
 	npc2.ReadFromTxt("Image//mikechat.txt");
+
 
 
 	Timer = 0;
 
 	GreenKnight = Human("greenknight", 10, 0, Vector3(-90, -30, 125));
-	/*PinkKnightLeg1 = Human("PinkKnightLeg1", 10, 0, Vector3(-160, -30, 125));
-	PinkKnightLeg2 = Human("PinkKnightLeg2", 10, 0, Vector3(-160, -30, 125));
-	PinkKnightBody = Human("PinkKnightBody", 10, 0, Vector3(-160, -30, 125));*/
-	BB8H = Alien("bb8head", 10, 0, Vector3(-50, -30, 125));
-	BB8B = Alien("bb8body", 10, 0, Vector3(-50, -30, 125));
-	Pingu = Alien("pingu", 10, 0, Vector3(50, -30, -125));
-
 }
 
 
@@ -259,7 +252,6 @@ void Sp2_Scene1::Update(double dt)
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);
 
-	
 	if (Application::IsKeyPressed('1'))
 	{
 		glEnable(GL_CULL_FACE);
@@ -278,7 +270,6 @@ void Sp2_Scene1::Update(double dt)
 	}
 	if (frpc.b_isInVehicle == false)
 	{
-
 		camera.view = (camera.target - camera.position).Normalized();
 		camera.right = camera.view.Cross(camera.defaultUp);
 		camera.right.y = 0;
@@ -421,9 +412,6 @@ void Sp2_Scene1::Update(double dt)
 	{
 	
 	}
-
- /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
-        b_isWorn = true;*/
 	if (frpc.b_isInVehicle == true)
 	{
 		frpc.updateVehicle(Application::IsKeyPressed('W'), Application::IsKeyPressed('S'), Application::IsKeyPressed('A'), Application::IsKeyPressed('D'), dt);
@@ -604,6 +592,49 @@ void Sp2_Scene1::RenderPinkKnight()
 	modelStack.PopMatrix();
 }
 
+void Sp2_Scene1::RenderPingu()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(50, -30, -125);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_PINGUBODY], true);	// True false rfers to on/off light respectively
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_PINGULH], true);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_PINGURH], true);
+
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
+void Sp2_Scene1::RenderBB8()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(-50, -30, 125);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_BB8H], true);	// True false rfers to on/off light respectively
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	//modelStack.Rotate(0, 1, 0, 0);
+	modelStack.Scale(1, 1, 1);
+	RenderMesh(meshList[GEO_BB8B], true);
+
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -718,22 +749,18 @@ void Sp2_Scene1::Renderfps()
 	/*<---NPC--->*/
 
 	RenderPinkKnight();
+	RenderPingu();
+	RenderBB8();
 
 	RenderGameChar(defaultnpc, meshList[GEO_DEFAULTNPC],70);
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], 70);
 	RenderGameChar(npc2, meshList[GEO_NPC2], 70);
 	RenderGameChar(station, meshList[GEO_STATION], 70,false,Vector3(3.5 ,7,3.5));
 	RenderGameChar(GreenKnight, meshList[GEO_GREENKNIGHT], 70, false, Vector3(0.25, 0.25, 0.25));
-	/*RenderGameChar(PinkKnightLeg1, meshList[GEO_PINKKNIGHTLEG1], 70, false, Vector3(0.4, 0.4, 0.4));
-	RenderGameChar(PinkKnightLeg2, meshList[GEO_PINKKNIGHTLEG2], 70, false, Vector3(0.4, 0.4, 0.4));
-	RenderGameChar(PinkKnightBody, meshList[GEO_PINKKNIGHTBODY], 70, false, Vector3(0.4, 0.4, 0.4));*/
-	RenderGameChar(BB8H, meshList[GEO_BB8H], 70, true, Vector3(10, 10, 10));
-	RenderGameChar(BB8B, meshList[GEO_BB8B], 70, true, Vector3(10, 10, 10));
-	RenderGameChar(Pingu, meshList[GEO_PINGU], 70, true, Vector3(1, 1, 1));
 
 	RenderMesh(meshList[GEO_AXES], false); 
 	/*<---Weapons--->*/
-    if (b_isWorn == false) // b_isInVehicle == false
+    if (b_isWorn == false)
 	    RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
 
 	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
@@ -750,11 +777,7 @@ void Sp2_Scene1::Renderfps()
 void Sp2_Scene1::Rendertps()
 {
 	RenderSkybox(camera);
-	
-
 	RenderMesh(meshList[GEO_AXES], false);
-
-
 }
 
 void Sp2_Scene1::Render()
