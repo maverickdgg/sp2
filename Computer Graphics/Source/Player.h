@@ -6,6 +6,7 @@
 #include "Application.h"
 #include "Camera3.h"
 #include "Quest.h"
+#include "Collision.h"
 
 #include <vector>
 
@@ -31,7 +32,7 @@ public:
 	vector<Quest*> questList;
 
 	void assignGun(Gun* newGun);
-	void movementUpdate(Camera3& cam, double dt);
+	void movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec);
 	void gunUpdate(Camera3 cam, double dt);
 	bool receiveQuest(Quest* q);
 	bool receiveQuest(GameChar& x);

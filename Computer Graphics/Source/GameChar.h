@@ -19,9 +19,11 @@ public:
 	bool b_indexDebounce;
 	bool isPressed;
 	vector<string> vec_dialog;
+	bool b_dialogueEnd;
+	int chat_boundary;
+
 	vector<string> ReadFromTxt(string link);
 	void chat_update(Vector3 player_pos);
-	int chat_boundary;
 
 	Quest* quest;
 

@@ -25,22 +25,6 @@
 #include "BB-8.h"
 #include "Pingu.h"
 
-struct Object
-{
-	Position position;
-	int State;
-	std::string Message;
-
-};
-
-enum Objects
-{
-	NPC,
-	GUIDENPC,
-	MIKENPC,
-	Num_Obj,
-};
-
 class Sp2_Scene1 : public Scene
 {
 public:
@@ -79,19 +63,14 @@ public:
 		GEO_CROSSHAIR,
 		/*<---Humans--->*/
 		GEO_HELM,
-		/*<---NPCs--->*/
-		GEO_NPC2,// Mike Wazowski
+
 		/*<---NPC--->*/
-		GEO_DEFAULTNPC,	// Default (Pure Interaction Codes, no NPC)	
+		GEO_MIKE,	// Default (Pure Interaction Codes, no NPC)	
 		GEO_NPC3,	// Storm Trooper
         GEO_FLIGHTUI,	// Astronaut Suit
 		GEO_BB8H,	// BB-8 Head
 		GEO_BB8B,	// BB-8 Body
 		GEO_PINGU,
-		GEO_GREENKNIGHT,
-		GEO_PINKKNIGHTLEG1,
-		GEO_PINKKNIGHTLEG2,
-		GEO_PINKKNIGHTBODY,
 
 		GEO_PINGUBODY,
 		GEO_PINGULH,
@@ -147,21 +126,16 @@ public:
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 	Buildings station;
-	Human defaultnpc;
-	Alien npc2;
+	Alien mike1,mike2,mike3;
 	Human whale;
-	Human GreenKnight;
-	Human PinkKnightLeg1;
-	Human PinkKnightLeg2;
-	Human PinkKnightBody;
 	BB8 BB8_;
 	Pingu Pingu_;
 
 	//player
 	Player player;
-public:
-	Object objects[Num_Obj];
-	int Timer;
+
+	vector<GameObject*> collisionVec;
+
 
 private:
 	unsigned m_vertexArrayID;
@@ -176,12 +150,12 @@ private:
 	Light light[1];
 
 	void RenderMesh(Mesh* mesh, bool enableLight);
-	void RenderSkybox(Camera3 camera);
+	void RenderSkybox();
 	void RenderSpaceVehicles(Camera3 camera);
 
-	void RenderPinkKnight();
+
 	void RenderPingu();
-	void RenderBB8();
+	void RenderBB8(BB8 x);
 
 	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1,1,1));
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));

@@ -131,8 +131,9 @@ void Sp2_Scene1::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//geom init
-	frpc = SpaceVehicles("fourth", 20, 30, Vector3(55, 0, 60));
-	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 800);
+	/*frpc = SpaceVehicles("fourth", 5, 30, Vector3(55, 0, 60));
+	collisionVec.push_back(&frpc);*/
+	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450,300);
 	camera2.Init(Vector3(50,20, 50), Vector3(0,1,0), frpc.pos);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
@@ -161,7 +162,7 @@ void Sp2_Scene1::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
-	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 11), 1.f, 1.f);
+	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 1), 1.f, 1.f);
 	
 	/*<---Studio Project 2 OBJs--->*/
 	
@@ -179,11 +180,8 @@ void Sp2_Scene1::Init()
 	meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
 	/*<---NPC--->*/
-	meshList[GEO_DEFAULTNPC] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
-	meshList[GEO_DEFAULTNPC]->textureID = LoadTGA("Image//mike.tga");
-
-	meshList[GEO_NPC2] = MeshBuilder::GenerateOBJ("npc2", "OBJ//mike.obj");
-	meshList[GEO_NPC2]->textureID = LoadTGA("Image//mike.tga");
+	meshList[GEO_MIKE] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
+	meshList[GEO_MIKE]->textureID = LoadTGA("Image//mike.tga");
 
 	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
 	
@@ -192,14 +190,6 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB8B.obj");
 	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB8B.tga");
-
-	meshList[GEO_GREENKNIGHT] = MeshBuilder::GenerateOBJ("greenKnight", "OBJ//GreenKnight.obj");
-	meshList[GEO_GREENKNIGHT]->textureID = LoadTGA("Image//GreenKnight.tga");
-
-	meshList[GEO_PINKKNIGHTLEG1] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinkKnightLeg1.obj");
-	meshList[GEO_PINKKNIGHTLEG2] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinkKnightLeg2.obj");
-	meshList[GEO_PINKKNIGHTBODY] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinkKnightBody.obj");
-	meshList[GEO_PINKKNIGHTBODY]->textureID = LoadTGA("Image//PinkKnight.tga");
 
 	meshList[GEO_PINGUBODY] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinguBody.obj");
 	meshList[GEO_PINGUBODY]->textureID = LoadTGA("Image//Pingu.tga");
@@ -215,27 +205,33 @@ void Sp2_Scene1::Init()
     laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y ,camera.position.z));
 	player.assignGun(&laserRifle);
 
-	whale = Human("NPCLEPUSMAG", 0, 30, Vector3(-200, 0, 200));
+	whale = Human("NPCLEPUSMAG", 10, 0, Vector3(75, -20, -300));
 	whale.ReadFromTxt("Image//Robotdialogue.txt");
+	collisionVec.push_back(&whale);
 
-	frpc = SpaceVehicles("fourth", 0, 0, Vector3(55, 0, 60));
-	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 300));
+	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
 
 	/*<---Set the position of the NPC--->*/
-	objects[NPC].Message = "Press 'E' to wear HEV suit";
-	Timer = 0;
     b_isWorn = false;
 
-	defaultnpc = Human("npc", 0, 30, Vector3(120, -30, 125));
-	npc2 = Alien("npc2", 0, 45, Vector3(500, 0, 125));
-	npc2.ReadFromTxt("Image//mikechat.txt");
+	mike1 = Alien("npc", 30, 0, Vector3(400, -30, 250));
+	collisionVec.push_back(&mike1);
 
-	Timer = 0;
+	mike2 = Alien("mike2", 30, -90, Vector3( -50, -30, 300));
+	mike2.ReadFromTxt("Image//mikechat.txt");
+	collisionVec.push_back(&mike2);
 
-	GreenKnight = Human("greenknight", 10, 0, Vector3(-90, -30, 125));
-	BB8_.quest = new Quest();
-	BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
-	BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+	mike3 = Alien("mike3", 30, -75, Vector3(175, -30, 300));
+	mike3.ReadFromTxt("Image//mikechat.txt");
+	collisionVec.push_back(&mike3);
+
+	BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
+
+
+	collisionVec.push_back(&player);
+	//BB8_.quest = new Quest();
+	//BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
+	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
 }
 
 
@@ -265,7 +261,7 @@ void Sp2_Scene1::Update(double dt)
 	{
 		if (frpc.b_isInVehicle == false)
 		{
-			player.movementUpdate(camera, dt);
+			player.movementUpdate(camera, dt,collisionVec);
 			player.gunUpdate(camera,dt);
 		}
 		 if (frpc.b_isInVehicle == true)
@@ -303,13 +299,6 @@ void Sp2_Scene1::Update(double dt)
 	//gun update
 
 
-
-	Timer++;
-	if (Timer % 10 == 0)
-	{
-	
-	}
-
  /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
         b_isWorn = true;*/
 	if (frpc.b_isInVehicle == true)
@@ -318,9 +307,9 @@ void Sp2_Scene1::Update(double dt)
 	}
 
 	//npc chat updates
-	whale.chat_update(camera.position);
-	npc2.chat_update(camera.position);
-	
+	whale.chat_update(player.pos);
+	mike2.chat_update(player.pos);
+	//cout << player.questList.size()<<endl;
 	frpc.enterVehicleUpdate(player);
 } 
 
@@ -367,7 +356,7 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 }
 
 
-void Sp2_Scene1::RenderSkybox(Camera3 camera)
+void Sp2_Scene1::RenderSkybox()
 {	
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -10, 0);
@@ -381,7 +370,7 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, 0, camera.position.z);
+	//modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(0, 999, 0);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Rotate(180, 0, 0, 1);
@@ -391,7 +380,7 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, 0, camera.position.z);
+	//modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(999, 0, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Rotate(90, 0, 0, 1);
@@ -400,7 +389,7 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, 0, camera.position.z);
+	//modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(-999, 0, 0);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Rotate(90, 0, 0, 1);
@@ -410,7 +399,7 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 
 
 	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, 0, camera.position.z);
+	//modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(0, 0, -999);
 	modelStack.Rotate(90, 0, 0, 1);
 	modelStack.Scale(1000, 1000, 1000);
@@ -418,7 +407,7 @@ void Sp2_Scene1::RenderSkybox(Camera3 camera)
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, 0, camera.position.z);
+	//modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(0, 0, 999);
 	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Rotate(90, 0, 0, 1);
@@ -457,37 +446,17 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool 
 
 	if (x.vec_dialog.empty() == false)
 	{
-		if (collision(x.pos, camera.position, (x.boundary + 15)) && x.isPressed == true)
+		if (collision(x.pos, player.pos, (x.boundary + player.boundary + x.chat_boundary)) && x.isPressed == true)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(1, 1, 1), 3, 1, 10);
+			//if (x.dialogue_index == x.vec_dialog.size() - 1 && x.quest!=nullptr)
+			//{
+			//	player.receiveQuest(x);
+			//}
+			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0,1,0), 2, 1, 20);
 		}
 	}
 }
 
-void Sp2_Scene1::RenderPinkKnight()
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(-160, -35.5, 125);
-	modelStack.Rotate(180,0,1,0);
-	modelStack.Scale(0.35,0.35,0.35);
-	RenderMesh(meshList[GEO_PINKKNIGHTBODY], true);	// True false rfers to on/off light respectively
-	
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	/*modelStack.Rotate(0,1,0,0);*/
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_PINKKNIGHTLEG1], true);
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	/*modelStack.Rotate(0,1,0,0);*/
-	modelStack.Scale(1, 1, 1);
-	RenderMesh(meshList[GEO_PINKKNIGHTLEG2], true);
-
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-}
 
 void Sp2_Scene1::RenderPingu()
 {
@@ -516,10 +485,13 @@ void Sp2_Scene1::RenderPingu()
 	modelStack.PopMatrix();
 }
 
-void Sp2_Scene1::RenderBB8()
+void Sp2_Scene1::RenderBB8(BB8 x)
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(-50, -30, 125);
+	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Rotate(x.viewAngle, 0, 1, 0);
+	modelStack.PushMatrix();
+	modelStack.Translate(0, -33, 0);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8H], true);	// True false rfers to on/off light respectively
@@ -527,10 +499,12 @@ void Sp2_Scene1::RenderBB8()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-50, -30, 125);
+	modelStack.Translate(0, -33, 0);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8B], true);
+
+	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
 }
@@ -582,10 +556,10 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 	modelStack.Scale(size, size, size);
 	modelStack.Translate(x, y, 0);
 
-	modelStack.PushMatrix();
-	modelStack.Scale(50, 2, 1);
-	RenderMesh(meshList[GEO_TEXTBACKGROUND], false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Scale(50, 2, 1);
+	//RenderMesh(meshList[GEO_TEXTBACKGROUND], false);
+	//modelStack.PopMatrix();
 
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
@@ -642,21 +616,22 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 
 void Sp2_Scene1::Renderfps()
 {
-	RenderSkybox(camera);
+	RenderSkybox();
 
-	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
+	RenderGameObj(station, meshList[GEO_STATION], true, false, Vector3(2.5, 7, 4));
+
+	//RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
 
 	/*<---NPC--->*/
 
-	RenderPinkKnight();
-	RenderPingu();
-	RenderBB8();
+	//RenderPingu();
+	RenderBB8(BB8_);
 
-	RenderGameChar(defaultnpc, meshList[GEO_DEFAULTNPC],70);
-	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], 70);
-	RenderGameChar(npc2, meshList[GEO_NPC2], 70);
-	RenderGameChar(station, meshList[GEO_STATION], 70,false,Vector3(3.5 ,7,3.5));
-	RenderGameChar(GreenKnight, meshList[GEO_GREENKNIGHT], 70, false, Vector3(0.25, 0.25, 0.25));
+	RenderGameChar(mike1, meshList[GEO_MIKE], true,true,Vector3(5,5,5));
+	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG],true,true,Vector3(10,10,10));
+	RenderGameChar(mike2, meshList[GEO_MIKE],true,true,Vector3(7,4,7));
+	RenderGameChar(mike3, meshList[GEO_MIKE], true, true, Vector3(4,7,4));
+
 
 	RenderMesh(meshList[GEO_AXES], false); 
 	/*<---Weapons--->*/
@@ -676,7 +651,7 @@ void Sp2_Scene1::Renderfps()
 
 void Sp2_Scene1::Rendertps()
 {
-	RenderSkybox(camera);
+	RenderSkybox();
 	RenderMesh(meshList[GEO_AXES], false);
 }
 
