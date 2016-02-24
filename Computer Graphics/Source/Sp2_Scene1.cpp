@@ -235,7 +235,9 @@ void Sp2_Scene1::Init()
 	GreenKnight = Human("greenknight", 10, 0, Vector3(-90, -30, 125));
 	BB8_.quest = new Quest();
 	BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
-	BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+	raceQuest = Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+	BB8_.assignQuest(&raceQuest);
 }
 
 
@@ -322,6 +324,13 @@ void Sp2_Scene1::Update(double dt)
 	npc2.chat_update(camera.position);
 	
 	frpc.enterVehicleUpdate(player);
+
+	if (Application::IsKeyPressed('Z'))
+	{
+		BB8_.quest->taskComplete(0);
+	}
+	if (BB8_.quest->questComplete())
+		RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
 } 
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)

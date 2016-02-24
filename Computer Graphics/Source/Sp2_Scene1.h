@@ -24,6 +24,7 @@
 #include "Player.h"
 #include "BB-8.h"
 #include "Pingu.h"
+#include "Quest.h"
 
 struct Object
 {
@@ -156,6 +157,7 @@ public:
 	Human PinkKnightBody;
 	BB8 BB8_;
 	Pingu Pingu_;
+	Quest raceQuest;
 
 	//player
 	Player player;

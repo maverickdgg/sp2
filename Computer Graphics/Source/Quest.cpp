@@ -97,6 +97,5 @@ void Quest::ReadFromTxtQuest(string link)
 
 		}
 	}
-	{inData.close();
-	}
+	inData.close();
 }
