@@ -2,6 +2,7 @@
 #include "Human.h"
 #include "Alien.h"
 #include "BB-8.h"
+#include "BB-8_2.h"
 #include "Pingu.h"
 #include "GL\glew.h"
 #include "Buildings.h"
@@ -190,7 +191,13 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB8B.obj");
 	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB8B.tga");
-
+	/**/
+	meshList[GEO_BB8v2H] = MeshBuilder::GenerateOBJ("bb8v2head", "OBJ//BB82H.obj");
+	meshList[GEO_BB8v2H]->textureID = LoadTGA("Image//BB82H.tga");
+	/*<------BB-8 Version 2------>*/
+	meshList[GEO_BB8v2B] = MeshBuilder::GenerateOBJ("bb8v2body", "OBJ//BB82B.obj");
+	meshList[GEO_BB8v2B]->textureID = LoadTGA("Image//BB82B.tga");
+	/**/
 	meshList[GEO_PINGUBODY] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinguBody.obj");
 	meshList[GEO_PINGUBODY]->textureID = LoadTGA("Image//Pingu.tga");
 	meshList[GEO_PINGULH] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinguLH.obj");
@@ -256,6 +263,11 @@ void Sp2_Scene1::Init()
 	BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
 	collisionVec.push_back(&BB8_);
 
+	/**/
+	BB8v2_ = BB8v2("BB8v2", 45, 0, Vector3(100, 10, 100));
+	BB8v2_.ReadFromTxt("Image//bb8v2.txt");
+	collisionVec.push_back(&BB8v2_);
+	/**/
 
 	tasklist.push_back("find the key card in the room");
 	questPtr = new Quest(1, tasklist, "get keycard");
@@ -266,11 +278,11 @@ void Sp2_Scene1::Init()
 	whale.assignQuest(questPtr);
 	collisionVec.push_back(&whale);
 
-	BB8_.quest = new Quest();
-	BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
-	BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+	//BB8_.quest = new Quest();
+	//BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
+	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
 }
-	void Sp2_Scene1::Update(double dt)
+void Sp2_Scene1::Update(double dt)
 {
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);
@@ -296,10 +308,10 @@ void Sp2_Scene1::Init()
 	{
 		if (frpc.b_isInVehicle == false)
 		{
-			player.movementUpdate(camera, dt,collisionVec);
-			player.gunUpdate(camera,dt);
+			player.movementUpdate(camera, dt, collisionVec);
+			player.gunUpdate(camera, dt);
 		}
-		 if (frpc.b_isInVehicle == true)
+		if (frpc.b_isInVehicle == true)
 		{
 			camera2.tpsUpdateVec(frpc.pos);
 		}
@@ -334,8 +346,8 @@ void Sp2_Scene1::Init()
 	//gun update
 
 
- /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
-        b_isWorn = true;*/
+	/*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
+	b_isWorn = true;*/
 	if (frpc.b_isInVehicle == true)
 	{
 		frpc.updateVehicle(Application::IsKeyPressed('W'), Application::IsKeyPressed('S'), Application::IsKeyPressed('A'), Application::IsKeyPressed('D'), dt);
@@ -354,15 +366,18 @@ void Sp2_Scene1::Init()
 	mike2.chat_update(player.pos);
 	frpc.enterVehicleUpdate(player);
 
-	if (Application::IsKeyPressed('Z'))
-	{
-		BB8_.quest->taskComplete(0);
-	}
-	if (BB8_.quest->questComplete())
-		RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
-	BB8_.moveCircles(dt);
+	//if (Application::IsKeyPressed('Z'))
+	//{
+	//	BB8_.quest->taskComplete(0);
+	//}
+	//if (BB8_.quest->questComplete())
+	//	RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
 
-} 
+	/*<----------------------------------------------------------------------------------->*/
+	BB8_.moveCircles(dt);
+	BB8v2_.rotateAbout(dt);	/*<-----Double-Check------>*/
+	/*<----------------------------------------------------------------------------------->*/
+}
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 {
@@ -408,7 +423,7 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 
 
 void Sp2_Scene1::RenderSkybox()
-{	
+{
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -10, 0);
 
@@ -470,13 +485,13 @@ void Sp2_Scene1::RenderSkybox()
 }
 
 
-void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,bool hasInteractions,Vector3 scale)
+void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale)
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
 	modelStack.Rotate(x.viewAngle, 0, 1, 0);
-	modelStack.Scale(scale.x,scale.y,scale.z);
-	RenderMesh(mesh,enableLight);
+	modelStack.Scale(scale.x, scale.y, scale.z);
+	RenderMesh(mesh, enableLight);
 	modelStack.PopMatrix();
 
 	if (hasInteractions == true)
@@ -491,9 +506,9 @@ void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,bool ha
 	}
 }
 
-void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool hasInteractions, Vector3 scale)
+void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale)
 {
-	RenderGameObj(x, mesh, enableLight,hasInteractions ,scale);
+	RenderGameObj(x, mesh, enableLight, hasInteractions, scale);
 
 	if (x.vec_dialog.empty() == false)
 	{
@@ -503,7 +518,7 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool 
 			//{
 			//	player.receiveQuest(x);
 			//}
-			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0,1,0), 2, 1, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0, 1, 0), 2, 1, 20);
 		}
 	}
 }
@@ -561,6 +576,32 @@ void Sp2_Scene1::RenderBB8(BB8 x)
 	modelStack.PopMatrix();
 }
 
+/*<--------------------Scene 3 BB-8------------------------------------------------------->*/
+void Sp2_Scene1::RenderBB8v2(BB8v2 n)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(n.pos.x, n.pos.y, n.pos.z);
+	modelStack.Rotate(n.viewAngle, 0, 1, 0);
+	modelStack.PushMatrix();
+	modelStack.Translate(0, -33, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_BB8v2H], true);	// True false rfers to on/off light respectively
+
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(n.pos.x, n.pos.y - 34, n.pos.z);
+	modelStack.Rotate(n.viewAngle, 0, 0, 1);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_BB8v2B], true);
+
+	modelStack.PopMatrix();
+}
+/*<--------------------Scene 3 BB-8------------------------------------------------------->*/
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -587,7 +628,6 @@ void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
-
 }
 
 
@@ -641,7 +681,7 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 }
 
 
-void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale , Vector3 rotate )
+void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale, Vector3 rotate)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -100, 100); //size of screen UI
@@ -682,30 +722,33 @@ void Sp2_Scene1::Renderfps()
 	RenderSkybox();
 
 	RenderGameObj(station, meshList[GEO_STATION], true, false, Vector3(2.5, 7, 4));
-	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(20,30,20));
+	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
-	RenderGameObj(table1, meshList[GEO_TABLE], true, false, Vector3(30,40,30));
-	RenderGameObj(chair1, meshList[GEO_CHAIR], true, false, Vector3(10,12,10));
-	RenderGameObj(keycard1, meshList[GEO_KEYCARD], true, true, Vector3(2,2,2));
+	RenderGameObj(table1, meshList[GEO_TABLE], true, false, Vector3(30, 40, 30));
+	RenderGameObj(chair1, meshList[GEO_CHAIR], true, false, Vector3(10, 12, 10));
+	RenderGameObj(keycard1, meshList[GEO_KEYCARD], true, true, Vector3(2, 2, 2));
 	//RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
 
 	/*<---NPC--->*/
 
 	//RenderPingu();
 	RenderBB8(BB8_);
+	RenderBB8v2(BB8v2_);
 
-	RenderGameChar(mike1, meshList[GEO_MIKE], true,true,Vector3(5,5,5));
-	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG],true,true,Vector3(10,10,10));
-	RenderGameChar(mike2, meshList[GEO_MIKE],true,true,Vector3(7,4,7));
-	RenderGameChar(mike3, meshList[GEO_MIKE], true, true, Vector3(4,7,4));
+	//RenderGameChar(BB8v2_, meshList[GEO_BB8v2B], true, true, Vector3(1, 1, 1));
+
+	RenderGameChar(mike1, meshList[GEO_MIKE], true, true, Vector3(5, 5, 5));
+	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], true, true, Vector3(10, 10, 10));
+	RenderGameChar(mike2, meshList[GEO_MIKE], true, true, Vector3(7, 4, 7));
+	RenderGameChar(mike3, meshList[GEO_MIKE], true, true, Vector3(4, 7, 4));
 
 
-	RenderMesh(meshList[GEO_AXES], false); 
+	RenderMesh(meshList[GEO_AXES], false);
 	/*<---Weapons--->*/
-    if (b_isWorn == false)
-	    RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
+	if (b_isWorn == false)
+		RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE], Vector3(75, -15, -10), Vector3(250, 250, 250), Vector3(10, 110, 0));
 
 	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
 	{
@@ -744,12 +787,12 @@ void Sp2_Scene1::Render()
 	if (frpc.b_isInVehicle == true)
 	{
 		viewStack.LookAt(
-		camera2.position.x, camera2.position.y, camera2.position.z,
-		camera2.target.x, camera2.target.y, camera2.target.z,
-		camera2.up.x, camera2.up.y, camera2.up.z
-		);
+			camera2.position.x, camera2.position.y, camera2.position.z,
+			camera2.target.x, camera2.target.y, camera2.target.z,
+			camera2.up.x, camera2.up.y, camera2.up.z
+			);
 	}
-	
+
 	else if (frpc.b_isInVehicle == false)
 	{
 		viewStack.LookAt(

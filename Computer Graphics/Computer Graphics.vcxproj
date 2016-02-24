@@ -85,6 +85,7 @@
     <ClCompile Include="Source\Alien.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\BB-8.cpp" />
+    <ClCompile Include="Source\BB-8_2.cpp" />
     <ClCompile Include="Source\Buildings.cpp" />
     <ClCompile Include="Source\Bullet.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
@@ -116,6 +117,7 @@
     <ClInclude Include="Source\Alien.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\BB-8.h" />
+    <ClInclude Include="Source\BB-8_2.h" />
     <ClInclude Include="Source\Buildings.h" />
     <ClInclude Include="Source\Bullet.h" />
     <ClInclude Include="Source\Camera.h" />
