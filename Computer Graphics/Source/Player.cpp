@@ -13,7 +13,7 @@ Player::Player()
 	b_jumpDebounce = false;
 	b_jumpUp = true;
 	f_jumpSpeed = 50;
-	f_gravity = 25;
+	f_gravity = 50;
 	f_initialJumpSpeed = 50;
 
 	for (int i = 0; i < 5; ++i)
@@ -39,7 +39,7 @@ void Player::assignGun(Gun* newGun)
 	}
 }
 
-void Player::movementUpdate(Camera3& cam , double dt)
+void Player::movementUpdate(Camera3& cam , double dt , vector<GameObject*> collisionVec)
 {
 	float movSpeed;
 	if (Application::IsKeyPressed(VK_SHIFT))
@@ -55,28 +55,53 @@ void Player::movementUpdate(Camera3& cam , double dt)
 	cam.right.y = 0;
 	cam.right.Normalize();
 	cam.up = cam.right.Cross(cam.view).Normalized();
-	
+
 	viewAngle = cam.cameraRotationY;
+
+	Vector3 tempPos = pos;
 	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
 	{
-		pos.x += cos(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
-		pos.z -= sin(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+		tempPos.x += cos(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+		tempPos.z -= sin(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
 	}
 	if (Application::IsKeyPressed('S') && !Application::IsKeyPressed('W'))
 	{
-		pos.x -= cos(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
-		pos.z += sin(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+		tempPos.x -= cos(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+		tempPos.z += sin(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
 	}
 	if (Application::IsKeyPressed('D') && !Application::IsKeyPressed('A'))
 	{
-		pos.x += sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
-		pos.z += cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+		tempPos.x += sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+		tempPos.z += cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 	}
 	if (Application::IsKeyPressed('A') && !Application::IsKeyPressed('D'))
 	{
-		pos.x -= sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
-		pos.z -= cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+		tempPos.x -= sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+		tempPos.z -= cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 	}
+	if (collision(tempPos, collisionVec, this->boundary) == false)
+	{
+		pos = tempPos;
+	}
+	if (pos.x > cam.boundaryX)
+	{
+		pos.x = cam.boundaryX;
+	}
+	else if (pos.x < -cam.boundaryX)
+	{
+		pos.x = -cam.boundaryX;
+	}
+	if (pos.z > cam.boundaryZ)
+	{
+		pos.z = cam.boundaryZ;
+	}
+	else if (pos.z < -cam.boundaryZ)
+	{
+		pos.z = -cam.boundaryZ;
+	}
+
+
+
 	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false)
 	{
 		f_beforeJump = pos.y;
@@ -129,14 +154,29 @@ void Player::gunUpdate(Camera3 cam, double dt)
 	currGun->updateBullet(dt);
 }
 
-bool Player::receiveQuest(Quest* q)
+bool Player::haveAcceptedCheck(Quest* q)
 {
 	for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
 	{
-		if (*it == nullptr)
+		if (*it == q)
 		{
-			*it = q;
 			return true;
+		}
+	}
+	return false;
+}
+
+bool Player::receiveQuest(Quest* q)
+{
+	if (haveAcceptedCheck(q) == false)
+	{
+		for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
+		{
+			if (*it == nullptr)
+			{
+				*it = q;
+				return true;
+			}
 		}
 	}
 	return false;
@@ -145,6 +185,26 @@ bool Player::receiveQuest(Quest* q)
 bool Player::receiveQuest(GameChar& x)
 {
 	return receiveQuest(x.quest);
+}
+
+bool Player::taskComplete(Quest* q, int index)
+{
+	if (index > q->numTasks || haveAcceptedCheck(q)==false)
+	{
+		return false;
+	}
+	else
+	{
+		for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
+		{
+			if (*it == q)
+			{
+				(*it)->task[index]=true;
+				questCompleted(q);
+				return true;
+			}
+		}
+	}
 }
 
 bool Player::questCompleted(Quest* q)

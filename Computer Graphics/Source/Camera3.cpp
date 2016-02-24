@@ -13,7 +13,7 @@ Camera3::~Camera3()
 
 }
 
-void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, float bound)
+void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, float boundX,float boundZ)
 {
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;
@@ -30,7 +30,8 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up,
 	f_jumpAcceleration = 75;
 	b_jumping = false;
 	b_jumpUP = true;
-	boundary = bound;
+	boundaryX = boundX;
+	boundaryZ = boundZ;
 
 }
 

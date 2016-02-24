@@ -8,18 +8,20 @@ size_t GameChar::GC_count = 0;
 
 GameChar::GameChar()
 {
-	chat_boundary = 100;
+	chat_boundary = 20;
 	GC_count++;
 	b_indexDebounce = false;
 	dialogue_index = 0;
+	b_dialogueEnd = false;
 }
 
 GameChar::GameChar(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos)
 {
-	chat_boundary = 100;
+	chat_boundary = 20;
 	++GC_count;
 	dialogue_index = 0;
 	b_indexDebounce = false;
+	b_dialogueEnd = false;
 }
 
 GameChar::~GameChar()
@@ -56,14 +58,15 @@ void GameChar::chat_update(Vector3 player_pos)
 	// NPC Text Indexing
 	if (vec_dialog.empty() == false)
 	{
-		if (Application::IsKeyPressed('E') && b_indexDebounce == false && collision(player_pos, pos, chat_boundary) == true)
+		if (Application::IsKeyPressed('E') && b_indexDebounce == false && collision(player_pos, pos, 15 + this->boundary + chat_boundary) == true)
 		{
-			if (isPressed == true)
+			if (isPressed == true && b_dialogueEnd == false)
 			{
 				++dialogue_index;
 				if (dialogue_index >= vec_dialog.size())
 				{
-					dialogue_index = 0;
+					--dialogue_index;
+					b_dialogueEnd = true;
 				}
 			}
 			b_indexDebounce = true;
@@ -72,13 +75,15 @@ void GameChar::chat_update(Vector3 player_pos)
 
 		}
 		// NPC Text Reset
-		if ((!Application::IsKeyPressed('E') && b_indexDebounce == true) || collision(player_pos, pos, chat_boundary) == false)
+		if ((!Application::IsKeyPressed('E') && b_indexDebounce == true) || collision(player_pos, pos, 15 + this->boundary + chat_boundary) == false)
 		{
 			b_indexDebounce = false;
 		}
-		if (collision(player_pos, pos, chat_boundary) == false)
+		if (collision(player_pos, pos, 15 + this->boundary + chat_boundary) == false)
 		{
 			isPressed = false;
+			b_dialogueEnd = false;
+			dialogue_index = 0;
 		}
 	}
 	

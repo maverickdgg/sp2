@@ -54,13 +54,13 @@ bool collision(GameObject x, vector<GameObject> y)
 	return false;
 }
 
-bool collision(GameObject x, vector<GameObject*> y)
+bool collision(Vector3 x, vector<GameObject*> y , float boundary)
 {
 	for (vector<GameObject*>::iterator it = y.begin(); it != y.end(); ++it)
 	{
-		if ((*it)->pos != x.pos)
+		if ((*it)->pos != x)
 		{
-			if (collision(x,**it) == true)
+			if (collision(**it, x,boundary) == true)
 			{
 				return true;
 			}
