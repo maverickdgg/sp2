@@ -133,8 +133,8 @@ void Sp2_Scene1::Init()
 	//geom init
 	/*frpc = SpaceVehicles("fourth", 5, 30, Vector3(55, 0, 60));
 	collisionVec.push_back(&frpc);*/
-	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450,300);
-	camera2.Init(Vector3(50,20, 50), Vector3(0,1,0), frpc.pos);
+	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450, 300);
+	camera2.Init(Vector3(50, 20, 50), Vector3(0, 1, 0), frpc.pos);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
@@ -151,8 +151,8 @@ void Sp2_Scene1::Init()
 	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1.f, 1.f);
 	meshList[GEO_TOP]->textureID = LoadTGA("Image//purplenebula_up.tga");
 
-    meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f, 1.f);
-    meshList[GEO_LEFT]->textureID = LoadTGA("Image//purplenebula_lf.tga");
+	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f, 1.f);
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//purplenebula_lf.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f, 1.f);
 	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//purplenebula_rt.tga");
@@ -163,20 +163,20 @@ void Sp2_Scene1::Init()
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("quad", Color(0, 0, 1), 1.f, 1.f);
-	
+
 	/*<---Studio Project 2 OBJs--->*/
-	
-	meshList[GEO_NPCLEPUSMAG] = MeshBuilder::GenerateOBJ("NPCLEPUSMAG","OBJ//NPCLEPUSMAG.obj");
+
+	meshList[GEO_NPCLEPUSMAG] = MeshBuilder::GenerateOBJ("NPCLEPUSMAG", "OBJ//NPCLEPUSMAG.obj");
 	meshList[GEO_NPCLEPUSMAG]->textureID = LoadTGA("Image//NPCLEPUSMAG.tga");
 
 	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
 	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
 
 	/*<--- GUN --->*/
-    meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
-    meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
+	meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
+	meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
 
-    meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
+	meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
 	meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
 	/*<---NPC--->*/
@@ -184,7 +184,7 @@ void Sp2_Scene1::Init()
 	meshList[GEO_MIKE]->textureID = LoadTGA("Image//mike.tga");
 
 	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
-	
+
 	meshList[GEO_BB8H] = MeshBuilder::GenerateOBJ("bb8head", "OBJ//BB8H.obj");
 	meshList[GEO_BB8H]->textureID = LoadTGA("Image//BB8H.tga");
 
@@ -214,7 +214,7 @@ void Sp2_Scene1::Init()
 	b_tpsDebounce = false;
 	tpsTimer = 0;
 
-    laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y ,camera.position.z));
+	laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x, camera.position.y, camera.position.z));
 	player.assignGun(&laserRifle);
 
 	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
@@ -234,12 +234,12 @@ void Sp2_Scene1::Init()
 	collisionVec.push_back(&chair1);
 	keycard1 = Buildings("keycard1", 0, 0, Vector3(-300, -5, 150));
 	/*<---Set the position of the NPC--->*/
-    b_isWorn = false;
+	b_isWorn = false;
 
 	mike1 = Alien("mike1", 30, 0, Vector3(400, -30, 250));
 	collisionVec.push_back(&mike1);
 
-	mike2 = Alien("mike2", 30, -90, Vector3( -50, -30, 300));
+	mike2 = Alien("mike2", 30, -90, Vector3(-50, -30, 300));
 	mike2.ReadFromTxt("Image//mikechat.txt");
 	collisionVec.push_back(&mike2);
 
@@ -256,9 +256,9 @@ void Sp2_Scene1::Init()
 	BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
 	collisionVec.push_back(&BB8_);
 
-	
+
 	tasklist.push_back("find the key card in the room");
-	questPtr = new Quest(1,tasklist, "get keycard");
+	questPtr = new Quest(1, tasklist, "get keycard");
 	tasklist.clear();
 
 	whale = Human("NPCLEPUSMAG", 10, 0, Vector3(75, -20, -300));
@@ -266,11 +266,11 @@ void Sp2_Scene1::Init()
 	whale.assignQuest(questPtr);
 	collisionVec.push_back(&whale);
 
-	//BB8_.quest = new Quest();
-	//BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
-	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
-
-void Sp2_Scene1::Update(double dt)
+	BB8_.quest = new Quest();
+	BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
+	BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+}
+	void Sp2_Scene1::Update(double dt)
 {
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);

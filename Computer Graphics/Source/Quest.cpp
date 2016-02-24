@@ -60,7 +60,7 @@ bool Quest::questComplete()
 //			std::getline(inData, data);
 //			vec_dialog.push_back(data);
 //		}
-//	}
+//	} 
 //	{inData.close();
 //	return vec_dialog;
 //	}
