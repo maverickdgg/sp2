@@ -26,6 +26,8 @@
 #include "BB-8_2.h"
 #include "Pingu.h"
 #include "Quest.h"
+#include "AlienEnemy.h"
+#include "ChestBurster.h"
 
 class Sp2_Scene1 : public Scene
 {
@@ -74,7 +76,10 @@ public:
 		GEO_BB8B,	// BB-8 Body
 		GEO_BB8v2H,	// BB-8 Head(Version 2)
 		GEO_PINGU,
+
 		GEO_BB8v2B,	// BB-8 Body(Version 2)
+
+		GEO_CHESTBURSTER,
 
 		GEO_PINGUBODY,
 		GEO_PINGULH,
@@ -141,7 +146,7 @@ public:
 	BB8v2 BB8v2_;
 	Pingu Pingu_;
 	Quest raceQuest;
-
+	ChestBurster ChestBurster_;
 	//player
 	Player player;
 
@@ -177,7 +182,11 @@ private:
 
 	void RenderPingu();
 	void RenderBB8(BB8 x);
+
 	void RenderBB8v2(BB8v2 n);
+
+	void RenderChestBurster(ChestBurster x);
+
 
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));

@@ -6,11 +6,12 @@
 #include "Pingu.h"
 #include "GL\glew.h"
 #include "Buildings.h"
-
+#include "AlienEnemy.h"
 #include "shader.hpp"
 #include "LoadTGA.h"
 #include "Collision.h"
 #include "Application.h"
+#include "ChestBurster.h"
 
 extern GLFWwindow* m_window;
 
@@ -217,6 +218,11 @@ void Sp2_Scene1::Init()
 	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("keycard", "OBJ//KeyCard.obj");
 	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
 
+	/*<---NPC--->*/
+
+	meshList[GEO_CHESTBURSTER] = MeshBuilder::GenerateOBJ("chestburster", "OBJ//ChestBurster.obj");
+	meshList[GEO_CHESTBURSTER]->textureID = LoadTGA("Image//ChestBurster.tga");
+
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
@@ -263,11 +269,17 @@ void Sp2_Scene1::Init()
 	BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
 	collisionVec.push_back(&BB8_);
 
+
 	/**/
 	BB8v2_ = BB8v2("BB8v2", 45, 0, Vector3(100, 10, 100));
 	BB8v2_.ReadFromTxt("Image//bb8v2.txt");
 	collisionVec.push_back(&BB8v2_);
 	/**/
+=======
+	ChestBurster_ = ChestBurster("ChestBurster", 15, 0, Vector3(30, 0, 50));
+	collisionVec.push_back(&ChestBurster_);
+
+
 
 	tasklist.push_back("find the key card in the room");
 	questPtr = new Quest(1, tasklist, "get keycard");
@@ -373,11 +385,18 @@ void Sp2_Scene1::Update(double dt)
 	//if (BB8_.quest->questComplete())
 	//	RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
 
+
 	/*<----------------------------------------------------------------------------------->*/
 	BB8_.moveCircles(dt);
 	BB8v2_.rotateAbout(dt);	/*<-----Double-Check------>*/
 	/*<----------------------------------------------------------------------------------->*/
 }
+=======
+	BB8_.moveCircles(dt);
+
+	ChestBurster_.translateWorm(dt);
+} 
+
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 {
@@ -576,6 +595,7 @@ void Sp2_Scene1::RenderBB8(BB8 x)
 	modelStack.PopMatrix();
 }
 
+
 /*<--------------------Scene 3 BB-8------------------------------------------------------->*/
 void Sp2_Scene1::RenderBB8v2(BB8v2 n)
 {
@@ -588,9 +608,22 @@ void Sp2_Scene1::RenderBB8v2(BB8v2 n)
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8v2H], true);	// True false rfers to on/off light respectively
 
+void Sp2_Scene1::RenderChestBurster(ChestBurster x)
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y - 20, x.pos.z);
+	modelStack.Rotate(x.viewAngle, 0, 0, 1);
+	modelStack.PushMatrix();
+	//modelStack.Translate(0, -33, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(40, 40, 40);
+	RenderMesh(meshList[GEO_CHESTBURSTER], true);	// True false rfers to on/off light respectively
+
+
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
+
 
 	modelStack.PushMatrix();
 	modelStack.Translate(n.pos.x, n.pos.y - 34, n.pos.z);
@@ -602,6 +635,9 @@ void Sp2_Scene1::RenderBB8v2(BB8v2 n)
 	modelStack.PopMatrix();
 }
 /*<--------------------Scene 3 BB-8------------------------------------------------------->*/
+
+}
+
 
 void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -735,9 +771,13 @@ void Sp2_Scene1::Renderfps()
 
 	//RenderPingu();
 	RenderBB8(BB8_);
+
 	RenderBB8v2(BB8v2_);
 
 	//RenderGameChar(BB8v2_, meshList[GEO_BB8v2B], true, true, Vector3(1, 1, 1));
+
+	RenderChestBurster(ChestBurster_);
+
 
 	RenderGameChar(mike1, meshList[GEO_MIKE], true, true, Vector3(5, 5, 5));
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], true, true, Vector3(10, 10, 10));
