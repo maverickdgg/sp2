@@ -34,8 +34,10 @@ public:
 	void assignGun(Gun* newGun);
 	void movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec);
 	void gunUpdate(Camera3 cam, double dt);
+	bool haveAcceptedCheck(Quest* q);
 	bool receiveQuest(Quest* q);
 	bool receiveQuest(GameChar& x);
+	bool taskComplete(Quest* q, int index);
 	bool questCompleted(Quest* q);
 };
 #endif

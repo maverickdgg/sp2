@@ -198,6 +198,18 @@ void Sp2_Scene1::Init()
 	meshList[GEO_PINGURH] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinguRH.obj");
 	meshList[GEO_PINGURH]->textureID = LoadTGA("Image//Pingu.tga");
 
+	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("table", "OBJ//Table.obj");
+	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
+
+	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("chair", "OBJ//Chair.obj");
+	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//Chair.tga");
+
+	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("boxes", "OBJ//Box.obj");
+	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
+
+	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("keycard", "OBJ//KeyCard.obj");
+	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
+
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
@@ -205,16 +217,26 @@ void Sp2_Scene1::Init()
     laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x,camera.position.y ,camera.position.z));
 	player.assignGun(&laserRifle);
 
-	whale = Human("NPCLEPUSMAG", 10, 0, Vector3(75, -20, -300));
-	whale.ReadFromTxt("Image//Robotdialogue.txt");
-	collisionVec.push_back(&whale);
-
 	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
 
+	//furniture
+	box1 = Buildings("box 1", 20, 0, Vector3(375, -30, 275));
+	collisionVec.push_back(&box1);
+	box2 = Buildings("box 2", 20, 0, Vector3(375, -30, 250));
+	collisionVec.push_back(&box2);
+	box3 = Buildings("box 3", 20, 0, Vector3(375, -30, 225));
+	collisionVec.push_back(&box3);
+	box4 = Buildings("box 4", 20, 0, Vector3(400, -30, 225));
+	collisionVec.push_back(&box4);
+	table1 = Buildings("table1", 50, 90, Vector3(-300, -30, 200));
+	collisionVec.push_back(&table1);
+	chair1 = Buildings("chair1", 20, 0, Vector3(-300, -30, 150));
+	collisionVec.push_back(&chair1);
+	keycard1 = Buildings("keycard1", 0, 0, Vector3(-300, -5, 150));
 	/*<---Set the position of the NPC--->*/
     b_isWorn = false;
 
-	mike1 = Alien("npc", 30, 0, Vector3(400, -30, 250));
+	mike1 = Alien("mike1", 30, 0, Vector3(400, -30, 250));
 	collisionVec.push_back(&mike1);
 
 	mike2 = Alien("mike2", 30, -90, Vector3( -50, -30, 300));
@@ -226,9 +248,18 @@ void Sp2_Scene1::Init()
 	collisionVec.push_back(&mike3);
 
 	BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
+	collisionVec.push_back(&BB8_);
 
+	
+	tasklist.push_back("find the key card in the room");
+	questPtr = new Quest(1,tasklist, "get keycard");
+	tasklist.clear();
 
-	collisionVec.push_back(&player);
+	whale = Human("NPCLEPUSMAG", 10, 0, Vector3(75, -20, -300));
+	whale.ReadFromTxt("text//keycardQuestDialogue.txt");
+	whale.assignQuest(questPtr);
+	collisionVec.push_back(&whale);
+
 	//BB8_.quest = new Quest();
 	//BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
 	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
@@ -308,9 +339,18 @@ void Sp2_Scene1::Update(double dt)
 
 	//npc chat updates
 	whale.chat_update(player.pos);
+	if (whale.b_dialogueEnd == true)
+	{
+		player.receiveQuest(whale);
+	}
+	if (collision(player, keycard1.pos, 15) == true && Application::IsKeyPressed('E'))
+	{
+		player.taskComplete(whale.quest, 0);
+	}
 	mike2.chat_update(player.pos);
-	//cout << player.questList.size()<<endl;
 	frpc.enterVehicleUpdate(player);
+
+	BB8_.moveCircles(dt);
 } 
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
@@ -500,6 +540,7 @@ void Sp2_Scene1::RenderBB8(BB8 x)
 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -33, 0);
+	//modelStack.Rotate(x.lowerBodyRotate, 0,0,1);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8B], true);
@@ -616,10 +657,27 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 
 void Sp2_Scene1::Renderfps()
 {
+	Vector3 lightDir(light[0].position.x,
+		light[0].position.y, light[0].position.z);
+	Vector3 lightDirection_cameraspace = viewStack.Top() *
+		lightDir;
+	glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
+	RenderMesh(meshList[GEO_LIGHTBALL], false);
+	modelStack.PopMatrix();
+
 	RenderSkybox();
 
 	RenderGameObj(station, meshList[GEO_STATION], true, false, Vector3(2.5, 7, 4));
-
+	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(20,30,20));
+	RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
+	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
+	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
+	RenderGameObj(table1, meshList[GEO_TABLE], true, false, Vector3(30,40,30));
+	RenderGameObj(chair1, meshList[GEO_CHAIR], true, false, Vector3(10,12,10));
+	RenderGameObj(keycard1, meshList[GEO_KEYCARD], true, true, Vector3(2,2,2));
 	//RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
 
 	/*<---NPC--->*/

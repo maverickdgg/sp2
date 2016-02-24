@@ -65,8 +65,8 @@ void GameChar::chat_update(Vector3 player_pos)
 				++dialogue_index;
 				if (dialogue_index >= vec_dialog.size())
 				{
-					dialogue_index = 0;
-					b_dialogueEnd == true;
+					--dialogue_index;
+					b_dialogueEnd = true;
 				}
 			}
 			b_indexDebounce = true;
@@ -83,6 +83,7 @@ void GameChar::chat_update(Vector3 player_pos)
 		{
 			isPressed = false;
 			b_dialogueEnd = false;
+			dialogue_index = 0;
 		}
 	}
 	

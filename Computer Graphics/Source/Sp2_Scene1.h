@@ -75,6 +75,11 @@ public:
 		GEO_PINGUBODY,
 		GEO_PINGULH,
 		GEO_PINGURH,
+
+		GEO_BOX,
+		GEO_TABLE,
+		GEO_CHAIR,
+		GEO_KEYCARD,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -133,6 +138,16 @@ public:
 
 	//player
 	Player player;
+
+	//furniture
+	Buildings box1,box2,box3,box4;
+	Buildings table1;
+	Buildings chair1;
+	Buildings keycard1;
+
+	//for quest
+	vector<string> tasklist;
+	Quest* questPtr;
 
 	vector<GameObject*> collisionVec;
 

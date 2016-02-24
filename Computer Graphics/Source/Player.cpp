@@ -154,14 +154,29 @@ void Player::gunUpdate(Camera3 cam, double dt)
 	currGun->updateBullet(dt);
 }
 
-bool Player::receiveQuest(Quest* q)
+bool Player::haveAcceptedCheck(Quest* q)
 {
 	for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
 	{
-		if (*it == nullptr)
+		if (*it == q)
 		{
-			*it = q;
 			return true;
+		}
+	}
+	return false;
+}
+
+bool Player::receiveQuest(Quest* q)
+{
+	if (haveAcceptedCheck(q) == false)
+	{
+		for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
+		{
+			if (*it == nullptr)
+			{
+				*it = q;
+				return true;
+			}
 		}
 	}
 	return false;
@@ -170,6 +185,26 @@ bool Player::receiveQuest(Quest* q)
 bool Player::receiveQuest(GameChar& x)
 {
 	return receiveQuest(x.quest);
+}
+
+bool Player::taskComplete(Quest* q, int index)
+{
+	if (index > q->numTasks || haveAcceptedCheck(q)==false)
+	{
+		return false;
+	}
+	else
+	{
+		for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
+		{
+			if (*it == q)
+			{
+				(*it)->task[index]=true;
+				questCompleted(q);
+				return true;
+			}
+		}
+	}
 }
 
 bool Player::questCompleted(Quest* q)
