@@ -83,6 +83,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Alien.cpp" />
+    <ClCompile Include="Source\AlienEnemy.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\BB-8.cpp" />
     <ClCompile Include="Source\Buildings.cpp" />
@@ -90,6 +91,7 @@
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
     <ClCompile Include="Source\CameraTPS.cpp" />
+    <ClCompile Include="Source\ChestBurster.cpp" />
     <ClCompile Include="Source\Collision.cpp" />
     <ClCompile Include="Source\GameChar.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
@@ -100,6 +102,7 @@
     <ClCompile Include="Source\LoadTGA.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Material.cpp" />
+    <ClCompile Include="Source\menu.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\Pingu.cpp" />
@@ -113,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Alien.h" />
+    <ClInclude Include="Source\AlienEnemy.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\BB-8.h" />
     <ClInclude Include="Source\Buildings.h" />
@@ -120,6 +124,7 @@
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />
     <ClInclude Include="Source\CameraTPS.h" />
+    <ClInclude Include="Source\ChestBurster.h" />
     <ClInclude Include="Source\Collision.h" />
     <ClInclude Include="Source\GameChar.h" />
     <ClInclude Include="Source\GameObject.h" />
@@ -129,6 +134,7 @@
     <ClInclude Include="Source\LoadOBJ.h" />
     <ClInclude Include="Source\LoadTGA.h" />
     <ClInclude Include="Source\Material.h" />
+    <ClInclude Include="Source\menu.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\Pingu.h" />
