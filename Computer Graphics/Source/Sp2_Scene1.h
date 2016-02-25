@@ -166,14 +166,12 @@ private:
 
 	void RenderMesh(Mesh* mesh, bool enableLight);
 	void RenderSkybox();
-	void RenderSpaceVehicles(Camera3 camera);
-
 
 	void RenderPingu();
 	void RenderBB8(BB8 x);
 
-	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1,1,1));
-	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
+	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1,1,1), Vector3 rotate = Vector3(0,0,0));
+	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), Vector3 rotate = Vector3(0, 0, 0) );
 
 	void Renderfps();
 	void Rendertps();

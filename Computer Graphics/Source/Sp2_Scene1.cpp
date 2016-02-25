@@ -459,10 +459,13 @@ void Sp2_Scene1::RenderSkybox()
 }
 
 
-void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,bool hasInteractions,Vector3 scale)
+void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Rotate(rotate.z, 0, 0, 1);
+	modelStack.Rotate(rotate.y, 0, 1, 0);
+	modelStack.Rotate(rotate.x, 1, 0, 0);
 	modelStack.Rotate(x.viewAngle, 0, 1, 0);
 	modelStack.Scale(scale.x,scale.y,scale.z);
 	RenderMesh(mesh,enableLight);
@@ -480,9 +483,9 @@ void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh,bool enableLight,bool ha
 	}
 }
 
-void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool hasInteractions, Vector3 scale)
+void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
-	RenderGameObj(x, mesh, enableLight,hasInteractions ,scale);
+	RenderGameObj(x, mesh, enableLight,hasInteractions ,scale ,rotate);
 
 	if (x.vec_dialog.empty() == false)
 	{
