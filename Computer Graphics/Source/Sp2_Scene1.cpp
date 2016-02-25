@@ -213,8 +213,8 @@ void Sp2_Scene1::Init()
 
 	/*<---NPC--->*/
 
-	meshList[GEO_CHESTBURSTER] = MeshBuilder::GenerateOBJ("chestburster", "OBJ//ChestBurster.obj");
-	meshList[GEO_CHESTBURSTER]->textureID = LoadTGA("Image//ChestBurster.tga");
+	//meshList[GEO_CHESTBURSTER] = MeshBuilder::GenerateOBJ("chestburster", "OBJ//ChestBurster.obj");
+	//meshList[GEO_CHESTBURSTER]->textureID = LoadTGA("Image//ChestBurster.tga");
 
 	b_enabletps = false;
 	b_tpsDebounce = false;
@@ -226,13 +226,13 @@ void Sp2_Scene1::Init()
 	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
 
 	//furniture
-	box1 = Buildings("box 1", 20, 0, Vector3(375, -30, 275));
+	box1 = Buildings("box 1", 25, 0, Vector3(375, -30, 275));
 	collisionVec.push_back(&box1);
-	box2 = Buildings("box 2", 20, 0, Vector3(375, -30, 250));
+	box2 = Buildings("box 2", 25, 0, Vector3(375, -30, 250));
 	collisionVec.push_back(&box2);
-	box3 = Buildings("box 3", 20, 0, Vector3(375, -30, 225));
+	box3 = Buildings("box 3", 25, 0, Vector3(375, -30, 225));
 	collisionVec.push_back(&box3);
-	box4 = Buildings("box 4", 20, 0, Vector3(400, -30, 225));
+	box4 = Buildings("box 4", 25, 0, Vector3(400, -30, 225));
 	collisionVec.push_back(&box4);
 	table1 = Buildings("table1", 50, 90, Vector3(-300, -30, 200));
 	collisionVec.push_back(&table1);
@@ -723,7 +723,7 @@ void Sp2_Scene1::Renderfps()
 
 	//RenderPingu();
 	RenderBB8(BB8_);
-	RenderChestBurster(ChestBurster_);
+	//RenderChestBurster(ChestBurster_);
 
 	RenderGameChar(mike1, meshList[GEO_MIKE], true,true,Vector3(5,5,5));
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG],true,true,Vector3(10,10,10));
