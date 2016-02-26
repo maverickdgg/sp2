@@ -9,12 +9,13 @@ Player::Player()
 	currGun = nullptr;
 	f_walkSpeed = 70;
 	f_sprintSpeed = 200;
-	f_beforeJump = 0;
 	b_jumpDebounce = false;
 	b_jumpUp = true;
 	f_jumpSpeed = 50;
 	f_gravity = 50;
 	f_initialJumpSpeed = 50;
+	groundLevel = 0;
+	f_jumpDebounceTimer = 0;
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -124,9 +125,9 @@ void Player::movementUpdate(Camera3& cam , double dt , vector<GameObject*> colli
 
 
 
-	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false)
+	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false && f_jumpDebounceTimer >=0.5)
 	{
-		f_beforeJump = pos.y;
+		f_jumpDebounceTimer = 0;
 		b_jumpDebounce = true;
 		b_jumpUp = true;
 		f_jumpSpeed = f_initialJumpSpeed;
@@ -134,26 +135,56 @@ void Player::movementUpdate(Camera3& cam , double dt , vector<GameObject*> colli
 	if (b_jumpUp == true && b_jumpDebounce == true)
 	{
 		f_jumpSpeed -= f_gravity * dt;
-		pos.y += f_jumpSpeed * dt;
+		tempPos.y += f_jumpSpeed * dt;
 		if (f_jumpSpeed <= 0)
 		{
 			f_jumpSpeed = 0;
 			b_jumpUp = false;
 		}
+		else if (collision(tempPos, collisionVec, this->boundary) == true)
+		{
+			b_jumpUp = false;
+		}
+		else {
+			pos = tempPos;
+		}
 	}
 	if (b_jumpUp == false && b_jumpDebounce == true)
 	{
 		f_jumpSpeed += f_gravity * dt;
-		pos.y -= f_jumpSpeed * dt;
-		if (f_jumpSpeed >= f_initialJumpSpeed)
+		tempPos.y -= f_jumpSpeed * dt;
+		if (tempPos.y <= groundLevel)
+		{
+			pos.y = groundLevel;
+			f_jumpSpeed = f_initialJumpSpeed;
+			b_jumpUp = true;
+			b_jumpDebounce = false;
+		}
+		else if (collision(tempPos, collisionVec, this->boundary) == true)
 		{
 			f_jumpSpeed = f_initialJumpSpeed;
 			b_jumpUp = true;
 			b_jumpDebounce = false;
-			pos.y = f_beforeJump;
+		}
+		else
+		{
+			pos = tempPos;
 		}
 	}
+	if (b_jumpDebounce == false && f_jumpDebounceTimer <0.5)
+	{
+		f_jumpDebounceTimer += dt;
+	}
 
+	if (pos.y > groundLevel && collision(pos - Vector3(0, 20, 0)*dt, collisionVec, this->boundary) == false && b_jumpDebounce == false)
+	{
+		pos.y -= 20 * dt;
+	}
+	else if (pos.y < groundLevel)
+	{
+		pos.y = groundLevel;
+	}
+	
 	cam.position = this->pos;
 	cam.updateRotation(0.3);
 }

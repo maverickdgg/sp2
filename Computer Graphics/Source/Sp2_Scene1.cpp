@@ -218,8 +218,13 @@ void Sp2_Scene1::Init()
     meshList[GEO_SUIT] = MeshBuilder::GenerateOBJ("npc1", "OBJ//astronautsuit.obj");
     meshList[GEO_SUIT]->textureID = LoadTGA("Image//0001_npcmastronautworker_c.tg4d.tga");
 
+
     meshList[GEO_HELMETUI] = MeshBuilder::GenerateQuad("helmetfps", Color(1, 1, 1), 1.f, 1.f);
     meshList[GEO_HELMETUI]->textureID = LoadTGA("Image//HelmetInside.tga");
+
+	//meshList[GEO_CHESTBURSTER] = MeshBuilder::GenerateOBJ("chestburster", "OBJ//ChestBurster.obj");
+	//meshList[GEO_CHESTBURSTER]->textureID = LoadTGA("Image//ChestBurster.tga");
+
 
 	b_enabletps = false;
 	b_tpsDebounce = false;
@@ -233,13 +238,13 @@ void Sp2_Scene1::Init()
 	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
 
 	//furniture
-	box1 = Buildings("box 1", 20, 0, Vector3(375, -30, 275));
+	box1 = Buildings("box 1", 25, 0, Vector3(375, -30, 275));
 	collisionVec.push_back(&box1);
-	box2 = Buildings("box 2", 20, 0, Vector3(375, -30, 250));
+	box2 = Buildings("box 2", 25, 0, Vector3(375, -30, 250));
 	collisionVec.push_back(&box2);
-	box3 = Buildings("box 3", 20, 0, Vector3(375, -30, 225));
+	box3 = Buildings("box 3", 25, 0, Vector3(375, -30, 225));
 	collisionVec.push_back(&box3);
-	box4 = Buildings("box 4", 20, 0, Vector3(400, -30, 225));
+	box4 = Buildings("box 4", 25, 0, Vector3(400, -30, 225));
 	collisionVec.push_back(&box4);
 	table1 = Buildings("table1", 50, 90, Vector3(-300, -30, 200));
 	collisionVec.push_back(&table1);
@@ -379,6 +384,7 @@ void Sp2_Scene1::Init()
 	//if (BB8_.quest->questComplete())
 	//	RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
 	BB8_.moveCircles(dt);
+	ChestBurster_.translateWorm(dt);
 
     if (b_isWorn == true && collision(suit.pos, camera.position, suit.boundary) == false)
     {
@@ -541,18 +547,15 @@ void Sp2_Scene1::RenderSuit()
     }
 }
 
-void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, smaller axis)
+
+void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
-	//modelStack.Rotate(x.viewAngle, 0, 1, 0);
-    if (axis == 1)
-        modelStack.Rotate(x.viewAngle, 1, 0, 0);
-    else if (axis == 2)
-        modelStack.Rotate(x.viewAngle, 0, 1, 0);
-    else if (axis == 0)
-        axis = 0;
-        //modelStack.Rotate(0, 0, 0, 0);
+	modelStack.Rotate(rotate.z, 0, 0, 1);
+	modelStack.Rotate(rotate.y, 0, 1, 0);
+	modelStack.Rotate(rotate.x, 1, 0, 0);
+	modelStack.Rotate(x.viewAngle, 0, 1, 0);
 	modelStack.Scale(scale.x,scale.y,scale.z);
 	RenderMesh(mesh,enableLight);
 	modelStack.PopMatrix();
@@ -569,9 +572,9 @@ void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool 
 	}
 }
 
-void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh,  bool enableLight, bool hasInteractions, Vector3 scale)
+void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
-	RenderGameObj(x, mesh, enableLight,hasInteractions ,scale);
+	RenderGameObj(x, mesh, enableLight,hasInteractions ,scale ,rotate);
 
 	if (x.vec_dialog.empty() == false)
 	{
@@ -742,7 +745,7 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 	modelStack.Rotate(rotate.z, 0, 0, 1);
 	modelStack.Scale(scale.x, scale.y, scale.z);
 
-	RenderMesh(mesh, false);
+	RenderMesh(mesh, b_lightEnabled);
 
 	projectionStack.PopMatrix();
 	viewStack.PopMatrix();
@@ -783,6 +786,9 @@ void Sp2_Scene1::Renderfps()
 
 	//RenderPingu();
 	RenderBB8(BB8_);
+
+
+	//RenderChestBurster(ChestBurster_);
 
 	RenderGameChar(mike1, meshList[GEO_MIKE], true,true,Vector3(5,5,5));
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG],true,true,Vector3(10,10,10));

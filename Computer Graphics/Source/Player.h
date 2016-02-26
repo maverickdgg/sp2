@@ -23,12 +23,13 @@ public:
 
 	float f_walkSpeed;
 	float f_sprintSpeed;
-	float f_beforeJump;
+	float f_jumpDebounceTimer;
 	float f_initialJumpSpeed;
 	float f_jumpSpeed;
 	float f_gravity;
 	bool b_jumpDebounce;
 	bool b_jumpUp;
+	float groundLevel;
 
 	vector<Quest*> questList;
 
