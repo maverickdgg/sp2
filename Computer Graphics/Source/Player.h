@@ -18,6 +18,7 @@ public:
 	Gun* currGun;
 
 	Player();
+    Player(smaller init_Health);
 	~Player();
 
 	float f_walkSpeed;

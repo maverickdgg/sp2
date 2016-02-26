@@ -92,7 +92,6 @@
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
     <ClCompile Include="Source\CameraTPS.cpp" />
-    <ClCompile Include="Source\ChestBurster.cpp" />
     <ClCompile Include="Source\Collision.cpp" />
     <ClCompile Include="Source\GameChar.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
@@ -108,10 +107,13 @@
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\Pingu.cpp" />
     <ClCompile Include="Source\PinkKnight.cpp" />
+    <ClCompile Include="Source\Platform.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Quest.cpp" />
     <ClCompile Include="Source\shader.cpp" />
+    <ClCompile Include="Source\Sir.cpp" />
     <ClCompile Include="Source\Sp2_Scene1.cpp" />
+    <ClCompile Include="Source\SP2_Scene3.cpp" />
     <ClCompile Include="Source\SpaceVehicles.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
   </ItemGroup>
@@ -126,7 +128,6 @@
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />
     <ClInclude Include="Source\CameraTPS.h" />
-    <ClInclude Include="Source\ChestBurster.h" />
     <ClInclude Include="Source\Collision.h" />
     <ClInclude Include="Source\GameChar.h" />
     <ClInclude Include="Source\GameObject.h" />
@@ -141,11 +142,14 @@
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\Pingu.h" />
     <ClInclude Include="Source\PinkKnight.h" />
+    <ClInclude Include="Source\Platform.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Quest.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
+    <ClInclude Include="Source\Sir.h" />
     <ClInclude Include="Source\Sp2_Scene1.h" />
+    <ClInclude Include="Source\SP2_Scene3.h" />
     <ClInclude Include="Source\SpaceVehicles.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />

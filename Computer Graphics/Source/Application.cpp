@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 #include "SP2_scene1.h"
+#include "SP2_Scene3.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
@@ -104,7 +105,7 @@ void Application::Run()
 {
 	//Main Loop
 
-	Scene *scene = new Sp2_Scene1();
+	Scene *scene = new Sp2_Scene3();
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame

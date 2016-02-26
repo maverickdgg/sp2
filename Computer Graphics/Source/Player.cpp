@@ -22,6 +22,28 @@ Player::Player()
 	}
 }
 
+Player::Player(smaller init_Health) : GameChar("Player", 15, 0, Vector3(0, 0, 0), init_Health)
+{
+    pos = Vector3(0, 0, 0);
+    viewAngle = 0;
+    boundary = 15;
+    name = "Player";
+    currGun = nullptr;
+    f_walkSpeed = 70;
+    f_sprintSpeed = 200;
+    f_beforeJump = 0;
+    b_jumpDebounce = false;
+    b_jumpUp = true;
+    f_jumpSpeed = 50;
+    f_gravity = 50;
+    f_initialJumpSpeed = 50;
+
+    for (int i = 0; i < 5; ++i)
+    {
+        questList.push_back(nullptr);
+    }
+}
+
 Player::~Player()
 {
 }

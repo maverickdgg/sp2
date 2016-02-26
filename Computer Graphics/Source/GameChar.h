@@ -10,7 +10,7 @@ class GameChar : public GameObject
 {
 protected:
 	GameChar();
-	GameChar(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0));
+    GameChar(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0), smaller init_Health = 0);
 
 public:
     ~GameChar();
@@ -25,8 +25,18 @@ public:
 	vector<string> ReadFromTxt(string link);
 	void chat_update(Vector3 player_pos);
 
+    bool isDead();
+    smaller getHealth();
+    string getHealthString();
+    bool recieveHealthDamage(const int& damage);
+
 	Quest* quest;
 
 	void assignQuest(Quest* q);
+
+private:
+    smaller health;
+    bool invulnerability;
+    smaller max_health;
 };
 #endif

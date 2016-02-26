@@ -1,18 +1,37 @@
 #include "AlienEnemy.h"
 
-size_t AlienEnemy::alienEnemy_count = 0;
-
 AlienEnemy::AlienEnemy()
 {
-	alienEnemy_count++;
+
 }
 
 AlienEnemy::AlienEnemy(string object_name, int boundary, float viewAngle, Vector3 pos) : Alien(object_name, boundary, viewAngle, pos)
 {
-	alienEnemy_count++;
+    turnSpeed = 45;
+    isTurned = false;
 }
 
 AlienEnemy::~AlienEnemy()
 {
-	alienEnemy_count--;
+
+}
+
+void AlienEnemy::translateWorm(double dt)
+{
+    if (isTurned == false)
+    {
+        viewAngle += turnSpeed*dt;
+        if (viewAngle > 10)
+        {
+            isTurned = true;
+        }
+    }
+    else if (isTurned == true)
+    {
+        viewAngle -= turnSpeed*dt;
+        if (viewAngle < -10)
+        {
+            isTurned = false;
+        }
+    }
 }
