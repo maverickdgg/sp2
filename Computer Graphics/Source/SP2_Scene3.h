@@ -28,7 +28,7 @@
 #include "Pingu.h"
 #include "Quest.h"
 #include "Sir.h"
-#include "Platform.h"
+#include "Medic.h"
 
 class Sp2_Scene3 : public Scene
 {
@@ -88,8 +88,7 @@ public:
 		GEO_BB8v2H,	// BB-8 Head(Version 2)
 		GEO_PINGU,
 		GEO_BB8v2B,	// BB-8 Body(Version 2)
-        GEO_CHESTBURSTER,	// Worm
-		GEO_PLATFORM,	// Platform
+        GEO_CHESTBURSTER,
 
         GEO_PINGUBODY,
         GEO_PINGULH,
@@ -99,6 +98,12 @@ public:
         GEO_TABLE,
         GEO_CHAIR,
         GEO_KEYCARD,
+
+		/*<------Medic------>*/
+		GEO_MEDICBODY,
+		GEO_MEDICHEAD,
+		GEO_MEDICARM1,
+		GEO_MEDICARM2,
         /*<---Do not touch--->*/
         NUM_GEOMETRY,
     };
@@ -159,11 +164,11 @@ public:
     Human spaceHelm;
     BB8 BB8_;
 	BB8v2 BB8v2_;
+	Medic Medic_;
     Pingu Pingu_;
     Quest raceQuest;
     AlienEnemy ChestBurster;
 	Sir Sir_;
-	Platform Platform_;
 
     //player
     Player player;
@@ -179,6 +184,7 @@ public:
     Quest* questPtr;
 
     vector<GameObject*> collisionVec;
+
 
 private:
     unsigned m_vertexArrayID;
@@ -196,13 +202,14 @@ private:
     void RenderSkybox();
     void RenderSpaceVehicles(Camera3 camera);
 
+
     void RenderPingu();
     void RenderBB8(BB8 x);
 	void RenderBB8v2(BB8v2 n);
     void RenderSuit();
     void RenderChestBurster();
 	void RenderSir(/*Sir n*/);
-	void RenderPlatform(Platform p);
+	void RenderMedic(Medic x);
 
     void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
     void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));

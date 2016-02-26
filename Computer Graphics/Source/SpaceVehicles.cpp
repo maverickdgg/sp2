@@ -70,7 +70,7 @@ void SpaceVehicles::enterVehicleUpdate(Player& player)
 	{
 		b_isInVehicle = false;
 		b_vehDebounce = true;
-		player.pos = this->pos;
+		player.pos = this->pos - Vector3(11,0,10);
 	}
 	if (!Application::IsKeyPressed('E') && b_vehDebounce == true)
 	{

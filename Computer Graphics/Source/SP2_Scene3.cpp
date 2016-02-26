@@ -7,7 +7,7 @@
 #include "GL\glew.h"
 #include "Buildings.h"
 #include "Sir.h"
-#include "Platform.h"
+#include "Medic.h"
 
 #include "shader.hpp"
 #include "LoadTGA.h"
@@ -247,9 +247,19 @@ void Sp2_Scene3::Init()
     meshList[GEO_GUIDEARMRIGHT]->textureID = LoadTGA("Image//Space_suit_texture.tga");
 	/*<---Under Construction--->*/
 
-	/*<------Platform------>*/
-	meshList[GEO_PLATFORM] = MeshBuilder::GenerateOBJ("platform", "OBJ//Platform.obj");
-	meshList[GEO_PLATFORM]->textureID = LoadTGA("Image//Platform.tga");
+	/*<---Medic--->*/
+	meshList[GEO_MEDICBODY] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicBody.obj");
+	meshList[GEO_MEDICBODY]->textureID = LoadTGA("Image//MedicBody.tga");
+
+	meshList[GEO_MEDICARM1] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm1.obj");
+	meshList[GEO_MEDICARM1]->textureID = LoadTGA("Image//MedicBody.tga");
+
+	meshList[GEO_MEDICARM2] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm2.obj");
+	meshList[GEO_MEDICARM2]->textureID = LoadTGA("Image//MedicBody.tga");
+
+	meshList[GEO_MEDICHEAD] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicHead.obj");
+	meshList[GEO_MEDICHEAD]->textureID = LoadTGA("Image//MedicBody.tga");
+	/*<---Medic--->*/
 
     b_enabletps = false;
     b_tpsDebounce = false;
@@ -297,6 +307,9 @@ void Sp2_Scene3::Init()
 	Sir_ = Sir("Sir", 25, 0, Vector3(30, 0, 70));
 	collisionVec.push_back(&Sir_);
 
+	Medic_ = Medic("medic", 15, 0, Vector3(5, 0, 50));
+	collisionVec.push_back(&Medic_);
+
     BB8_.quest = new Quest();
     BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
     //BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
@@ -316,9 +329,6 @@ void Sp2_Scene3::Init()
     BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
     collisionVec.push_back(&BB8_);
 
-	/**/
-	Platform_ = Platform("platform", 45, 0, Vector3(-100, 50, -100));
-	collisionVec.push_back(&Platform_);
 
     tasklist.push_back("find the key card in the room");
     questPtr = new Quest(1, tasklist, "get keycard");
@@ -417,7 +427,7 @@ void Sp2_Scene3::Update(double dt)
     mike2.chat_update(player.pos);
     frpc.enterVehicleUpdate(player);
 	BB8v2_.chat_update(player.pos);
-	//Platform_.chat_update(player.pos);
+	Medic_.chat_update(player.pos);
 
     //if (Application::IsKeyPressed('Z'))
     //{
@@ -427,10 +437,6 @@ void Sp2_Scene3::Update(double dt)
     //	RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
     BB8_.moveCircles(dt);
 	BB8v2_.rotateAbout(dt);	/*<-----Double-Check------>*/
-
-	/*<------------>*/
-	// Platform_.rotateAbout(dt);
-	/*<------------>*/
 
     if (b_isWorn == true && collision(suit.pos, camera.position, suit.boundary) == false)
     {
@@ -806,53 +812,79 @@ void Sp2_Scene3::RenderSir(/*Sir n*/)
 	modelStack.PopMatrix();
 }
 
-/*<--------------------Scene 3 BB-8------------------------------------------------------->*/
-void Sp2_Scene3::RenderPlatform(Platform p)
+void Sp2_Scene3::RenderMedic(Medic x)
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(p.pos.x, p.pos.y, p.pos.z);
-	modelStack.Rotate(p.viewAngle, 0, 1, 0);
+	modelStack.Translate(x.pos.x, x.pos.y - 33, x.pos.z - 90);
+	modelStack.Rotate(x.viewAngle, 0, 0, 1);
 	modelStack.PushMatrix();
-	modelStack.Translate(0, -33, 0);
+	//modelStack.Translate(0, -33, 0);
 	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_PLATFORM], false);	// True false rfers to on/off light respectively
+	modelStack.Scale(0.4, 0.4, 0.4);
+	RenderMesh(meshList[GEO_MEDICBODY], true);	// True false refers to on/off light respectively
 
 	modelStack.PopMatrix();
-
 	modelStack.PopMatrix();
 
-	//modelStack.PushMatrix();
-	//modelStack.Translate(n.pos.x, n.pos.y - 34, n.pos.z);
-	//modelStack.Rotate(n.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(10, 10, 10);
-	//RenderMesh(meshList[GEO_BB8v2B], true);
 
-	//modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y + 4, x.pos.z - 90);
+	modelStack.Rotate(x.viewAngle, 0, 0, 1);
+	modelStack.PushMatrix();
+	//modelStack.Translate(0, -33, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(0.4, 0.4, 0.4);
+	RenderMesh(meshList[GEO_MEDICHEAD], true);	// True false refers to on/off light respectively
 
-	//if (collision(n.pos, camera.position, (n.boundary + 30)))
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y - 4, x.pos.z - 82);
+	modelStack.Rotate(x.viewAngle, 0, 0, 1);
+	modelStack.PushMatrix();
+	//modelStack.Translate(0, -33, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(0.4, 0.4, 0.4);
+	RenderMesh(meshList[GEO_MEDICARM1], true);	// True false refers to on/off light respectively
+
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y - 4, x.pos.z - 96);
+	modelStack.Rotate(x.viewAngle, 0, 0, 1);
+	modelStack.PushMatrix();
+	//modelStack.Translate(0, -33, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(0.4, 0.4, 0.4);
+	RenderMesh(meshList[GEO_MEDICARM2], true);	// True false refers to on/off light respectively
+
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	if (collision(x.pos, camera.position, (x.boundary + 30)))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to heal", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
+
+	//if (x.vec_dialog.empty() == false)
 	//{
-	//	modelStack.PushMatrix();
-	//	modelStack.Translate(2, 6, 0);
-	//	RenderTextOnScreen(meshList[GEO_TEXT], "Click 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
-	//	modelStack.PopMatrix();
-	//}
-
-	//if (n.vec_dialog.empty() == false)
-	//{
-	//	if (collision(n.pos, player.pos, (n.boundary + player.boundary + n.chat_boundary)) && n.isPressed == true)
+	//	if (collision(x.pos, player.pos, (x.boundary + player.boundary + x.chat_boundary)) && x.isPressed == true)
 	//	{
 	//		//if (x.dialogue_index == x.vec_dialog.size() - 1 && x.quest!=nullptr)
 	//		//{
 	//		//	player.receiveQuest(x);
 	//		//}
-	//		RenderTextOnScreen(meshList[GEO_TEXT], n.vec_dialog[n.dialogue_index], Color(0, 1, 0), 2, 1, 20);
+	//		RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0, 1, 0), 2, 1, 20);
 	//	}
 	//}
-}
-/*<--------------------Scene 3 BB-8------------------------------------------------------->*/
 
+	/*<>*/
+}
 
 void Sp2_Scene3::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -987,13 +1019,12 @@ void Sp2_Scene3::Renderfps()
     //RenderGameChar(ChestBurster, )
     RenderChestBurster();
 	RenderSir();
+	RenderMedic(Medic_);
 
     /*<---PLAYERCOSTUME--->*/
     RenderSuit();
 	/*<---NPC--->*/
 	RenderBB8v2(BB8v2_);
-	/*<---Platform--->*/
-	RenderPlatform(Platform_);
 
     /*<---NPC--->*/
 

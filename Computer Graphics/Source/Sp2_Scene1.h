@@ -75,7 +75,6 @@ public:
 		GEO_BB8H,	// BB-8 Head
 		GEO_BB8B,	// BB-8 Body
 		GEO_PINGU,
-		GEO_CHESTBURSTER,
 
 		GEO_PINGUBODY,
 		GEO_PINGULH,
@@ -146,7 +145,7 @@ public:
 	BB8 BB8_;
 	Pingu Pingu_;
 	Quest raceQuest;
-	ChestBurster ChestBurster_;
+
 	//player
 	Player player;
 
@@ -177,17 +176,15 @@ private:
 
 	void RenderMesh(Mesh* mesh, bool enableLight);
 	void RenderSkybox();
+	void RenderSpaceVehicles(Camera3 camera);
+
 
 	void RenderPingu();
 	void RenderBB8(BB8 x);
-	void RenderChestBurster(ChestBurster x);
-
+    void RenderSuit();
 
     void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
-
-	
-
 
 	void Renderfps();
 	void Rendertps();

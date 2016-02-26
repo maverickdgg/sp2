@@ -10,19 +10,11 @@ bool collision(GameObject x, GameObject y)
 	}
 	else
 	{
-<<<<<<< HEAD
 	return true;
 	}*/
 	if (distance.x < 0)
 	{
 		distance.x *= -1;
-=======
-		return true;
-	}*/
-	if (distance.x < 0)
-	{
-		distance.x *= -1; 
->>>>>>> origin/master
 	}
 	if (distance.y < 0)
 	{
@@ -42,11 +34,7 @@ bool collision(GameObject x, GameObject y)
 	}
 }
 
-<<<<<<< HEAD
 bool collision(GameObject x, Vector3 y, int boundary)
-=======
-bool collision(GameObject x, Vector3 y,int boundary)
->>>>>>> origin/master
 {
 	return collision(x.pos, y, (x.boundary + boundary));
 }

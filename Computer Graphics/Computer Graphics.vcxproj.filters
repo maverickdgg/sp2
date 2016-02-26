@@ -114,7 +114,7 @@
     <ClCompile Include="Source\BB-8_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Platform.cpp">
+    <ClCompile Include="Source\Medic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -224,7 +224,7 @@
     <ClInclude Include="Source\BB-8_2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Platform.h">
+    <ClInclude Include="Source\Medic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
