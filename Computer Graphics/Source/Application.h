@@ -7,6 +7,7 @@
 
 //Include GLFW
 #include <GLFW/glfw3.h>
+#include "Scene.h"
 
 class Application
 {
@@ -18,8 +19,13 @@ public:
 	void Exit();
 	static bool IsKeyPressed(unsigned short key);
 
-private:
+	static void switchToScene1();
+	static void switchToScene2();
 
+private:
+	static Scene* scene;
+	static Scene* scene1;
+	static Scene* scene2;
 	//Declare a window object
 	StopWatch m_timer;
 };

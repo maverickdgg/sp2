@@ -2,6 +2,7 @@
 #define CAMERA_TPS_H
 
 #include "Camera.h"
+#include "GameObject.h"
 
 class CameraTPS : public Camera
 {
@@ -12,11 +13,14 @@ public:
     Vector3 defaultUp;
     Vector3 right;
     Vector3 view;
+	GameObject* targetObj;
+	bool b_cameraLock;
+	bool b_cameraLockDebounce;
     CameraTPS();
     ~CameraTPS();
-    virtual void Init(const Vector3& pos, const Vector3& up, const Vector3& vehiclePos);
+    virtual void Init(const Vector3& pos, const Vector3& up, GameObject* targetObj);
     void tpsUpdateRotation(float speed);
-    void tpsUpdateVec(Vector3 targetedVec);
+    void tpsUpdateVec(double dt);
 };
 
 #endif

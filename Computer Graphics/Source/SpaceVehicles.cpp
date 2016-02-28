@@ -9,10 +9,11 @@ SpaceVehicles::SpaceVehicles() : max_speed(25)
 	b_isInVehicle = false;
 }
 
-SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos), acceleration(50), speed(0), max_speed(250), rotateAngle(30)
+SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos), acceleration(25), speed(0), max_speed(100), rotateAngle(50)
 {
 	b_vehDebounce = false;
 	b_isInVehicle = false;
+	rotationZ = 0;
 }
 
 SpaceVehicles::~SpaceVehicles()
@@ -20,41 +21,75 @@ SpaceVehicles::~SpaceVehicles()
 	SV_count--;
 }
 
-void SpaceVehicles::updateVehicle(bool isPressedW ,bool isPressedS, bool isPressedA, bool isPressedD, double deltaTime)
+void SpaceVehicles::updateVehicle(double deltaTime)
 {
-    if (isPressedW == true && isPressedS == false)
+	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
     {
         if (speed < max_speed)
         {
-            speed += acceleration ;
+            speed += acceleration * deltaTime;
         }
+		if (speed>max_speed)
+		{
+			speed = max_speed;
+		}
     }
 
-    if (isPressedS == true && isPressedW == false)
+	if (Application::IsKeyPressed('S') && !Application::IsKeyPressed('W'))
     {
         if (speed > -max_speed)
         {
-            speed -= acceleration ;
+            speed -= acceleration * deltaTime;
         }
+		if (speed < -max_speed)
+		{
+			speed = -max_speed;
+		}
     }
-    else if (isPressedW == false && isPressedS == false)
+	else if (!Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
     {
         if (speed > 0)
-        speed -= acceleration;
+        speed -= acceleration * deltaTime;
 		if (speed < 0)
 		{
-			speed += acceleration;
+			speed += acceleration * deltaTime;
 		}
     }
    
-    if (isPressedA == true && isPressedD == false)
+	if (Application::IsKeyPressed('A') && !Application::IsKeyPressed('D'))
     {
-        viewAngle += rotateAngle * deltaTime;
+		if (rotationZ <= 0)
+		{
+			viewAngle += rotateAngle * deltaTime;
+		}
+        
+		if (rotationZ > -45)
+			rotationZ -= rotateAngle* deltaTime;
+		else if (rotationZ < -45)
+			rotationZ = -45;
     }
-    if (isPressedD == true && isPressedA == false)
+	if (Application::IsKeyPressed('D') && !Application::IsKeyPressed('A'))
     {
-        viewAngle -= rotateAngle * deltaTime;
+		if (rotationZ >= 0)
+		{
+			viewAngle -= rotateAngle * deltaTime;
+		}
+		if (rotationZ < 45)
+			rotationZ += rotateAngle* deltaTime;
+		else if (rotationZ > 45)
+			rotationZ = 45;
     }
+	if (!Application::IsKeyPressed('A') && !Application::IsKeyPressed('D'))
+	{
+		if (rotationZ > 0)
+		{
+			rotationZ -= rotateAngle* deltaTime;
+		}
+		if (rotationZ < 0)
+		{
+			rotationZ += rotateAngle* deltaTime;
+		}
+	}
         pos.x += sin(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
         pos.z += cos(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
 }

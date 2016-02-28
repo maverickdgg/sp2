@@ -6,10 +6,15 @@
 #include <stdlib.h>
 
 #include "SP2_scene1.h"
+#include "Sp2_SpaceRace.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
+
+Scene* Application::scene;
+Scene* Application::scene1;
+Scene* Application::scene2;
 
 //Define an error callback
 static void error_callback(int error, const char* description)
@@ -100,16 +105,32 @@ void Application::Init()
 	}
 }
 
+void Application::switchToScene1()
+{
+	scene = scene1;
+}
+
+void Application::switchToScene2()
+{
+	scene = scene2;
+}
+
 void Application::Run()
 {
 	//Main Loop
 
-	Scene *scene = new Sp2_Scene1();
-	scene->Init();
+
+	scene1 = new Sp2_Scene1();
+	scene1->Init();
+	scene2 = new Sp2_SpaceRace();
+	scene2->Init();
+
+	scene = scene1;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
 	{
+
 		scene->Update(m_timer.getElapsedTime());
 		scene->Render();
 		//Swap buffers

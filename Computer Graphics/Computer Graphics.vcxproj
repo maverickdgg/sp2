@@ -101,6 +101,7 @@
     <ClCompile Include="Source\LoadOBJ.cpp" />
     <ClCompile Include="Source\LoadTGA.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Map.cpp" />
     <ClCompile Include="Source\Material.cpp" />
     <ClCompile Include="Source\menu.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
@@ -111,6 +112,7 @@
     <ClCompile Include="Source\Quest.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Sp2_Scene1.cpp" />
+    <ClCompile Include="Source\Sp2_SpaceRace.cpp" />
     <ClCompile Include="Source\SpaceVehicles.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
   </ItemGroup>
@@ -133,6 +135,7 @@
     <ClInclude Include="Source\Light.h" />
     <ClInclude Include="Source\LoadOBJ.h" />
     <ClInclude Include="Source\LoadTGA.h" />
+    <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\Material.h" />
     <ClInclude Include="Source\menu.h" />
     <ClInclude Include="Source\Mesh.h" />
@@ -144,6 +147,7 @@
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Sp2_Scene1.h" />
+    <ClInclude Include="Source\Sp2_SpaceRace.h" />
     <ClInclude Include="Source\SpaceVehicles.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />

@@ -42,15 +42,7 @@ bool collision(GameObject x, Vector3 y,int boundary)
 bool collision(Vector3 x, Vector3 y, int boundary)
 {
 	Vector3 distance = x - y;
-	//float length = distance.Length();
-	//if (length > boundary)
-	//{
-	//	return false;
-	//}
-	//else
-	//{
-	//	return true;
-	//}
+
 	if (distance.x < 0)
 	{
 		distance.x *= -1;

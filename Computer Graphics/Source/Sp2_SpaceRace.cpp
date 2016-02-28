@@ -1,4 +1,4 @@
-#include "Sp2_Scene1.h"
+#include "Sp2_SpaceRace.h"
 #include "Human.h"
 #include "Alien.h"
 #include "BB-8.h"
@@ -14,15 +14,15 @@
 
 extern GLFWwindow* m_window;
 
-Sp2_Scene1::Sp2_Scene1()
+Sp2_SpaceRace::Sp2_SpaceRace()
 {
 }
 
-Sp2_Scene1::~Sp2_Scene1()
+Sp2_SpaceRace::~Sp2_SpaceRace()
 {
 }
 
-void Sp2_Scene1::Init()
+void Sp2_SpaceRace::Init()
 {
 
 	ShowCursor(FALSE);
@@ -132,8 +132,10 @@ void Sp2_Scene1::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//geom init
-
+	frpc = SpaceVehicles("frpc", 30, 0, Vector3(50,0,50));
+	collisionVec.push_back(&frpc);
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450, 300);
+	camera2.Init(Vector3(-50, 15, -50), Vector3(0, 1, 0), &frpc);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
@@ -190,13 +192,6 @@ void Sp2_Scene1::Init()
 	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB8B.obj");
 	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB8B.tga");
 
-	meshList[GEO_PINGUBODY] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinguBody.obj");
-	meshList[GEO_PINGUBODY]->textureID = LoadTGA("Image//Pingu.tga");
-	meshList[GEO_PINGULH] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinguLH.obj");
-	meshList[GEO_PINGULH]->textureID = LoadTGA("Image//Pingu.tga");
-	meshList[GEO_PINGURH] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinguRH.obj");
-	meshList[GEO_PINGURH]->textureID = LoadTGA("Image//Pingu.tga");
-
 	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("table", "OBJ//Table.obj");
 	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
 
@@ -211,74 +206,15 @@ void Sp2_Scene1::Init()
 
 	/*<---NPC--->*/
 
-	//meshList[GEO_CHESTBURSTER] = MeshBuilder::GenerateOBJ("chestburster", "OBJ//ChestBurster.obj");
-	//meshList[GEO_CHESTBURSTER]->textureID = LoadTGA("Image//ChestBurster.tga");
-
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
 
-	laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x, camera.position.y, camera.position.z));
-	player.assignGun(&laserRifle);
-
-	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
-
-	//furniture
-	box1 = Buildings("box 1", 25, 0, Vector3(375, -30, 275));
-	collisionVec.push_back(&box1);
-	box2 = Buildings("box 2", 25, 0, Vector3(375, -30, 250));
-	collisionVec.push_back(&box2);
-	box3 = Buildings("box 3", 25, 0, Vector3(375, -30, 225));
-	collisionVec.push_back(&box3);
-	box4 = Buildings("box 4", 25, 0, Vector3(400, -30, 225));
-	collisionVec.push_back(&box4);
-	table1 = Buildings("table1", 50, 90, Vector3(-300, -30, 200));
-	collisionVec.push_back(&table1);
-	chair1 = Buildings("chair1", 20, 0, Vector3(-300, -30, 150));
-	collisionVec.push_back(&chair1);
-	keycard1 = Buildings("keycard1", 0, 0, Vector3(-300, -5, 150));
-	/*<---Set the position of the NPC--->*/
-	b_isWorn = false;
-
-	mike1 = Alien("mike1", 30, 0, Vector3(400, -30, 250));
-	collisionVec.push_back(&mike1);
-
-	mike2 = Alien("mike2", 30, -90, Vector3(-50, -30, 300));
-	mike2.ReadFromTxt("Image//mikechat.txt");
-	collisionVec.push_back(&mike2);
-
-	BB8_.quest = new Quest();
-	BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
-	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
-	raceQuest = Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
-	BB8_.assignQuest(&raceQuest);
-
-	mike3 = Alien("mike3", 30, -75, Vector3(175, -30, 300));
-	mike3.ReadFromTxt("Image//mikechat.txt");
-	collisionVec.push_back(&mike3);
-
-	BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
-	collisionVec.push_back(&BB8_);
-
-	//ChestBurster_ = ChestBurster("ChestBurster", 15, 0, Vector3(30, 0, 50));
-	//collisionVec.push_back(&ChestBurster_);
-
-
-	tasklist.push_back("find the key card in the room");
-	questPtr = new Quest(1, tasklist, "get keycard");
-	tasklist.clear();
-
-	whale = Human("NPCLEPUSMAG", 10, 0, Vector3(75, -20, -300));
-	whale.ReadFromTxt("text//keycardQuestDialogue.txt");
-	whale.assignQuest(questPtr);
-	collisionVec.push_back(&whale);
-
-	//BB8_.quest = new Quest();
-	//BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
-	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+	//loading of map;
+	racetrack = load_map("text//map.txt");
 }
-void Sp2_Scene1::Update(double dt)
-	{
+void Sp2_SpaceRace::Update(double dt)
+{
 
 	if (Application::IsKeyPressed('1'))
 	{
@@ -299,12 +235,21 @@ void Sp2_Scene1::Update(double dt)
 
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-			player.movementUpdate(camera, dt,collisionVec);
-			player.gunUpdate(camera,dt);
+		if (frpc.b_isInVehicle == false)
+		{
+			player.movementUpdate(camera, dt, collisionVec);
+		}
+		else
+		{
+			camera2.tpsUpdateVec(dt);
+			frpc.updateVehicle(dt);
+			cout << frpc.speed << endl;
+			
+		}
 
 		ShowCursor(FALSE);
 	}
-
+	frpc.enterVehicleUpdate(player);
 	if (Application::IsKeyPressed(VK_MENU))
 	{
 		ShowCursor(TRUE);
@@ -329,43 +274,14 @@ void Sp2_Scene1::Update(double dt)
 			tpsTimer = 0;
 		}
 	}
-
-	//gun update
-
-
- /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
-        b_isWorn = true;*/
-
-
-	//npc chat updates
-	whale.chat_update(player.pos);
-	if (whale.b_dialogueEnd == true)
+	if (Application::IsKeyPressed('O'))
 	{
-		player.receiveQuest(whale);
+		Application::switchToScene1();
 	}
-	if (collision(player, keycard1.pos, 15) == true && Application::IsKeyPressed('E'))
-	{
-		player.taskComplete(whale.quest, 0);
-	}
-	mike2.chat_update(player.pos);
+	speed = std::to_string(frpc.speed);
+}
 
-	//if (Application::IsKeyPressed('Z'))
-	//{
-	//	BB8_.quest->taskComplete(0);
-	//}
-	//if (BB8_.quest->questComplete())
-	//	RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
-	BB8_.moveCircles(dt);
-
-	ChestBurster_.translateWorm(dt);
-
-	if (Application::IsKeyPressed('P'))
-	{
-		Application::switchToScene2();
-	}
-} 
-
-void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
+void Sp2_SpaceRace::RenderMesh(Mesh* mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 	MVP = projectionStack.Top() * viewStack.Top() *	modelStack.Top();
@@ -408,8 +324,8 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 }
 
 
-void Sp2_Scene1::RenderSkybox()
-{	
+void Sp2_SpaceRace::RenderSkybox(Camera camera)
+{
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -10, 0);
 
@@ -422,7 +338,7 @@ void Sp2_Scene1::RenderSkybox()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	//modelStack.Translate(camera.position.x, 0, camera.position.z);
+	modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(0, 999, 0);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Rotate(180, 0, 0, 1);
@@ -432,7 +348,7 @@ void Sp2_Scene1::RenderSkybox()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	//modelStack.Translate(camera.position.x, 0, camera.position.z);
+	modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(999, 0, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Rotate(90, 0, 0, 1);
@@ -441,7 +357,7 @@ void Sp2_Scene1::RenderSkybox()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	//modelStack.Translate(camera.position.x, 0, camera.position.z);
+	modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(-999, 0, 0);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Rotate(90, 0, 0, 1);
@@ -451,7 +367,7 @@ void Sp2_Scene1::RenderSkybox()
 
 
 	modelStack.PushMatrix();
-	//modelStack.Translate(camera.position.x, 0, camera.position.z);
+	modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(0, 0, -999);
 	modelStack.Rotate(90, 0, 0, 1);
 	modelStack.Scale(1000, 1000, 1000);
@@ -459,7 +375,7 @@ void Sp2_Scene1::RenderSkybox()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	//modelStack.Translate(camera.position.x, 0, camera.position.z);
+	modelStack.Translate(camera.position.x, 0, camera.position.z);
 	modelStack.Translate(0, 0, 999);
 	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Rotate(90, 0, 0, 1);
@@ -471,16 +387,17 @@ void Sp2_Scene1::RenderSkybox()
 }
 
 
-void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
+void Sp2_SpaceRace::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
-	modelStack.Rotate(rotate.z, 0, 0, 1);
-	modelStack.Rotate(rotate.y, 0, 1, 0);
-	modelStack.Rotate(rotate.x, 1, 0, 0);
 	modelStack.Rotate(x.viewAngle, 0, 1, 0);
-	modelStack.Scale(scale.x,scale.y,scale.z);
-	RenderMesh(mesh,enableLight);
+	modelStack.Rotate(rotate.x, 1, 0, 0);
+	modelStack.Rotate(rotate.y, 0, 1, 0);
+	modelStack.Rotate(rotate.z, 0, 0, 1);
+	
+	modelStack.Scale(scale.x, scale.y, scale.z);
+	RenderMesh(mesh, enableLight);
 	modelStack.PopMatrix();
 
 	if (hasInteractions == true)
@@ -495,9 +412,9 @@ void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool 
 	}
 }
 
-void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
+void Sp2_SpaceRace::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
-	RenderGameObj(x, mesh, enableLight,hasInteractions ,scale ,rotate);
+	RenderGameObj(x, mesh, enableLight, hasInteractions, scale, rotate);
 
 	if (x.vec_dialog.empty() == false)
 	{
@@ -507,81 +424,13 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool h
 			//{
 			//	player.receiveQuest(x);
 			//}
-			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0,1,0), 2, 1, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0, 1, 0), 2, 1, 20);
 		}
 	}
 }
 
 
-void Sp2_Scene1::RenderPingu()
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(50, -30, -125);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_PINGUBODY], true);	// True false rfers to on/off light respectively
-
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(50, -30, -125);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_PINGULH], true);
-
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(50, -30, -125);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_PINGURH], true);
-
-	modelStack.PopMatrix();
-}
-
-void Sp2_Scene1::RenderBB8(BB8 x)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
-	modelStack.Rotate(x.viewAngle, 0, 1, 0);
-	modelStack.PushMatrix();
-	modelStack.Translate(0, -33, 0);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_BB8H], true);	// True false rfers to on/off light respectively
-
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, -33, 0);
-	//modelStack.Rotate(x.lowerBodyRotate, 0,0,1);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_BB8B], true);
-
-	modelStack.PopMatrix();
-
-	modelStack.PopMatrix();
-}
-
-void Sp2_Scene1::RenderChestBurster(ChestBurster x)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(x.pos.x, x.pos.y - 20, x.pos.z);
-	modelStack.Rotate(x.viewAngle, 0, 0, 1);
-	modelStack.PushMatrix();
-	//modelStack.Translate(0, -33, 0);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(40, 40, 40);
-	RenderMesh(meshList[GEO_CHESTBURSTER], true);	// True false rfers to on/off light respectively
-
-	modelStack.PopMatrix();
-
-	modelStack.PopMatrix();
-}
-
-void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
+void Sp2_SpaceRace::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -610,7 +459,7 @@ void Sp2_Scene1::RenderText(Mesh* mesh, std::string text, Color color)
 }
 
 
-void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void Sp2_SpaceRace::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -660,7 +509,7 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 }
 
 
-void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale , Vector3 rotate )
+void Sp2_SpaceRace::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale, Vector3 rotate)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -100, 100); //size of screen UI
@@ -685,7 +534,7 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 }
 
 
-void Sp2_Scene1::Renderfps()
+void Sp2_SpaceRace::Renderfps()
 {
 	Vector3 lightDir(light[0].position.x,
 		light[0].position.y, light[0].position.z);
@@ -698,53 +547,23 @@ void Sp2_Scene1::Renderfps()
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
 
-	RenderSkybox();
+	RenderSkybox(camera);
+	
+	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
 
-	RenderGameObj(station, meshList[GEO_STATION], true, false, Vector3(2.5, 7, 4));
-	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(20,30,20));
-	RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
-	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
-	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
-	RenderGameObj(table1, meshList[GEO_TABLE], true, false, Vector3(30,40,30));
-	RenderGameObj(chair1, meshList[GEO_CHAIR], true, false, Vector3(10,12,10));
-	RenderGameObj(keycard1, meshList[GEO_KEYCARD], true, true, Vector3(2,2,2));
-	//RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
+	if (frpc.b_isInVehicle == true)
+	RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
 
-	/*<---NPC--->*/
-
-	//RenderPingu();
-	RenderBB8(BB8_);
-	//RenderChestBurster(ChestBurster_);
-
-	RenderGameChar(mike1, meshList[GEO_MIKE], true,true,Vector3(5,5,5));
-	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG],true,true,Vector3(10,10,10));
-	RenderGameChar(mike2, meshList[GEO_MIKE],true,true,Vector3(7,4,7));
-	RenderGameChar(mike3, meshList[GEO_MIKE], true, true, Vector3(4,7,4));
-
-
-	RenderMesh(meshList[GEO_AXES], false); 
-	/*<---Weapons--->*/
-    if (b_isWorn == false)
-	    RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE],Vector3(75,-15,-10),Vector3(250,250,250),Vector3(10,110,0));
-
-	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(it->pos.x, it->pos.y, it->pos.z);
-		modelStack.Rotate(it->angleY, 0, 1, 0);
-		modelStack.Rotate(it->angleX, 0, 0, 1);
-		RenderMesh(meshList[GEO_DART], true);
-		modelStack.PopMatrix();
-	}
-}
-
-void Sp2_Scene1::Rendertps()
-{
-	RenderSkybox();
 	RenderMesh(meshList[GEO_AXES], false);
 }
 
-void Sp2_Scene1::Render()
+void Sp2_SpaceRace::Rendertps()
+{
+	RenderSkybox(camera);
+	RenderMesh(meshList[GEO_AXES], false);
+}
+
+void Sp2_SpaceRace::Render()
 {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -761,12 +580,22 @@ void Sp2_Scene1::Render()
 	viewStack.LoadIdentity();
 
 	//set View position to camera
-	
-	viewStack.LookAt(
-		camera.position.x, camera.position.y, camera.position.z,
-		camera.target.x, camera.target.y, camera.target.z,
-		camera.up.x, camera.up.y, camera.up.z
-		);
+	if (frpc.b_isInVehicle == false)
+	{
+		viewStack.LookAt(
+			camera.position.x, camera.position.y, camera.position.z,
+			camera.target.x, camera.target.y, camera.target.z,
+			camera.up.x, camera.up.y, camera.up.z
+			);
+	}
+	else if (frpc.b_isInVehicle == true)
+	{
+		viewStack.LookAt(
+			camera2.position.x, camera2.position.y, camera2.position.z,
+			camera2.target.x, camera2.target.y, camera2.target.z,
+			camera2.up.x, camera2.up.y, camera2.up.z
+			);
+	}
 
 	Renderfps();
 
@@ -791,7 +620,7 @@ void Sp2_Scene1::Render()
 
 
 
-void Sp2_Scene1::Exit()
+void Sp2_SpaceRace::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
