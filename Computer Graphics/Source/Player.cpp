@@ -23,6 +23,29 @@ Player::Player()
 	}
 }
 
+Player::Player(Vector3 pos)
+{
+	this->pos = pos;
+	viewAngle = 0;
+	boundary = 15;
+	name = "Player";
+	currGun = nullptr;
+	f_walkSpeed = 70;
+	f_sprintSpeed = 200;
+	b_jumpDebounce = false;
+	b_jumpUp = true;
+	f_jumpSpeed = 50;
+	f_gravity = 50;
+	f_initialJumpSpeed = 50;
+	groundLevel = 0;
+	f_jumpDebounceTimer = 0;
+
+	for (int i = 0; i < 5; ++i)
+	{
+		questList.push_back(nullptr);
+	}
+}
+
 Player::~Player()
 {
 }

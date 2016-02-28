@@ -5,6 +5,8 @@
 #include <fstream>
 #include <iostream>
 
+#include "Vector3.h"
+
 using std::string;
 
 typedef struct sMap
@@ -18,14 +20,7 @@ typedef struct sMap
 		nrow = row;
 		ncol = col;
 		
-		/*for (int i = 0; i < nrow; ++i)
-		{
-			for (int j = 0; j < ncol; ++j)
-			{
-				data = new char;
-			}
-		}*/
-		data = new char[nrow * ncol];
+		data = new char[(nrow*ncol)];
 	}
 	//destructor
 	~sMap()
@@ -36,5 +31,9 @@ typedef struct sMap
 }MAP,*PMAP;
 
 PMAP load_map(string filename);
+
+Vector3 indexToVector(int index);
+int vectorToIndex(Vector3 pos);
+int toIndex(int row, int col);
 
 #endif

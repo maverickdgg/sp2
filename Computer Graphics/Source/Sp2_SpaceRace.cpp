@@ -132,7 +132,7 @@ void Sp2_SpaceRace::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//geom init
-	frpc = SpaceVehicles("frpc", 30, 0, Vector3(50,0,50));
+	frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44,25)));
 	collisionVec.push_back(&frpc);
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450, 300);
 	camera2.Init(Vector3(-50, 15, -50), Vector3(0, 1, 0), &frpc);
@@ -172,19 +172,15 @@ void Sp2_SpaceRace::Init()
 
 	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
 	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
-
 	/*<--- GUN --->*/
 	meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
 	meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
 
 	meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
 	meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
-
 	/*<---NPC--->*/
 	meshList[GEO_MIKE] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
 	meshList[GEO_MIKE]->textureID = LoadTGA("Image//mike.tga");
-
-	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
 
 	meshList[GEO_BB8H] = MeshBuilder::GenerateOBJ("bb8head", "OBJ//BB8H.obj");
 	meshList[GEO_BB8H]->textureID = LoadTGA("Image//BB8H.tga");
@@ -203,16 +199,30 @@ void Sp2_SpaceRace::Init()
 
 	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("keycard", "OBJ//KeyCard.obj");
 	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
-
 	/*<---NPC--->*/
-
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
 
+	player = Player(frpc.pos);
+
+	// cpu racers
+	frpc2 = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 26)) , 75);
 	//loading of map;
-	racetrack = load_map("text//map.txt");
+	racetrack = load_map("text//map1.txt");
+	racePath.push(toIndex(44,45));
+	racePath.push(toIndex(33,45));
+	racePath.push(toIndex(33,42));
+	racePath.push(toIndex(29,38));
+	racePath.push(toIndex(29,34));
+	racePath.push(toIndex(34,34));
+	racePath.push(toIndex(34,23));
+	racePath.push(toIndex(20,23));
+	racePath.push(toIndex(20,14));
+	racePath.push(toIndex(28,6));
+	racePath.push(toIndex(44,6));
 }
+
 void Sp2_SpaceRace::Update(double dt)
 {
 
@@ -242,9 +252,7 @@ void Sp2_SpaceRace::Update(double dt)
 		else
 		{
 			camera2.tpsUpdateVec(dt);
-			frpc.updateVehicle(dt);
-			cout << frpc.speed << endl;
-			
+			frpc.updateVehicle(dt,racetrack);
 		}
 
 		ShowCursor(FALSE);
@@ -279,6 +287,8 @@ void Sp2_SpaceRace::Update(double dt)
 		Application::switchToScene1();
 	}
 	speed = std::to_string(frpc.speed);
+
+	frpc2.updateCPUVehicle(dt, racetrack, racePath);
 }
 
 void Sp2_SpaceRace::RenderMesh(Mesh* mesh, bool enableLight)
@@ -412,6 +422,20 @@ void Sp2_SpaceRace::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bo
 	}
 }
 
+void Sp2_SpaceRace::RenderGameObj(Mesh* mesh, Vector3 pos, Vector3 scale, Vector3 rotate)
+{
+	modelStack.PushMatrix();
+
+	modelStack.Translate(pos.x, pos.y, pos.z);
+	modelStack.Rotate(rotate.x, 1, 0, 0);
+	modelStack.Rotate(rotate.y, 0, 1, 0);
+	modelStack.Rotate(rotate.z, 0, 0, 1);
+	modelStack.Scale(scale.x, scale.y, scale.z);
+	RenderMesh(mesh, true);
+
+	modelStack.PopMatrix();
+}
+
 void Sp2_SpaceRace::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
 	RenderGameObj(x, mesh, enableLight, hasInteractions, scale, rotate);
@@ -428,7 +452,6 @@ void Sp2_SpaceRace::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, boo
 		}
 	}
 }
-
 
 void Sp2_SpaceRace::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -550,11 +573,20 @@ void Sp2_SpaceRace::Renderfps()
 	RenderSkybox(camera);
 	
 	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
+	RenderGameObj(frpc2, meshList[GEO_FOURTH], true, true, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
 
 	if (frpc.b_isInVehicle == true)
 	RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
 
 	RenderMesh(meshList[GEO_AXES], false);
+
+	for (int i = 0; i < 2500; ++i)
+	{
+		if (racetrack->data[i] == '1')
+		{
+			RenderGameObj(meshList[GEO_BOX], indexToVector(i) + Vector3(10,-30,10), Vector3(20, 40, 20), Vector3(0, 0, 0));
+		}
+	}
 }
 
 void Sp2_SpaceRace::Rendertps()

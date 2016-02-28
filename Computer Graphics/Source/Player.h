@@ -18,6 +18,7 @@ public:
 	Gun* currGun;
 
 	Player();
+	Player(Vector3 pos);
 	~Player();
 
 	float f_walkSpeed;

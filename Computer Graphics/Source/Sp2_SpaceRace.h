@@ -28,6 +28,10 @@
 #include "AlienEnemy.h"
 #include "Map.h"
 
+#include <queue>
+
+using std::queue;
+
 class Sp2_SpaceRace : public Scene
 {
 public:
@@ -131,7 +135,7 @@ public:
 	bool b_isWorn;
 	float tpsTimer;
 
-	SpaceVehicles frpc;
+	SpaceVehicles frpc,frpc2;
 
 	//player
 	Player player;
@@ -150,6 +154,7 @@ public:
 
 	string speed;
 	PMAP racetrack;
+	queue<int> racePath;
 
 
 private:
@@ -168,8 +173,9 @@ private:
 	void RenderSkybox(Camera cam);
 
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), Vector3 rotate = Vector3(0, 0, 0));
+	void RenderGameObj(Mesh* mesh, Vector3 pos, Vector3 scale, Vector3 rotate);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), Vector3 rotate = Vector3(0, 0, 0));
-
+	
 	void Renderfps();
 	void Rendertps();
 

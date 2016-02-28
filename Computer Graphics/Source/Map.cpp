@@ -43,3 +43,23 @@ PMAP load_map(string filename)
 	return map;
 }
 
+Vector3 indexToVector(int index)
+{
+	int row, col;
+	row = index / 50;
+	col = index % 50;
+	Vector3 origin = Vector3(-500, 0, -500);
+	return (origin + Vector3(row * 20, 0, col * 20) );
+}
+
+int vectorToIndex(Vector3 pos)
+{
+	int row = (pos.x + 500) / 20;
+	int col = (pos.z + 500) / 20;
+	return (row * 50 + col);
+}
+
+int toIndex(int row, int col)
+{
+	return (row * 50 + col);
+}
