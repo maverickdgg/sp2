@@ -143,10 +143,14 @@ bool GameChar::recieveHealthDamage(const int& damage)
 
 void GameChar::regainHealth(const int& healAMT)
 {
-    if (health > 100)
-        health = 100;
-    if (health <= 100)
-        health += healAMT;
+	if (health > 100)
+	{
+		health = 100;
+	}
+	if (health <= 100)
+	{
+		health =+ healAMT;
+	}
 }
 
 void GameChar::assignQuest(Quest* q)
