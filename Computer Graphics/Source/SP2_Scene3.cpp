@@ -267,6 +267,11 @@ void Sp2_Scene3::Init()
 	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(-50, 125, -125));
 	collisionVec.push_back(&ChestBurster);
 
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(200, 0 , -125));
+	collisionVec.push_back(&ChestBurster1);
+	
+
+
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
@@ -392,6 +397,8 @@ void Sp2_Scene3::Update(double dt)
 
 	if (b_isDisplayUI == true && collision(ChestBurster.pos, player.pos, 21))
 		player.recieveHealthDamage(1);
+	if (b_isDisplayUI == true && collision(ChestBurster1.pos, player.pos, 21))
+		player.recieveHealthDamage(1);
 
 	if (player.isDead() == false)
 		oldPos = player.pos;
@@ -403,10 +410,22 @@ void Sp2_Scene3::Update(double dt)
 
 	if (collision(suit, player.pos, 21) && Application::IsKeyPressed('E'))
 		b_isWorn = true;
-
+	
+	if (b_isDisplayUI == true && player.oxygen > 0)
+	{
+		player.oxygen -= (dt);
+	}
+	if (player.oxygen <= 0)
+	{
+		player.oxygen == 0;
+		player.isDead();
+	}
 
 	ChestBurster.translateWorm(dt);
 	ChestBurster.move(dt);
+
+	ChestBurster1.translateWorm(dt);
+	ChestBurster1.move(dt);
 	//
 	Sir_.Salute(dt);
 
@@ -590,8 +609,11 @@ void Sp2_Scene3::RenderSuit()
 	if (b_isDisplayUI)
 	{
 		RenderMeshOnScreen(meshList[GEO_HELMETUI], Vector3(40, 30.5, -10), Vector3(30, 40, 10), Vector3(0, 0, 90));
-        if (player.isDead() == false)
-		    RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
+		if (player.isDead() == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
+			RenderTextOnScreen(meshList[GEO_TEXT2], player.getOxygenString(), Color(0, 1, 0), 3, 12, 2.75);
+		}
 	}
 }
 
@@ -753,7 +775,6 @@ void Sp2_Scene3::RenderSir(/*Sir n*/)
 
 void Sp2_Scene3::RenderPlatform(Platform p, bool isRotate)
 {
-
 	modelStack.PushMatrix();
 	modelStack.Translate(p.pos.x, p.pos.y, p.pos.z);
 	modelStack.PushMatrix();
@@ -980,6 +1001,25 @@ void Sp2_Scene3::RenderChestBurster()
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
+
+}
+
+void Sp2_Scene3::RenderChestBurster1()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(ChestBurster1.pos.x + ChestBurster1.wormtranslating, ChestBurster1.pos.y - 29.5, ChestBurster1.pos.z);
+	modelStack.Rotate(ChestBurster1.viewAngle, 0, 0, 1);
+	modelStack.PushMatrix();
+	//modelStack.Translate(0, -33, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Rotate(ChestBurster1.wormrotating, 0, 1, 0);
+	modelStack.Scale(40, 40, 40);
+	RenderMesh(meshList[GEO_CHESTBURSTER], true);	// True false rfers to on/off light respectively
+
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();
+
 }
 
 void Sp2_Scene3::RenderText(Mesh* mesh, std::string text, Color color)
@@ -1112,6 +1152,7 @@ void Sp2_Scene3::Renderfps()
 	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderChestBurster();
+	RenderChestBurster1();
 	RenderGameObj(ladder, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
 	RenderGameObj(ladder2, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
     RenderGameObj(ladder3, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));

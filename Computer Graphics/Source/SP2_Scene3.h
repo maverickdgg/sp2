@@ -173,6 +173,7 @@ public:
 	Pingu Pingu_;
 	Quest raceQuest;
 	AlienEnemy ChestBurster;
+	AlienEnemy ChestBurster1;
 	Sir Sir_;
 	Platform Platform_;
 	Platform Platform1;
@@ -226,6 +227,7 @@ private:
 	void RenderBB8v2(BB8v2 n);
 	void RenderSuit();
 	void RenderChestBurster();
+	void RenderChestBurster1();
 	void RenderSir(/*Sir n*/);
 	void RenderPlatform(Platform p, bool isRotate);
 	void RenderMedic(Medic x);
