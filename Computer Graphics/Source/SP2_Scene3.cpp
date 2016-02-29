@@ -314,7 +314,7 @@ void Sp2_Scene3::Init()
 	Platform5 = Platform("platform5", 30, 0, Vector3(75, 210, -120));		// To Be Continued...
 	collisionVec.push_back(&Platform5);
 
-	Platform6 = Platform("platform6", 30, 0, Vector3(120, 408.15, -120));
+	Platform6 = Platform("platform6", 30, 0, Vector3(150, 210, -170));
 	collisionVec.push_back(&Platform6);
 
 	Platform7 = Platform("platform7", 30, 0, Vector3(420, 408.15, -120));
@@ -331,7 +331,7 @@ void Sp2_Scene3::Init()
 
 	player.oxygen = 6000;
     horiDist = 50;
-	verticalDistance = 80;
+	verticalDistance = 50;
     b_switchDir = false;
 }
 void Sp2_Scene3::Update(double dt)
@@ -523,7 +523,7 @@ void Sp2_Scene3::Update(double dt)
 	if (b_switchDir == false)
 	{
 		verticalDistance -= 5 * (dt);
-		if (verticalDistance < -60)
+		if (verticalDistance < -220)
 		{
 			b_switchDir = true;
 		}
@@ -531,13 +531,13 @@ void Sp2_Scene3::Update(double dt)
 	else if (b_switchDir == true)
 	{
 		verticalDistance += 5 * (dt);
-		if (verticalDistance > 50)
+		if (verticalDistance > 210)
 		{
 			b_switchDir = false;
 		}
 	}
 	/*ladder4.pos.x = horiDist;*/
-	Platform6.pos.y = verticalDistance + 25;
+	Platform6.pos.y = verticalDistance + 175;
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
 	if (b_switchDir == false)
