@@ -155,6 +155,7 @@ public:
 	bool b_isClimb;
 	bool b_isClimb2;
     bool b_isClimb3;
+	bool b_isClimb4;
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
@@ -203,6 +204,7 @@ public:
 	Buildings ladder;
 	Buildings ladder2;
 	Buildings ladder3;
+	Buildings ladder4;
 
 	//for quest
 	vector<string> tasklist;

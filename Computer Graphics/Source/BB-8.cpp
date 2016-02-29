@@ -11,7 +11,7 @@ BB8::BB8(string object_name, int boundary, float viewAngle, Vector3 pos) : GameC
 {
 	bb8_count++;
 	speed = 50;
-	turnSpeed = 30;
+	turnSpeed = 70;
 	lowerBodyRotate = 180;
 }
 

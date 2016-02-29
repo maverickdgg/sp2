@@ -642,7 +642,7 @@ void Sp2_Scene1::RenderBB8(BB8 x)
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -34, 0);
 	//modelStack.Rotate(x.lowerBodyRotate, 0,0,1);
-	modelStack.Rotate(x.viewAngle, 0, 0, 1);
+	modelStack.Rotate(x.viewAngle, 0, 0, -1);
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8B], true);
 

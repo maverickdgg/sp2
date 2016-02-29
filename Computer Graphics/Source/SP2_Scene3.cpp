@@ -252,6 +252,8 @@ void Sp2_Scene3::Init()
 	b_isDisplayUI = false;
 	b_isClimb == false;
 	b_isClimb2 = false;
+	b_isClimb3 = false;
+	b_isClimb4 = false;
 	rotateHelm = 0;
 	scaleHelm = 50;
 
@@ -267,6 +269,9 @@ void Sp2_Scene3::Init()
 	ladder3 = Buildings("ladder3", 1, 270, Vector3(-50, 152, -53.5));
 	collisionVec.push_back(&ladder3);
 
+	ladder4 = Buildings("ladder4", 1, 135, Vector3(50, 215, -90));
+	collisionVec.push_back(&ladder4);
+
 	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(-50, 125, -125));
 	collisionVec.push_back(&ChestBurster);
 
@@ -277,9 +282,6 @@ void Sp2_Scene3::Init()
 	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(200, 0 , -125));
 	collisionVec.push_back(&ChestBurster1);
 	
-
-
-
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
@@ -451,6 +453,7 @@ void Sp2_Scene3::Update(double dt)
         ladder.climb(b_isClimb, ladder, player);
         ladder2.climb(b_isClimb2, ladder2, player);
         ladder3.climb(b_isClimb3, ladder3, player);
+		ladder4.climb(b_isClimb4, ladder4, player);
     }
 
 	if (b_isClimb == true)
@@ -1190,6 +1193,7 @@ void Sp2_Scene3::Renderfps()
 	RenderGameObj(ladder, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
 	RenderGameObj(ladder2, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
     RenderGameObj(ladder3, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
+	RenderGameObj(ladder4, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
 
 	/*<---NPC--->*/
 	//RenderPingu();
