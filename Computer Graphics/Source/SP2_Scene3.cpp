@@ -269,7 +269,7 @@ void Sp2_Scene3::Init()
 	ladder3 = Buildings("ladder3", 1, 270, Vector3(-50, 152, -53.5));
 	collisionVec.push_back(&ladder3);
 
-	ladder4 = Buildings("ladder4", 1, 135, Vector3(50, 215, -90));
+	ladder4 = Buildings("ladder4", 1, 140, Vector3(50, 210, -90));
 	collisionVec.push_back(&ladder4);
 
 	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(-50, 125, -125));
@@ -279,7 +279,8 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 260, -125));
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 245, -125));
+
 	collisionVec.push_back(&ChestBurster1);
 	
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
@@ -311,7 +312,7 @@ void Sp2_Scene3::Init()
 	Platform4 = Platform("platform4", 30, 0, Vector3(-10, 150, -25));		// Done (Healer)
 	collisionVec.push_back(&Platform4);
 
-	Platform5 = Platform("platform5", 30, 0, Vector3(75, 215, -120));		// To Be Continued...
+	Platform5 = Platform("platform5", 30, 0, Vector3(75, 210, -120));		// To Be Continued...
 	collisionVec.push_back(&Platform5);
 
 	Platform6 = Platform("platform6", 30, 0, Vector3(120, 408.15, -120));
@@ -330,6 +331,9 @@ void Sp2_Scene3::Init()
 	collisionVec.push_back(&Platform10);
 
 	player.oxygen = 6000;
+    horiDist = 50;
+	verticalDistance = 80;
+    b_switchDir = false;
 }
 void Sp2_Scene3::Update(double dt)
 {
@@ -429,12 +433,18 @@ void Sp2_Scene3::Update(double dt)
 	
 	if (b_isDisplayUI == true && player.oxygen > 0)
 	{
-		player.oxygen -= 1;
+		--player.oxygen;
 	}
 	if (player.oxygen <= 0)
 	{
 		player.recieveHealthDamage(100);
 	}
+
+    if (Application::IsKeyPressed('E') && player.isDead())
+    {
+        player.regainHealth(100);
+        player.oxygen = 6000;
+    }
 
 	ChestBurster.translateWorm(dt);
 	ChestBurster.move(dt);
@@ -472,18 +482,73 @@ void Sp2_Scene3::Update(double dt)
         if (Application::IsKeyPressed('W'))
             ++player.pos.y;
     }
+    if (b_isClimb4 == true)
+    {
+        if (Application::IsKeyPressed('W'))
+            ++player.pos.y;
+    }
 	Platform_.changePlatform(b_isClimb, Platform_, player);
 	Platform1.changePlatform(b_isClimb, Platform1, player);
-	Platform2.changePlatform(b_isClimb, Platform2, player);
+	Platform2.changePlatform(b_isClimb3, Platform2, player);
 	Platform3.changePlatform(b_isClimb2, Platform3, player);
-	Platform4.changePlatform(b_isClimb, Platform4, player);
-	Platform5.changePlatform(b_isClimb, Platform5, player);
+	Platform4.changePlatform(b_isClimb3, Platform4, player);
+	Platform5.changePlatform(b_isClimb4, Platform5, player);
 	Platform6.changePlatform(b_isClimb, Platform6, player);
 	Platform7.changePlatform(b_isClimb, Platform7, player);
 	Platform8.changePlatform(b_isClimb, Platform8, player);
 	Platform9.changePlatform(b_isClimb, Platform9, player);
 	Platform10.changePlatform(b_isClimb, Platform10, player);
+	/*<------------------------Horizontal Distance (Platform4)--------------------------------->*/
 
+    if (b_switchDir == false)
+
+    {
+        horiDist -= 5 * (dt);
+
+        if (horiDist < -60)
+
+        {
+            b_switchDir = true;
+        }
+    }
+
+    else if (b_switchDir == true)
+
+    {
+        horiDist += 5 * (dt);
+        if (horiDist > 50)
+        {
+            b_switchDir = false;
+        }
+    }
+
+    ladder4.pos.x = horiDist;
+    Platform5.pos.x = horiDist + 25;
+    ChestBurster1.pos.x = horiDist + 25;
+	/*<------------------------Vertical Distance (Platform5)----------------------------------->*/
+
+	if (b_switchDir == false)
+	{
+		verticalDistance -= 5 * (dt);
+		if (verticalDistance < -60)
+		{
+			b_switchDir = true;
+		}
+	}
+	else if (b_switchDir == true)
+	{
+		verticalDistance += 5 * (dt);
+		if (verticalDistance > 50)
+		{
+			b_switchDir = false;
+		}
+	}
+	/*ladder4.pos.x = horiDist;*/
+	Platform6.pos.y = verticalDistance + 25;
+	Necromancer.pos.y = verticalDistance + 25;
+	/*<-------------------------------End---------------------------------------------------->*/
+
+	if (b_switchDir == false)
 	if (Application::IsKeyPressed('O'))
 	{
 		Application::switchToScene1();
@@ -1225,7 +1290,6 @@ void Sp2_Scene3::Renderfps()
         RenderTextOnScreen(meshList[GEO_TEXT], "You have died!", Color(1, 0, 0), 4, 2, 4);
         RenderTextOnScreen(meshList[GEO_TEXT], "Press 'E' to respawn.", Color(0, 1, 0), 4, 0.5, 2.5);
     }
-
 
     /*<---PLAYERCOSTUME--->*/
     RenderSuit();

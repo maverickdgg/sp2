@@ -156,6 +156,9 @@ public:
 	bool b_isClimb2;
     bool b_isClimb3;
 	bool b_isClimb4;
+    bool b_switchDir;
+    float horiDist;
+	float verticalDistance;
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
@@ -175,12 +178,10 @@ public:
 	Pingu Pingu_;
 	Quest raceQuest;
 	AlienEnemy ChestBurster;
-
 	AlienEnemy Necromancer;
-
 	AlienEnemy ChestBurster1;
-
 	Sir Sir_;
+
 	Platform Platform_;
 	Platform Platform1;
 	Platform Platform2;
