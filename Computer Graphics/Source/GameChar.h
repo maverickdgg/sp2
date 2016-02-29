@@ -10,11 +10,11 @@ class GameChar : public GameObject
 {
 protected:
 	GameChar();
-    GameChar(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0), smaller init_Health = 0);
+	GameChar(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0), smaller init_Health = 0);
 
 public:
-    ~GameChar();
-    static size_t GC_count;
+	~GameChar();
+	static size_t GC_count;
 	int dialogue_index;
 	bool b_indexDebounce;
 	bool isPressed;
@@ -25,18 +25,18 @@ public:
 	vector<string> ReadFromTxt(string link);
 	void chat_update(Vector3 player_pos);
 
-    bool isDead();
-    smaller getHealth();
-    string getHealthString();
-    bool recieveHealthDamage(const int& damage);
+	bool isDead();
+	smaller getHealth();
+	string getHealthString();
+	bool recieveHealthDamage(const int& damage);
 
 	Quest* quest;
 
 	void assignQuest(Quest* q);
 
 private:
-    smaller health;
-    bool invulnerability;
-    smaller max_health;
+	smaller health;
+	bool invulnerability;
+	smaller max_health;
 };
 #endif

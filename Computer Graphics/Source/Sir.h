@@ -2,7 +2,7 @@
 #define SIR_H
 #include "GameChar.h"
 
-class Sir: public GameChar
+class Sir : public GameChar
 {
 	bool isTurned;
 	float turnSpeed;

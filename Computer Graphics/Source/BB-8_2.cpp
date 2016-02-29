@@ -19,7 +19,7 @@ BB8v2::~BB8v2()
 {
 	bb8v2_count--;
 }
-void BB8v2::move( double dt)
+void BB8v2::move(double dt)
 {
 	pos.x += cos(Math::DegreeToRadian(viewAngle)) * speed * dt;
 	pos.z -= sin(Math::DegreeToRadian(viewAngle)) * speed * dt;

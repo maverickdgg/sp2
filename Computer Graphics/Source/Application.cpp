@@ -28,7 +28,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 
 bool Application::IsKeyPressed(unsigned short key)
 {
-    return ((GetAsyncKeyState(key) & 0x8001) != 0);
+	return ((GetAsyncKeyState(key) & 0x8001) != 0);
 }
 
 Application::Application()
@@ -67,7 +67,7 @@ void Application::Init()
 
 	//Create a window and create its OpenGL context
 	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", NULL, NULL);
-	
+
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
 
@@ -75,16 +75,16 @@ void Application::Init()
 	//If the window couldn't be created
 	if (!m_window)
 	{
-		fprintf( stderr, "Failed to open GLFW window.\n" );
+		fprintf(stderr, "Failed to open GLFW window.\n");
 		glfwTerminate();
 		exit(EXIT_FAILURE);
 	}
 
-	
+
 
 	//This function makes the context of the specified window current on the calling thread. 
 	glfwMakeContextCurrent(m_window);
-	
+
 	//Sets the key callback
 	glfwSetKeyCallback(m_window, key_callback);
 
@@ -94,7 +94,7 @@ void Application::Init()
 	GLenum err = glewInit();
 
 	//If GLEW hasn't initialized
-	if (err != GLEW_OK) 
+	if (err != GLEW_OK)
 	{
 		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
 		//return -1;

@@ -11,14 +11,14 @@ public:
 	SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos);
 	~SpaceVehicles();
 	static size_t SV_count;
-    int speed;
+	int speed;
 	bool b_isInVehicle;
 	bool b_vehDebounce;
-    void updateVehicle(bool isPressedW, bool isPressedS, bool isPressedA, bool isPressedD, double deltaTime);
+	void updateVehicle(bool isPressedW, bool isPressedS, bool isPressedA, bool isPressedD, double deltaTime);
 	void enterVehicleUpdate(Player& player);
 private:
-    int acceleration;
-    float rotateAngle;
-    smaller max_speed;
+	int acceleration;
+	float rotateAngle;
+	smaller max_speed;
 };
 #endif

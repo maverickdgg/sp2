@@ -12,7 +12,7 @@ GameObject::GameObject(string object_name, int boundary, float viewAngle, Vector
 	this->boundary = boundary;
 	this->name = object_name;
 	this->pos = pos;
-    this->viewAngle = viewAngle;
+	this->viewAngle = viewAngle;
 }
 
 GameObject::~GameObject()

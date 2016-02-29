@@ -13,8 +13,8 @@ Mesh::Mesh(const std::string &meshName)
 	: name(meshName)
 	, mode(DRAW_TRIANGLES)
 {
-	glGenBuffers(1,&vertexBuffer);
-	glGenBuffers(1,&indexBuffer);
+	glGenBuffers(1, &vertexBuffer);
+	glGenBuffers(1, &indexBuffer);
 	textureID = 0;
 }
 
@@ -52,18 +52,18 @@ void Mesh::Render()
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)sizeof(Position));
-	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position)+sizeof(Color)));
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position) + sizeof(Color)));
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
 
 	if (textureID > 0)
 	{
-		glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position)+sizeof(Color)+sizeof(Vector3)));
+		glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position) + sizeof(Color) + sizeof(Vector3)));
 	}
 
 
-	if (mode==DRAW_TRIANGLES)
+	if (mode == DRAW_TRIANGLES)
 		glDrawElements(GL_TRIANGLES, indexSize, GL_UNSIGNED_INT, 0);
-	else if (mode==DRAW_TRIANGLE_STRIP)
+	else if (mode == DRAW_TRIANGLE_STRIP)
 		glDrawElements(GL_TRIANGLE_STRIP, indexSize, GL_UNSIGNED_INT, 0);
 	else if (mode == DRAW_LINES)
 		glDrawElements(GL_LINES, indexSize, GL_UNSIGNED_INT, 0);
@@ -90,12 +90,12 @@ void Mesh::Render(unsigned offset, unsigned count)
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)sizeof(Position));
-	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position)+sizeof(Color)));
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position) + sizeof(Color)));
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
 
 	if (textureID > 0)
 	{
-		glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position)+sizeof(Color)+sizeof(Vector3)));
+		glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Position) + sizeof(Color) + sizeof(Vector3)));
 	}
 
 

@@ -1,6 +1,6 @@
 #include "Material.h"
 
-Component::Component(float r, float g , float b)
+Component::Component(float r, float g, float b)
 {
 	Set(r, g, b);
 }
@@ -14,7 +14,7 @@ void Component::Set(float r, float g, float b)
 
 Material::Material()
 {
-	kAmbient = Component(0.2,0.2,0.2);
+	kAmbient = Component(0.2, 0.2, 0.2);
 	kDiffuse = Component(0.3f, 0.3f, 0.3f);
 	kSpecular = Component(0.1f, 0.1f, 0.1f);
 	setShininess(0.5);

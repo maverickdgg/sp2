@@ -37,3 +37,16 @@ void Platform::rotateAbout(double dt)
 	viewAngle += turnSpeed * dt;
 	//move(dt);
 }
+
+void Platform::changePlatform(bool& isClimb, Platform& p, Player& player)
+{
+	if (isClimb == false && collision(p.pos, player.pos, 46))
+	{
+		p.boundary = 10;
+	}
+	else if (isClimb == true && collision(p.pos, player.pos, 46))
+	{
+		//player.pos.z += 2;
+		player.pos.y += 4;
+	}
+}

@@ -20,48 +20,48 @@ SpaceVehicles::~SpaceVehicles()
 	SV_count--;
 }
 
-void SpaceVehicles::updateVehicle(bool isPressedW ,bool isPressedS, bool isPressedA, bool isPressedD, double deltaTime)
+void SpaceVehicles::updateVehicle(bool isPressedW, bool isPressedS, bool isPressedA, bool isPressedD, double deltaTime)
 {
-    if (isPressedW == true && isPressedS == false)
-    {
-        if (speed < max_speed)
-        {
-            speed += acceleration ;
-        }
-    }
+	if (isPressedW == true && isPressedS == false)
+	{
+		if (speed < max_speed)
+		{
+			speed += acceleration;
+		}
+	}
 
-    if (isPressedS == true && isPressedW == false)
-    {
-        if (speed > -max_speed)
-        {
-            speed -= acceleration ;
-        }
-    }
-    else if (isPressedW == false && isPressedS == false)
-    {
-        if (speed > 0)
-        speed -= acceleration;
+	if (isPressedS == true && isPressedW == false)
+	{
+		if (speed > -max_speed)
+		{
+			speed -= acceleration;
+		}
+	}
+	else if (isPressedW == false && isPressedS == false)
+	{
+		if (speed > 0)
+			speed -= acceleration;
 		if (speed < 0)
 		{
 			speed += acceleration;
 		}
-    }
-   
-    if (isPressedA == true && isPressedD == false)
-    {
-        viewAngle += rotateAngle * deltaTime;
-    }
-    if (isPressedD == true && isPressedA == false)
-    {
-        viewAngle -= rotateAngle * deltaTime;
-    }
-        pos.x += sin(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
-        pos.z += cos(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+	}
+
+	if (isPressedA == true && isPressedD == false)
+	{
+		viewAngle += rotateAngle * deltaTime;
+	}
+	if (isPressedD == true && isPressedA == false)
+	{
+		viewAngle -= rotateAngle * deltaTime;
+	}
+	pos.x += sin(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+	pos.z += cos(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
 }
 
 void SpaceVehicles::enterVehicleUpdate(Player& player)
 {
-	if (Application::IsKeyPressed('E') && b_vehDebounce == false && b_isInVehicle ==false && collision(player,this->pos,this->boundary + player.boundary + 10))
+	if (Application::IsKeyPressed('E') && b_vehDebounce == false && b_isInVehicle == false && collision(player, this->pos, this->boundary + player.boundary + 10))
 	{
 		b_isInVehicle = true;
 		b_vehDebounce = true;
@@ -70,7 +70,7 @@ void SpaceVehicles::enterVehicleUpdate(Player& player)
 	{
 		b_isInVehicle = false;
 		b_vehDebounce = true;
-		player.pos = this->pos - Vector3(11,0,10);
+		player.pos = this->pos - Vector3(11, 0, 10);
 	}
 	if (!Application::IsKeyPressed('E') && b_vehDebounce == true)
 	{

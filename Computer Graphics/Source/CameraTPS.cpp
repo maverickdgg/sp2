@@ -13,43 +13,43 @@ CameraTPS::~CameraTPS()
 
 void CameraTPS::Init(const Vector3& pos, const Vector3& up, const Vector3& vehiclePos)
 {
-    this->defaultOffset = pos;
-    this->target = vehiclePos;
+	this->defaultOffset = pos;
+	this->target = vehiclePos;
 	this->position = target + defaultOffset;
-    this->view = (target - position).Normalized();
+	this->view = (target - position).Normalized();
 	right = view.Cross(up);
 	right.y = 0;
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
-    cameraRotationX = 0.0f;
-    cameraRotationY = 0.0f;
+	cameraRotationX = 0.0f;
+	cameraRotationY = 0.0f;
 }
 
 void CameraTPS::tpsUpdateRotation(float speed)
 {
-    int screenSizeX, screenSizeY;
-    int midScreenX, midScreenY;
-    glfwGetWindowSize(m_window, &screenSizeX, &screenSizeY);
-    midScreenX = screenSizeX / 2;
-    midScreenY = screenSizeY / 2;
-    //checking for the position of the mouse cursor and resetting it every frame
-    POINT mousePos;
-    GetCursorPos(&mousePos);
-    SetCursorPos(midScreenX, midScreenY);
-    cameraRotationY -= (mousePos.x - midScreenX) / (1.0f / speed);
-    cameraRotationX -= (mousePos.y - midScreenY) / (1.0f / speed);
-    if (cameraRotationX >80)
-    {
-        cameraRotationX = 80;
-    }
-    else if (cameraRotationX < -80)
-    {
-        cameraRotationX = -80;
-    }
-    if (cameraRotationY >= 360 || cameraRotationY <= -360)
-    {
-        cameraRotationY = 0;
-    }
+	int screenSizeX, screenSizeY;
+	int midScreenX, midScreenY;
+	glfwGetWindowSize(m_window, &screenSizeX, &screenSizeY);
+	midScreenX = screenSizeX / 2;
+	midScreenY = screenSizeY / 2;
+	//checking for the position of the mouse cursor and resetting it every frame
+	POINT mousePos;
+	GetCursorPos(&mousePos);
+	SetCursorPos(midScreenX, midScreenY);
+	cameraRotationY -= (mousePos.x - midScreenX) / (1.0f / speed);
+	cameraRotationX -= (mousePos.y - midScreenY) / (1.0f / speed);
+	if (cameraRotationX >80)
+	{
+		cameraRotationX = 80;
+	}
+	else if (cameraRotationX < -80)
+	{
+		cameraRotationX = -80;
+	}
+	if (cameraRotationY >= 360 || cameraRotationY <= -360)
+	{
+		cameraRotationY = 0;
+	}
 
 	position = Vector3 // position
 		(
@@ -57,16 +57,16 @@ void CameraTPS::tpsUpdateRotation(float speed)
 		//sin(Math::DegreeToRadian(cameraRotationX)) * defaultOffset.y  + this->target.y,
 		defaultOffset.y + this->target.y,
 		sin(Math::DegreeToRadian(cameraRotationY))* defaultOffset.z + this->target.z
-        );
+		);
 
 }
 
 void CameraTPS::tpsUpdateVec(Vector3 targetVec)
 {
 
-    this->target = targetVec;
-    tpsUpdateRotation(1);
-    //this->position = (Vector3(vec.x, vec.y + 20, vec.z) - (Vector3(cam.view.x, 0, cam.view.z).Normalized()) * 80);
+	this->target = targetVec;
+	tpsUpdateRotation(1);
+	//this->position = (Vector3(vec.x, vec.y + 20, vec.z) - (Vector3(cam.view.x, 0, cam.view.z).Normalized()) * 80);
 	view = (target - position).Normalized();
 	right = view.Cross(defaultUp);
 	right.y = 0;

@@ -2,6 +2,7 @@
 #define PLATFORM_H
 
 #include "GameChar.h"
+#include "Player.h"
 
 class Platform :public GameChar
 {
@@ -16,6 +17,6 @@ public:
 	void move(double dt);
 	void moveCircles(double dt);
 	void rotateAbout(double dt);
-
+	void changePlatform(bool& isClimb, Platform& p, Player& player);
 };
 #endif

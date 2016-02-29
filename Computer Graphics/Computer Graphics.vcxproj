@@ -108,6 +108,7 @@
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\Pingu.cpp" />
     <ClCompile Include="Source\PinkKnight.cpp" />
+    <ClCompile Include="Source\Platform.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Quest.cpp" />
     <ClCompile Include="Source\shader.cpp" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\Pingu.h" />
     <ClInclude Include="Source\PinkKnight.h" />
+    <ClInclude Include="Source\Platform.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Quest.h" />
     <ClInclude Include="Source\Scene.h" />
