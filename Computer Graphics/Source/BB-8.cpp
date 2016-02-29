@@ -11,8 +11,8 @@ BB8::BB8(string object_name, int boundary, float viewAngle, Vector3 pos) : GameC
 {
 	bb8_count++;
 	speed = 50;
-	turnSpeed = 20;
-	lowerBodyRotate = 0;
+	turnSpeed = 30;
+	lowerBodyRotate = 180;
 }
 
 BB8::~BB8()
@@ -23,7 +23,7 @@ void BB8::move(double dt)
 {
 	pos.x += cos(Math::DegreeToRadian(viewAngle)) * speed * dt;
 	pos.z -= sin(Math::DegreeToRadian(viewAngle)) * speed * dt;
-	lowerBodyRotate += speed *dt;
+	lowerBodyRotate -= speed *dt;
 }
 
 void BB8::moveCircles(double dt)
@@ -31,3 +31,9 @@ void BB8::moveCircles(double dt)
 	viewAngle += turnSpeed * dt;
 	move(dt);
 }
+
+//void BB8::rotateAbout(double dt)
+//{
+//	viewAngle += turnSpeed * dt;
+//	move(dt);
+//}

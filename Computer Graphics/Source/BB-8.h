@@ -15,6 +15,6 @@ public:
 	float turnSpeed;
 	void move(double dt);
 	void moveCircles(double dt);
-
+	void rotateAbout(double dt);
 };
 #endif

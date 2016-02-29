@@ -264,7 +264,7 @@ void Sp2_Scene3::Init()
 	ladder3 = Buildings("ladder3", 1, 270, Vector3(-50, 150, -25));
 	collisionVec.push_back(&ladder3);
 
-	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(50, 0, 100));
+	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(-50, 125, -125));
 	collisionVec.push_back(&ChestBurster);
 
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
