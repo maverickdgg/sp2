@@ -309,7 +309,7 @@ void Sp2_Scene1::Update(double dt)
 	{
 		ShowCursor(TRUE);
 	}
-
+	
 	if (Application::IsKeyPressed('M') && b_enabletps == true && b_tpsDebounce == false)
 	{
 		b_tpsDebounce = true;

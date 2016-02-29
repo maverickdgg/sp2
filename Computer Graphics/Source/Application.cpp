@@ -70,8 +70,8 @@ void Application::Init()
 
 
 	//Create a window and create its OpenGL context
-	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", NULL, NULL);
-	
+	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width*2/3, glfwGetVideoMode(glfwGetPrimaryMonitor())->height * 2/3, "Computer Graphics", NULL, NULL);
+	//m_window = glfwCreateWindow(1980, 1080, "Computer Graphics", glfwGetPrimaryMonitor() , NULL);
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
 

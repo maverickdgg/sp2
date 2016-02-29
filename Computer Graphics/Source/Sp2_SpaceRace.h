@@ -135,16 +135,17 @@ public:
 	bool b_isWorn;
 	float tpsTimer;
 
+	bool b_raceBegin;
+	bool b_raceStart;
+	float f_raceCountdown;
+
 	SpaceVehicles frpc,frpc2;
 
 	//player
 	Player player;
 
-	//furniture
-	Buildings box1, box2, box3, box4;
-	Buildings table1;
-	Buildings chair1;
-	Buildings keycard1;
+	//npc
+	Alien spaceRaceNpc;
 
 	//for quest
 	vector<string> tasklist;

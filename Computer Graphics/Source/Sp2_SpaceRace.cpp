@@ -134,7 +134,7 @@ void Sp2_SpaceRace::Init()
 	//geom init
 	frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44,25)));
 	collisionVec.push_back(&frpc);
-	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450, 300);
+	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 1000, 1000);
 	camera2.Init(Vector3(-50, 15, -50), Vector3(0, 1, 0), &frpc);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
@@ -202,12 +202,18 @@ void Sp2_SpaceRace::Init()
 	/*<---NPC--->*/
 	b_enabletps = false;
 	b_tpsDebounce = false;
+	b_raceBegin = false;
+	b_raceStart = false;
 	tpsTimer = 0;
+	f_raceCountdown = 3;
 
-	player = Player(frpc.pos);
+	player = Player(indexToVector(toIndex(11,37)));
+
+	spaceRaceNpc = Alien("Space Race NPC", 20, 180, indexToVector(toIndex(3, 6))+ Vector3(0,-20,0) );
+	spaceRaceNpc.ReadFromTxt("text//spaceRaceDialogue.txt");
 
 	// cpu racers
-	frpc2 = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 26)) , 75);
+	frpc2 = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 26)) , 110);
 	//loading of map;
 	racetrack = load_map("text//map1.txt");
 	racePath.push(toIndex(44,45));
@@ -252,12 +258,15 @@ void Sp2_SpaceRace::Update(double dt)
 		else
 		{
 			camera2.tpsUpdateVec(dt);
-			frpc.updateVehicle(dt,racetrack);
+			if (b_raceStart == true)
+			{
+				frpc.updateVehicle(dt, racetrack);
+			}
 		}
 
 		ShowCursor(FALSE);
 	}
-	frpc.enterVehicleUpdate(player);
+	//frpc.enterVehicleUpdate(player);
 	if (Application::IsKeyPressed(VK_MENU))
 	{
 		ShowCursor(TRUE);
@@ -288,7 +297,29 @@ void Sp2_SpaceRace::Update(double dt)
 	}
 	speed = std::to_string(frpc.speed);
 
+	if (b_raceStart == true)
 	frpc2.updateCPUVehicle(dt, racetrack, racePath);
+
+	spaceRaceNpc.chat_update(player.pos);
+	if (spaceRaceNpc.b_dialogueEnd == true)
+	{
+		b_raceBegin = true;
+		frpc.b_isInVehicle = true;
+		f_raceCountdown = 6.0f;
+		player.pos = indexToVector(toIndex(11, 37));
+
+	}
+	if (b_raceBegin == true && f_raceCountdown > 0)
+	{
+		f_raceCountdown -= dt;
+	}
+	if (f_raceCountdown <= 0)
+	{
+		f_raceCountdown == 0;
+		b_raceStart = true;
+		b_raceBegin = false;
+	}
+
 }
 
 void Sp2_SpaceRace::RenderMesh(Mesh* mesh, bool enableLight)
@@ -439,15 +470,11 @@ void Sp2_SpaceRace::RenderGameObj(Mesh* mesh, Vector3 pos, Vector3 scale, Vector
 void Sp2_SpaceRace::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
 	RenderGameObj(x, mesh, enableLight, hasInteractions, scale, rotate);
-
 	if (x.vec_dialog.empty() == false)
 	{
 		if (collision(x.pos, player.pos, (x.boundary + player.boundary + x.chat_boundary)) && x.isPressed == true)
 		{
-			//if (x.dialogue_index == x.vec_dialog.size() - 1 && x.quest!=nullptr)
-			//{
-			//	player.receiveQuest(x);
-			//}
+
 			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0, 1, 0), 2, 1, 20);
 		}
 	}
@@ -570,23 +597,42 @@ void Sp2_SpaceRace::Renderfps()
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
 
-	RenderSkybox(camera);
-	
-	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
-	RenderGameObj(frpc2, meshList[GEO_FOURTH], true, true, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
-
-	if (frpc.b_isInVehicle == true)
-	RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
-
-	RenderMesh(meshList[GEO_AXES], false);
-
 	for (int i = 0; i < 2500; ++i)
 	{
 		if (racetrack->data[i] == '1')
 		{
-			RenderGameObj(meshList[GEO_BOX], indexToVector(i) + Vector3(10,-30,10), Vector3(20, 40, 20), Vector3(0, 0, 0));
+			RenderGameObj(meshList[GEO_BOX], indexToVector(i) + Vector3(10, -30, 10), Vector3(20, 40, 20), Vector3(0, 0, 0));
 		}
 	}
+
+	RenderSkybox(camera);
+
+	
+
+	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
+	RenderGameObj(frpc2, meshList[GEO_FOURTH], true, true, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
+
+
+	RenderGameChar(spaceRaceNpc, meshList[GEO_MIKE], true, true, Vector3(5, 5, 5));
+	if (frpc.b_isInVehicle == true)
+	RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
+
+	if (b_raceBegin == true && f_raceCountdown > 4)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "3", Color(0, 1, 0), 10, 3, 3);
+	}
+	else if (b_raceBegin == true && f_raceCountdown > 2)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "2", Color(0, 1, 0), 10, 3, 3);
+	}
+	else if (b_raceBegin == true && f_raceCountdown > 0)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "1", Color(0, 1, 0), 10, 3, 3);
+	}
+
+	RenderMesh(meshList[GEO_AXES], false);
+
+
 }
 
 void Sp2_SpaceRace::Rendertps()
