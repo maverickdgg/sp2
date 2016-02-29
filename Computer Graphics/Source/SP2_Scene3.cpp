@@ -331,6 +331,7 @@ void Sp2_Scene3::Init()
 
 	player.oxygen = 6000;
     horiDist = 50;
+	verticalDistance = 80;
     b_switchDir = false;
 }
 void Sp2_Scene3::Update(double dt)
@@ -490,7 +491,7 @@ void Sp2_Scene3::Update(double dt)
 	Platform8.changePlatform(b_isClimb, Platform8, player);
 	Platform9.changePlatform(b_isClimb, Platform9, player);
 	Platform10.changePlatform(b_isClimb, Platform10, player);
-
+	/*<------------------------Horizontal Distance (Platform4)--------------------------------->*/
     if (b_switchDir == false)
     {
         horiDist -= 5 * (dt);
@@ -510,7 +511,28 @@ void Sp2_Scene3::Update(double dt)
     ladder4.pos.x = horiDist;
     Platform5.pos.x = horiDist + 25;
     ChestBurster1.pos.x = horiDist + 25;
-
+	/*<------------------------Vertical Distance (Platform5)----------------------------------->*/
+	if (b_switchDir == false)
+	{
+		verticalDistance -= 5 * (dt);
+		if (verticalDistance < -60)
+		{
+			b_switchDir = true;
+		}
+	}
+	else if (b_switchDir == true)
+	{
+		verticalDistance += 5 * (dt);
+		if (verticalDistance > 50)
+		{
+			b_switchDir = false;
+		}
+	}
+	/*ladder4.pos.x = horiDist;*/
+	Platform6.pos.y = verticalDistance + 25;
+	Necromancer.pos.y = verticalDistance + 25;
+	/*<-------------------------------End---------------------------------------------------->*/
+	if (b_switchDir == false)
 	if (Application::IsKeyPressed('O'))
 	{
 		Application::switchToScene1();
