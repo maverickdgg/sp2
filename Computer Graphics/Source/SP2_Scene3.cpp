@@ -279,14 +279,17 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 250, -125));
+
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 245, -125));
+
+
 	collisionVec.push_back(&ChestBurster1);
 	
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
 
-	Medic_ = Medic("medic", 5, 0, Vector3(-65, 185, -20));
+	Medic_ = Medic("medic", 5, 0, Vector3(-65, 190, -20));
 	collisionVec.push_back(&Medic_);
 
 	/**/
@@ -498,15 +501,21 @@ void Sp2_Scene3::Update(double dt)
 	Platform9.changePlatform(b_isClimb, Platform9, player);
 	Platform10.changePlatform(b_isClimb, Platform10, player);
 	/*<------------------------Horizontal Distance (Platform4)--------------------------------->*/
+
     if (b_switchDir == false)
+
     {
         horiDist -= 5 * (dt);
+
         if (horiDist < -60)
+
         {
             b_switchDir = true;
         }
     }
+
     else if (b_switchDir == true)
+
     {
         horiDist += 5 * (dt);
         if (horiDist > 50)
@@ -514,12 +523,14 @@ void Sp2_Scene3::Update(double dt)
             b_switchDir = false;
         }
     }
+
     ladder4.pos.x = horiDist;
     Platform5.pos.x = horiDist + 25;
     ChestBurster1.pos.x = horiDist + 25;
     box1.pos.x = horiDist;
 
 	/*<------------------------Vertical Distance (Platform5)----------------------------------->*/
+
 	if (b_switchDir == false)
 	{
 		verticalDistance -= 5 * (dt);
@@ -540,10 +551,15 @@ void Sp2_Scene3::Update(double dt)
 	Platform6.pos.y = verticalDistance + 175;
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
+
 	if (b_switchDir == false)
 	if (Application::IsKeyPressed('O'))
 	{
 		Application::switchToScene1();
+	}
+	if (Application::IsKeyPressed('E') && (collision(Medic_.pos.x, player.pos.y, 21)))
+	{
+		player.regainHealth(100);
 	}
 }
 
@@ -1046,7 +1062,6 @@ void Sp2_Scene3::RenderMedic(Medic x)
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to heal", Color(1, 0, 0), 3, 1, 8);
 		modelStack.PopMatrix();
 	}
-
 	//if (x.vec_dialog.empty() == false)
 	//{
 	//	if (collision(x.pos, player.pos, (x.boundary + player.boundary + x.chat_boundary)) && x.isPressed == true)
