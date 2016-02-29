@@ -1,5 +1,7 @@
 #include "GameChar.h"
 #include <iostream>
+#include <iostream>
+#include <iomanip>
 
 using std::cout;
 using std::endl;
@@ -115,23 +117,28 @@ string GameChar::getHealthString()
 bool GameChar::isDead()
 {
 	if (health <= 0)
+	{
 		return true;
+	}
 	else
+	{
 		return false;
+	}
 }
 
 bool GameChar::recieveHealthDamage(const int& damage)
 {
-	if (health > 0)
-	{
-		health -= damage;
-		return true;
-	}
-	else if (isDead() == true)
+	if (isDead() == true)
 	{
 		health = 0;
 		return false;
 	}
+	else if (health > 0)
+	{
+		health -= damage;
+		return true;
+	}
+	
 }
 
 void GameChar::regainHealth(const int& healAMT)
