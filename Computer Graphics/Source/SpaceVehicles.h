@@ -20,6 +20,8 @@ public:
 	bool b_isInVehicle;
 	bool b_vehDebounce;
 	float rotationZ;
+	int lap;
+	bool lapDebounce;
 
     void updateVehicle(double deltaTime);
 	void updateVehicle(double deltaTime , PMAP map);

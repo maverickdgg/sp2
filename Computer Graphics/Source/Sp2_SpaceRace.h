@@ -73,7 +73,7 @@ public:
 
 		/*<---NPC--->*/
 		GEO_MIKE,	// Default (Pure Interaction Codes, no NPC)	
-		GEO_NPC3,	// Storm Trooper
+		GEO_ALIEN,
 		GEO_FLIGHTUI,	// Astronaut Suit
 		GEO_BB8H,	// BB-8 Head
 		GEO_BB8B,	// BB-8 Body

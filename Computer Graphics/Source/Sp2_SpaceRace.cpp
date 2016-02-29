@@ -199,6 +199,9 @@ void Sp2_SpaceRace::Init()
 
 	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("keycard", "OBJ//KeyCard.obj");
 	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
+
+	meshList[GEO_ALIEN] = MeshBuilder::GenerateOBJ("AlienOne", "OBJ//AlienOne.obj");
+	meshList[GEO_ALIEN]->textureID = LoadTGA("Image//AlienOne.tga");
 	/*<---NPC--->*/
 	b_enabletps = false;
 	b_tpsDebounce = false;
@@ -209,7 +212,7 @@ void Sp2_SpaceRace::Init()
 
 	player = Player(indexToVector(toIndex(11,37)));
 
-	spaceRaceNpc = Alien("Space Race NPC", 20, 180, indexToVector(toIndex(3, 6))+ Vector3(0,-20,0) );
+	spaceRaceNpc = Alien("Space Race NPC", 20, 0, indexToVector(toIndex(3, 6))+ Vector3(0,-10,0) );
 	spaceRaceNpc.ReadFromTxt("text//spaceRaceDialogue.txt");
 
 	// cpu racers
@@ -253,7 +256,7 @@ void Sp2_SpaceRace::Update(double dt)
 	{
 		if (frpc.b_isInVehicle == false)
 		{
-			player.movementUpdate(camera, dt, collisionVec);
+			player.movementUpdate(camera, dt, collisionVec,racetrack);
 		}
 		else
 		{
@@ -319,7 +322,7 @@ void Sp2_SpaceRace::Update(double dt)
 		b_raceStart = true;
 		b_raceBegin = false;
 	}
-
+	spaceRaceNpc.pulsingUpdate(dt);
 }
 
 void Sp2_SpaceRace::RenderMesh(Mesh* mesh, bool enableLight)
@@ -609,13 +612,17 @@ void Sp2_SpaceRace::Renderfps()
 
 	
 
-	RenderGameObj(frpc, meshList[GEO_FOURTH],true,true,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
-	RenderGameObj(frpc2, meshList[GEO_FOURTH], true, true, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
+	RenderGameObj(frpc, meshList[GEO_FOURTH],true,false,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
+	RenderGameObj(frpc2, meshList[GEO_FOURTH], true, false, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
 
 
-	RenderGameChar(spaceRaceNpc, meshList[GEO_MIKE], true, true, Vector3(5, 5, 5));
+	RenderGameChar(spaceRaceNpc, meshList[GEO_ALIEN], true, true, Vector3(12,24,12)+(Vector3(1,0.6,1) * spaceRaceNpc.f_scaleBig ));
 	if (frpc.b_isInVehicle == true)
-	RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
+		RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(frpc.lap), Color(0, 1, 0), 3, 1, 18);
+	}
+	
 
 	if (b_raceBegin == true && f_raceCountdown > 4)
 	{

@@ -48,9 +48,8 @@ vector<string> GameChar::ReadFromTxt(string link)
 			vec_dialog.push_back(data);
 		}
 	}
-	{inData.close();
+	inData.close();
 	return vec_dialog;
-	}
 }
 
 void GameChar::chat_update(Vector3 player_pos)

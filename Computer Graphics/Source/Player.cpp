@@ -190,6 +190,145 @@ void Player::movementUpdate(Camera3& cam , double dt , vector<GameObject*> colli
 	cam.updateRotation(0.3);
 }
 
+
+void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec,PMAP map)
+{
+	float movSpeed;
+	if (Application::IsKeyPressed(VK_SHIFT))
+	{
+		movSpeed = f_sprintSpeed;
+	}
+	else
+	{
+		movSpeed = f_walkSpeed;
+	}
+	cam.view = (cam.target - cam.position).Normalized();
+	cam.right = cam.view.Cross(cam.defaultUp);
+	cam.right.y = 0;
+	cam.right.Normalize();
+	cam.up = cam.right.Cross(cam.view).Normalized();
+
+	viewAngle = cam.cameraRotationY;
+
+	Vector3 tempPos = pos;
+	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
+	{
+		tempPos.x += cos(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+		tempPos.z -= sin(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+	}
+	if (Application::IsKeyPressed('S') && !Application::IsKeyPressed('W'))
+	{
+		tempPos.x -= cos(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+		tempPos.z += sin(Math::DegreeToRadian(viewAngle)) * movSpeed * dt;
+	}
+	if (Application::IsKeyPressed('D') && !Application::IsKeyPressed('A'))
+	{
+		tempPos.x += sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+		tempPos.z += cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+	}
+	if (Application::IsKeyPressed('A') && !Application::IsKeyPressed('D'))
+	{
+		tempPos.x -= sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+		tempPos.z -= cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
+	}
+	if (collision(tempPos, collisionVec, this->boundary) == false && map->data[vectorToIndex(tempPos)]!='1')
+	{
+		pos = tempPos;
+	}
+	else
+	{
+		if (map->data[vectorToIndex(Vector3(tempPos.x, 0, pos.z))] != '1')
+		{
+			pos.x = tempPos.x;
+		}
+		else if (map->data[vectorToIndex(Vector3(pos.x, 0, tempPos.z))] != '1')
+		{
+			pos.z = tempPos.z;
+		}
+	}
+	if (pos.x > cam.boundaryX)
+	{
+		pos.x = cam.boundaryX;
+	}
+	else if (pos.x < -cam.boundaryX)
+	{
+		pos.x = -cam.boundaryX;
+	}
+	if (pos.z > cam.boundaryZ)
+	{
+		pos.z = cam.boundaryZ;
+	}
+	else if (pos.z < -cam.boundaryZ)
+	{
+		pos.z = -cam.boundaryZ;
+	}
+
+
+
+	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false && f_jumpDebounceTimer >= 0.5)
+	{
+		f_jumpDebounceTimer = 0;
+		b_jumpDebounce = true;
+		b_jumpUp = true;
+		f_jumpSpeed = f_initialJumpSpeed;
+	}
+	if (b_jumpUp == true && b_jumpDebounce == true)
+	{
+		f_jumpSpeed -= f_gravity * dt;
+		tempPos.y += f_jumpSpeed * dt;
+		if (f_jumpSpeed <= 0)
+		{
+			f_jumpSpeed = 0;
+			b_jumpUp = false;
+		}
+		else if (collision(tempPos, collisionVec, this->boundary) == true)
+		{
+			b_jumpUp = false;
+		}
+		else {
+			pos = tempPos;
+		}
+	}
+	if (b_jumpUp == false && b_jumpDebounce == true)
+	{
+		f_jumpSpeed += f_gravity * dt;
+		tempPos.y -= f_jumpSpeed * dt;
+		if (tempPos.y <= groundLevel)
+		{
+			pos.y = groundLevel;
+			f_jumpSpeed = f_initialJumpSpeed;
+			b_jumpUp = true;
+			b_jumpDebounce = false;
+		}
+		else if (collision(tempPos, collisionVec, this->boundary) == true)
+		{
+			f_jumpSpeed = f_initialJumpSpeed;
+			b_jumpUp = true;
+			b_jumpDebounce = false;
+		}
+		else
+		{
+			pos = tempPos;
+		}
+	}
+	if (b_jumpDebounce == false && f_jumpDebounceTimer <0.5)
+	{
+		f_jumpDebounceTimer += dt;
+	}
+
+	if (pos.y > groundLevel && collision(pos - Vector3(0, 20, 0)*dt, collisionVec, this->boundary) == false && b_jumpDebounce == false)
+	{
+		pos.y -= 20 * dt;
+	}
+	else if (pos.y < groundLevel)
+	{
+		pos.y = groundLevel;
+	}
+
+	cam.position = this->pos;
+	cam.updateRotation(0.3);
+}
+
 void Player::gunUpdate(Camera3 cam, double dt)
 {
 	if (currGun == nullptr)

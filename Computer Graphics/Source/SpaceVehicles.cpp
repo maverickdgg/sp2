@@ -7,6 +7,8 @@ SpaceVehicles::SpaceVehicles() : max_speed(25)
 	SV_count++;
 	b_vehDebounce = false;
 	b_isInVehicle = false;
+	lap = 0;
+	lapDebounce = false;
 }
 
 SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, Vector3 pos , int max_speed) : GameObject(object_name, boundary, viewAngle, pos), acceleration(25), speed(0), max_speed(max_speed), rotateAngle(80)
@@ -14,6 +16,8 @@ SpaceVehicles::SpaceVehicles(string object_name, int boundary, float viewAngle, 
 	b_vehDebounce = false;
 	b_isInVehicle = false;
 	rotationZ = 0;
+	lap = 0;
+	lapDebounce = false;
 }
 
 SpaceVehicles::~SpaceVehicles()
@@ -208,6 +212,16 @@ void SpaceVehicles::updateVehicle(double deltaTime , PMAP map)
 		{
 			pos.z = tempPos.z;
 		}
+	}
+
+	if (map->data[vectorToIndex(pos)] == '3' && lapDebounce==false)
+	{
+		lapDebounce = true;
+		++lap;
+	}
+	if (lapDebounce == true && map->data[vectorToIndex(pos)] != '3')
+	{
+		lapDebounce = false;
 	}
 }
 

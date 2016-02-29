@@ -74,7 +74,7 @@ void Application::Init()
 	//m_window = glfwCreateWindow(1980, 1080, "Computer Graphics", glfwGetPrimaryMonitor() , NULL);
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
-
+	
 
 	//If the window couldn't be created
 	if (!m_window)
