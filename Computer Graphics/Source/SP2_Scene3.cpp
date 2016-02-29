@@ -238,7 +238,7 @@ void Sp2_Scene3::Init()
 	//player = Player(100);
 
 	//furniture
-	box1 = Buildings("box 1", 25, 0, Vector3(375, -30, 275));
+	box1 = Buildings("box 1", 5, 0, Vector3(50, 222.5, -130));
 	collisionVec.push_back(&box1);
 	box2 = Buildings("box 2", 25, 0, Vector3(375, -30, 250));
 	collisionVec.push_back(&box2);
@@ -279,7 +279,7 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 245, -125));
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 250, -125));
 	collisionVec.push_back(&ChestBurster1);
 	
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
@@ -305,10 +305,10 @@ void Sp2_Scene3::Init()
 	Platform2 = Platform("platform2", 30, 0, Vector3(-50, 150, -25));		// Done
 	collisionVec.push_back(&Platform2);
 
-	Platform3 = Platform("platform3", 30, 0, Vector3(-50, 85, -120));		// Done (Worm)
+	Platform3 = Platform("platform3", 30, 0, Vector3(-50, 85, -120));		// Done
 	collisionVec.push_back(&Platform3);
 
-	Platform4 = Platform("platform4", 30, 0, Vector3(-10, 150, -25));		// Done (Healer)
+	Platform4 = Platform("platform4", 30, 0, Vector3(-10, 150, -25));		// Done
 	collisionVec.push_back(&Platform4);
 
 	Platform5 = Platform("platform5", 30, 0, Vector3(75, 210, -120));		// To Be Continued...
@@ -486,11 +486,11 @@ void Sp2_Scene3::Update(double dt)
             ++player.pos.y;
     }
 	Platform_.changePlatform(b_isClimb, Platform_, player);
-	Platform1.changePlatform(b_isClimb, Platform1, player);
-	Platform2.changePlatform(b_isClimb3, Platform2, player);
-	Platform3.changePlatform(b_isClimb2, Platform3, player);
-	Platform4.changePlatform(b_isClimb3, Platform4, player);
-	Platform5.changePlatform(b_isClimb4, Platform5, player);
+	Platform1.changePlatform(b_isClimb2, Platform1, player);
+	Platform2.changePlatform(b_isClimb4, Platform2, player);
+	Platform3.changePlatform(b_isClimb3, Platform3, player);
+	Platform4.changePlatform(b_isClimb4, Platform4, player);
+	Platform5.changePlatform(b_isClimb, Platform5, player);
 	Platform6.changePlatform(b_isClimb, Platform6, player);
 	Platform7.changePlatform(b_isClimb, Platform7, player);
 	Platform8.changePlatform(b_isClimb, Platform8, player);
@@ -516,6 +516,7 @@ void Sp2_Scene3::Update(double dt)
     ladder4.pos.x = horiDist;
     Platform5.pos.x = horiDist + 25;
     ChestBurster1.pos.x = horiDist + 25;
+    box1.pos.x = horiDist;
 
 	if (Application::IsKeyPressed('O'))
 	{
@@ -1218,7 +1219,7 @@ void Sp2_Scene3::Renderfps()
 
 	RenderSkybox();
 
-	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
+	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
 	RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
