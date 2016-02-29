@@ -279,7 +279,7 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 255 , -125));
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 245, -125));
 	collisionVec.push_back(&ChestBurster1);
 	
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
@@ -432,12 +432,18 @@ void Sp2_Scene3::Update(double dt)
 	
 	if (b_isDisplayUI == true && player.oxygen > 0)
 	{
-		player.oxygen -= 1;
+		--player.oxygen;
 	}
 	if (player.oxygen <= 0)
 	{
 		player.recieveHealthDamage(100);
 	}
+
+    if (Application::IsKeyPressed('E') && player.isDead())
+    {
+        player.regainHealth(100);
+        player.oxygen = 6000;
+    }
 
 	ChestBurster.translateWorm(dt);
 	ChestBurster.move(dt);
@@ -1270,11 +1276,6 @@ void Sp2_Scene3::Renderfps()
         RenderMeshOnScreen(meshList[GEO_DEATHSCREEN], Vector3(40, 30.5, -10), Vector3(30, 40, 10), Vector3(0, 0, 90));
         RenderTextOnScreen(meshList[GEO_TEXT], "You have died!", Color(1, 0, 0), 4, 2, 4);
         RenderTextOnScreen(meshList[GEO_TEXT], "Press 'E' to respawn.", Color(0, 1, 0), 4, 0.5, 2.5);
-    }
-
-    if (Application::IsKeyPressed('E') && player.isDead())
-    {
-        player.regainHealth(100);
     }
 
     /*<---PLAYERCOSTUME--->*/
