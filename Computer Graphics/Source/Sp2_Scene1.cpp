@@ -185,11 +185,11 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("spacestation", "OBJ//spaceshuttle.obj");
 
-	meshList[GEO_BB8H] = MeshBuilder::GenerateOBJ("bb8head", "OBJ//BB8H.obj");
-	meshList[GEO_BB8H]->textureID = LoadTGA("Image//BB8H.tga");
+	meshList[GEO_BB8H] = MeshBuilder::GenerateOBJ("bb8head", "OBJ//BB82H.obj");
+	meshList[GEO_BB8H]->textureID = LoadTGA("Image//BB82H.tga");
 
-	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB8B.obj");
-	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB8B.tga");
+	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB82B.obj");
+	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB82B.tga");
 
 	meshList[GEO_PINGUBODY] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinguBody.obj");
 	meshList[GEO_PINGUBODY]->textureID = LoadTGA("Image//Pingu.tga");
@@ -269,7 +269,7 @@ void Sp2_Scene1::Init()
 	mike3.ReadFromTxt("Image//mikechat.txt");
 	collisionVec.push_back(&mike3);
 
-	BB8_ = BB8("BB8", 45, 0, Vector3(50, 0, 50));
+	BB8_ = BB8("BB8", 45, 0, Vector3(50, 10, 50));
 	collisionVec.push_back(&BB8_);
 
 
@@ -376,6 +376,7 @@ void Sp2_Scene1::Update(double dt)
 	//if (BB8_.quest->questComplete())
 	//	RenderTextOnScreen(meshList[GEO_TEXT], "Quest complete", Color(1, 0, 0), 10, 3, 3);
 	BB8_.moveCircles(dt);
+	//BB8_.rotateAbout(dt);
 
 
 	//ChestBurster_.translateWorm(dt);
@@ -639,9 +640,9 @@ void Sp2_Scene1::RenderBB8(BB8 x)
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, -33, 0);
+	modelStack.Translate(0, -34, 0);
 	//modelStack.Rotate(x.lowerBodyRotate, 0,0,1);
-	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Rotate(x.viewAngle, 0, 0, 1);
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_BB8B], true);
 
