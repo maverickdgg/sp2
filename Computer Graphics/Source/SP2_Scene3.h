@@ -156,6 +156,8 @@ public:
 	bool b_isClimb2;
     bool b_isClimb3;
 	bool b_isClimb4;
+    bool b_switchDir;
+    float horiDist;
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
