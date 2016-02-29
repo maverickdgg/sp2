@@ -289,7 +289,7 @@ void Sp2_Scene3::Init()
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
 
-	Medic_ = Medic("medic", 5, 0, Vector3(-65, 170, -20));
+	Medic_ = Medic("medic", 5, 0, Vector3(-65, 190, -20));
 	collisionVec.push_back(&Medic_);
 
 	/**/
@@ -557,7 +557,7 @@ void Sp2_Scene3::Update(double dt)
 	{
 		Application::switchToScene1();
 	}
-	if (Application::IsKeyPressed('E') && (collision(Medic_.pos.x, player.pos, 21)))
+	if (Application::IsKeyPressed('E') && (collision(Medic_.pos.x, player.pos.y, 21)))
 	{
 		player.regainHealth(100);
 	}
