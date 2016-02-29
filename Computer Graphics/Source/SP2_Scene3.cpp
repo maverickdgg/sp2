@@ -261,7 +261,7 @@ void Sp2_Scene3::Init()
 	ladder2 = Buildings("ladder2", 1, 270, Vector3(-15, 86, -120));
 	collisionVec.push_back(&ladder2);
 
-	ladder3 = Buildings("ladder3", 1, 270, Vector3(-50, 150, -25));
+	ladder3 = Buildings("ladder3", 1, 270, Vector3(-50, 152, -53.5));
 	collisionVec.push_back(&ladder3);
 
 	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(50, 0, 100));
@@ -399,7 +399,6 @@ void Sp2_Scene3::Update(double dt)
 	{
 		camera.up.x = camera.up.y;
 		player.pos = oldPos;
-		RenderMeshOnScreen(meshList[GEO_DEATHSCREEN], Vector3(40, 30.5, -10), Vector3(10, 10, 10), Vector3(0, 0, 0));
 	}
 
 	if (collision(suit, player.pos, 21) && Application::IsKeyPressed('E'))
@@ -415,6 +414,7 @@ void Sp2_Scene3::Update(double dt)
     {
         ladder.climb(b_isClimb, ladder, player);
         ladder2.climb(b_isClimb2, ladder2, player);
+        ladder3.climb(b_isClimb3, ladder3, player);
     }
 
 	if (b_isClimb == true)
@@ -427,6 +427,11 @@ void Sp2_Scene3::Update(double dt)
 		if (Application::IsKeyPressed('W'))
 			++player.pos.y;
 	}
+    if (b_isClimb3 == true)
+    {
+        if (Application::IsKeyPressed('W'))
+            ++player.pos.y;
+    }
 	Platform_.changePlatform(b_isClimb, Platform_, player);
 	Platform1.changePlatform(b_isClimb, Platform1, player);
 	Platform2.changePlatform(b_isClimb, Platform2, player);
@@ -585,7 +590,8 @@ void Sp2_Scene3::RenderSuit()
 	if (b_isDisplayUI)
 	{
 		RenderMeshOnScreen(meshList[GEO_HELMETUI], Vector3(40, 30.5, -10), Vector3(30, 40, 10), Vector3(0, 0, 90));
-		RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
+        if (player.isDead() == false)
+		    RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
 	}
 }
 
@@ -1108,7 +1114,7 @@ void Sp2_Scene3::Renderfps()
 	RenderChestBurster();
 	RenderGameObj(ladder, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
 	RenderGameObj(ladder2, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
-
+    RenderGameObj(ladder3, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
 
 	/*<---NPC--->*/
 	//RenderPingu();
@@ -1128,6 +1134,18 @@ void Sp2_Scene3::Renderfps()
 	RenderPlatform(Platform8, false);
 	RenderPlatform(Platform9, false);
 	RenderPlatform(Platform10, false);
+
+    if (player.isDead() == true)
+    {
+        RenderMeshOnScreen(meshList[GEO_DEATHSCREEN], Vector3(40, 30.5, -10), Vector3(30, 40, 10), Vector3(0, 0, 90));
+        RenderTextOnScreen(meshList[GEO_TEXT], "You have died!", Color(1, 0, 0), 4, 2, 4);
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press 'E' to respawn.", Color(0, 1, 0), 4, 0.5, 2.5);
+    }
+
+    if (Application::IsKeyPressed('E') && player.isDead())
+    {
+        player.regainHealth(100);
+    }
 
     /*<---PLAYERCOSTUME--->*/
     RenderSuit();

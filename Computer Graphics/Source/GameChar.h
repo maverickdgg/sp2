@@ -29,6 +29,7 @@ public:
 	smaller getHealth();
 	string getHealthString();
 	bool recieveHealthDamage(const int& damage);
+    void regainHealth(const int& healAMT = 1);
 
 	Quest* quest;
 

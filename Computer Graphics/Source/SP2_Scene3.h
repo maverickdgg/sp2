@@ -153,6 +153,7 @@ public:
 	bool b_isDisplayUI;
 	bool b_isClimb;
 	bool b_isClimb2;
+    bool b_isClimb3;
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
