@@ -39,5 +39,6 @@ private:
 	smaller health;
 	bool invulnerability;
 	smaller max_health;
+
 };
 #endif

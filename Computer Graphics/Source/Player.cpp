@@ -1,5 +1,7 @@
 #include "Player.h"
-
+#include <sstream>
+#include <iostream>
+#include <iomanip>
 Player::Player() : GameChar("Player", 15, 0, Vector3(0, 0, 0), 100)
 {
 	pos = Vector3(0, 0, 0);
@@ -420,18 +422,30 @@ bool Player::questCompleted(Quest* q)
 string Player::getOxygenString()
 {
 	string replace;
-	if (oxygen / 100 != 0)
-	{
-		replace = (oxygen / 100) + '0';
-		replace += ((oxygen / 10) % 10) + '0';
-		replace += (oxygen % 10) + '0';
-	}
-	else if (oxygen / 100 == 0 && oxygen / 10 != 0)
-	{
-		replace = (oxygen / 10) + '0';
-		replace += (oxygen % 10) + '0';
-	}
-	else
-		replace = oxygen + '0';
+	replace.push_back((oxygen / 1000) + '0');
+
+	replace.push_back(((oxygen / 100) % 10) + '0');
+	replace.push_back('.');
+	replace.push_back(((oxygen / 10) % 10) + '0');
+
+	replace.push_back((oxygen % 10) + '0');
+	//= std::to_string(oxygen);
+	//if (oxygen / 100 != 0)
+	//{
+	//	replace = (oxygen / 100) + '0';
+	//	replace += ((oxygen / 10) % 10) + '0';
+	//	replace += (oxygen % 10) + '0';
+	//}
+	//else if (oxygen / 100 == 0 && oxygen / 10 != 0)
+	//{
+	//	replace = (oxygen / 10) + '0';
+	//	replace += (oxygen % 10) + '0';
+	//}
+	//else
+	//	replace = oxygen + '0'; 
+
+	if (oxygen <= 0)
+		replace = '0';
+ 
 	return replace;
 }

@@ -274,7 +274,7 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(200, 0 , -125));
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 260 , -125));
 	collisionVec.push_back(&ChestBurster1);
 	
 
@@ -326,6 +326,8 @@ void Sp2_Scene3::Init()
 
 	Platform10 = Platform("platform10", 30, 0, Vector3(220, 808.15, -120));
 	collisionVec.push_back(&Platform10);
+
+	player.oxygen = 6000;
 }
 void Sp2_Scene3::Update(double dt)
 {
@@ -425,12 +427,11 @@ void Sp2_Scene3::Update(double dt)
 	
 	if (b_isDisplayUI == true && player.oxygen > 0)
 	{
-		player.oxygen -= (dt);
+		player.oxygen -= 1;
 	}
 	if (player.oxygen <= 0)
 	{
-		player.oxygen == 0;
-		player.isDead();
+		player.recieveHealthDamage(100);
 	}
 
 	ChestBurster.translateWorm(dt);
@@ -1030,7 +1031,7 @@ void Sp2_Scene3::RenderChestBurster1()
 	//modelStack.Translate(0, -33, 0);
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Rotate(ChestBurster1.wormrotating, 0, 1, 0);
-	modelStack.Scale(40, 40, 40);
+	modelStack.Scale(30, 30, 30);
 	RenderMesh(meshList[GEO_CHESTBURSTER], true);	// True false rfers to on/off light respectively
 
 	modelStack.PopMatrix();
