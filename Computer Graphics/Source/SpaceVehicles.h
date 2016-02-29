@@ -29,6 +29,7 @@ public:
 
 	void enterVehicleUpdate(Player& player);
 	void updateCPUVehicle(double deltaTime, PMAP map, queue<int>& q);
+	queue<int> racepath;
 private:
 
     float acceleration;
