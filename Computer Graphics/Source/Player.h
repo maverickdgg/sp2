@@ -31,6 +31,7 @@ public:
 	bool b_jumpDebounce;
 	bool b_jumpUp;
 	float groundLevel;
+	smaller oxygen;
 
 	vector<Quest*> questList;
 
@@ -43,5 +44,6 @@ public:
 	bool receiveQuest(GameChar& x);
 	bool taskComplete(Quest* q, int index);
 	bool questCompleted(Quest* q);
+	string getOxygenString();
 };
 #endif

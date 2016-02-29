@@ -16,6 +16,7 @@ Player::Player() : GameChar("Player", 15, 0, Vector3(0, 0, 0), 100)
 	f_initialJumpSpeed = 50;
 	groundLevel = 0;
 	f_jumpDebounceTimer = 0;
+	oxygen = 100;
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -414,4 +415,23 @@ bool Player::questCompleted(Quest* q)
 		}
 	}
 	return false;
+}
+
+string Player::getOxygenString()
+{
+	string replace;
+	if (oxygen / 100 != 0)
+	{
+		replace = (oxygen / 100) + '0';
+		replace += ((oxygen / 10) % 10) + '0';
+		replace += (oxygen % 10) + '0';
+	}
+	else if (oxygen / 100 == 0 && oxygen / 10 != 0)
+	{
+		replace = (oxygen / 10) + '0';
+		replace += (oxygen % 10) + '0';
+	}
+	else
+		replace = oxygen + '0';
+	return replace;
 }

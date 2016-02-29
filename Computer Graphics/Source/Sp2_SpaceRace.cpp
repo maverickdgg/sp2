@@ -216,7 +216,7 @@ void Sp2_SpaceRace::Init()
 	spaceRaceNpc.ReadFromTxt("text//spaceRaceDialogue.txt");
 
 	// cpu racers
-	frpc2 = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 26)) , 110);
+	frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)) , 110);
 	//loading of map;
 	racetrack = load_map("text//map1.txt");
 	racePath.push(toIndex(44,45));
@@ -230,6 +230,9 @@ void Sp2_SpaceRace::Init()
 	racePath.push(toIndex(20,14));
 	racePath.push(toIndex(28,6));
 	racePath.push(toIndex(44,6));
+
+	frpc.racepath = racePath;
+	frpc2.racepath = racePath;
 }
 
 void Sp2_SpaceRace::Update(double dt)
@@ -301,7 +304,10 @@ void Sp2_SpaceRace::Update(double dt)
 	speed = std::to_string(frpc.speed);
 
 	if (b_raceStart == true)
-	frpc2.updateCPUVehicle(dt, racetrack, racePath);
+	{
+		frpc2.updateCPUVehicle(dt, racetrack, frpc2.racepath);
+	}
+	
 
 	spaceRaceNpc.chat_update(player.pos);
 	if (spaceRaceNpc.b_dialogueEnd == true)
@@ -323,6 +329,18 @@ void Sp2_SpaceRace::Update(double dt)
 		b_raceBegin = false;
 	}
 	spaceRaceNpc.pulsingUpdate(dt);
+
+	if (frpc.lap >= 3)
+	{
+		//resetting the race after 3 laps.
+		b_raceStart = false;
+		frpc.lap = 0;
+		f_raceCountdown = 6.0f;
+		frpc.b_isInVehicle = false;
+		frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 25)));
+		frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)), 110);	
+		frpc2.racepath = racePath;
+	}
 }
 
 void Sp2_SpaceRace::RenderMesh(Mesh* mesh, bool enableLight)
