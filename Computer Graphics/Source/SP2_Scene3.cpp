@@ -199,20 +199,20 @@ void Sp2_Scene3::Init()
 	meshList[GEO_GUIDEARMRIGHT] = MeshBuilder::GenerateOBJ("npcsuitrightarm", "OBJ//Space_suit_arm_right.obj");
 	meshList[GEO_GUIDEARMRIGHT]->textureID = LoadTGA("Image//Space_suit_texture.tga");
 
-	//meshList[GEO_LADDER] = MeshBuilder::GenerateOBJ("ladder", "OBJ//ladder.obj");
+	meshList[GEO_LADDER] = MeshBuilder::GenerateOBJ("ladder", "OBJ//ladder.obj");
 	//meshList[GEO_LADDER]->textureID = LoadTGA("Image//Space_suit_texture.tga");
 
-	//meshList[GEO_MEDICBODY] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicBody.obj");
-	//meshList[GEO_MEDICBODY]->textureID = LoadTGA("Image//MedicBody.tga");
+	meshList[GEO_MEDICBODY] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicBody.obj");
+	meshList[GEO_MEDICBODY]->textureID = LoadTGA("Image//MedicBody.tga");
 
-	//meshList[GEO_MEDICARM1] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm1.obj");
-	//meshList[GEO_MEDICARM1]->textureID = LoadTGA("Image//MedicBody.tga");
+	meshList[GEO_MEDICARM1] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm1.obj");
+	meshList[GEO_MEDICARM1]->textureID = LoadTGA("Image//MedicBody.tga");
 
-	//meshList[GEO_MEDICARM2] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm2.obj");
-	//meshList[GEO_MEDICARM2]->textureID = LoadTGA("Image//MedicBody.tga");
+	meshList[GEO_MEDICARM2] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm2.obj");
+	meshList[GEO_MEDICARM2]->textureID = LoadTGA("Image//MedicBody.tga");
 
-	//meshList[GEO_MEDICHEAD] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicHead.obj");
-	//meshList[GEO_MEDICHEAD]->textureID = LoadTGA("Image//MedicBody.tga");
+	meshList[GEO_MEDICHEAD] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicHead.obj");
+	meshList[GEO_MEDICHEAD]->textureID = LoadTGA("Image//MedicBody.tga");
 
 	///*<---Under Construction--->*/
 
@@ -271,7 +271,7 @@ void Sp2_Scene3::Init()
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
 
-	Medic_ = Medic("medic", 5, 0, Vector3(5, 0, 50));
+	Medic_ = Medic("medic", 5, 0, Vector3(5, 180, 50));
 	collisionVec.push_back(&Medic_);
 
 	/**/
@@ -411,8 +411,11 @@ void Sp2_Scene3::Update(double dt)
 	//
 	Sir_.Salute(dt);
 
-	ladder.climb(b_isClimb, ladder, player);
-	ladder2.climb(b_isClimb2, ladder2, player);
+    if (b_isDisplayUI)
+    {
+        ladder.climb(b_isClimb, ladder, player);
+        ladder2.climb(b_isClimb2, ladder2, player);
+    }
 
 	if (b_isClimb == true)
 	{
@@ -883,7 +886,7 @@ void Sp2_Scene3::RenderPlatform(Platform p, bool isRotate)
 void Sp2_Scene3::RenderMedic(Medic x)
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(x.pos.x, x.pos.y - 33, x.pos.z - 90);
+	modelStack.Translate(x.pos.x, x.pos.y - 30, x.pos.z);
 	modelStack.Rotate(x.viewAngle, 0, 0, 1);
 	modelStack.PushMatrix();
 	//modelStack.Translate(0, -33, 0);
@@ -896,7 +899,7 @@ void Sp2_Scene3::RenderMedic(Medic x)
 
 
 	modelStack.PushMatrix();
-	modelStack.Translate(x.pos.x, x.pos.y + 4, x.pos.z - 90);
+	modelStack.Translate(x.pos.x, x.pos.y + 9, x.pos.z);
 	modelStack.Rotate(x.viewAngle, 0, 0, 1);
 	modelStack.PushMatrix();
 	//modelStack.Translate(0, -33, 0);
@@ -908,7 +911,7 @@ void Sp2_Scene3::RenderMedic(Medic x)
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(x.pos.x, x.pos.y - 4, x.pos.z - 82);
+	modelStack.Translate(x.pos.x + 0.5, x.pos.y - 1, x.pos.z + 8);
 	modelStack.Rotate(x.viewAngle, 0, 0, 1);
 	modelStack.PushMatrix();
 	//modelStack.Translate(0, -33, 0);
@@ -920,7 +923,7 @@ void Sp2_Scene3::RenderMedic(Medic x)
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(x.pos.x, x.pos.y - 4, x.pos.z - 96);
+	modelStack.Translate(x.pos.x + 0.5, x.pos.y - 1.5, x.pos.z - 6);
 	modelStack.Rotate(x.viewAngle, 0, 0, 1);
 	modelStack.PushMatrix();
 	//modelStack.Translate(0, -33, 0);
@@ -931,7 +934,7 @@ void Sp2_Scene3::RenderMedic(Medic x)
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-	if (collision(x.pos, camera.position, (x.boundary + 30)))
+	if (collision(x.pos, player.pos, 21))
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(2, 6, 0);
@@ -1103,11 +1106,8 @@ void Sp2_Scene3::Renderfps()
 	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderChestBurster();
-	//RenderGameObj(ladder, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
-	//RenderGameObj(ladder2, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
-
-	/*<---PLAYERCOSTUME--->*/
-	RenderSuit();
+	RenderGameObj(ladder, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
+	RenderGameObj(ladder2, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
 
 
 	/*<---NPC--->*/
@@ -1115,7 +1115,7 @@ void Sp2_Scene3::Renderfps()
 	//RenderBB8(BB8_);
 	RenderSir();
 	RenderBB8v2(BB8v2_);
-	//RenderMedic(Medic_);
+	RenderMedic(Medic_);
 	/*<---Platform--->*/
 	RenderPlatform(Platform_, true);
 	RenderPlatform(Platform1, false);
@@ -1128,6 +1128,9 @@ void Sp2_Scene3::Renderfps()
 	RenderPlatform(Platform8, false);
 	RenderPlatform(Platform9, false);
 	RenderPlatform(Platform10, false);
+
+    /*<---PLAYERCOSTUME--->*/
+    RenderSuit();
 
 	RenderMesh(meshList[GEO_AXES], false);
 	/*<---Weapons--->*/
