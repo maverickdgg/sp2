@@ -238,7 +238,7 @@ void Sp2_Scene3::Init()
 	//player = Player(100);
 
 	//furniture
-	box1 = Buildings("box 1", 5, 0, Vector3(50, 222.5, -130));
+	box1 = Buildings("box 1", 1, 0, Vector3(50, 222.5, -130));
 	collisionVec.push_back(&box1);
 	box2 = Buildings("box 2", 25, 0, Vector3(375, -30, 250));
 	collisionVec.push_back(&box2);
@@ -279,7 +279,7 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 250, -125));
+	ChestBurster1 = AlienEnemy("ChestBurster1", 1, 0, Vector3(75, 250, -125));
 	collisionVec.push_back(&ChestBurster1);
 	
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
@@ -333,6 +333,9 @@ void Sp2_Scene3::Init()
     horiDist = 50;
 	verticalDistance = 80;
     b_switchDir = false;
+    b_collectBox1 = false;
+    b_collectBox2 = false;
+    b_collectBox3 = false;
 }
 void Sp2_Scene3::Update(double dt)
 {
@@ -412,7 +415,7 @@ void Sp2_Scene3::Update(double dt)
 
 	if (b_isDisplayUI == true && collision(ChestBurster.pos, player.pos, 21))
 		player.recieveHealthDamage(1);
-	if (b_isDisplayUI == true && collision(ChestBurster1.pos, player.pos, 21))
+	if (b_isDisplayUI == true && collision(ChestBurster1.pos, player.pos, 17))
 		player.recieveHealthDamage(1);
 
 
@@ -518,6 +521,8 @@ void Sp2_Scene3::Update(double dt)
     Platform5.pos.x = horiDist + 25;
     ChestBurster1.pos.x = horiDist + 25;
     box1.pos.x = horiDist;
+    //if (collision(Platform5.pos, player.pos, player.boundary + Platform5.boundary))
+    //    player.pos.x = horiDist;
 
 	/*<------------------------Vertical Distance (Platform5)----------------------------------->*/
 	if (b_switchDir == false)
@@ -540,7 +545,10 @@ void Sp2_Scene3::Update(double dt)
 	Platform6.pos.y = verticalDistance + 25;
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
-	if (b_switchDir == false)
+    if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false)
+    {
+        b_collectBox1 = true;
+    }
 	if (Application::IsKeyPressed('O'))
 	{
 		Application::switchToScene1();
@@ -1242,7 +1250,8 @@ void Sp2_Scene3::Renderfps()
 
 	RenderSkybox();
 
-	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
+    if (b_collectBox1 == false)
+	    RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
 	RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));

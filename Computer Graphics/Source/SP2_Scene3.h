@@ -157,6 +157,9 @@ public:
     bool b_isClimb3;
 	bool b_isClimb4;
     bool b_switchDir;
+    bool b_collectBox1;
+    bool b_collectBox2;
+    bool b_collectBox3;
     float horiDist;
 	float verticalDistance;
 	float rotateHelm;
