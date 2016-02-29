@@ -16,6 +16,11 @@ public:
 	float wormrotating;
 	float wormtranslate;
 	float wormrotate;
+
+	float necroTranslating;
+	float necroRotating;
+	float necroTranslate;
+	float necroRotate;
 };
 
 #endif

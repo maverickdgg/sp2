@@ -87,6 +87,7 @@ public:
 		GEO_BB8v2B,
 		GEO_PINGU,
 		GEO_CHESTBURSTER,
+		GEO_NECROMANCER,
 		GEO_PLATFORM,
 		GEO_LADDER,
 
@@ -173,6 +174,7 @@ public:
 	Pingu Pingu_;
 	Quest raceQuest;
 	AlienEnemy ChestBurster;
+	AlienEnemy Necromancer;
 	Sir Sir_;
 	Platform Platform_;
 	Platform Platform1;
@@ -226,6 +228,7 @@ private:
 	void RenderBB8v2(BB8v2 n);
 	void RenderSuit();
 	void RenderChestBurster();
+	void RenderNecromancer();
 	void RenderSir(/*Sir n*/);
 	void RenderPlatform(Platform p, bool isRotate);
 	void RenderMedic(Medic x);

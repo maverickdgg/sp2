@@ -172,6 +172,9 @@ void Sp2_Scene3::Init()
 	meshList[GEO_CHESTBURSTER] = MeshBuilder::GenerateOBJ("chestburster", "OBJ//Chestburster.obj");
 	meshList[GEO_CHESTBURSTER]->textureID = LoadTGA("Image//Chestburster_texture.tga");
 
+	meshList[GEO_NECROMANCER] = MeshBuilder::GenerateOBJ("necromancer", "OBJ//Necromancer.obj");
+	meshList[GEO_NECROMANCER]->textureID = LoadTGA("Image//Necromancer.tga");
+
 	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("boxes", "OBJ//Box.obj");
 	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
 
@@ -267,11 +270,14 @@ void Sp2_Scene3::Init()
 	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(-50, 125, -125));
 	collisionVec.push_back(&ChestBurster);
 
+	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
+	collisionVec.push_back(&Necromancer);
+
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
 
-	Medic_ = Medic("medic", 5, 0, Vector3(5, 180, 50));
+	Medic_ = Medic("medic", 5, 0, Vector3(-65, 185, -20));
 	collisionVec.push_back(&Medic_);
 
 	/**/
@@ -281,22 +287,22 @@ void Sp2_Scene3::Init()
 	/**/
 
 	/**/
-	Platform_ = Platform("platform", 30, 0, Vector3(-80, 8.15, -120));
+	Platform_ = Platform("platform", 30, 0, Vector3(-80, 8.15, -120));		// Done
 	collisionVec.push_back(&Platform_);
 
-	Platform1 = Platform("platform1", 30, 0, Vector3(50, 25, -120));
+	Platform1 = Platform("platform1", 30, 0, Vector3(50, 25, -120));		// Done
 	collisionVec.push_back(&Platform1);
 
-	Platform2 = Platform("platform2", 30, 0, Vector3(-50, 150, -25));
+	Platform2 = Platform("platform2", 30, 0, Vector3(-50, 150, -25));		// Done
 	collisionVec.push_back(&Platform2);
 
-	Platform3 = Platform("platform3", 30, 0, Vector3(-50, 85, -120));
+	Platform3 = Platform("platform3", 30, 0, Vector3(-50, 85, -120));		// Done (Worm)
 	collisionVec.push_back(&Platform3);
 
-	Platform4 = Platform("platform4", 30, 0, Vector3(420, 408.15, -120));
+	Platform4 = Platform("platform4", 30, 0, Vector3(-10, 150, -25));		// Done (Healer)
 	collisionVec.push_back(&Platform4);
 
-	Platform5 = Platform("platform5", 30, 0, Vector3(-180, 408.15, -120));
+	Platform5 = Platform("platform5", 30, 0, Vector3(75, 215, -120));		// To Be Continued...
 	collisionVec.push_back(&Platform5);
 
 	Platform6 = Platform("platform6", 30, 0, Vector3(120, 408.15, -120));
@@ -393,6 +399,10 @@ void Sp2_Scene3::Update(double dt)
 	if (b_isDisplayUI == true && collision(ChestBurster.pos, player.pos, 21))
 		player.recieveHealthDamage(1);
 
+
+	if (b_isDisplayUI == true && collision(Necromancer.pos, player.pos, 21))
+		player.recieveHealthDamage(1);
+
 	if (player.isDead() == false)
 		oldPos = player.pos;
 	else if (player.isDead())
@@ -407,6 +417,8 @@ void Sp2_Scene3::Update(double dt)
 
 	ChestBurster.translateWorm(dt);
 	ChestBurster.move(dt);
+	Necromancer.translateWorm(dt);
+	Necromancer.move(dt);
 	//
 	Sir_.Salute(dt);
 
@@ -982,6 +994,23 @@ void Sp2_Scene3::RenderChestBurster()
 	modelStack.PopMatrix();
 }
 
+void Sp2_Scene3::RenderNecromancer()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(Necromancer.pos.x, Necromancer.pos.y - 29.5 + Necromancer.wormtranslating, Necromancer.pos.z);
+	//modelStack.Rotate(Necromancer.viewAngle, 0, 0, 1);
+	modelStack.PushMatrix();
+	//modelStack.Translate(0, -33, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Rotate(Necromancer.wormrotating, 0, 1, 0);
+	modelStack.Scale(2, 2, 2);
+	RenderMesh(meshList[GEO_NECROMANCER], true);	// True false rfers to on/off light respectively
+
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();
+}
+
 void Sp2_Scene3::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1122,6 +1151,7 @@ void Sp2_Scene3::Renderfps()
 	RenderSir();
 	RenderBB8v2(BB8v2_);
 	RenderMedic(Medic_);
+	RenderNecromancer();
 	/*<---Platform--->*/
 	RenderPlatform(Platform_, true);
 	RenderPlatform(Platform1, false);
