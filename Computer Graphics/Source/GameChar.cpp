@@ -15,7 +15,7 @@ GameChar::GameChar()
 	b_dialogueEnd = false;
 }
 
-GameChar::GameChar(string object_name, int boundary, float viewAngle, Vector3 pos) : GameObject(object_name, boundary, viewAngle, pos)
+GameChar::GameChar(string object_name, int boundary, float viewAngle, Vector3 pos, smaller init_Health) : GameObject(object_name, boundary, viewAngle, pos), health(init_Health)
 {
 	chat_boundary = 20;
 	++GC_count;
@@ -85,7 +85,54 @@ void GameChar::chat_update(Vector3 player_pos)
 			dialogue_index = 0;
 		}
 	}
-	
+
+}
+
+smaller GameChar::getHealth()
+{
+	return health;
+}
+
+string GameChar::getHealthString()
+{
+	string replace;
+	if (health / 100 != 0)
+	{
+		replace = (health / 100) + '0';
+		replace += ((health / 10) % 10) + '0';
+		replace += (health % 10) + '0';
+	}
+	else if (health / 100 == 0 && health / 10 != 0)
+	{
+		replace = (health / 10) + '0';
+		replace += (health % 10) + '0';
+	}
+	else
+		replace = health + '0';
+	return replace;
+}
+
+bool GameChar::isDead()
+{
+	if (health <= 0)
+		return true;
+	else
+		return false;
+}
+
+bool GameChar::recieveHealthDamage(const int& damage)
+{
+	if (health > 0)
+	{
+		health -= damage;
+		return true;
+	}
+	else if (isDead() == true)
+	{
+		health = 0;
+		return false;
+	}
+
 }
 
 void GameChar::assignQuest(Quest* q)

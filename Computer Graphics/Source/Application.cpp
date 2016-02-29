@@ -6,7 +6,11 @@
 #include <stdlib.h>
 
 #include "SP2_scene1.h"
+
 #include "Sp2_SpaceRace.h"
+
+#include "SP2_Scene3.h"
+
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
@@ -15,6 +19,7 @@ const unsigned int frameTime = 1000 / FPS; // time for each frame
 Scene* Application::scene;
 Scene* Application::scene1;
 Scene* Application::scene2;
+Scene* Application::scene3;
 
 //Define an error callback
 static void error_callback(int error, const char* description)
@@ -32,7 +37,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 
 bool Application::IsKeyPressed(unsigned short key)
 {
-    return ((GetAsyncKeyState(key) & 0x8001) != 0);
+	return ((GetAsyncKeyState(key) & 0x8001) != 0);
 }
 
 Application::Application()
@@ -70,8 +75,10 @@ void Application::Init()
 
 
 	//Create a window and create its OpenGL context
+
 	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width*2/3, glfwGetVideoMode(glfwGetPrimaryMonitor())->height * 2/3, "Computer Graphics", NULL, NULL);
 	//m_window = glfwCreateWindow(1980, 1080, "Computer Graphics", glfwGetPrimaryMonitor() , NULL);
+
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
 	
@@ -79,16 +86,16 @@ void Application::Init()
 	//If the window couldn't be created
 	if (!m_window)
 	{
-		fprintf( stderr, "Failed to open GLFW window.\n" );
+		fprintf(stderr, "Failed to open GLFW window.\n");
 		glfwTerminate();
 		exit(EXIT_FAILURE);
 	}
 
-	
+
 
 	//This function makes the context of the specified window current on the calling thread. 
 	glfwMakeContextCurrent(m_window);
-	
+
 	//Sets the key callback
 	glfwSetKeyCallback(m_window, key_callback);
 
@@ -98,7 +105,7 @@ void Application::Init()
 	GLenum err = glewInit();
 
 	//If GLEW hasn't initialized
-	if (err != GLEW_OK) 
+	if (err != GLEW_OK)
 	{
 		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
 		//return -1;
@@ -115,6 +122,11 @@ void Application::switchToScene2()
 	scene = scene2;
 }
 
+void Application::switchToScene3()
+{
+	scene = scene3;
+}
+
 void Application::Run()
 {
 	//Main Loop
@@ -124,8 +136,10 @@ void Application::Run()
 	scene1->Init();
 	scene2 = new Sp2_SpaceRace();
 	scene2->Init();
-
+	scene3 = new Sp2_Scene3();
+	scene3->Init();
 	scene = scene1;
+
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))

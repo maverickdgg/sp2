@@ -20,7 +20,8 @@ struct Light
 	Vector3 spotDirection;
 	float cosCutoff;
 	float cosInner;
-	float exponent;
+	float exponent;
+
 	Light();
 };
 #endif

@@ -16,3 +16,13 @@ Buildings::~Buildings()
 {
 	b_count--;
 }
+
+void Buildings::climb(bool& isClimb, Buildings& ladder, Player& player)
+{
+	if (collision(ladder.pos, player.pos, 20) == true)
+	{
+		isClimb = true;
+	}
+	else
+		isClimb = false;
+}

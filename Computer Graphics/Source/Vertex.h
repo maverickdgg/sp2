@@ -12,7 +12,7 @@ struct Position
 	}
 	Position(float x = 0, float y = 0, float z = 0)
 	{
-	Set(x, y, z);
+		Set(x, y, z);
 	}
 
 };
@@ -26,7 +26,7 @@ struct Color
 	}
 	Color(float r = 0, float g = 0, float b = 0)
 	{
-		Set(r,g,b);
+		Set(r, g, b);
 	}
 
 };

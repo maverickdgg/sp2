@@ -25,8 +25,6 @@
 #include "BB-8.h"
 #include "Pingu.h"
 #include "Quest.h"
-#include "AlienEnemy.h"
-#include "ChestBurster.h"
 
 class Sp2_Scene1 : public Scene
 {
@@ -55,6 +53,7 @@ public:
 		GEO_BACK,
 		/*<---Text--->*/
 		GEO_TEXT,
+		GEO_TEXT2,
 		GEO_TEXTBACKGROUND,
 		/*<---Space Vehicles--->*/
 		GEO_FOURTH,
@@ -65,16 +64,17 @@ public:
 		GEO_DART,
 		GEO_CROSSHAIR,
 		/*<---Humans--->*/
+		GEO_SUIT,
 		GEO_HELM,
 
 		/*<---NPC--->*/
 		GEO_MIKE,	// Default (Pure Interaction Codes, no NPC)	
 		GEO_NPC3,	// Storm Trooper
-        GEO_FLIGHTUI,	// Astronaut Suit
+		GEO_FLIGHTUI,	// Astronaut Suit
+		GEO_HELMETUI,
 		GEO_BB8H,	// BB-8 Head
 		GEO_BB8B,	// BB-8 Body
 		GEO_PINGU,
-		GEO_CHESTBURSTER,
 
 		GEO_PINGUBODY,
 		GEO_PINGULH,
@@ -129,23 +129,28 @@ public:
 	bool b_enabletps;
 	bool b_tpsDebounce;
 	bool b_isWorn;
+	bool b_isDisplayUI;
+	float rotateHelm;
+	float scaleHelm;
 	float tpsTimer;
 
-    Gun laserRifle;
+	Gun laserRifle;
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 	Buildings station;
-	Alien mike1,mike2,mike3;
+	Alien mike1, mike2, mike3;
 	Human whale;
+	Human suit;
+	Human spaceHelm;
 	BB8 BB8_;
 	Pingu Pingu_;
 	Quest raceQuest;
-	ChestBurster ChestBurster_;
+
 	//player
 	Player player;
 
 	//furniture
-	Buildings box1,box2,box3,box4;
+	Buildings box1, box2, box3, box4;
 	Buildings table1;
 	Buildings chair1;
 	Buildings keycard1;
@@ -171,19 +176,21 @@ private:
 
 	void RenderMesh(Mesh* mesh, bool enableLight);
 	void RenderSkybox();
+	void RenderSpaceVehicles(Camera3 camera);
+
 
 	void RenderPingu();
 	void RenderBB8(BB8 x);
-	void RenderChestBurster(ChestBurster x);
+	void RenderSuit();
 
-	void RenderGameObj(GameObject x, Mesh* mesh,bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1,1,1), Vector3 rotate = Vector3(0,0,0));
-	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), Vector3 rotate = Vector3(0, 0, 0) );
+	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
+	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
 
 	void Renderfps();
 	void Rendertps();
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderMeshOnScreen(Mesh* mesh, Vector3 translate = Vector3(0, 0, 0), Vector3 scale = Vector3(1,1,1), Vector3 rotate = Vector3(0, 0, 0));
+	void RenderMeshOnScreen(Mesh* mesh, Vector3 translate = Vector3(0, 0, 0), Vector3 scale = Vector3(1, 1, 1), Vector3 rotate = Vector3(0, 0, 0));
 };
 #endif

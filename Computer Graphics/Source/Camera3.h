@@ -25,13 +25,13 @@ public:
 	float movementSpeed;
 	float boundaryX;
 	float boundaryZ;
-	
+
 	Camera3();
 	~Camera3();
-	virtual void Init(const Vector3& pos, const Vector3& target, const Vector3& up, float boundX,float boundZ);
+	virtual void Init(const Vector3& pos, const Vector3& target, const Vector3& up, float boundX, float boundZ);
 	void updateRotation(float CameraSpeed);
 	void updateRotationTps(float cameraSpeed);
-	void tpsUpdate(Camera3 cam,double dt);
+	void tpsUpdate(Camera3 cam, double dt);
 	virtual void Update(double dt);
 	virtual void Reset();
 };

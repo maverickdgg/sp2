@@ -13,7 +13,7 @@ Camera3::~Camera3()
 
 }
 
-void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, float boundX,float boundZ)
+void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, float boundX, float boundZ)
 {
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;
@@ -39,7 +39,7 @@ void Camera3::updateRotation(float CameraSpeed) // camerarotationx and y, 38 to 
 {
 	int screenSizeX, screenSizeY;
 	int midScreenX, midScreenY;
-	glfwGetWindowSize(m_window,&screenSizeX,&screenSizeY);
+	glfwGetWindowSize(m_window, &screenSizeX, &screenSizeY);
 	midScreenX = screenSizeX / 2;
 	midScreenY = screenSizeY / 2;
 	// Checking for the position of the mouse cursor and resetting it every frame
@@ -56,22 +56,22 @@ void Camera3::updateRotation(float CameraSpeed) // camerarotationx and y, 38 to 
 	{
 		cameraRotationX = -80;
 	}
-	if (cameraRotationY >=360 || cameraRotationY <= -360)
+	if (cameraRotationY >= 360 || cameraRotationY <= -360)
 	{
 		cameraRotationY = 0;
 	}
 
 	target = Vector3 // position
 		(
-		cos(Math::DegreeToRadian(cameraRotationY)) * cos(Math::DegreeToRadian(cameraRotationX))+ this->position.x, // target.x // position + Math...
-		sin(Math::DegreeToRadian(cameraRotationX))+this->position.y,
+		cos(Math::DegreeToRadian(cameraRotationY)) * cos(Math::DegreeToRadian(cameraRotationX)) + this->position.x, // target.x // position + Math...
+		sin(Math::DegreeToRadian(cameraRotationX)) + this->position.y,
 		-sin(Math::DegreeToRadian(cameraRotationY))  * cos(Math::DegreeToRadian(cameraRotationX)) + this->position.z
 		);
 }
 
 void Camera3::Update(double dt)
 {
-	static const float CAMERA_SPEED = 50.f;	
+	static const float CAMERA_SPEED = 50.f;
 	view = (target - position).Normalized();
 	right = view.Cross(defaultUp);
 	right.y = 0;
@@ -81,7 +81,7 @@ void Camera3::Update(double dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		view = (Vector3(target.x, 0, target.z) - Vector3(position.x, 0, position.z)).Normalized();
-		position += view *(float)( movementSpeed * dt);
+		position += view *(float)(movementSpeed * dt);
 
 	}
 
@@ -94,13 +94,13 @@ void Camera3::Update(double dt)
 
 	if (Application::IsKeyPressed('A'))
 	{
-		position -= right * (movementSpeed/45);
+		position -= right * (movementSpeed / 45);
 
-		
+
 	}
 	if (Application::IsKeyPressed('D'))
 	{
-		position += right* (movementSpeed/45);
+		position += right* (movementSpeed / 45);
 
 	}
 
@@ -171,17 +171,17 @@ void Camera3::updateRotationTps(float cameraSpeed)
 	}
 	position = Vector3
 		(
-		target.x + cos(Math::DegreeToRadian(cameraRotationY))*cos(Math::DegreeToRadian(cameraRotationX))*80,
+		target.x + cos(Math::DegreeToRadian(cameraRotationY))*cos(Math::DegreeToRadian(cameraRotationX)) * 80,
 		35,
 		target.z + sin(Math::DegreeToRadian(cameraRotationY))*cos(Math::DegreeToRadian(cameraRotationX)) * 80
 		);
 }
 
-void Camera3::tpsUpdate(Camera3 cam,double dt)
+void Camera3::tpsUpdate(Camera3 cam, double dt)
 {
 	this->target = cam.position;
 	//updateRotationTps(50);
-	this->position =( Vector3(cam.position.x, cam.position.y+20, cam.position.z) - (Vector3(cam.view.x, 0, cam.view.z).Normalized())* 80 );
+	this->position = (Vector3(cam.position.x, cam.position.y + 20, cam.position.z) - (Vector3(cam.view.x, 0, cam.view.z).Normalized()) * 80);
 	view = (target - position).Normalized();
 	right = view.Cross(defaultUp);
 	right.y = 0;

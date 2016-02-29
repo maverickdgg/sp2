@@ -12,7 +12,7 @@ class Quest
 {
 public:
 	Quest();
-	Quest(int numOfTasks,vector<string> names, string questName);
+	Quest(int numOfTasks, vector<string> names, string questName);
 	~Quest();
 	vector<bool> task; // Objective Complete
 	int numTasks;

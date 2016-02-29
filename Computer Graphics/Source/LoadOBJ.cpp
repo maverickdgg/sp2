@@ -6,10 +6,10 @@
 
 bool LoadOBJ
 (
-	const char *file_path, 
-	std::vector<Position> & out_vertices, 
-	std::vector<TexCoord> & out_uvs, 
-	std::vector<Vector3> & out_normals
+const char *file_path,
+std::vector<Position> & out_vertices,
+std::vector<TexCoord> & out_uvs,
+std::vector<Vector3> & out_normals
 )
 {
 	std::ifstream fileStream(file_path, std::ios::binary);
@@ -124,13 +124,13 @@ struct PackedVertex{
 	};
 };
 
-bool getSimilarVertexIndex_fast( 
-	PackedVertex & packed, 
+bool getSimilarVertexIndex_fast(
+	PackedVertex & packed,
 	std::map<PackedVertex, unsigned short> & VertexToOutIndex,
 	unsigned short & result
-){
+	){
 	std::map<PackedVertex, unsigned short>::iterator it = VertexToOutIndex.find(packed);
-	if(it == VertexToOutIndex.end())
+	if (it == VertexToOutIndex.end())
 	{
 		return false;
 	}
@@ -148,27 +148,27 @@ void IndexVBO(
 
 	std::vector<unsigned> & out_indices,
 	std::vector<Vertex> & out_vertices
-)
+	)
 {
-	std::map<PackedVertex,unsigned short> VertexToOutIndex;
+	std::map<PackedVertex, unsigned short> VertexToOutIndex;
 
 	// For each input vertex
-	for(unsigned int i = 0; i < in_vertices.size(); ++i) 
+	for (unsigned int i = 0; i < in_vertices.size(); ++i)
 	{
 
-		PackedVertex packed = {in_vertices[i], in_uvs[i], in_normals[i]};
+		PackedVertex packed = { in_vertices[i], in_uvs[i], in_normals[i] };
 
 		// Try to find a similar vertex in out_XXXX
 		unsigned short index;
-		bool found = getSimilarVertexIndex_fast( packed, VertexToOutIndex, index);
+		bool found = getSimilarVertexIndex_fast(packed, VertexToOutIndex, index);
 
-		if ( found )
-		{ 
+		if (found)
+		{
 			// A similar vertex is already in the VBO, use it instead !
-			out_indices.push_back( index );
+			out_indices.push_back(index);
 		}
 		else
-		{ 
+		{
 			// If not, it needs to be added in the output data.
 			Vertex v;
 			v.pos.Set(in_vertices[i].x, in_vertices[i].y, in_vertices[i].z);
@@ -177,8 +177,8 @@ void IndexVBO(
 			v.col.Set(1, 1, 1);
 			out_vertices.push_back(v);
 			unsigned newindex = (unsigned)out_vertices.size() - 1;
-			out_indices.push_back( newindex );
-			VertexToOutIndex[ packed ] = newindex;
+			out_indices.push_back(newindex);
+			VertexToOutIndex[packed] = newindex;
 		}
 	}
 }

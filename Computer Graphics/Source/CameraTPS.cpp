@@ -13,58 +13,63 @@ CameraTPS::~CameraTPS()
 
 void CameraTPS::Init(const Vector3& pos, const Vector3& up, GameObject* targetObj)
 {
+
 	this->targetObj = targetObj;
     this->defaultOffset = pos;
     this->target = targetObj->pos;
+
 	this->position = target + defaultOffset;
-    this->view = (target - position).Normalized();
+	this->view = (target - position).Normalized();
 	right = view.Cross(up);
 	right.y = 0;
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
+
     cameraRotationX = 0.0f;
     cameraRotationY = 0.0f;
 	b_cameraLock = false;
 	b_cameraLockDebounce = false;
+
 }
 
 void CameraTPS::tpsUpdateRotation(float speed)
 {
-    int screenSizeX, screenSizeY;
-    int midScreenX, midScreenY;
-    glfwGetWindowSize(m_window, &screenSizeX, &screenSizeY);
-    midScreenX = screenSizeX / 2;
-    midScreenY = screenSizeY / 2;
-    //checking for the position of the mouse cursor and resetting it every frame
-    POINT mousePos;
-    GetCursorPos(&mousePos);
-    SetCursorPos(midScreenX, midScreenY);
-    cameraRotationY -= (mousePos.x - midScreenX) / (1.0f / speed);
-    cameraRotationX -= (mousePos.y - midScreenY) / (1.0f / speed);
-    if (cameraRotationX >80)
-    {
-        cameraRotationX = 80;
-    }
-    else if (cameraRotationX < -80)
-    {
-        cameraRotationX = -80;
-    }
-    if (cameraRotationY >= 360 || cameraRotationY <= -360)
-    {
-        cameraRotationY = 0;
-    }
+	int screenSizeX, screenSizeY;
+	int midScreenX, midScreenY;
+	glfwGetWindowSize(m_window, &screenSizeX, &screenSizeY);
+	midScreenX = screenSizeX / 2;
+	midScreenY = screenSizeY / 2;
+	//checking for the position of the mouse cursor and resetting it every frame
+	POINT mousePos;
+	GetCursorPos(&mousePos);
+	SetCursorPos(midScreenX, midScreenY);
+	cameraRotationY -= (mousePos.x - midScreenX) / (1.0f / speed);
+	cameraRotationX -= (mousePos.y - midScreenY) / (1.0f / speed);
+	if (cameraRotationX >80)
+	{
+		cameraRotationX = 80;
+	}
+	else if (cameraRotationX < -80)
+	{
+		cameraRotationX = -80;
+	}
+	if (cameraRotationY >= 360 || cameraRotationY <= -360)
+	{
+		cameraRotationY = 0;
+	}
 
 	position = Vector3 // position
 		(
 		cos(Math::DegreeToRadian(cameraRotationY)) * defaultOffset.x + this->target.x, // target.x // position + Math...
 		defaultOffset.y + this->target.y,
 		sin(Math::DegreeToRadian(cameraRotationY))* defaultOffset.z + this->target.z
-        );
+		);
 
 }
 
 void CameraTPS::tpsUpdateVec(double dt)
 {
+
 	if (Application::IsKeyPressed('L') && b_cameraLockDebounce == false && b_cameraLock == false)
 	{
 		b_cameraLockDebounce = true;
@@ -92,7 +97,7 @@ void CameraTPS::tpsUpdateVec(double dt)
 	else
 	{
 		this->target = targetObj->pos;
-		cameraRotationY = -(targetObj->viewAngle) +90;
+		cameraRotationY = -(targetObj->viewAngle) + 90;
 		this->position = Vector3 // position
 			(
 			cos(Math::DegreeToRadian(cameraRotationY)) * defaultOffset.x + this->target.x, // target.x // position + Math...

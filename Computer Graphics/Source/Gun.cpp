@@ -12,7 +12,7 @@ Gun::Gun(string name, int boundary, Vector3 pos) : Weapon(name, boundary, 0, pos
 {
 	this->pos = pos;
 	fireRate = 2;
-	fireDebounceTimer = 1/fireRate;
+	fireDebounceTimer = 1 / fireRate;
 }
 
 Gun::~Gun()
@@ -20,7 +20,7 @@ Gun::~Gun()
 	G_count--;
 }
 
-void Gun::fire( double dt)
+void Gun::fire(double dt)
 {
 	if (fireDebounceTimer == 0)
 	{
@@ -44,12 +44,12 @@ void Gun::updateBullet(double dt)
 	for (vector<Bullet>::iterator it = bulletVec.begin(); it != bulletVec.end();)
 	{
 		it->bulletUpdate(dt);
-		
+
 		if (it->despawnTimer <= 0)
 		{
 			it = despawnBullet(it);
 		}
-		else 
+		else
 		{
 			it++;
 		}
@@ -58,12 +58,12 @@ void Gun::updateBullet(double dt)
 
 float Gun::findAngle(Vector3 view)
 {
-    view = Vector3(view.x, 0, view.z);
-    if (view.z >=0)
-        viewAngle = Math::RadianToDegree(atan(view.x / view.z))-90 ;
-    else
-        viewAngle = Math::RadianToDegree(atan(view.x/view.z)) - 180 -90;
-    return viewAngle;
+	view = Vector3(view.x, 0, view.z);
+	if (view.z >= 0)
+		viewAngle = Math::RadianToDegree(atan(view.x / view.z)) - 90;
+	else
+		viewAngle = Math::RadianToDegree(atan(view.x / view.z)) - 180 - 90;
+	return viewAngle;
 }
 
 

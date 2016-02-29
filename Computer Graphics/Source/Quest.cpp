@@ -4,7 +4,7 @@ Quest::Quest()
 {
 }
 
-Quest::Quest(int numOfTasks, vector<string> names,string questName)
+Quest::Quest(int numOfTasks, vector<string> names, string questName)
 {
 	for (int i = 0; i < numOfTasks; ++i)
 	{
@@ -93,7 +93,7 @@ void Quest::ReadFromTxtQuest(string link)
 				std::getline(inData, data);
 				questName = data;
 			}
-		    ++index;
+			++index;
 
 		}
 	}

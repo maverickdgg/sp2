@@ -61,14 +61,14 @@ Then generate the VBO/IBO and store them in Mesh object
 \return Pointer to mesh storing VBO/IBO of quad
 */
 /******************************************************************************/
-Mesh* MeshBuilder::GenerateQuad(const std::string &meshName,Color color, float lengthX, float lengthY)
+Mesh* MeshBuilder::GenerateQuad(const std::string &meshName, Color color, float lengthX, float lengthY)
 {
 	vector<Vertex> vertex_buffer_data;
 	vector<GLuint> index_buffer_data;
 	Vertex v;
-	 
+
 	v.pos.Set(-1.0, 1.0, 0.0); v.col = color; v.normal.Set(0, 0, 1); v.texCoord.Set(0, 0); vertex_buffer_data.push_back(v);
-	v.pos.Set(1.0, 1.0, 0.0); v.col = color;v.normal.Set(0,0,1);v.texCoord.Set(0, 1); vertex_buffer_data.push_back(v);
+	v.pos.Set(1.0, 1.0, 0.0); v.col = color; v.normal.Set(0, 0, 1); v.texCoord.Set(0, 1); vertex_buffer_data.push_back(v);
 	v.pos.Set(-1.0, -1.0, 0.0); v.col = color; v.normal.Set(0, 0, 1); v.texCoord.Set(1, 0); vertex_buffer_data.push_back(v);
 	v.pos.Set(1.0, -1.0, 0.0); v.col = color; v.normal.Set(0, 0, 1); v.texCoord.Set(1, 1); vertex_buffer_data.push_back(v);
 
@@ -106,7 +106,7 @@ Then generate the VBO/IBO and store them in Mesh object
 \return Pointer to mesh storing VBO/IBO of cube
 */
 /******************************************************************************/
-Mesh* MeshBuilder::GenerateCube(const std::string &meshName,  Color color)
+Mesh* MeshBuilder::GenerateCube(const std::string &meshName, Color color)
 {
 	vector<Vertex> vertex_buffer_data;
 	vector<GLuint> index_buffer_data;
@@ -189,23 +189,23 @@ Mesh* MeshBuilder::GenerateCircle(const string& meshName, Color color, unsigned 
 	Vertex v;
 
 	float anglePerSlice = 360.0f / numSlices;
-	for (unsigned i = 0; i < numSlices+1; ++i)
+	for (unsigned i = 0; i < numSlices + 1; ++i)
 	{
 		float theta = i*anglePerSlice;
 		v.pos.Set(CircleX(theta), 0, CircleZ(theta));
 		v.col = color;
-		v.normal.Set(0,1,0);
+		v.normal.Set(0, 1, 0);
 		vertex_buffer_data.push_back(v);
 	}
 	v.pos.Set(0, 0, 0);
 	v.col = color;
-	v.normal.Set(0,1,0);
+	v.normal.Set(0, 1, 0);
 	vertex_buffer_data.push_back(v);
-	
-	for (int i = 0; i < numSlices+1; ++i)
+
+	for (int i = 0; i < numSlices + 1; ++i)
 	{
 		index_buffer_data.push_back(i);
-		index_buffer_data.push_back(numSlices+1);
+		index_buffer_data.push_back(numSlices + 1);
 	}
 	Mesh *mesh = new Mesh(meshName);
 
@@ -232,19 +232,19 @@ Mesh* MeshBuilder::GenerateRing(const string& meshName, Color color, float inner
 		float theta = i*anglePerSlice;
 		v.pos.Set(CircleX(theta), 0, CircleZ(theta));
 		v.col = color;
-		v.normal.Set(0,1,0);
+		v.normal.Set(0, 1, 0);
 		vertex_buffer_data.push_back(v);
 
-		v.pos.Set(CircleX(theta)*innerRadius, 0*innerRadius, CircleZ(theta)*innerRadius);
+		v.pos.Set(CircleX(theta)*innerRadius, 0 * innerRadius, CircleZ(theta)*innerRadius);
 		v.col = color;
-		v.normal.Set(0,1,0);
+		v.normal.Set(0, 1, 0);
 		vertex_buffer_data.push_back(v);
 	}
 
 	for (int i = 0; i < numSlices + 1; i++)
 	{
-		index_buffer_data.push_back(2*i);
-		index_buffer_data.push_back(2*i+1);
+		index_buffer_data.push_back(2 * i);
+		index_buffer_data.push_back(2 * i + 1);
 	}
 	Mesh *mesh = new Mesh(meshName);
 
@@ -282,7 +282,7 @@ Mesh* MeshBuilder::GenerateSphere(const string& meshName, Color color, unsigned 
 
 	float anglePerStack = 180.0f / numStack; //180 because from -90 to 90
 	float anglePerSlice = 360.0f / numSlices;
-	for (unsigned stack = 0; stack < numStack+1; ++stack)
+	for (unsigned stack = 0; stack < numStack + 1; ++stack)
 	{
 		float phi = -90 + stack*anglePerStack; //each degree change per stack
 		for (unsigned slice = 0; slice < numSlices + 1; ++slice)
@@ -301,8 +301,8 @@ Mesh* MeshBuilder::GenerateSphere(const string& meshName, Color color, unsigned 
 	{
 		for (unsigned slice = 0; slice < numSlices + 1; ++slice)
 		{
-			index_buffer_data.push_back(stack*(numSlices+1)+slice);
-			index_buffer_data.push_back((stack+1)*(numSlices + 1) + slice);
+			index_buffer_data.push_back(stack*(numSlices + 1) + slice);
+			index_buffer_data.push_back((stack + 1)*(numSlices + 1) + slice);
 		}
 	}
 	Mesh *mesh = new Mesh(meshName);
@@ -318,7 +318,7 @@ Mesh* MeshBuilder::GenerateSphere(const string& meshName, Color color, unsigned 
 	return mesh;
 }
 
-Mesh* MeshBuilder::GenerateCylinder(const string& meshName, Color color, float topRadius,unsigned numSlice)
+Mesh* MeshBuilder::GenerateCylinder(const string& meshName, Color color, float topRadius, unsigned numSlice)
 {
 	vector<Vertex> vertex_buffer_data;
 	vector<GLuint> index_buffer_data;
@@ -356,18 +356,18 @@ Mesh* MeshBuilder::GenerateCylinder(const string& meshName, Color color, float t
 		index_buffer_data.push_back(2 * slice);
 	}
 	//center
-	for (int slice = 0; slice < numSlice+1; ++slice)
+	for (int slice = 0; slice < numSlice + 1; ++slice)
 	{
 		index_buffer_data.push_back(2 * slice);
 		index_buffer_data.push_back(2 * (slice)+1);
 	}
-		// top lid
+	// top lid
 	for (int slice = 0; slice < numSlice + 1; ++slice)
 	{
-		index_buffer_data.push_back(2 * slice+1);
+		index_buffer_data.push_back(2 * slice + 1);
 		index_buffer_data.push_back(2 * (numSlice + 1) + 1);
 	}
-	
+
 	Mesh *mesh = new Mesh(meshName);
 
 	glBindBuffer(GL_ARRAY_BUFFER, mesh->vertexBuffer);
@@ -424,7 +424,7 @@ Mesh* MeshBuilder::GenerateTorus(const string& meshName, Color color, float inne
 	return mesh;
 }
 
-Mesh* MeshBuilder::GenerateHemiSphere(const string& meshName, Color color, unsigned numSlices, unsigned numStack )
+Mesh* MeshBuilder::GenerateHemiSphere(const string& meshName, Color color, unsigned numSlices, unsigned numStack)
 {
 	std::vector<Vertex> vertex_buffer_data;
 	std::vector<GLuint> index_buffer_data;

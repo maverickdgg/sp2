@@ -21,17 +21,17 @@ using std::endl;
 class GameObject
 {
 private:
-    
-    static size_t GO_count;
-	
+
+	static size_t GO_count;
+
 public:
 	string name;
-    virtual ~GameObject();
+	virtual ~GameObject();
 	int boundary;
 	Vector3 pos;
-    float viewAngle;
+	float viewAngle;
 protected:
-    GameObject();
+	GameObject();
 	GameObject(string object_name, int boundary, float viewAngle = 0, Vector3 pos = Vector3(0, 0, 0));
 
 };

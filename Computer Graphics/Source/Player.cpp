@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player()
+Player::Player() : GameChar("Player", 15, 0, Vector3(0, 0, 0), 100)
 {
 	pos = Vector3(0, 0, 0);
 	viewAngle = 0;
@@ -63,7 +63,7 @@ void Player::assignGun(Gun* newGun)
 	}
 }
 
-void Player::movementUpdate(Camera3& cam , double dt , vector<GameObject*> collisionVec)
+void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec)
 {
 	float movSpeed;
 	if (Application::IsKeyPressed(VK_SHIFT))
@@ -126,7 +126,7 @@ void Player::movementUpdate(Camera3& cam , double dt , vector<GameObject*> colli
 
 
 
-	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false && f_jumpDebounceTimer >=0.5)
+	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false && f_jumpDebounceTimer >= 0.5)
 	{
 		f_jumpDebounceTimer = 0;
 		b_jumpDebounce = true;
@@ -185,7 +185,7 @@ void Player::movementUpdate(Camera3& cam , double dt , vector<GameObject*> colli
 	{
 		pos.y = groundLevel;
 	}
-	
+
 	cam.position = this->pos;
 	cam.updateRotation(0.3);
 }
@@ -382,7 +382,7 @@ bool Player::receiveQuest(GameChar& x)
 
 bool Player::taskComplete(Quest* q, int index)
 {
-	if (index > q->numTasks || haveAcceptedCheck(q)==false)
+	if (index > q->numTasks || haveAcceptedCheck(q) == false)
 	{
 		return false;
 	}
@@ -392,7 +392,7 @@ bool Player::taskComplete(Quest* q, int index)
 		{
 			if (*it == q)
 			{
-				(*it)->task[index]=true;
+				(*it)->task[index] = true;
 				questCompleted(q);
 				return true;
 			}

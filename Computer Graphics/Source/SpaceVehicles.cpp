@@ -25,6 +25,7 @@ SpaceVehicles::~SpaceVehicles()
 	SV_count--;
 }
 
+
 void SpaceVehicles::updateVehicle(double deltaTime)
 {
 	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
@@ -58,10 +59,12 @@ void SpaceVehicles::updateVehicle(double deltaTime)
 		}
         if (speed > 0)
         speed -= acceleration * deltaTime;
+
 		if (speed < 0)
 		{
 			speed += acceleration * deltaTime;
 		}
+
     }
    
 	if (Application::IsKeyPressed('A') && !Application::IsKeyPressed('D'))
@@ -104,6 +107,7 @@ void SpaceVehicles::updateVehicle(double deltaTime)
 	}
         pos.x += sin(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
         pos.z += cos(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+
 }
 
 
@@ -227,7 +231,7 @@ void SpaceVehicles::updateVehicle(double deltaTime , PMAP map)
 
 void SpaceVehicles::enterVehicleUpdate(Player& player)
 {
-	if (Application::IsKeyPressed('E') && b_vehDebounce == false && b_isInVehicle ==false && collision(player,this->pos,this->boundary + player.boundary + 10))
+	if (Application::IsKeyPressed('E') && b_vehDebounce == false && b_isInVehicle == false && collision(player, this->pos, this->boundary + player.boundary + 10))
 	{
 		b_isInVehicle = true;
 		b_vehDebounce = true;
@@ -236,7 +240,7 @@ void SpaceVehicles::enterVehicleUpdate(Player& player)
 	{
 		b_isInVehicle = false;
 		b_vehDebounce = true;
-		player.pos = this->pos;
+		player.pos = this->pos - Vector3(11, 0, 10);
 	}
 	if (!Application::IsKeyPressed('E') && b_vehDebounce == true)
 	{

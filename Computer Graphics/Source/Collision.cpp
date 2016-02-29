@@ -6,15 +6,15 @@ bool collision(GameObject x, GameObject y)
 	/*float length = distance.Length();
 	if (length > x.boundary + y.boundary)
 	{
-		return false;
+	return false;
 	}
 	else
 	{
-		return true;
+	return true;
 	}*/
 	if (distance.x < 0)
 	{
-		distance.x *= -1; 
+		distance.x *= -1;
 	}
 	if (distance.y < 0)
 	{
@@ -34,7 +34,7 @@ bool collision(GameObject x, GameObject y)
 	}
 }
 
-bool collision(GameObject x, Vector3 y,int boundary)
+bool collision(GameObject x, Vector3 y, int boundary)
 {
 	return collision(x.pos, y, (x.boundary + boundary));
 }
@@ -77,13 +77,13 @@ bool collision(GameObject x, vector<GameObject> y)
 	return false;
 }
 
-bool collision(Vector3 x, vector<GameObject*> y , float boundary)
+bool collision(Vector3 x, vector<GameObject*> y, float boundary)
 {
 	for (vector<GameObject*>::iterator it = y.begin(); it != y.end(); ++it)
 	{
 		if ((*it)->pos != x)
 		{
-			if (collision(**it, x,boundary) == true)
+			if (collision(**it, x, boundary) == true)
 			{
 				return true;
 			}

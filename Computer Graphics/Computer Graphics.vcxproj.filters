@@ -102,10 +102,22 @@
     <ClCompile Include="Source\menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\SP2_Scene3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Source\AlienEnemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ChestBurster.cpp">
+    <ClCompile Include="Source\Sir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BB-8_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Medic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Sp2_SpaceRace.cpp">
@@ -209,10 +221,22 @@
     <ClInclude Include="Source\menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\SP2_Scene3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Source\AlienEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ChestBurster.h">
+    <ClInclude Include="Source\Sir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BB-8_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Medic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Sp2_SpaceRace.h">
