@@ -136,6 +136,7 @@ public:
 	bool b_raceEnd;
 	float f_endTimer;
 	float f_raceCountdown;
+	bool win;
 
 	SpaceVehicles frpc,frpc2;
 

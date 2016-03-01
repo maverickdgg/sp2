@@ -452,6 +452,7 @@ void Sp2_Scene3::Update(double dt)
 	if (player.oxygen <= 0)
 	{
 		player.recieveHealthDamage(100);
+		player.isDead();
 	}
 
     if (Application::IsKeyPressed('E') && player.isDead())
@@ -589,7 +590,7 @@ void Sp2_Scene3::Update(double dt)
 	    player.pos -= Vector3(50,0,50);
 	    Application::switchToScene1();
 	}
-	if (Application::IsKeyPressed('E') && (collision(Medic_.pos.x, player.pos.y, 21)))
+	if (Application::IsKeyPressed('E') && (collision(Medic_.pos, player.pos, 21)))
 	{
 		player.regainHealth(100);
 	}
