@@ -23,13 +23,17 @@ public:
 	float rotationZ;
 	int lap;
 	bool lapDebounce;
+	queue<int> racepath;
 
     void updateVehicle(double deltaTime);
-	void updateVehicle(double deltaTime , PMAP map);
+	void updateVehicle(double deltaTime , PMAP map,queue<int>& q);
 
 	void enterVehicleUpdate(Player& player);
 	void updateCPUVehicle(double deltaTime, PMAP map, queue<int>& q);
-	queue<int> racepath;
+	
+	int getRacePosition(SpaceVehicles x, int startIndex);
+	int positionInQueue(int index);
+	float distanceFromCheckpoint();
 private:
 
     float acceleration;

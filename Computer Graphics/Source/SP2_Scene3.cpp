@@ -229,6 +229,9 @@ void Sp2_Scene3::Init()
 	/*<------BB-8 Version 2------>*/
 	meshList[GEO_BB8v2B] = MeshBuilder::GenerateOBJ("bb8v2body", "OBJ//BB82B.obj");
 	meshList[GEO_BB8v2B]->textureID = LoadTGA("Image//BB82B.tga");
+
+	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("npc1", "OBJ//Teleporter.obj");
+	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	/**/
 
 	b_enabletps = false;
@@ -328,6 +331,8 @@ void Sp2_Scene3::Init()
 
 	Platform10 = Platform("platform10", 30, 0, Vector3(220, 808.15, -120));
 	collisionVec.push_back(&Platform10);
+
+	spaceStationTp = Buildings("Space station teleporter", 25, 0, Vector3(-200,-30,200));
 
 	player.oxygen = 6000;
     horiDist = 50;
@@ -553,12 +558,18 @@ void Sp2_Scene3::Update(double dt)
 	Platform6.pos.y = verticalDistance + 175;
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
+
     if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false)
     {
         b_collectBox1 = true;
     }
-	if (Application::IsKeyPressed('O'))
+	//if (Application::IsKeyPressed('O'))
+
+
+	if (b_switchDir == false)
+	if (collisionXZ(player.pos, spaceStationTp) == true && Application::IsKeyPressed('E'))
 	{
+		player.pos -= Vector3(50,0,50);
 		Application::switchToScene1();
 	}
 	if (Application::IsKeyPressed('E') && (collision(Medic_.pos.x, player.pos.y, 21)))
@@ -1246,6 +1257,25 @@ void Sp2_Scene3::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 }
 
 
+void Sp2_Scene3::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale)
+{
+	RenderGameObj(x, mesh, true, false, scale);
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Translate(0, 30, 0);
+	modelStack.Scale(7, 7, 7);
+	RenderText(meshList[GEO_TEXT], text, Color(0, 1, 0));
+	modelStack.PopMatrix();
+
+	if (collisionXZ(player.pos, x))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to teleport", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
+}
+
 void Sp2_Scene3::Renderfps()
 {
 	Vector3 lightDir(light[0].position.x,
@@ -1317,6 +1347,8 @@ void Sp2_Scene3::Renderfps()
 		RenderMesh(meshList[GEO_DART], true);
 		modelStack.PopMatrix();
 	}
+
+	RenderTeleporter(spaceStationTp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 }
 
 void Sp2_Scene3::Rendertps()

@@ -106,6 +106,8 @@ public:
 		GEO_MEDICARM1,
 		GEO_MEDICARM2,
 
+		GEO_TELEPORTER,
+
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -210,6 +212,8 @@ public:
 	Buildings ladder3;
 	Buildings ladder4;
 
+	Buildings spaceStationTp;
+
 	//for quest
 	vector<string> tasklist;
 	Quest* questPtr;
@@ -249,6 +253,7 @@ private:
 
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
+	void RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale);
 
 	void Renderfps();
 	void Rendertps();
