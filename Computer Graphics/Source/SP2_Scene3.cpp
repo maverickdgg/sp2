@@ -443,6 +443,7 @@ void Sp2_Scene3::Update(double dt)
 	if (player.oxygen <= 0)
 	{
 		player.recieveHealthDamage(100);
+		player.isDead();
 	}
 
     if (Application::IsKeyPressed('E') && player.isDead())
