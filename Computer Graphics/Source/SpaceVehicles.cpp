@@ -120,7 +120,7 @@ void SpaceVehicles::updateVehicle(double deltaTime , PMAP map,queue<int>& q)
 		q.push(q.front());
 		q.pop();
 	}
-	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
+	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed(VK_SPACE))
 	{
 		if (speed < max_speed)
 		{
@@ -132,18 +132,15 @@ void SpaceVehicles::updateVehicle(double deltaTime , PMAP map,queue<int>& q)
 		}
 	}
 
-	if (Application::IsKeyPressed('S') && !Application::IsKeyPressed('W'))
+	if (Application::IsKeyPressed(VK_SPACE))
 	{
-		if (speed > -max_speed)
+		if (speed > 0)
 		{
-			speed -= acceleration * deltaTime;
+			speed -= acceleration *1.5* deltaTime;
 		}
-		if (speed < -max_speed)
-		{
-			speed = -max_speed;
-		}
+
 	}
-	else if (!Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
+	else if (!Application::IsKeyPressed('W') && !Application::IsKeyPressed(VK_SPACE))
 	{
 		if (speed > -2 && speed <2)
 		{
