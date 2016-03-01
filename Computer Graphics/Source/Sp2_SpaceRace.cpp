@@ -319,13 +319,14 @@ void Sp2_SpaceRace::Update(double dt)
 	if (b_raceBegin == true && f_raceCountdown > 0)
 	{
 		f_raceCountdown -= dt;
+		if (f_raceCountdown <= 0)
+		{
+			f_raceCountdown == 6.0f;
+			b_raceStart = true;
+			b_raceBegin = false;
+		}
 	}
-	if (f_raceCountdown <= 0)
-	{
-		f_raceCountdown == 0;
-		b_raceStart = true;
-		b_raceBegin = false;
-	}
+	
 	spaceRaceNpc.pulsingUpdate(dt);
 
 	if (frpc.lap >= 3)
@@ -334,21 +335,31 @@ void Sp2_SpaceRace::Update(double dt)
 		b_raceStart = false;
 		b_raceEnd = true;
 		f_endTimer = 5.f;
-		
-		f_raceCountdown = 6.0f;
 		frpc.b_isInVehicle = false;
-		frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 25)));
-		frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)), 110);	
-		frpc2.racepath = racePath;
+		
+		if (frpc.getRacePosition(frpc,toIndex(44,45)) == 1)
+		{
+			win = true;
+		}
+		else{
+			win = false;
+		}
+		frpc.lap = 0;
+		frpc2.lap = 0;
+		
 	}
 	if (b_raceEnd == true)
 	{
 		f_endTimer -= dt;
 		if (f_endTimer <= 0)
 		{
-			frpc.lap = 0;
-			frpc2.lap = 0;
 			b_raceEnd = false;
+			f_raceCountdown = 6.0f;
+			f_endTimer = 5.f;
+			frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 25)));
+			frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)), 110);
+			frpc.racepath = racePath;
+			frpc2.racepath = racePath;
 		}
 	}
 }
@@ -693,9 +704,9 @@ void Sp2_SpaceRace::Renderfps()
 
 	if (b_raceEnd == true)
 	{
-		if (racePosition == 1)
+		if (win == true)
 			RenderTextOnScreen(meshList[GEO_TEXT], "Congratulations! You WIN!", Color(0, 1, 0), 3, 1, 10);
-		else if (racePosition == 2)
+		else if (win == false)
 			RenderTextOnScreen(meshList[GEO_TEXT], "YOU LOSE! TRY AGAIN!", Color(0, 1, 0), 3, 1, 10);
 	}
 
