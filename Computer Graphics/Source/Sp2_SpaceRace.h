@@ -74,20 +74,14 @@ public:
 		/*<---NPC--->*/
 		GEO_MIKE,	// Default (Pure Interaction Codes, no NPC)	
 		GEO_ALIEN,
-		GEO_FLIGHTUI,	// Astronaut Suit
-		GEO_BB8H,	// BB-8 Head
-		GEO_BB8B,	// BB-8 Body
-		GEO_PINGU,
-		GEO_CHESTBURSTER,
+		GEO_TELEPORTER,
 
 		GEO_PINGUBODY,
 		GEO_PINGULH,
 		GEO_PINGURH,
 
 		GEO_BOX,
-		GEO_TABLE,
-		GEO_CHAIR,
-		GEO_KEYCARD,
+
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -135,8 +129,12 @@ public:
 	bool b_isWorn;
 	float tpsTimer;
 
+	int racePosition;
+
 	bool b_raceBegin;
 	bool b_raceStart;
+	bool b_raceEnd;
+	float f_endTimer;
 	float f_raceCountdown;
 
 	SpaceVehicles frpc,frpc2;
@@ -146,6 +144,9 @@ public:
 
 	//npc
 	Alien spaceRaceNpc;
+
+	//furniture
+	Buildings spaceStationtp;
 
 	//for quest
 	vector<string> tasklist;
@@ -176,6 +177,7 @@ private:
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), Vector3 rotate = Vector3(0, 0, 0));
 	void RenderGameObj(Mesh* mesh, Vector3 pos, Vector3 scale, Vector3 rotate);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), Vector3 rotate = Vector3(0, 0, 0));
+	void RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale);
 	
 	void Renderfps();
 	void Rendertps();

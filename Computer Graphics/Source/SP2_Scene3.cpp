@@ -229,6 +229,9 @@ void Sp2_Scene3::Init()
 	/*<------BB-8 Version 2------>*/
 	meshList[GEO_BB8v2B] = MeshBuilder::GenerateOBJ("bb8v2body", "OBJ//BB82B.obj");
 	meshList[GEO_BB8v2B]->textureID = LoadTGA("Image//BB82B.tga");
+
+	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("npc1", "OBJ//Teleporter.obj");
+	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	/**/
 
 	b_enabletps = false;
@@ -238,7 +241,7 @@ void Sp2_Scene3::Init()
 	//player = Player(100);
 
 	//furniture
-	box1 = Buildings("box 1", 25, 0, Vector3(375, -30, 275));
+	box1 = Buildings("box 1", 5, 0, Vector3(50, 222.5, -130));
 	collisionVec.push_back(&box1);
 	box2 = Buildings("box 2", 25, 0, Vector3(375, -30, 250));
 	collisionVec.push_back(&box2);
@@ -252,6 +255,8 @@ void Sp2_Scene3::Init()
 	b_isDisplayUI = false;
 	b_isClimb == false;
 	b_isClimb2 = false;
+	b_isClimb3 = false;
+	b_isClimb4 = false;
 	rotateHelm = 0;
 	scaleHelm = 50;
 
@@ -267,6 +272,9 @@ void Sp2_Scene3::Init()
 	ladder3 = Buildings("ladder3", 1, 270, Vector3(-50, 152, -53.5));
 	collisionVec.push_back(&ladder3);
 
+	ladder4 = Buildings("ladder4", 1, 140, Vector3(50, 210, -90));
+	collisionVec.push_back(&ladder4);
+
 	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(-50, 125, -125));
 	collisionVec.push_back(&ChestBurster);
 
@@ -274,14 +282,15 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 260 , -125));
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 245, -125));
+
 	collisionVec.push_back(&ChestBurster1);
 
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
 
-	Medic_ = Medic("medic", 5, 0, Vector3(-65, 185, -20));
+	Medic_ = Medic("medic", 5, 0, Vector3(-65, 190, -20));
 	collisionVec.push_back(&Medic_);
 
 	/**/
@@ -300,16 +309,16 @@ void Sp2_Scene3::Init()
 	Platform2 = Platform("platform2", 30, 0, Vector3(-50, 150, -25));		// Done
 	collisionVec.push_back(&Platform2);
 
-	Platform3 = Platform("platform3", 30, 0, Vector3(-50, 85, -120));		// Done (Worm)
+	Platform3 = Platform("platform3", 30, 0, Vector3(-50, 85, -120));		// Done
 	collisionVec.push_back(&Platform3);
 
-	Platform4 = Platform("platform4", 30, 0, Vector3(-10, 150, -25));		// Done (Healer)
+	Platform4 = Platform("platform4", 30, 0, Vector3(-10, 150, -25));		// Done
 	collisionVec.push_back(&Platform4);
 
-	Platform5 = Platform("platform5", 30, 0, Vector3(75, 215, -120));		// To Be Continued...
+	Platform5 = Platform("platform5", 30, 0, Vector3(75, 210, -120));		// To Be Continued...
 	collisionVec.push_back(&Platform5);
 
-	Platform6 = Platform("platform6", 30, 0, Vector3(120, 408.15, -120));
+	Platform6 = Platform("platform6", 30, 0, Vector3(150, 210, -170));
 	collisionVec.push_back(&Platform6);
 
 	Platform7 = Platform("platform7", 30, 0, Vector3(420, 408.15, -120));
@@ -324,7 +333,12 @@ void Sp2_Scene3::Init()
 	Platform10 = Platform("platform10", 30, 0, Vector3(220, 808.15, -120));
 	collisionVec.push_back(&Platform10);
 
+	spaceStationTp = Buildings("Space station teleporter", 25, 0, Vector3(-200,-30,200));
+
 	player.oxygen = 6000;
+    horiDist = 50;
+	verticalDistance = 50;
+    b_switchDir = false;
 }
 void Sp2_Scene3::Update(double dt)
 {
@@ -424,12 +438,18 @@ void Sp2_Scene3::Update(double dt)
 	
 	if (b_isDisplayUI == true && player.oxygen > 0)
 	{
-		player.oxygen -= 1;
+		--player.oxygen;
 	}
 	if (player.oxygen <= 0)
 	{
 		player.recieveHealthDamage(100);
 	}
+
+    if (Application::IsKeyPressed('E') && player.isDead())
+    {
+        player.regainHealth(100);
+        player.oxygen = 6000;
+    }
 
 	ChestBurster.translateWorm(dt);
 	ChestBurster.move(dt);
@@ -449,6 +469,7 @@ void Sp2_Scene3::Update(double dt)
         ladder.climb(b_isClimb, ladder, player);
         ladder2.climb(b_isClimb2, ladder2, player);
         ladder3.climb(b_isClimb3, ladder3, player);
+		ladder4.climb(b_isClimb4, ladder4, player);
     }
 
 	if (b_isClimb == true)
@@ -466,22 +487,86 @@ void Sp2_Scene3::Update(double dt)
         if (Application::IsKeyPressed('W'))
             ++player.pos.y;
     }
+    if (b_isClimb4 == true)
+    {
+        if (Application::IsKeyPressed('W'))
+            ++player.pos.y;
+    }
 	Platform_.changePlatform(b_isClimb, Platform_, player);
-	Platform1.changePlatform(b_isClimb, Platform1, player);
-	Platform2.changePlatform(b_isClimb, Platform2, player);
-	Platform3.changePlatform(b_isClimb2, Platform3, player);
-	Platform4.changePlatform(b_isClimb, Platform4, player);
+	Platform1.changePlatform(b_isClimb2, Platform1, player);
+	Platform2.changePlatform(b_isClimb4, Platform2, player);
+	Platform3.changePlatform(b_isClimb3, Platform3, player);
+	Platform4.changePlatform(b_isClimb4, Platform4, player);
 	Platform5.changePlatform(b_isClimb, Platform5, player);
 	Platform6.changePlatform(b_isClimb, Platform6, player);
 	Platform7.changePlatform(b_isClimb, Platform7, player);
 	Platform8.changePlatform(b_isClimb, Platform8, player);
 	Platform9.changePlatform(b_isClimb, Platform9, player);
 	Platform10.changePlatform(b_isClimb, Platform10, player);
+	/*<------------------------Horizontal Distance (Platform4)--------------------------------->*/
 
-	if (Application::IsKeyPressed('O'))
+    if (b_switchDir == false)
+
+    {
+        horiDist -= 5 * (dt);
+
+        if (horiDist < -60)
+
+        {
+            b_switchDir = true;
+        }
+    }
+
+    else if (b_switchDir == true)
+
+    {
+        horiDist += 5 * (dt);
+        if (horiDist > 50)
+        {
+            b_switchDir = false;
+        }
+    }
+
+    ladder4.pos.x = horiDist;
+    Platform5.pos.x = horiDist + 25;
+    ChestBurster1.pos.x = horiDist + 25;
+    box1.pos.x = horiDist;
+
+	/*<------------------------Vertical Distance (Platform5)----------------------------------->*/
+
+	if (b_switchDir == false)
 	{
-		Application::switchToScene1();
+		verticalDistance -= 5 * (dt);
+		if (verticalDistance < -220)
+		{
+			b_switchDir = true;
+		}
 	}
+	else if (b_switchDir == true)
+	{
+		verticalDistance += 5 * (dt);
+		if (verticalDistance > 210)
+		{
+			b_switchDir = false;
+		}
+	}
+	/*ladder4.pos.x = horiDist;*/
+	Platform6.pos.y = verticalDistance + 175;
+	//Necromancer.pos.y = verticalDistance + 25;
+	/*<-------------------------------End---------------------------------------------------->*/
+
+	if (b_switchDir == false)
+
+	if (collisionXZ(player.pos, spaceStationTp) == true && Application::IsKeyPressed('E'))
+	{
+	    player.pos -= Vector3(50,0,50);
+	    Application::switchToScene1();
+	}
+	if (Application::IsKeyPressed('E') && (collision(Medic_.pos.x, player.pos.y, 21)))
+	{
+		player.regainHealth(100);
+	}
+
 }
 
 void Sp2_Scene3::RenderMesh(Mesh* mesh, bool enableLight)
@@ -983,7 +1068,6 @@ void Sp2_Scene3::RenderMedic(Medic x)
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to heal", Color(1, 0, 0), 3, 1, 8);
 		modelStack.PopMatrix();
 	}
-
 	//if (x.vec_dialog.empty() == false)
 	//{
 	//	if (collision(x.pos, player.pos, (x.boundary + player.boundary + x.chat_boundary)) && x.isPressed == true)
@@ -1164,6 +1248,25 @@ void Sp2_Scene3::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 }
 
 
+void Sp2_Scene3::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale)
+{
+	RenderGameObj(x, mesh, true, false, scale);
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Translate(0, 30, 0);
+	modelStack.Scale(7, 7, 7);
+	RenderText(meshList[GEO_TEXT], text, Color(0, 1, 0));
+	modelStack.PopMatrix();
+
+	if (collisionXZ(player.pos, x))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to teleport", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
+}
+
 void Sp2_Scene3::Renderfps()
 {
 	Vector3 lightDir(light[0].position.x,
@@ -1179,7 +1282,7 @@ void Sp2_Scene3::Renderfps()
 
 	RenderSkybox();
 
-	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
+	RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
 	RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
@@ -1188,6 +1291,7 @@ void Sp2_Scene3::Renderfps()
 	RenderGameObj(ladder, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
 	RenderGameObj(ladder2, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
     RenderGameObj(ladder3, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
+	RenderGameObj(ladder4, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
 
 	/*<---NPC--->*/
 	//RenderPingu();
@@ -1216,11 +1320,6 @@ void Sp2_Scene3::Renderfps()
         RenderTextOnScreen(meshList[GEO_TEXT], "Press 'E' to respawn.", Color(0, 1, 0), 4, 0.5, 2.5);
     }
 
-    if (Application::IsKeyPressed('E') && player.isDead())
-    {
-        player.regainHealth(100);
-    }
-
     /*<---PLAYERCOSTUME--->*/
     RenderSuit();
 
@@ -1238,6 +1337,8 @@ void Sp2_Scene3::Renderfps()
 		RenderMesh(meshList[GEO_DART], true);
 		modelStack.PopMatrix();
 	}
+
+	RenderTeleporter(spaceStationTp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 }
 
 void Sp2_Scene3::Rendertps()

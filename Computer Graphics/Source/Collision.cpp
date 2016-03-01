@@ -39,6 +39,32 @@ bool collision(GameObject x, Vector3 y, int boundary)
 	return collision(x.pos, y, (x.boundary + boundary));
 }
 
+bool collisionXZ(Vector3 x, GameObject y)
+{
+	Vector3 distance = x - y.pos;
+
+	if (distance.x < 0)
+	{
+		distance.x *= -1;
+	}
+	if (distance.y < 0)
+	{
+		distance.y *= -1;
+	}
+	if (distance.z < 0)
+	{
+		distance.z *= -1;
+	}
+	if (distance.x < (y.boundary) && distance.z < ( y.boundary))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 bool collision(Vector3 x, Vector3 y, int boundary)
 {
 	Vector3 distance = x - y;

@@ -106,6 +106,8 @@ public:
 		GEO_MEDICARM1,
 		GEO_MEDICARM2,
 
+		GEO_TELEPORTER,
+
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -155,6 +157,10 @@ public:
 	bool b_isClimb;
 	bool b_isClimb2;
     bool b_isClimb3;
+	bool b_isClimb4;
+    bool b_switchDir;
+    float horiDist;
+	float verticalDistance;
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
@@ -174,12 +180,10 @@ public:
 	Pingu Pingu_;
 	Quest raceQuest;
 	AlienEnemy ChestBurster;
-
 	AlienEnemy Necromancer;
-
 	AlienEnemy ChestBurster1;
-
 	Sir Sir_;
+
 	Platform Platform_;
 	Platform Platform1;
 	Platform Platform2;
@@ -203,6 +207,9 @@ public:
 	Buildings ladder;
 	Buildings ladder2;
 	Buildings ladder3;
+	Buildings ladder4;
+
+	Buildings spaceStationTp;
 
 	//for quest
 	vector<string> tasklist;
@@ -243,6 +250,7 @@ private:
 
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
+	void RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale);
 
 	void Renderfps();
 	void Rendertps();

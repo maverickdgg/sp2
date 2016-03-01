@@ -84,6 +84,7 @@ public:
 		GEO_TABLE,
 		GEO_CHAIR,
 		GEO_KEYCARD,
+		GEO_TELEPORTER,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -154,6 +155,7 @@ public:
 	Buildings table1;
 	Buildings chair1;
 	Buildings keycard1;
+	Buildings scene3Tp,raceTp;
 
 	//for quest
 	vector<string> tasklist;
@@ -185,6 +187,7 @@ private:
 
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
+	void RenderTeleporter(GameObject x, Mesh* mesh, string text,Vector3 scale);
 
 	void Renderfps();
 	void Rendertps();

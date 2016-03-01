@@ -136,6 +136,7 @@ void Sp2_SpaceRace::Init()
 	collisionVec.push_back(&frpc);
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 1000, 1000);
 	camera2.Init(Vector3(-50, 15, -50), Vector3(0, 1, 0), &frpc);
+	camera2.b_cameraLock = true;
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
@@ -182,31 +183,22 @@ void Sp2_SpaceRace::Init()
 	meshList[GEO_MIKE] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
 	meshList[GEO_MIKE]->textureID = LoadTGA("Image//mike.tga");
 
-	meshList[GEO_BB8H] = MeshBuilder::GenerateOBJ("bb8head", "OBJ//BB8H.obj");
-	meshList[GEO_BB8H]->textureID = LoadTGA("Image//BB8H.tga");
-
-	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB8B.obj");
-	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB8B.tga");
-
-	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("table", "OBJ//Table.obj");
-	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
-
-	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("chair", "OBJ//Chair.obj");
-	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//Chair.tga");
-
 	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("boxes", "OBJ//Box.obj");
 	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
 
-	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("keycard", "OBJ//KeyCard.obj");
-	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
-
 	meshList[GEO_ALIEN] = MeshBuilder::GenerateOBJ("AlienOne", "OBJ//AlienOne.obj");
 	meshList[GEO_ALIEN]->textureID = LoadTGA("Image//AlienOne.tga");
+
+	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("npc1", "OBJ//Teleporter.obj");
+	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
+
 	/*<---NPC--->*/
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	b_raceBegin = false;
 	b_raceStart = false;
+	b_raceEnd = false;
+	f_endTimer = 3;
 	tpsTimer = 0;
 	f_raceCountdown = 3;
 
@@ -214,6 +206,8 @@ void Sp2_SpaceRace::Init()
 
 	spaceRaceNpc = Alien("Space Race NPC", 20, 0, indexToVector(toIndex(3, 6))+ Vector3(0,-10,0) );
 	spaceRaceNpc.ReadFromTxt("text//spaceRaceDialogue.txt");
+
+	racePosition = 2;
 
 	// cpu racers
 	frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)) , 110);
@@ -233,6 +227,8 @@ void Sp2_SpaceRace::Init()
 
 	frpc.racepath = racePath;
 	frpc2.racepath = racePath;
+
+	spaceStationtp = Buildings("Space station teleporter", 25, 0, indexToVector(toIndex(10,10)) + Vector3(0,-30,0));
 }
 
 void Sp2_SpaceRace::Update(double dt)
@@ -266,7 +262,7 @@ void Sp2_SpaceRace::Update(double dt)
 			camera2.tpsUpdateVec(dt);
 			if (b_raceStart == true)
 			{
-				frpc.updateVehicle(dt, racetrack);
+				frpc.updateVehicle(dt, racetrack,frpc.racepath);
 			}
 		}
 
@@ -297,8 +293,9 @@ void Sp2_SpaceRace::Update(double dt)
 			tpsTimer = 0;
 		}
 	}
-	if (Application::IsKeyPressed('O'))
+	if (collisionXZ(player.pos, spaceStationtp) == true && Application::IsKeyPressed('E'))
 	{
+		player.pos = indexToVector(toIndex(12, 12));
 		Application::switchToScene1();
 	}
 	speed = std::to_string(frpc.speed);
@@ -306,6 +303,7 @@ void Sp2_SpaceRace::Update(double dt)
 	if (b_raceStart == true)
 	{
 		frpc2.updateCPUVehicle(dt, racetrack, frpc2.racepath);
+		racePosition = frpc.getRacePosition(frpc2, toIndex(44, 45));
 	}
 	
 
@@ -334,12 +332,24 @@ void Sp2_SpaceRace::Update(double dt)
 	{
 		//resetting the race after 3 laps.
 		b_raceStart = false;
-		frpc.lap = 0;
+		b_raceEnd = true;
+		f_endTimer = 5.f;
+		
 		f_raceCountdown = 6.0f;
 		frpc.b_isInVehicle = false;
 		frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 25)));
 		frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)), 110);	
 		frpc2.racepath = racePath;
+	}
+	if (b_raceEnd == true)
+	{
+		f_endTimer -= dt;
+		if (f_endTimer <= 0)
+		{
+			frpc.lap = 0;
+			frpc2.lap = 0;
+			b_raceEnd = false;
+		}
 	}
 }
 
@@ -604,6 +614,24 @@ void Sp2_SpaceRace::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 sc
 	modelStack.PopMatrix();
 }
 
+void Sp2_SpaceRace::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale)
+{
+	RenderGameObj(x, mesh, true, false, scale);
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Translate(0, 30, 0);
+	modelStack.Scale(7, 7, 7);
+	RenderText(meshList[GEO_TEXT], text, Color(0, 1, 0));
+	modelStack.PopMatrix();
+
+	if (collisionXZ(player.pos, x))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to teleport", Color(1, 0, 0), 3, 1, 8);
+		modelStack.PopMatrix();
+	}
+}
 
 void Sp2_SpaceRace::Renderfps()
 {
@@ -630,15 +658,23 @@ void Sp2_SpaceRace::Renderfps()
 
 	
 
-	RenderGameObj(frpc, meshList[GEO_FOURTH],true,false,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
-	RenderGameObj(frpc2, meshList[GEO_FOURTH], true, false, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
+	RenderGameObj(frpc, meshList[GEO_FOURTH],false,false,Vector3(0.5,0.5,0.5),Vector3(0,0,frpc.rotationZ));  
+	RenderGameObj(frpc2, meshList[GEO_FOURTH], false, false, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
 
 
-	RenderGameChar(spaceRaceNpc, meshList[GEO_ALIEN], true, true, Vector3(12,24,12)+(Vector3(1,0.6,1) * spaceRaceNpc.f_scaleBig ));
+	RenderGameChar(spaceRaceNpc, meshList[GEO_ALIEN], true, false, Vector3(12,24,12)+(Vector3(1,0.6,1) * spaceRaceNpc.f_scaleBig ));
+	RenderTeleporter(spaceStationtp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
+
 	if (frpc.b_isInVehicle == true)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
-		RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(frpc.lap), Color(0, 1, 0), 3, 1, 18);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Current Lap :", Color(0, 1, 0), 2, 1, 27);
+		RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(frpc.lap+1), Color(0, 1, 0), 3, 10, 18);
+		RenderTextOnScreen(meshList[GEO_TEXT], "/ 3", Color(0, 1, 0), 3, 11, 18);
+		if (racePosition == 1)
+			RenderTextOnScreen(meshList[GEO_TEXT], "1st", Color(0, 1, 0), 3, 1, 17);
+		else if (racePosition == 2)
+			RenderTextOnScreen(meshList[GEO_TEXT], "2nd", Color(0, 1, 0), 3, 1, 17);
 	}
 	
 
@@ -653,6 +689,14 @@ void Sp2_SpaceRace::Renderfps()
 	else if (b_raceBegin == true && f_raceCountdown > 0)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "1", Color(0, 1, 0), 10, 3, 3);
+	}
+
+	if (b_raceEnd == true)
+	{
+		if (racePosition == 1)
+			RenderTextOnScreen(meshList[GEO_TEXT], "Congragulations! You WIN!", Color(0, 1, 0), 3, 1, 10);
+		else if (racePosition == 2)
+			RenderTextOnScreen(meshList[GEO_TEXT], "YOU LOSE! TRY AGAIN!", Color(0, 1, 0), 3, 1, 10);
 	}
 
 	RenderMesh(meshList[GEO_AXES], false);
