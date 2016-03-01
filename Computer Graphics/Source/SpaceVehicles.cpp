@@ -112,8 +112,14 @@ void SpaceVehicles::updateVehicle(double deltaTime)
 
 
 
-void SpaceVehicles::updateVehicle(double deltaTime , PMAP map)
+void SpaceVehicles::updateVehicle(double deltaTime , PMAP map,queue<int>& q)
 {
+
+	if (collision(pos, indexToVector(q.front()), 40))
+	{
+		q.push(q.front());
+		q.pop();
+	}
 	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
 	{
 		if (speed < max_speed)
@@ -258,6 +264,7 @@ void SpaceVehicles::updateCPUVehicle(double deltaTime, PMAP map, queue<int>& q)
 	}
 	Vector3 view = (target - pos).Normalized();
 	view = Vector3(view.x, 0, view.z);
+
 	if (view.z >= 0)
 		viewAngle = Math::RadianToDegree(atan(view.x / view.z)) ;
 	else
@@ -301,4 +308,74 @@ void SpaceVehicles::updateCPUVehicle(double deltaTime, PMAP map, queue<int>& q)
 			pos.z = tempPos.z;
 		}
 	}
+	if (map->data[vectorToIndex(pos)] == '3' && lapDebounce == false)
+	{
+		lapDebounce = true;
+		++lap;
+	}
+	if (lapDebounce == true && map->data[vectorToIndex(pos)] != '3')
+	{
+		lapDebounce = false;
+	}
+}
+
+int SpaceVehicles::getRacePosition(SpaceVehicles x,int startIndex)
+{
+	//x is the opponent vehicle
+	if (x.lap > this->lap)
+	{
+		return 2;
+	}
+	else if (x.lap < this->lap)
+	{
+		return 1;
+	}
+	else
+	{
+		int thisCheckpoint =racepath.size()- this->positionInQueue(startIndex);
+		int xCheckpoint = racepath.size() - x.positionInQueue(startIndex);
+		if (thisCheckpoint < xCheckpoint)
+		{
+			return 2;
+		}
+		else if (thisCheckpoint >xCheckpoint)
+		{
+			return 1;
+		}
+		else
+		{
+			if (this->distanceFromCheckpoint() > x.distanceFromCheckpoint())
+			{
+				return 2;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+	}
+}
+
+int SpaceVehicles::positionInQueue(int index)
+{
+	queue<int> copy = this->racepath;
+	int pos = 0;
+	while (copy.front() != index)
+	{
+		if (copy.empty())
+		{
+			pos = -1;
+			break;
+		}
+		++pos;
+		copy.pop();
+	}
+	return pos; 
+}
+
+float SpaceVehicles::distanceFromCheckpoint()
+{
+	Vector3 checkpoint = indexToVector(racepath.front());
+	Vector3 distance = pos - checkpoint;
+	return distance.Length();
 }

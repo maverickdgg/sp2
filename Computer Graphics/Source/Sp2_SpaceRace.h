@@ -135,8 +135,12 @@ public:
 	bool b_isWorn;
 	float tpsTimer;
 
+	int racePosition;
+
 	bool b_raceBegin;
 	bool b_raceStart;
+	bool b_raceEnd;
+	float f_endTimer;
 	float f_raceCountdown;
 
 	SpaceVehicles frpc,frpc2;
