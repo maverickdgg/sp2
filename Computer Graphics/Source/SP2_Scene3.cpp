@@ -276,9 +276,6 @@ void Sp2_Scene3::Init()
 
 	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 260 , -125));
 	collisionVec.push_back(&ChestBurster1);
-	
-
-
 
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
