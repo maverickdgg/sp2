@@ -232,6 +232,9 @@ void Sp2_Scene3::Init()
 
 	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("npc1", "OBJ//Teleporter.obj");
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
+
+    meshList[GEO_ROCKET] = MeshBuilder::GenerateOBJ("rocket", "OBJ//Rocket.obj");
+    meshList[GEO_ROCKET]->textureID = LoadTGA("Image//Shuttle.tga");
 	/**/
 
 	b_enabletps = false;
@@ -243,9 +246,9 @@ void Sp2_Scene3::Init()
 	//furniture
 	box1 = Buildings("box 1", 1, 0, Vector3(50, 222.5, -130));
 	collisionVec.push_back(&box1);
-	box2 = Buildings("box 2", 25, 0, Vector3(375, -30, 250));
+    box2 = Buildings("box 2", 1, 0, Vector3(-25, 95, -130));
 	collisionVec.push_back(&box2);
-	box3 = Buildings("box 3", 25, 0, Vector3(375, -30, 225));
+	box3 = Buildings("box 3", 1, 0, Vector3(375, -30, 225));
 	collisionVec.push_back(&box3);
 	box4 = Buildings("box 4", 25, 0, Vector3(400, -30, 225));
 	collisionVec.push_back(&box4);
@@ -257,6 +260,7 @@ void Sp2_Scene3::Init()
 	b_isClimb2 = false;
 	b_isClimb3 = false;
 	b_isClimb4 = false;
+    b_isClimb6 = false;
 	rotateHelm = 0;
 	scaleHelm = 50;
 
@@ -282,9 +286,12 @@ void Sp2_Scene3::Init()
 	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
 	collisionVec.push_back(&Necromancer);
 
-	ChestBurster1 = AlienEnemy("ChestBurster1", 1, 0, Vector3(75, 250, -125));
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 251, -125));
+
+    rocket = Buildings("rocket", 20, 180, Vector3(0, 100, 200));
+
 	collisionVec.push_back(&ChestBurster1);
-	
+
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
 	collisionVec.push_back(&Sir_);
@@ -317,7 +324,7 @@ void Sp2_Scene3::Init()
 	Platform5 = Platform("platform5", 30, 0, Vector3(75, 210, -120));		// To Be Continued...
 	collisionVec.push_back(&Platform5);
 
-	Platform6 = Platform("platform6", 30, 0, Vector3(150, 210, -170));
+	Platform6 = Platform("platform6", 10, 0, Vector3(150, 210, -170));
 	collisionVec.push_back(&Platform6);
 
 	Platform7 = Platform("platform7", 30, 0, Vector3(420, 408.15, -120));
@@ -500,7 +507,7 @@ void Sp2_Scene3::Update(double dt)
 	Platform3.changePlatform(b_isClimb3, Platform3, player);
 	Platform4.changePlatform(b_isClimb4, Platform4, player);
 	Platform5.changePlatform(b_isClimb, Platform5, player);
-	Platform6.changePlatform(b_isClimb, Platform6, player);
+	Platform6.noLadderPlatform(Platform6, player);
 	Platform7.changePlatform(b_isClimb, Platform7, player);
 	Platform8.changePlatform(b_isClimb, Platform8, player);
 	Platform9.changePlatform(b_isClimb, Platform9, player);
@@ -520,7 +527,6 @@ void Sp2_Scene3::Update(double dt)
     }
 
     else if (b_switchDir == true)
-
     {
         horiDist += 5 * (dt);
         if (horiDist > 50)
@@ -533,8 +539,8 @@ void Sp2_Scene3::Update(double dt)
     Platform5.pos.x = horiDist + 25;
     ChestBurster1.pos.x = horiDist + 25;
     box1.pos.x = horiDist;
-    //if (collision(Platform5.pos, player.pos, player.boundary + Platform5.boundary))
-    //    player.pos.x = horiDist;
+    //if (collision(Platform5.pos, player.pos, player.boundary + Platform5.boundary + 1))
+    //    player.pos.x += horiDist;
 
 	/*<------------------------Vertical Distance (Platform5)----------------------------------->*/
 
@@ -556,6 +562,8 @@ void Sp2_Scene3::Update(double dt)
 	}
 	/*ladder4.pos.x = horiDist;*/
 	Platform6.pos.y = verticalDistance + 175;
+    //if (collision(Platform6.pos, player.pos, 26))
+    //    player.pos.y += verticalDistance;
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
 
@@ -563,19 +571,29 @@ void Sp2_Scene3::Update(double dt)
     {
         b_collectBox1 = true;
     }
+    if (collision(box2.pos, player.pos, 17) && b_collectBox2 == false)
+    {
+        b_collectBox2 = true;
+    }
+    if (collision(box3.pos, player.pos, 17) && b_collectBox3 == false)
+    {
+        b_collectBox3 = true;
+    }
 	//if (Application::IsKeyPressed('O'))
 
 
 	if (b_switchDir == false)
+
 	if (collisionXZ(player.pos, spaceStationTp) == true && Application::IsKeyPressed('E'))
 	{
-		player.pos -= Vector3(50,0,50);
-		Application::switchToScene1();
+	    player.pos -= Vector3(50,0,50);
+	    Application::switchToScene1();
 	}
 	if (Application::IsKeyPressed('E') && (collision(Medic_.pos.x, player.pos.y, 21)))
 	{
 		player.regainHealth(100);
 	}
+
 }
 
 void Sp2_Scene3::RenderMesh(Mesh* mesh, bool enableLight)
@@ -1147,6 +1165,16 @@ void Sp2_Scene3::RenderNecromancer()
 	modelStack.PopMatrix();
 }
 
+void Sp2_Scene3::RenderRocket()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(rocket.pos.x, rocket.pos.y, rocket.pos.z);
+    modelStack.Rotate(90, -1, 0, 0);
+    modelStack.Scale(30, 30, 30);
+    RenderMesh(meshList[GEO_ROCKET], true);
+    modelStack.PopMatrix();
+}
+
 void Sp2_Scene3::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1293,8 +1321,10 @@ void Sp2_Scene3::Renderfps()
 
     if (b_collectBox1 == false)
 	    RenderGameObj(box1, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
-	RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
-	RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
+    if (b_collectBox2 == false)
+	    RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
+    if (b_collectBox3 == false)
+	    RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderChestBurster();
 	RenderChestBurster1();
@@ -1302,6 +1332,7 @@ void Sp2_Scene3::Renderfps()
 	RenderGameObj(ladder2, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
     RenderGameObj(ladder3, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
 	RenderGameObj(ladder4, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
+    RenderRocket();
 
 	/*<---NPC--->*/
 	//RenderPingu();
@@ -1329,6 +1360,8 @@ void Sp2_Scene3::Renderfps()
         RenderTextOnScreen(meshList[GEO_TEXT], "You have died!", Color(1, 0, 0), 4, 2, 4);
         RenderTextOnScreen(meshList[GEO_TEXT], "Press 'E' to respawn.", Color(0, 1, 0), 4, 0.5, 2.5);
     }
+
+
 
     /*<---PLAYERCOSTUME--->*/
     RenderSuit();

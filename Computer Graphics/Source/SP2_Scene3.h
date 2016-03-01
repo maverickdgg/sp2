@@ -107,6 +107,7 @@ public:
 		GEO_MEDICARM2,
 
 		GEO_TELEPORTER,
+        GEO_ROCKET,
 
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
@@ -158,6 +159,7 @@ public:
 	bool b_isClimb2;
     bool b_isClimb3;
 	bool b_isClimb4;
+    bool b_isClimb6;
     bool b_switchDir;
     bool b_collectBox1;
     bool b_collectBox2;
@@ -211,6 +213,7 @@ public:
 	Buildings ladder2;
 	Buildings ladder3;
 	Buildings ladder4;
+    Buildings rocket;
 
 	Buildings spaceStationTp;
 
@@ -254,6 +257,7 @@ private:
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
 	void RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale);
+    void RenderRocket();
 
 	void Renderfps();
 	void Rendertps();

@@ -50,3 +50,11 @@ void Platform::changePlatform(bool& isClimb, Platform& p, Player& player)
 		player.pos.y += 4;
 	}
 }
+
+void Platform::noLadderPlatform(Platform& p, Player& player)
+{
+    if (collision(p.pos, player.pos, 46))
+    {
+        p.boundary = 10;
+    }
+}

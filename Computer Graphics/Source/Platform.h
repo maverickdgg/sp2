@@ -18,5 +18,6 @@ public:
 	void moveCircles(double dt);
 	void rotateAbout(double dt);
 	void changePlatform(bool& isClimb, Platform& p, Player& player);
+    void noLadderPlatform(Platform& p, Player& player);
 };
 #endif

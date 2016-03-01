@@ -151,7 +151,7 @@ void GameChar::regainHealth(const int& healAMT)
 	}
 	if (health <= 100)
 	{
-		health =+ healAMT;
+		health += healAMT;
 	}
 }
 
