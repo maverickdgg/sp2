@@ -108,6 +108,7 @@ public:
 
 		GEO_TELEPORTER,
         GEO_ROCKET,
+		GEO_ARROW,
 
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
@@ -217,6 +218,8 @@ public:
 
 	Buildings spaceStationTp;
 
+	Buildings Arrow;
+
 	//for quest
 	vector<string> tasklist;
 	Quest* questPtr;
@@ -258,6 +261,8 @@ private:
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));
 	void RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale);
     void RenderRocket();
+
+	void RenderInstructions(GameObject x, Mesh* mesh, string text, Vector3 scale);
 
 	void Renderfps();
 	void Rendertps();

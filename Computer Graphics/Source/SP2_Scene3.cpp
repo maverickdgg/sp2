@@ -235,6 +235,9 @@ void Sp2_Scene3::Init()
 
     meshList[GEO_ROCKET] = MeshBuilder::GenerateOBJ("rocket", "OBJ//Rocket.obj");
     meshList[GEO_ROCKET]->textureID = LoadTGA("Image//Shuttle.tga");
+
+	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
+	meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
 	/**/
 
 	b_enabletps = false;
@@ -287,10 +290,13 @@ void Sp2_Scene3::Init()
 	collisionVec.push_back(&Necromancer);
 
 	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 251, -125));
+	collisionVec.push_back(&ChestBurster1);
 
     rocket = Buildings("rocket", 20, 180, Vector3(0, 100, 200));
+	collisionVec.push_back(&rocket);
 
-	collisionVec.push_back(&ChestBurster1);
+	Arrow = Buildings("arrow", 10, 180, Vector3(70, 30, 30));
+	collisionVec.push_back(&Arrow);
 
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
@@ -701,6 +707,25 @@ void Sp2_Scene3::RenderSkybox()
 	modelStack.Rotate(270, 1, 0, 0);
 	RenderMesh(meshList[GEO_BOTTOM], false);
 	modelStack.PopMatrix();
+}
+
+void Sp2_Scene3::RenderInstructions(GameObject x, Mesh* mesh, string text, Vector3 scale)
+{
+	RenderGameObj(x, mesh, true, false, scale);
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Translate(-250, 10, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderText(meshList[GEO_TEXT], text, Color(0, 1, 1));
+	modelStack.PopMatrix();
+
+	//if (collisionXZ(player.pos, x))
+	//{
+	//	modelStack.PushMatrix();
+	//	modelStack.Translate(2, 6, 0);
+	//	RenderText(meshList[GEO_TEXT], "Please talk to all of the NPCs before proceeding. ", Color(1, 0, 0));
+	//	modelStack.PopMatrix();
+	//}
 }
 
 void Sp2_Scene3::RenderSuit()
@@ -1342,6 +1367,7 @@ void Sp2_Scene3::Renderfps()
 	RenderBB8v2(BB8v2_);
 	RenderMedic(Medic_);
 	RenderNecromancer();
+	RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(50, 50, 50));
 	/*<---Platform--->*/
 	RenderPlatform(Platform_, true);
 	RenderPlatform(Platform1, false);
