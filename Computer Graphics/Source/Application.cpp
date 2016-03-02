@@ -8,8 +8,9 @@
 #include "SP2_scene1.h"
 
 #include "Sp2_SpaceRace.h"
-
+#include "Sp2_FightScene.h"
 #include "SP2_Scene3.h"
+
 
 
 GLFWwindow* m_window;
@@ -20,6 +21,7 @@ Scene* Application::scene;
 Scene* Application::scene1;
 Scene* Application::scene2;
 Scene* Application::scene3;
+Scene* Application::scene4;
 
 //Define an error callback
 static void error_callback(int error, const char* description)
@@ -76,7 +78,7 @@ void Application::Init()
 
 	//Create a window and create its OpenGL context
 
-	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", NULL, NULL);
+	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	//m_window = glfwCreateWindow(1980, 1080, "Computer Graphics", glfwGetPrimaryMonitor() , NULL);
 
 	glfwSetWindowSizeCallback(m_window, resize_callback);
@@ -127,6 +129,11 @@ void Application::switchToScene3()
 	scene = scene3;
 }
 
+void Application::switchToScene4()
+{
+	scene = scene4;
+}
+
 void Application::Run()
 {
 	//Main Loop
@@ -138,6 +145,8 @@ void Application::Run()
 	scene2->Init();
 	scene3 = new Sp2_Scene3();
 	scene3->Init();
+	scene4 = new Sp2_FightScene();
+	scene4->Init();
 	scene = scene1;
 
 

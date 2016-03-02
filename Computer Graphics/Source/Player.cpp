@@ -106,26 +106,7 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 		tempPos.x -= sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 		tempPos.z -= cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 	}
-	if (collision(tempPos, collisionVec, this->boundary) == false)
-	{
-		pos = tempPos;
-	}
-	if (pos.x > cam.boundaryX)
-	{
-		pos.x = cam.boundaryX;
-	}
-	else if (pos.x < -cam.boundaryX)
-	{
-		pos.x = -cam.boundaryX;
-	}
-	if (pos.z > cam.boundaryZ)
-	{
-		pos.z = cam.boundaryZ;
-	}
-	else if (pos.z < -cam.boundaryZ)
-	{
-		pos.z = -cam.boundaryZ;
-	}
+	
 
 
 
@@ -187,6 +168,26 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 	else if (pos.y < groundLevel)
 	{
 		pos.y = groundLevel;
+	}
+	if (collision(tempPos, collisionVec, this->boundary) == false)
+	{
+		pos = tempPos;
+	}
+	if (pos.x > cam.boundaryX)
+	{
+		pos.x = cam.boundaryX;
+	}
+	else if (pos.x < -cam.boundaryX)
+	{
+		pos.x = -cam.boundaryX;
+	}
+	if (pos.z > cam.boundaryZ)
+	{
+		pos.z = cam.boundaryZ;
+	}
+	else if (pos.z < -cam.boundaryZ)
+	{
+		pos.z = -cam.boundaryZ;
 	}
 
 	cam.position = this->pos;
@@ -234,7 +235,82 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 		tempPos.x -= sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 		tempPos.z -= cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 	}
-	if (collision(tempPos, collisionVec, this->boundary) == false && map->data[vectorToIndex(tempPos)]!='1')
+	
+	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false && f_jumpDebounceTimer >= 0.5)
+	{
+		f_jumpDebounceTimer = 0;
+		b_jumpDebounce = true;
+		b_jumpUp = true;
+		f_jumpSpeed = f_initialJumpSpeed;
+	}
+	if (b_jumpUp == true && b_jumpDebounce == true)
+	{
+		f_jumpSpeed -= f_gravity * dt;
+		tempPos.y += f_jumpSpeed * dt;
+		if (f_jumpSpeed <= 0)
+		{
+			f_jumpSpeed = 0;
+			b_jumpUp = false;
+		}
+		else if (collision(tempPos, collisionVec, this->boundary) == true)
+		{
+			b_jumpUp = false;
+		}
+		if (collision(tempPos, collisionVec, this->boundary) == false && map->data[vectorToIndex(tempPos)] != '1')
+		{
+			pos = tempPos;
+		}
+		else
+		{
+			if (map->data[vectorToIndex(Vector3(tempPos.x, 0, pos.z))] != '1')
+			{
+				pos.x = tempPos.x;
+			}
+			else if (map->data[vectorToIndex(Vector3(pos.x, 0, tempPos.z))] != '1')
+			{
+				pos.z = tempPos.z;
+			}
+		}
+	}
+	if (b_jumpUp == false && b_jumpDebounce == true)
+	{
+		f_jumpSpeed += f_gravity * dt;
+		tempPos.y -= f_jumpSpeed * dt;
+		if (tempPos.y <= groundLevel)
+		{
+			pos.y = groundLevel;
+			f_jumpSpeed = f_initialJumpSpeed;
+			b_jumpUp = true;
+			b_jumpDebounce = false;
+		}
+		else if (collision(tempPos, collisionVec, this->boundary) == true)
+		{
+			f_jumpSpeed = f_initialJumpSpeed;
+			b_jumpUp = true;
+			b_jumpDebounce = false;
+		}
+		if (collision(tempPos, collisionVec, this->boundary) == false && map->data[vectorToIndex(tempPos)] != '1')
+		{
+			pos = tempPos;
+		}
+		else
+		{
+			if (map->data[vectorToIndex(Vector3(tempPos.x, 0, pos.z))] != '1')
+			{
+				pos.x = tempPos.x;
+			}
+			else if (map->data[vectorToIndex(Vector3(pos.x, 0, tempPos.z))] != '1')
+			{
+				pos.z = tempPos.z;
+			}
+		}
+	}
+	if (b_jumpDebounce == false && f_jumpDebounceTimer <0.5)
+	{
+		f_jumpDebounceTimer += dt;
+	}
+
+	if (collision(tempPos, collisionVec, this->boundary) == false && map->data[vectorToIndex(tempPos)] != '1')
 	{
 		pos = tempPos;
 	}
@@ -266,59 +342,6 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 		pos.z = -cam.boundaryZ;
 	}
 
-
-
-	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false && f_jumpDebounceTimer >= 0.5)
-	{
-		f_jumpDebounceTimer = 0;
-		b_jumpDebounce = true;
-		b_jumpUp = true;
-		f_jumpSpeed = f_initialJumpSpeed;
-	}
-	if (b_jumpUp == true && b_jumpDebounce == true)
-	{
-		f_jumpSpeed -= f_gravity * dt;
-		tempPos.y += f_jumpSpeed * dt;
-		if (f_jumpSpeed <= 0)
-		{
-			f_jumpSpeed = 0;
-			b_jumpUp = false;
-		}
-		else if (collision(tempPos, collisionVec, this->boundary) == true)
-		{
-			b_jumpUp = false;
-		}
-		else {
-			pos = tempPos;
-		}
-	}
-	if (b_jumpUp == false && b_jumpDebounce == true)
-	{
-		f_jumpSpeed += f_gravity * dt;
-		tempPos.y -= f_jumpSpeed * dt;
-		if (tempPos.y <= groundLevel)
-		{
-			pos.y = groundLevel;
-			f_jumpSpeed = f_initialJumpSpeed;
-			b_jumpUp = true;
-			b_jumpDebounce = false;
-		}
-		else if (collision(tempPos, collisionVec, this->boundary) == true)
-		{
-			f_jumpSpeed = f_initialJumpSpeed;
-			b_jumpUp = true;
-			b_jumpDebounce = false;
-		}
-		else
-		{
-			pos = tempPos;
-		}
-	}
-	if (b_jumpDebounce == false && f_jumpDebounceTimer <0.5)
-	{
-		f_jumpDebounceTimer += dt;
-	}
-
 	if (pos.y > groundLevel && collision(pos - Vector3(0, 20, 0)*dt, collisionVec, this->boundary) == false && b_jumpDebounce == false)
 	{
 		pos.y -= 20 * dt;
@@ -327,6 +350,9 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 	{
 		pos.y = groundLevel;
 	}
+
+	
+
 
 	cam.position = this->pos;
 	cam.updateRotation(0.3);
