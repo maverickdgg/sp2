@@ -210,7 +210,7 @@ void Sp2_Scene3::Init()
 
 	meshList[GEO_MEDICARM1] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm1.obj");
 	meshList[GEO_MEDICARM1]->textureID = LoadTGA("Image//MedicBody.tga");
-
+  
 	meshList[GEO_MEDICARM2] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm2.obj");
 	meshList[GEO_MEDICARM2]->textureID = LoadTGA("Image//MedicBody.tga");
 
