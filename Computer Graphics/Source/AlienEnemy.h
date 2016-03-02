@@ -2,6 +2,12 @@
 #define ALIENENEMY_H
 #include "Alien.h"
 
+/******************************************************************************/
+/*!
+Class AlienEnemy:
+\brief	Providing the AlienEnemies to move ( inherits from Alien )
+/******************************************************************************/
+
 class AlienEnemy : public Alien
 {
 	bool isTurned;

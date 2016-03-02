@@ -1,10 +1,27 @@
 #include "AlienEnemy.h"
 
+/****************************************************************************/
+/*!
+\brief
+default constructor for AlienEnemy
+*/
+/****************************************************************************/
 AlienEnemy::AlienEnemy()
 {
-
 }
 
+/****************************************************************************/
+/*!
+\brief
+ Logic Behind the AlienEnemies' movement 
+\param object_name 
+Point to calculate distance from
+\exception Divide by zero
+thrown if normalizing a zero vector
+\return
+Resulting normalized vector
+*/
+/****************************************************************************/
 AlienEnemy::AlienEnemy(string object_name, int boundary, float viewAngle, Vector3 pos) : Alien(object_name, boundary, viewAngle, pos)
 {
 	turnSpeed = 45;

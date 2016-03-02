@@ -104,7 +104,6 @@
     <ClCompile Include="Source\Map.cpp" />
     <ClCompile Include="Source\Material.cpp" />
     <ClCompile Include="Source\Medic.cpp" />
-    <ClCompile Include="Source\menu.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\Pingu.cpp" />
@@ -143,7 +142,6 @@
     <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\Material.h" />
     <ClInclude Include="Source\Medic.h" />
-    <ClInclude Include="Source\menu.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\Pingu.h" />
