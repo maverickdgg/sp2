@@ -246,11 +246,11 @@ void Sp2_Scene3::Init()
 	//furniture
 	box1 = Buildings("box 1", 1, 0, Vector3(50, 222.5, -130));
 	collisionVec.push_back(&box1);
-    box2 = Buildings("box 2", 1, 0, Vector3(-25, 95, -130));
+    box2 = Buildings("box 2", 1, 0, Vector3(-35, 96, -100));
 	collisionVec.push_back(&box2);
-	box3 = Buildings("box 3", 1, 0, Vector3(375, -30, 225));
+    box3 = Buildings("box 3", 1, 0, Vector3(400, 0, 225));
 	collisionVec.push_back(&box3);
-	box4 = Buildings("box 4", 25, 0, Vector3(400, -30, 225));
+	box4 = Buildings("box 4", 1, 0, Vector3(400, -30, 225));
 	collisionVec.push_back(&box4);
 	spaceHelm = Human("spacehelm", 10, 30, camera.position);
 	/*<---Set the position of the NPC--->*/
@@ -288,7 +288,7 @@ void Sp2_Scene3::Init()
 
 	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 251, -125));
 
-    rocket = Buildings("rocket", 20, 180, Vector3(0, 100, 200));
+    rocket = Buildings("rocket", 10, 180, Vector3(100, 500, -120));
 
 	collisionVec.push_back(&ChestBurster1);
 
@@ -348,6 +348,8 @@ void Sp2_Scene3::Init()
     b_collectBox1 = false;
     b_collectBox2 = false;
     b_collectBox3 = false;
+    b_isLand = false;
+    landDist = 1000;
 }
 void Sp2_Scene3::Update(double dt)
 {
@@ -459,6 +461,7 @@ void Sp2_Scene3::Update(double dt)
     {
         player.regainHealth(100);
         player.oxygen = 6000;
+        player.pos = Vector3(0, 0, 0);
     }
 
 	ChestBurster.translateWorm(dt);
@@ -580,11 +583,18 @@ void Sp2_Scene3::Update(double dt)
     {
         b_collectBox3 = true;
     }
-	//if (Application::IsKeyPressed('O'))
+    if (b_collectBox1 == true && b_collectBox2 == true && b_collectBox3 == true)
+        b_isLand = true;
 
+    if (b_isLand == true && landDist >= 100)
+        landDist -= 2.5;
+
+    rocket.pos.y = landDist;
+
+    if (collision(rocket.pos, player.pos, 26))
+        b_isDisplayUI = false;
 
 	if (b_switchDir == false)
-
 	if (collisionXZ(player.pos, spaceStationTp) == true && Application::IsKeyPressed('E'))
 	{
 	    player.pos -= Vector3(50,0,50);
@@ -742,6 +752,19 @@ void Sp2_Scene3::RenderSuit()
 			RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
 			RenderTextOnScreen(meshList[GEO_TEXT2], player.getOxygenString(), Color(0, 1, 0), 3, 12, 2.75);
 		}
+        RenderTextOnScreen(meshList[GEO_TEXT], "Collect spaceship parts", Color(1, 0, 1), 1.25, 10, 40);
+        if (b_collectBox1 == false)
+            RenderTextOnScreen(meshList[GEO_TEXT], "Engine: Uncollected", Color(1, 1, 0), 1.25, 10, 38);
+        else if (b_collectBox1 == true)
+            RenderTextOnScreen(meshList[GEO_TEXT], "Engine: collected", Color(1, 1, 0), 1.25, 10, 38);
+        if (b_collectBox2 == false)
+            RenderTextOnScreen(meshList[GEO_TEXT], "Exhaust: Uncollected", Color(1, 1, 0), 1.25, 10, 37);
+        else if (b_collectBox2 == true)
+            RenderTextOnScreen(meshList[GEO_TEXT], "Exhaust: collected", Color(1, 1, 0), 1.25, 10, 37);
+        if (b_collectBox3 == false)
+            RenderTextOnScreen(meshList[GEO_TEXT], "Tanks: Uncollected", Color(1, 1, 0), 1.25, 10, 36);
+        else if (b_collectBox3 == true)
+            RenderTextOnScreen(meshList[GEO_TEXT], "Tanks: collected", Color(1, 1, 0), 1.25, 10, 36);
 	}
 }
 
@@ -1170,6 +1193,7 @@ void Sp2_Scene3::RenderRocket()
 {
     modelStack.PushMatrix();
     modelStack.Translate(rocket.pos.x, rocket.pos.y, rocket.pos.z);
+    modelStack.Rotate(90, 0, -1, 0);
     modelStack.Rotate(90, -1, 0, 0);
     modelStack.Scale(30, 30, 30);
     RenderMesh(meshList[GEO_ROCKET], true);
@@ -1349,11 +1373,11 @@ void Sp2_Scene3::Renderfps()
 	RenderPlatform(Platform3, false);
 	RenderPlatform(Platform4, false);
 	RenderPlatform(Platform5, false);
-	RenderPlatform(Platform6, false);
-	RenderPlatform(Platform7, false);
-	RenderPlatform(Platform8, false);
-	RenderPlatform(Platform9, false);
-	RenderPlatform(Platform10, false);
+	//RenderPlatform(Platform6, false);
+	//RenderPlatform(Platform7, false);
+	//RenderPlatform(Platform8, false);
+	//RenderPlatform(Platform9, false);
+	//RenderPlatform(Platform10, false);
 
     if (player.isDead() == true)
     {
@@ -1362,7 +1386,7 @@ void Sp2_Scene3::Renderfps()
         RenderTextOnScreen(meshList[GEO_TEXT], "Press 'E' to respawn.", Color(0, 1, 0), 4, 0.5, 2.5);
     }
 
-
+    RenderTeleporter(spaceStationTp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 
     /*<---PLAYERCOSTUME--->*/
     RenderSuit();
@@ -1381,8 +1405,6 @@ void Sp2_Scene3::Renderfps()
 		RenderMesh(meshList[GEO_DART], true);
 		modelStack.PopMatrix();
 	}
-
-	RenderTeleporter(spaceStationTp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 }
 
 void Sp2_Scene3::Rendertps()

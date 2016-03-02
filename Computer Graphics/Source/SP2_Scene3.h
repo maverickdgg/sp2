@@ -164,11 +164,13 @@ public:
     bool b_collectBox1;
     bool b_collectBox2;
     bool b_collectBox3;
+    bool b_isLand;
     float horiDist;
 	float verticalDistance;
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
+    int landDist;
 	Vector3 oldPos;
 
 	Gun laserRifle;
