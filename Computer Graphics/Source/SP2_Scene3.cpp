@@ -1367,7 +1367,7 @@ void Sp2_Scene3::Renderfps()
 	RenderBB8v2(BB8v2_);
 	RenderMedic(Medic_);
 	RenderNecromancer();
-	RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(50, 50, 50));
+	RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(70, 70, 70));
 	/*<---Platform--->*/
 	RenderPlatform(Platform_, true);
 	RenderPlatform(Platform1, false);
