@@ -133,6 +133,8 @@ public:
 	//npc
 	Alien spaceRaceNpc;
 
+	vector<Alien*> alienVec;
+
 	//furniture
 	Buildings spaceStationtp;
 

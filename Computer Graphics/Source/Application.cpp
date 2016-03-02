@@ -22,6 +22,7 @@ Scene* Application::scene1;
 Scene* Application::scene2;
 Scene* Application::scene3;
 Scene* Application::scene4;
+Music* Application::music;
 
 //Define an error callback
 static void error_callback(int error, const char* description)
@@ -134,10 +135,17 @@ void Application::switchToScene4()
 	scene = scene4;
 }
 
+void Application::playSound(int index, bool loop)
+{
+	music->OpeningMusic(index,loop);
+}
+
 void Application::Run()
 {
 	//Main Loop
 
+	music = new Music();
+	music->Init();
 
 	scene1 = new Sp2_Scene1();
 	scene1->Init();
