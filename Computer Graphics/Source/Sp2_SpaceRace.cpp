@@ -133,10 +133,12 @@ void Sp2_SpaceRace::Init()
 
 	//geom init
 	frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44,25)));
-	collisionVec.push_back(&frpc);
+
+	frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)), 110);
+
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 1000, 1000);
 	camera2.Init(Vector3(-50, 15, -50), Vector3(0, 1, 0), &frpc);
-	camera2.b_cameraLock = true;
+	camera3.Init(Vector3(-50, 15, -50), Vector3(0, 1, 0), &frpc2);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
@@ -202,15 +204,21 @@ void Sp2_SpaceRace::Init()
 	tpsTimer = 0;
 	f_raceCountdown = 3;
 
+	b_raceBegin2 = false;
+	b_raceStart2 = false;
+	b_raceEnd2 = false;
+	f_endTimer2 = 3;
+
 	player = Player(indexToVector(toIndex(11,37)));
 
 	spaceRaceNpc = Alien("Space Race NPC", 20, 0, indexToVector(toIndex(3, 6))+ Vector3(0,-10,0) );
 	spaceRaceNpc.ReadFromTxt("text//spaceRaceDialogue.txt");
 
-	racePosition = 2;
+	race2PNpc = Alien("Space Race NPC", 20, 0, indexToVector(toIndex(3, 20)) + Vector3(0, -10, 0));
+	race2PNpc.ReadFromTxt("text//2playerRaceNPC.txt");
 
-	// cpu racers
-	frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)) , 110);
+	racePosition = 2;
+	
 	//loading of map;
 	racetrack = load_map("text//map1.txt");
 	racePath.push(toIndex(44,45));
@@ -253,18 +261,6 @@ void Sp2_SpaceRace::Update(double dt)
 
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-		if (frpc.b_isInVehicle == false)
-		{
-			player.movementUpdate(camera, dt, collisionVec,racetrack);
-		}
-		else
-		{
-			camera2.tpsUpdateVec(dt);
-			if (b_raceStart == true)
-			{
-				frpc.updateVehicle(dt, racetrack,frpc.racepath);
-			}
-		}
 
 		ShowCursor(FALSE);
 	}
@@ -293,20 +289,53 @@ void Sp2_SpaceRace::Update(double dt)
 			tpsTimer = 0;
 		}
 	}
+	//teleporter update
 	if (collisionXZ(player.pos, spaceStationtp) == true && Application::IsKeyPressed('E'))
 	{
 		player.pos = indexToVector(toIndex(12, 12));
 		Application::switchToScene1();
 	}
-	speed = std::to_string(frpc.speed);
 
-	if (b_raceStart == true)
-	{
-		frpc2.updateCPUVehicle(dt, racetrack, frpc2.racepath);
-		racePosition = frpc.getRacePosition(frpc2, toIndex(44, 45));
-	}
+	
 	
 
+	if (frpc.b_isInVehicle == false)
+	{
+		player.movementUpdate(camera, dt, collisionVec, racetrack);
+	}
+	else
+	{
+		//1P race
+		if (b_raceStart == true)
+		{
+			frpc.updateVehicle(dt, racetrack, frpc.racepath);
+			frpc2.updateCPUVehicle(dt, racetrack, frpc2.racepath);
+			racePosition = frpc.getRacePosition(frpc2, toIndex(44, 45));
+		}
+		else if (b_raceStart == false && b_raceEnd == true)
+		{
+			frpc.updateCPUVehicle(dt, racetrack, frpc.racepath);
+			frpc2.updateCPUVehicle(dt, racetrack, frpc2.racepath);
+			racePosition = frpc.getRacePosition(frpc2, toIndex(44, 45));
+		}
+
+		if (b_raceStart2 == true)
+		{
+			frpc.updateVehicle(dt, racetrack, frpc.racepath);
+			frpc2.updateVehicle2(dt, racetrack, frpc2.racepath);
+			racePosition = frpc.getRacePosition(frpc2, toIndex(44, 45));
+			
+		}
+
+		camera2.tpsUpdateVec(dt);
+		if (b_raceStart2 == true || b_raceBegin2 == true)
+		{
+			camera3.tpsUpdateVec(dt);
+		}
+		
+	}
+	
+	// NPC chat dialogue updates
 	spaceRaceNpc.chat_update(player.pos);
 	if (spaceRaceNpc.b_dialogueEnd == true)
 	{
@@ -314,8 +343,21 @@ void Sp2_SpaceRace::Update(double dt)
 		frpc.b_isInVehicle = true;
 		f_raceCountdown = 6.0f;
 		player.pos = indexToVector(toIndex(11, 37));
-
+		camera2.b_cameraLock = true;
 	}
+	race2PNpc.chat_update(player.pos);
+	if (race2PNpc.b_dialogueEnd == true)
+	{
+		b_raceBegin2 = true;
+		frpc.b_isInVehicle = true;
+		f_raceCountdown = 6.0f;
+		player.pos = indexToVector(toIndex(11, 37));
+		camera2.b_cameraLock = true;
+		camera3.b_cameraLock = true;
+		frpc2.max_speed = 150;
+	}
+
+	//Race one boolean logic
 	if (b_raceBegin == true && f_raceCountdown > 0)
 	{
 		f_raceCountdown -= dt;
@@ -327,15 +369,15 @@ void Sp2_SpaceRace::Update(double dt)
 		}
 	}
 	
-	spaceRaceNpc.pulsingUpdate(dt);
+	
 
-	if (frpc.lap >= 3)
+	if (frpc.lap >= 3 && b_raceStart == true)
 	{
 		//resetting the race after 3 laps.
 		b_raceStart = false;
 		b_raceEnd = true;
-		f_endTimer = 5.f;
-		frpc.b_isInVehicle = false;
+		f_endTimer = 6.f;
+		
 		
 		if (frpc.getRacePosition(frpc,toIndex(44,45)) == 1)
 		{
@@ -344,8 +386,8 @@ void Sp2_SpaceRace::Update(double dt)
 		else{
 			win = false;
 		}
-		frpc.lap = 0;
-		frpc2.lap = 0;
+		
+		camera2.b_cameraLock = false;
 		
 	}
 	if (b_raceEnd == true)
@@ -354,14 +396,74 @@ void Sp2_SpaceRace::Update(double dt)
 		if (f_endTimer <= 0)
 		{
 			b_raceEnd = false;
+			frpc.b_isInVehicle = false;
 			f_raceCountdown = 6.0f;
 			f_endTimer = 5.f;
 			frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 25)));
 			frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)), 110);
+			frpc.lap = 0;
+			frpc2.lap = 0;
 			frpc.racepath = racePath;
 			frpc2.racepath = racePath;
 		}
 	}
+
+
+	//2P race boolean logic
+
+	if (b_raceBegin2 == true && f_raceCountdown > 0)
+	{
+		f_raceCountdown -= dt;
+		if (f_raceCountdown <= 0)
+		{
+			f_raceCountdown == 6.0f;
+			b_raceStart2 = true;
+			b_raceBegin2 = false;
+		}
+	}
+
+
+
+	if ((frpc.lap >= 3 || frpc2.lap>=3) && b_raceStart2 == true)
+	{
+		//resetting the race after 3 laps.
+		b_raceStart2 = false;
+		b_raceEnd2 = true;
+		f_endTimer2 = 6.f;
+
+
+		if (frpc.getRacePosition(frpc, toIndex(44, 45)) == 1)
+		{
+			win = true;
+		}
+		else{
+			win = false;
+		}
+
+		camera2.b_cameraLock = false;
+		camera3.b_cameraLock = false;
+	}
+	if (b_raceEnd == true)
+	{
+		f_endTimer -= dt;
+		if (f_endTimer <= 0)
+		{
+			b_raceEnd = false;
+			frpc.b_isInVehicle = false;
+			f_raceCountdown = 6.0f;
+			f_endTimer = 5.f;
+			frpc = SpaceVehicles("frpc", 10, 0, indexToVector(toIndex(44, 25)));
+			frpc2 = SpaceVehicles("frpc2", 10, 0, indexToVector(toIndex(44, 26)), 110);
+			frpc.lap = 0;
+			frpc2.lap = 0;
+			frpc.racepath = racePath;
+			frpc2.racepath = racePath;
+		}
+	}
+
+
+	//animation updates
+	spaceRaceNpc.pulsingUpdate(dt);
 }
 
 void Sp2_SpaceRace::RenderMesh(Mesh* mesh, bool enableLight)
@@ -652,11 +754,6 @@ void Sp2_SpaceRace::Renderfps()
 		lightDir;
 	glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
 
-	modelStack.PushMatrix();
-	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
 	for (int i = 0; i < 2500; ++i)
 	{
 		if (racetrack->data[i] == '1')
@@ -674,11 +771,12 @@ void Sp2_SpaceRace::Renderfps()
 
 
 	RenderGameChar(spaceRaceNpc, meshList[GEO_ALIEN], true, false, Vector3(12,24,12)+(Vector3(1,0.6,1) * spaceRaceNpc.f_scaleBig ));
+	RenderGameChar(race2PNpc, meshList[GEO_ALIEN], true, false, Vector3(12, 24, 12) + (Vector3(0.6,1,0.6) * spaceRaceNpc.f_scaleBig));
 	RenderTeleporter(spaceStationtp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 
 	if (frpc.b_isInVehicle == true)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT],speed, Color(0, 1, 0), 3, 1,1);
+		RenderTextOnScreen(meshList[GEO_TEXT],std::to_string(frpc.speed), Color(0, 1, 0), 3, 1,1);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Current Lap :", Color(0, 1, 0), 2, 1, 27);
 		RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(frpc.lap+1), Color(0, 1, 0), 3, 10, 18);
 		RenderTextOnScreen(meshList[GEO_TEXT], "/ 3", Color(0, 1, 0), 3, 11, 18);
@@ -702,7 +800,28 @@ void Sp2_SpaceRace::Renderfps()
 		RenderTextOnScreen(meshList[GEO_TEXT], "1", Color(0, 1, 0), 10, 3, 3);
 	}
 
+	if (b_raceBegin2 == true && f_raceCountdown > 4)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "3", Color(0, 1, 0), 10, 3, 3);
+	}
+	else if (b_raceBegin2 == true && f_raceCountdown > 2)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "2", Color(0, 1, 0), 10, 3, 3);
+	}
+	else if (b_raceBegin2 == true && f_raceCountdown > 0)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "1", Color(0, 1, 0), 10, 3, 3);
+	}
+
 	if (b_raceEnd == true)
+	{
+		if (win == true)
+			RenderTextOnScreen(meshList[GEO_TEXT], "Congratulations! You WIN!", Color(0, 1, 0), 3, 1, 10);
+		else if (win == false)
+			RenderTextOnScreen(meshList[GEO_TEXT], "YOU LOSE! TRY AGAIN!", Color(0, 1, 0), 3, 1, 10);
+	}
+
+	if (b_raceEnd2 == true)
 	{
 		if (win == true)
 			RenderTextOnScreen(meshList[GEO_TEXT], "Congratulations! You WIN!", Color(0, 1, 0), 3, 1, 10);
@@ -717,8 +836,66 @@ void Sp2_SpaceRace::Renderfps()
 
 void Sp2_SpaceRace::Rendertps()
 {
+
+	Vector3 lightDir(light[0].position.x,
+		light[0].position.y, light[0].position.z);
+	Vector3 lightDirection_cameraspace = viewStack.Top() *
+		lightDir;
+	glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+
+	for (int i = 0; i < 2500; ++i)
+	{
+		if (racetrack->data[i] == '1')
+		{
+			RenderGameObj(meshList[GEO_BOX], indexToVector(i) + Vector3(10, -30, 10), Vector3(20, 40, 20), Vector3(0, 0, 0));
+		}
+	}
+
 	RenderSkybox(camera);
-	RenderMesh(meshList[GEO_AXES], false);
+
+
+
+	RenderGameObj(frpc, meshList[GEO_FOURTH], false, false, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc.rotationZ));
+	RenderGameObj(frpc2, meshList[GEO_FOURTH], false, false, Vector3(0.5, 0.5, 0.5), Vector3(0, 0, frpc2.rotationZ));
+
+
+	RenderGameChar(spaceRaceNpc, meshList[GEO_ALIEN], true, false, Vector3(12, 24, 12) + (Vector3(1, 0.6, 1) * spaceRaceNpc.f_scaleBig));
+	RenderGameChar(race2PNpc, meshList[GEO_ALIEN], true, false, Vector3(12, 24, 12) + (Vector3(0.6, 1, 0.6) * spaceRaceNpc.f_scaleBig));
+	RenderTeleporter(spaceStationtp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
+
+	if (frpc.b_isInVehicle == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(frpc2.speed), Color(0, 1, 0), 3, 1, 1);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Current Lap :", Color(0, 1, 0), 2, 1, 27);
+		RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(frpc2.lap + 1), Color(0, 1, 0), 3, 10, 18);
+		RenderTextOnScreen(meshList[GEO_TEXT], "/ 3", Color(0, 1, 0), 3, 11, 18);
+		if (racePosition == 2)
+			RenderTextOnScreen(meshList[GEO_TEXT], "1st", Color(0, 1, 0), 3, 1, 17);
+		else if (racePosition == 1)
+			RenderTextOnScreen(meshList[GEO_TEXT], "2nd", Color(0, 1, 0), 3, 1, 17);
+	}
+
+
+	if (b_raceBegin2 == true && f_raceCountdown > 4)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "3", Color(0, 1, 0), 10, 3, 3);
+	}
+	else if (b_raceBegin2 == true && f_raceCountdown > 2)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "2", Color(0, 1, 0), 10, 3, 3);
+	}
+	else if (b_raceBegin2 == true && f_raceCountdown > 0)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "1", Color(0, 1, 0), 10, 3, 3);
+	}
+
+	if (b_raceEnd2 == true)
+	{
+		if (win == false)
+			RenderTextOnScreen(meshList[GEO_TEXT], "Congratulations! You WIN!", Color(0, 1, 0), 3, 1, 10);
+		else if (win == true)
+			RenderTextOnScreen(meshList[GEO_TEXT], "YOU LOSE! TRY AGAIN!", Color(0, 1, 0), 3, 1, 10);
+	}
 }
 
 void Sp2_SpaceRace::Render()
@@ -729,48 +906,82 @@ void Sp2_SpaceRace::Render()
 
 
 	//glViewport(0, 0, screenWidth*2/3, screenHeight);
-	glViewport(0, 0, screenWidth, screenHeight);
-	projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
 
-
-	projectionStack.LoadMatrix(projection);
-
-	viewStack.LoadIdentity();
-
-	//set View position to camera
-	if (frpc.b_isInVehicle == false)
+	if (b_raceBegin2 == true || b_raceStart2 == true)
 	{
-		viewStack.LookAt(
-			camera.position.x, camera.position.y, camera.position.z,
-			camera.target.x, camera.target.y, camera.target.z,
-			camera.up.x, camera.up.y, camera.up.z
-			);
+		glViewport(0, screenHeight / 2, screenWidth, screenHeight / 2);
+		projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
+		projectionStack.LoadMatrix(projection);
+
+		viewStack.LoadIdentity();
+
+		//set View position to camera
+		if (frpc.b_isInVehicle == false)
+		{
+			viewStack.LookAt(
+				camera.position.x, camera.position.y, camera.position.z,
+				camera.target.x, camera.target.y, camera.target.z,
+				camera.up.x, camera.up.y, camera.up.z
+				);
+		}
+		else if (frpc.b_isInVehicle == true)
+		{
+			viewStack.LookAt(
+				camera2.position.x, camera2.position.y, camera2.position.z,
+				camera2.target.x, camera2.target.y, camera2.target.z,
+				camera2.up.x, camera2.up.y, camera2.up.z
+				);
+		}
+
+		Renderfps();
 	}
-	else if (frpc.b_isInVehicle == true)
+
+	else
 	{
-		viewStack.LookAt(
-			camera2.position.x, camera2.position.y, camera2.position.z,
-			camera2.target.x, camera2.target.y, camera2.target.z,
-			camera2.up.x, camera2.up.y, camera2.up.z
-			);
+		glViewport(0, 0, screenWidth, screenHeight);
+		projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
+		projectionStack.LoadMatrix(projection);
+
+		viewStack.LoadIdentity();
+
+		//set View position to camera
+		if (frpc.b_isInVehicle == false)
+		{
+			viewStack.LookAt(
+				camera.position.x, camera.position.y, camera.position.z,
+				camera.target.x, camera.target.y, camera.target.z,
+				camera.up.x, camera.up.y, camera.up.z
+				);
+		}
+		else if (frpc.b_isInVehicle == true)
+		{
+			viewStack.LookAt(
+				camera2.position.x, camera2.position.y, camera2.position.z,
+				camera2.target.x, camera2.target.y, camera2.target.z,
+				camera2.up.x, camera2.up.y, camera2.up.z
+				);
+		}
+
+		Renderfps();
 	}
+	
 
-	Renderfps();
+	
 
-	if (b_enabletps == true)
+	if (b_raceBegin2 == true || b_raceStart2 == true)
 	{
-		glViewport(screenWidth * 2 / 3, screenHeight / 10, screenWidth / 3, screenHeight / 3);
-
+		
+		
 		glClear(GL_DEPTH_BUFFER_BIT);
-
+		glViewport(0, 0, screenWidth, screenHeight / 2);
 		projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
 		projectionStack.LoadMatrix(projection);
 		viewStack.LoadIdentity();
 		//set View position to camera
 		viewStack.LookAt(
-			camera2.position.x, camera2.position.y, camera2.position.z,
-			camera2.target.x, camera2.target.y, camera2.target.z,
-			camera2.up.x, camera2.up.y, camera2.up.z
+			camera3.position.x, camera3.position.y, camera3.position.z,
+			camera3.target.x, camera3.target.y, camera3.target.z,
+			camera3.up.x, camera3.up.y, camera3.up.z
 			);
 		Rendertps();
 	}

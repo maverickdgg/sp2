@@ -232,6 +232,127 @@ void SpaceVehicles::updateVehicle(double deltaTime , PMAP map,queue<int>& q)
 	}
 }
 
+
+void SpaceVehicles::updateVehicle2(double deltaTime, PMAP map, queue<int>& q)
+{
+	if (collision(pos, indexToVector(q.front()), 40))
+	{
+		q.push(q.front());
+		q.pop();
+	}
+	if (Application::IsKeyPressed(VK_UP) && !Application::IsKeyPressed(VK_DOWN))
+	{
+		if (speed < max_speed)
+		{
+			speed += acceleration * deltaTime;
+		}
+		if (speed>max_speed)
+		{
+			speed = max_speed;
+		}
+	}
+
+	if (Application::IsKeyPressed(VK_DOWN))
+	{
+		if (speed > 0)
+		{
+			speed -= acceleration *1.5* deltaTime;
+		}
+
+	}
+	else if (!Application::IsKeyPressed(VK_UP) && !Application::IsKeyPressed(VK_DOWN))
+	{
+		if (speed > -2 && speed <2)
+		{
+			speed = 0;
+		}
+		if (speed > 0)
+			speed -= acceleration * deltaTime;
+		if (speed < 0)
+		{
+			speed += acceleration * deltaTime;
+		}
+	}
+
+	if (Application::IsKeyPressed(VK_LEFT) && !Application::IsKeyPressed(VK_RIGHT))
+	{
+		//if (rotationZ <= 0)
+		//{
+		viewAngle += rotateAngle * deltaTime;
+
+
+		if (rotationZ > -45)
+			rotationZ -= rotateAngle * 2 * deltaTime;
+		else if (rotationZ < -45)
+			rotationZ = -45;
+	}
+	if (Application::IsKeyPressed(VK_RIGHT) && !Application::IsKeyPressed(VK_LEFT))
+	{
+		//if (rotationZ >= 0)
+		//{
+		viewAngle -= rotateAngle * deltaTime;
+
+		if (rotationZ < 45)
+			rotationZ += rotateAngle * 2 * deltaTime;
+		else if (rotationZ > 45)
+			rotationZ = 45;
+	}
+	if (!Application::IsKeyPressed(VK_LEFT) && !Application::IsKeyPressed(VK_RIGHT))
+	{
+		if (rotationZ > -5 && rotationZ < 5)
+		{
+			rotationZ = 0;
+		}
+		if (rotationZ > 0)
+		{
+			rotationZ -= rotateAngle* deltaTime;
+		}
+		if (rotationZ < 0)
+		{
+			rotationZ += rotateAngle * 2 * deltaTime;
+		}
+	}
+	Vector3 tempPos = pos;
+
+	tempPos.x += sin(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+	tempPos.z += cos(Math::DegreeToRadian(viewAngle)) * speed * deltaTime;
+
+	if (map->data[vectorToIndex(tempPos)] != '1')
+	{
+		pos = tempPos;
+	}
+	else
+	{
+		if (speed > 25)
+		{
+			speed -= acceleration * 6 * deltaTime;
+		}
+
+		if (speed < 0)
+		{
+			speed = 0;
+		}
+		if (map->data[vectorToIndex(Vector3(tempPos.x, 0, pos.z))] != '1')
+		{
+			pos.x = tempPos.x;
+		}
+		else if (map->data[vectorToIndex(Vector3(pos.x, 0, tempPos.z))] != '1')
+		{
+			pos.z = tempPos.z;
+		}
+	}
+
+	if (map->data[vectorToIndex(pos)] == '3' && lapDebounce == false)
+	{
+		lapDebounce = true;
+		++lap;
+	}
+	if (lapDebounce == true && map->data[vectorToIndex(pos)] != '3')
+	{
+		lapDebounce = false;
+	}
+}
+
 void SpaceVehicles::enterVehicleUpdate(Player& player)
 {
 	if (Application::IsKeyPressed('E') && b_vehDebounce == false && b_isInVehicle == false && collision(player, this->pos, this->boundary + player.boundary + 10))
