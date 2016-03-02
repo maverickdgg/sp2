@@ -12,6 +12,9 @@ public:
 	float f_scaleBig;
 	bool b_scaleUp;
 
+
+
+
 	void pulsingUpdate(double dt);
 };
 #endif
