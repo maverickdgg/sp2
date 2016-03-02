@@ -57,8 +57,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\glew\lib;$(SolutionDir)\glfw\lib-msvc120;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;Common Library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\glew\lib;$(SolutionDir)\glfw\lib-msvc120;$(SolutionDir)$(Configuration);$(SolutionDir)\irrKlang;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;Common Library.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -106,6 +106,7 @@
     <ClCompile Include="Source\Medic.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
+    <ClCompile Include="Source\Music.cpp" />
     <ClCompile Include="Source\Pingu.cpp" />
     <ClCompile Include="Source\PinkKnight.cpp" />
     <ClCompile Include="Source\Platform.cpp" />
@@ -121,6 +122,7 @@
     <ClCompile Include="Source\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="irrKlang\include\irrKlang.h" />
     <ClInclude Include="Source\Alien.h" />
     <ClInclude Include="Source\AlienEnemy.h" />
     <ClInclude Include="Source\Application.h" />
@@ -144,6 +146,7 @@
     <ClInclude Include="Source\Medic.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
+    <ClInclude Include="Source\Music.h" />
     <ClInclude Include="Source\Pingu.h" />
     <ClInclude Include="Source\PinkKnight.h" />
     <ClInclude Include="Source\Platform.h" />

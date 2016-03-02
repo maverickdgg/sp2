@@ -340,10 +340,10 @@ void Sp2_Scene1::Update(double dt)
 
 	//gun update
 
-
-
- /*   if (collision(suit, camera.position, suit.boundary) && Application::IsKeyPressed('E'))
-        b_isWorn = true;*/
+	if (Application::IsKeyPressed('J'))
+	{
+		Application::playSound(0,false);
+	}
 
 	//npc chat updates
 	whale.chat_update(player.pos);

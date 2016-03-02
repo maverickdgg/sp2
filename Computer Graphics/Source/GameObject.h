@@ -6,7 +6,6 @@
 #include <fstream>
 #include "MyMath.h"
 #include "Vector3.h"
-#include <algorithm>
 
 using std::ifstream;
 using std::ofstream;
