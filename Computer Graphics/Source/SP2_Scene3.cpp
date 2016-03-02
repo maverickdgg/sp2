@@ -568,7 +568,7 @@ void Sp2_Scene3::Update(double dt)
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
 
-    if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false)
+    if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false) ///// BOX MUSIC
     {
         b_collectBox1 = true;
     }
