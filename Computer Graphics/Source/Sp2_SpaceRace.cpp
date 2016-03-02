@@ -326,9 +326,15 @@ void Sp2_SpaceRace::Update(double dt)
 			racePosition = frpc.getRacePosition(frpc2, toIndex(44, 45));
 			
 		}
+		else if (b_raceStart2 == false && b_raceEnd2 == true)
+		{
+			frpc.updateCPUVehicle(dt, racetrack, frpc.racepath);
+			frpc2.updateCPUVehicle(dt, racetrack, frpc2.racepath);
+			racePosition = frpc.getRacePosition(frpc2, toIndex(44, 45));
+		}
 
 		camera2.tpsUpdateVec(dt);
-		if (b_raceStart2 == true || b_raceBegin2 == true)
+		if (b_raceStart2 == true || b_raceBegin2 == true|| b_raceEnd2 == true)
 		{
 			camera3.tpsUpdateVec(dt);
 		}
@@ -443,12 +449,12 @@ void Sp2_SpaceRace::Update(double dt)
 		camera2.b_cameraLock = false;
 		camera3.b_cameraLock = false;
 	}
-	if (b_raceEnd == true)
+	if (b_raceEnd2 == true)
 	{
 		f_endTimer -= dt;
 		if (f_endTimer <= 0)
 		{
-			b_raceEnd = false;
+			b_raceEnd2 = false;
 			frpc.b_isInVehicle = false;
 			f_raceCountdown = 6.0f;
 			f_endTimer = 5.f;
@@ -968,7 +974,7 @@ void Sp2_SpaceRace::Render()
 
 	
 
-	if (b_raceBegin2 == true || b_raceStart2 == true)
+	if (b_raceBegin2 == true || b_raceStart2 == true || b_raceEnd2 == true)
 	{
 		
 		
