@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file Buildings.h
+\author Tan Hou Gim Samuel
+\par email: 153942B@mymail.nyp.edu.sg
+\brief Class for structural game objects, inherits from GameChar instead of GameObject
+*/
+/******************************************************************************/
+
 #ifndef BUILDINGS_H
 #define BUILDINGS_H
 #include "GameChar.h"
