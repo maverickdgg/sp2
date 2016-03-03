@@ -460,7 +460,7 @@ void Sp2_Scene3::Update(double dt)
 		player.recieveHealthDamage(100);
 		player.isDead();
 	}
-
+	
     if (Application::IsKeyPressed('E') && player.isDead())
     {
         player.regainHealth(100);
@@ -599,8 +599,8 @@ void Sp2_Scene3::Update(double dt)
 	if (Application::IsKeyPressed('E') && (collision(Medic_.pos, player.pos, 21)))
 	{
 		player.regainHealth(100);
+		Application::playSound(1, false);
 	}
-
 }
 
 void Sp2_Scene3::RenderMesh(Mesh* mesh, bool enableLight)
