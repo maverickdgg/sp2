@@ -1,6 +1,6 @@
 /******************************************************************************/
 /*!
-\file	Alien.h
+\file	Medic.h
 \author Wayne Aw
 \par	Email: 152558X@mymail.nyp.edu.sg
 \par	Admin Number: 152558X
@@ -8,7 +8,7 @@
 \par	Diploma: Game Development and Technology
 \par	Class: GD1504
 \brief
-Class to define alien while inheriting from GameChar
+Class to define Medic NPC while inheriting from GameChar
 */
 /******************************************************************************/
 #ifndef MEDIC_H
@@ -17,7 +17,7 @@ Class to define alien while inheriting from GameChar
 
 /******************************************************************************/
 /*!
-Class Alien:
+Class Medic:
 \brief	Class for the medic NPC
 /******************************************************************************/
 class Medic : public GameChar
