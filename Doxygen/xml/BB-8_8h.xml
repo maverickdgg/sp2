@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="BB-8_8h" kind="file" language="C++">
+    <compoundname>BB-8.h</compoundname>
+    <includes refid="GameChar_8h" local="yes">GameChar.h</includes>
+    <includedby refid="BB-8_8cpp" local="yes">Computer Graphics/Source/BB-8.cpp</includedby>
+    <includedby refid="Sp2__Scene1_8h" local="yes">Computer Graphics/Source/Sp2_Scene1.h</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <includedby refid="SP2__Scene3_8cpp" local="yes">Computer Graphics/Source/SP2_Scene3.cpp</includedby>
+    <includedby refid="Sp2__SpaceRace_8h" local="yes">Computer Graphics/Source/Sp2_SpaceRace.h</includedby>
+    <incdepgraph>
+      <node id="7125">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7120" relation="include">
+        </childnode>
+        <childnode refid="7126" relation="include">
+        </childnode>
+      </node>
+      <node id="7151">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+        <childnode refid="7144" relation="include">
+        </childnode>
+      </node>
+      <node id="7149">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+      </node>
+      <node id="7154">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+        <childnode refid="7144" relation="include">
+        </childnode>
+      </node>
+      <node id="7133">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="7118" relation="include">
+        </childnode>
+        <childnode refid="7117" relation="include">
+        </childnode>
+        <childnode refid="7119" relation="include">
+        </childnode>
+        <childnode refid="7126" relation="include">
+        </childnode>
+        <childnode refid="7134" relation="include">
+        </childnode>
+      </node>
+      <node id="7134">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="7135" relation="include">
+        </childnode>
+        <childnode refid="7137" relation="include">
+        </childnode>
+        <childnode refid="7139" relation="include">
+        </childnode>
+        <childnode refid="7140" relation="include">
+        </childnode>
+        <childnode refid="7141" relation="include">
+        </childnode>
+        <childnode refid="7142" relation="include">
+        </childnode>
+        <childnode refid="7143" relation="include">
+        </childnode>
+        <childnode refid="7144" relation="include">
+        </childnode>
+        <childnode refid="7145" relation="include">
+        </childnode>
+        <childnode refid="7146" relation="include">
+        </childnode>
+        <childnode refid="7147" relation="include">
+        </childnode>
+        <childnode refid="7151" relation="include">
+        </childnode>
+        <childnode refid="7152" relation="include">
+        </childnode>
+        <childnode refid="7148" relation="include">
+        </childnode>
+        <childnode refid="7154" relation="include">
+        </childnode>
+        <childnode refid="7149" relation="include">
+        </childnode>
+        <childnode refid="7153" relation="include">
+        </childnode>
+        <childnode refid="7155" relation="include">
+        </childnode>
+        <childnode refid="7156" relation="include">
+        </childnode>
+        <childnode refid="7150" relation="include">
+        </childnode>
+      </node>
+      <node id="7158">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="7118" relation="include">
+        </childnode>
+        <childnode refid="7117" relation="include">
+        </childnode>
+        <childnode refid="7115" relation="include">
+        </childnode>
+      </node>
+      <node id="7129">
+        <label>windows.h</label>
+      </node>
+      <node id="7113">
+        <label>Computer Graphics/Source/BB-8.h</label>
+        <link refid="BB-8.h"/>
+        <childnode refid="7114" relation="include">
+        </childnode>
+      </node>
+      <node id="7157">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="7115" relation="include">
+        </childnode>
+      </node>
+      <node id="7135">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="7136" relation="include">
+        </childnode>
+      </node>
+      <node id="7139">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="7135" relation="include">
+        </childnode>
+      </node>
+      <node id="7121">
+        <label>cmath</label>
+      </node>
+      <node id="7117">
+        <label>string</label>
+      </node>
+      <node id="7120">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7121" relation="include">
+        </childnode>
+        <childnode refid="7122" relation="include">
+        </childnode>
+        <childnode refid="7123" relation="include">
+        </childnode>
+        <childnode refid="7124" relation="include">
+        </childnode>
+      </node>
+      <node id="7130">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="7131">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="7115">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="7116" relation="include">
+        </childnode>
+        <childnode refid="7117" relation="include">
+        </childnode>
+        <childnode refid="7118" relation="include">
+        </childnode>
+        <childnode refid="7119" relation="include">
+        </childnode>
+        <childnode refid="7120" relation="include">
+        </childnode>
+        <childnode refid="7125" relation="include">
+        </childnode>
+      </node>
+      <node id="7156">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+        <childnode refid="7146" relation="include">
+        </childnode>
+      </node>
+      <node id="7122">
+        <label>exception</label>
+      </node>
+      <node id="7119">
+        <label>fstream</label>
+      </node>
+      <node id="7128">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="7129" relation="include">
+        </childnode>
+      </node>
+      <node id="7140">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="7135" relation="include">
+        </childnode>
+      </node>
+      <node id="7150">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+        <childnode refid="7144" relation="include">
+        </childnode>
+      </node>
+      <node id="7136">
+        <label>wchar.h</label>
+      </node>
+      <node id="7145">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+        <childnode refid="7137" relation="include">
+        </childnode>
+        <childnode refid="7146" relation="include">
+        </childnode>
+        <childnode refid="7147" relation="include">
+        </childnode>
+        <childnode refid="7143" relation="include">
+        </childnode>
+        <childnode refid="7149" relation="include">
+        </childnode>
+        <childnode refid="7150" relation="include">
+        </childnode>
+      </node>
+      <node id="7123">
+        <label>ctime</label>
+      </node>
+      <node id="7118">
+        <label>vector</label>
+      </node>
+      <node id="7137">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="7138" relation="include">
+        </childnode>
+        <childnode refid="7135" relation="include">
+        </childnode>
+      </node>
+      <node id="7116">
+        <label>sstream</label>
+      </node>
+      <node id="7155">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+      </node>
+      <node id="7138">
+        <label>math.h</label>
+      </node>
+      <node id="7152">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+        <childnode refid="7153" relation="include">
+        </childnode>
+      </node>
+      <node id="7124">
+        <label>cstdlib</label>
+      </node>
+      <node id="7143">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="7126">
+        <label>iostream</label>
+      </node>
+      <node id="7132">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="7146">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="7140" relation="include">
+        </childnode>
+        <childnode refid="7137" relation="include">
+        </childnode>
+        <childnode refid="7143" relation="include">
+        </childnode>
+        <childnode refid="7144" relation="include">
+        </childnode>
+      </node>
+      <node id="7144">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+      </node>
+      <node id="7147">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="7140" relation="include">
+        </childnode>
+        <childnode refid="7148" relation="include">
+        </childnode>
+        <childnode refid="7137" relation="include">
+        </childnode>
+      </node>
+      <node id="7141">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="7142">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="7148">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="7140" relation="include">
+        </childnode>
+        <childnode refid="7137" relation="include">
+        </childnode>
+      </node>
+      <node id="7127">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="7128" relation="include">
+        </childnode>
+        <childnode refid="7130" relation="include">
+        </childnode>
+        <childnode refid="7131" relation="include">
+        </childnode>
+        <childnode refid="7132" relation="include">
+        </childnode>
+        <childnode refid="7133" relation="include">
+        </childnode>
+      </node>
+      <node id="7153">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="7139" relation="include">
+        </childnode>
+      </node>
+      <node id="7114">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="7115" relation="include">
+        </childnode>
+        <childnode refid="7127" relation="include">
+        </childnode>
+        <childnode refid="7157" relation="include">
+        </childnode>
+        <childnode refid="7158" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7162">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="7159">
+        <label>Computer Graphics/Source/BB-8.h</label>
+        <link refid="BB-8.h"/>
+        <childnode refid="7160" relation="include">
+        </childnode>
+        <childnode refid="7161" relation="include">
+        </childnode>
+        <childnode refid="7163" relation="include">
+        </childnode>
+        <childnode refid="7164" relation="include">
+        </childnode>
+        <childnode refid="7165" relation="include">
+        </childnode>
+      </node>
+      <node id="7165">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="7166" relation="include">
+        </childnode>
+      </node>
+      <node id="7164">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="7160">
+        <label>Computer Graphics/Source/BB-8.cpp</label>
+        <link refid="BB-8_8cpp"/>
+      </node>
+      <node id="7163">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="7164" relation="include">
+        </childnode>
+      </node>
+      <node id="7161">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="7162" relation="include">
+        </childnode>
+      </node>
+      <node id="7166">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classBB8" prot="public">BB8</innerclass>
+    <briefdescription>
+<para>Class to define a <ref refid="classBB8" kindref="compound">BB8</ref> NPC inheriting from <ref refid="classGameChar" kindref="compound">GameChar</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BB_8_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BB_8_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameChar_8h" kindref="compound">GameChar.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="25" refid="classBB8" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classBB8" kindref="compound">BB8</ref><sp/>:</highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classGameChar" kindref="compound">GameChar</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBB8_1aa127e2730d346ebb5405d7d88b4dc826" kindref="member">BB8</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBB8_1aa127e2730d346ebb5405d7d88b4dc826" kindref="member">BB8</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>=<sp/>0,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref><sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBB8_1a18ecb28ff4a6583bc0eda14f95807b21" kindref="member">~BB8</ref>();</highlight></codeline>
+<codeline lineno="31" refid="classBB8_1a9ac56e15b27ac311b78a56ad02129d29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classBB8_1a9ac56e15b27ac311b78a56ad02129d29" kindref="member">bb8_count</ref>;</highlight></codeline>
+<codeline lineno="32" refid="classBB8_1a2b13ff43219c7d40adea057c957ffd17" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBB8_1a2b13ff43219c7d40adea057c957ffd17" kindref="member">lowerBodyRotate</ref>;</highlight></codeline>
+<codeline lineno="33" refid="classBB8_1a77ee10ab2c261a0e5958ab3be85eb0ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBB8_1a77ee10ab2c261a0e5958ab3be85eb0ca" kindref="member">speed</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classBB8_1a71a2932d4e62e84d02af3062638fcf40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBB8_1a71a2932d4e62e84d02af3062638fcf40" kindref="member">turnSpeed</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBB8_1aab6c34b90dab5887f0563060a20838e4" kindref="member">move</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBB8_1a5099bc077f16f7a4efea6f780870fec5" kindref="member">moveCircles</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBB8_1ad5aaf54dda6b96f365504235cbddf5da" kindref="member">rotateAbout</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/BB-8.h"/>
+  </compounddef>
+</doxygen>

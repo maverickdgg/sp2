@@ -1,0 +1,12 @@
+digraph "compute_imdct"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="compute_imdct",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="imdct12",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#a537c21d3e9b6a3435fd1dd884145b853"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="imdct36",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#a8e0f45791456c07ffa41f0dacd94f152"];
+}

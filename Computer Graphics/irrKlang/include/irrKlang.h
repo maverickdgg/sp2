@@ -1,3 +1,4 @@
+
 /* irrKlang.h -- interface of the 'irrKlang' library
 
   Copyright (C) 2002-2014 Nikolaus Gebhardt
@@ -7,6 +8,20 @@
   arising from the use of this software.
 */
 
+/******************************************************************************/
+/*!
+\file	irrKlang.h
+\author Lee Jian Lin
+\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Admin Number: 150580X
+\par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
+\par	Diploma: Game Development and Technology
+\par	Class: GD1503
+\par	Mobile Number: 9755 2038
+\brief
+Library for music
+*/
+/******************************************************************************/
 #ifndef __IRR_KLANG_H_INCLUDED__
 #define __IRR_KLANG_H_INCLUDED__
 

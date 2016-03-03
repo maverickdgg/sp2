@@ -11,7 +11,12 @@
 #define BUILDINGS_H
 #include "GameChar.h"
 #include "Player.h"
-
+/******************************************************************************/
+/*!
+Class Buildings:
+\brief
+Class for the Buildings ( Inherits from GameChar )
+/******************************************************************************/
 class Buildings : public GameChar
 {
 public:

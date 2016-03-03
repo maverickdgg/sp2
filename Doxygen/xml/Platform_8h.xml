@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Platform_8h" kind="file" language="C++">
+    <compoundname>Platform.h</compoundname>
+    <includes refid="GameChar_8h" local="yes">GameChar.h</includes>
+    <includes refid="Player_8h" local="yes">Player.h</includes>
+    <includedby refid="Platform_8cpp" local="yes">Computer Graphics/Source/Platform.cpp</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <includedby refid="SP2__Scene3_8cpp" local="yes">Computer Graphics/Source/SP2_Scene3.cpp</includedby>
+    <incdepgraph>
+      <node id="9051">
+        <label>Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="9006" relation="include">
+        </childnode>
+        <childnode refid="9019" relation="include">
+        </childnode>
+        <childnode refid="9052" relation="include">
+        </childnode>
+        <childnode refid="9050" relation="include">
+        </childnode>
+        <childnode refid="9049" relation="include">
+        </childnode>
+        <childnode refid="9054" relation="include">
+        </childnode>
+        <childnode refid="9010" relation="include">
+        </childnode>
+      </node>
+      <node id="9005">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform.h"/>
+        <childnode refid="9006" relation="include">
+        </childnode>
+        <childnode refid="9051" relation="include">
+        </childnode>
+      </node>
+      <node id="9017">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="9012" relation="include">
+        </childnode>
+        <childnode refid="9018" relation="include">
+        </childnode>
+      </node>
+      <node id="9043">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+        <childnode refid="9036" relation="include">
+        </childnode>
+      </node>
+      <node id="9041">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+      </node>
+      <node id="9046">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+        <childnode refid="9036" relation="include">
+        </childnode>
+      </node>
+      <node id="9025">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="9010" relation="include">
+        </childnode>
+        <childnode refid="9009" relation="include">
+        </childnode>
+        <childnode refid="9011" relation="include">
+        </childnode>
+        <childnode refid="9018" relation="include">
+        </childnode>
+        <childnode refid="9026" relation="include">
+        </childnode>
+      </node>
+      <node id="9026">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="9027" relation="include">
+        </childnode>
+        <childnode refid="9029" relation="include">
+        </childnode>
+        <childnode refid="9031" relation="include">
+        </childnode>
+        <childnode refid="9032" relation="include">
+        </childnode>
+        <childnode refid="9033" relation="include">
+        </childnode>
+        <childnode refid="9034" relation="include">
+        </childnode>
+        <childnode refid="9035" relation="include">
+        </childnode>
+        <childnode refid="9036" relation="include">
+        </childnode>
+        <childnode refid="9037" relation="include">
+        </childnode>
+        <childnode refid="9038" relation="include">
+        </childnode>
+        <childnode refid="9039" relation="include">
+        </childnode>
+        <childnode refid="9043" relation="include">
+        </childnode>
+        <childnode refid="9044" relation="include">
+        </childnode>
+        <childnode refid="9040" relation="include">
+        </childnode>
+        <childnode refid="9046" relation="include">
+        </childnode>
+        <childnode refid="9041" relation="include">
+        </childnode>
+        <childnode refid="9045" relation="include">
+        </childnode>
+        <childnode refid="9047" relation="include">
+        </childnode>
+        <childnode refid="9048" relation="include">
+        </childnode>
+        <childnode refid="9042" relation="include">
+        </childnode>
+      </node>
+      <node id="9050">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="9010" relation="include">
+        </childnode>
+        <childnode refid="9009" relation="include">
+        </childnode>
+        <childnode refid="9007" relation="include">
+        </childnode>
+      </node>
+      <node id="9021">
+        <label>windows.h</label>
+      </node>
+      <node id="9049">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="9007" relation="include">
+        </childnode>
+      </node>
+      <node id="9027">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="9028" relation="include">
+        </childnode>
+      </node>
+      <node id="9031">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="9027" relation="include">
+        </childnode>
+      </node>
+      <node id="9013">
+        <label>cmath</label>
+      </node>
+      <node id="9009">
+        <label>string</label>
+      </node>
+      <node id="9012">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="9013" relation="include">
+        </childnode>
+        <childnode refid="9014" relation="include">
+        </childnode>
+        <childnode refid="9015" relation="include">
+        </childnode>
+        <childnode refid="9016" relation="include">
+        </childnode>
+      </node>
+      <node id="9022">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="9023">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="9007">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="9008" relation="include">
+        </childnode>
+        <childnode refid="9009" relation="include">
+        </childnode>
+        <childnode refid="9010" relation="include">
+        </childnode>
+        <childnode refid="9011" relation="include">
+        </childnode>
+        <childnode refid="9012" relation="include">
+        </childnode>
+        <childnode refid="9017" relation="include">
+        </childnode>
+      </node>
+      <node id="9048">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+        <childnode refid="9038" relation="include">
+        </childnode>
+      </node>
+      <node id="9014">
+        <label>exception</label>
+      </node>
+      <node id="9011">
+        <label>fstream</label>
+      </node>
+      <node id="9020">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="9021" relation="include">
+        </childnode>
+      </node>
+      <node id="9032">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="9027" relation="include">
+        </childnode>
+      </node>
+      <node id="9042">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+        <childnode refid="9036" relation="include">
+        </childnode>
+      </node>
+      <node id="9028">
+        <label>wchar.h</label>
+      </node>
+      <node id="9037">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+        <childnode refid="9029" relation="include">
+        </childnode>
+        <childnode refid="9038" relation="include">
+        </childnode>
+        <childnode refid="9039" relation="include">
+        </childnode>
+        <childnode refid="9035" relation="include">
+        </childnode>
+        <childnode refid="9041" relation="include">
+        </childnode>
+        <childnode refid="9042" relation="include">
+        </childnode>
+      </node>
+      <node id="9015">
+        <label>ctime</label>
+      </node>
+      <node id="9054">
+        <label>Map.h</label>
+        <link refid="Map_8h"/>
+        <childnode refid="9009" relation="include">
+        </childnode>
+        <childnode refid="9011" relation="include">
+        </childnode>
+        <childnode refid="9018" relation="include">
+        </childnode>
+        <childnode refid="9017" relation="include">
+        </childnode>
+      </node>
+      <node id="9010">
+        <label>vector</label>
+      </node>
+      <node id="9029">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="9030" relation="include">
+        </childnode>
+        <childnode refid="9027" relation="include">
+        </childnode>
+      </node>
+      <node id="9008">
+        <label>sstream</label>
+      </node>
+      <node id="9047">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+      </node>
+      <node id="9030">
+        <label>math.h</label>
+      </node>
+      <node id="9044">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+        <childnode refid="9045" relation="include">
+        </childnode>
+      </node>
+      <node id="9016">
+        <label>cstdlib</label>
+      </node>
+      <node id="9035">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="9018">
+        <label>iostream</label>
+      </node>
+      <node id="9024">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="9038">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="9032" relation="include">
+        </childnode>
+        <childnode refid="9029" relation="include">
+        </childnode>
+        <childnode refid="9035" relation="include">
+        </childnode>
+        <childnode refid="9036" relation="include">
+        </childnode>
+      </node>
+      <node id="9036">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+      </node>
+      <node id="9039">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="9032" relation="include">
+        </childnode>
+        <childnode refid="9040" relation="include">
+        </childnode>
+        <childnode refid="9029" relation="include">
+        </childnode>
+      </node>
+      <node id="9033">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="9034">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="9040">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="9032" relation="include">
+        </childnode>
+        <childnode refid="9029" relation="include">
+        </childnode>
+      </node>
+      <node id="9019">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="9020" relation="include">
+        </childnode>
+        <childnode refid="9022" relation="include">
+        </childnode>
+        <childnode refid="9023" relation="include">
+        </childnode>
+        <childnode refid="9024" relation="include">
+        </childnode>
+        <childnode refid="9025" relation="include">
+        </childnode>
+      </node>
+      <node id="9045">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="9031" relation="include">
+        </childnode>
+      </node>
+      <node id="9052">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="9053" relation="include">
+        </childnode>
+      </node>
+      <node id="9053">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="9017" relation="include">
+        </childnode>
+        <childnode refid="9019" relation="include">
+        </childnode>
+      </node>
+      <node id="9006">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="9007" relation="include">
+        </childnode>
+        <childnode refid="9019" relation="include">
+        </childnode>
+        <childnode refid="9049" relation="include">
+        </childnode>
+        <childnode refid="9050" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9055">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform.h"/>
+        <childnode refid="9056" relation="include">
+        </childnode>
+        <childnode refid="9057" relation="include">
+        </childnode>
+        <childnode refid="9058" relation="include">
+        </childnode>
+      </node>
+      <node id="9058">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="9057">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="9058" relation="include">
+        </childnode>
+      </node>
+      <node id="9056">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classPlatform" prot="public">Platform</innerclass>
+    <briefdescription>
+<para>Class to define platform while inheriting from <ref refid="classGameChar" kindref="compound">GameChar</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PLATFORM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PLATFORM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameChar_8h" kindref="compound">GameChar.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Player_8h" kindref="compound">Player.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="26" refid="classPlatform" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPlatform" kindref="compound">Platform</ref><sp/>:</highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classGameChar" kindref="compound">GameChar</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" kindref="member">Platform</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" kindref="member">Platform</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>=<sp/>0,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref><sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a13b5e4ef946b8a2fe38d22014145ab68" kindref="member">~Platform</ref>();</highlight></codeline>
+<codeline lineno="32" refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" kindref="member">Platform_count</ref>;</highlight></codeline>
+<codeline lineno="33" refid="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" kindref="member">lowerBodyRotate</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" kindref="member">speed</ref>;</highlight></codeline>
+<codeline lineno="35" refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" kindref="member">turnSpeed</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a486c573852bfdb54819927a5870556d3" kindref="member">move</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" kindref="member">moveCircles</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a80d4dd2b9cf2a6abc359e068286cf16c" kindref="member">rotateAbout</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" kindref="member">changePlatform</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>isClimb,<sp/><ref refid="classPlatform" kindref="compound">Platform</ref>&amp;<sp/>p,<sp/><ref refid="classPlayer" kindref="compound">Player</ref>&amp;<sp/>player);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" kindref="member">noLadderPlatform</ref>(<ref refid="classPlatform" kindref="compound">Platform</ref>&amp;<sp/>p,<sp/><ref refid="classPlayer" kindref="compound">Player</ref>&amp;<sp/>player);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Platform.h"/>
+  </compounddef>
+</doxygen>

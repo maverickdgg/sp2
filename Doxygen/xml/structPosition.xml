@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structPosition" kind="struct" language="C++" prot="public">
+    <compoundname>Position</compoundname>
+    <includes refid="Vertex_8h" local="no">Vertex.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPosition_1af684446cbf0f6d53386686283da6dcc6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Position::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Vertex.h" line="27" column="1" bodyfile="Computer Graphics/Source/Vertex.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1aa0cff3ada5866ad3236dd88b24f64c39" compoundref="MeshBuilder_8cpp" startline="277" endline="319">MeshBuilder::GenerateSphere</referencedby>
+        <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="8" endline="116">LoadOBJ</referencedby>
+        <referencedby refid="Utility_8h_1adfba271c0b8f223d01dd4f35e62e27af" compoundref="Utility_8cpp" startline="3" endline="11">operator*</referencedby>
+        <referencedby refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="28" endline="31">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structPosition_1a54a6182b5f7539295b32255808897d3f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Position::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Vertex.h" line="27" column="1" bodyfile="Computer Graphics/Source/Vertex.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1aa0cff3ada5866ad3236dd88b24f64c39" compoundref="MeshBuilder_8cpp" startline="277" endline="319">MeshBuilder::GenerateSphere</referencedby>
+        <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="8" endline="116">LoadOBJ</referencedby>
+        <referencedby refid="Utility_8h_1adfba271c0b8f223d01dd4f35e62e27af" compoundref="Utility_8cpp" startline="3" endline="11">operator*</referencedby>
+        <referencedby refid="classLoadingScene_1a35ba516ca75c80353cd958f6393b4ef7" compoundref="LoadingScene_8cpp" startline="312" endline="328">LoadingScene::Renderfps</referencedby>
+        <referencedby refid="classSp2__Scene1_1ad6a43af14f5aca3417deea62b24dbc7e" compoundref="Sp2__Scene1_8cpp" startline="672" endline="733">Sp2_Scene1::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__Scene3_1a43e8c34b03c54e12d61a707e5e10e4f2" compoundref="SP2__Scene3_8cpp" startline="1444" endline="1519">Sp2_Scene3::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="28" endline="31">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Position::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Vertex.h" line="27" column="1" bodyfile="Computer Graphics/Source/Vertex.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1aa0cff3ada5866ad3236dd88b24f64c39" compoundref="MeshBuilder_8cpp" startline="277" endline="319">MeshBuilder::GenerateSphere</referencedby>
+        <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="8" endline="116">LoadOBJ</referencedby>
+        <referencedby refid="Utility_8h_1adfba271c0b8f223d01dd4f35e62e27af" compoundref="Utility_8cpp" startline="3" endline="11">operator*</referencedby>
+        <referencedby refid="classLoadingScene_1a35ba516ca75c80353cd958f6393b4ef7" compoundref="LoadingScene_8cpp" startline="312" endline="328">LoadingScene::Renderfps</referencedby>
+        <referencedby refid="classSp2__Scene1_1ad6a43af14f5aca3417deea62b24dbc7e" compoundref="Sp2__Scene1_8cpp" startline="672" endline="733">Sp2_Scene1::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__Scene3_1a43e8c34b03c54e12d61a707e5e10e4f2" compoundref="SP2__Scene3_8cpp" startline="1444" endline="1519">Sp2_Scene3::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="28" endline="31">Set</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Position::Set</definition>
+        <argsstring>(float x, float y, float z)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Vertex.h" line="28" column="1" bodyfile="Computer Graphics/Source/Vertex.h" bodystart="28" bodyend="31"/>
+        <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="27">x</references>
+        <references refid="structPosition_1a54a6182b5f7539295b32255808897d3f" compoundref="Vertex_8h" startline="27">y</references>
+        <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="27">z</references>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="18" endline="49">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classMeshBuilder_1af82a06baa71bcd1ef4a238161cf3325b" compoundref="MeshBuilder_8cpp" startline="185" endline="221">MeshBuilder::GenerateCircle</referencedby>
+        <referencedby refid="classMeshBuilder_1ad8f4a3a18fca28e77c82ee30934a5995" compoundref="MeshBuilder_8cpp" startline="495" endline="535">MeshBuilder::GenerateCircleLine</referencedby>
+        <referencedby refid="classMeshBuilder_1a5e777328dc946f483beb5645d8f24c4a" compoundref="MeshBuilder_8cpp" startline="109" endline="173">MeshBuilder::GenerateCube</referencedby>
+        <referencedby refid="classMeshBuilder_1a7848e12e80faf05fe525dca860bc5e13" compoundref="MeshBuilder_8cpp" startline="321" endline="382">MeshBuilder::GenerateCylinder</referencedby>
+        <referencedby refid="classMeshBuilder_1adac1ad1856500e8d5efdb8d576bfbc0d" compoundref="MeshBuilder_8cpp" startline="537" endline="577">MeshBuilder::GenerateHalfCircleLine</referencedby>
+        <referencedby refid="classMeshBuilder_1a3bfcd731fed289415ea3252195f6e267" compoundref="MeshBuilder_8cpp" startline="427" endline="493">MeshBuilder::GenerateHemiSphere</referencedby>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="64" endline="93">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a84ad6e09820e72f4f6893862166cf5fd" compoundref="MeshBuilder_8cpp" startline="223" endline="260">MeshBuilder::GenerateRing</referencedby>
+        <referencedby refid="classMeshBuilder_1aa0cff3ada5866ad3236dd88b24f64c39" compoundref="MeshBuilder_8cpp" startline="277" endline="319">MeshBuilder::GenerateSphere</referencedby>
+        <referencedby refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="607" endline="646">MeshBuilder::GenerateText</referencedby>
+        <referencedby refid="classMeshBuilder_1a27e6a5bc9270e592f31df04fbbc7cf31" compoundref="MeshBuilder_8cpp" startline="384" endline="425">MeshBuilder::GenerateTorus</referencedby>
+        <referencedby refid="LoadOBJ_8h_1aa99ef9426a57205ed8acb8f7d41f3bae" compoundref="LoadOBJ_8cpp" startline="144" endline="184">IndexVBO</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4704d16ad01dec2a8405dd55800dd84b" compoundref="Sp2__Scene1_8cpp" startline="25" endline="272">Sp2_Scene1::Init</referencedby>
+        <referencedby refid="classLoadingScene_1ab58112cfff35f696e5479b5eaf74cbb3" compoundref="LoadingScene_8cpp" startline="24" endline="141">LoadingScene::Init</referencedby>
+        <referencedby refid="classSp2__Scene3_1a8f774405ee31eaf42274079a2d0a03ee" compoundref="SP2__Scene3_8cpp" startline="56" endline="404">Sp2_Scene3::Init</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" compoundref="Sp2__SpaceRace_8cpp" startline="25" endline="240">Sp2_SpaceRace::Init</referencedby>
+        <referencedby refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" compoundref="Light_8cpp" startline="4" endline="10">Light::Light</referencedby>
+        <referencedby refid="structPosition_1ab73d81912c4ead48cee5342d7cf5a33b" compoundref="Vertex_8h" startline="32" endline="35">Position</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structPosition_1ab73d81912c4ead48cee5342d7cf5a33b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Position::Position</definition>
+        <argsstring>(float x=0, float y=0, float z=0)</argsstring>
+        <name>Position</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Vertex.h" line="32" column="1" bodyfile="Computer Graphics/Source/Vertex.h" bodystart="32" bodyend="35"/>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="28" endline="31">Set</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct for the <ref refid="structPosition" kindref="compound">Position</ref> /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Struct <ref refid="structPosition" kindref="compound">Position</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1192">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="1193" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="1193">
+        <label>float</label>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Vertex.h" line="26" column="1" bodyfile="Computer Graphics/Source/Vertex.h" bodystart="25" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structPosition_1ab73d81912c4ead48cee5342d7cf5a33b" prot="public" virt="non-virtual"><scope>Position</scope><name>Position</name></member>
+      <member refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" prot="public" virt="non-virtual"><scope>Position</scope><name>Set</name></member>
+      <member refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" prot="public" virt="non-virtual"><scope>Position</scope><name>x</name></member>
+      <member refid="structPosition_1a54a6182b5f7539295b32255808897d3f" prot="public" virt="non-virtual"><scope>Position</scope><name>y</name></member>
+      <member refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" prot="public" virt="non-virtual"><scope>Position</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

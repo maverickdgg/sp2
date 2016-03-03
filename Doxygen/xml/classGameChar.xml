@@ -1,0 +1,669 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classGameChar" kind="class" language="C++" prot="public">
+    <compoundname>GameChar</compoundname>
+    <basecompoundref refid="classGameObject" prot="public" virt="non-virtual">GameObject</basecompoundref>
+    <derivedcompoundref refid="classAlien" prot="public" virt="non-virtual">Alien</derivedcompoundref>
+    <derivedcompoundref refid="classBB8" prot="public" virt="non-virtual">BB8</derivedcompoundref>
+    <derivedcompoundref refid="classBB8v2" prot="public" virt="non-virtual">BB8v2</derivedcompoundref>
+    <derivedcompoundref refid="classBuildings" prot="public" virt="non-virtual">Buildings</derivedcompoundref>
+    <derivedcompoundref refid="classHuman" prot="public" virt="non-virtual">Human</derivedcompoundref>
+    <derivedcompoundref refid="classMedic" prot="public" virt="non-virtual">Medic</derivedcompoundref>
+    <derivedcompoundref refid="classPingu" prot="public" virt="non-virtual">Pingu</derivedcompoundref>
+    <derivedcompoundref refid="classPinkKnight" prot="public" virt="non-virtual">PinkKnight</derivedcompoundref>
+    <derivedcompoundref refid="classPlatform" prot="public" virt="non-virtual">Platform</derivedcompoundref>
+    <derivedcompoundref refid="classPlayer" prot="public" virt="non-virtual">Player</derivedcompoundref>
+    <derivedcompoundref refid="classSir" prot="public" virt="non-virtual">Sir</derivedcompoundref>
+    <includes refid="GameChar_8h" local="no">GameChar.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classGameChar_1a64f572d829f790537947d7ec566035de" prot="public" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t GameChar::GC_count</definition>
+        <argsstring></argsstring>
+        <name>GC_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="36" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" compoundref="GameChar_8cpp" startline="11" endline="18">GameChar</referencedby>
+        <referencedby refid="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" compoundref="GameChar_8cpp" startline="29" endline="32">~GameChar</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classGameChar_1a7107872fd67096fcd09554c4758d29f8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameChar::dialogue_index</definition>
+        <argsstring></argsstring>
+        <name>dialogue_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="37" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">chat_update</referencedby>
+        <referencedby refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" compoundref="GameChar_8cpp" startline="11" endline="18">GameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameChar::b_indexDebounce</definition>
+        <argsstring></argsstring>
+        <name>b_indexDebounce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="38" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">chat_update</referencedby>
+        <referencedby refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" compoundref="GameChar_8cpp" startline="11" endline="18">GameChar</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameChar::isPressed</definition>
+        <argsstring></argsstring>
+        <name>isPressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="39" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">chat_update</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1aecf445b212b38680333591507fec1b9c" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; GameChar::vec_dialog</definition>
+        <argsstring></argsstring>
+        <name>vec_dialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="40" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">chat_update</referencedby>
+        <referencedby refid="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" compoundref="GameChar_8cpp" startline="34" endline="55">ReadFromTxt</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameChar::b_dialogueEnd</definition>
+        <argsstring></argsstring>
+        <name>b_dialogueEnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="41" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">chat_update</referencedby>
+        <referencedby refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" compoundref="GameChar_8cpp" startline="11" endline="18">GameChar</referencedby>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1a696bae70c00267e3e510330073aa2502" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameChar::chat_boundary</definition>
+        <argsstring></argsstring>
+        <name>chat_boundary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="42" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">chat_update</referencedby>
+        <referencedby refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" compoundref="GameChar_8cpp" startline="11" endline="18">GameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1a931f5a592835d5beb15617c1f461ad09" prot="public" static="no" mutable="no">
+        <type><ref refid="classQuest" kindref="compound">Quest</ref> *</type>
+        <definition>Quest* GameChar::quest</definition>
+        <argsstring></argsstring>
+        <name>quest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="53" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" compoundref="GameChar_8cpp" startline="157" endline="160">assignQuest</referencedby>
+        <referencedby refid="classPlayer_1a1a0af4b8bb61f111b7d3c1996d4db5ce" compoundref="Player_8cpp" startline="383" endline="386">Player::receiveQuest</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classGameChar_1ac3f247e99c59587dd1e8fcdc078ef536" prot="private" static="no" mutable="no">
+        <type><ref refid="GameObject_8h_1a24ef3f5cfa3f7ef60fc06899a809e63e" kindref="member">smaller</ref></type>
+        <definition>smaller GameChar::health</definition>
+        <argsstring></argsstring>
+        <name>health</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="58" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classGameChar_1af269122fc55f796480526e528d7df914" compoundref="GameChar_8cpp" startline="91" endline="94">getHealth</referencedby>
+        <referencedby refid="classGameChar_1a5d065602468049316d1108925cede374" compoundref="GameChar_8cpp" startline="96" endline="115">getHealthString</referencedby>
+        <referencedby refid="classGameChar_1a3e719d888ab88c36961827985897f24c" compoundref="GameChar_8cpp" startline="117" endline="128">isDead</referencedby>
+        <referencedby refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" compoundref="GameChar_8cpp" startline="130" endline="143">recieveHealthDamage</referencedby>
+        <referencedby refid="classGameChar_1a9acf18e780626b55712297ba5c07ad94" compoundref="GameChar_8cpp" startline="145" endline="155">regainHealth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1abf5d6ada13d4d1560ed06a1f9cdd51da" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameChar::invulnerability</definition>
+        <argsstring></argsstring>
+        <name>invulnerability</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="59" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameChar_1a4e73c2c6fca1d50c58e98bd75678ec4b" prot="private" static="no" mutable="no">
+        <type><ref refid="GameObject_8h_1a24ef3f5cfa3f7ef60fc06899a809e63e" kindref="member">smaller</ref></type>
+        <definition>smaller GameChar::max_health</definition>
+        <argsstring></argsstring>
+        <name>max_health</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="60" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameChar::GameChar</definition>
+        <argsstring>()</argsstring>
+        <name>GameChar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="31" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="11" bodyend="18"/>
+        <references refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" compoundref="GameChar_8h" startline="41">b_dialogueEnd</references>
+        <references refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" compoundref="GameChar_8h" startline="38">b_indexDebounce</references>
+        <references refid="classGameChar_1a696bae70c00267e3e510330073aa2502" compoundref="GameChar_8h" startline="42">chat_boundary</references>
+        <references refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" compoundref="GameChar_8h" startline="37">dialogue_index</references>
+        <references refid="classGameChar_1a64f572d829f790537947d7ec566035de" compoundref="GameChar_8h" startline="36">GC_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1ae15f329bb71a20fe4083b07702f73658" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameChar::GameChar</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0), smaller init_Health=0)</argsstring>
+        <name>GameChar</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <param>
+          <type><ref refid="GameObject_8h_1a24ef3f5cfa3f7ef60fc06899a809e63e" kindref="member">smaller</ref></type>
+          <declname>init_Health</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="32" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="20" bodyend="27"/>
+        <references refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" compoundref="GameChar_8h" startline="41">b_dialogueEnd</references>
+        <references refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" compoundref="GameChar_8h" startline="38">b_indexDebounce</references>
+        <references refid="classGameChar_1a696bae70c00267e3e510330073aa2502" compoundref="GameChar_8h" startline="42">chat_boundary</references>
+        <references refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" compoundref="GameChar_8h" startline="37">dialogue_index</references>
+        <references refid="classGameChar_1a64f572d829f790537947d7ec566035de" compoundref="GameChar_8h" startline="36">GC_count</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameChar::~GameChar</definition>
+        <argsstring>()</argsstring>
+        <name>~GameChar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="35" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="29" bodyend="32"/>
+        <references refid="classGameChar_1a64f572d829f790537947d7ec566035de" compoundref="GameChar_8h" startline="36">GC_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt; string &gt; GameChar::ReadFromTxt</definition>
+        <argsstring>(string link)</argsstring>
+        <name>ReadFromTxt</name>
+        <param>
+          <type>string</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="44" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="34" bodyend="55"/>
+        <references refid="classGameChar_1aecf445b212b38680333591507fec1b9c" compoundref="GameChar_8h" startline="40">vec_dialog</references>
+        <referencedby refid="classSp2__Scene1_1a4704d16ad01dec2a8405dd55800dd84b" compoundref="Sp2__Scene1_8cpp" startline="25" endline="272">Sp2_Scene1::Init</referencedby>
+        <referencedby refid="classSp2__Scene3_1a8f774405ee31eaf42274079a2d0a03ee" compoundref="SP2__Scene3_8cpp" startline="56" endline="404">Sp2_Scene3::Init</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" compoundref="Sp2__SpaceRace_8cpp" startline="25" endline="240">Sp2_SpaceRace::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameChar::chat_update</definition>
+        <argsstring>(Vector3 player_pos)</argsstring>
+        <name>chat_update</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>player_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="45" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="57" bodyend="89"/>
+        <references refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" compoundref="GameChar_8h" startline="41">b_dialogueEnd</references>
+        <references refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" compoundref="GameChar_8h" startline="38">b_indexDebounce</references>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="classGameChar_1a696bae70c00267e3e510330073aa2502" compoundref="GameChar_8h" startline="42">chat_boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" compoundref="GameChar_8h" startline="37">dialogue_index</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="39" endline="42">Application::IsKeyPressed</references>
+        <references refid="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" compoundref="GameChar_8h" startline="39">isPressed</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="classGameChar_1aecf445b212b38680333591507fec1b9c" compoundref="GameChar_8h" startline="40">vec_dialog</references>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1a3e719d888ab88c36961827985897f24c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameChar::isDead</definition>
+        <argsstring>()</argsstring>
+        <name>isDead</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="47" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="117" bodyend="128"/>
+        <references refid="classGameChar_1ac3f247e99c59587dd1e8fcdc078ef536" compoundref="GameChar_8h" startline="58">health</references>
+        <referencedby refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" compoundref="GameChar_8cpp" startline="130" endline="143">recieveHealthDamage</referencedby>
+        <referencedby refid="classSp2__Scene3_1a43e8c34b03c54e12d61a707e5e10e4f2" compoundref="SP2__Scene3_8cpp" startline="1444" endline="1519">Sp2_Scene3::Renderfps</referencedby>
+        <referencedby refid="classSp2__Scene3_1ab8b8ee5ac95441f935c1b4d04c3a39c2" compoundref="SP2__Scene3_8cpp" startline="815" endline="871">Sp2_Scene3::RenderSuit</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1af269122fc55f796480526e528d7df914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="GameObject_8h_1a24ef3f5cfa3f7ef60fc06899a809e63e" kindref="member">smaller</ref></type>
+        <definition>smaller GameChar::getHealth</definition>
+        <argsstring>()</argsstring>
+        <name>getHealth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="48" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="91" bodyend="94"/>
+        <references refid="classGameChar_1ac3f247e99c59587dd1e8fcdc078ef536" compoundref="GameChar_8h" startline="58">health</references>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1a5d065602468049316d1108925cede374" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string GameChar::getHealthString</definition>
+        <argsstring>()</argsstring>
+        <name>getHealthString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="49" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="96" bodyend="115"/>
+        <references refid="classGameChar_1ac3f247e99c59587dd1e8fcdc078ef536" compoundref="GameChar_8h" startline="58">health</references>
+        <referencedby refid="classSp2__Scene3_1ab8b8ee5ac95441f935c1b4d04c3a39c2" compoundref="SP2__Scene3_8cpp" startline="815" endline="871">Sp2_Scene3::RenderSuit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameChar::recieveHealthDamage</definition>
+        <argsstring>(const int &amp;damage)</argsstring>
+        <name>recieveHealthDamage</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>damage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="50" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="130" bodyend="143"/>
+        <references refid="classGameChar_1ac3f247e99c59587dd1e8fcdc078ef536" compoundref="GameChar_8h" startline="58">health</references>
+        <references refid="classGameChar_1a3e719d888ab88c36961827985897f24c" compoundref="GameChar_8cpp" startline="117" endline="128">isDead</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1a9acf18e780626b55712297ba5c07ad94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameChar::regainHealth</definition>
+        <argsstring>(const int &amp;healAMT=1)</argsstring>
+        <name>regainHealth</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>healAMT</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="51" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="145" bodyend="155"/>
+        <references refid="classGameChar_1ac3f247e99c59587dd1e8fcdc078ef536" compoundref="GameChar_8h" startline="58">health</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameChar::assignQuest</definition>
+        <argsstring>(Quest *q)</argsstring>
+        <name>assignQuest</name>
+        <param>
+          <type><ref refid="classQuest" kindref="compound">Quest</ref> *</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameChar.h" line="55" column="1" bodyfile="Computer Graphics/Source/GameChar.cpp" bodystart="157" bodyend="160"/>
+        <references refid="classGameChar_1a931f5a592835d5beb15617c1f461ad09" compoundref="GameChar_8h" startline="53">quest</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="classGameChar" kindref="compound">GameChar</ref> (Inheriting from <ref refid="classGameObject" kindref="compound">GameObject</ref>) /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classGameChar" kindref="compound">GameChar</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="889">
+        <label>Buildings</label>
+        <link refid="classBuildings"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="892">
+        <label>Pingu</label>
+        <link refid="classPingu"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="894">
+        <label>Platform</label>
+        <link refid="classPlatform"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="893">
+        <label>PinkKnight</label>
+        <link refid="classPinkKnight"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="891">
+        <label>Medic</label>
+        <link refid="classMedic"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="886">
+        <label>ChestBurster</label>
+        <link refid="classChestBurster"/>
+        <childnode refid="885" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="884">
+        <label>Alien</label>
+        <link refid="classAlien"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="890">
+        <label>Human</label>
+        <link refid="classHuman"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="895">
+        <label>Player</label>
+        <link refid="classPlayer"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="896">
+        <label>Sir</label>
+        <link refid="classSir"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="883">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="887">
+        <label>BB8</label>
+        <link refid="classBB8"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="888">
+        <label>BB8v2</label>
+        <link refid="classBB8v2"/>
+        <childnode refid="882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="885">
+        <label>AlienEnemy</label>
+        <link refid="classAlienEnemy"/>
+        <childnode refid="884" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="882">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="883" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="903">
+        <label>static size_t</label>
+      </node>
+      <node id="904">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="902">
+        <label>string</label>
+      </node>
+      <node id="899">
+        <label>float</label>
+      </node>
+      <node id="901">
+        <label>int</label>
+      </node>
+      <node id="908">
+        <label>vector&lt; bool &gt;</label>
+      </node>
+      <node id="907">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="901" relation="usage">
+          <edgelabel>numTasks</edgelabel>
+        </childnode>
+        <childnode refid="902" relation="usage">
+          <edgelabel>questName</edgelabel>
+        </childnode>
+        <childnode refid="904" relation="usage">
+          <edgelabel>taskNames</edgelabel>
+        </childnode>
+        <childnode refid="908" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="906">
+        <label>unsigned</label>
+      </node>
+      <node id="898">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="899" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="900" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="901" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="902" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="903" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="905">
+        <label>bool</label>
+      </node>
+      <node id="897">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="898" relation="public-inheritance">
+        </childnode>
+        <childnode refid="901" relation="usage">
+          <edgelabel>dialogue_index</edgelabel>
+          <edgelabel>chat_boundary</edgelabel>
+        </childnode>
+        <childnode refid="904" relation="usage">
+          <edgelabel>vec_dialog</edgelabel>
+        </childnode>
+        <childnode refid="905" relation="usage">
+          <edgelabel>b_dialogueEnd</edgelabel>
+          <edgelabel>isPressed</edgelabel>
+          <edgelabel>b_indexDebounce</edgelabel>
+          <edgelabel>invulnerability</edgelabel>
+        </childnode>
+        <childnode refid="906" relation="usage">
+          <edgelabel>max_health</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="903" relation="usage">
+          <edgelabel>GC_count</edgelabel>
+        </childnode>
+        <childnode refid="907" relation="usage">
+          <edgelabel>quest</edgelabel>
+        </childnode>
+      </node>
+      <node id="900">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="899" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/GameChar.h" line="29" column="1" bodyfile="Computer Graphics/Source/GameChar.h" bodystart="28" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" prot="public" virt="non-virtual"><scope>GameChar</scope><name>assignQuest</name></member>
+      <member refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" prot="public" virt="non-virtual"><scope>GameChar</scope><name>b_dialogueEnd</name></member>
+      <member refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" prot="public" virt="non-virtual"><scope>GameChar</scope><name>b_indexDebounce</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>GameChar</scope><name>boundary</name></member>
+      <member refid="classGameChar_1a696bae70c00267e3e510330073aa2502" prot="public" virt="non-virtual"><scope>GameChar</scope><name>chat_boundary</name></member>
+      <member refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" prot="public" virt="non-virtual"><scope>GameChar</scope><name>chat_update</name></member>
+      <member refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" prot="public" virt="non-virtual"><scope>GameChar</scope><name>dialogue_index</name></member>
+      <member refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" prot="protected" virt="non-virtual"><scope>GameChar</scope><name>GameChar</name></member>
+      <member refid="classGameChar_1ae15f329bb71a20fe4083b07702f73658" prot="protected" virt="non-virtual"><scope>GameChar</scope><name>GameChar</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>GameChar</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>GameChar</scope><name>GameObject</name></member>
+      <member refid="classGameChar_1a64f572d829f790537947d7ec566035de" prot="public" virt="non-virtual"><scope>GameChar</scope><name>GC_count</name></member>
+      <member refid="classGameChar_1af269122fc55f796480526e528d7df914" prot="public" virt="non-virtual"><scope>GameChar</scope><name>getHealth</name></member>
+      <member refid="classGameChar_1a5d065602468049316d1108925cede374" prot="public" virt="non-virtual"><scope>GameChar</scope><name>getHealthString</name></member>
+      <member refid="classGameChar_1ac3f247e99c59587dd1e8fcdc078ef536" prot="private" virt="non-virtual"><scope>GameChar</scope><name>health</name></member>
+      <member refid="classGameChar_1abf5d6ada13d4d1560ed06a1f9cdd51da" prot="private" virt="non-virtual"><scope>GameChar</scope><name>invulnerability</name></member>
+      <member refid="classGameChar_1a3e719d888ab88c36961827985897f24c" prot="public" virt="non-virtual"><scope>GameChar</scope><name>isDead</name></member>
+      <member refid="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" prot="public" virt="non-virtual"><scope>GameChar</scope><name>isPressed</name></member>
+      <member refid="classGameChar_1a4e73c2c6fca1d50c58e98bd75678ec4b" prot="private" virt="non-virtual"><scope>GameChar</scope><name>max_health</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>GameChar</scope><name>name</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>GameChar</scope><name>pos</name></member>
+      <member refid="classGameChar_1a931f5a592835d5beb15617c1f461ad09" prot="public" virt="non-virtual"><scope>GameChar</scope><name>quest</name></member>
+      <member refid="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" prot="public" virt="non-virtual"><scope>GameChar</scope><name>ReadFromTxt</name></member>
+      <member refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" prot="public" virt="non-virtual"><scope>GameChar</scope><name>recieveHealthDamage</name></member>
+      <member refid="classGameChar_1a9acf18e780626b55712297ba5c07ad94" prot="public" virt="non-virtual"><scope>GameChar</scope><name>regainHealth</name></member>
+      <member refid="classGameChar_1aecf445b212b38680333591507fec1b9c" prot="public" virt="non-virtual"><scope>GameChar</scope><name>vec_dialog</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>GameChar</scope><name>viewAngle</name></member>
+      <member refid="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" prot="public" virt="non-virtual"><scope>GameChar</scope><name>~GameChar</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>GameChar</scope><name>~GameObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

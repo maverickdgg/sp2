@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="LoadTGA_8h" kind="file" language="C++">
+    <compoundname>LoadTGA.h</compoundname>
+    <includedby refid="LoadingScene_8h" local="yes">Computer Graphics/Source/LoadingScene.h</includedby>
+    <includedby refid="LoadTGA_8cpp" local="yes">Computer Graphics/Source/LoadTGA.cpp</includedby>
+    <includedby refid="Sp2__Scene1_8h" local="yes">Computer Graphics/Source/Sp2_Scene1.h</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <includedby refid="SP2__Scene3_8cpp" local="yes">Computer Graphics/Source/SP2_Scene3.cpp</includedby>
+    <includedby refid="Sp2__SpaceRace_8h" local="yes">Computer Graphics/Source/Sp2_SpaceRace.h</includedby>
+    <invincdepgraph>
+      <node id="8371">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="8366">
+        <label>Computer Graphics/Source/LoadTGA.h</label>
+        <link refid="LoadTGA.h"/>
+        <childnode refid="8367" relation="include">
+        </childnode>
+        <childnode refid="8369" relation="include">
+        </childnode>
+        <childnode refid="8370" relation="include">
+        </childnode>
+        <childnode refid="8372" relation="include">
+        </childnode>
+        <childnode refid="8373" relation="include">
+        </childnode>
+        <childnode refid="8374" relation="include">
+        </childnode>
+      </node>
+      <node id="8368">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="8374">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="8375" relation="include">
+        </childnode>
+      </node>
+      <node id="8373">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="8372">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="8373" relation="include">
+        </childnode>
+      </node>
+      <node id="8370">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="8371" relation="include">
+        </childnode>
+      </node>
+      <node id="8369">
+        <label>Computer Graphics/Source/LoadTGA.cpp</label>
+        <link refid="LoadTGA_8cpp"/>
+      </node>
+      <node id="8375">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="8367">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="8368" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="LoadTGA_8h_1a459a80ca6de67a1e3493bfb66ae317e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLuint</type>
+        <definition>GLuint LoadTGA</definition>
+        <argsstring>(const char *file_path)</argsstring>
+        <name>LoadTGA</name>
+        <param>
+          <type>const char *</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/LoadTGA.h" line="18" column="1" bodyfile="Computer Graphics/Source/LoadTGA.cpp" bodystart="8" bodyend="67"/>
+        <referencedby refid="classLoadingScene_1ab58112cfff35f696e5479b5eaf74cbb3" compoundref="LoadingScene_8cpp" startline="24" endline="141">LoadingScene::Init</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4704d16ad01dec2a8405dd55800dd84b" compoundref="Sp2__Scene1_8cpp" startline="25" endline="272">Sp2_Scene1::Init</referencedby>
+        <referencedby refid="classSp2__Scene3_1a8f774405ee31eaf42274079a2d0a03ee" compoundref="SP2__Scene3_8cpp" startline="56" endline="404">Sp2_Scene3::Init</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" compoundref="Sp2__SpaceRace_8cpp" startline="25" endline="240">Sp2_SpaceRace::Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Loading of targa files. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOAD_TGA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOAD_TGA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">GLuint<sp/><ref refid="LoadTGA_8h_1a459a80ca6de67a1e3493bfb66ae317e4" kindref="member">LoadTGA</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*file_path);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/LoadTGA.h"/>
+  </compounddef>
+</doxygen>

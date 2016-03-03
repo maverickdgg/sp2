@@ -1,3 +1,17 @@
+/******************************************************************************/
+/*!
+\file	GameObject.h
+\author Lee Jian Lin
+\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Admin Number: 150580X
+\par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
+\par	Diploma: Game Development and Technology
+\par	Class: GD1503
+\par	Mobile Number: 9755 2038
+\brief
+Class to define GameObject
+*/
+/******************************************************************************/
 #ifndef GAME_OBJECT_H
 #define GAME_OBJECT_H
 #include <sstream>
@@ -17,7 +31,12 @@ typedef unsigned short smaller;
 
 using std::cout;
 using std::endl;
-
+/******************************************************************************/
+/*!
+Class GameObject:
+\brief
+Class for GameObject
+/******************************************************************************/
 class GameObject
 {
 private:

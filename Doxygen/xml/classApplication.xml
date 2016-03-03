@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classApplication" kind="class" language="C++" prot="public">
+    <compoundname>Application</compoundname>
+    <includes refid="Application_8h" local="no">Application.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classApplication_1ab88104d2d60c09e0782ad95e91829e9f" prot="private" static="yes" mutable="no">
+        <type><ref refid="classMusic" kindref="compound">Music</ref> *</type>
+        <definition>Music * Application::music</definition>
+        <argsstring></argsstring>
+        <name>music</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="48" column="1" bodyfile="Computer Graphics/Source/Application.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classApplication_1a109b65d784f90f3abe16eaa1b78964c6" compoundref="Application_8cpp" startline="133" endline="136">playSound</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scene</definition>
+        <argsstring></argsstring>
+        <name>scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="49" column="1" bodyfile="Computer Graphics/Source/Application.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Run</referencedby>
+        <referencedby refid="classApplication_1a91142113d0411e0c6d6ce10510595473" compoundref="Application_8cpp" startline="116" endline="119">switchToScene1</referencedby>
+        <referencedby refid="classApplication_1adcd99fc02418a75a3497c2c4063661d3" compoundref="Application_8cpp" startline="121" endline="124">switchToScene2</referencedby>
+        <referencedby refid="classApplication_1adcdead9b44473efebf34f31b3cac6e49" compoundref="Application_8cpp" startline="126" endline="129">switchToScene3</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a50d90791b1ea4d955356ccc51dd195a0" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scene1</definition>
+        <argsstring></argsstring>
+        <name>scene1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="50" column="1" bodyfile="Computer Graphics/Source/Application.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Run</referencedby>
+        <referencedby refid="classApplication_1a91142113d0411e0c6d6ce10510595473" compoundref="Application_8cpp" startline="116" endline="119">switchToScene1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a997aa8d44c12a58bf6f1d76b5fb6ef32" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scene2</definition>
+        <argsstring></argsstring>
+        <name>scene2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="51" column="1" bodyfile="Computer Graphics/Source/Application.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Run</referencedby>
+        <referencedby refid="classApplication_1adcd99fc02418a75a3497c2c4063661d3" compoundref="Application_8cpp" startline="121" endline="124">switchToScene2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1aaa31112bc63ae5ebd089d0c47d094618" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scene3</definition>
+        <argsstring></argsstring>
+        <name>scene3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="52" column="1" bodyfile="Computer Graphics/Source/Application.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Run</referencedby>
+        <referencedby refid="classApplication_1adcdead9b44473efebf34f31b3cac6e49" compoundref="Application_8cpp" startline="126" endline="129">switchToScene3</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" static="no" mutable="no">
+        <type><ref refid="classStopWatch" kindref="compound">StopWatch</ref></type>
+        <definition>StopWatch Application::m_timer</definition>
+        <argsstring></argsstring>
+        <name>m_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="54" column="1" bodyfile="Computer Graphics/Source/Application.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>()</argsstring>
+        <name>Application</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="35" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::~Application</definition>
+        <argsstring>()</argsstring>
+        <name>~Application</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="36" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="37" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="59" bodyend="114"/>
+        <references refid="Application_8cpp_1a6e6d1771a9242858811be0a3569838fa" compoundref="Application_8cpp" startline="26" endline="30">error_callback</references>
+        <references refid="Application_8cpp_1a6d1a8981b70f74fc60c1428f080da820" compoundref="Application_8cpp" startline="33" endline="37">key_callback</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="14">m_window</references>
+        <references refid="Application_8cpp_1aadcee9765075e232ca0720f80a76ad37" compoundref="Application_8cpp" startline="52" endline="55">resize_callback</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="3" endline="9">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="38" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="138" bodyend="180"/>
+        <references refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Scene::Exit</references>
+        <references refid="Application_8cpp_1ae228418b33873657fa31313fb4189a8f" compoundref="Application_8cpp" startline="16">frameTime</references>
+        <references refid="classStopWatch_1ac8be1626396d1a5ca414f74349d59eb2" compoundref="timer_8cpp" startline="34" endline="41">StopWatch::getElapsedTime</references>
+        <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
+        <references refid="classMusic_1a8b63084b9964d4a587ac610f6ac00053" compoundref="Music_8cpp" startline="36" endline="50">Music::Init</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="39" endline="42">IsKeyPressed</references>
+        <references refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" compoundref="Application_8h" startline="54">m_timer</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="14">m_window</references>
+        <references refid="classApplication_1ab88104d2d60c09e0782ad95e91829e9f" compoundref="Application_8h" startline="48">music</references>
+        <references refid="classPlayer_1ab091b7f43632f3f4f902671a8092fa87" compoundref="Player_8h" startline="53">Player::questList</references>
+        <references refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Scene::Render</references>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="49">scene</references>
+        <references refid="classApplication_1a50d90791b1ea4d955356ccc51dd195a0" compoundref="Application_8h" startline="50">scene1</references>
+        <references refid="classApplication_1a997aa8d44c12a58bf6f1d76b5fb6ef32" compoundref="Application_8h" startline="51">scene2</references>
+        <references refid="classApplication_1aaa31112bc63ae5ebd089d0c47d094618" compoundref="Application_8h" startline="52">scene3</references>
+        <references refid="classStopWatch_1a23301f735a2e3190435e39c9fd70cdf2" compoundref="timer_8cpp" startline="29" endline="32">StopWatch::startTimer</references>
+        <references refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Scene::Update</references>
+        <references refid="classStopWatch_1a2cd0856fc87a40038edfd66d784be8b4" compoundref="timer_8cpp" startline="43" endline="56">StopWatch::waitUntil</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="3" endline="9">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="39" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="182" bodyend="188"/>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="14">m_window</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="3" endline="9">main</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Application::IsKeyPressed</definition>
+        <argsstring>(unsigned short key)</argsstring>
+        <name>IsKeyPressed</name>
+        <param>
+          <type>unsigned short</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="40" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="39" bodyend="42"/>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">GameChar::chat_update</referencedby>
+        <referencedby refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" compoundref="SpaceVehicles_8cpp" startline="356" endline="373">SpaceVehicles::enterVehicleUpdate</referencedby>
+        <referencedby refid="classPlayer_1a5b057a6cd421a056d2a0694ab00739e7" compoundref="Player_8cpp" startline="48" endline="174">Player::movementUpdate</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Run</referencedby>
+        <referencedby refid="classCameraTPS_1a743d5fc45867e31a8915e47173d0fcb2" compoundref="CameraTPS_8cpp" startline="70" endline="114">CameraTPS::tpsUpdateVec</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="72" endline="145">Camera3::Update</referencedby>
+        <referencedby refid="classLoadingScene_1af6e9ab4dacf0023958123446facc2015" compoundref="LoadingScene_8cpp" startline="142" endline="166">LoadingScene::Update</referencedby>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a91142113d0411e0c6d6ce10510595473" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::switchToScene1</definition>
+        <argsstring>()</argsstring>
+        <name>switchToScene1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="42" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="116" bodyend="119"/>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="49">scene</references>
+        <references refid="classApplication_1a50d90791b1ea4d955356ccc51dd195a0" compoundref="Application_8h" startline="50">scene1</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1adcd99fc02418a75a3497c2c4063661d3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::switchToScene2</definition>
+        <argsstring>()</argsstring>
+        <name>switchToScene2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="43" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="121" bodyend="124"/>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="49">scene</references>
+        <references refid="classApplication_1a997aa8d44c12a58bf6f1d76b5fb6ef32" compoundref="Application_8h" startline="51">scene2</references>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1adcdead9b44473efebf34f31b3cac6e49" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::switchToScene3</definition>
+        <argsstring>()</argsstring>
+        <name>switchToScene3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="44" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="126" bodyend="129"/>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="49">scene</references>
+        <references refid="classApplication_1aaa31112bc63ae5ebd089d0c47d094618" compoundref="Application_8h" startline="52">scene3</references>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a109b65d784f90f3abe16eaa1b78964c6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::playSound</definition>
+        <argsstring>(int index, bool loop)</argsstring>
+        <name>playSound</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Application.h" line="45" column="1" bodyfile="Computer Graphics/Source/Application.cpp" bodystart="133" bodyend="136"/>
+        <references refid="classApplication_1ab88104d2d60c09e0782ad95e91829e9f" compoundref="Application_8h" startline="48">music</references>
+        <references refid="classMusic_1a3f78d938063364faad5374958191cabf" compoundref="Music_8cpp" startline="52" endline="55">Music::OpeningMusic</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="classApplication" kindref="compound">Application</ref> /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classApplication" kindref="compound">Application</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="749">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="745">
+        <label>Music</label>
+        <link refid="classMusic"/>
+        <childnode refid="746" relation="usage">
+          <edgelabel>engine</edgelabel>
+        </childnode>
+        <childnode refid="749" relation="usage">
+          <edgelabel>musicVec</edgelabel>
+        </childnode>
+        <childnode refid="750" relation="usage">
+          <edgelabel>sound</edgelabel>
+        </childnode>
+      </node>
+      <node id="746">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="747" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="750">
+        <label>vector&lt; irrklang::ISoundSource * &gt;</label>
+      </node>
+      <node id="754">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="748">
+        <label>int</label>
+      </node>
+      <node id="744">
+        <label>Application</label>
+        <link refid="classApplication"/>
+        <childnode refid="745" relation="usage">
+          <edgelabel>music</edgelabel>
+        </childnode>
+        <childnode refid="751" relation="usage">
+          <edgelabel>m_timer</edgelabel>
+        </childnode>
+        <childnode refid="754" relation="usage">
+          <edgelabel>scene</edgelabel>
+          <edgelabel>scene1</edgelabel>
+          <edgelabel>scene2</edgelabel>
+          <edgelabel>scene3</edgelabel>
+        </childnode>
+      </node>
+      <node id="753">
+        <label>LARGE_INTEGER</label>
+      </node>
+      <node id="751">
+        <label>StopWatch</label>
+        <link refid="classStopWatch"/>
+        <childnode refid="752" relation="usage">
+          <edgelabel>wTimerRes</edgelabel>
+        </childnode>
+        <childnode refid="753" relation="usage">
+          <edgelabel>frequency</edgelabel>
+          <edgelabel>currTime</edgelabel>
+          <edgelabel>prevTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="747">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="748" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+      <node id="752">
+        <label>UINT</label>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Application.h" line="33" column="1" bodyfile="Computer Graphics/Source/Application.h" bodystart="32" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" virt="non-virtual"><scope>Application</scope><name>Exit</name></member>
+      <member refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" virt="non-virtual"><scope>Application</scope><name>Init</name></member>
+      <member refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" virt="non-virtual"><scope>Application</scope><name>IsKeyPressed</name></member>
+      <member refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" virt="non-virtual"><scope>Application</scope><name>m_timer</name></member>
+      <member refid="classApplication_1ab88104d2d60c09e0782ad95e91829e9f" prot="private" virt="non-virtual"><scope>Application</scope><name>music</name></member>
+      <member refid="classApplication_1a109b65d784f90f3abe16eaa1b78964c6" prot="public" virt="non-virtual"><scope>Application</scope><name>playSound</name></member>
+      <member refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" virt="non-virtual"><scope>Application</scope><name>Run</name></member>
+      <member refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" prot="private" virt="non-virtual"><scope>Application</scope><name>scene</name></member>
+      <member refid="classApplication_1a50d90791b1ea4d955356ccc51dd195a0" prot="private" virt="non-virtual"><scope>Application</scope><name>scene1</name></member>
+      <member refid="classApplication_1a997aa8d44c12a58bf6f1d76b5fb6ef32" prot="private" virt="non-virtual"><scope>Application</scope><name>scene2</name></member>
+      <member refid="classApplication_1aaa31112bc63ae5ebd089d0c47d094618" prot="private" virt="non-virtual"><scope>Application</scope><name>scene3</name></member>
+      <member refid="classApplication_1a91142113d0411e0c6d6ce10510595473" prot="public" virt="non-virtual"><scope>Application</scope><name>switchToScene1</name></member>
+      <member refid="classApplication_1adcd99fc02418a75a3497c2c4063661d3" prot="public" virt="non-virtual"><scope>Application</scope><name>switchToScene2</name></member>
+      <member refid="classApplication_1adcdead9b44473efebf34f31b3cac6e49" prot="public" virt="non-virtual"><scope>Application</scope><name>switchToScene3</name></member>
+      <member refid="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" virt="non-virtual"><scope>Application</scope><name>~Application</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classWeapon" kind="class" language="C++" prot="public">
+    <compoundname>Weapon</compoundname>
+    <basecompoundref refid="classGameObject" prot="public" virt="non-virtual">GameObject</basecompoundref>
+    <includes refid="Weapon_8h" local="no">Weapon.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classWeapon_1ad977cc9ed79f232f984181db01bde518" prot="public" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Weapon::W_count</definition>
+        <argsstring></argsstring>
+        <name>W_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Weapon.h" line="28" column="1" bodyfile="Computer Graphics/Source/Weapon.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" compoundref="Weapon_8cpp" startline="5" endline="8">Weapon</referencedby>
+        <referencedby refid="classWeapon_1a420e7ba3d2017e6de3e93eb579cfd3fa" compoundref="Weapon_8cpp" startline="15" endline="18">~Weapon</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classWeapon_1af7f5d5ecbb3ac0e95350a6750be1fb28" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Weapon::dmg</definition>
+        <argsstring></argsstring>
+        <name>dmg</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Weapon.h" line="29" column="1" bodyfile="Computer Graphics/Source/Weapon.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWeapon_1afb1de8f3da7a0adc6094a63944d9e5ca" prot="public" static="no" mutable="no">
+        <type><ref refid="GameObject_8h_1a24ef3f5cfa3f7ef60fc06899a809e63e" kindref="member">smaller</ref></type>
+        <definition>smaller Weapon::attackSpeed</definition>
+        <argsstring></argsstring>
+        <name>attackSpeed</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Weapon.h" line="30" column="1" bodyfile="Computer Graphics/Source/Weapon.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWeapon_1aab76bfeda3c2aecd2ada527edf0695ea" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Weapon::durability</definition>
+        <argsstring></argsstring>
+        <name>durability</name>
+        <initializer>= 1.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Weapon.h" line="31" column="1" bodyfile="Computer Graphics/Source/Weapon.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWeapon_1a420e7ba3d2017e6de3e93eb579cfd3fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Weapon::~Weapon</definition>
+        <argsstring>()</argsstring>
+        <name>~Weapon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Weapon.h" line="27" column="1" bodyfile="Computer Graphics/Source/Weapon.cpp" bodystart="15" bodyend="18"/>
+        <references refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" compoundref="Weapon_8h" startline="28">W_count</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Weapon::Weapon</definition>
+        <argsstring>()</argsstring>
+        <name>Weapon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Weapon.h" line="33" column="1" bodyfile="Computer Graphics/Source/Weapon.cpp" bodystart="5" bodyend="8"/>
+        <references refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" compoundref="Weapon_8h" startline="28">W_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classWeapon_1aba8ab6a4d4ffdb21deec0218cdc8a813" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Weapon::Weapon</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0))</argsstring>
+        <name>Weapon</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Weapon.h" line="34" column="1" bodyfile="Computer Graphics/Source/Weapon.cpp" bodystart="10" bodyend="13"/>
+        <references refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" compoundref="Weapon_8h" startline="28">W_count</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for the weapons inheriting from <ref refid="classGameObject" kindref="compound">GameObject</ref> /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classWeapon" kindref="compound">Weapon</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1402">
+        <label>Weapon</label>
+        <link refid="classWeapon"/>
+        <childnode refid="1403" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1403">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1410">
+        <label>static size_t</label>
+      </node>
+      <node id="1409">
+        <label>string</label>
+      </node>
+      <node id="1406">
+        <label>float</label>
+      </node>
+      <node id="1408">
+        <label>int</label>
+      </node>
+      <node id="1404">
+        <label>Weapon</label>
+        <link refid="classWeapon"/>
+        <childnode refid="1405" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1406" relation="usage">
+          <edgelabel>durability</edgelabel>
+        </childnode>
+        <childnode refid="1408" relation="usage">
+          <edgelabel>dmg</edgelabel>
+        </childnode>
+        <childnode refid="1411" relation="usage">
+          <edgelabel>attackSpeed</edgelabel>
+        </childnode>
+        <childnode refid="1410" relation="usage">
+          <edgelabel>W_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1411">
+        <label>unsigned</label>
+      </node>
+      <node id="1405">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="1406" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="1407" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="1408" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="1409" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1410" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1407">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1406" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Weapon.h" line="25" column="1" bodyfile="Computer Graphics/Source/Weapon.h" bodystart="24" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classWeapon_1afb1de8f3da7a0adc6094a63944d9e5ca" prot="public" virt="non-virtual"><scope>Weapon</scope><name>attackSpeed</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>Weapon</scope><name>boundary</name></member>
+      <member refid="classWeapon_1af7f5d5ecbb3ac0e95350a6750be1fb28" prot="public" virt="non-virtual"><scope>Weapon</scope><name>dmg</name></member>
+      <member refid="classWeapon_1aab76bfeda3c2aecd2ada527edf0695ea" prot="public" virt="non-virtual"><scope>Weapon</scope><name>durability</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>Weapon</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>Weapon</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>Weapon</scope><name>name</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>Weapon</scope><name>pos</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>Weapon</scope><name>viewAngle</name></member>
+      <member refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" prot="public" virt="non-virtual"><scope>Weapon</scope><name>W_count</name></member>
+      <member refid="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" prot="protected" virt="non-virtual"><scope>Weapon</scope><name>Weapon</name></member>
+      <member refid="classWeapon_1aba8ab6a4d4ffdb21deec0218cdc8a813" prot="protected" virt="non-virtual"><scope>Weapon</scope><name>Weapon</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>Weapon</scope><name>~GameObject</name></member>
+      <member refid="classWeapon_1a420e7ba3d2017e6de3e93eb579cfd3fa" prot="public" virt="non-virtual"><scope>Weapon</scope><name>~Weapon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

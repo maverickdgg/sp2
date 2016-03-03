@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Medic_8h" kind="file" language="C++">
+    <compoundname>Medic.h</compoundname>
+    <includes refid="GameChar_8h" local="yes">GameChar.h</includes>
+    <includedby refid="Medic_8cpp" local="yes">Computer Graphics/Source/Medic.cpp</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <incdepgraph>
+      <node id="8530">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="8525" relation="include">
+        </childnode>
+        <childnode refid="8531" relation="include">
+        </childnode>
+      </node>
+      <node id="8556">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+        <childnode refid="8549" relation="include">
+        </childnode>
+      </node>
+      <node id="8554">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+      </node>
+      <node id="8559">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+        <childnode refid="8549" relation="include">
+        </childnode>
+      </node>
+      <node id="8538">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="8523" relation="include">
+        </childnode>
+        <childnode refid="8522" relation="include">
+        </childnode>
+        <childnode refid="8524" relation="include">
+        </childnode>
+        <childnode refid="8531" relation="include">
+        </childnode>
+        <childnode refid="8539" relation="include">
+        </childnode>
+      </node>
+      <node id="8539">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="8540" relation="include">
+        </childnode>
+        <childnode refid="8542" relation="include">
+        </childnode>
+        <childnode refid="8544" relation="include">
+        </childnode>
+        <childnode refid="8545" relation="include">
+        </childnode>
+        <childnode refid="8546" relation="include">
+        </childnode>
+        <childnode refid="8547" relation="include">
+        </childnode>
+        <childnode refid="8548" relation="include">
+        </childnode>
+        <childnode refid="8549" relation="include">
+        </childnode>
+        <childnode refid="8550" relation="include">
+        </childnode>
+        <childnode refid="8551" relation="include">
+        </childnode>
+        <childnode refid="8552" relation="include">
+        </childnode>
+        <childnode refid="8556" relation="include">
+        </childnode>
+        <childnode refid="8557" relation="include">
+        </childnode>
+        <childnode refid="8553" relation="include">
+        </childnode>
+        <childnode refid="8559" relation="include">
+        </childnode>
+        <childnode refid="8554" relation="include">
+        </childnode>
+        <childnode refid="8558" relation="include">
+        </childnode>
+        <childnode refid="8560" relation="include">
+        </childnode>
+        <childnode refid="8561" relation="include">
+        </childnode>
+        <childnode refid="8555" relation="include">
+        </childnode>
+      </node>
+      <node id="8563">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="8523" relation="include">
+        </childnode>
+        <childnode refid="8522" relation="include">
+        </childnode>
+        <childnode refid="8520" relation="include">
+        </childnode>
+      </node>
+      <node id="8534">
+        <label>windows.h</label>
+      </node>
+      <node id="8562">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="8520" relation="include">
+        </childnode>
+      </node>
+      <node id="8540">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="8541" relation="include">
+        </childnode>
+      </node>
+      <node id="8544">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="8540" relation="include">
+        </childnode>
+      </node>
+      <node id="8526">
+        <label>cmath</label>
+      </node>
+      <node id="8522">
+        <label>string</label>
+      </node>
+      <node id="8525">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="8526" relation="include">
+        </childnode>
+        <childnode refid="8527" relation="include">
+        </childnode>
+        <childnode refid="8528" relation="include">
+        </childnode>
+        <childnode refid="8529" relation="include">
+        </childnode>
+      </node>
+      <node id="8535">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="8518">
+        <label>Computer Graphics/Source/Medic.h</label>
+        <link refid="Medic.h"/>
+        <childnode refid="8519" relation="include">
+        </childnode>
+      </node>
+      <node id="8536">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="8520">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="8521" relation="include">
+        </childnode>
+        <childnode refid="8522" relation="include">
+        </childnode>
+        <childnode refid="8523" relation="include">
+        </childnode>
+        <childnode refid="8524" relation="include">
+        </childnode>
+        <childnode refid="8525" relation="include">
+        </childnode>
+        <childnode refid="8530" relation="include">
+        </childnode>
+      </node>
+      <node id="8561">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+        <childnode refid="8551" relation="include">
+        </childnode>
+      </node>
+      <node id="8527">
+        <label>exception</label>
+      </node>
+      <node id="8524">
+        <label>fstream</label>
+      </node>
+      <node id="8533">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="8534" relation="include">
+        </childnode>
+      </node>
+      <node id="8545">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="8540" relation="include">
+        </childnode>
+      </node>
+      <node id="8555">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+        <childnode refid="8549" relation="include">
+        </childnode>
+      </node>
+      <node id="8541">
+        <label>wchar.h</label>
+      </node>
+      <node id="8550">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+        <childnode refid="8542" relation="include">
+        </childnode>
+        <childnode refid="8551" relation="include">
+        </childnode>
+        <childnode refid="8552" relation="include">
+        </childnode>
+        <childnode refid="8548" relation="include">
+        </childnode>
+        <childnode refid="8554" relation="include">
+        </childnode>
+        <childnode refid="8555" relation="include">
+        </childnode>
+      </node>
+      <node id="8528">
+        <label>ctime</label>
+      </node>
+      <node id="8523">
+        <label>vector</label>
+      </node>
+      <node id="8542">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="8543" relation="include">
+        </childnode>
+        <childnode refid="8540" relation="include">
+        </childnode>
+      </node>
+      <node id="8521">
+        <label>sstream</label>
+      </node>
+      <node id="8560">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+      </node>
+      <node id="8543">
+        <label>math.h</label>
+      </node>
+      <node id="8557">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+        <childnode refid="8558" relation="include">
+        </childnode>
+      </node>
+      <node id="8529">
+        <label>cstdlib</label>
+      </node>
+      <node id="8548">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="8531">
+        <label>iostream</label>
+      </node>
+      <node id="8537">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="8551">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="8545" relation="include">
+        </childnode>
+        <childnode refid="8542" relation="include">
+        </childnode>
+        <childnode refid="8548" relation="include">
+        </childnode>
+        <childnode refid="8549" relation="include">
+        </childnode>
+      </node>
+      <node id="8549">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+      </node>
+      <node id="8552">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="8545" relation="include">
+        </childnode>
+        <childnode refid="8553" relation="include">
+        </childnode>
+        <childnode refid="8542" relation="include">
+        </childnode>
+      </node>
+      <node id="8546">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="8547">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="8553">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="8545" relation="include">
+        </childnode>
+        <childnode refid="8542" relation="include">
+        </childnode>
+      </node>
+      <node id="8532">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="8533" relation="include">
+        </childnode>
+        <childnode refid="8535" relation="include">
+        </childnode>
+        <childnode refid="8536" relation="include">
+        </childnode>
+        <childnode refid="8537" relation="include">
+        </childnode>
+        <childnode refid="8538" relation="include">
+        </childnode>
+      </node>
+      <node id="8558">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="8544" relation="include">
+        </childnode>
+      </node>
+      <node id="8519">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="8520" relation="include">
+        </childnode>
+        <childnode refid="8532" relation="include">
+        </childnode>
+        <childnode refid="8562" relation="include">
+        </childnode>
+        <childnode refid="8563" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8564">
+        <label>Computer Graphics/Source/Medic.h</label>
+        <link refid="Medic.h"/>
+        <childnode refid="8565" relation="include">
+        </childnode>
+        <childnode refid="8566" relation="include">
+        </childnode>
+      </node>
+      <node id="8567">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="8566">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="8567" relation="include">
+        </childnode>
+      </node>
+      <node id="8565">
+        <label>Computer Graphics/Source/Medic.cpp</label>
+        <link refid="Medic_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMedic" prot="public">Medic</innerclass>
+    <briefdescription>
+<para>Class to define <ref refid="classMedic" kindref="compound">Medic</ref> NPC while inheriting from <ref refid="classGameChar" kindref="compound">GameChar</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Wayne Aw </para></simplesect>
+<simplesect kind="par"><title>Email: 152558X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 152558X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1504</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MEDIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MEDIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameChar_8h" kindref="compound">GameChar.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="23" refid="classMedic" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMedic" kindref="compound">Medic</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classGameChar" kindref="compound">GameChar</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMedic_1a6bd1946f4e44fe417380daf53d70eb17" kindref="member">Medic</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMedic_1a6bd1946f4e44fe417380daf53d70eb17" kindref="member">Medic</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>=<sp/>0,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref><sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMedic_1af124c26fe84913b4ae936192cc1f5c5a" kindref="member">~Medic</ref>();</highlight></codeline>
+<codeline lineno="29" refid="classMedic_1ad34d71e643e83284900d33804e31b74d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classMedic_1ad34d71e643e83284900d33804e31b74d" kindref="member">medic_count</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Medic.h"/>
+  </compounddef>
+</doxygen>

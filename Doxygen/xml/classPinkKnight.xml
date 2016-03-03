@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classPinkKnight" kind="class" language="C++" prot="public">
+    <compoundname>PinkKnight</compoundname>
+    <basecompoundref refid="classGameChar" prot="public" virt="non-virtual">GameChar</basecompoundref>
+    <includes refid="PinkKnight_8h" local="no">PinkKnight.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classPinkKnight_1a4982bcd19d16158382b58a8a0ffa0a00" prot="public" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t PinkKnight::PinkKnight_count</definition>
+        <argsstring></argsstring>
+        <name>PinkKnight_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/PinkKnight.h" line="29" column="1" bodyfile="Computer Graphics/Source/PinkKnight.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classPinkKnight_1acdb03e24f364cb185600bc4118b21539" compoundref="PinkKnight_8cpp" startline="5" endline="8">PinkKnight</referencedby>
+        <referencedby refid="classPinkKnight_1a4db2bb529643b2dd1569cc1b1b0211a9" compoundref="PinkKnight_8cpp" startline="15" endline="18">~PinkKnight</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classPinkKnight_1acdb03e24f364cb185600bc4118b21539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PinkKnight::PinkKnight</definition>
+        <argsstring>()</argsstring>
+        <name>PinkKnight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/PinkKnight.h" line="26" column="1" bodyfile="Computer Graphics/Source/PinkKnight.cpp" bodystart="5" bodyend="8"/>
+        <references refid="classPinkKnight_1a4982bcd19d16158382b58a8a0ffa0a00" compoundref="PinkKnight_8h" startline="29">PinkKnight_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classPinkKnight_1a05a8deaabc2d3d500a8bef820ca09840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PinkKnight::PinkKnight</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0))</argsstring>
+        <name>PinkKnight</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/PinkKnight.h" line="27" column="1" bodyfile="Computer Graphics/Source/PinkKnight.cpp" bodystart="10" bodyend="13"/>
+        <references refid="classPinkKnight_1a4982bcd19d16158382b58a8a0ffa0a00" compoundref="PinkKnight_8h" startline="29">PinkKnight_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classPinkKnight_1a4db2bb529643b2dd1569cc1b1b0211a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PinkKnight::~PinkKnight</definition>
+        <argsstring>()</argsstring>
+        <name>~PinkKnight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/PinkKnight.h" line="28" column="1" bodyfile="Computer Graphics/Source/PinkKnight.cpp" bodystart="15" bodyend="18"/>
+        <references refid="classPinkKnight_1a4982bcd19d16158382b58a8a0ffa0a00" compoundref="PinkKnight_8h" startline="29">PinkKnight_count</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="classPinkKnight" kindref="compound">PinkKnight</ref> (Inheriting from <ref refid="classGameChar" kindref="compound">GameChar</ref>) /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classPinkKnight" kindref="compound">PinkKnight</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1142">
+        <label>PinkKnight</label>
+        <link refid="classPinkKnight"/>
+        <childnode refid="1143" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1144">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="1143">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="1144" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1152">
+        <label>static size_t</label>
+      </node>
+      <node id="1153">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="1151">
+        <label>string</label>
+      </node>
+      <node id="1148">
+        <label>float</label>
+      </node>
+      <node id="1145">
+        <label>PinkKnight</label>
+        <link refid="classPinkKnight"/>
+        <childnode refid="1146" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1152" relation="usage">
+          <edgelabel>PinkKnight_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1150">
+        <label>int</label>
+      </node>
+      <node id="1157">
+        <label>vector&lt; bool &gt;</label>
+      </node>
+      <node id="1156">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="1150" relation="usage">
+          <edgelabel>numTasks</edgelabel>
+        </childnode>
+        <childnode refid="1151" relation="usage">
+          <edgelabel>questName</edgelabel>
+        </childnode>
+        <childnode refid="1153" relation="usage">
+          <edgelabel>taskNames</edgelabel>
+        </childnode>
+        <childnode refid="1157" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="1155">
+        <label>unsigned</label>
+      </node>
+      <node id="1147">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="1148" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="1149" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="1150" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="1151" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1152" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1154">
+        <label>bool</label>
+      </node>
+      <node id="1146">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="1147" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1150" relation="usage">
+          <edgelabel>dialogue_index</edgelabel>
+          <edgelabel>chat_boundary</edgelabel>
+        </childnode>
+        <childnode refid="1153" relation="usage">
+          <edgelabel>vec_dialog</edgelabel>
+        </childnode>
+        <childnode refid="1154" relation="usage">
+          <edgelabel>b_dialogueEnd</edgelabel>
+          <edgelabel>isPressed</edgelabel>
+          <edgelabel>b_indexDebounce</edgelabel>
+          <edgelabel>invulnerability</edgelabel>
+        </childnode>
+        <childnode refid="1155" relation="usage">
+          <edgelabel>max_health</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="1152" relation="usage">
+          <edgelabel>GC_count</edgelabel>
+        </childnode>
+        <childnode refid="1156" relation="usage">
+          <edgelabel>quest</edgelabel>
+        </childnode>
+      </node>
+      <node id="1149">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1148" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/PinkKnight.h" line="24" column="1" bodyfile="Computer Graphics/Source/PinkKnight.h" bodystart="23" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>assignQuest</name></member>
+      <member refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>b_dialogueEnd</name></member>
+      <member refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>b_indexDebounce</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>boundary</name></member>
+      <member refid="classGameChar_1a696bae70c00267e3e510330073aa2502" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>chat_boundary</name></member>
+      <member refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>chat_update</name></member>
+      <member refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>dialogue_index</name></member>
+      <member refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" prot="protected" virt="non-virtual"><scope>PinkKnight</scope><name>GameChar</name></member>
+      <member refid="classGameChar_1ae15f329bb71a20fe4083b07702f73658" prot="protected" virt="non-virtual"><scope>PinkKnight</scope><name>GameChar</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>PinkKnight</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>PinkKnight</scope><name>GameObject</name></member>
+      <member refid="classGameChar_1a64f572d829f790537947d7ec566035de" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>GC_count</name></member>
+      <member refid="classGameChar_1af269122fc55f796480526e528d7df914" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>getHealth</name></member>
+      <member refid="classGameChar_1a5d065602468049316d1108925cede374" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>getHealthString</name></member>
+      <member refid="classGameChar_1a3e719d888ab88c36961827985897f24c" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>isDead</name></member>
+      <member refid="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>isPressed</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>name</name></member>
+      <member refid="classPinkKnight_1acdb03e24f364cb185600bc4118b21539" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>PinkKnight</name></member>
+      <member refid="classPinkKnight_1a05a8deaabc2d3d500a8bef820ca09840" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>PinkKnight</name></member>
+      <member refid="classPinkKnight_1a4982bcd19d16158382b58a8a0ffa0a00" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>PinkKnight_count</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>pos</name></member>
+      <member refid="classGameChar_1a931f5a592835d5beb15617c1f461ad09" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>quest</name></member>
+      <member refid="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>ReadFromTxt</name></member>
+      <member refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>recieveHealthDamage</name></member>
+      <member refid="classGameChar_1a9acf18e780626b55712297ba5c07ad94" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>regainHealth</name></member>
+      <member refid="classGameChar_1aecf445b212b38680333591507fec1b9c" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>vec_dialog</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>viewAngle</name></member>
+      <member refid="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>~GameChar</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>PinkKnight</scope><name>~GameObject</name></member>
+      <member refid="classPinkKnight_1a4db2bb529643b2dd1569cc1b1b0211a9" prot="public" virt="non-virtual"><scope>PinkKnight</scope><name>~PinkKnight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

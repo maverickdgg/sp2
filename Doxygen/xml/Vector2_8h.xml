@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Vector2_8h" kind="file" language="C++">
+    <compoundname>Vector2.h</compoundname>
+    <includedby refid="Vector2_8cpp" local="yes">Common Library/Source/Vector2.cpp</includedby>
+    <invincdepgraph>
+      <node id="5235">
+        <label>Common Library/Source/Vector2.cpp</label>
+        <link refid="Vector2_8cpp"/>
+      </node>
+      <node id="5234">
+        <label>Common Library/Source/Vector2.h</label>
+        <link refid="Vector2.h"/>
+        <childnode refid="5235" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structVector2" prot="public">Vector2</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>VECTOR2_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VECTOR2_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="structVector2" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structVector2" kindref="compound">Vector2</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" kindref="member">Vector2</ref>(<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>0<sp/>);<sp/></highlight><highlight class="comment">//default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" kindref="member">Vector2</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2" kindref="compound">Vector2</ref><sp/>&amp;rhs<sp/>);<sp/></highlight><highlight class="comment">//copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structVector2_1a2ce5d6093cb49379ed06bb54d499827b" kindref="member">Set</ref>(<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b<sp/>);<sp/></highlight><highlight class="comment">//Set<sp/>all<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2" kindref="compound">Vector2</ref><sp/><ref refid="structVector2_1aacd2520a12d261747b074cbbdf4683d2" kindref="member">operator+</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2" kindref="compound">Vector2</ref>&amp;<sp/>rhs<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Vector<sp/>addition</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2" kindref="compound">Vector2</ref><sp/><ref refid="structVector2_1a195d64886d6c8b3f785cf2360e3ebf5c" kindref="member">operator-</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2" kindref="compound">Vector2</ref>&amp;<sp/>rhs<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Vector<sp/>subtraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2" kindref="compound">Vector2</ref><sp/><ref refid="structVector2_1a195d64886d6c8b3f785cf2360e3ebf5c" kindref="member">operator-</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Unary<sp/>negation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2" kindref="compound">Vector2</ref><sp/><ref refid="structVector2_1a8b1aadc548dacb88e29a79beb273526f" kindref="member">operator*</ref>(<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scalar<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Scalar<sp/>multiplication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structVector2_1ada50cfce507d29051b11855813e67f1a" kindref="member">Length</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Get<sp/>magnitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structVector2_1ae8af3ef0f28fa87700c8abdcc48dd018" kindref="member">Dot</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2" kindref="compound">Vector2</ref>&amp;<sp/>rhs<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Dot<sp/>product</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2" kindref="compound">Vector2</ref><sp/><ref refid="structVector2_1aa1e93ce5025f04198a2bc7b0cdcfbe36" kindref="member">Normalized</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);<sp/></highlight><highlight class="comment">//Return<sp/>a<sp/>copy<sp/>of<sp/>this<sp/>vector,<sp/>normalized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Common Library/Source/Vector2.h"/>
+  </compounddef>
+</doxygen>

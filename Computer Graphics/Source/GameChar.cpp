@@ -1,3 +1,11 @@
+/******************************************************************************/
+/*!
+\file GameChar.cpp
+\author Daniel
+\brief Abstract class reserved for game characters only
+*/
+/******************************************************************************/
+
 #include "GameChar.h"
 #include <iostream>
 #include <iostream>
@@ -8,6 +16,13 @@ using std::endl;
 
 size_t GameChar::GC_count = 0;
 
+/******************************************************************************/
+/*!
+\brief
+Default constructor that has a count which increments everytime a character is declared, a distance in which chat is initiated, two boolean to check during chat with NPCs so it can be restarted as well as read from txt files
+*/
+/******************************************************************************/
+
 GameChar::GameChar()
 {
 	chat_boundary = 20;
@@ -16,6 +31,23 @@ GameChar::GameChar()
 	dialogue_index = 0;
 	b_dialogueEnd = false;
 }
+
+/******************************************************************************/
+/*!
+\brief
+Overloaded constructor that delegates variables such as name and position to GameObject constructor and initialise health amount of character
+\param object_name
+String type variable to store name of character
+\param boundary
+Int type var to detect collision distance of player from object
+\param viewAngle
+Float type var to store angle of rotation of object
+\param pos
+Vector3 type var to store x-y-z position of object
+\param init_health
+unsigned short type var to store initialise initial health of game char
+*/
+/******************************************************************************/
 
 GameChar::GameChar(string object_name, int boundary, float viewAngle, Vector3 pos, smaller init_Health) : GameObject(object_name, boundary, viewAngle, pos), health(init_Health)
 {
@@ -26,10 +58,30 @@ GameChar::GameChar(string object_name, int boundary, float viewAngle, Vector3 po
 	b_dialogueEnd = false;
 }
 
+/******************************************************************************/
+/*!
+\brief
+Default destructor that decrements when an object of the class is deleted
+*/
+/******************************************************************************/
+
 GameChar::~GameChar()
 {
 	--GC_count;
 }
+
+/******************************************************************************/
+/*!
+\brief 
+    Read from text file to extract string dialog using fStream
+\param link
+    String type var to access direct link to a text file
+\exception
+    Direct link is not found and therefore contents cannot be read
+\return
+    Vector of strings
+*/
+/******************************************************************************/
 
 vector<string> GameChar::ReadFromTxt(string link)
 {
@@ -53,6 +105,14 @@ vector<string> GameChar::ReadFromTxt(string link)
 	inData.close();
 	return vec_dialog;
 }
+
+/******************************************************************************/
+/*!
+\brief Standard interactions with NPC 
+\param player_pos
+    Vector3 type var to decide when collision occurs between player and NPC so chat interaction is triggered
+*/
+/******************************************************************************/
 
 void GameChar::chat_update(Vector3 player_pos)
 {
@@ -88,10 +148,28 @@ void GameChar::chat_update(Vector3 player_pos)
 
 }
 
+/******************************************************************************/
+/*!
+\brief Gets health of character
+\return
+    Character's current health in unsigned short
+*/
+/******************************************************************************/
+
 smaller GameChar::getHealth()
 {
 	return health;
 }
+
+/******************************************************************************/
+/*!
+\brief Gets health of char by converting it to string
+\exception
+    Player's health is an ascii character other than the alphabet after "+'0'"
+\return
+    Character's current health in string
+*/
+/******************************************************************************/
 
 string GameChar::getHealthString()
 {
@@ -114,18 +192,40 @@ string GameChar::getHealthString()
 	return replace;
 }
 
+/******************************************************************************/
+/*!
+\brief Checks whether character is deceased if health is less than or equal to 0
+\return
+    True if dead, false if not
+*/
+/******************************************************************************/
+
 bool GameChar::isDead()
 {
 	if (health <= 0)
 	{
-		return true;
-	// WOW YOU DIED SONG.
+        return true;
 	}
 	else
 	{
 		return false;
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief Character recieves damage
+\param damage
+    amount of damage in int taken
+\exception
+    if character's health is already less than 0, health will not reach the negative range
+\exception
+    if damage is less than 0, return false
+\return
+    whether character has recieved damaged
+Character's current health in unsigned short
+*/
+/******************************************************************************/
 
 bool GameChar::recieveHealthDamage(const int& damage)
 {
@@ -138,9 +238,16 @@ bool GameChar::recieveHealthDamage(const int& damage)
 	{
 		health -= damage;
 		return true;
-	}
-	
+	}	
 }
+
+/******************************************************************************/
+/*!
+\brief Heals the character by a certain amount
+\param healAMT
+    int to represent amount of health gained back
+*/
+/******************************************************************************/
 
 void GameChar::regainHealth(const int& healAMT)
 {
@@ -153,6 +260,12 @@ void GameChar::regainHealth(const int& healAMT)
 		}
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief Assigns quest to character
+*/
+/******************************************************************************/
 
 void GameChar::assignQuest(Quest* q)
 {

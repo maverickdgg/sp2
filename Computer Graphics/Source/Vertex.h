@@ -1,8 +1,27 @@
+/******************************************************************************/
+/*!
+\file	Vertex.h
+\author Lee Jian Lin
+\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Admin Number: 150580X
+\par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
+\par	Diploma: Game Development and Technology
+\par	Class: GD1503
+\par	Mobile Number: 9755 2038
+\brief
+Structs to define the different types of vertex
+*/
+/******************************************************************************/
 #ifndef _VERTEX_H
 #define _VERTEX_H
 
 #include "Vector3.h"
-
+/******************************************************************************/
+/*!
+Struct Position:
+\brief
+Struct for the Position
+/******************************************************************************/
 struct Position
 {
 	float x, y, z;
@@ -16,7 +35,12 @@ struct Position
 	}
 
 };
-
+/******************************************************************************/
+/*!
+Struct Color:
+\brief
+Struct for the colors
+/******************************************************************************/
 struct Color
 {
 	float r, g, b;
@@ -30,7 +54,12 @@ struct Color
 	}
 
 };
-
+/******************************************************************************/
+/*!
+Struct TexCoord
+\brief
+Struct for the coordinates
+/******************************************************************************/
 struct TexCoord
 {
 	float u, v;
@@ -38,7 +67,12 @@ struct TexCoord
 	void Set(float u, float v) { this->u = u; this->v = v; }
 };
 
-
+/******************************************************************************/
+/*!
+Struct Vertex:
+\brief
+Struct for Vertex indicating the position, colors, normal as well as the coordinates
+/******************************************************************************/
 struct Vertex
 {
 	Position pos;

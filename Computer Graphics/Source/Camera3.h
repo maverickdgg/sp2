@@ -1,8 +1,27 @@
+/******************************************************************************/
+/*!
+\file	Camera3.h
+\author Lee Jian Lin
+\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Admin Number: 150580X
+\par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
+\par	Diploma: Game Development and Technology
+\par	Class: GD1503
+\par	Mobile Number: 9755 2038
+\brief
+Class to define the third type of camera
+*/
+/******************************************************************************/
 #ifndef CAMERA_3_H
 #define CAMERA_3_H
 
 #include "Camera.h"
-
+/******************************************************************************/
+/*!
+Class Camera3:
+\brief
+Class for the third type of camera (Inheriting from Camera)
+/******************************************************************************/
 class Camera3 : public Camera
 {
 public:

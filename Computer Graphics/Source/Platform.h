@@ -9,7 +9,7 @@
 \par	Class: GD1503
 \par	Mobile Number: 9755 2038
 \brief
-Class to define platform inheriting from GameChar
+Class to define platform while inheriting from GameChar
 */
 /******************************************************************************/
 #ifndef PLATFORM_H
@@ -17,7 +17,12 @@ Class to define platform inheriting from GameChar
 
 #include "GameChar.h"
 #include "Player.h"
-
+/******************************************************************************/
+/*!
+Class Platform:
+\brief
+Class for Platform (Inheriting from GameChar)
+/******************************************************************************/
 class Platform :public GameChar
 {
 public:
