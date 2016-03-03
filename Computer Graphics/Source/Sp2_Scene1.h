@@ -2,21 +2,20 @@
 #define SP2_SCENE1_H
 
 #include "Scene.h"
-#include"Mtx44.h"
+#include "Mtx44.h"
 #include "Application.h"
 #include "Camera3.h"
 #include "CameraTPS.h"
-#include"Mesh.h"
-#include"MeshBuilder.h"
+#include "Mesh.h"
+#include "MeshBuilder.h"
 #include "MatrixStack.h"
 #include "Light.h"
-#include"Material.h"
+#include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
 #include "GameObject.h"
 #include "SpaceVehicles.h"
 #include "Buildings.h"
-
 
 #include "Human.h"
 #include "Alien.h"
@@ -34,6 +33,7 @@ public:
 	virtual void Init();
 	virtual void Update(double dt);
 	virtual void Render();
+	virtual void Reset();
 	virtual void Exit();
 
 	enum GEOMETRY_TYPE
@@ -58,10 +58,6 @@ public:
 		GEO_FOURTH,
 		GEO_NPCLEPUSMAG,
 		GEO_STATION, // SpaceShuttle
-		/*<---Weapons--->*/
-		GEO_SNIPERRIFLE,
-		GEO_DART,
-		GEO_CROSSHAIR,
 		/*<---Humans--->*/
 		GEO_DOOR,
 
@@ -106,6 +102,7 @@ public:
 		U_LIGHT0_COSCUTOFF,
 		U_LIGHT0_COSINNER,
 		U_LIGHT0_EXPONENT,
+
 		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
@@ -166,7 +163,7 @@ private:
 	unsigned m_programID;
 	unsigned m_indexBuffer[NUM_GEOMETRY];
 
-	MS modelStack, viewStack, projectionStack, viewStack2;
+	MS modelStack, viewStack, projectionStack;
 	float f_rotateCube;
 	Mesh* meshList[NUM_GEOMETRY];
 	Light light[1];

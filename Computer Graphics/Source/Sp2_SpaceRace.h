@@ -17,7 +17,6 @@
 #include "SpaceVehicles.h"
 #include "Buildings.h"
 
-
 #include "Human.h"
 #include "Alien.h"
 #include "Player.h"
@@ -41,6 +40,7 @@ public:
 	virtual void Update(double dt);
 	virtual void Render();
 	virtual void Exit();
+	virtual void Reset();
 
 	enum GEOMETRY_TYPE
 	{

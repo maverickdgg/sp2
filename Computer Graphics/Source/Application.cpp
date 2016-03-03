@@ -77,7 +77,8 @@ void Application::Init()
 
 	//Create a window and create its OpenGL context
 
-	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+	//m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", NULL, NULL);
 	//m_window = glfwCreateWindow(1980, 1080, "Computer Graphics", glfwGetPrimaryMonitor() , NULL);
 
 	glfwSetWindowSizeCallback(m_window, resize_callback);
@@ -142,26 +143,26 @@ void Application::Run()
 	music = new Music();
 	music->Init();
 
-	scene1 = new Sp2_Scene1();
-	scene1->Init();
-	scene2 = new Sp2_SpaceRace();
-	scene2->Init();
 	scene3 = new Sp2_Scene3();
 	scene3->Init();
-	scene = scene1;
 
+	scene2 = new Sp2_SpaceRace();
+	scene2->Init();
+
+	scene1 = new Sp2_Scene1();
+	scene1->Init();
+
+	scene = scene1;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
 	{
 		if (Application::IsKeyPressed('R'))
 		{
-			Player::questList.clear();
-			scene1->Init();
-
-			scene2->Init();
-			scene3->Init();
-			scene = scene1;
+			scene1->Reset();
+			scene2->Reset();
+			scene3->Reset();
+			switchToScene1();
 		}
 
 		scene->Update(m_timer.getElapsedTime());

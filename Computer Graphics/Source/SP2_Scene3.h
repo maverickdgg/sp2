@@ -38,6 +38,7 @@ public:
 	virtual void Init();
 	virtual void Update(double dt);
 	virtual void Render();
+	virtual void Reset();
 	virtual void Exit();
 
 	enum GEOMETRY_TYPE

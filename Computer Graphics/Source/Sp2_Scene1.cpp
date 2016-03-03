@@ -48,81 +48,56 @@ void Sp2_Scene1::Init()
 
 
 	glfwGetWindowSize(m_window, &screenWidth, &screenHeight);
-
 	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
 
-	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
-	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
-
-	m_parameters[U_MVP] = glGetUniformLocation(m_programID,
-		"MVP");
-	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID,
-		"MV");
-	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] =
-		glGetUniformLocation(m_programID, "MV_inverse_transpose");
-	m_parameters[U_MATERIAL_AMBIENT] =
-		glGetUniformLocation(m_programID, "material.kAmbient");
-	m_parameters[U_MATERIAL_DIFFUSE] =
-		glGetUniformLocation(m_programID, "material.kDiffuse");
-	m_parameters[U_MATERIAL_SPECULAR] =
-		glGetUniformLocation(m_programID, "material.kSpecular");
-	m_parameters[U_MATERIAL_SHININESS] =
-		glGetUniformLocation(m_programID, "material.kShininess");
-	m_parameters[U_LIGHT0_POSITION] =
-		glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
-	m_parameters[U_LIGHT0_COLOR] =
-		glGetUniformLocation(m_programID, "lights[0].color");
-	m_parameters[U_LIGHT0_POWER] =
-		glGetUniformLocation(m_programID, "lights[0].power");
+	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
+	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
+	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
+	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
+	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
+	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
+	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
+	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
+	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
+	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
 	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
 	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
 	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
+	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
 	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
 	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
 	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
 	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
 
-	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 
-	//handler for text
+	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
+	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
+
 	glUseProgram(m_programID);
 
-	light[0].position.Set(0, 20, 0);
-	light[0].color.Set(1, 1, 1);
-	light[0].power = 1;
+	light[0].type = Light::LIGHT_DIRECTIONAL;
+	light[0].color.Set(1, 0.9f, 1);
+	light[0].position.Set(0.f, 20.f, 0.f);
+	light[0].power = 2;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(30));
+	light[0].cosInner = cos(Math::DegreeToRadian(29));
+	light[0].exponent = 1.f;
+	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
-	//make sure you pass uniform parameters after glUseProgram()
-	glUniform1i(m_parameters[U_NUMLIGHTS], 5);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
-	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
-	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
 
-	//spot light
-	light[0].type = Light::LIGHT_SPOT;
-	light[0].position.Set(0, 200, 0);
-	light[0].color.Set(1, 1, 1);
-	light[0].power = 30;
-	light[0].kC = 1.f;
-	light[0].kL = 0.01f;
-	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
-	light[0].cosInner = cos(Math::DegreeToRadian(30));
-	light[0].exponent = 3.f;
-	light[0].spotDirection.Set(0.f, 1.f, 0.f);
+	// Pass information
+	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 
 	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1,
-		&light[0].color.r);
+	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
 	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
 	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
@@ -131,6 +106,7 @@ void Sp2_Scene1::Init()
 	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
+	
 	//geom init
 
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450, 300);
@@ -172,13 +148,6 @@ void Sp2_Scene1::Init()
 
 	meshList[GEO_FOURTH] = MeshBuilder::GenerateOBJ("fourthplayercontrolled", "OBJ//FourthPlayerControlled.obj");
 	meshList[GEO_FOURTH]->textureID = LoadTGA("Image//FourthPlayerControlled.tga");
-
-	/*<--- GUN --->*/
-	meshList[GEO_SNIPERRIFLE] = MeshBuilder::GenerateOBJ("sniperrifle", "OBJ//SniperRifle.obj");
-	meshList[GEO_SNIPERRIFLE]->textureID = LoadTGA("Image//0005_npcmastronautworker_sp.tg4d.tga");
-
-	meshList[GEO_DART] = MeshBuilder::GenerateOBJ("dart", "OBJ//dart.obj");
-	meshList[GEO_DART]->textureID = LoadTGA("Image//dart.tga");
 
 	/*<---NPC--->*/
 	meshList[GEO_MIKE] = MeshBuilder::GenerateOBJ("npc1", "OBJ//mike.obj");
@@ -269,6 +238,8 @@ void Sp2_Scene1::Init()
 	scene3Tp = Buildings("Scene 3 teleporter", 25, 0, Vector3(300, -30, -250));
 	raceTp = Buildings("Scene race teleporter", 25, 0, Vector3(-300, -30, -250));
 
+
+
 }
 void Sp2_Scene1::Update(double dt)
 
@@ -297,33 +268,15 @@ void Sp2_Scene1::Update(double dt)
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
 		player.movementUpdate(camera, dt,collisionVec);
+		//light[0].spotDirection.Set(-camera.view.x, -camera.view.y, -camera.view.z);
 		ShowCursor(FALSE);
 	}
-
+	
 	if (Application::IsKeyPressed(VK_MENU))
 	{
 		ShowCursor(TRUE);
 	}
-	
-	if (Application::IsKeyPressed('M') && b_enabletps == true && b_tpsDebounce == false)
-	{
-		b_tpsDebounce = true;
-		b_enabletps = false;
-	}
-	if (Application::IsKeyPressed('M') && b_enabletps == false && b_tpsDebounce == false)
-	{
-		b_tpsDebounce = true;
-		b_enabletps = true;
-	}
-	if (b_tpsDebounce == true)
-	{
-		tpsTimer += dt;
-		if (tpsTimer >= 2)
-		{
-			b_tpsDebounce = false;
-			tpsTimer = 0;
-		}
-	}
+
 
 	//npc chat updates
 	whale.chat_update(player.pos);
@@ -366,8 +319,66 @@ void Sp2_Scene1::Update(double dt)
 		player.pos = Vector3(250,0,-250);
 		Application::switchToScene3();
 	}
+	
 } 
 
+void Sp2_Scene1::Reset()
+{
+	b_enabletps = false;
+	b_tpsDebounce = false;
+	tpsTimer = 0;
+	gameComplete = false;
+
+	player = Player();
+
+	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
+
+	//furniture
+	box1 = Buildings("box 1", 20, 0, Vector3(375, -30, 275));
+	collisionVec.push_back(&box1);
+	box2 = Buildings("box 2", 20, 0, Vector3(375, -30, 250));
+	collisionVec.push_back(&box2);
+	box3 = Buildings("box 3", 20, 0, Vector3(375, -30, 225));
+	collisionVec.push_back(&box3);
+	box4 = Buildings("box 4", 20, 0, Vector3(400, -30, 225));
+	collisionVec.push_back(&box4);
+	table1 = Buildings("table1", 50, 90, Vector3(-300, -30, 200));
+	collisionVec.push_back(&table1);
+	chair1 = Buildings("chair1", 20, 0, Vector3(-300, -30, 150));
+	collisionVec.push_back(&chair1);
+
+	door = Buildings("door", 0, 0, Vector3(0, 50, -400));
+
+	/*<---Set the position of the NPC--->*/
+	b_isWorn = false;
+	b_isDisplayUI = false;
+	rotateHelm = 0;
+	scaleHelm = 50;
+
+	mike1 = Alien("mike1", 30, 0, Vector3(400, -30, 250));
+	collisionVec.push_back(&mike1);
+
+	mike2 = Alien("mike2", 30, 90, Vector3(-50, -10, 300));
+	mike2.ReadFromTxt("text//SpaceRaceQuestInfo.txt");
+	collisionVec.push_back(&mike2);
+
+	mike3 = Alien("mike3", 30, 90, Vector3(175, -10, 300));
+	mike3.ReadFromTxt("text//PlatformerQuestInfo.txt");
+	collisionVec.push_back(&mike3);
+
+	BB8_ = BB8("BB8", 45, 0, Vector3(250, 10, 50));
+	collisionVec.push_back(&BB8_);
+
+	player.questList.clear();
+	player.setQuest();
+
+	whale = Human("NPCLEPUSMAG", 10, 0, Vector3(75, -20, -300));
+	whale.ReadFromTxt("text//keycardQuestDialogue.txt");
+	collisionVec.push_back(&whale);
+
+	scene3Tp = Buildings("Scene 3 teleporter", 25, 0, Vector3(300, -30, -250));
+	raceTp = Buildings("Scene race teleporter", 25, 0, Vector3(-300, -30, -250));
+}
 
 void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 {
@@ -422,7 +433,7 @@ void Sp2_Scene1::RenderSkybox()
 	modelStack.Translate(20, 0, 0);
 	modelStack.Scale(1000, 1000, 1000);
 	modelStack.Rotate(270, 1, 0, 0);
-	RenderMesh(meshList[GEO_BOTTOM], false);
+	RenderMesh(meshList[GEO_BOTTOM], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -671,16 +682,24 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 
 void Sp2_Scene1::Renderfps()
 {
-	Vector3 lightDir(light[0].position.x,
-		light[0].position.y, light[0].position.z);
-	Vector3 lightDirection_cameraspace = viewStack.Top() *
-		lightDir;
-	glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
+	if (light[0].type == Light::LIGHT_DIRECTIONAL)
+	{
+		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
+		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+	}
+	else if (light[0].type == Light::LIGHT_SPOT)
+	{
+		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
+		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+	}
+	else
+	{
+		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+	}
 
 	RenderSkybox();
 
@@ -742,47 +761,26 @@ void Sp2_Scene1::Render()
 {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	Mtx44 projection;
-
+	
 
 	//glViewport(0, 0, screenWidth*2/3, screenHeight);
 	glViewport(0, 0, screenWidth, screenHeight);
+	Mtx44 projection;
 	projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
-
 
 	projectionStack.LoadMatrix(projection);
 
-	viewStack.LoadIdentity();
-
 	//set View position to camera
-
+	viewStack.LoadIdentity();
 	
 	viewStack.LookAt(
 		camera.position.x, camera.position.y, camera.position.z,
 		camera.target.x, camera.target.y, camera.target.z,
 		camera.up.x, camera.up.y, camera.up.z
 		);
-
-
+	
+	modelStack.LoadIdentity();
 	Renderfps();
-
-	if (b_enabletps == true)
-	{
-		glViewport(screenWidth * 2 / 3, screenHeight / 10, screenWidth / 3, screenHeight / 3);
-
-		glClear(GL_DEPTH_BUFFER_BIT);
-
-		projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
-		projectionStack.LoadMatrix(projection);
-		viewStack.LoadIdentity();
-		//set View position to camera
-		viewStack.LookAt(
-			camera2.position.x, camera2.position.y, camera2.position.z,
-			camera2.target.x, camera2.target.y, camera2.target.z,
-			camera2.up.x, camera2.up.y, camera2.up.z
-			);
-		Rendertps();
-	}
 }
 
 

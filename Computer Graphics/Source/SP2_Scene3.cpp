@@ -53,78 +53,54 @@ void Sp2_Scene3::Init()
 
 	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
 
-	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
-	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
-
-	m_parameters[U_MVP] = glGetUniformLocation(m_programID,
-		"MVP");
-	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID,
-		"MV");
-	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] =
-		glGetUniformLocation(m_programID, "MV_inverse_transpose");
-	m_parameters[U_MATERIAL_AMBIENT] =
-		glGetUniformLocation(m_programID, "material.kAmbient");
-	m_parameters[U_MATERIAL_DIFFUSE] =
-		glGetUniformLocation(m_programID, "material.kDiffuse");
-	m_parameters[U_MATERIAL_SPECULAR] =
-		glGetUniformLocation(m_programID, "material.kSpecular");
-	m_parameters[U_MATERIAL_SHININESS] =
-		glGetUniformLocation(m_programID, "material.kShininess");
-	m_parameters[U_LIGHT0_POSITION] =
-		glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
-	m_parameters[U_LIGHT0_COLOR] =
-		glGetUniformLocation(m_programID, "lights[0].color");
-	m_parameters[U_LIGHT0_POWER] =
-		glGetUniformLocation(m_programID, "lights[0].power");
+	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
+	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
+	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
+	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
+	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
+	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
+	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
+	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
+	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
+	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
 	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
 	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
 	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
+	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
 	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
 	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
 	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
 	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
 
-	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 
-	//handler for text
+	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
+	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
+
 	glUseProgram(m_programID);
 
-	light[0].position.Set(0, 20, 0);
-	light[0].color.Set(1, 1, 1);
-	light[0].power = 1;
-	light[0].kC = 1.f;
-	light[0].kL = 0.01f;
-	light[0].kQ = 0.001f;
-
-	//make sure you pass uniform parameters after glUseProgram()
-	glUniform1i(m_parameters[U_NUMLIGHTS], 5);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
-	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
-	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
-
-	//spot light
 	light[0].type = Light::LIGHT_SPOT;
-	light[0].position.Set(0, 200, 0);
-	light[0].color.Set(1, 1, 1);
-	light[0].power = 30;
+	light[0].color.Set(1, 0.9f, 1);
+	light[0].position.Set(0.f, 20.f, 0.f);
+	light[0].power = 2;
 	light[0].kC = 1.f;
-	light[0].kL = 0.01f;
-	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
-	light[0].cosInner = cos(Math::DegreeToRadian(30));
+	light[0].kL = 0.007f;
+	light[0].kQ = 0.0007f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(20));
+	light[0].cosInner = cos(Math::DegreeToRadian(19));
 	light[0].exponent = 3.f;
-	light[0].spotDirection.Set(0.f, 1.f, 0.f);
+	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
+
+
+	// Pass information
+	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 
 	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1,
-		&light[0].color.r);
+	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
 	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
 	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
@@ -132,6 +108,7 @@ void Sp2_Scene3::Init()
 	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutoff);
 	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
+
 
 	//geom init
 	/*frpc = SpaceVehicles("fourth", 5, 30, Vector3(55, 0, 60));
@@ -382,6 +359,7 @@ void Sp2_Scene3::Update(double dt)
 		if (frpc.b_isInVehicle == false)
 		{
 			player.movementUpdate(camera, dt, collisionVec);
+			light[0].spotDirection.Set(-camera.view.x, -camera.view.y, -camera.view.z);
 		}
 		if (frpc.b_isInVehicle == true)
 		{
@@ -393,26 +371,6 @@ void Sp2_Scene3::Update(double dt)
 	if (Application::IsKeyPressed(VK_MENU))
 	{
 		ShowCursor(TRUE);
-	}
-
-	if (Application::IsKeyPressed('M') && b_enabletps == true && b_tpsDebounce == false)
-	{
-		b_tpsDebounce = true;
-		b_enabletps = false;
-	}
-	if (Application::IsKeyPressed('M') && b_enabletps == false && b_tpsDebounce == false)
-	{
-		b_tpsDebounce = true;
-		b_enabletps = true;
-	}
-	if (b_tpsDebounce == true)
-	{
-		tpsTimer += dt;
-		if (tpsTimer >= 2)
-		{
-			b_tpsDebounce = false;
-			tpsTimer = 0;
-		}
 	}
 
 	BB8v2_.chat_update(player.pos);
@@ -704,7 +662,7 @@ void Sp2_Scene3::RenderSkybox()
 	modelStack.Translate(20, 0, 0);
 	modelStack.Scale(1000, 1000, 1000);
 	modelStack.Rotate(270, 1, 0, 0);
-	RenderMesh(meshList[GEO_BOTTOM], false);
+	RenderMesh(meshList[GEO_BOTTOM], true);
 	modelStack.PopMatrix();
 }
 
@@ -934,7 +892,7 @@ void Sp2_Scene3::RenderPlatform(Platform p, bool isRotate)
 	if (isRotate == true)
 		modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Scale(20, 20, 5);
-	RenderMesh(meshList[GEO_PLATFORM], false);	// True false rfers to on/off light respectively
+	RenderMesh(meshList[GEO_PLATFORM], true);	// True false rfers to on/off light respectively
 
 	modelStack.PopMatrix();
 
@@ -1331,17 +1289,26 @@ void Sp2_Scene3::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3
 
 void Sp2_Scene3::Renderfps()
 {
-	Vector3 lightDir(light[0].position.x,
-		light[0].position.y, light[0].position.z);
-	Vector3 lightDirection_cameraspace = viewStack.Top() *
-		lightDir;
-	glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+	if (light[0].type == Light::LIGHT_DIRECTIONAL)
+	{
+		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
+		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+	}
+	else if (light[0].type == Light::LIGHT_SPOT)
+	{
+		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
+		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+	}
+	else
+	{
+		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+	}
 
-	modelStack.PushMatrix();
-	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
+	
 	RenderSkybox();
 
     if (b_collectBox1 == false)
@@ -1366,7 +1333,7 @@ void Sp2_Scene3::Renderfps()
 	RenderBB8v2(BB8v2_);
 	RenderMedic(Medic_);
 	RenderNecromancer();
-	RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(70, 70, 70));
+	//RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(70, 70, 70));
 	/*<---Platform--->*/
 	RenderPlatform(Platform_, true);
 	RenderPlatform(Platform1, false);
@@ -1444,25 +1411,128 @@ void Sp2_Scene3::Render()
 
 	Renderfps();
 
-	if (b_enabletps == true)
-	{
-		glViewport(screenWidth * 2 / 3, screenHeight / 10, screenWidth / 3, screenHeight / 3);
-
-		glClear(GL_DEPTH_BUFFER_BIT);
-
-		projection.SetToPerspective(45.0f, glfwGetVideoMode(glfwGetPrimaryMonitor())->width / glfwGetVideoMode(glfwGetPrimaryMonitor())->height, 0.1f, 10000.0f);
-		projectionStack.LoadMatrix(projection);
-		viewStack.LoadIdentity();
-		//set View position to camera
-		viewStack.LookAt(
-			camera2.position.x, camera2.position.y, camera2.position.z,
-			camera2.target.x, camera2.target.y, camera2.target.z,
-			camera2.up.x, camera2.up.y, camera2.up.z
-			);
-		Rendertps();
-	}
 }
 
+void Sp2_Scene3::Reset()
+{
+
+	b_enabletps = false;
+	b_tpsDebounce = false;
+	tpsTimer = 0;
+
+	//player = Player(100);
+
+	//furniture
+	box1 = Buildings("box 1", 1, 0, Vector3(50, 222.5, -130));
+	collisionVec.push_back(&box1);
+	box2 = Buildings("box 2", 1, 0, Vector3(-25, 95, -130));
+	collisionVec.push_back(&box2);
+	box3 = Buildings("box 3", 1, 0, Vector3(375, -30, 225));
+	collisionVec.push_back(&box3);
+	box4 = Buildings("box 4", 25, 0, Vector3(400, -30, 225));
+	collisionVec.push_back(&box4);
+	spaceHelm = Human("spacehelm", 10, 30, camera.position);
+	/*<---Set the position of the NPC--->*/
+	b_isWorn = false;
+	b_isDisplayUI = false;
+	b_isClimb == false;
+	b_isClimb2 = false;
+	b_isClimb3 = false;
+	b_isClimb4 = false;
+	b_isClimb6 = false;
+	rotateHelm = 0;
+	scaleHelm = 50;
+
+	suit = Human("spacesuit", 5, 0, Vector3(150, 0, 130));
+	collisionVec.push_back(&suit);
+
+	ladder = Buildings("ladder1", 1, 0, Vector3(-100, 10, -152.5));
+	collisionVec.push_back(&ladder);
+
+	ladder2 = Buildings("ladder2", 1, 270, Vector3(-15, 86, -120));
+	collisionVec.push_back(&ladder2);
+
+	ladder3 = Buildings("ladder3", 1, 270, Vector3(-50, 152, -53.5));
+	collisionVec.push_back(&ladder3);
+
+	ladder4 = Buildings("ladder4", 1, 140, Vector3(50, 210, -90));
+	collisionVec.push_back(&ladder4);
+
+	ChestBurster = AlienEnemy("ChestBurster", 5, 0, Vector3(-50, 125, -125));
+	collisionVec.push_back(&ChestBurster);
+
+
+	Necromancer = AlienEnemy("Necromancer", 5, 0, Vector3(-30, 220, -20));
+	collisionVec.push_back(&Necromancer);
+
+	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 251, -125));
+	collisionVec.push_back(&ChestBurster1);
+
+	rocket = Buildings("rocket", 20, 180, Vector3(0, 100, 200));
+	collisionVec.push_back(&rocket);
+
+	Arrow = Buildings("arrow", 10, 180, Vector3(70, 30, 30));
+	collisionVec.push_back(&Arrow);
+
+	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
+	Sir_.ReadFromTxt("text//sir.txt");
+	collisionVec.push_back(&Sir_);
+
+	Medic_ = Medic("medic", 5, 0, Vector3(-65, 190, -20));
+	collisionVec.push_back(&Medic_);
+
+	/**/
+	BB8v2_ = BB8v2("BB8v2", 5, 0, Vector3(150, 10, 200));
+	BB8v2_.ReadFromTxt("text//bb8v2.txt");
+	collisionVec.push_back(&BB8v2_);
+	/**/
+
+	player = Player();
+
+	/**/
+	Platform_ = Platform("platform", 30, 0, Vector3(-80, 8.15, -120));		// Done
+	collisionVec.push_back(&Platform_);
+
+	Platform1 = Platform("platform1", 30, 0, Vector3(50, 25, -120));		// Done
+	collisionVec.push_back(&Platform1);
+
+	Platform2 = Platform("platform2", 30, 0, Vector3(-50, 150, -25));		// Done
+	collisionVec.push_back(&Platform2);
+
+	Platform3 = Platform("platform3", 30, 0, Vector3(-50, 85, -120));		// Done
+	collisionVec.push_back(&Platform3);
+
+	Platform4 = Platform("platform4", 30, 0, Vector3(-10, 150, -25));		// Done
+	collisionVec.push_back(&Platform4);
+
+	Platform5 = Platform("platform5", 30, 0, Vector3(75, 210, -120));		// To Be Continued...
+	collisionVec.push_back(&Platform5);
+
+	Platform6 = Platform("platform6", 10, 0, Vector3(150, 210, -170));
+	collisionVec.push_back(&Platform6);
+
+	Platform7 = Platform("platform7", 30, 0, Vector3(420, 408.15, -120));
+	collisionVec.push_back(&Platform7);
+
+	Platform8 = Platform("platform8", 30, 0, Vector3(20, 608.15, -120));
+	collisionVec.push_back(&Platform8);
+
+	Platform9 = Platform("platform9", 30, 0, Vector3(420, 608.15, -120));
+	collisionVec.push_back(&Platform9);
+
+	Platform10 = Platform("platform10", 30, 0, Vector3(220, 808.15, -120));
+	collisionVec.push_back(&Platform10);
+
+	spaceStationTp = Buildings("Space station teleporter", 25, 0, Vector3(-200, -30, 200));
+
+	player.oxygen = 6000;
+	horiDist = 50;
+	verticalDistance = 50;
+	b_switchDir = false;
+	b_collectBox1 = false;
+	b_collectBox2 = false;
+	b_collectBox3 = false;
+}
 
 
 void Sp2_Scene3::Exit()

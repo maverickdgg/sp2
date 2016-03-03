@@ -33,12 +33,6 @@
     <ClCompile Include="Source\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Light.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Material.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\LoadOBJ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -118,9 +112,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Music.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\LoadingScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -237,9 +228,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Music.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\LoadingScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
