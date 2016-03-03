@@ -360,11 +360,13 @@ void Sp2_Scene1::Update(double dt)
 	{
 		player.pos = Vector3(-250, 0, -250);
 		Application::switchToScene2();
+		Application::playSound(2, false);
 	}
 	if (collisionXZ(player.pos,scene3Tp)==true && Application::IsKeyPressed('E'))
 	{
 		player.pos = Vector3(250,0,-250);
 		Application::switchToScene3();
+		Application::playSound(2, false);
 	}
 } 
 

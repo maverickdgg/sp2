@@ -294,6 +294,7 @@ void Sp2_SpaceRace::Update(double dt)
 	{
 		player.pos = indexToVector(toIndex(12, 12));
 		Application::switchToScene1();
+		Application::playSound(2, false);
 	}
 	
 

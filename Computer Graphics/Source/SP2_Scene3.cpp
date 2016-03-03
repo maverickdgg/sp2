@@ -459,7 +459,6 @@ void Sp2_Scene3::Update(double dt)
 		player.recieveHealthDamage(100);
 		player.isDead();
 	}
-	
     if (Application::IsKeyPressed('E') && player.isDead())
     {
         player.regainHealth(100);
@@ -594,6 +593,7 @@ void Sp2_Scene3::Update(double dt)
 	{
 	    player.pos -= Vector3(50,0,50);
 	    Application::switchToScene1();
+		Application::playSound(2, false);
 	}
 	if (Application::IsKeyPressed('E') && (collision(Medic_.pos, player.pos, 21)))
 	{
@@ -1366,7 +1366,7 @@ void Sp2_Scene3::Renderfps()
 	RenderBB8v2(BB8v2_);
 	RenderMedic(Medic_);
 	RenderNecromancer();
-	RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(70, 70, 70));
+	//RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(70, 70, 70));
 	/*<---Platform--->*/
 	RenderPlatform(Platform_, true);
 	RenderPlatform(Platform1, false);

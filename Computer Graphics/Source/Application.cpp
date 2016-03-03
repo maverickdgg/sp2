@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "SP2_scene1.h"
+#include "Sp2_Scene1.h"
 #include "Sp2_SpaceRace.h"
 #include "SP2_Scene3.h"
 
@@ -77,7 +77,7 @@ void Application::Init()
 
 	//Create a window and create its OpenGL context
 
-	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics",NULL, NULL);
 	//m_window = glfwCreateWindow(1980, 1080, "Computer Graphics", glfwGetPrimaryMonitor() , NULL);
 
 	glfwSetWindowSizeCallback(m_window, resize_callback);
@@ -148,8 +148,8 @@ void Application::Run()
 	scene2->Init();
 	scene3 = new Sp2_Scene3();
 	scene3->Init();
-	scene = scene1;
 
+	scene = scene1;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
