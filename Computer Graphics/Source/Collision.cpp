@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	Collision.h
+\author Daniel
+\brief
+Class for collision between player and game object
+*/
+/******************************************************************************/
+
 #include "Collision.h"
 
 bool collision(GameObject x, GameObject y)

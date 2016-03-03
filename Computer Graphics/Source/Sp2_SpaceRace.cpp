@@ -953,7 +953,7 @@ void Sp2_SpaceRace::Renderfps()
 			RenderTextOnScreen(meshList[GEO_TEXT], "2nd", Color(0, 1, 0), 3, 1, 17);
 	}
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS:", Color(0, 1, 0), 3, 13, 18);
-	RenderTextOnScreen(meshList[GEO_TEXT], fps, Color(0, 1, 0), 3, 15, 18);
+	RenderTextOnScreen(meshList[GEO_TEXT], fps, Color(0, 1, 0), 3, 17, 18);
 
 	if (b_raceBegin == true && f_raceCountdown > 4)
 	{
@@ -999,6 +999,12 @@ void Sp2_SpaceRace::Renderfps()
 
 
 }
+/******************************************************************************/
+/*!
+\brief
+rendering of the scene in the third person view
+*/
+/******************************************************************************/
 
 void Sp2_SpaceRace::Rendertps()
 {
@@ -1077,6 +1083,7 @@ void Sp2_SpaceRace::Rendertps()
 			RenderTextOnScreen(meshList[GEO_TEXT], "YOU LOSE! TRY AGAIN!", Color(0, 1, 0), 3, 1, 10);
 	}
 }
+
 
 void Sp2_SpaceRace::Render()
 {

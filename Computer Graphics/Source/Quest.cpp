@@ -3,7 +3,12 @@
 Quest::Quest()
 {
 }
-
+/******************************************************************************/
+/*!
+\brief
+overloaded constructor of the quest
+*/
+/******************************************************************************/
 Quest::Quest(int numOfTasks, vector<string> names, string questName)
 {
 	for (int i = 0; i < numOfTasks; ++i)
@@ -17,7 +22,14 @@ Quest::Quest(int numOfTasks, vector<string> names, string questName)
 Quest::~Quest()
 {
 }
-
+/******************************************************************************/
+/*!
+\brief
+complete the task
+\param index
+index of the task 
+*/
+/******************************************************************************/
 void Quest::taskComplete(int index)
 {
 	if (index >= task.size())
@@ -29,7 +41,14 @@ void Quest::taskComplete(int index)
 		task[index] = true;
 	}
 }
-
+/******************************************************************************/
+/*!
+\brief
+check if all task are done and quest is complete
+\return
+true if all task complete
+*/
+/******************************************************************************/
 bool Quest::questComplete()
 {
 	for (vector<bool>::iterator it = task.begin(); it != task.end(); ++it)
@@ -41,7 +60,6 @@ bool Quest::questComplete()
 	}
 	return true;
 }
-
 
 void Quest::ReadFromTxtQuest(string link)
 {

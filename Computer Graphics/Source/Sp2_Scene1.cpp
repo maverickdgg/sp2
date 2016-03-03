@@ -22,7 +22,12 @@ Sp2_Scene1::~Sp2_Scene1()
 {
 	player.questList.clear();
 }
-
+/******************************************************************************/
+/*!
+\brief
+initialise of the scene
+*/
+/******************************************************************************/
 void Sp2_Scene1::Init()
 {
 	Application::playSound(4, true);
@@ -238,9 +243,13 @@ void Sp2_Scene1::Init()
 	scene3Tp = Buildings("Scene 3 teleporter", 25, 0, Vector3(300, -30, -250));
 	raceTp = Buildings("Scene race teleporter", 25, 0, Vector3(-300, -30, -250));
 
-
-
 }
+/******************************************************************************/
+/*!
+\brief
+update the scene
+*/
+/******************************************************************************/
 void Sp2_Scene1::Update(double dt)
 
 {
@@ -274,6 +283,7 @@ void Sp2_Scene1::Update(double dt)
 		ShowCursor(TRUE);
 	}
 
+	fps = std::to_string(1 / dt);
 
 	//npc chat updates
 	whale.chat_update(player.pos);
@@ -320,7 +330,12 @@ void Sp2_Scene1::Update(double dt)
 	}
 	
 } 
-
+/******************************************************************************/
+/*!
+\brief
+resetting all variables in the scene
+*/
+/******************************************************************************/
 void Sp2_Scene1::Reset()
 {
 	b_enabletps = false;
@@ -420,7 +435,12 @@ void Sp2_Scene1::RenderMesh(Mesh* mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
-
+/******************************************************************************/
+/*!
+\brief
+rendering of the skybox
+*/
+/******************************************************************************/
 
 void Sp2_Scene1::RenderSkybox()
 {
@@ -484,6 +504,25 @@ void Sp2_Scene1::RenderSkybox()
 	modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief
+helper render function to render a game object in thhe scene
+\param
+the game object
+\param mesh
+the mesh to be render relative to the position and rotation angle of the object
+\param enableLight
+light enabled or not
+\param hasIteractions
+whether the game object has interactions to it
+\param scale
+a vector that handles the scaling of the object rendered
+\rotate
+a vector that handles the rotation of the object rendered
+*/
+/******************************************************************************/
+
 void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, smaller axis)
 {
 	modelStack.PushMatrix();
@@ -507,6 +546,21 @@ void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool 
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief
+to render the teleporter as well as a text above it
+\param x
+the gameobject variable of the teleporter
+\param mesh
+mesh to be rendered
+\param text
+the text to be rendered above the teleporter
+\param scale
+to scale the object
+*/
+/******************************************************************************/
+
 void Sp2_Scene1::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale)
 {
 	RenderGameObj(x, mesh, true, false, scale);
@@ -525,7 +579,24 @@ void Sp2_Scene1::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3
 		modelStack.PopMatrix();
 	}
 }
-
+/******************************************************************************/
+/*!
+\brief
+to render game character and their lines of dialgue
+\param x
+game character
+\param mesh
+mesh to be rendered
+\param enableLight
+whether light is enabled
+\param hasIteractions
+whether the object has interactions
+\param scale
+to scale the object
+\param rotate
+to rotate the object
+*/
+/******************************************************************************/
 void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale)
 {
 	RenderGameObj(x, mesh, enableLight, hasInteractions, scale);
@@ -543,7 +614,12 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool h
 	}
 }
 
-
+/******************************************************************************/
+/*!
+\brief
+rendering of BB8
+*/
+/******************************************************************************/
 void Sp2_Scene1::RenderBB8(BB8 x)
 {
 	modelStack.PushMatrix();
@@ -653,7 +729,20 @@ void Sp2_Scene1::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 
 	glEnable(GL_DEPTH_TEST);
 }
-
+/******************************************************************************/
+/*!
+\brief
+rendering a mesh that is tied to the screen
+\param mesh
+mesh to be rendered
+\param translate
+translation on the screen
+\param scale
+to scale the object
+\param rotate
+to rotate the object
+*/
+/******************************************************************************/
 void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale, Vector3 rotate)
 {
 	Mtx44 ortho;
@@ -678,7 +767,12 @@ void Sp2_Scene1::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale
 	modelStack.PopMatrix();
 }
 
-
+/******************************************************************************/
+/*!
+\brief
+rendering of the scene for first person camera
+*/
+/******************************************************************************/
 void Sp2_Scene1::Renderfps()
 {
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
@@ -748,7 +842,8 @@ void Sp2_Scene1::Renderfps()
 
 	RenderMesh(meshList[GEO_AXES], false);
 	/*<---Weapons--->*/
-	
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS:", Color(0, 1, 0), 3, 13, 18);
+	RenderTextOnScreen(meshList[GEO_TEXT], fps, Color(0, 1, 0), 3, 17, 18);
 }
 
 void Sp2_Scene1::Rendertps()

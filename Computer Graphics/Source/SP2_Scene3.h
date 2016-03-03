@@ -244,7 +244,7 @@ public:
 	Quest* questPtr;
 
 	vector<GameObject*> collisionVec;
-
+	string fps;
 
 private:
 	unsigned m_vertexArrayID;

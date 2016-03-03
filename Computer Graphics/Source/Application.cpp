@@ -78,7 +78,7 @@ void Application::Init()
 	//Create a window and create its OpenGL context
 
 	//m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
-	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", NULL, NULL);
+	m_window = glfwCreateWindow(glfwGetVideoMode(glfwGetPrimaryMonitor())->width, glfwGetVideoMode(glfwGetPrimaryMonitor())->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	//m_window = glfwCreateWindow(1980, 1080, "Computer Graphics", glfwGetPrimaryMonitor() , NULL);
 
 	glfwSetWindowSizeCallback(m_window, resize_callback);
@@ -130,7 +130,16 @@ void Application::switchToScene3()
 }
 
 
-
+/******************************************************************************/
+/*!
+\brief
+a static function to play sound
+\param index
+index of the sound source
+\param loop
+whether to loop the music or not
+*/
+/******************************************************************************/
 void Application::playSound(int index, bool loop)
 {
 	music->OpeningMusic(index,loop);
@@ -152,7 +161,7 @@ void Application::Run()
 	scene1 = new Sp2_Scene1();
 	scene1->Init();
 
-	scene = scene3;
+	scene = scene1;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))

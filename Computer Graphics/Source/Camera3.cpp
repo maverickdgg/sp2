@@ -12,7 +12,12 @@ Camera3::~Camera3()
 {
 
 }
-
+/******************************************************************************/
+/*!
+\brief
+intialise of the camera
+*/
+/******************************************************************************/
 void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, float boundX, float boundZ)
 {
 	this->position = defaultPosition = pos;
@@ -32,8 +37,16 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up,
 	b_jumpUP = true;
 	boundaryX = boundX;
 	boundaryZ = boundZ;
-
 }
+
+/******************************************************************************/
+/*!
+\brief
+update the rotation of the camera
+\param CameraSpeed
+the sensitivity of the camera rotation
+*/
+/******************************************************************************/
 
 void Camera3::updateRotation(float CameraSpeed) // camerarotationx and y, 38 to 48
 {
@@ -68,6 +81,15 @@ void Camera3::updateRotation(float CameraSpeed) // camerarotationx and y, 38 to 
 		-sin(Math::DegreeToRadian(cameraRotationY))  * cos(Math::DegreeToRadian(cameraRotationX)) + this->position.z
 		);
 }
+
+/******************************************************************************/
+/*!
+\brief
+camera update 
+\param dt
+delta time
+*/
+/******************************************************************************/
 
 void Camera3::Update(double dt)
 {
@@ -143,51 +165,12 @@ void Camera3::Update(double dt)
 	}
 	updateRotation(CameraSpeed);
 }
-
-void Camera3::updateRotationTps(float cameraSpeed)
-{
-	int screenSizeX, screenSizeY;
-	int midScreenX, midScreenY;
-	glfwGetWindowSize(m_window, &screenSizeX, &screenSizeY);
-	midScreenX = screenSizeX / 2;
-	midScreenY = screenSizeY / 2;
-	//checking for the position of the mouse cursor and resetting it every frame
-	POINT mousePos;
-	GetCursorPos(&mousePos);
-	SetCursorPos(midScreenX, midScreenY);
-	cameraRotationY -= (mousePos.x - midScreenX) / (1.0f / CameraSpeed);
-	cameraRotationX -= (mousePos.y - midScreenY) / (1.0f / CameraSpeed);
-	if (cameraRotationX >80)
-	{
-		cameraRotationX = 80;
-	}
-	else if (cameraRotationX < -80)
-	{
-		cameraRotationX = -80;
-	}
-	if (cameraRotationY >= 360 || cameraRotationY <= -360)
-	{
-		cameraRotationY = 0;
-	}
-	position = Vector3
-		(
-		target.x + cos(Math::DegreeToRadian(cameraRotationY))*cos(Math::DegreeToRadian(cameraRotationX)) * 80,
-		35,
-		target.z + sin(Math::DegreeToRadian(cameraRotationY))*cos(Math::DegreeToRadian(cameraRotationX)) * 80
-		);
-}
-
-void Camera3::tpsUpdate(Camera3 cam, double dt)
-{
-	this->target = cam.position;
-	//updateRotationTps(50);
-	this->position = (Vector3(cam.position.x, cam.position.y + 20, cam.position.z) - (Vector3(cam.view.x, 0, cam.view.z).Normalized()) * 80);
-	view = (target - position).Normalized();
-	right = view.Cross(defaultUp);
-	right.y = 0;
-	right.Normalize();
-	this->up = right.Cross(view).Normalized();
-}
+/******************************************************************************/
+/*!
+\brief
+camera reset
+*/
+/******************************************************************************/
 
 void Camera3::Reset()
 {

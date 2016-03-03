@@ -10,7 +10,12 @@ CameraTPS::CameraTPS()
 CameraTPS::~CameraTPS()
 {
 }
-
+/******************************************************************************/
+/*!
+\brief
+intialise third person camera
+*/
+/******************************************************************************/
 void CameraTPS::Init(const Vector3& pos, const Vector3& up, GameObject* targetObj)
 {
 
@@ -31,7 +36,14 @@ void CameraTPS::Init(const Vector3& pos, const Vector3& up, GameObject* targetOb
 	b_cameraLockDebounce = false;
 
 }
-
+/******************************************************************************/
+/*!
+\brief
+update the rotation of the camera based on mouse
+\param speed
+rotation speed (mouse sensitivity)
+*/
+/******************************************************************************/
 void CameraTPS::tpsUpdateRotation(float speed)
 {
 	int screenSizeX, screenSizeY;
@@ -66,7 +78,14 @@ void CameraTPS::tpsUpdateRotation(float speed)
 		);
 
 }
-
+/******************************************************************************/
+/*!
+\brief
+update of the third person camera
+\param dt
+delta time
+*/
+/******************************************************************************/
 void CameraTPS::tpsUpdateVec(double dt)
 {
 

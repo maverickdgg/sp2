@@ -374,6 +374,7 @@ void Sp2_Scene3::Init()
 
 void Sp2_Scene3::Update(double dt)
 {
+	fps = std::to_string(1 / dt);
 	if (Application::IsKeyPressed('1'))
 	{
 		glEnable(GL_CULL_FACE);
@@ -1245,6 +1246,7 @@ void Sp2_Scene3::Renderfps()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 	
+
 	RenderSkybox();
 
     if (b_collectBox1 == false)
@@ -1307,6 +1309,9 @@ void Sp2_Scene3::Renderfps()
 
 
 	RenderTeleporter(spaceStationTp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
+
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS:", Color(0, 1, 0), 3, 13, 18);
+	RenderTextOnScreen(meshList[GEO_TEXT], fps, Color(0, 1, 0), 3, 17, 18);
 }
 
 void Sp2_Scene3::Rendertps()

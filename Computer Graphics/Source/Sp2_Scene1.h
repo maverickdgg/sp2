@@ -148,6 +148,8 @@ public:
 	float tpsTimer;
 	bool gameComplete;
 
+	string fps;
+
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 	Buildings station;

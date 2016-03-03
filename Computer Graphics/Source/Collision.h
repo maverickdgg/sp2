@@ -23,6 +23,5 @@ bool collision(GameObject x, Vector3 y, int boundary);
 bool collision(Vector3 x, Vector3 y, int boundary);
 bool collision(Vector3 x, vector<GameObject*> y, float boundary);
 bool collisionXZ(Vector3 x,GameObject y);
-vector<GameObject> collisionElimination(GameObject x, vector<GameObject> y);
 
 #endif

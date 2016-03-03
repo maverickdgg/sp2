@@ -8,7 +8,16 @@ Music::~Music()
 {
 
 }
-
+/******************************************************************************/
+/*!
+\brief
+reading from text file and making a vector of links
+\param link
+link to the textfile to read from
+\return
+a vector of string that contains all the link to music files
+*/
+/******************************************************************************/
 vector<string> Music::readFromText(string link)
 {
 	ifstream inData;
@@ -32,7 +41,12 @@ vector<string> Music::readFromText(string link)
 	inData.close();
 	return vec_dialog;
 }
-
+/******************************************************************************/
+/*!
+\brief
+intialise music
+*/
+/******************************************************************************/
 void Music::Init()
 {
 	engine = irrklang::createIrrKlangDevice();
@@ -48,7 +62,16 @@ void Music::Init()
 	}
 
 }
-
+/******************************************************************************/
+/*!
+\brief
+playing the sound source
+\param index
+index of the sound source to be played
+\param loop
+whether to loop the sound file or not
+*/
+/******************************************************************************/
 void Music::OpeningMusic(int index,bool loop)
 {
 	engine->play2D(sound[index], loop);
