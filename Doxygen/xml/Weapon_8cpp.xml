@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Weapon_8cpp" kind="file" language="C++">
+    <compoundname>Weapon.cpp</compoundname>
+    <includes refid="Weapon_8h" local="yes">Weapon.h</includes>
+    <incdepgraph>
+      <node id="10032">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="10027" relation="include">
+        </childnode>
+        <childnode refid="10033" relation="include">
+        </childnode>
+      </node>
+      <node id="10020">
+        <label>Computer Graphics/Source/Weapon.cpp</label>
+        <link refid="Weapon.cpp"/>
+        <childnode refid="10021" relation="include">
+        </childnode>
+      </node>
+      <node id="10028">
+        <label>cmath</label>
+      </node>
+      <node id="10024">
+        <label>string</label>
+      </node>
+      <node id="10027">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="10028" relation="include">
+        </childnode>
+        <childnode refid="10029" relation="include">
+        </childnode>
+        <childnode refid="10030" relation="include">
+        </childnode>
+        <childnode refid="10031" relation="include">
+        </childnode>
+      </node>
+      <node id="10022">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="10023" relation="include">
+        </childnode>
+        <childnode refid="10024" relation="include">
+        </childnode>
+        <childnode refid="10025" relation="include">
+        </childnode>
+        <childnode refid="10026" relation="include">
+        </childnode>
+        <childnode refid="10027" relation="include">
+        </childnode>
+        <childnode refid="10032" relation="include">
+        </childnode>
+      </node>
+      <node id="10029">
+        <label>exception</label>
+      </node>
+      <node id="10026">
+        <label>fstream</label>
+      </node>
+      <node id="10021">
+        <label>Weapon.h</label>
+        <link refid="Weapon_8h"/>
+        <childnode refid="10022" relation="include">
+        </childnode>
+      </node>
+      <node id="10030">
+        <label>ctime</label>
+      </node>
+      <node id="10025">
+        <label>vector</label>
+      </node>
+      <node id="10023">
+        <label>sstream</label>
+      </node>
+      <node id="10031">
+        <label>cstdlib</label>
+      </node>
+      <node id="10033">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Weapon_8h" kindref="compound">Weapon.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" kindref="member">Weapon::W_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" refkind="member"><highlight class="normal"><ref refid="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" kindref="member">Weapon::Weapon</ref>()</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" kindref="member">W_count</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classWeapon_1aba8ab6a4d4ffdb21deec0218cdc8a813" refkind="member"><highlight class="normal"><ref refid="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" kindref="member">Weapon::Weapon</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>viewAngle,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos)<sp/>:<sp/><ref refid="classGameObject" kindref="compound">GameObject</ref>(name,<sp/>boundary,<sp/>viewAngle,<sp/>pos)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" kindref="member">W_count</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classWeapon_1a420e7ba3d2017e6de3e93eb579cfd3fa" refkind="member"><highlight class="normal"><ref refid="classWeapon_1a420e7ba3d2017e6de3e93eb579cfd3fa" kindref="member">Weapon::~Weapon</ref>()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--<ref refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" kindref="member">W_count</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Weapon.cpp"/>
+  </compounddef>
+</doxygen>

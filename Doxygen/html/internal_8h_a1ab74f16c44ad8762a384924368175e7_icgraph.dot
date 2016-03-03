@@ -1,0 +1,43 @@
+digraph "show_bits"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="show_bits",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="get_bits",height=0.2,width=0.4,color="black",URL="$internal_8h.html#a4c9accf71fe52dba23187e83252f2459"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="get_bitsz",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#a3bb107475a04ad73ab8f45dd8f1dbc44"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="huffman_decode",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#aa123e4d670f1d03b262749f6d2134630"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="mp_decode_layer3",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#aa6bde9d54d008252eb8b748f805c7c1e"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="mp_decode_frame",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#a2dff7b15a5f55a97729fb3f2d7194e64"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="mpaudec_decode_frame",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#ad804754f6cb3863f2489fcddc56f9ae4"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="irrklang::CIrrKlangAudio\lStreamMP3::decodeFrame",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#a0694b0e9c0ca306701236b660a11633d"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="irrklang::CIrrKlangAudio\lStreamMP3::CIrrKlangAudioStreamMP3",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#aa0525477376ae287275da88a17f4825d"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="irrklang::CIrrKlangAudio\lStreamMP3::readFrames",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#a85374ba5ed9178fa74dd256d59018ca0",tooltip="tells the audio stream to read n audio frames into the specified buffer "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="irrklang::CIrrKlangAudio\lStreamMP3::setPosition",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#ae615c171d074153463af08a11118ceaf",tooltip="sets the position of the audio stream. "];
+  Node11 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="mp_decode_layer1",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#aa8d8ca6a6ace0fa4945bbf9de65c0364"];
+  Node12 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="mp_decode_layer2",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#a72ee70f98e9873f63c88b69b80e15825"];
+  Node13 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="get_vlc",height=0.2,width=0.4,color="black",URL="$internal_8h.html#ad9d1cef202cce95b0fd843505647ae2c"];
+  Node14 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

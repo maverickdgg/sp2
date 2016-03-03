@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="CameraTPS_8h" kind="file" language="C++">
+    <compoundname>CameraTPS.h</compoundname>
+    <includes refid="Camera_8h" local="yes">Camera.h</includes>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <includedby refid="CameraTPS_8cpp" local="yes">Computer Graphics/Source/CameraTPS.cpp</includedby>
+    <includedby refid="LoadingScene_8h" local="yes">Computer Graphics/Source/LoadingScene.h</includedby>
+    <includedby refid="Sp2__Scene1_8h" local="yes">Computer Graphics/Source/Sp2_Scene1.h</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <includedby refid="Sp2__SpaceRace_8h" local="yes">Computer Graphics/Source/Sp2_SpaceRace.h</includedby>
+    <incdepgraph>
+      <node id="7634">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7635" relation="include">
+        </childnode>
+        <childnode refid="7640" relation="include">
+        </childnode>
+      </node>
+      <node id="7668">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+        <childnode refid="7661" relation="include">
+        </childnode>
+      </node>
+      <node id="7666">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+      </node>
+      <node id="7671">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+        <childnode refid="7661" relation="include">
+        </childnode>
+      </node>
+      <node id="7647">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="7648" relation="include">
+        </childnode>
+        <childnode refid="7649" relation="include">
+        </childnode>
+        <childnode refid="7650" relation="include">
+        </childnode>
+        <childnode refid="7640" relation="include">
+        </childnode>
+        <childnode refid="7651" relation="include">
+        </childnode>
+      </node>
+      <node id="7651">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="7652" relation="include">
+        </childnode>
+        <childnode refid="7654" relation="include">
+        </childnode>
+        <childnode refid="7656" relation="include">
+        </childnode>
+        <childnode refid="7657" relation="include">
+        </childnode>
+        <childnode refid="7658" relation="include">
+        </childnode>
+        <childnode refid="7659" relation="include">
+        </childnode>
+        <childnode refid="7660" relation="include">
+        </childnode>
+        <childnode refid="7661" relation="include">
+        </childnode>
+        <childnode refid="7662" relation="include">
+        </childnode>
+        <childnode refid="7663" relation="include">
+        </childnode>
+        <childnode refid="7664" relation="include">
+        </childnode>
+        <childnode refid="7668" relation="include">
+        </childnode>
+        <childnode refid="7669" relation="include">
+        </childnode>
+        <childnode refid="7665" relation="include">
+        </childnode>
+        <childnode refid="7671" relation="include">
+        </childnode>
+        <childnode refid="7666" relation="include">
+        </childnode>
+        <childnode refid="7670" relation="include">
+        </childnode>
+        <childnode refid="7672" relation="include">
+        </childnode>
+        <childnode refid="7673" relation="include">
+        </childnode>
+        <childnode refid="7667" relation="include">
+        </childnode>
+      </node>
+      <node id="7643">
+        <label>windows.h</label>
+      </node>
+      <node id="7652">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="7653" relation="include">
+        </childnode>
+      </node>
+      <node id="7656">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="7652" relation="include">
+        </childnode>
+      </node>
+      <node id="7636">
+        <label>cmath</label>
+      </node>
+      <node id="7649">
+        <label>string</label>
+      </node>
+      <node id="7635">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7636" relation="include">
+        </childnode>
+        <childnode refid="7637" relation="include">
+        </childnode>
+        <childnode refid="7638" relation="include">
+        </childnode>
+        <childnode refid="7639" relation="include">
+        </childnode>
+      </node>
+      <node id="7644">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="7645">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="7674">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="7675" relation="include">
+        </childnode>
+        <childnode refid="7649" relation="include">
+        </childnode>
+        <childnode refid="7648" relation="include">
+        </childnode>
+        <childnode refid="7650" relation="include">
+        </childnode>
+        <childnode refid="7635" relation="include">
+        </childnode>
+        <childnode refid="7634" relation="include">
+        </childnode>
+      </node>
+      <node id="7673">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+        <childnode refid="7663" relation="include">
+        </childnode>
+      </node>
+      <node id="7637">
+        <label>exception</label>
+      </node>
+      <node id="7650">
+        <label>fstream</label>
+      </node>
+      <node id="7642">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="7643" relation="include">
+        </childnode>
+      </node>
+      <node id="7657">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="7652" relation="include">
+        </childnode>
+      </node>
+      <node id="7667">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+        <childnode refid="7661" relation="include">
+        </childnode>
+      </node>
+      <node id="7653">
+        <label>wchar.h</label>
+      </node>
+      <node id="7662">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+        <childnode refid="7654" relation="include">
+        </childnode>
+        <childnode refid="7663" relation="include">
+        </childnode>
+        <childnode refid="7664" relation="include">
+        </childnode>
+        <childnode refid="7660" relation="include">
+        </childnode>
+        <childnode refid="7666" relation="include">
+        </childnode>
+        <childnode refid="7667" relation="include">
+        </childnode>
+      </node>
+      <node id="7638">
+        <label>ctime</label>
+      </node>
+      <node id="7648">
+        <label>vector</label>
+      </node>
+      <node id="7654">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="7655" relation="include">
+        </childnode>
+        <childnode refid="7652" relation="include">
+        </childnode>
+      </node>
+      <node id="7675">
+        <label>sstream</label>
+      </node>
+      <node id="7672">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+      </node>
+      <node id="7655">
+        <label>math.h</label>
+      </node>
+      <node id="7669">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+        <childnode refid="7670" relation="include">
+        </childnode>
+      </node>
+      <node id="7639">
+        <label>cstdlib</label>
+      </node>
+      <node id="7660">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="7640">
+        <label>iostream</label>
+      </node>
+      <node id="7646">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="7663">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="7657" relation="include">
+        </childnode>
+        <childnode refid="7654" relation="include">
+        </childnode>
+        <childnode refid="7660" relation="include">
+        </childnode>
+        <childnode refid="7661" relation="include">
+        </childnode>
+      </node>
+      <node id="7661">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+      </node>
+      <node id="7632">
+        <label>Computer Graphics/Source/CameraTPS.h</label>
+        <link refid="CameraTPS.h"/>
+        <childnode refid="7633" relation="include">
+        </childnode>
+        <childnode refid="7674" relation="include">
+        </childnode>
+      </node>
+      <node id="7664">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="7657" relation="include">
+        </childnode>
+        <childnode refid="7665" relation="include">
+        </childnode>
+        <childnode refid="7654" relation="include">
+        </childnode>
+      </node>
+      <node id="7658">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="7659">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="7665">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="7657" relation="include">
+        </childnode>
+        <childnode refid="7654" relation="include">
+        </childnode>
+      </node>
+      <node id="7641">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="7642" relation="include">
+        </childnode>
+        <childnode refid="7644" relation="include">
+        </childnode>
+        <childnode refid="7645" relation="include">
+        </childnode>
+        <childnode refid="7646" relation="include">
+        </childnode>
+        <childnode refid="7647" relation="include">
+        </childnode>
+      </node>
+      <node id="7670">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="7656" relation="include">
+        </childnode>
+      </node>
+      <node id="7633">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="7634" relation="include">
+        </childnode>
+        <childnode refid="7641" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7681">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="7677">
+        <label>Computer Graphics/Source/CameraTPS.cpp</label>
+        <link refid="CameraTPS_8cpp"/>
+      </node>
+      <node id="7679">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="7684">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="7685" relation="include">
+        </childnode>
+      </node>
+      <node id="7683">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="7682">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="7683" relation="include">
+        </childnode>
+      </node>
+      <node id="7680">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="7681" relation="include">
+        </childnode>
+      </node>
+      <node id="7685">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="7676">
+        <label>Computer Graphics/Source/CameraTPS.h</label>
+        <link refid="CameraTPS.h"/>
+        <childnode refid="7677" relation="include">
+        </childnode>
+        <childnode refid="7678" relation="include">
+        </childnode>
+        <childnode refid="7680" relation="include">
+        </childnode>
+        <childnode refid="7682" relation="include">
+        </childnode>
+        <childnode refid="7684" relation="include">
+        </childnode>
+      </node>
+      <node id="7678">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="7679" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCameraTPS" prot="public">CameraTPS</innerclass>
+    <briefdescription>
+<para>Class to define the second type of camera. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CAMERA_TPS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CAMERA_TPS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera_8h" kindref="compound">Camera.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="26" refid="classCameraTPS" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCameraTPS" kindref="compound">CameraTPS</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classCamera" kindref="compound">Camera</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="classCameraTPS_1a681f92200edaf4ebe3e6cc3fbfab0e2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCameraTPS_1a681f92200edaf4ebe3e6cc3fbfab0e2e" kindref="member">cameraRotationX</ref>;</highlight></codeline>
+<codeline lineno="30" refid="classCameraTPS_1a6ad2c3e863d62d8e9b77e8f8ad84a975" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCameraTPS_1a6ad2c3e863d62d8e9b77e8f8ad84a975" kindref="member">cameraRotationY</ref>;</highlight></codeline>
+<codeline lineno="31" refid="classCameraTPS_1a3108660478cffaee13529bb4bc4a38c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCameraTPS_1a3108660478cffaee13529bb4bc4a38c4" kindref="member">defaultOffset</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classCameraTPS_1ab8a9bdf35b07282b8aea5d6815c68e14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCameraTPS_1ab8a9bdf35b07282b8aea5d6815c68e14" kindref="member">defaultUp</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classCameraTPS_1ad663bf792eddc2446a754793b972cbe9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCameraTPS_1ad663bf792eddc2446a754793b972cbe9" kindref="member">right</ref>;</highlight></codeline>
+<codeline lineno="35" refid="classCameraTPS_1a9430b8e4fc70c05942966e381b35a22f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCameraTPS_1a9430b8e4fc70c05942966e381b35a22f" kindref="member">view</ref>;</highlight></codeline>
+<codeline lineno="36" refid="classCameraTPS_1a92cb02bad5e5b2f42541ee9bc90c4bc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject" kindref="compound">GameObject</ref>*<sp/><ref refid="classCameraTPS_1a92cb02bad5e5b2f42541ee9bc90c4bc7" kindref="member">targetObj</ref>;</highlight></codeline>
+<codeline lineno="37" refid="classCameraTPS_1ace288e06f800aca64fc97aa1d259d054" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCameraTPS_1ace288e06f800aca64fc97aa1d259d054" kindref="member">b_cameraLock</ref>;</highlight></codeline>
+<codeline lineno="38" refid="classCameraTPS_1a22043f9dd3a9e0408dc12be86f0b6868" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCameraTPS_1a22043f9dd3a9e0408dc12be86f0b6868" kindref="member">b_cameraLockDebounce</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCameraTPS_1ae213a8b75a1fa2c328a469ea97055832" kindref="member">CameraTPS</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCameraTPS_1af17a7f970cb9d3a1b5fbc246d2fbb2b9" kindref="member">~CameraTPS</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCameraTPS_1a3394f9c1704b0b93c07c9e1dc16108ff" kindref="member">Init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/><ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref>,<sp/><ref refid="classGameObject" kindref="compound">GameObject</ref>*<sp/>targetObj);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCameraTPS_1a187145d973095406211ad23707ef7587" kindref="member">tpsUpdateRotation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCameraTPS_1a743d5fc45867e31a8915e47173d0fcb2" kindref="member">tpsUpdateVec</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/CameraTPS.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classPlatform" kind="class" language="C++" prot="public">
+    <compoundname>Platform</compoundname>
+    <basecompoundref refid="classGameChar" prot="public" virt="non-virtual">GameChar</basecompoundref>
+    <includes refid="Platform_8h" local="no">Platform.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classPlatform_1a6766dc4a558bca40ac563be9920500a3" prot="public" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Platform::Platform_count</definition>
+        <argsstring></argsstring>
+        <name>Platform_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="32" column="1" bodyfile="Computer Graphics/Source/Platform.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" compoundref="Platform_8cpp" startline="24" endline="27">Platform</referencedby>
+        <referencedby refid="classPlatform_1a13b5e4ef946b8a2fe38d22014145ab68" compoundref="Platform_8cpp" startline="49" endline="52">~Platform</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Platform::lowerBodyRotate</definition>
+        <argsstring></argsstring>
+        <name>lowerBodyRotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="33" column="1" bodyfile="Computer Graphics/Source/Platform.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classPlatform_1a486c573852bfdb54819927a5870556d3" compoundref="Platform_8cpp" startline="61" endline="66">move</referencedby>
+        <referencedby refid="classPlatform_1a1360f921f4520952b602a47a0850d39e" compoundref="Platform_8cpp" startline="36" endline="42">Platform</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Platform::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="34" column="1" bodyfile="Computer Graphics/Source/Platform.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classPlatform_1a486c573852bfdb54819927a5870556d3" compoundref="Platform_8cpp" startline="61" endline="66">move</referencedby>
+        <referencedby refid="classPlatform_1a1360f921f4520952b602a47a0850d39e" compoundref="Platform_8cpp" startline="36" endline="42">Platform</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Platform::turnSpeed</definition>
+        <argsstring></argsstring>
+        <name>turnSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="35" column="1" bodyfile="Computer Graphics/Source/Platform.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" compoundref="Platform_8cpp" startline="75" endline="79">moveCircles</referencedby>
+        <referencedby refid="classPlatform_1a1360f921f4520952b602a47a0850d39e" compoundref="Platform_8cpp" startline="36" endline="42">Platform</referencedby>
+        <referencedby refid="classPlatform_1a80d4dd2b9cf2a6abc359e068286cf16c" compoundref="Platform_8cpp" startline="88" endline="92">rotateAbout</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Platform::Platform</definition>
+        <argsstring>()</argsstring>
+        <name>Platform</name>
+        <briefdescription>
+<para><ref refid="classPlatform" kindref="compound">Platform</ref>&apos;s default constructor implements count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="29" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="24" bodyend="27"/>
+        <references refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" compoundref="Platform_8h" startline="32">Platform_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classPlatform_1a1360f921f4520952b602a47a0850d39e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Platform::Platform</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0))</argsstring>
+        <name>Platform</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classPlatform" kindref="compound">Platform</ref>&apos;s overloaded constructor with parameters implements count. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object_name, int boundary, float viewAngle, <ref refid="structVector3" kindref="compound">Vector3</ref> pos </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="30" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="36" bodyend="42"/>
+        <references refid="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" compoundref="Platform_8h" startline="33">lowerBodyRotate</references>
+        <references refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" compoundref="Platform_8h" startline="32">Platform_count</references>
+        <references refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" compoundref="Platform_8h" startline="34">speed</references>
+        <references refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" compoundref="Platform_8h" startline="35">turnSpeed</references>
+      </memberdef>
+      <memberdef kind="function" id="classPlatform_1a13b5e4ef946b8a2fe38d22014145ab68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Platform::~Platform</definition>
+        <argsstring>()</argsstring>
+        <name>~Platform</name>
+        <briefdescription>
+<para><ref refid="classPlatform" kindref="compound">Platform</ref>&apos;s default destructor decrements count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="31" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="49" bodyend="52"/>
+        <references refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" compoundref="Platform_8h" startline="32">Platform_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classPlatform_1a486c573852bfdb54819927a5870556d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Platform::move</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>move</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Sets the movement of the <ref refid="classPlatform" kindref="compound">Platform</ref> (To be edited) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dt </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="36" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="61" bodyend="66"/>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" compoundref="Platform_8h" startline="33">lowerBodyRotate</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" compoundref="Platform_8h" startline="34">speed</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" compoundref="Platform_8cpp" startline="75" endline="79">moveCircles</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Platform::moveCircles</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>moveCircles</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Executing move function as well as rotation while moving. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dt </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="37" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="75" bodyend="79"/>
+        <references refid="classPlatform_1a486c573852bfdb54819927a5870556d3" compoundref="Platform_8cpp" startline="61" endline="66">move</references>
+        <references refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" compoundref="Platform_8h" startline="35">turnSpeed</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+      </memberdef>
+      <memberdef kind="function" id="classPlatform_1a80d4dd2b9cf2a6abc359e068286cf16c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Platform::rotateAbout</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>rotateAbout</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>ViewAngle is for turning speed, rotating at its own position without moving around. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dt </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="38" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="88" bodyend="92"/>
+        <references refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" compoundref="Platform_8h" startline="35">turnSpeed</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+      </memberdef>
+      <memberdef kind="function" id="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Platform::changePlatform</definition>
+        <argsstring>(bool &amp;isClimb, Platform &amp;p, Player &amp;player)</argsstring>
+        <name>changePlatform</name>
+        <param>
+          <type>bool &amp;</type>
+          <declname>isClimb</declname>
+        </param>
+        <param>
+          <type><ref refid="classPlatform" kindref="compound">Platform</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="classPlayer" kindref="compound">Player</ref> &amp;</type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="39" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="94" bodyend="105"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Platform::noLadderPlatform</definition>
+        <argsstring>(Platform &amp;p, Player &amp;player)</argsstring>
+        <name>noLadderPlatform</name>
+        <param>
+          <type><ref refid="classPlatform" kindref="compound">Platform</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="classPlayer" kindref="compound">Player</ref> &amp;</type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Platform.h" line="40" column="1" bodyfile="Computer Graphics/Source/Platform.cpp" bodystart="107" bodyend="113"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="classPlatform" kindref="compound">Platform</ref> (Inheriting from <ref refid="classGameChar" kindref="compound">GameChar</ref>) /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classPlatform" kindref="compound">Platform</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1158">
+        <label>Platform</label>
+        <link refid="classPlatform"/>
+        <childnode refid="1159" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1160">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="1159">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="1160" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1168">
+        <label>static size_t</label>
+      </node>
+      <node id="1169">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="1161">
+        <label>Platform</label>
+        <link refid="classPlatform"/>
+        <childnode refid="1162" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1164" relation="usage">
+          <edgelabel>speed</edgelabel>
+          <edgelabel>lowerBodyRotate</edgelabel>
+          <edgelabel>turnSpeed</edgelabel>
+        </childnode>
+        <childnode refid="1168" relation="usage">
+          <edgelabel>Platform_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1167">
+        <label>string</label>
+      </node>
+      <node id="1164">
+        <label>float</label>
+      </node>
+      <node id="1166">
+        <label>int</label>
+      </node>
+      <node id="1173">
+        <label>vector&lt; bool &gt;</label>
+      </node>
+      <node id="1172">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="1166" relation="usage">
+          <edgelabel>numTasks</edgelabel>
+        </childnode>
+        <childnode refid="1167" relation="usage">
+          <edgelabel>questName</edgelabel>
+        </childnode>
+        <childnode refid="1169" relation="usage">
+          <edgelabel>taskNames</edgelabel>
+        </childnode>
+        <childnode refid="1173" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="1171">
+        <label>unsigned</label>
+      </node>
+      <node id="1163">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="1164" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="1165" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="1166" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="1167" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1168" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1170">
+        <label>bool</label>
+      </node>
+      <node id="1162">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="1163" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1166" relation="usage">
+          <edgelabel>dialogue_index</edgelabel>
+          <edgelabel>chat_boundary</edgelabel>
+        </childnode>
+        <childnode refid="1169" relation="usage">
+          <edgelabel>vec_dialog</edgelabel>
+        </childnode>
+        <childnode refid="1170" relation="usage">
+          <edgelabel>b_dialogueEnd</edgelabel>
+          <edgelabel>isPressed</edgelabel>
+          <edgelabel>b_indexDebounce</edgelabel>
+          <edgelabel>invulnerability</edgelabel>
+        </childnode>
+        <childnode refid="1171" relation="usage">
+          <edgelabel>max_health</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="1168" relation="usage">
+          <edgelabel>GC_count</edgelabel>
+        </childnode>
+        <childnode refid="1172" relation="usage">
+          <edgelabel>quest</edgelabel>
+        </childnode>
+      </node>
+      <node id="1165">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1164" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Platform.h" line="27" column="1" bodyfile="Computer Graphics/Source/Platform.h" bodystart="26" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" prot="public" virt="non-virtual"><scope>Platform</scope><name>assignQuest</name></member>
+      <member refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" prot="public" virt="non-virtual"><scope>Platform</scope><name>b_dialogueEnd</name></member>
+      <member refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" prot="public" virt="non-virtual"><scope>Platform</scope><name>b_indexDebounce</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>Platform</scope><name>boundary</name></member>
+      <member refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" prot="public" virt="non-virtual"><scope>Platform</scope><name>changePlatform</name></member>
+      <member refid="classGameChar_1a696bae70c00267e3e510330073aa2502" prot="public" virt="non-virtual"><scope>Platform</scope><name>chat_boundary</name></member>
+      <member refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" prot="public" virt="non-virtual"><scope>Platform</scope><name>chat_update</name></member>
+      <member refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" prot="public" virt="non-virtual"><scope>Platform</scope><name>dialogue_index</name></member>
+      <member refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" prot="protected" virt="non-virtual"><scope>Platform</scope><name>GameChar</name></member>
+      <member refid="classGameChar_1ae15f329bb71a20fe4083b07702f73658" prot="protected" virt="non-virtual"><scope>Platform</scope><name>GameChar</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>Platform</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>Platform</scope><name>GameObject</name></member>
+      <member refid="classGameChar_1a64f572d829f790537947d7ec566035de" prot="public" virt="non-virtual"><scope>Platform</scope><name>GC_count</name></member>
+      <member refid="classGameChar_1af269122fc55f796480526e528d7df914" prot="public" virt="non-virtual"><scope>Platform</scope><name>getHealth</name></member>
+      <member refid="classGameChar_1a5d065602468049316d1108925cede374" prot="public" virt="non-virtual"><scope>Platform</scope><name>getHealthString</name></member>
+      <member refid="classGameChar_1a3e719d888ab88c36961827985897f24c" prot="public" virt="non-virtual"><scope>Platform</scope><name>isDead</name></member>
+      <member refid="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" prot="public" virt="non-virtual"><scope>Platform</scope><name>isPressed</name></member>
+      <member refid="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" prot="public" virt="non-virtual"><scope>Platform</scope><name>lowerBodyRotate</name></member>
+      <member refid="classPlatform_1a486c573852bfdb54819927a5870556d3" prot="public" virt="non-virtual"><scope>Platform</scope><name>move</name></member>
+      <member refid="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" prot="public" virt="non-virtual"><scope>Platform</scope><name>moveCircles</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>Platform</scope><name>name</name></member>
+      <member refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" prot="public" virt="non-virtual"><scope>Platform</scope><name>noLadderPlatform</name></member>
+      <member refid="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" prot="public" virt="non-virtual"><scope>Platform</scope><name>Platform</name></member>
+      <member refid="classPlatform_1a1360f921f4520952b602a47a0850d39e" prot="public" virt="non-virtual"><scope>Platform</scope><name>Platform</name></member>
+      <member refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" prot="public" virt="non-virtual"><scope>Platform</scope><name>Platform_count</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>Platform</scope><name>pos</name></member>
+      <member refid="classGameChar_1a931f5a592835d5beb15617c1f461ad09" prot="public" virt="non-virtual"><scope>Platform</scope><name>quest</name></member>
+      <member refid="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" prot="public" virt="non-virtual"><scope>Platform</scope><name>ReadFromTxt</name></member>
+      <member refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" prot="public" virt="non-virtual"><scope>Platform</scope><name>recieveHealthDamage</name></member>
+      <member refid="classGameChar_1a9acf18e780626b55712297ba5c07ad94" prot="public" virt="non-virtual"><scope>Platform</scope><name>regainHealth</name></member>
+      <member refid="classPlatform_1a80d4dd2b9cf2a6abc359e068286cf16c" prot="public" virt="non-virtual"><scope>Platform</scope><name>rotateAbout</name></member>
+      <member refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" prot="public" virt="non-virtual"><scope>Platform</scope><name>speed</name></member>
+      <member refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" prot="public" virt="non-virtual"><scope>Platform</scope><name>turnSpeed</name></member>
+      <member refid="classGameChar_1aecf445b212b38680333591507fec1b9c" prot="public" virt="non-virtual"><scope>Platform</scope><name>vec_dialog</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>Platform</scope><name>viewAngle</name></member>
+      <member refid="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" prot="public" virt="non-virtual"><scope>Platform</scope><name>~GameChar</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>Platform</scope><name>~GameObject</name></member>
+      <member refid="classPlatform_1a13b5e4ef946b8a2fe38d22014145ab68" prot="public" virt="non-virtual"><scope>Platform</scope><name>~Platform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

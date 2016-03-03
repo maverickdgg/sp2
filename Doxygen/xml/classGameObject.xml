@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classGameObject" kind="class" language="C++" prot="public">
+    <compoundname>GameObject</compoundname>
+    <derivedcompoundref refid="classGameChar" prot="public" virt="non-virtual">GameChar</derivedcompoundref>
+    <derivedcompoundref refid="classSpaceVehicles" prot="public" virt="non-virtual">SpaceVehicles</derivedcompoundref>
+    <derivedcompoundref refid="classWeapon" prot="public" virt="non-virtual">Weapon</derivedcompoundref>
+    <includes refid="GameObject_8h" local="no">GameObject.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classGameObject_1ac706fae2a30cc6ae4233dc3c8f7f41be" prot="private" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t GameObject::GO_count</definition>
+        <argsstring></argsstring>
+        <name>GO_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="44" column="1" bodyfile="Computer Graphics/Source/GameObject.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" compoundref="GameObject_8cpp" startline="5" endline="8">GameObject</referencedby>
+        <referencedby refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" compoundref="GameObject_8cpp" startline="18" endline="21">~GameObject</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string GameObject::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="47" column="1" bodyfile="Computer Graphics/Source/GameObject.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" compoundref="GameObject_8cpp" startline="10" endline="16">GameObject</referencedby>
+        <referencedby refid="classPlayer_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="Player_8cpp" startline="8" endline="24">Player::Player</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameObject::boundary</definition>
+        <argsstring></argsstring>
+        <name>boundary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="49" column="1" bodyfile="Computer Graphics/Source/GameObject.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" compoundref="Platform_8cpp" startline="94" endline="105">Platform::changePlatform</referencedby>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">GameChar::chat_update</referencedby>
+        <referencedby refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</referencedby>
+        <referencedby refid="Collision_8h_1a9eed1fd9a880ab57e22efb89aa7696de" compoundref="Collision_8cpp" startline="121" endline="135">collisionElimination</referencedby>
+        <referencedby refid="Collision_8h_1a5ced462f9fcc3c9963cdf5e0da071631" compoundref="Collision_8cpp" startline="42" endline="66">collisionXZ</referencedby>
+        <referencedby refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" compoundref="SpaceVehicles_8cpp" startline="356" endline="373">SpaceVehicles::enterVehicleUpdate</referencedby>
+        <referencedby refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" compoundref="GameObject_8cpp" startline="10" endline="16">GameObject</referencedby>
+        <referencedby refid="classPlayer_1a5b057a6cd421a056d2a0694ab00739e7" compoundref="Player_8cpp" startline="48" endline="174">Player::movementUpdate</referencedby>
+        <referencedby refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" compoundref="Platform_8cpp" startline="107" endline="113">Platform::noLadderPlatform</referencedby>
+        <referencedby refid="classPlayer_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="Player_8cpp" startline="8" endline="24">Player::Player</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene1_1aeabebe615a8a759a67df19a5d622f666" compoundref="Sp2__Scene1_8cpp" startline="477" endline="498">Sp2_Scene1::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a21eaef4ef696d83ad357ee8c0ec4bb16" compoundref="Sp2__SpaceRace_8cpp" startline="580" endline="603">Sp2_SpaceRace::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1a57f6c020216c4093a312595a01d3e35e" compoundref="SP2__Scene3_8cpp" startline="873" endline="899">Sp2_Scene3::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 GameObject::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="50" column="1" bodyfile="Computer Graphics/Source/GameObject.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" compoundref="Platform_8cpp" startline="94" endline="105">Platform::changePlatform</referencedby>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">GameChar::chat_update</referencedby>
+        <referencedby refid="classBuildings_1a728402f8f61318eff08b8f7afc2c1224" compoundref="Buildings_8cpp" startline="20" endline="28">Buildings::climb</referencedby>
+        <referencedby refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</referencedby>
+        <referencedby refid="Collision_8h_1a9eed1fd9a880ab57e22efb89aa7696de" compoundref="Collision_8cpp" startline="121" endline="135">collisionElimination</referencedby>
+        <referencedby refid="Collision_8h_1a5ced462f9fcc3c9963cdf5e0da071631" compoundref="Collision_8cpp" startline="42" endline="66">collisionXZ</referencedby>
+        <referencedby refid="classSpaceVehicles_1a63617a030d2fc668c5f55b787aebc265" compoundref="SpaceVehicles_8cpp" startline="494" endline="499">SpaceVehicles::distanceFromCheckpoint</referencedby>
+        <referencedby refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" compoundref="SpaceVehicles_8cpp" startline="356" endline="373">SpaceVehicles::enterVehicleUpdate</referencedby>
+        <referencedby refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" compoundref="GameObject_8cpp" startline="10" endline="16">GameObject</referencedby>
+        <referencedby refid="classCameraTPS_1a3394f9c1704b0b93c07c9e1dc16108ff" compoundref="CameraTPS_8cpp" startline="14" endline="33">CameraTPS::Init</referencedby>
+        <referencedby refid="classBB8v2_1a4d48f1032bb60950982b908efeb3ca95" compoundref="BB-8__2_8cpp" startline="62" endline="67">BB8v2::move</referencedby>
+        <referencedby refid="classBB8_1aab6c34b90dab5887f0563060a20838e4" compoundref="BB-8_8cpp" startline="62" endline="67">BB8::move</referencedby>
+        <referencedby refid="classPlatform_1a486c573852bfdb54819927a5870556d3" compoundref="Platform_8cpp" startline="61" endline="66">Platform::move</referencedby>
+        <referencedby refid="classPlayer_1a5b057a6cd421a056d2a0694ab00739e7" compoundref="Player_8cpp" startline="48" endline="174">Player::movementUpdate</referencedby>
+        <referencedby refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" compoundref="Platform_8cpp" startline="107" endline="113">Platform::noLadderPlatform</referencedby>
+        <referencedby refid="classPlayer_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="Player_8cpp" startline="8" endline="24">Player::Player</referencedby>
+        <referencedby refid="classSpaceVehicles_1a287f59990fa7612f7883a01555eea404" compoundref="SpaceVehicles_8cpp" startline="477" endline="492">SpaceVehicles::positionInQueue</referencedby>
+        <referencedby refid="classSp2__Scene1_1affd071d43ef2fca91b096e7e7963f7d1" compoundref="Sp2__Scene1_8cpp" startline="537" endline="560">Sp2_Scene1::RenderBB8</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene3_1aaf2c3e791d4ccba1e3b1e76d9df0d9bb" compoundref="SP2__Scene3_8cpp" startline="1251" endline="1267">Sp2_Scene3::RenderChestBurster</referencedby>
+        <referencedby refid="classSp2__Scene3_1aee8c1d7c9bd31063ba0f0a0f8c0eb10f" compoundref="SP2__Scene3_8cpp" startline="1269" endline="1285">Sp2_Scene3::RenderChestBurster1</referencedby>
+        <referencedby refid="classSp2__Scene1_1ad6a43af14f5aca3417deea62b24dbc7e" compoundref="Sp2__Scene1_8cpp" startline="672" endline="733">Sp2_Scene1::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene1_1aeabebe615a8a759a67df19a5d622f666" compoundref="Sp2__Scene1_8cpp" startline="477" endline="498">Sp2_Scene1::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a21eaef4ef696d83ad357ee8c0ec4bb16" compoundref="Sp2__SpaceRace_8cpp" startline="580" endline="603">Sp2_SpaceRace::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1a57f6c020216c4093a312595a01d3e35e" compoundref="SP2__Scene3_8cpp" startline="873" endline="899">Sp2_Scene3::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1a346e1aa0ed86ad3745dabf77d8725567" compoundref="SP2__Scene3_8cpp" startline="790" endline="807">Sp2_Scene3::RenderInstructions</referencedby>
+        <referencedby refid="classSp2__Scene3_1af977943490d876a299b08644b5f0ebcd" compoundref="SP2__Scene3_8cpp" startline="1176" endline="1247">Sp2_Scene3::RenderMedic</referencedby>
+        <referencedby refid="classSp2__Scene3_1a485e611aa8f811d187cbf0f444ae8704" compoundref="SP2__Scene3_8cpp" startline="1287" endline="1302">Sp2_Scene3::RenderNecromancer</referencedby>
+        <referencedby refid="classSp2__Scene3_1aa9b81af61da8677203bf3e15f8526d15" compoundref="SP2__Scene3_8cpp" startline="1039" endline="1174">Sp2_Scene3::RenderPlatform</referencedby>
+        <referencedby refid="classSp2__Scene3_1ac03a8ab64a3e0fbd62ae9cda9ef2daa4" compoundref="SP2__Scene3_8cpp" startline="1304" endline="1313">Sp2_Scene3::RenderRocket</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+        <referencedby refid="classSp2__Scene3_1a9a9c699d70d2758a642716104614c8e9" compoundref="SP2__Scene3_8cpp" startline="727" endline="788">Sp2_Scene3::RenderSkybox</referencedby>
+        <referencedby refid="classSp2__Scene3_1ab8b8ee5ac95441f935c1b4d04c3a39c2" compoundref="SP2__Scene3_8cpp" startline="815" endline="871">Sp2_Scene3::RenderSuit</referencedby>
+        <referencedby refid="classSp2__Scene1_1a600d17005d897d460e53c972a7f82307" compoundref="Sp2__Scene1_8cpp" startline="500" endline="517">Sp2_Scene1::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a8dae59c02fa2996a5a7793fbea6b08e7" compoundref="Sp2__SpaceRace_8cpp" startline="735" endline="752">Sp2_SpaceRace::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__Scene3_1a52aad13df08c4bddb02bbc4469e0bab7" compoundref="SP2__Scene3_8cpp" startline="1425" endline="1442">Sp2_Scene3::RenderTeleporter</referencedby>
+        <referencedby refid="classCameraTPS_1a743d5fc45867e31a8915e47173d0fcb2" compoundref="CameraTPS_8cpp" startline="70" endline="114">CameraTPS::tpsUpdateVec</referencedby>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">SpaceVehicles::updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameObject::viewAngle</definition>
+        <argsstring></argsstring>
+        <name>viewAngle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="51" column="1" bodyfile="Computer Graphics/Source/GameObject.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" compoundref="GameObject_8cpp" startline="10" endline="16">GameObject</referencedby>
+        <referencedby refid="classBB8_1aab6c34b90dab5887f0563060a20838e4" compoundref="BB-8_8cpp" startline="62" endline="67">BB8::move</referencedby>
+        <referencedby refid="classBB8v2_1a4d48f1032bb60950982b908efeb3ca95" compoundref="BB-8__2_8cpp" startline="62" endline="67">BB8v2::move</referencedby>
+        <referencedby refid="classPlatform_1a486c573852bfdb54819927a5870556d3" compoundref="Platform_8cpp" startline="61" endline="66">Platform::move</referencedby>
+        <referencedby refid="classBB8v2_1a2a6a77006ee5d61b77ff0e61fe85f1f9" compoundref="BB-8__2_8cpp" startline="76" endline="80">BB8v2::moveCircles</referencedby>
+        <referencedby refid="classBB8_1a5099bc077f16f7a4efea6f780870fec5" compoundref="BB-8_8cpp" startline="76" endline="80">BB8::moveCircles</referencedby>
+        <referencedby refid="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" compoundref="Platform_8cpp" startline="75" endline="79">Platform::moveCircles</referencedby>
+        <referencedby refid="classPlayer_1a5b057a6cd421a056d2a0694ab00739e7" compoundref="Player_8cpp" startline="48" endline="174">Player::movementUpdate</referencedby>
+        <referencedby refid="classPlayer_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="Player_8cpp" startline="8" endline="24">Player::Player</referencedby>
+        <referencedby refid="classSp2__Scene1_1affd071d43ef2fca91b096e7e7963f7d1" compoundref="Sp2__Scene1_8cpp" startline="537" endline="560">Sp2_Scene1::RenderBB8</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene3_1aaf2c3e791d4ccba1e3b1e76d9df0d9bb" compoundref="SP2__Scene3_8cpp" startline="1251" endline="1267">Sp2_Scene3::RenderChestBurster</referencedby>
+        <referencedby refid="classSp2__Scene3_1aee8c1d7c9bd31063ba0f0a0f8c0eb10f" compoundref="SP2__Scene3_8cpp" startline="1269" endline="1285">Sp2_Scene3::RenderChestBurster1</referencedby>
+        <referencedby refid="classSp2__Scene1_1aeabebe615a8a759a67df19a5d622f666" compoundref="Sp2__Scene1_8cpp" startline="477" endline="498">Sp2_Scene1::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a21eaef4ef696d83ad357ee8c0ec4bb16" compoundref="Sp2__SpaceRace_8cpp" startline="580" endline="603">Sp2_SpaceRace::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1a57f6c020216c4093a312595a01d3e35e" compoundref="SP2__Scene3_8cpp" startline="873" endline="899">Sp2_Scene3::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1af977943490d876a299b08644b5f0ebcd" compoundref="SP2__Scene3_8cpp" startline="1176" endline="1247">Sp2_Scene3::RenderMedic</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+        <referencedby refid="classBB8v2_1a986d4233ad3944db9aa7e74786035e7d" compoundref="BB-8__2_8cpp" startline="89" endline="92">BB8v2::rotateAbout</referencedby>
+        <referencedby refid="classPlatform_1a80d4dd2b9cf2a6abc359e068286cf16c" compoundref="Platform_8cpp" startline="88" endline="92">Platform::rotateAbout</referencedby>
+        <referencedby refid="classSir_1afac5147d417fcd73dae1e03c5d0e0167" compoundref="Sir_8cpp" startline="57" endline="75">Sir::Salute</referencedby>
+        <referencedby refid="classCameraTPS_1a743d5fc45867e31a8915e47173d0fcb2" compoundref="CameraTPS_8cpp" startline="70" endline="114">CameraTPS::tpsUpdateVec</referencedby>
+        <referencedby refid="classChestBurster_1a41f57dc1ecde2be7dfbac81586ed65c1" compoundref="ChestBurster_8cpp" startline="24" endline="49">ChestBurster::translateWorm</referencedby>
+        <referencedby refid="classAlienEnemy_1a9f081cfeff02a328bde683c947f0f7d8" compoundref="AlienEnemy_8cpp" startline="60" endline="78">AlienEnemy::translateWorm</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">SpaceVehicles::updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>GameObject::~GameObject</definition>
+        <argsstring>()</argsstring>
+        <name>~GameObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="48" column="1" bodyfile="Computer Graphics/Source/GameObject.cpp" bodystart="18" bodyend="21"/>
+        <references refid="classGameObject_1ac706fae2a30cc6ae4233dc3c8f7f41be" compoundref="GameObject_8h" startline="44">GO_count</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameObject::GameObject</definition>
+        <argsstring>()</argsstring>
+        <name>GameObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="53" column="1" bodyfile="Computer Graphics/Source/GameObject.cpp" bodystart="5" bodyend="8"/>
+        <references refid="classGameObject_1ac706fae2a30cc6ae4233dc3c8f7f41be" compoundref="GameObject_8h" startline="44">GO_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameObject::GameObject</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0))</argsstring>
+        <name>GameObject</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/GameObject.h" line="54" column="1" bodyfile="Computer Graphics/Source/GameObject.cpp" bodystart="10" bodyend="16"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">boundary</references>
+        <references refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" compoundref="GameObject_8h" startline="47">name</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">pos</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">viewAngle</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="classGameObject" kindref="compound">GameObject</ref> /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classGameObject" kindref="compound">GameObject</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="916">
+        <label>Buildings</label>
+        <link refid="classBuildings"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="919">
+        <label>Pingu</label>
+        <link refid="classPingu"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="924">
+        <label>SpaceVehicles</label>
+        <link refid="classSpaceVehicles"/>
+        <childnode refid="909" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="921">
+        <label>Platform</label>
+        <link refid="classPlatform"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="920">
+        <label>PinkKnight</label>
+        <link refid="classPinkKnight"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="918">
+        <label>Medic</label>
+        <link refid="classMedic"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="925">
+        <label>Weapon</label>
+        <link refid="classWeapon"/>
+        <childnode refid="909" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="913">
+        <label>ChestBurster</label>
+        <link refid="classChestBurster"/>
+        <childnode refid="912" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="911">
+        <label>Alien</label>
+        <link refid="classAlien"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="917">
+        <label>Human</label>
+        <link refid="classHuman"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="922">
+        <label>Player</label>
+        <link refid="classPlayer"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="923">
+        <label>Sir</label>
+        <link refid="classSir"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="909">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="914">
+        <label>BB8</label>
+        <link refid="classBB8"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="915">
+        <label>BB8v2</label>
+        <link refid="classBB8v2"/>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="912">
+        <label>AlienEnemy</label>
+        <link refid="classAlienEnemy"/>
+        <childnode refid="911" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="910">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="909" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="931">
+        <label>static size_t</label>
+      </node>
+      <node id="930">
+        <label>string</label>
+      </node>
+      <node id="927">
+        <label>float</label>
+      </node>
+      <node id="929">
+        <label>int</label>
+      </node>
+      <node id="926">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="927" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="928" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="929" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="930" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="931" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="928">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="927" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/GameObject.h" line="41" column="1" bodyfile="Computer Graphics/Source/GameObject.h" bodystart="40" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>GameObject</scope><name>boundary</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>GameObject</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>GameObject</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1ac706fae2a30cc6ae4233dc3c8f7f41be" prot="private" virt="non-virtual"><scope>GameObject</scope><name>GO_count</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>GameObject</scope><name>name</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>GameObject</scope><name>pos</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>GameObject</scope><name>viewAngle</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>GameObject</scope><name>~GameObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

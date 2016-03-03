@@ -1,0 +1,644 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classSpaceVehicles" kind="class" language="C++" prot="public">
+    <compoundname>SpaceVehicles</compoundname>
+    <basecompoundref refid="classGameObject" prot="public" virt="non-virtual">GameObject</basecompoundref>
+    <includes refid="SpaceVehicles_8h" local="no">SpaceVehicles.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classSpaceVehicles_1a1c19079da9c647e83bb6dbfa488006c7" prot="public" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SpaceVehicles::SV_count</definition>
+        <argsstring></argsstring>
+        <name>SV_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="37" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" compoundref="SpaceVehicles_8cpp" startline="5" endline="12">SpaceVehicles</referencedby>
+        <referencedby refid="classSpaceVehicles_1aef46c3a2834d0ccf0af95420051b801f" compoundref="SpaceVehicles_8cpp" startline="23" endline="26">~SpaceVehicles</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpaceVehicles::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="39" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1ad63bdf11991b7886b2cf6559036572d4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SpaceVehicles::b_isInVehicle</definition>
+        <argsstring></argsstring>
+        <name>b_isInVehicle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="40" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" compoundref="SpaceVehicles_8cpp" startline="356" endline="373">enterVehicleUpdate</referencedby>
+        <referencedby refid="classSp2__Scene3_1a2227ee0830c9d5f4ca486cc70b140331" compoundref="SP2__Scene3_8cpp" startline="1527" endline="1581">Sp2_Scene3::Render</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a6e5a16911da0317ddce3175936fb316d" compoundref="Sp2__SpaceRace_8cpp" startline="923" endline="1010">Sp2_SpaceRace::Render</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" compoundref="SpaceVehicles_8cpp" startline="5" endline="12">SpaceVehicles</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1a11d3fe594539e9c3ea18598bf581892b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SpaceVehicles::b_vehDebounce</definition>
+        <argsstring></argsstring>
+        <name>b_vehDebounce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="41" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" compoundref="SpaceVehicles_8cpp" startline="356" endline="373">enterVehicleUpdate</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" compoundref="SpaceVehicles_8cpp" startline="5" endline="12">SpaceVehicles</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpaceVehicles::rotationZ</definition>
+        <argsstring></argsstring>
+        <name>rotationZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="42" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac43323a5c95ec6e0adf7e3d8fc55625b" compoundref="SpaceVehicles_8cpp" startline="14" endline="21">SpaceVehicles</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpaceVehicles::lap</definition>
+        <argsstring></argsstring>
+        <name>lap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="43" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1a1f3c77da3c867f506dbc62dea84b53ef" compoundref="SpaceVehicles_8cpp" startline="440" endline="475">getRacePosition</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" compoundref="SpaceVehicles_8cpp" startline="5" endline="12">SpaceVehicles</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" compoundref="SpaceVehicles_8cpp" startline="115" endline="233">updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SpaceVehicles::lapDebounce</definition>
+        <argsstring></argsstring>
+        <name>lapDebounce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="44" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" compoundref="SpaceVehicles_8cpp" startline="5" endline="12">SpaceVehicles</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" compoundref="SpaceVehicles_8cpp" startline="115" endline="233">updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpaceVehicles::max_speed</definition>
+        <argsstring></argsstring>
+        <name>max_speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="45" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1a9cb508afbfcc18ed511922c53ca77ad6" prot="public" static="no" mutable="no">
+        <type>queue&lt; int &gt;</type>
+        <definition>queue&lt;int&gt; SpaceVehicles::racepath</definition>
+        <argsstring></argsstring>
+        <name>racepath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="46" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1a63617a030d2fc668c5f55b787aebc265" compoundref="SpaceVehicles_8cpp" startline="494" endline="499">distanceFromCheckpoint</referencedby>
+        <referencedby refid="classSpaceVehicles_1a1f3c77da3c867f506dbc62dea84b53ef" compoundref="SpaceVehicles_8cpp" startline="440" endline="475">getRacePosition</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" compoundref="Sp2__SpaceRace_8cpp" startline="25" endline="240">Sp2_SpaceRace::Init</referencedby>
+        <referencedby refid="classSpaceVehicles_1a287f59990fa7612f7883a01555eea404" compoundref="SpaceVehicles_8cpp" startline="477" endline="492">positionInQueue</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpaceVehicles::acceleration</definition>
+        <argsstring></argsstring>
+        <name>acceleration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="60" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSpaceVehicles_1aa070b3ae1bcad34cb3211c3d73d10d78" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpaceVehicles::rotateAngle</definition>
+        <argsstring></argsstring>
+        <name>rotateAngle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="61" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" compoundref="SpaceVehicles_8cpp" startline="29" endline="111">updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">updateVehicle2</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SpaceVehicles::SpaceVehicles</definition>
+        <argsstring>()</argsstring>
+        <name>SpaceVehicles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="34" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="5" bodyend="12"/>
+        <references refid="classSpaceVehicles_1ad63bdf11991b7886b2cf6559036572d4" compoundref="SpaceVehicles_8h" startline="40">b_isInVehicle</references>
+        <references refid="classSpaceVehicles_1a11d3fe594539e9c3ea18598bf581892b" compoundref="SpaceVehicles_8h" startline="41">b_vehDebounce</references>
+        <references refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" compoundref="SpaceVehicles_8h" startline="43">lap</references>
+        <references refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" compoundref="SpaceVehicles_8h" startline="44">lapDebounce</references>
+        <references refid="classSpaceVehicles_1a1c19079da9c647e83bb6dbfa488006c7" compoundref="SpaceVehicles_8h" startline="37">SV_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1ac43323a5c95ec6e0adf7e3d8fc55625b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SpaceVehicles::SpaceVehicles</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle, Vector3 pos, int max_speed=150)</argsstring>
+        <name>SpaceVehicles</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_speed</declname>
+          <defval>150</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="35" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="14" bodyend="21"/>
+        <references refid="classSpaceVehicles_1ad63bdf11991b7886b2cf6559036572d4" compoundref="SpaceVehicles_8h" startline="40">b_isInVehicle</references>
+        <references refid="classSpaceVehicles_1a11d3fe594539e9c3ea18598bf581892b" compoundref="SpaceVehicles_8h" startline="41">b_vehDebounce</references>
+        <references refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" compoundref="SpaceVehicles_8h" startline="43">lap</references>
+        <references refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" compoundref="SpaceVehicles_8h" startline="44">lapDebounce</references>
+        <references refid="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" compoundref="SpaceVehicles_8h" startline="42">rotationZ</references>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1aef46c3a2834d0ccf0af95420051b801f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SpaceVehicles::~SpaceVehicles</definition>
+        <argsstring>()</argsstring>
+        <name>~SpaceVehicles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="36" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="23" bodyend="26"/>
+        <references refid="classSpaceVehicles_1a1c19079da9c647e83bb6dbfa488006c7" compoundref="SpaceVehicles_8h" startline="37">SV_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpaceVehicles::updateVehicle</definition>
+        <argsstring>(double deltaTime)</argsstring>
+        <name>updateVehicle</name>
+        <param>
+          <type>double</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="48" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="29" bodyend="111"/>
+        <references refid="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" compoundref="SpaceVehicles_8h" startline="60">acceleration</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="39" endline="42">Application::IsKeyPressed</references>
+        <references refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" compoundref="SpaceVehicles_8h" startline="45">max_speed</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="classSpaceVehicles_1aa070b3ae1bcad34cb3211c3d73d10d78" compoundref="SpaceVehicles_8h" startline="61">rotateAngle</references>
+        <references refid="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" compoundref="SpaceVehicles_8h" startline="42">rotationZ</references>
+        <references refid="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" compoundref="SpaceVehicles_8h" startline="39">speed</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpaceVehicles::updateVehicle</definition>
+        <argsstring>(double deltaTime, PMAP map, queue&lt; int &gt; &amp;q)</argsstring>
+        <name>updateVehicle</name>
+        <param>
+          <type>double</type>
+          <declname>deltaTime</declname>
+        </param>
+        <param>
+          <type><ref refid="Map_8h_1a1974ae7bce14f096c1a498ab33b38c6f" kindref="member">PMAP</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>queue&lt; int &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="49" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="115" bodyend="233"/>
+        <references refid="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" compoundref="SpaceVehicles_8h" startline="60">acceleration</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" compoundref="Map_8h" startline="34">sMap::data</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="Map_8cpp_1ae7b0fce8d732defec7b9ae019af73a00" compoundref="Map_8cpp" startline="46" endline="53">indexToVector</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="39" endline="42">Application::IsKeyPressed</references>
+        <references refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" compoundref="SpaceVehicles_8h" startline="43">lap</references>
+        <references refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" compoundref="SpaceVehicles_8h" startline="44">lapDebounce</references>
+        <references refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" compoundref="SpaceVehicles_8h" startline="45">max_speed</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="classSpaceVehicles_1aa070b3ae1bcad34cb3211c3d73d10d78" compoundref="SpaceVehicles_8h" startline="61">rotateAngle</references>
+        <references refid="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" compoundref="SpaceVehicles_8h" startline="42">rotationZ</references>
+        <references refid="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" compoundref="SpaceVehicles_8h" startline="39">speed</references>
+        <references refid="Map_8cpp_1abb21e73deb56ceccf5d5908e806df63e" compoundref="Map_8cpp" startline="55" endline="60">vectorToIndex</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpaceVehicles::updateVehicle2</definition>
+        <argsstring>(double deltaTime, PMAP map, queue&lt; int &gt; &amp;q)</argsstring>
+        <name>updateVehicle2</name>
+        <param>
+          <type>double</type>
+          <declname>deltaTime</declname>
+        </param>
+        <param>
+          <type><ref refid="Map_8h_1a1974ae7bce14f096c1a498ab33b38c6f" kindref="member">PMAP</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>queue&lt; int &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="50" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="236" bodyend="354"/>
+        <references refid="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" compoundref="SpaceVehicles_8h" startline="60">acceleration</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" compoundref="Map_8h" startline="34">sMap::data</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="Map_8cpp_1ae7b0fce8d732defec7b9ae019af73a00" compoundref="Map_8cpp" startline="46" endline="53">indexToVector</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="39" endline="42">Application::IsKeyPressed</references>
+        <references refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" compoundref="SpaceVehicles_8h" startline="43">lap</references>
+        <references refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" compoundref="SpaceVehicles_8h" startline="44">lapDebounce</references>
+        <references refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" compoundref="SpaceVehicles_8h" startline="45">max_speed</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="classSpaceVehicles_1aa070b3ae1bcad34cb3211c3d73d10d78" compoundref="SpaceVehicles_8h" startline="61">rotateAngle</references>
+        <references refid="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" compoundref="SpaceVehicles_8h" startline="42">rotationZ</references>
+        <references refid="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" compoundref="SpaceVehicles_8h" startline="39">speed</references>
+        <references refid="Map_8cpp_1abb21e73deb56ceccf5d5908e806df63e" compoundref="Map_8cpp" startline="55" endline="60">vectorToIndex</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpaceVehicles::enterVehicleUpdate</definition>
+        <argsstring>(Player &amp;player)</argsstring>
+        <name>enterVehicleUpdate</name>
+        <param>
+          <type><ref refid="classPlayer" kindref="compound">Player</ref> &amp;</type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="52" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="356" bodyend="373"/>
+        <references refid="classSpaceVehicles_1ad63bdf11991b7886b2cf6559036572d4" compoundref="SpaceVehicles_8h" startline="40">b_isInVehicle</references>
+        <references refid="classSpaceVehicles_1a11d3fe594539e9c3ea18598bf581892b" compoundref="SpaceVehicles_8h" startline="41">b_vehDebounce</references>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="39" endline="42">Application::IsKeyPressed</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpaceVehicles::updateCPUVehicle</definition>
+        <argsstring>(double deltaTime, PMAP map, queue&lt; int &gt; &amp;q)</argsstring>
+        <name>updateCPUVehicle</name>
+        <param>
+          <type>double</type>
+          <declname>deltaTime</declname>
+        </param>
+        <param>
+          <type><ref refid="Map_8h_1a1974ae7bce14f096c1a498ab33b38c6f" kindref="member">PMAP</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>queue&lt; int &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="53" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="375" bodyend="438"/>
+        <references refid="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" compoundref="SpaceVehicles_8h" startline="60">acceleration</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" compoundref="Map_8h" startline="34">sMap::data</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="Map_8cpp_1ae7b0fce8d732defec7b9ae019af73a00" compoundref="Map_8cpp" startline="46" endline="53">indexToVector</references>
+        <references refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" compoundref="SpaceVehicles_8h" startline="43">lap</references>
+        <references refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" compoundref="SpaceVehicles_8h" startline="44">lapDebounce</references>
+        <references refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" compoundref="SpaceVehicles_8h" startline="45">max_speed</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="namespaceMath_1a1a1d364c850f9d66fda85cf71598bbe5" compoundref="MyMath_8h" startline="64" endline="67">Math::RadianToDegree</references>
+        <references refid="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" compoundref="SpaceVehicles_8h" startline="39">speed</references>
+        <references refid="Map_8cpp_1abb21e73deb56ceccf5d5908e806df63e" compoundref="Map_8cpp" startline="55" endline="60">vectorToIndex</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1a1f3c77da3c867f506dbc62dea84b53ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SpaceVehicles::getRacePosition</definition>
+        <argsstring>(SpaceVehicles x, int startIndex)</argsstring>
+        <name>getRacePosition</name>
+        <param>
+          <type><ref refid="classSpaceVehicles" kindref="compound">SpaceVehicles</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>startIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="55" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="440" bodyend="475"/>
+        <references refid="classSpaceVehicles_1a63617a030d2fc668c5f55b787aebc265" compoundref="SpaceVehicles_8cpp" startline="494" endline="499">distanceFromCheckpoint</references>
+        <references refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" compoundref="SpaceVehicles_8h" startline="43">lap</references>
+        <references refid="classSpaceVehicles_1a287f59990fa7612f7883a01555eea404" compoundref="SpaceVehicles_8cpp" startline="477" endline="492">positionInQueue</references>
+        <references refid="classSpaceVehicles_1a9cb508afbfcc18ed511922c53ca77ad6" compoundref="SpaceVehicles_8h" startline="46">racepath</references>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1a287f59990fa7612f7883a01555eea404" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SpaceVehicles::positionInQueue</definition>
+        <argsstring>(int index)</argsstring>
+        <name>positionInQueue</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="56" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="477" bodyend="492"/>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="classSpaceVehicles_1a9cb508afbfcc18ed511922c53ca77ad6" compoundref="SpaceVehicles_8h" startline="46">racepath</references>
+        <referencedby refid="classSpaceVehicles_1a1f3c77da3c867f506dbc62dea84b53ef" compoundref="SpaceVehicles_8cpp" startline="440" endline="475">getRacePosition</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSpaceVehicles_1a63617a030d2fc668c5f55b787aebc265" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SpaceVehicles::distanceFromCheckpoint</definition>
+        <argsstring>()</argsstring>
+        <name>distanceFromCheckpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/SpaceVehicles.h" line="57" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.cpp" bodystart="494" bodyend="499"/>
+        <references refid="Map_8cpp_1ae7b0fce8d732defec7b9ae019af73a00" compoundref="Map_8cpp" startline="46" endline="53">indexToVector</references>
+        <references refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Vector3::Length</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="classSpaceVehicles_1a9cb508afbfcc18ed511922c53ca77ad6" compoundref="SpaceVehicles_8h" startline="46">racepath</references>
+        <referencedby refid="classSpaceVehicles_1a1f3c77da3c867f506dbc62dea84b53ef" compoundref="SpaceVehicles_8cpp" startline="440" endline="475">getRacePosition</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for Space Vehicles inheriting from <ref refid="classGameObject" kindref="compound">GameObject</ref> /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classSpaceVehicles" kindref="compound">SpaceVehicles</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1365">
+        <label>SpaceVehicles</label>
+        <link refid="classSpaceVehicles"/>
+        <childnode refid="1366" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1366">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1374">
+        <label>queue&lt; int &gt;</label>
+      </node>
+      <node id="1373">
+        <label>static size_t</label>
+      </node>
+      <node id="1367">
+        <label>SpaceVehicles</label>
+        <link refid="classSpaceVehicles"/>
+        <childnode refid="1368" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1369" relation="usage">
+          <edgelabel>speed</edgelabel>
+          <edgelabel>acceleration</edgelabel>
+          <edgelabel>rotationZ</edgelabel>
+          <edgelabel>rotateAngle</edgelabel>
+        </childnode>
+        <childnode refid="1374" relation="usage">
+          <edgelabel>racepath</edgelabel>
+        </childnode>
+        <childnode refid="1371" relation="usage">
+          <edgelabel>lap</edgelabel>
+          <edgelabel>max_speed</edgelabel>
+        </childnode>
+        <childnode refid="1375" relation="usage">
+          <edgelabel>b_vehDebounce</edgelabel>
+          <edgelabel>b_isInVehicle</edgelabel>
+          <edgelabel>lapDebounce</edgelabel>
+        </childnode>
+        <childnode refid="1373" relation="usage">
+          <edgelabel>SV_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1372">
+        <label>string</label>
+      </node>
+      <node id="1369">
+        <label>float</label>
+      </node>
+      <node id="1371">
+        <label>int</label>
+      </node>
+      <node id="1368">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="1369" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="1370" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="1371" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="1372" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1373" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1375">
+        <label>bool</label>
+      </node>
+      <node id="1370">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1369" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/SpaceVehicles.h" line="32" column="1" bodyfile="Computer Graphics/Source/SpaceVehicles.h" bodystart="31" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" prot="private" virt="non-virtual"><scope>SpaceVehicles</scope><name>acceleration</name></member>
+      <member refid="classSpaceVehicles_1ad63bdf11991b7886b2cf6559036572d4" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>b_isInVehicle</name></member>
+      <member refid="classSpaceVehicles_1a11d3fe594539e9c3ea18598bf581892b" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>b_vehDebounce</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>boundary</name></member>
+      <member refid="classSpaceVehicles_1a63617a030d2fc668c5f55b787aebc265" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>distanceFromCheckpoint</name></member>
+      <member refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>enterVehicleUpdate</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>SpaceVehicles</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>SpaceVehicles</scope><name>GameObject</name></member>
+      <member refid="classSpaceVehicles_1a1f3c77da3c867f506dbc62dea84b53ef" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>getRacePosition</name></member>
+      <member refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>lap</name></member>
+      <member refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>lapDebounce</name></member>
+      <member refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>max_speed</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>name</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>pos</name></member>
+      <member refid="classSpaceVehicles_1a287f59990fa7612f7883a01555eea404" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>positionInQueue</name></member>
+      <member refid="classSpaceVehicles_1a9cb508afbfcc18ed511922c53ca77ad6" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>racepath</name></member>
+      <member refid="classSpaceVehicles_1aa070b3ae1bcad34cb3211c3d73d10d78" prot="private" virt="non-virtual"><scope>SpaceVehicles</scope><name>rotateAngle</name></member>
+      <member refid="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>rotationZ</name></member>
+      <member refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>SpaceVehicles</name></member>
+      <member refid="classSpaceVehicles_1ac43323a5c95ec6e0adf7e3d8fc55625b" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>SpaceVehicles</name></member>
+      <member refid="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>speed</name></member>
+      <member refid="classSpaceVehicles_1a1c19079da9c647e83bb6dbfa488006c7" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>SV_count</name></member>
+      <member refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>updateCPUVehicle</name></member>
+      <member refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>updateVehicle</name></member>
+      <member refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>updateVehicle</name></member>
+      <member refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>updateVehicle2</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>viewAngle</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>SpaceVehicles</scope><name>~GameObject</name></member>
+      <member refid="classSpaceVehicles_1aef46c3a2834d0ccf0af95420051b801f" prot="public" virt="non-virtual"><scope>SpaceVehicles</scope><name>~SpaceVehicles</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

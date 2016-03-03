@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Platform_8cpp" kind="file" language="C++">
+    <compoundname>Platform.cpp</compoundname>
+    <includes refid="Platform_8h" local="yes">Platform.h</includes>
+    <incdepgraph>
+      <node id="9000">
+        <label>Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="8955" relation="include">
+        </childnode>
+        <childnode refid="8968" relation="include">
+        </childnode>
+        <childnode refid="9001" relation="include">
+        </childnode>
+        <childnode refid="8999" relation="include">
+        </childnode>
+        <childnode refid="8998" relation="include">
+        </childnode>
+        <childnode refid="9003" relation="include">
+        </childnode>
+        <childnode refid="8959" relation="include">
+        </childnode>
+      </node>
+      <node id="8954">
+        <label>Platform.h</label>
+        <link refid="Platform_8h"/>
+        <childnode refid="8955" relation="include">
+        </childnode>
+        <childnode refid="9000" relation="include">
+        </childnode>
+      </node>
+      <node id="8966">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="8961" relation="include">
+        </childnode>
+        <childnode refid="8967" relation="include">
+        </childnode>
+      </node>
+      <node id="8992">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+        <childnode refid="8985" relation="include">
+        </childnode>
+      </node>
+      <node id="8990">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+      </node>
+      <node id="8995">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+        <childnode refid="8985" relation="include">
+        </childnode>
+      </node>
+      <node id="8974">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="8959" relation="include">
+        </childnode>
+        <childnode refid="8958" relation="include">
+        </childnode>
+        <childnode refid="8960" relation="include">
+        </childnode>
+        <childnode refid="8967" relation="include">
+        </childnode>
+        <childnode refid="8975" relation="include">
+        </childnode>
+      </node>
+      <node id="8975">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="8976" relation="include">
+        </childnode>
+        <childnode refid="8978" relation="include">
+        </childnode>
+        <childnode refid="8980" relation="include">
+        </childnode>
+        <childnode refid="8981" relation="include">
+        </childnode>
+        <childnode refid="8982" relation="include">
+        </childnode>
+        <childnode refid="8983" relation="include">
+        </childnode>
+        <childnode refid="8984" relation="include">
+        </childnode>
+        <childnode refid="8985" relation="include">
+        </childnode>
+        <childnode refid="8986" relation="include">
+        </childnode>
+        <childnode refid="8987" relation="include">
+        </childnode>
+        <childnode refid="8988" relation="include">
+        </childnode>
+        <childnode refid="8992" relation="include">
+        </childnode>
+        <childnode refid="8993" relation="include">
+        </childnode>
+        <childnode refid="8989" relation="include">
+        </childnode>
+        <childnode refid="8995" relation="include">
+        </childnode>
+        <childnode refid="8990" relation="include">
+        </childnode>
+        <childnode refid="8994" relation="include">
+        </childnode>
+        <childnode refid="8996" relation="include">
+        </childnode>
+        <childnode refid="8997" relation="include">
+        </childnode>
+        <childnode refid="8991" relation="include">
+        </childnode>
+      </node>
+      <node id="8999">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="8959" relation="include">
+        </childnode>
+        <childnode refid="8958" relation="include">
+        </childnode>
+        <childnode refid="8956" relation="include">
+        </childnode>
+      </node>
+      <node id="8970">
+        <label>windows.h</label>
+      </node>
+      <node id="8998">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="8956" relation="include">
+        </childnode>
+      </node>
+      <node id="8976">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="8977" relation="include">
+        </childnode>
+      </node>
+      <node id="8980">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="8976" relation="include">
+        </childnode>
+      </node>
+      <node id="8962">
+        <label>cmath</label>
+      </node>
+      <node id="8958">
+        <label>string</label>
+      </node>
+      <node id="8961">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="8962" relation="include">
+        </childnode>
+        <childnode refid="8963" relation="include">
+        </childnode>
+        <childnode refid="8964" relation="include">
+        </childnode>
+        <childnode refid="8965" relation="include">
+        </childnode>
+      </node>
+      <node id="8971">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="8972">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="8956">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="8957" relation="include">
+        </childnode>
+        <childnode refid="8958" relation="include">
+        </childnode>
+        <childnode refid="8959" relation="include">
+        </childnode>
+        <childnode refid="8960" relation="include">
+        </childnode>
+        <childnode refid="8961" relation="include">
+        </childnode>
+        <childnode refid="8966" relation="include">
+        </childnode>
+      </node>
+      <node id="8997">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+        <childnode refid="8987" relation="include">
+        </childnode>
+      </node>
+      <node id="8963">
+        <label>exception</label>
+      </node>
+      <node id="8960">
+        <label>fstream</label>
+      </node>
+      <node id="8969">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="8970" relation="include">
+        </childnode>
+      </node>
+      <node id="8981">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="8976" relation="include">
+        </childnode>
+      </node>
+      <node id="8991">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+        <childnode refid="8985" relation="include">
+        </childnode>
+      </node>
+      <node id="8977">
+        <label>wchar.h</label>
+      </node>
+      <node id="8986">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+        <childnode refid="8978" relation="include">
+        </childnode>
+        <childnode refid="8987" relation="include">
+        </childnode>
+        <childnode refid="8988" relation="include">
+        </childnode>
+        <childnode refid="8984" relation="include">
+        </childnode>
+        <childnode refid="8990" relation="include">
+        </childnode>
+        <childnode refid="8991" relation="include">
+        </childnode>
+      </node>
+      <node id="8964">
+        <label>ctime</label>
+      </node>
+      <node id="9003">
+        <label>Map.h</label>
+        <link refid="Map_8h"/>
+        <childnode refid="8958" relation="include">
+        </childnode>
+        <childnode refid="8960" relation="include">
+        </childnode>
+        <childnode refid="8967" relation="include">
+        </childnode>
+        <childnode refid="8966" relation="include">
+        </childnode>
+      </node>
+      <node id="8959">
+        <label>vector</label>
+      </node>
+      <node id="8978">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="8979" relation="include">
+        </childnode>
+        <childnode refid="8976" relation="include">
+        </childnode>
+      </node>
+      <node id="8957">
+        <label>sstream</label>
+      </node>
+      <node id="8996">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+      </node>
+      <node id="8979">
+        <label>math.h</label>
+      </node>
+      <node id="8993">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+        <childnode refid="8994" relation="include">
+        </childnode>
+      </node>
+      <node id="8965">
+        <label>cstdlib</label>
+      </node>
+      <node id="8953">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform.cpp"/>
+        <childnode refid="8954" relation="include">
+        </childnode>
+      </node>
+      <node id="8984">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="8967">
+        <label>iostream</label>
+      </node>
+      <node id="8973">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="8987">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="8981" relation="include">
+        </childnode>
+        <childnode refid="8978" relation="include">
+        </childnode>
+        <childnode refid="8984" relation="include">
+        </childnode>
+        <childnode refid="8985" relation="include">
+        </childnode>
+      </node>
+      <node id="8985">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+      </node>
+      <node id="8988">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="8981" relation="include">
+        </childnode>
+        <childnode refid="8989" relation="include">
+        </childnode>
+        <childnode refid="8978" relation="include">
+        </childnode>
+      </node>
+      <node id="8982">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="8983">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="8989">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="8981" relation="include">
+        </childnode>
+        <childnode refid="8978" relation="include">
+        </childnode>
+      </node>
+      <node id="8968">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="8969" relation="include">
+        </childnode>
+        <childnode refid="8971" relation="include">
+        </childnode>
+        <childnode refid="8972" relation="include">
+        </childnode>
+        <childnode refid="8973" relation="include">
+        </childnode>
+        <childnode refid="8974" relation="include">
+        </childnode>
+      </node>
+      <node id="8994">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="8980" relation="include">
+        </childnode>
+      </node>
+      <node id="9001">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="9002" relation="include">
+        </childnode>
+      </node>
+      <node id="9002">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="8966" relation="include">
+        </childnode>
+        <childnode refid="8968" relation="include">
+        </childnode>
+      </node>
+      <node id="8955">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="8956" relation="include">
+        </childnode>
+        <childnode refid="8968" relation="include">
+        </childnode>
+        <childnode refid="8998" relation="include">
+        </childnode>
+        <childnode refid="8999" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>This contains all of the functions in <ref refid="classPlatform" kindref="compound">Platform</ref> Class. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Contact Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Platform_8h" kindref="compound">Platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" kindref="member">Platform::Platform_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" refkind="member"><highlight class="normal"><ref refid="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" kindref="member">Platform::Platform</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" kindref="member">Platform_count</ref>++;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classPlatform_1a1360f921f4520952b602a47a0850d39e" refkind="member"><highlight class="normal"><ref refid="classPlatform_1a52028ea2984cbfdf8e9f42ee87f66cfe" kindref="member">Platform::Platform</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>viewAngle,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos)<sp/>:<sp/><ref refid="classGameChar" kindref="compound">GameChar</ref>(object_name,<sp/>boundary,<sp/>viewAngle,<sp/>pos)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" kindref="member">Platform_count</ref>++;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" kindref="member">speed</ref><sp/>=<sp/>50;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" kindref="member">turnSpeed</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" kindref="member">lowerBodyRotate</ref><sp/>=<sp/>180;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classPlatform_1a13b5e4ef946b8a2fe38d22014145ab68" refkind="member"><highlight class="normal"><ref refid="classPlatform_1a13b5e4ef946b8a2fe38d22014145ab68" kindref="member">Platform::~Platform</ref>()</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a6766dc4a558bca40ac563be9920500a3" kindref="member">Platform_count</ref>--;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="60"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classPlatform_1a486c573852bfdb54819927a5870556d3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a486c573852bfdb54819927a5870556d3" kindref="member">Platform::move</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>+=<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref>))<sp/>*<sp/><ref refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" kindref="member">speed</ref><sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>-=<sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref>))<sp/>*<sp/><ref refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" kindref="member">speed</ref><sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a122e32c503ad4b07a78c29e0989c2b56" kindref="member">lowerBodyRotate</ref><sp/>-=<sp/><ref refid="classPlatform_1ad4e11b9270a8f7211b2c09bf7989d834" kindref="member">speed</ref><sp/>*dt;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a4c0f2ca0f0eda1577dc060de188fae18" kindref="member">Platform::moveCircles</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>+=<sp/><ref refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" kindref="member">turnSpeed</ref><sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlatform_1a486c573852bfdb54819927a5870556d3" kindref="member">move</ref>(dt);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="87"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classPlatform_1a80d4dd2b9cf2a6abc359e068286cf16c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1a80d4dd2b9cf2a6abc359e068286cf16c" kindref="member">Platform::rotateAbout</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>+=<sp/><ref refid="classPlatform_1a2327d657095daa17cb1a66fc7b6c0506" kindref="member">turnSpeed</ref><sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//move(dt);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">/*&lt;---Samuel---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" kindref="member">Platform::changePlatform</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>isClimb,<sp/><ref refid="classPlatform" kindref="compound">Platform</ref>&amp;<sp/>p,<sp/><ref refid="classPlayer" kindref="compound">Player</ref>&amp;<sp/>player)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isClimb<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(p.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,<sp/>player.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,<sp/>46))</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isClimb<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(p.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,<sp/>player.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,<sp/>46))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//player.pos.z<sp/>+=<sp/>2;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>player.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>+=<sp/>4;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" kindref="member">Platform::noLadderPlatform</ref>(<ref refid="classPlatform" kindref="compound">Platform</ref>&amp;<sp/>p,<sp/><ref refid="classPlayer" kindref="compound">Player</ref>&amp;<sp/>player)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(p.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,<sp/>player.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,<sp/>46))</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Platform.cpp"/>
+  </compounddef>
+</doxygen>

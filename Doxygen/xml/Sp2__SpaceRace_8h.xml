@@ -1,0 +1,837 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Sp2__SpaceRace_8h" kind="file" language="C++">
+    <compoundname>Sp2_SpaceRace.h</compoundname>
+    <includes refid="Scene_8h" local="yes">Scene.h</includes>
+    <includes refid="Mtx44_8h" local="yes">Mtx44.h</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includes refid="CameraTPS_8h" local="yes">CameraTPS.h</includes>
+    <includes refid="Mesh_8h" local="yes">Mesh.h</includes>
+    <includes refid="MeshBuilder_8h" local="yes">MeshBuilder.h</includes>
+    <includes refid="MatrixStack_8h" local="yes">MatrixStack.h</includes>
+    <includes refid="Light_8h" local="yes">Light.h</includes>
+    <includes refid="Material_8h" local="yes">Material.h</includes>
+    <includes refid="Utility_8h" local="yes">Utility.h</includes>
+    <includes refid="LoadTGA_8h" local="yes">LoadTGA.h</includes>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <includes refid="SpaceVehicles_8h" local="yes">SpaceVehicles.h</includes>
+    <includes refid="Buildings_8h" local="yes">Buildings.h</includes>
+    <includes refid="Human_8h" local="yes">Human.h</includes>
+    <includes refid="Alien_8h" local="yes">Alien.h</includes>
+    <includes refid="Player_8h" local="yes">Player.h</includes>
+    <includes refid="BB-8_8h" local="yes">BB-8.h</includes>
+    <includes refid="Pingu_8h" local="yes">Pingu.h</includes>
+    <includes refid="Quest_8h" local="yes">Quest.h</includes>
+    <includes refid="AlienEnemy_8h" local="yes">AlienEnemy.h</includes>
+    <includes refid="Map_8h" local="yes">Map.h</includes>
+    <includes local="no">queue</includes>
+    <includedby refid="Sp2__SpaceRace_8cpp" local="yes">Computer Graphics/Source/Sp2_SpaceRace.cpp</includedby>
+    <incdepgraph>
+      <node id="9833">
+        <label>Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="9834" relation="include">
+        </childnode>
+        <childnode refid="9785" relation="include">
+        </childnode>
+        <childnode refid="9817" relation="include">
+        </childnode>
+        <childnode refid="9836" relation="include">
+        </childnode>
+        <childnode refid="9835" relation="include">
+        </childnode>
+        <childnode refid="9837" relation="include">
+        </childnode>
+        <childnode refid="9791" relation="include">
+        </childnode>
+      </node>
+      <node id="9783">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="9778" relation="include">
+        </childnode>
+        <childnode refid="9784" relation="include">
+        </childnode>
+      </node>
+      <node id="9811">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+        <childnode refid="9804" relation="include">
+        </childnode>
+      </node>
+      <node id="9809">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+      </node>
+      <node id="9822">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="9792" relation="include">
+        </childnode>
+        <childnode refid="9823" relation="include">
+        </childnode>
+        <childnode refid="9824" relation="include">
+        </childnode>
+      </node>
+      <node id="9814">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+        <childnode refid="9804" relation="include">
+        </childnode>
+      </node>
+      <node id="9838">
+        <label>queue</label>
+      </node>
+      <node id="9790">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="9791" relation="include">
+        </childnode>
+        <childnode refid="9792" relation="include">
+        </childnode>
+        <childnode refid="9793" relation="include">
+        </childnode>
+        <childnode refid="9784" relation="include">
+        </childnode>
+        <childnode refid="9794" relation="include">
+        </childnode>
+      </node>
+      <node id="9794">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="9795" relation="include">
+        </childnode>
+        <childnode refid="9797" relation="include">
+        </childnode>
+        <childnode refid="9799" relation="include">
+        </childnode>
+        <childnode refid="9800" relation="include">
+        </childnode>
+        <childnode refid="9801" relation="include">
+        </childnode>
+        <childnode refid="9802" relation="include">
+        </childnode>
+        <childnode refid="9803" relation="include">
+        </childnode>
+        <childnode refid="9804" relation="include">
+        </childnode>
+        <childnode refid="9805" relation="include">
+        </childnode>
+        <childnode refid="9806" relation="include">
+        </childnode>
+        <childnode refid="9807" relation="include">
+        </childnode>
+        <childnode refid="9811" relation="include">
+        </childnode>
+        <childnode refid="9812" relation="include">
+        </childnode>
+        <childnode refid="9808" relation="include">
+        </childnode>
+        <childnode refid="9814" relation="include">
+        </childnode>
+        <childnode refid="9809" relation="include">
+        </childnode>
+        <childnode refid="9813" relation="include">
+        </childnode>
+        <childnode refid="9815" relation="include">
+        </childnode>
+        <childnode refid="9816" relation="include">
+        </childnode>
+        <childnode refid="9810" relation="include">
+        </childnode>
+      </node>
+      <node id="9836">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="9791" relation="include">
+        </childnode>
+        <childnode refid="9792" relation="include">
+        </childnode>
+        <childnode refid="9820" relation="include">
+        </childnode>
+      </node>
+      <node id="9787">
+        <label>windows.h</label>
+      </node>
+      <node id="9842">
+        <label>BB-8.h</label>
+        <link refid="BB-8_8h"/>
+        <childnode refid="9834" relation="include">
+        </childnode>
+      </node>
+      <node id="9829">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="9823" relation="include">
+        </childnode>
+      </node>
+      <node id="9831">
+        <label>LoadTGA.h</label>
+        <link refid="LoadTGA_8h"/>
+      </node>
+      <node id="9826">
+        <label>LoadOBJ.h</label>
+        <link refid="LoadOBJ_8h"/>
+        <childnode refid="9791" relation="include">
+        </childnode>
+        <childnode refid="9823" relation="include">
+        </childnode>
+        <childnode refid="9783" relation="include">
+        </childnode>
+      </node>
+      <node id="9835">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="9820" relation="include">
+        </childnode>
+      </node>
+      <node id="9840">
+        <label>Human.h</label>
+        <link refid="Human_8h"/>
+        <childnode refid="9834" relation="include">
+        </childnode>
+      </node>
+      <node id="9795">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="9796" relation="include">
+        </childnode>
+      </node>
+      <node id="9799">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="9795" relation="include">
+        </childnode>
+      </node>
+      <node id="9779">
+        <label>cmath</label>
+      </node>
+      <node id="9775">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2_SpaceRace.h"/>
+        <childnode refid="9776" relation="include">
+        </childnode>
+        <childnode refid="9777" relation="include">
+        </childnode>
+        <childnode refid="9785" relation="include">
+        </childnode>
+        <childnode refid="9817" relation="include">
+        </childnode>
+        <childnode refid="9819" relation="include">
+        </childnode>
+        <childnode refid="9822" relation="include">
+        </childnode>
+        <childnode refid="9825" relation="include">
+        </childnode>
+        <childnode refid="9827" relation="include">
+        </childnode>
+        <childnode refid="9829" relation="include">
+        </childnode>
+        <childnode refid="9824" relation="include">
+        </childnode>
+        <childnode refid="9830" relation="include">
+        </childnode>
+        <childnode refid="9831" relation="include">
+        </childnode>
+        <childnode refid="9820" relation="include">
+        </childnode>
+        <childnode refid="9832" relation="include">
+        </childnode>
+        <childnode refid="9839" relation="include">
+        </childnode>
+        <childnode refid="9840" relation="include">
+        </childnode>
+        <childnode refid="9841" relation="include">
+        </childnode>
+        <childnode refid="9833" relation="include">
+        </childnode>
+        <childnode refid="9842" relation="include">
+        </childnode>
+        <childnode refid="9843" relation="include">
+        </childnode>
+        <childnode refid="9836" relation="include">
+        </childnode>
+        <childnode refid="9844" relation="include">
+        </childnode>
+        <childnode refid="9837" relation="include">
+        </childnode>
+        <childnode refid="9838" relation="include">
+        </childnode>
+      </node>
+      <node id="9792">
+        <label>string</label>
+      </node>
+      <node id="9778">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="9779" relation="include">
+        </childnode>
+        <childnode refid="9780" relation="include">
+        </childnode>
+        <childnode refid="9781" relation="include">
+        </childnode>
+        <childnode refid="9782" relation="include">
+        </childnode>
+      </node>
+      <node id="9788">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="9789">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="9825">
+        <label>MeshBuilder.h</label>
+        <link refid="MeshBuilder_8h"/>
+        <childnode refid="9822" relation="include">
+        </childnode>
+        <childnode refid="9791" relation="include">
+        </childnode>
+        <childnode refid="9823" relation="include">
+        </childnode>
+        <childnode refid="9792" relation="include">
+        </childnode>
+        <childnode refid="9778" relation="include">
+        </childnode>
+        <childnode refid="9826" relation="include">
+        </childnode>
+        <childnode refid="9793" relation="include">
+        </childnode>
+      </node>
+      <node id="9820">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="9821" relation="include">
+        </childnode>
+        <childnode refid="9792" relation="include">
+        </childnode>
+        <childnode refid="9791" relation="include">
+        </childnode>
+        <childnode refid="9793" relation="include">
+        </childnode>
+        <childnode refid="9778" relation="include">
+        </childnode>
+        <childnode refid="9783" relation="include">
+        </childnode>
+      </node>
+      <node id="9823">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="9783" relation="include">
+        </childnode>
+      </node>
+      <node id="9816">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+        <childnode refid="9806" relation="include">
+        </childnode>
+      </node>
+      <node id="9780">
+        <label>exception</label>
+      </node>
+      <node id="9793">
+        <label>fstream</label>
+      </node>
+      <node id="9843">
+        <label>Pingu.h</label>
+        <link refid="Pingu_8h"/>
+        <childnode refid="9834" relation="include">
+        </childnode>
+      </node>
+      <node id="9841">
+        <label>Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="9834" relation="include">
+        </childnode>
+      </node>
+      <node id="9786">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="9787" relation="include">
+        </childnode>
+      </node>
+      <node id="9839">
+        <label>Buildings.h</label>
+        <link refid="Buildings_8h"/>
+        <childnode refid="9834" relation="include">
+        </childnode>
+        <childnode refid="9833" relation="include">
+        </childnode>
+      </node>
+      <node id="9800">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="9795" relation="include">
+        </childnode>
+      </node>
+      <node id="9810">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+        <childnode refid="9804" relation="include">
+        </childnode>
+      </node>
+      <node id="9796">
+        <label>wchar.h</label>
+      </node>
+      <node id="9805">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+        <childnode refid="9797" relation="include">
+        </childnode>
+        <childnode refid="9806" relation="include">
+        </childnode>
+        <childnode refid="9807" relation="include">
+        </childnode>
+        <childnode refid="9803" relation="include">
+        </childnode>
+        <childnode refid="9809" relation="include">
+        </childnode>
+        <childnode refid="9810" relation="include">
+        </childnode>
+      </node>
+      <node id="9781">
+        <label>ctime</label>
+      </node>
+      <node id="9837">
+        <label>Map.h</label>
+        <link refid="Map_8h"/>
+        <childnode refid="9792" relation="include">
+        </childnode>
+        <childnode refid="9793" relation="include">
+        </childnode>
+        <childnode refid="9784" relation="include">
+        </childnode>
+        <childnode refid="9783" relation="include">
+        </childnode>
+      </node>
+      <node id="9828">
+        <label>stack</label>
+      </node>
+      <node id="9791">
+        <label>vector</label>
+      </node>
+      <node id="9797">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="9798" relation="include">
+        </childnode>
+        <childnode refid="9795" relation="include">
+        </childnode>
+      </node>
+      <node id="9777">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="9778" relation="include">
+        </childnode>
+        <childnode refid="9783" relation="include">
+        </childnode>
+      </node>
+      <node id="9821">
+        <label>sstream</label>
+      </node>
+      <node id="9830">
+        <label>Utility.h</label>
+        <link refid="Utility_8h"/>
+        <childnode refid="9823" relation="include">
+        </childnode>
+        <childnode refid="9777" relation="include">
+        </childnode>
+      </node>
+      <node id="9815">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+      </node>
+      <node id="9798">
+        <label>math.h</label>
+      </node>
+      <node id="9824">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="9812">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+        <childnode refid="9813" relation="include">
+        </childnode>
+      </node>
+      <node id="9782">
+        <label>cstdlib</label>
+      </node>
+      <node id="9803">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="9784">
+        <label>iostream</label>
+      </node>
+      <node id="9776">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="9806">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="9800" relation="include">
+        </childnode>
+        <childnode refid="9797" relation="include">
+        </childnode>
+        <childnode refid="9803" relation="include">
+        </childnode>
+        <childnode refid="9804" relation="include">
+        </childnode>
+      </node>
+      <node id="9804">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+      </node>
+      <node id="9844">
+        <label>AlienEnemy.h</label>
+        <link refid="AlienEnemy_8h"/>
+        <childnode refid="9841" relation="include">
+        </childnode>
+      </node>
+      <node id="9819">
+        <label>CameraTPS.h</label>
+        <link refid="CameraTPS_8h"/>
+        <childnode refid="9818" relation="include">
+        </childnode>
+        <childnode refid="9820" relation="include">
+        </childnode>
+      </node>
+      <node id="9832">
+        <label>SpaceVehicles.h</label>
+        <link refid="SpaceVehicles_8h"/>
+        <childnode refid="9820" relation="include">
+        </childnode>
+        <childnode refid="9785" relation="include">
+        </childnode>
+        <childnode refid="9833" relation="include">
+        </childnode>
+        <childnode refid="9837" relation="include">
+        </childnode>
+        <childnode refid="9838" relation="include">
+        </childnode>
+      </node>
+      <node id="9807">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="9800" relation="include">
+        </childnode>
+        <childnode refid="9808" relation="include">
+        </childnode>
+        <childnode refid="9797" relation="include">
+        </childnode>
+      </node>
+      <node id="9801">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="9827">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="9828" relation="include">
+        </childnode>
+        <childnode refid="9777" relation="include">
+        </childnode>
+      </node>
+      <node id="9802">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="9808">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="9800" relation="include">
+        </childnode>
+        <childnode refid="9797" relation="include">
+        </childnode>
+      </node>
+      <node id="9785">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="9786" relation="include">
+        </childnode>
+        <childnode refid="9788" relation="include">
+        </childnode>
+        <childnode refid="9789" relation="include">
+        </childnode>
+        <childnode refid="9776" relation="include">
+        </childnode>
+        <childnode refid="9790" relation="include">
+        </childnode>
+      </node>
+      <node id="9813">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="9799" relation="include">
+        </childnode>
+      </node>
+      <node id="9817">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="9818" relation="include">
+        </childnode>
+      </node>
+      <node id="9818">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="9783" relation="include">
+        </childnode>
+        <childnode refid="9785" relation="include">
+        </childnode>
+      </node>
+      <node id="9834">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="9820" relation="include">
+        </childnode>
+        <childnode refid="9785" relation="include">
+        </childnode>
+        <childnode refid="9835" relation="include">
+        </childnode>
+        <childnode refid="9836" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9845">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2_SpaceRace.h"/>
+        <childnode refid="9846" relation="include">
+        </childnode>
+      </node>
+      <node id="9846">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classSp2__SpaceRace" prot="public">Sp2_SpaceRace</innerclass>
+    <briefdescription>
+<para>Class to define the Space Race <ref refid="classScene" kindref="compound">Scene</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SP2_SPACERACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SP2_SPACERACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include&quot;<ref refid="Mtx44_8h" kindref="compound">Mtx44.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CameraTPS_8h" kindref="compound">CameraTPS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include&quot;<ref refid="Mesh_8h" kindref="compound">Mesh.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include&quot;<ref refid="MeshBuilder_8h" kindref="compound">MeshBuilder.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MatrixStack_8h" kindref="compound">MatrixStack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Light_8h" kindref="compound">Light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include&quot;<ref refid="Material_8h" kindref="compound">Material.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Utility_8h" kindref="compound">Utility.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LoadTGA_8h" kindref="compound">LoadTGA.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SpaceVehicles_8h" kindref="compound">SpaceVehicles.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Buildings_8h" kindref="compound">Buildings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Human_8h" kindref="compound">Human.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Alien_8h" kindref="compound">Alien.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Player_8h" kindref="compound">Player.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="BB-8_8h" kindref="compound">BB-8.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Pingu_8h" kindref="compound">Pingu.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Quest_8h" kindref="compound">Quest.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="AlienEnemy_8h" kindref="compound">AlienEnemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Map_8h" kindref="compound">Map.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::queue;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="53" refid="classSp2__SpaceRace" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classSp2__SpaceRace" kindref="compound">Sp2_SpaceRace</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a311b45a1af34188b3a1cb3fd6abe32e9" kindref="member">Sp2_SpaceRace</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a08af69c098bdfebcdbcd34f6cba55925" kindref="member">~Sp2_SpaceRace</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a6e5a16911da0317ddce3175936fb316d" kindref="member">Render</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a91f33f1923935c883a447e26eb8084a6" kindref="member">Exit</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0" kindref="member">GEOMETRY_TYPE</ref></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*&lt;---Studio<sp/>Project<sp/>2---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*---Essentials---*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ab882496e1672f045d721ae8327285978" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ab882496e1672f045d721ae8327285978" kindref="member">GEO_AXES</ref>,</highlight></codeline>
+<codeline lineno="69" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a2c3d616a8e9980fd0dddf751255fb3fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a2c3d616a8e9980fd0dddf751255fb3fc" kindref="member">GEO_QUAD</ref>,</highlight></codeline>
+<codeline lineno="70" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a8e4cb173ffdb088ffe95932dd8146393" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a8e4cb173ffdb088ffe95932dd8146393" kindref="member">GEO_LIGHTBALL</ref>,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*---Scene<sp/>Skybox---*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a091ee4b74e97f27f791ce8bed0a73e7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a091ee4b74e97f27f791ce8bed0a73e7d" kindref="member">GEO_LEFT</ref>,</highlight></codeline>
+<codeline lineno="73" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ad5b7e6a84cd9d9874c7cf8435af343d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ad5b7e6a84cd9d9874c7cf8435af343d0" kindref="member">GEO_RIGHT</ref>,</highlight></codeline>
+<codeline lineno="74" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a8247460bd06e76e9f511e83f08191c89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a8247460bd06e76e9f511e83f08191c89" kindref="member">GEO_TOP</ref>,</highlight></codeline>
+<codeline lineno="75" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a84e96ddb744eb8dbd06ddb5dd21d4881" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a84e96ddb744eb8dbd06ddb5dd21d4881" kindref="member">GEO_BOTTOM</ref>,</highlight></codeline>
+<codeline lineno="76" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a0147ff47e90aa7fea5b7b69e6c56f6cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a0147ff47e90aa7fea5b7b69e6c56f6cd" kindref="member">GEO_FRONT</ref>,</highlight></codeline>
+<codeline lineno="77" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ae146d9fa0ad61e05fa868cff01e85b01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ae146d9fa0ad61e05fa868cff01e85b01" kindref="member">GEO_BACK</ref>,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*&lt;---Text---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ab761bf98a4bb672be8f98da98d62b617" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ab761bf98a4bb672be8f98da98d62b617" kindref="member">GEO_TEXT</ref>,</highlight></codeline>
+<codeline lineno="80" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a6e8778b54093926fbf017d0f354a793d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a6e8778b54093926fbf017d0f354a793d" kindref="member">GEO_TEXTBACKGROUND</ref>,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*&lt;---Space<sp/>Vehicles---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ae821c624e648466a01c3e9bd7ff279bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ae821c624e648466a01c3e9bd7ff279bd" kindref="member">GEO_FOURTH</ref>,</highlight></codeline>
+<codeline lineno="83" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acbbaa8f29b4d727836d493384aa85531" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acbbaa8f29b4d727836d493384aa85531" kindref="member">GEO_NPCLEPUSMAG</ref>,</highlight></codeline>
+<codeline lineno="84" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a272c3b3807987c5d263542a2cffc659a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a272c3b3807987c5d263542a2cffc659a" kindref="member">GEO_STATION</ref>,<sp/></highlight><highlight class="comment">//<sp/>SpaceShuttle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*&lt;---Weapons---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a595351b820892492b099c169736a5253" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a595351b820892492b099c169736a5253" kindref="member">GEO_SNIPERRIFLE</ref>,</highlight></codeline>
+<codeline lineno="87" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a92684eb463a62116dd74a701a68268ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a92684eb463a62116dd74a701a68268ec" kindref="member">GEO_DART</ref>,</highlight></codeline>
+<codeline lineno="88" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a1023e86481e16081813c844d2dae8bfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a1023e86481e16081813c844d2dae8bfd" kindref="member">GEO_CROSSHAIR</ref>,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*&lt;---Humans---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0aec747040482e566c902b0235a9a6baf2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0aec747040482e566c902b0235a9a6baf2" kindref="member">GEO_HELM</ref>,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*&lt;---NPC---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a865a4fa3cb3bd79023e9d357c7756d81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a865a4fa3cb3bd79023e9d357c7756d81" kindref="member">GEO_MIKE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>(Pure<sp/>Interaction<sp/>Codes,<sp/>no<sp/>NPC)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ac2ff898df64ef9424e6ff93c4982a904" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0ac2ff898df64ef9424e6ff93c4982a904" kindref="member">GEO_ALIEN</ref>,</highlight></codeline>
+<codeline lineno="95" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a3ea05f7af7a184c66216fdbccab1d378" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a3ea05f7af7a184c66216fdbccab1d378" kindref="member">GEO_TELEPORTER</ref>,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a11afb6330d10f641e84e7c2d2a74f6c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a11afb6330d10f641e84e7c2d2a74f6c8" kindref="member">GEO_PINGUBODY</ref>,</highlight></codeline>
+<codeline lineno="98" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0adb7e9ed0c2c87c6ac10f2a1e3033bd03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0adb7e9ed0c2c87c6ac10f2a1e3033bd03" kindref="member">GEO_PINGULH</ref>,</highlight></codeline>
+<codeline lineno="99" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a7c71ccbc58e81f5dfc816e1433e7da7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a7c71ccbc58e81f5dfc816e1433e7da7d" kindref="member">GEO_PINGURH</ref>,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a2af4a5a521bd1fd9a5f8675eda88500b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0a2af4a5a521bd1fd9a5f8675eda88500b" kindref="member">GEO_BOX</ref>,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*&lt;---Do<sp/>not<sp/>touch---&gt;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acaddee1de290a97855fbe6e4a6674d6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acaddee1de290a97855fbe6e4a6674d6f" kindref="member">NUM_GEOMETRY</ref>,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2b" kindref="member">UNIFORM_TYPE</ref></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bae2cc71d976e6aaec4b21db4243c643b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bae2cc71d976e6aaec4b21db4243c643b2" kindref="member">U_MVP</ref>,</highlight></codeline>
+<codeline lineno="110" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba7fdb17d475379c1b8480d8055a60815d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba7fdb17d475379c1b8480d8055a60815d" kindref="member">U_MODELVIEW</ref>,</highlight></codeline>
+<codeline lineno="111" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba5ae332073b35212d2eb26487b1cb44b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba5ae332073b35212d2eb26487b1cb44b0" kindref="member">U_MODELVIEW_INVERSE_TRANSPOSE</ref>,</highlight></codeline>
+<codeline lineno="112" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2baad1795aef21d9c1a62595ba1ff8bc08e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2baad1795aef21d9c1a62595ba1ff8bc08e" kindref="member">U_MATERIAL_AMBIENT</ref>,</highlight></codeline>
+<codeline lineno="113" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bac17690f81f97dcce6dc0d5f834a80e81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bac17690f81f97dcce6dc0d5f834a80e81" kindref="member">U_MATERIAL_DIFFUSE</ref>,</highlight></codeline>
+<codeline lineno="114" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba5934f101999f59b158dcea405ae6d792" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba5934f101999f59b158dcea405ae6d792" kindref="member">U_MATERIAL_SPECULAR</ref>,</highlight></codeline>
+<codeline lineno="115" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba0ebe542dbfac6bfb427be808b25859a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba0ebe542dbfac6bfb427be808b25859a2" kindref="member">U_MATERIAL_SHININESS</ref>,</highlight></codeline>
+<codeline lineno="116" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba3076a053b66c9f67c55cb4e6604de7a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba3076a053b66c9f67c55cb4e6604de7a4" kindref="member">U_LIGHT0_POSITION</ref>,</highlight></codeline>
+<codeline lineno="117" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2badc01be56a628becb9d9b059b5b3d5986" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2badc01be56a628becb9d9b059b5b3d5986" kindref="member">U_LIGHT0_COLOR</ref>,</highlight></codeline>
+<codeline lineno="118" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba83edd4c4a299e3341fb6c6ef0491763d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba83edd4c4a299e3341fb6c6ef0491763d" kindref="member">U_LIGHT0_POWER</ref>,</highlight></codeline>
+<codeline lineno="119" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba891f63f610dc4e9ad20c9f43a3294137" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba891f63f610dc4e9ad20c9f43a3294137" kindref="member">U_LIGHT0_KC</ref>,</highlight></codeline>
+<codeline lineno="120" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba6fe40700f7df7dc98110b4021a3f922b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba6fe40700f7df7dc98110b4021a3f922b" kindref="member">U_LIGHT0_KL</ref>,</highlight></codeline>
+<codeline lineno="121" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bac3619b6d291ea56128d848a34a91c1f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bac3619b6d291ea56128d848a34a91c1f6" kindref="member">U_LIGHT0_KQ</ref>,</highlight></codeline>
+<codeline lineno="122" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba94240f217530e4e6e58d4ace083325cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba94240f217530e4e6e58d4ace083325cf" kindref="member">U_LIGHTENABLED</ref>,</highlight></codeline>
+<codeline lineno="123" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bae207c576b72717a399223693d9b68dc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bae207c576b72717a399223693d9b68dc0" kindref="member">U_LIGHT0_TYPE</ref>,</highlight></codeline>
+<codeline lineno="124" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba5cdb2c473f2690081ec1a4f172499ce9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba5cdb2c473f2690081ec1a4f172499ce9" kindref="member">U_LIGHT0_SPOTDIRECTION</ref>,</highlight></codeline>
+<codeline lineno="125" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba90d760263ec6f3adf8c20b16f366c5c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba90d760263ec6f3adf8c20b16f366c5c2" kindref="member">U_LIGHT0_COSCUTOFF</ref>,</highlight></codeline>
+<codeline lineno="126" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2baaf673bc49f046b45f4dfe1dbe63e0f62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2baaf673bc49f046b45f4dfe1dbe63e0f62" kindref="member">U_LIGHT0_COSINNER</ref>,</highlight></codeline>
+<codeline lineno="127" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba23119496f44916cec8fb8458165a5510" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba23119496f44916cec8fb8458165a5510" kindref="member">U_LIGHT0_EXPONENT</ref>,</highlight></codeline>
+<codeline lineno="128" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba917f2ae73f4d277e4fdc3df634a9423e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba917f2ae73f4d277e4fdc3df634a9423e" kindref="member">U_NUMLIGHTS</ref>,</highlight></codeline>
+<codeline lineno="129" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba7f5adb5ecfc6d1a806cf45431ff85c05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba7f5adb5ecfc6d1a806cf45431ff85c05" kindref="member">U_COLOR_TEXTURE_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="130" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba1c57b0297bce3ddbad0e6037c38ab67b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2ba1c57b0297bce3ddbad0e6037c38ab67b" kindref="member">U_COLOR_TEXTURE</ref>,</highlight></codeline>
+<codeline lineno="131" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bac7db022fc1676978822696e3aee7f3d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bac7db022fc1676978822696e3aee7f3d7" kindref="member">U_TEXT_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="132" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2badd8e029a3e7170da5f5d4dbad9e78b0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2badd8e029a3e7170da5f5d4dbad9e78b0a" kindref="member">U_TEXT_COLOR</ref>,</highlight></codeline>
+<codeline lineno="133" refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bad4bcce8ce96b892f0380bef58dddbbe1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bad4bcce8ce96b892f0380bef58dddbbe1" kindref="member">U_TOTAL</ref>,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classSp2__SpaceRace_1a41e8e335216896dcaaac58236e404017" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a41e8e335216896dcaaac58236e404017" kindref="member">m_parameters</ref>[<ref refid="classSp2__SpaceRace_1ac7196e51a43d2e4475cc6f379691ff2bad4bcce8ce96b892f0380bef58dddbbe1" kindref="member">U_TOTAL</ref>];</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classSp2__SpaceRace_1ad664c758156721b6feeae5bcbf3a80ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/><ref refid="classSp2__SpaceRace_1ad664c758156721b6feeae5bcbf3a80ed" kindref="member">camera</ref>;</highlight></codeline>
+<codeline lineno="139" refid="classSp2__SpaceRace_1af6d2a909aafda0c535cb6d2f7a250f04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCameraTPS" kindref="compound">CameraTPS</ref><sp/><ref refid="classSp2__SpaceRace_1a5858e7b01f93710d7b605e105fed902f" kindref="member">camera2</ref>,<ref refid="classSp2__SpaceRace_1af6d2a909aafda0c535cb6d2f7a250f04" kindref="member">camera3</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classSp2__SpaceRace_1ab03beba84de182b4862badaa58e8f8e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ab03beba84de182b4862badaa58e8f8e7" kindref="member">LSPEED</ref>;</highlight></codeline>
+<codeline lineno="142" refid="classSp2__SpaceRace_1ae091a548e12e1f2717a146fcaf066e32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ae091a548e12e1f2717a146fcaf066e32" kindref="member">b_lightEnabled</ref>;</highlight></codeline>
+<codeline lineno="143" refid="classSp2__SpaceRace_1a171713b26cd81809cd838baad16310d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a171713b26cd81809cd838baad16310d4" kindref="member">screenWidth</ref>,<sp/><ref refid="classSp2__SpaceRace_1ab6c94e59b3b641856dddd71321c65845" kindref="member">screenHeight</ref>;</highlight></codeline>
+<codeline lineno="144" refid="classSp2__SpaceRace_1a1fb38a163dae67688f7034b12f0ce10d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classSp2__SpaceRace_1a1fb38a163dae67688f7034b12f0ce10d" kindref="member">tempPos</ref>;</highlight></codeline>
+<codeline lineno="145" refid="classSp2__SpaceRace_1aac61a7272125edbd80ed61b1cb4057ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1aac61a7272125edbd80ed61b1cb4057ca" kindref="member">b_enabletps</ref>;</highlight></codeline>
+<codeline lineno="146" refid="classSp2__SpaceRace_1a3cae33df40eba7e86efc8ff3bdac984f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a3cae33df40eba7e86efc8ff3bdac984f" kindref="member">b_tpsDebounce</ref>;</highlight></codeline>
+<codeline lineno="147" refid="classSp2__SpaceRace_1af0bc24bd556a24fbad63175ca0673e91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1af0bc24bd556a24fbad63175ca0673e91" kindref="member">b_isWorn</ref>;</highlight></codeline>
+<codeline lineno="148" refid="classSp2__SpaceRace_1a4a9ce64785b9aa60ae38a083c8a111b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a4a9ce64785b9aa60ae38a083c8a111b1" kindref="member">tpsTimer</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classSp2__SpaceRace_1afc0f123bbecb97229cec3d0961233e1f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1afc0f123bbecb97229cec3d0961233e1f" kindref="member">racePosition</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="classSp2__SpaceRace_1a23af4243f223a19d8d2f7ad09a573694" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a23af4243f223a19d8d2f7ad09a573694" kindref="member">b_raceBegin</ref>;</highlight></codeline>
+<codeline lineno="153" refid="classSp2__SpaceRace_1a3e76674010765f48ddd24569bb1a1a35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a3e76674010765f48ddd24569bb1a1a35" kindref="member">b_raceStart</ref>;</highlight></codeline>
+<codeline lineno="154" refid="classSp2__SpaceRace_1a67193b95a812f6efbf168c151f831080" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a67193b95a812f6efbf168c151f831080" kindref="member">b_raceEnd</ref>;</highlight></codeline>
+<codeline lineno="155" refid="classSp2__SpaceRace_1a8c7988da9e314960c24c430acdf83d8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a8c7988da9e314960c24c430acdf83d8e" kindref="member">f_endTimer</ref>;</highlight></codeline>
+<codeline lineno="156" refid="classSp2__SpaceRace_1a6a623f1eda835034a796f8ae2bb9e943" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a6a623f1eda835034a796f8ae2bb9e943" kindref="member">f_raceCountdown</ref>;</highlight></codeline>
+<codeline lineno="157" refid="classSp2__SpaceRace_1ac0264ea588a82696adc7c6f512455a58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ac0264ea588a82696adc7c6f512455a58" kindref="member">win</ref>;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="classSp2__SpaceRace_1adc66baa8a1cc95e57195e7f9f91969b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1adc66baa8a1cc95e57195e7f9f91969b0" kindref="member">b_raceBegin2</ref>;</highlight></codeline>
+<codeline lineno="160" refid="classSp2__SpaceRace_1adc20702e651121ef6a2553e75c9a402b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1adc20702e651121ef6a2553e75c9a402b" kindref="member">b_raceStart2</ref>;</highlight></codeline>
+<codeline lineno="161" refid="classSp2__SpaceRace_1ab87ca3b792d0d27577f7830623490832" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ab87ca3b792d0d27577f7830623490832" kindref="member">b_raceEnd2</ref>;</highlight></codeline>
+<codeline lineno="162" refid="classSp2__SpaceRace_1a627712fea3d9092a6296d8082398070c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a627712fea3d9092a6296d8082398070c" kindref="member">f_endTimer2</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="classSp2__SpaceRace_1a39f58d867518d1992f0b1e5257c6b399" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSpaceVehicles" kindref="compound">SpaceVehicles</ref><sp/><ref refid="classSp2__SpaceRace_1ac166a34d6dbaad2b27855d4c7131e66f" kindref="member">frpc</ref>,<ref refid="classSp2__SpaceRace_1a39f58d867518d1992f0b1e5257c6b399" kindref="member">frpc2</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//player</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="classSp2__SpaceRace_1a5df48d8cbed56aedb2a966ac5415fbdd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayer" kindref="compound">Player</ref><sp/><ref refid="classSp2__SpaceRace_1a5df48d8cbed56aedb2a966ac5415fbdd" kindref="member">player</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//npc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="classSp2__SpaceRace_1a811841491f83abb770ed1029de15f611" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classAlien" kindref="compound">Alien</ref><sp/><ref refid="classSp2__SpaceRace_1a811841491f83abb770ed1029de15f611" kindref="member">spaceRaceNpc</ref>,<ref refid="classSp2__SpaceRace_1a5e301e3ff6438ef0ad037ce9eeae3ba4" kindref="member">race2PNpc</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//furniture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="classSp2__SpaceRace_1a31720fa6907290d496f3381e46626d4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBuildings" kindref="compound">Buildings</ref><sp/><ref refid="classSp2__SpaceRace_1a31720fa6907290d496f3381e46626d4a" kindref="member">spaceStationtp</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>quest</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="classSp2__SpaceRace_1a8cff7672c3dc18d02b74f9106775752b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classSp2__SpaceRace_1a8cff7672c3dc18d02b74f9106775752b" kindref="member">tasklist</ref>;</highlight></codeline>
+<codeline lineno="177" refid="classSp2__SpaceRace_1aa171d6c83b8e0c4b081238d5e325e545" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuest" kindref="compound">Quest</ref>*<sp/><ref refid="classSp2__SpaceRace_1aa171d6c83b8e0c4b081238d5e325e545" kindref="member">questPtr</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="classSp2__SpaceRace_1a1eec06ad623b1a06bb57cde710b3f284" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;GameObject*&gt;<sp/><ref refid="classSp2__SpaceRace_1a1eec06ad623b1a06bb57cde710b3f284" kindref="member">collisionVec</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="classSp2__SpaceRace_1a5e99958ad37bd1ec9838aa1f86013a5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsMap" kindref="compound">PMAP</ref><sp/><ref refid="classSp2__SpaceRace_1a5e99958ad37bd1ec9838aa1f86013a5a" kindref="member">racetrack</ref>;</highlight></codeline>
+<codeline lineno="182" refid="classSp2__SpaceRace_1a5dd347fbccc61abe04c0ded5f54d1b07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>queue&lt;int&gt;<sp/><ref refid="classSp2__SpaceRace_1a5dd347fbccc61abe04c0ded5f54d1b07" kindref="member">racePath</ref>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="186" refid="classSp2__SpaceRace_1ab5b719191e4d6050c96b9c694a5b7635" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ab5b719191e4d6050c96b9c694a5b7635" kindref="member">m_vertexArrayID</ref>;</highlight></codeline>
+<codeline lineno="187" refid="classSp2__SpaceRace_1ad0b65e7b5ebfcb23f17e2e8946c9ac12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ad0b65e7b5ebfcb23f17e2e8946c9ac12" kindref="member">m_vertexBuffer</ref>[<ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acaddee1de290a97855fbe6e4a6674d6f" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="188" refid="classSp2__SpaceRace_1a697f4a7678b010ac1d40006047b18817" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a697f4a7678b010ac1d40006047b18817" kindref="member">m_colorBuffer</ref>[<ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acaddee1de290a97855fbe6e4a6674d6f" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="189" refid="classSp2__SpaceRace_1aad04c987f333d3928f7e159e443e4fb7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1aad04c987f333d3928f7e159e443e4fb7" kindref="member">m_programID</ref>;</highlight></codeline>
+<codeline lineno="190" refid="classSp2__SpaceRace_1a35eb2abe02b4502ef4b1f07aeca45ed2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a35eb2abe02b4502ef4b1f07aeca45ed2" kindref="member">m_indexBuffer</ref>[<ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acaddee1de290a97855fbe6e4a6674d6f" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="classSp2__SpaceRace_1af18423e40a0fb1b9fbb4cc7cc3f04835" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMS" kindref="compound">MS</ref><sp/><ref refid="classSp2__SpaceRace_1a216ce6d4ec686fe0c3d73d5db9673274" kindref="member">modelStack</ref>,<sp/><ref refid="classSp2__SpaceRace_1ab7de2d1ea655cf9d8cf94465209116a9" kindref="member">viewStack</ref>,<sp/><ref refid="classSp2__SpaceRace_1a91b9b6fe1f7098e8bddf2db9613b8e12" kindref="member">projectionStack</ref>,<sp/><ref refid="classSp2__SpaceRace_1af18423e40a0fb1b9fbb4cc7cc3f04835" kindref="member">viewStack2</ref>;</highlight></codeline>
+<codeline lineno="193" refid="classSp2__SpaceRace_1ae642a599b910eb30287b4642863faec6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ae642a599b910eb30287b4642863faec6" kindref="member">f_rotateCube</ref>;</highlight></codeline>
+<codeline lineno="194" refid="classSp2__SpaceRace_1ab613b2c905d06da3f6ba414168ba555d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classSp2__SpaceRace_1ab613b2c905d06da3f6ba414168ba555d" kindref="member">meshList</ref>[<ref refid="classSp2__SpaceRace_1a9fe98d7f6a1748dab36f366e9cb638d0acaddee1de290a97855fbe6e4a6674d6f" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="195" refid="classSp2__SpaceRace_1ab3f7e7b6405ed02f240d14a4dbeb8d0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight" kindref="compound">Light</ref><sp/><ref refid="classSp2__SpaceRace_1ab3f7e7b6405ed02f240d14a4dbeb8d0e" kindref="member">light</ref>[1];</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1aa4a535cf7560abb19c8cb833b4e02021" kindref="member">RenderMesh</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enableLight);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1aca0d05de9acd52fc9ecf95d2f4438271" kindref="member">RenderSkybox</ref>(<ref refid="classCamera" kindref="compound">Camera</ref><sp/>cam);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a21eaef4ef696d83ad357ee8c0ec4bb16" kindref="member">RenderGameObj</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enableLight<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasInteraction<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>scale<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(1,<sp/>1,<sp/>1),<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>rotate<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a21eaef4ef696d83ad357ee8c0ec4bb16" kindref="member">RenderGameObj</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>scale,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>rotate);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" kindref="member">RenderGameChar</ref>(<ref refid="classGameChar" kindref="compound">GameChar</ref><sp/>x,<sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enableLight<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasInteraction<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>scale<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(1,<sp/>1,<sp/>1),<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>rotate<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a8dae59c02fa2996a5a7793fbea6b08e7" kindref="member">RenderTeleporter</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>text,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>scale);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" kindref="member">Renderfps</ref>();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" kindref="member">Rendertps</ref>();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ac57ecb62b9f60a351db8ce5fb3fae670" kindref="member">RenderText</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1a3fddc2a76f735203bad1411e27781059" kindref="member">RenderTextOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSp2__SpaceRace_1ab0f4ca726823858a22af078333c90c8b" kindref="member">RenderMeshOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>translate<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0),<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>scale<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(1,<sp/>1,<sp/>1),<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>rotate<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Sp2_SpaceRace.h"/>
+  </compounddef>
+</doxygen>

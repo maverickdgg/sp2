@@ -1,0 +1,16 @@
+digraph "Computer Graphics/irrKlang" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_ae43a1f3162a6a75b457adff50d66fa5 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Computer Graphics" fontname="Helvetica", fontsize="10", URL="dir_ae43a1f3162a6a75b457adff50d66fa5.html"]
+  subgraph clusterdir_6a0ef7c59787af7de3734003789107e2 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_6a0ef7c59787af7de3734003789107e2.html"];
+    dir_6a0ef7c59787af7de3734003789107e2 [shape=plaintext label="irrKlang"];
+    dir_2dee590d80439c849fbe3dcf65def756 [shape=box label="include" color="black" fillcolor="white" style="filled" URL="dir_2dee590d80439c849fbe3dcf65def756.html"];
+    dir_6f3eb046256fd728f56d11719040f83b [shape=box label="plugins" color="red" fillcolor="white" style="filled" URL="dir_6f3eb046256fd728f56d11719040f83b.html"];
+  }
+  }
+  dir_6f3eb046256fd728f56d11719040f83b->dir_2dee590d80439c849fbe3dcf65def756 [headlabel="4", labeldistance=1.5 headhref="dir_000005_000004.html"];
+}
