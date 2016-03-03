@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structsMap" kind="struct" language="C++" prot="public">
+    <compoundname>sMap</compoundname>
+    <includes refid="Map_8h" local="no">Map.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsMap_1a9a387757567a8171e6b6a4c0aeb7015a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sMap::nrow</definition>
+        <argsstring></argsstring>
+        <name>nrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="33" column="1" bodyfile="Computer Graphics/Source/Map.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsMap_1a3343a64933315adb8adeeb5116e56a33" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sMap::ncol</definition>
+        <argsstring></argsstring>
+        <name>ncol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="33" column="1" bodyfile="Computer Graphics/Source/Map.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="structsMap_1a16b379986a22dff416c4490a14a85036" compoundref="Map_8h" startline="37" endline="43">sMap</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* sMap::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="34" column="1" bodyfile="Computer Graphics/Source/Map.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="Map_8h_1aa4a8756e9bc3c91987fb04b2d9910ff6" compoundref="Map_8cpp" startline="3" endline="44">load_map</referencedby>
+        <referencedby refid="classPlayer_1ace6fddc3ea81d6f8d4808b74ed108edc" compoundref="Player_8cpp" startline="190" endline="351">Player::movementUpdate</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">SpaceVehicles::updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" compoundref="SpaceVehicles_8cpp" startline="115" endline="233">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+        <referencedby refid="structsMap_1a8d23b7c38b8933ceddbc90b7b84ff577" compoundref="Map_8h" startline="45" endline="48">~sMap</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structsMap_1a16b379986a22dff416c4490a14a85036" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sMap::sMap</definition>
+        <argsstring>(int row, int col)</argsstring>
+        <name>sMap</name>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="37" column="1" bodyfile="Computer Graphics/Source/Map.h" bodystart="37" bodyend="43"/>
+        <references refid="structsMap_1a3343a64933315adb8adeeb5116e56a33" compoundref="Map_8h" startline="33">ncol</references>
+      </memberdef>
+      <memberdef kind="function" id="structsMap_1a8d23b7c38b8933ceddbc90b7b84ff577" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sMap::~sMap</definition>
+        <argsstring>()</argsstring>
+        <name>~sMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="45" column="1" bodyfile="Computer Graphics/Source/Map.h" bodystart="45" bodyend="48"/>
+        <references refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" compoundref="Map_8h" startline="34">data</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct for Map /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Struct <ref refid="structsMap" kindref="compound">sMap</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1238">
+        <label>sMap</label>
+        <link refid="structsMap"/>
+        <childnode refid="1239" relation="usage">
+          <edgelabel>ncol</edgelabel>
+          <edgelabel>nrow</edgelabel>
+        </childnode>
+        <childnode refid="1240" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="1240">
+        <label>char *</label>
+      </node>
+      <node id="1239">
+        <label>int</label>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Map.h" line="32" column="1" bodyfile="Computer Graphics/Source/Map.h" bodystart="31" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" prot="public" virt="non-virtual"><scope>sMap</scope><name>data</name></member>
+      <member refid="structsMap_1a3343a64933315adb8adeeb5116e56a33" prot="public" virt="non-virtual"><scope>sMap</scope><name>ncol</name></member>
+      <member refid="structsMap_1a9a387757567a8171e6b6a4c0aeb7015a" prot="public" virt="non-virtual"><scope>sMap</scope><name>nrow</name></member>
+      <member refid="structsMap_1a16b379986a22dff416c4490a14a85036" prot="public" virt="non-virtual"><scope>sMap</scope><name>sMap</name></member>
+      <member refid="structsMap_1a8d23b7c38b8933ceddbc90b7b84ff577" prot="public" virt="non-virtual"><scope>sMap</scope><name>~sMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

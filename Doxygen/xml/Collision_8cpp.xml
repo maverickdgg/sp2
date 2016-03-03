@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Collision_8cpp" kind="file" language="C++">
+    <compoundname>Collision.cpp</compoundname>
+    <includes refid="Collision_8h" local="yes">Collision.h</includes>
+    <incdepgraph>
+      <node id="7798">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7793" relation="include">
+        </childnode>
+        <childnode refid="7799" relation="include">
+        </childnode>
+      </node>
+      <node id="7787">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="7788" relation="include">
+        </childnode>
+      </node>
+      <node id="7794">
+        <label>cmath</label>
+      </node>
+      <node id="7790">
+        <label>string</label>
+      </node>
+      <node id="7793">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7794" relation="include">
+        </childnode>
+        <childnode refid="7795" relation="include">
+        </childnode>
+        <childnode refid="7796" relation="include">
+        </childnode>
+        <childnode refid="7797" relation="include">
+        </childnode>
+      </node>
+      <node id="7788">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="7789" relation="include">
+        </childnode>
+        <childnode refid="7790" relation="include">
+        </childnode>
+        <childnode refid="7791" relation="include">
+        </childnode>
+        <childnode refid="7792" relation="include">
+        </childnode>
+        <childnode refid="7793" relation="include">
+        </childnode>
+        <childnode refid="7798" relation="include">
+        </childnode>
+      </node>
+      <node id="7795">
+        <label>exception</label>
+      </node>
+      <node id="7792">
+        <label>fstream</label>
+      </node>
+      <node id="7796">
+        <label>ctime</label>
+      </node>
+      <node id="7791">
+        <label>vector</label>
+      </node>
+      <node id="7789">
+        <label>sstream</label>
+      </node>
+      <node id="7797">
+        <label>cstdlib</label>
+      </node>
+      <node id="7799">
+        <label>iostream</label>
+      </node>
+      <node id="7786">
+        <label>Computer Graphics/Source/Collision.cpp</label>
+        <link refid="Collision.cpp"/>
+        <childnode refid="7787" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(GameObject x, GameObject y)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.cpp" line="3" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="3" bodyend="35"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" compoundref="Platform_8cpp" startline="94" endline="105">Platform::changePlatform</referencedby>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">GameChar::chat_update</referencedby>
+        <referencedby refid="classBuildings_1a728402f8f61318eff08b8f7afc2c1224" compoundref="Buildings_8cpp" startline="20" endline="28">Buildings::climb</referencedby>
+        <referencedby refid="Collision_8h_1ab3e33aa7ab8454d3831711e35fa18d75" compoundref="Collision_8cpp" startline="37" endline="40">collision</referencedby>
+        <referencedby refid="Collision_8h_1a9eed1fd9a880ab57e22efb89aa7696de" compoundref="Collision_8cpp" startline="121" endline="135">collisionElimination</referencedby>
+        <referencedby refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" compoundref="SpaceVehicles_8cpp" startline="356" endline="373">SpaceVehicles::enterVehicleUpdate</referencedby>
+        <referencedby refid="classPlayer_1a5b057a6cd421a056d2a0694ab00739e7" compoundref="Player_8cpp" startline="48" endline="174">Player::movementUpdate</referencedby>
+        <referencedby refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" compoundref="Platform_8cpp" startline="107" endline="113">Platform::noLadderPlatform</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene1_1aeabebe615a8a759a67df19a5d622f666" compoundref="Sp2__Scene1_8cpp" startline="477" endline="498">Sp2_Scene1::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a21eaef4ef696d83ad357ee8c0ec4bb16" compoundref="Sp2__SpaceRace_8cpp" startline="580" endline="603">Sp2_SpaceRace::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1a57f6c020216c4093a312595a01d3e35e" compoundref="SP2__Scene3_8cpp" startline="873" endline="899">Sp2_Scene3::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1af977943490d876a299b08644b5f0ebcd" compoundref="SP2__Scene3_8cpp" startline="1176" endline="1247">Sp2_Scene3::RenderMedic</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+        <referencedby refid="classSp2__Scene3_1ab8b8ee5ac95441f935c1b4d04c3a39c2" compoundref="SP2__Scene3_8cpp" startline="815" endline="871">Sp2_Scene3::RenderSuit</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">SpaceVehicles::updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" compoundref="SpaceVehicles_8cpp" startline="115" endline="233">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8cpp_1ab3e33aa7ab8454d3831711e35fa18d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(GameObject x, Vector3 y, int boundary)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.cpp" line="37" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="37" bodyend="40"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8cpp_1a5ced462f9fcc3c9963cdf5e0da071631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collisionXZ</definition>
+        <argsstring>(Vector3 x, GameObject y)</argsstring>
+        <name>collisionXZ</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.cpp" line="42" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="42" bodyend="66"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSp2__Scene3_1a346e1aa0ed86ad3745dabf77d8725567" compoundref="SP2__Scene3_8cpp" startline="790" endline="807">Sp2_Scene3::RenderInstructions</referencedby>
+        <referencedby refid="classSp2__Scene1_1a600d17005d897d460e53c972a7f82307" compoundref="Sp2__Scene1_8cpp" startline="500" endline="517">Sp2_Scene1::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a8dae59c02fa2996a5a7793fbea6b08e7" compoundref="Sp2__SpaceRace_8cpp" startline="735" endline="752">Sp2_SpaceRace::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__Scene3_1a52aad13df08c4bddb02bbc4469e0bab7" compoundref="SP2__Scene3_8cpp" startline="1425" endline="1442">Sp2_Scene3::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8cpp_1a5972be7aad62f35daa74b25a15fc27c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(Vector3 x, Vector3 y, int boundary)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.cpp" line="68" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="68" bodyend="92"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8cpp_1a58ec323eed74a512976d2e7233e74306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(GameObject x, vector&lt; GameObject &gt; y)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> &gt;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.cpp" line="94" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="94" bodyend="104"/>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8cpp_1a5f723bdc4ef5a9b28ee40efb0dc2668f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(Vector3 x, vector&lt; GameObject * &gt; y, float boundary)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> * &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.cpp" line="106" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="106" bodyend="119"/>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8cpp_1a9eed1fd9a880ab57e22efb89aa7696de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> &gt;</type>
+        <definition>vector&lt;GameObject&gt; collisionElimination</definition>
+        <argsstring>(GameObject x, vector&lt; GameObject &gt; y)</argsstring>
+        <name>collisionElimination</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> &gt;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.cpp" line="121" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="121" bodyend="135"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Collision_8h" kindref="compound">Collision.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/><ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>y)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>distance<sp/>=<sp/>x.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref><sp/>-<sp/>y.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*float<sp/>length<sp/>=<sp/>distance.Length();</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(length<sp/>&gt;<sp/>x.boundary<sp/>+<sp/>y.boundary)</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>true;</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&lt;<sp/>(x.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>+<sp/>y.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>)<sp/>&amp;&amp;<sp/>distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>&lt;<sp/>(x.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>+<sp/>y.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>)<sp/>&amp;&amp;<sp/>distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>&lt;<sp/>(x.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>+<sp/>y.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>))</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="Collision_8h_1ab3e33aa7ab8454d3831711e35fa18d75" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(x.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,<sp/>y,<sp/>(x.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>+<sp/>boundary));</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="Collision_8h_1a5ced462f9fcc3c9963cdf5e0da071631" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8cpp_1a5ced462f9fcc3c9963cdf5e0da071631" kindref="member">collisionXZ</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>x,<sp/><ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>y)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>distance<sp/>=<sp/>x<sp/>-<sp/>y.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&lt;<sp/>(y.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>)<sp/>&amp;&amp;<sp/>distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>&lt;<sp/>(<sp/>y.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="Collision_8h_1a5972be7aad62f35daa74b25a15fc27c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>x,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>distance<sp/>=<sp/>x<sp/>-<sp/>y;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&lt;<sp/>(boundary)<sp/>&amp;&amp;<sp/>distance.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>&lt;<sp/>(boundary)<sp/>&amp;&amp;<sp/>distance.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>&lt;<sp/>(boundary))</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="Collision_8h_1a58ec323eed74a512976d2e7233e74306" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/>vector&lt;GameObject&gt;<sp/>y)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(vector&lt;GameObject&gt;::iterator<sp/>it<sp/>=<sp/>y.begin();<sp/>it<sp/>!=<sp/>y.end();<sp/>++it)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(x,<sp/>*it)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="Collision_8h_1a5f723bdc4ef5a9b28ee40efb0dc2668f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>x,<sp/>vector&lt;GameObject*&gt;<sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>boundary)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(vector&lt;GameObject*&gt;::iterator<sp/>it<sp/>=<sp/>y.begin();<sp/>it<sp/>!=<sp/>y.end();<sp/>++it)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*it)-&gt;pos<sp/>!=<sp/>x)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(**it,<sp/>x,<sp/>boundary)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="Collision_8h_1a9eed1fd9a880ab57e22efb89aa7696de" refkind="member"><highlight class="normal">vector&lt;GameObject&gt;<sp/><ref refid="Collision_8cpp_1a9eed1fd9a880ab57e22efb89aa7696de" kindref="member">collisionElimination</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/>vector&lt;GameObject&gt;<sp/>y)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;GameObject&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(vector&lt;GameObject&gt;::iterator<sp/>it<sp/>=<sp/>y.begin();<sp/>it<sp/>!=<sp/>y.end();<sp/>++it)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((x.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>-<sp/>it-&gt;pos.y<sp/>&lt;<sp/>x.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>+<sp/>it-&gt;boundary)<sp/>&amp;&amp;<sp/>(x.<ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>-<sp/>it-&gt;pos.y<sp/>&gt;<sp/>-(x.<ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref><sp/>+<sp/>it-&gt;boundary)))</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(x,<sp/>*it)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.push_back(*it);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Collision.cpp"/>
+  </compounddef>
+</doxygen>

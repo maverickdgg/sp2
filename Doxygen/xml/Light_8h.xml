@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Light_8h" kind="file" language="C++">
+    <compoundname>Light.h</compoundname>
+    <includes refid="Vertex_8h" local="yes">Vertex.h</includes>
+    <includedby refid="Light_8cpp" local="yes">Computer Graphics/Source/Light.cpp</includedby>
+    <includedby refid="LoadingScene_8h" local="yes">Computer Graphics/Source/LoadingScene.h</includedby>
+    <includedby refid="Sp2__Scene1_8h" local="yes">Computer Graphics/Source/Sp2_Scene1.h</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <includedby refid="Sp2__SpaceRace_8h" local="yes">Computer Graphics/Source/Sp2_SpaceRace.h</includedby>
+    <incdepgraph>
+      <node id="8174">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="8175" relation="include">
+        </childnode>
+        <childnode refid="8180" relation="include">
+        </childnode>
+      </node>
+      <node id="8172">
+        <label>Computer Graphics/Source/Light.h</label>
+        <link refid="Light.h"/>
+        <childnode refid="8173" relation="include">
+        </childnode>
+      </node>
+      <node id="8176">
+        <label>cmath</label>
+      </node>
+      <node id="8175">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="8176" relation="include">
+        </childnode>
+        <childnode refid="8177" relation="include">
+        </childnode>
+        <childnode refid="8178" relation="include">
+        </childnode>
+        <childnode refid="8179" relation="include">
+        </childnode>
+      </node>
+      <node id="8173">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="8174" relation="include">
+        </childnode>
+      </node>
+      <node id="8177">
+        <label>exception</label>
+      </node>
+      <node id="8178">
+        <label>ctime</label>
+      </node>
+      <node id="8179">
+        <label>cstdlib</label>
+      </node>
+      <node id="8180">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8186">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="8181">
+        <label>Computer Graphics/Source/Light.h</label>
+        <link refid="Light.h"/>
+        <childnode refid="8182" relation="include">
+        </childnode>
+        <childnode refid="8183" relation="include">
+        </childnode>
+        <childnode refid="8185" relation="include">
+        </childnode>
+        <childnode refid="8187" relation="include">
+        </childnode>
+        <childnode refid="8189" relation="include">
+        </childnode>
+      </node>
+      <node id="8184">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="8182">
+        <label>Computer Graphics/Source/Light.cpp</label>
+        <link refid="Light_8cpp"/>
+      </node>
+      <node id="8189">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="8190" relation="include">
+        </childnode>
+      </node>
+      <node id="8188">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="8187">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="8188" relation="include">
+        </childnode>
+      </node>
+      <node id="8185">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="8186" relation="include">
+        </childnode>
+      </node>
+      <node id="8190">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="8183">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="8184" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structLight" prot="public">Light</innerclass>
+    <briefdescription>
+<para>Struct to define <ref refid="structLight" kindref="compound">Light</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_LIGHT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_LIGHT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vertex_8h" kindref="compound">Vertex.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="25" refid="structLight" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLight" kindref="compound">Light</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27" refid="structLight_1afeb738db41e987719e359166ef93314f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structPosition" kindref="compound">Position</ref><sp/><ref refid="structLight_1afeb738db41e987719e359166ef93314f" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="28" refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structColor" kindref="compound">Color</ref><sp/><ref refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" kindref="member">color</ref>;</highlight></codeline>
+<codeline lineno="29" refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" kindref="member">power</ref>;</highlight></codeline>
+<codeline lineno="30" refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" kindref="member">kC</ref>,<sp/><ref refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" kindref="member">kL</ref>,<sp/><ref refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" kindref="member">kQ</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" kindref="member">LIGHT_TYPE</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" kindref="member">LIGHT_POINT</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="35" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" kindref="member">LIGHT_DIRECTIONAL</ref>,</highlight></codeline>
+<codeline lineno="36" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" kindref="member">LIGHT_SPOT</ref>,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="38" refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" kindref="member">LIGHT_TYPE</ref><sp/><ref refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" kindref="member">spotDirection</ref>;</highlight></codeline>
+<codeline lineno="40" refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" kindref="member">cosCutoff</ref>;</highlight></codeline>
+<codeline lineno="41" refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" kindref="member">cosInner</ref>;</highlight></codeline>
+<codeline lineno="42" refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" kindref="member">exponent</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" kindref="member">Light</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Light.h"/>
+  </compounddef>
+</doxygen>

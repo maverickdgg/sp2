@@ -1,0 +1,26 @@
+digraph "Color::Set"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Color::Set",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Color::Color",height=0.2,width=0.4,color="black",URL="$structColor.html#a29962e70868c28ebaf5875b9bdc2a6ed"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MeshBuilder::GenerateAxes",height=0.2,width=0.4,color="black",URL="$classMeshBuilder.html#a78d37e2b0cc068eec801f17c367100e7",tooltip="Generate the vertices of a reference Axes; Use red for x-axis, green for y-axis, blue for z-axis Then..."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="LoadingScene::Init",height=0.2,width=0.4,color="black",URL="$classLoadingScene.html#ab58112cfff35f696e5479b5eaf74cbb3"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Sp2_Scene1::Init",height=0.2,width=0.4,color="black",URL="$classSp2__Scene1.html#a4704d16ad01dec2a8405dd55800dd84b"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Sp2_Scene3::Init",height=0.2,width=0.4,color="black",URL="$classSp2__Scene3.html#a8f774405ee31eaf42274079a2d0a03ee",tooltip="Init scene with game objects, light and camera positions, properties like light power. Loads OBJ and texture into scene. "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Sp2_SpaceRace::Init",height=0.2,width=0.4,color="black",URL="$classSp2__SpaceRace.html#a1837e0004994f2e9f885828b7788da27"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Light::Light",height=0.2,width=0.4,color="black",URL="$structLight.html#aeb5df09a25a32f19fdffa761268ba24f"];
+}

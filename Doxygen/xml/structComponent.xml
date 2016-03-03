@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structComponent" kind="struct" language="C++" prot="public">
+    <compoundname>Component</compoundname>
+    <includes refid="Material_8h" local="no">Material.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Component::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Material.h" line="25" column="1" bodyfile="Computer Graphics/Source/Material.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classLoadingScene_1acc79ce6f818d54de42bb7d4beafd33e7" compoundref="LoadingScene_8cpp" startline="169" endline="209">LoadingScene::RenderMesh</referencedby>
+        <referencedby refid="classSp2__Scene1_1a974bf14779d9515128872057892ca93f" compoundref="Sp2__Scene1_8cpp" startline="372" endline="412">Sp2_Scene1::RenderMesh</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1aa4a535cf7560abb19c8cb833b4e02021" compoundref="Sp2__SpaceRace_8cpp" startline="474" endline="514">Sp2_SpaceRace::RenderMesh</referencedby>
+        <referencedby refid="classSp2__Scene3_1a608cd9e5736f5d5c0639d78fb36a8518" compoundref="SP2__Scene3_8cpp" startline="684" endline="724">Sp2_Scene3::RenderMesh</referencedby>
+        <referencedby refid="structComponent_1a85f599b839327709953f0115dc5dfd49" compoundref="Material_8cpp" startline="8" endline="13">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Component::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Material.h" line="25" column="1" bodyfile="Computer Graphics/Source/Material.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="structComponent_1a85f599b839327709953f0115dc5dfd49" compoundref="Material_8cpp" startline="8" endline="13">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structComponent_1abd55184abe2aaf269b38f5913721821c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Component::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Material.h" line="25" column="1" bodyfile="Computer Graphics/Source/Material.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="structComponent_1a85f599b839327709953f0115dc5dfd49" compoundref="Material_8cpp" startline="8" endline="13">Set</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structComponent_1ae110a300786be861f7ea647ef77d9d18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Component::Component</definition>
+        <argsstring>(float r=0.1f, float g=0.1f, float b=0.1f)</argsstring>
+        <name>Component</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+          <defval>0.1f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+          <defval>0.1f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+          <defval>0.1f</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Material.h" line="26" column="1" bodyfile="Computer Graphics/Source/Material.cpp" bodystart="3" bodyend="6"/>
+        <references refid="structComponent_1a85f599b839327709953f0115dc5dfd49" compoundref="Material_8cpp" startline="8" endline="13">Set</references>
+      </memberdef>
+      <memberdef kind="function" id="structComponent_1a85f599b839327709953f0115dc5dfd49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Component::Set</definition>
+        <argsstring>(float r, float g, float b)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Material.h" line="28" column="1" bodyfile="Computer Graphics/Source/Material.cpp" bodystart="8" bodyend="13"/>
+        <references refid="structComponent_1abd55184abe2aaf269b38f5913721821c" compoundref="Material_8h" startline="25">b</references>
+        <references refid="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" compoundref="Material_8h" startline="25">g</references>
+        <references refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" compoundref="Material_8h" startline="25">r</references>
+        <referencedby refid="structComponent_1ae110a300786be861f7ea647ef77d9d18" compoundref="Material_8cpp" startline="3" endline="6">Component</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct for component /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Struct <ref refid="structComponent" kindref="compound">Component</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="876">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="877" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="877">
+        <label>float</label>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Material.h" line="24" column="1" bodyfile="Computer Graphics/Source/Material.h" bodystart="23" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structComponent_1abd55184abe2aaf269b38f5913721821c" prot="public" virt="non-virtual"><scope>Component</scope><name>b</name></member>
+      <member refid="structComponent_1ae110a300786be861f7ea647ef77d9d18" prot="public" virt="non-virtual"><scope>Component</scope><name>Component</name></member>
+      <member refid="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" prot="public" virt="non-virtual"><scope>Component</scope><name>g</name></member>
+      <member refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" prot="public" virt="non-virtual"><scope>Component</scope><name>r</name></member>
+      <member refid="structComponent_1a85f599b839327709953f0115dc5dfd49" prot="public" virt="non-virtual"><scope>Component</scope><name>Set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,3 +1,17 @@
+/******************************************************************************/
+/*!
+\file	Sp2_SpaceRace.h
+\author Lee Jian Lin
+\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Admin Number: 150580X
+\par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
+\par	Diploma: Game Development and Technology
+\par	Class: GD1503
+\par	Mobile Number: 9755 2038
+\brief
+Class to define the Space Race Scene
+*/
+/******************************************************************************/
 #ifndef SP2_SPACERACE_H
 #define SP2_SPACERACE_H
 
@@ -30,7 +44,12 @@
 #include <queue>
 
 using std::queue;
-
+/******************************************************************************/
+/*!
+Class Sp2_SpaceRace:
+\brief
+Class for the Space Race Scene inheriting from Scene
+/******************************************************************************/
 class Sp2_SpaceRace : public Scene
 {
 public:

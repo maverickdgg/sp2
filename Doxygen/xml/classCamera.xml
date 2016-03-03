@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classCamera" kind="class" language="C++" prot="public">
+    <compoundname>Camera</compoundname>
+    <derivedcompoundref refid="classCamera3" prot="public" virt="non-virtual">Camera3</derivedcompoundref>
+    <derivedcompoundref refid="classCameraTPS" prot="public" virt="non-virtual">CameraTPS</derivedcompoundref>
+    <includes refid="Camera_8h" local="no">Camera.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCamera_1a3b229874a00253021a1b6c61657fa5ab" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="29" column="1" bodyfile="Computer Graphics/Source/Camera.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" compoundref="Camera_8cpp" startline="33" endline="38">Init</referencedby>
+        <referencedby refid="classCameraTPS_1a3394f9c1704b0b93c07c9e1dc16108ff" compoundref="CameraTPS_8cpp" startline="14" endline="33">CameraTPS::Init</referencedby>
+        <referencedby refid="classSp2__Scene1_1a5d45996751484538f8f7675a1db98979" compoundref="Sp2__Scene1_8cpp" startline="741" endline="786">Sp2_Scene1::Render</referencedby>
+        <referencedby refid="classSp2__Scene3_1a2227ee0830c9d5f4ca486cc70b140331" compoundref="SP2__Scene3_8cpp" startline="1527" endline="1581">Sp2_Scene3::Render</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a6e5a16911da0317ddce3175936fb316d" compoundref="Sp2__SpaceRace_8cpp" startline="923" endline="1010">Sp2_SpaceRace::Render</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1aca0d05de9acd52fc9ecf95d2f4438271" compoundref="Sp2__SpaceRace_8cpp" startline="517" endline="577">Sp2_SpaceRace::RenderSkybox</referencedby>
+        <referencedby refid="classCameraTPS_1a187145d973095406211ad23707ef7587" compoundref="CameraTPS_8cpp" startline="35" endline="68">CameraTPS::tpsUpdateRotation</referencedby>
+        <referencedby refid="classCameraTPS_1a743d5fc45867e31a8915e47173d0fcb2" compoundref="CameraTPS_8cpp" startline="70" endline="114">CameraTPS::tpsUpdateVec</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera::target</definition>
+        <argsstring></argsstring>
+        <name>target</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="30" column="1" bodyfile="Computer Graphics/Source/Camera.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" compoundref="Camera_8cpp" startline="33" endline="38">Init</referencedby>
+        <referencedby refid="classCameraTPS_1a3394f9c1704b0b93c07c9e1dc16108ff" compoundref="CameraTPS_8cpp" startline="14" endline="33">CameraTPS::Init</referencedby>
+        <referencedby refid="classSp2__Scene1_1a5d45996751484538f8f7675a1db98979" compoundref="Sp2__Scene1_8cpp" startline="741" endline="786">Sp2_Scene1::Render</referencedby>
+        <referencedby refid="classSp2__Scene3_1a2227ee0830c9d5f4ca486cc70b140331" compoundref="SP2__Scene3_8cpp" startline="1527" endline="1581">Sp2_Scene3::Render</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a6e5a16911da0317ddce3175936fb316d" compoundref="Sp2__SpaceRace_8cpp" startline="923" endline="1010">Sp2_SpaceRace::Render</referencedby>
+        <referencedby refid="classCameraTPS_1a187145d973095406211ad23707ef7587" compoundref="CameraTPS_8cpp" startline="35" endline="68">CameraTPS::tpsUpdateRotation</referencedby>
+        <referencedby refid="classCameraTPS_1a743d5fc45867e31a8915e47173d0fcb2" compoundref="CameraTPS_8cpp" startline="70" endline="114">CameraTPS::tpsUpdateVec</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera_1ab76ce866ca2acd6ab54447f474077245" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera::up</definition>
+        <argsstring></argsstring>
+        <name>up</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="31" column="1" bodyfile="Computer Graphics/Source/Camera.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" compoundref="Camera_8cpp" startline="33" endline="38">Init</referencedby>
+        <referencedby refid="classSp2__Scene1_1a5d45996751484538f8f7675a1db98979" compoundref="Sp2__Scene1_8cpp" startline="741" endline="786">Sp2_Scene1::Render</referencedby>
+        <referencedby refid="classSp2__Scene3_1a2227ee0830c9d5f4ca486cc70b140331" compoundref="SP2__Scene3_8cpp" startline="1527" endline="1581">Sp2_Scene3::Render</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a6e5a16911da0317ddce3175936fb316d" compoundref="Sp2__SpaceRace_8cpp" startline="923" endline="1010">Sp2_SpaceRace::Render</referencedby>
+        <referencedby refid="classCameraTPS_1a743d5fc45867e31a8915e47173d0fcb2" compoundref="CameraTPS_8cpp" startline="70" endline="114">CameraTPS::tpsUpdateVec</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCamera_1a01f94c3543f56ede7af49dc778f19331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::Camera</definition>
+        <argsstring>()</argsstring>
+        <name>Camera</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="33" column="1" bodyfile="Computer Graphics/Source/Camera.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1ad1897942d0ccf91052386388a497349f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::~Camera</definition>
+        <argsstring>()</argsstring>
+        <name>~Camera</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="34" column="1" bodyfile="Computer Graphics/Source/Camera.cpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1a609775f7ec4cd936ad7add808cd7354c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::Init</definition>
+        <argsstring>(const Vector3 &amp;pos, const Vector3 &amp;target, const Vector3 &amp;up)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>up</declname>
+        </param>
+        <briefdescription>
+<para>Initialize camera. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- position of camera </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- where the camera is looking at </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>up</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- up vector of camera </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="35" column="1" bodyfile="Computer Graphics/Source/Camera.cpp" bodystart="33" bodyend="38"/>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="29">position</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="30">target</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="31">up</references>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1aa46f58b32270a571ab56dde4caca46db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+<para>Reset the camera settings. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="36" column="1" bodyfile="Computer Graphics/Source/Camera.cpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>To be called every frame. <ref refid="classCamera" kindref="compound">Camera</ref> will get user inputs and update its position and orientation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- frame time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Camera.h" line="37" column="1" bodyfile="Computer Graphics/Source/Camera.cpp" bodystart="58" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for the first type of camera /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classCamera" kindref="compound">Camera</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="804">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+      </node>
+      <node id="806">
+        <label>CameraTPS</label>
+        <link refid="classCameraTPS"/>
+        <childnode refid="804" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="805">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="804" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="807">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="808" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="809">
+        <label>float</label>
+      </node>
+      <node id="808">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="809" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Camera.h" line="27" column="1" bodyfile="Computer Graphics/Source/Camera.h" bodystart="26" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classCamera_1a01f94c3543f56ede7af49dc778f19331" prot="public" virt="non-virtual"><scope>Camera</scope><name>Camera</name></member>
+      <member refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" prot="public" virt="non-virtual"><scope>Camera</scope><name>Init</name></member>
+      <member refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" prot="public" virt="non-virtual"><scope>Camera</scope><name>position</name></member>
+      <member refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" prot="public" virt="non-virtual"><scope>Camera</scope><name>Reset</name></member>
+      <member refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" prot="public" virt="non-virtual"><scope>Camera</scope><name>target</name></member>
+      <member refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" prot="public" virt="non-virtual"><scope>Camera</scope><name>up</name></member>
+      <member refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" prot="public" virt="non-virtual"><scope>Camera</scope><name>Update</name></member>
+      <member refid="classCamera_1ad1897942d0ccf91052386388a497349f" prot="public" virt="non-virtual"><scope>Camera</scope><name>~Camera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

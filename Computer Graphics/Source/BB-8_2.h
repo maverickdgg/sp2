@@ -16,7 +16,12 @@ Class to define another version of BB-8 NPC inheriting from GameChar
 #define BB_8_V2_H
 
 #include "GameChar.h"
-
+/******************************************************************************/
+/*!
+Class BB8:
+\brief
+Class for the second version of BB8 NPC ( Inherits from GameChar )
+/******************************************************************************/
 class BB8v2 :public GameChar
 {
 public:

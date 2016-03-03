@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classScene" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Scene</compoundname>
+    <derivedcompoundref refid="classLoadingScene" prot="public" virt="non-virtual">LoadingScene</derivedcompoundref>
+    <derivedcompoundref refid="classSp2__Scene1" prot="public" virt="non-virtual">Sp2_Scene1</derivedcompoundref>
+    <derivedcompoundref refid="classSp2__Scene3" prot="public" virt="non-virtual">Sp2_Scene3</derivedcompoundref>
+    <derivedcompoundref refid="classSp2__SpaceRace" prot="public" virt="non-virtual">Sp2_SpaceRace</derivedcompoundref>
+    <includes refid="Scene_8h" local="no">Scene.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Scene::Scene</definition>
+        <argsstring>()</argsstring>
+        <name>Scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Scene.h" line="26" column="1" bodyfile="Computer Graphics/Source/Scene.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Scene::~Scene</definition>
+        <argsstring>()</argsstring>
+        <name>~Scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Scene.h" line="27" column="1" bodyfile="Computer Graphics/Source/Scene.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Init</definition>
+        <argsstring>()=0</argsstring>
+        <name>Init</name>
+        <reimplementedby refid="classSp2__Scene1_1a4704d16ad01dec2a8405dd55800dd84b">Init</reimplementedby>
+        <reimplementedby refid="classLoadingScene_1ab58112cfff35f696e5479b5eaf74cbb3">Init</reimplementedby>
+        <reimplementedby refid="classSp2__Scene3_1a8f774405ee31eaf42274079a2d0a03ee">Init</reimplementedby>
+        <reimplementedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27">Init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Scene.h" line="29" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Update</definition>
+        <argsstring>(double dt)=0</argsstring>
+        <name>Update</name>
+        <reimplementedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8">Update</reimplementedby>
+        <reimplementedby refid="classLoadingScene_1af6e9ab4dacf0023958123446facc2015">Update</reimplementedby>
+        <reimplementedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb">Update</reimplementedby>
+        <reimplementedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d">Update</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Scene.h" line="30" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Render</definition>
+        <argsstring>()=0</argsstring>
+        <name>Render</name>
+        <reimplementedby refid="classSp2__Scene1_1a5d45996751484538f8f7675a1db98979">Render</reimplementedby>
+        <reimplementedby refid="classLoadingScene_1a20d69f97ec73d55519a3481f32dd804b">Render</reimplementedby>
+        <reimplementedby refid="classSp2__Scene3_1a2227ee0830c9d5f4ca486cc70b140331">Render</reimplementedby>
+        <reimplementedby refid="classSp2__SpaceRace_1a6e5a16911da0317ddce3175936fb316d">Render</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Scene.h" line="31" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1aae8e24654ef98c79961c2b804b12852c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Exit</definition>
+        <argsstring>()=0</argsstring>
+        <name>Exit</name>
+        <reimplementedby refid="classSp2__Scene1_1afbef5b99be49a63f381b85e749091992">Exit</reimplementedby>
+        <reimplementedby refid="classLoadingScene_1a9a1b083267aa463aac0c22a298070941">Exit</reimplementedby>
+        <reimplementedby refid="classSp2__Scene3_1ac4bd2c745ebe143e944f51530a71f5e3">Exit</reimplementedby>
+        <reimplementedby refid="classSp2__SpaceRace_1a91f33f1923935c883a447e26eb8084a6">Exit</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Scene.h" line="32" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Application::Run</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="classScene" kindref="compound">Scene</ref> /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classScene" kindref="compound">Scene</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1208">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="1209">
+        <label>LoadingScene</label>
+        <link refid="classLoadingScene"/>
+        <childnode refid="1208" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1210">
+        <label>Sp2_Scene1</label>
+        <link refid="classSp2__Scene1"/>
+        <childnode refid="1208" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1211">
+        <label>Sp2_Scene3</label>
+        <link refid="classSp2__Scene3"/>
+        <childnode refid="1208" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1212">
+        <label>Sp2_SpaceRace</label>
+        <link refid="classSp2__SpaceRace"/>
+        <childnode refid="1208" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Computer Graphics/Source/Scene.h" line="24" column="1" bodyfile="Computer Graphics/Source/Scene.h" bodystart="23" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classScene_1aae8e24654ef98c79961c2b804b12852c" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Exit</name></member>
+      <member refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Init</name></member>
+      <member refid="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Render</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>Scene</scope><name>Scene</name></member>
+      <member refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Update</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>Scene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

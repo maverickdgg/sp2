@@ -15,7 +15,12 @@ Class to define a Sir NPC inheriting from GameChar
 #ifndef SIR_H
 #define SIR_H
 #include "GameChar.h"
-
+/******************************************************************************/
+/*!
+Class BB8:
+\brief
+Class for Sir NPC ( Inherits from GameChar )
+/******************************************************************************/
 class Sir : public GameChar
 {
 	bool isTurned;

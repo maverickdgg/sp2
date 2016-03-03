@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="AlienEnemy_8h" kind="file" language="C++">
+    <compoundname>AlienEnemy.h</compoundname>
+    <includes refid="Alien_8h" local="yes">Alien.h</includes>
+    <includedby refid="AlienEnemy_8cpp" local="yes">Computer Graphics/Source/AlienEnemy.cpp</includedby>
+    <includedby refid="ChestBurster_8h" local="yes">Computer Graphics/Source/ChestBurster.h</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <includedby refid="Sp2__SpaceRace_8h" local="yes">Computer Graphics/Source/Sp2_SpaceRace.h</includedby>
+    <incdepgraph>
+      <node id="6906">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="6901" relation="include">
+        </childnode>
+        <childnode refid="6907" relation="include">
+        </childnode>
+      </node>
+      <node id="6932">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+        <childnode refid="6925" relation="include">
+        </childnode>
+      </node>
+      <node id="6930">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+      </node>
+      <node id="6935">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+        <childnode refid="6925" relation="include">
+        </childnode>
+      </node>
+      <node id="6914">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="6899" relation="include">
+        </childnode>
+        <childnode refid="6898" relation="include">
+        </childnode>
+        <childnode refid="6900" relation="include">
+        </childnode>
+        <childnode refid="6907" relation="include">
+        </childnode>
+        <childnode refid="6915" relation="include">
+        </childnode>
+      </node>
+      <node id="6915">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="6916" relation="include">
+        </childnode>
+        <childnode refid="6918" relation="include">
+        </childnode>
+        <childnode refid="6920" relation="include">
+        </childnode>
+        <childnode refid="6921" relation="include">
+        </childnode>
+        <childnode refid="6922" relation="include">
+        </childnode>
+        <childnode refid="6923" relation="include">
+        </childnode>
+        <childnode refid="6924" relation="include">
+        </childnode>
+        <childnode refid="6925" relation="include">
+        </childnode>
+        <childnode refid="6926" relation="include">
+        </childnode>
+        <childnode refid="6927" relation="include">
+        </childnode>
+        <childnode refid="6928" relation="include">
+        </childnode>
+        <childnode refid="6932" relation="include">
+        </childnode>
+        <childnode refid="6933" relation="include">
+        </childnode>
+        <childnode refid="6929" relation="include">
+        </childnode>
+        <childnode refid="6935" relation="include">
+        </childnode>
+        <childnode refid="6930" relation="include">
+        </childnode>
+        <childnode refid="6934" relation="include">
+        </childnode>
+        <childnode refid="6936" relation="include">
+        </childnode>
+        <childnode refid="6937" relation="include">
+        </childnode>
+        <childnode refid="6931" relation="include">
+        </childnode>
+      </node>
+      <node id="6939">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="6899" relation="include">
+        </childnode>
+        <childnode refid="6898" relation="include">
+        </childnode>
+        <childnode refid="6896" relation="include">
+        </childnode>
+      </node>
+      <node id="6910">
+        <label>windows.h</label>
+      </node>
+      <node id="6938">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="6896" relation="include">
+        </childnode>
+      </node>
+      <node id="6916">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="6917" relation="include">
+        </childnode>
+      </node>
+      <node id="6920">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="6916" relation="include">
+        </childnode>
+      </node>
+      <node id="6902">
+        <label>cmath</label>
+      </node>
+      <node id="6898">
+        <label>string</label>
+      </node>
+      <node id="6901">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6902" relation="include">
+        </childnode>
+        <childnode refid="6903" relation="include">
+        </childnode>
+        <childnode refid="6904" relation="include">
+        </childnode>
+        <childnode refid="6905" relation="include">
+        </childnode>
+      </node>
+      <node id="6911">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="6912">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="6896">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="6897" relation="include">
+        </childnode>
+        <childnode refid="6898" relation="include">
+        </childnode>
+        <childnode refid="6899" relation="include">
+        </childnode>
+        <childnode refid="6900" relation="include">
+        </childnode>
+        <childnode refid="6901" relation="include">
+        </childnode>
+        <childnode refid="6906" relation="include">
+        </childnode>
+      </node>
+      <node id="6937">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+        <childnode refid="6927" relation="include">
+        </childnode>
+      </node>
+      <node id="6903">
+        <label>exception</label>
+      </node>
+      <node id="6900">
+        <label>fstream</label>
+      </node>
+      <node id="6909">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="6910" relation="include">
+        </childnode>
+      </node>
+      <node id="6894">
+        <label>Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="6895" relation="include">
+        </childnode>
+      </node>
+      <node id="6921">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="6916" relation="include">
+        </childnode>
+      </node>
+      <node id="6931">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+        <childnode refid="6925" relation="include">
+        </childnode>
+      </node>
+      <node id="6917">
+        <label>wchar.h</label>
+      </node>
+      <node id="6926">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+        <childnode refid="6918" relation="include">
+        </childnode>
+        <childnode refid="6927" relation="include">
+        </childnode>
+        <childnode refid="6928" relation="include">
+        </childnode>
+        <childnode refid="6924" relation="include">
+        </childnode>
+        <childnode refid="6930" relation="include">
+        </childnode>
+        <childnode refid="6931" relation="include">
+        </childnode>
+      </node>
+      <node id="6904">
+        <label>ctime</label>
+      </node>
+      <node id="6899">
+        <label>vector</label>
+      </node>
+      <node id="6918">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="6919" relation="include">
+        </childnode>
+        <childnode refid="6916" relation="include">
+        </childnode>
+      </node>
+      <node id="6897">
+        <label>sstream</label>
+      </node>
+      <node id="6936">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+      </node>
+      <node id="6919">
+        <label>math.h</label>
+      </node>
+      <node id="6933">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+        <childnode refid="6934" relation="include">
+        </childnode>
+      </node>
+      <node id="6905">
+        <label>cstdlib</label>
+      </node>
+      <node id="6924">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="6907">
+        <label>iostream</label>
+      </node>
+      <node id="6913">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="6927">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="6921" relation="include">
+        </childnode>
+        <childnode refid="6918" relation="include">
+        </childnode>
+        <childnode refid="6924" relation="include">
+        </childnode>
+        <childnode refid="6925" relation="include">
+        </childnode>
+      </node>
+      <node id="6925">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+      </node>
+      <node id="6893">
+        <label>Computer Graphics/Source/AlienEnemy.h</label>
+        <link refid="AlienEnemy.h"/>
+        <childnode refid="6894" relation="include">
+        </childnode>
+      </node>
+      <node id="6928">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="6921" relation="include">
+        </childnode>
+        <childnode refid="6929" relation="include">
+        </childnode>
+        <childnode refid="6918" relation="include">
+        </childnode>
+      </node>
+      <node id="6922">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="6923">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="6929">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="6921" relation="include">
+        </childnode>
+        <childnode refid="6918" relation="include">
+        </childnode>
+      </node>
+      <node id="6908">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="6909" relation="include">
+        </childnode>
+        <childnode refid="6911" relation="include">
+        </childnode>
+        <childnode refid="6912" relation="include">
+        </childnode>
+        <childnode refid="6913" relation="include">
+        </childnode>
+        <childnode refid="6914" relation="include">
+        </childnode>
+      </node>
+      <node id="6934">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="6920" relation="include">
+        </childnode>
+      </node>
+      <node id="6895">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="6896" relation="include">
+        </childnode>
+        <childnode refid="6908" relation="include">
+        </childnode>
+        <childnode refid="6938" relation="include">
+        </childnode>
+        <childnode refid="6939" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6941">
+        <label>Computer Graphics/Source/AlienEnemy.cpp</label>
+        <link refid="AlienEnemy_8cpp"/>
+      </node>
+      <node id="6946">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="6947" relation="include">
+        </childnode>
+      </node>
+      <node id="6945">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="6944">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="6945" relation="include">
+        </childnode>
+      </node>
+      <node id="6943">
+        <label>Computer Graphics/Source/ChestBurster.cpp</label>
+        <link refid="ChestBurster_8cpp"/>
+      </node>
+      <node id="6942">
+        <label>Computer Graphics/Source/ChestBurster.h</label>
+        <link refid="ChestBurster_8h"/>
+        <childnode refid="6943" relation="include">
+        </childnode>
+      </node>
+      <node id="6947">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="6940">
+        <label>Computer Graphics/Source/AlienEnemy.h</label>
+        <link refid="AlienEnemy.h"/>
+        <childnode refid="6941" relation="include">
+        </childnode>
+        <childnode refid="6942" relation="include">
+        </childnode>
+        <childnode refid="6944" relation="include">
+        </childnode>
+        <childnode refid="6946" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classAlienEnemy" prot="public">AlienEnemy</innerclass>
+    <briefdescription>
+<para>Functions of <ref refid="classAlien" kindref="compound">Alien</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class to define alienEnemy while inheriting from <ref refid="classAlien" kindref="compound">Alien</ref>.</para><para>Functions of <ref refid="classAlienEnemy" kindref="compound">AlienEnemy</ref>.</para><para><simplesect kind="author"><para>Wayne Aw </para></simplesect>
+<simplesect kind="par"><title>Email: 152558X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 152558X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1504</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ALIENENEMY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALIENENEMY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Alien_8h" kindref="compound">Alien.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="24" refid="classAlienEnemy" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classAlienEnemy" kindref="compound">AlienEnemy</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classAlien" kindref="compound">Alien</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="classAlienEnemy_1a0de5a3a9d681d6be700c485e21bd717f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1a0de5a3a9d681d6be700c485e21bd717f" kindref="member">isTurned</ref>;</highlight></codeline>
+<codeline lineno="27" refid="classAlienEnemy_1a9f171ba121b72b14b07e5aa9ec298164" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1a9f171ba121b72b14b07e5aa9ec298164" kindref="member">turnSpeed</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classAlienEnemy_1a3828b322341fedff782cc563cdb9a073" kindref="member">AlienEnemy</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classAlienEnemy_1a3828b322341fedff782cc563cdb9a073" kindref="member">AlienEnemy</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>=<sp/>0,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref><sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classAlienEnemy_1a051af8dbed413643a25995c9d2b436f9" kindref="member">~AlienEnemy</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1a9f081cfeff02a328bde683c947f0f7d8" kindref="member">translateWorm</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1a0d3273c668b95c89576b9fd06571d075" kindref="member">move</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="34" refid="classAlienEnemy_1aaf14e8a716db50485913cfb498f357c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1aaf14e8a716db50485913cfb498f357c0" kindref="member">wormtranslating</ref>;</highlight></codeline>
+<codeline lineno="35" refid="classAlienEnemy_1a2ae75db580e2fdefa2345be34bc63e09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1a2ae75db580e2fdefa2345be34bc63e09" kindref="member">wormrotating</ref>;</highlight></codeline>
+<codeline lineno="36" refid="classAlienEnemy_1ad02ab67fb5af0e01fae8c61d78c01e7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1ad02ab67fb5af0e01fae8c61d78c01e7b" kindref="member">wormtranslate</ref>;</highlight></codeline>
+<codeline lineno="37" refid="classAlienEnemy_1a239f3a8776309e9bf27995dc30424015" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1a239f3a8776309e9bf27995dc30424015" kindref="member">wormrotate</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classAlienEnemy_1af8d8c9670b78ba9cbaf2322c036c2632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1af8d8c9670b78ba9cbaf2322c036c2632" kindref="member">necroTranslating</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classAlienEnemy_1a81302de7a7e31a377a352b5c20665e39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1a81302de7a7e31a377a352b5c20665e39" kindref="member">necroRotating</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classAlienEnemy_1af65b16e22a876bb64b1bc0931d12efcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1af65b16e22a876bb64b1bc0931d12efcc" kindref="member">necroTranslate</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classAlienEnemy_1ad4920829a11d4bc90a4e3b12570fe36e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classAlienEnemy_1ad4920829a11d4bc90a4e3b12570fe36e" kindref="member">necroRotate</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/AlienEnemy.h"/>
+  </compounddef>
+</doxygen>

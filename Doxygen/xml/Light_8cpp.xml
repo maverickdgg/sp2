@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Light_8cpp" kind="file" language="C++">
+    <compoundname>Light.cpp</compoundname>
+    <includes refid="Light_8h" local="yes">Light.h</includes>
+    <incdepgraph>
+      <node id="8164">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="8165" relation="include">
+        </childnode>
+        <childnode refid="8170" relation="include">
+        </childnode>
+      </node>
+      <node id="8162">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="8163" relation="include">
+        </childnode>
+      </node>
+      <node id="8166">
+        <label>cmath</label>
+      </node>
+      <node id="8161">
+        <label>Computer Graphics/Source/Light.cpp</label>
+        <link refid="Light.cpp"/>
+        <childnode refid="8162" relation="include">
+        </childnode>
+      </node>
+      <node id="8165">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="8166" relation="include">
+        </childnode>
+        <childnode refid="8167" relation="include">
+        </childnode>
+        <childnode refid="8168" relation="include">
+        </childnode>
+        <childnode refid="8169" relation="include">
+        </childnode>
+      </node>
+      <node id="8163">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="8164" relation="include">
+        </childnode>
+      </node>
+      <node id="8167">
+        <label>exception</label>
+      </node>
+      <node id="8168">
+        <label>ctime</label>
+      </node>
+      <node id="8169">
+        <label>cstdlib</label>
+      </node>
+      <node id="8170">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Light_8h" kindref="compound">Light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Default<sp/>Constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" refkind="member"><highlight class="normal"><ref refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" kindref="member">Light::Light</ref>()</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1afeb738db41e987719e359166ef93314f" kindref="member">position</ref>.<ref refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" kindref="member">Set</ref>(0,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" kindref="member">color</ref>.<ref refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" kindref="member">Set</ref>(1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" kindref="member">power</ref><sp/>=<sp/>1.f;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" kindref="member">kC</ref><sp/>=<sp/><ref refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" kindref="member">kL</ref><sp/>=<sp/><ref refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" kindref="member">kQ</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Light.cpp"/>
+  </compounddef>
+</doxygen>

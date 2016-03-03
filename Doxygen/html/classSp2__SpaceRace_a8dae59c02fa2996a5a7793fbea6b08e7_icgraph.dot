@@ -1,0 +1,15 @@
+digraph "Sp2_SpaceRace::RenderTeleporter"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Sp2_SpaceRace::RenderTeleporter",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Sp2_SpaceRace::Renderfps",height=0.2,width=0.4,color="black",URL="$classSp2__SpaceRace.html#afe1631510dcb1ed61a327ce0e3787745"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Sp2_SpaceRace::Render",height=0.2,width=0.4,color="black",URL="$classSp2__SpaceRace.html#a6e5a16911da0317ddce3175936fb316d"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Sp2_SpaceRace::Rendertps",height=0.2,width=0.4,color="black",URL="$classSp2__SpaceRace.html#a862b9d074a5549aaa63c2f2e27425568"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

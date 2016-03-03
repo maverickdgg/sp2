@@ -1,0 +1,17 @@
+digraph "Computer Graphics/irrKlang/plugins/ikpMP3" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_6f3eb046256fd728f56d11719040f83b {
+    graph [ bgcolor="#ddddee", pencolor="black", label="plugins" fontname="Helvetica", fontsize="10", URL="dir_6f3eb046256fd728f56d11719040f83b.html"]
+  subgraph clusterdir_6e147ce48903ffbb2ff2c9514f470fab {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_6e147ce48903ffbb2ff2c9514f470fab.html"];
+    dir_6e147ce48903ffbb2ff2c9514f470fab [shape=plaintext label="ikpMP3"];
+    dir_956a925a30a8fd2b1d8e32bbdd3b32e7 [shape=box label="decoder" color="black" fillcolor="white" style="filled" URL="dir_956a925a30a8fd2b1d8e32bbdd3b32e7.html"];
+  }
+  }
+  dir_2dee590d80439c849fbe3dcf65def756 [shape=box label="include" URL="dir_2dee590d80439c849fbe3dcf65def756.html"];
+  dir_6e147ce48903ffbb2ff2c9514f470fab->dir_2dee590d80439c849fbe3dcf65def756 [headlabel="4", labeldistance=1.5 headhref="dir_000006_000004.html"];
+  dir_6e147ce48903ffbb2ff2c9514f470fab->dir_956a925a30a8fd2b1d8e32bbdd3b32e7 [headlabel="1", labeldistance=1.5 headhref="dir_000006_000007.html"];
+}

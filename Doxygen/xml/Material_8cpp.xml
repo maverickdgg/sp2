@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Material_8cpp" kind="file" language="C++">
+    <compoundname>Material.cpp</compoundname>
+    <includes refid="Material_8h" local="yes">Material.h</includes>
+    <incdepgraph>
+      <node id="8452">
+        <label>Computer Graphics/Source/Material.cpp</label>
+        <link refid="Material.cpp"/>
+        <childnode refid="8453" relation="include">
+        </childnode>
+      </node>
+      <node id="8453">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Material_8h" kindref="compound">Material.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="structComponent_1ae110a300786be861f7ea647ef77d9d18" refkind="member"><highlight class="normal"><ref refid="structComponent_1ae110a300786be861f7ea647ef77d9d18" kindref="member">Component::Component</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(r,<sp/>g,<sp/>b);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="structComponent_1a85f599b839327709953f0115dc5dfd49" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Component::Set</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;r<sp/>=<sp/><ref refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;g<sp/>=<sp/><ref refid="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" kindref="member">g</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;b<sp/>=<sp/><ref refid="structComponent_1abd55184abe2aaf269b38f5913721821c" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="structMaterial_1a137e987401b63eb7c6c27c3e38bc74b5" refkind="member"><highlight class="normal"><ref refid="structMaterial_1a137e987401b63eb7c6c27c3e38bc74b5" kindref="member">Material::Material</ref>()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" kindref="member">kAmbient</ref><sp/>=<sp/><ref refid="structComponent" kindref="compound">Component</ref>(0.2,<sp/>0.2,<sp/>0.2);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" kindref="member">kDiffuse</ref><sp/>=<sp/><ref refid="structComponent" kindref="compound">Component</ref>(0.3f,<sp/>0.3f,<sp/>0.3f);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" kindref="member">kSpecular</ref><sp/>=<sp/><ref refid="structComponent" kindref="compound">Component</ref>(0.1f,<sp/>0.1f,<sp/>0.1f);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMaterial_1a8e549500c333e99a45117cdbccee7a01" kindref="member">setShininess</ref>(0.5);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structMaterial_1a2c19452d71f54075df8f5405b03129f4" refkind="member"><highlight class="normal"><ref refid="structMaterial_1a2c19452d71f54075df8f5405b03129f4" kindref="member">Material::~Material</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="structMaterial_1a8e549500c333e99a45117cdbccee7a01" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structMaterial_1a8e549500c333e99a45117cdbccee7a01" kindref="member">Material::setShininess</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>shine)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" kindref="member">kShininess</ref><sp/>=<sp/>shine;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Material.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,8 +1,27 @@
+/******************************************************************************/
+/*!
+\file	Light.h
+\author Lee Jian Lin
+\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Admin Number: 150580X
+\par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
+\par	Diploma: Game Development and Technology
+\par	Class: GD1503
+\par	Mobile Number: 9755 2038
+\brief
+Struct to define Light
+*/
+/******************************************************************************/
 #ifndef _LIGHT_H
 #define _LIGHT_H
 
 #include "Vertex.h"
-
+/******************************************************************************/
+/*!
+Struct Light:
+\brief
+Struct for Light
+/******************************************************************************/
 struct Light
 {
 	Position position;

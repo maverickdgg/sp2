@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Map_8h" kind="file" language="C++">
+    <compoundname>Map.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includedby refid="SpaceVehicles_8h" local="yes">Computer Graphics/Source/SpaceVehicles.h</includedby>
+    <includedby refid="Map_8cpp" local="yes">Computer Graphics/Source/Map.cpp</includedby>
+    <includedby refid="Player_8h" local="yes">Computer Graphics/Source/Player.h</includedby>
+    <includedby refid="Sp2__SpaceRace_8h" local="yes">Computer Graphics/Source/Sp2_SpaceRace.h</includedby>
+    <incdepgraph>
+      <node id="8428">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="8429" relation="include">
+        </childnode>
+        <childnode refid="8427" relation="include">
+        </childnode>
+      </node>
+      <node id="8430">
+        <label>cmath</label>
+      </node>
+      <node id="8425">
+        <label>string</label>
+      </node>
+      <node id="8429">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="8430" relation="include">
+        </childnode>
+        <childnode refid="8431" relation="include">
+        </childnode>
+        <childnode refid="8432" relation="include">
+        </childnode>
+        <childnode refid="8433" relation="include">
+        </childnode>
+      </node>
+      <node id="8431">
+        <label>exception</label>
+      </node>
+      <node id="8426">
+        <label>fstream</label>
+      </node>
+      <node id="8432">
+        <label>ctime</label>
+      </node>
+      <node id="8424">
+        <label>Computer Graphics/Source/Map.h</label>
+        <link refid="Map.h"/>
+        <childnode refid="8425" relation="include">
+        </childnode>
+        <childnode refid="8426" relation="include">
+        </childnode>
+        <childnode refid="8427" relation="include">
+        </childnode>
+        <childnode refid="8428" relation="include">
+        </childnode>
+      </node>
+      <node id="8433">
+        <label>cstdlib</label>
+      </node>
+      <node id="8427">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8446">
+        <label>Computer Graphics/Source/Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="8447" relation="include">
+        </childnode>
+        <childnode refid="8435" relation="include">
+        </childnode>
+        <childnode refid="8449" relation="include">
+        </childnode>
+        <childnode refid="8451" relation="include">
+        </childnode>
+        <childnode refid="8438" relation="include">
+        </childnode>
+        <childnode refid="8440" relation="include">
+        </childnode>
+        <childnode refid="8442" relation="include">
+        </childnode>
+      </node>
+      <node id="8449">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform_8h"/>
+        <childnode refid="8450" relation="include">
+        </childnode>
+        <childnode refid="8440" relation="include">
+        </childnode>
+        <childnode refid="8441" relation="include">
+        </childnode>
+      </node>
+      <node id="8439">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="8437">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="8442">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="8443" relation="include">
+        </childnode>
+      </node>
+      <node id="8441">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="8445">
+        <label>Computer Graphics/Source/Map.cpp</label>
+        <link refid="Map_8cpp"/>
+      </node>
+      <node id="8447">
+        <label>Computer Graphics/Source/Buildings.h</label>
+        <link refid="Buildings_8h"/>
+        <childnode refid="8448" relation="include">
+        </childnode>
+        <childnode refid="8438" relation="include">
+        </childnode>
+        <childnode refid="8440" relation="include">
+        </childnode>
+        <childnode refid="8441" relation="include">
+        </childnode>
+        <childnode refid="8442" relation="include">
+        </childnode>
+      </node>
+      <node id="8451">
+        <label>Computer Graphics/Source/Player.cpp</label>
+        <link refid="Player_8cpp"/>
+      </node>
+      <node id="8440">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="8441" relation="include">
+        </childnode>
+      </node>
+      <node id="8434">
+        <label>Computer Graphics/Source/Map.h</label>
+        <link refid="Map.h"/>
+        <childnode refid="8435" relation="include">
+        </childnode>
+        <childnode refid="8445" relation="include">
+        </childnode>
+        <childnode refid="8446" relation="include">
+        </childnode>
+        <childnode refid="8442" relation="include">
+        </childnode>
+      </node>
+      <node id="8438">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="8439" relation="include">
+        </childnode>
+      </node>
+      <node id="8450">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform_8cpp"/>
+      </node>
+      <node id="8443">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="8435">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles_8h"/>
+        <childnode refid="8436" relation="include">
+        </childnode>
+        <childnode refid="8438" relation="include">
+        </childnode>
+        <childnode refid="8440" relation="include">
+        </childnode>
+        <childnode refid="8442" relation="include">
+        </childnode>
+        <childnode refid="8444" relation="include">
+        </childnode>
+      </node>
+      <node id="8448">
+        <label>Computer Graphics/Source/Buildings.cpp</label>
+        <link refid="Buildings_8cpp"/>
+      </node>
+      <node id="8436">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="8437" relation="include">
+        </childnode>
+      </node>
+      <node id="8444">
+        <label>Computer Graphics/Source/SpaceVehicles.cpp</label>
+        <link refid="SpaceVehicles_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structsMap" prot="public">sMap</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="Map_8h_1a268424e283fa24322dfa8bcddf908778" prot="public" static="no">
+        <type>struct <ref refid="structsMap" kindref="compound">sMap</ref></type>
+        <definition>typedef struct sMap MAP</definition>
+        <argsstring></argsstring>
+        <name>MAP</name>
+        <briefdescription>
+<para>Struct for Map /*. </para>        </briefdescription>
+        <detaileddescription>
+<para>Struct <ref refid="structsMap" kindref="compound">sMap</ref>: </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="Map_8h_1a1974ae7bce14f096c1a498ab33b38c6f" prot="public" static="no">
+        <type>struct <ref refid="structsMap" kindref="compound">sMap</ref> *</type>
+        <definition>typedef struct sMap* PMAP</definition>
+        <argsstring></argsstring>
+        <name>PMAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="50" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Map_8h_1aa4a8756e9bc3c91987fb04b2d9910ff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="Map_8h_1a1974ae7bce14f096c1a498ab33b38c6f" kindref="member">PMAP</ref></type>
+        <definition>PMAP load_map</definition>
+        <argsstring>(string filename)</argsstring>
+        <name>load_map</name>
+        <param>
+          <type>string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="52" column="1" bodyfile="Computer Graphics/Source/Map.cpp" bodystart="3" bodyend="44"/>
+        <references refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" compoundref="Map_8h" startline="34">sMap::data</references>
+        <referencedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" compoundref="Sp2__SpaceRace_8cpp" startline="25" endline="240">Sp2_SpaceRace::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="Map_8h_1ae7b0fce8d732defec7b9ae019af73a00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 indexToVector</definition>
+        <argsstring>(int index)</argsstring>
+        <name>indexToVector</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="54" column="1" bodyfile="Computer Graphics/Source/Map.cpp" bodystart="46" bodyend="53"/>
+        <referencedby refid="classSpaceVehicles_1a63617a030d2fc668c5f55b787aebc265" compoundref="SpaceVehicles_8cpp" startline="494" endline="499">SpaceVehicles::distanceFromCheckpoint</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" compoundref="Sp2__SpaceRace_8cpp" startline="25" endline="240">Sp2_SpaceRace::Init</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">SpaceVehicles::updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" compoundref="SpaceVehicles_8cpp" startline="115" endline="233">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="Map_8h_1abb21e73deb56ceccf5d5908e806df63e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int vectorToIndex</definition>
+        <argsstring>(Vector3 pos)</argsstring>
+        <name>vectorToIndex</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="55" column="1" bodyfile="Computer Graphics/Source/Map.cpp" bodystart="55" bodyend="60"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classPlayer_1ace6fddc3ea81d6f8d4808b74ed108edc" compoundref="Player_8cpp" startline="190" endline="351">Player::movementUpdate</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">SpaceVehicles::updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" compoundref="SpaceVehicles_8cpp" startline="115" endline="233">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="Map_8h_1a322adc57f23f51143b9b8194883711a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int toIndex</definition>
+        <argsstring>(int row, int col)</argsstring>
+        <name>toIndex</name>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Map.h" line="56" column="1" bodyfile="Computer Graphics/Source/Map.cpp" bodystart="62" bodyend="65"/>
+        <referencedby refid="classSp2__SpaceRace_1a1837e0004994f2e9f885828b7788da27" compoundref="Sp2__SpaceRace_8cpp" startline="25" endline="240">Sp2_SpaceRace::Init</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class to define the maps. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="31" refid="structsMap" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsMap" kindref="compound">sMap</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33" refid="structsMap_1a9a387757567a8171e6b6a4c0aeb7015a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structsMap_1a9a387757567a8171e6b6a4c0aeb7015a" kindref="member">nrow</ref>,<sp/><ref refid="structsMap_1a3343a64933315adb8adeeb5116e56a33" kindref="member">ncol</ref>;</highlight></codeline>
+<codeline lineno="34" refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structsMap_1a16b379986a22dff416c4490a14a85036" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsMap_1a16b379986a22dff416c4490a14a85036" kindref="member">sMap</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>col)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nrow<sp/>=<sp/>row;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncol<sp/>=<sp/>col;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[(nrow*<ref refid="structsMap_1a3343a64933315adb8adeeb5116e56a33" kindref="member">ncol</ref>)];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structsMap_1a8d23b7c38b8933ceddbc90b7b84ff577" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsMap_1a8d23b7c38b8933ceddbc90b7b84ff577" kindref="member">~sMap</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<ref refid="structsMap_1aa9a0aa514b8836cf4512e81927882ae3" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}<ref refid="Map_8h_1a268424e283fa24322dfa8bcddf908778" kindref="member">MAP</ref>,*<ref refid="Map_8h_1a1974ae7bce14f096c1a498ab33b38c6f" kindref="member">PMAP</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">PMAP<sp/><ref refid="Map_8h_1aa4a8756e9bc3c91987fb04b2d9910ff6" kindref="member">load_map</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="Map_8h_1ae7b0fce8d732defec7b9ae019af73a00" kindref="member">indexToVector</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Map_8h_1abb21e73deb56ceccf5d5908e806df63e" kindref="member">vectorToIndex</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Map_8h_1a322adc57f23f51143b9b8194883711a3" kindref="member">toIndex</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>col);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Map.h"/>
+  </compounddef>
+</doxygen>

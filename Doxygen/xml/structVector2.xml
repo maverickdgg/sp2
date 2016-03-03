@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structVector2" kind="struct" language="C++" prot="public">
+    <compoundname>Vector2</compoundname>
+    <includes refid="Vector2_8h" local="no">Vector2.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector2::Vector2</definition>
+        <argsstring>(float a=0, float b=0)</argsstring>
+        <name>Vector2</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="6" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="3" bodyend="5"/>
+        <referencedby refid="structVector2_1aa1e93ce5025f04198a2bc7b0cdcfbe36" compoundref="Vector2_8cpp" startline="45" endline="48">Normalized</referencedby>
+        <referencedby refid="structVector2_1a8b1aadc548dacb88e29a79beb273526f" compoundref="Vector2_8cpp" startline="30" endline="33">operator*</referencedby>
+        <referencedby refid="structVector2_1aacd2520a12d261747b074cbbdf4683d2" compoundref="Vector2_8cpp" startline="15" endline="18">operator+</referencedby>
+        <referencedby refid="structVector2_1a9057df0f0ef5c5b31fcda63bf90bd1dc" compoundref="Vector2_8cpp" startline="20" endline="23">operator-</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1ab5121be68bb6901b3ba92002a0f5fe58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector2::Vector2</definition>
+        <argsstring>(const Vector2 &amp;rhs)</argsstring>
+        <name>Vector2</name>
+        <param>
+          <type>const <ref refid="structVector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="7" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1a2ce5d6093cb49379ed06bb54d499827b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector2::Set</definition>
+        <argsstring>(float a, float b)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="8" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1aacd2520a12d261747b074cbbdf4683d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Vector2::operator+</definition>
+        <argsstring>(const Vector2 &amp;rhs) const </argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="structVector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="9" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="15" bodyend="18"/>
+        <references refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" compoundref="Vector2_8cpp" startline="3" endline="5">Vector2</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1a9057df0f0ef5c5b31fcda63bf90bd1dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Vector2::operator-</definition>
+        <argsstring>(const Vector2 &amp;rhs) const </argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="structVector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="10" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="20" bodyend="23"/>
+        <references refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" compoundref="Vector2_8cpp" startline="3" endline="5">Vector2</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1a195d64886d6c8b3f785cf2360e3ebf5c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Vector2::operator-</definition>
+        <argsstring>(void) const </argsstring>
+        <name>operator-</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="11" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="25" bodyend="28"/>
+        <references refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" compoundref="Vector2_8cpp" startline="3" endline="5">Vector2</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1a8b1aadc548dacb88e29a79beb273526f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Vector2::operator*</definition>
+        <argsstring>(float scalar) const </argsstring>
+        <name>operator*</name>
+        <param>
+          <type>float</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="12" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="30" bodyend="33"/>
+        <references refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" compoundref="Vector2_8cpp" startline="3" endline="5">Vector2</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1ada50cfce507d29051b11855813e67f1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector2::Length</definition>
+        <argsstring>(void) const </argsstring>
+        <name>Length</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="13" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1ae8af3ef0f28fa87700c8abdcc48dd018" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector2::Dot</definition>
+        <argsstring>(const Vector2 &amp;rhs) const </argsstring>
+        <name>Dot</name>
+        <param>
+          <type>const <ref refid="structVector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="14" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2_1aa1e93ce5025f04198a2bc7b0cdcfbe36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Vector2::Normalized</definition>
+        <argsstring>(void)</argsstring>
+        <name>Normalized</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common Library/Source/Vector2.h" line="15" column="1" bodyfile="Common Library/Source/Vector2.cpp" bodystart="45" bodyend="48"/>
+        <references refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" compoundref="Vector2_8cpp" startline="3" endline="5">Vector2</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Common Library/Source/Vector2.h" line="5" column="1" bodyfile="Common Library/Source/Vector2.h" bodystart="4" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structVector2_1ae8af3ef0f28fa87700c8abdcc48dd018" prot="public" virt="non-virtual"><scope>Vector2</scope><name>Dot</name></member>
+      <member refid="structVector2_1ada50cfce507d29051b11855813e67f1a" prot="public" virt="non-virtual"><scope>Vector2</scope><name>Length</name></member>
+      <member refid="structVector2_1aa1e93ce5025f04198a2bc7b0cdcfbe36" prot="public" virt="non-virtual"><scope>Vector2</scope><name>Normalized</name></member>
+      <member refid="structVector2_1a8b1aadc548dacb88e29a79beb273526f" prot="public" virt="non-virtual"><scope>Vector2</scope><name>operator*</name></member>
+      <member refid="structVector2_1aacd2520a12d261747b074cbbdf4683d2" prot="public" virt="non-virtual"><scope>Vector2</scope><name>operator+</name></member>
+      <member refid="structVector2_1a9057df0f0ef5c5b31fcda63bf90bd1dc" prot="public" virt="non-virtual"><scope>Vector2</scope><name>operator-</name></member>
+      <member refid="structVector2_1a195d64886d6c8b3f785cf2360e3ebf5c" prot="public" virt="non-virtual"><scope>Vector2</scope><name>operator-</name></member>
+      <member refid="structVector2_1a2ce5d6093cb49379ed06bb54d499827b" prot="public" virt="non-virtual"><scope>Vector2</scope><name>Set</name></member>
+      <member refid="structVector2_1aea6de4c492b90ea2cbb45280ae4d61d0" prot="public" virt="non-virtual"><scope>Vector2</scope><name>Vector2</name></member>
+      <member refid="structVector2_1ab5121be68bb6901b3ba92002a0f5fe58" prot="public" virt="non-virtual"><scope>Vector2</scope><name>Vector2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
