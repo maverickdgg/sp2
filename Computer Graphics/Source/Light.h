@@ -28,6 +28,13 @@ struct Light
 	Color color;
 	float power;
 	float kC, kL, kQ;
+	Light()
+	{
+		position.Set(0, 0, 0);
+		color.Set(1, 1, 1);
+		power = 0.1f;
+		kC = kL = kQ = 1;
+	}
 
 	enum LIGHT_TYPE
 	{
@@ -40,7 +47,6 @@ struct Light
 	float cosCutoff;
 	float cosInner;
 	float exponent;
-
-	Light();
 };
+
 #endif

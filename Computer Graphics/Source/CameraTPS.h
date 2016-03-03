@@ -1,15 +1,15 @@
 /******************************************************************************/
 /*!
 \file	CameraTPS.h
-\author Lee Jian Lin
-\par	Email: 150580X@mymail.nyp.edu.sg
-\par	Admin Number: 150580X
+\author Daniel Chua
+\par	Email: 152112Y@mymail.nyp.edu.sg
+\par	Admin Number: 152112Y
 \par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
 \par	Diploma: Game Development and Technology
 \par	Class: GD1503
-\par	Mobile Number: 9755 2038
+\par	Mobile Number: 9025 8239
 \brief
-Class to define the second type of camera
+Class to define the third person camera
 */
 /******************************************************************************/
 #ifndef CAMERA_TPS_H
