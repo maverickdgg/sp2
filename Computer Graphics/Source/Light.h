@@ -21,6 +21,7 @@ Struct to define Light
 Struct Light:
 \brief
 Struct for Light
+*/
 /******************************************************************************/
 struct Light
 {

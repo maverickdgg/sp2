@@ -33,6 +33,7 @@ struct Component
 Struct Material
 \brief
 Struct for material
+*/
 /******************************************************************************/
 struct Material
 {

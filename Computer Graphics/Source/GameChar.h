@@ -24,6 +24,7 @@ Class to define GameChar
 Class GameChar:
 \brief
 Class for GameChar (Inheriting from GameObject)
+*/
 /******************************************************************************/
 class GameChar : public GameObject
 {

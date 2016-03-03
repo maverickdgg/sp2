@@ -28,6 +28,7 @@ Class to define Application
 Class Application:
 \brief
 Class for Application
+*/
 /******************************************************************************/
 class Application
 {

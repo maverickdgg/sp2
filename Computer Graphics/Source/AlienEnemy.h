@@ -19,6 +19,7 @@ Class to define alienEnemy while inheriting from Alien
 /*!
 Class AlienEnemy:
 \brief	Allows AlienEnemies to move ( inherits from Alien )
+*/
 /******************************************************************************/
 
 class AlienEnemy : public Alien

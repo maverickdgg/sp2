@@ -22,6 +22,7 @@ Class to define the camera
 Class Camera:
 \brief
 Class for the first type of camera
+*/
 /******************************************************************************/
 class Camera
 {

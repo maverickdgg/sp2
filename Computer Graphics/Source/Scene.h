@@ -19,6 +19,7 @@ Class to define Scene
 Class Scene:
 \brief
 Class for Scene
+*/
 /******************************************************************************/
 class Scene
 {

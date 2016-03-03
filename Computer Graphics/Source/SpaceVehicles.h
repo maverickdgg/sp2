@@ -27,6 +27,7 @@ using std::queue;
 Class SpaceVehicles:
 \brief
 Class for Space Vehicles inheriting from GameObject
+*/
 /******************************************************************************/
 class SpaceVehicles : public GameObject
 {

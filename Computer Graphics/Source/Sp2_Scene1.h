@@ -42,6 +42,7 @@ Class to define Scene1 of the game
 Class Sp2_Scene1:
 \brief
 Class for Scene 1 of the game inheriting from Scene
+*/
 /******************************************************************************/
 class Sp2_Scene1 : public Scene
 {

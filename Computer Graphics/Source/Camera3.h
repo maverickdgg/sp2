@@ -21,6 +21,7 @@ Class to define the first person camera
 Class Camera3:
 \brief
 Class for the third type of camera (Inheriting from Camera)
+*/
 /******************************************************************************/
 class Camera3 : public Camera
 {

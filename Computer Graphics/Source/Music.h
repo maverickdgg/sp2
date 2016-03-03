@@ -31,6 +31,7 @@ using std::ifstream;
 Class Music:
 \brief
 Class for the overall music in the game
+*/
 /******************************************************************************/
 class Music
 {

@@ -26,6 +26,7 @@ using std::string;
 Class Quest:
 \brief
 Class for Quests
+*/
 /******************************************************************************/
 class Quest
 {

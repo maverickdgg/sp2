@@ -30,6 +30,7 @@ using std::vector;
 Class Player:
 \brief
 Class for Player (Inheriting from GameChar)
+*/
 /******************************************************************************/
 class Player : public GameChar
 {

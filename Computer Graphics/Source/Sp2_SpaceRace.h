@@ -48,6 +48,7 @@ using std::queue;
 Class Sp2_SpaceRace:
 \brief
 Class for the Space Race Scene inheriting from Scene
+*/
 /******************************************************************************/
 class Sp2_SpaceRace : public Scene
 {

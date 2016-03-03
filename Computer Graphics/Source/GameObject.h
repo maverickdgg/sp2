@@ -36,6 +36,7 @@ using std::endl;
 Class GameObject:
 \brief
 Class for GameObject
+*/
 /******************************************************************************/
 class GameObject
 {

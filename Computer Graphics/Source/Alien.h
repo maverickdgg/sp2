@@ -19,6 +19,7 @@ Class to define alien while inheriting from GameChar
 /*!
 Class Alien:
 \brief	Providing the AlienEnemies to move ( inherits from Alien )
+*/
 /******************************************************************************/
 class Alien : public GameChar
 {

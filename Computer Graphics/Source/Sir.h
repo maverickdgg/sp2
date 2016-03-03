@@ -20,6 +20,7 @@ Class to define a Sir NPC inheriting from GameChar
 Class BB8:
 \brief
 Class for Sir NPC ( Inherits from GameChar )
+*/
 /******************************************************************************/
 class Sir : public GameChar
 {

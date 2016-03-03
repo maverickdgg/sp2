@@ -27,6 +27,7 @@ using std::string;
 Struct sMap:
 \brief
 Struct for Map
+*/
 /******************************************************************************/
 typedef struct sMap
 {

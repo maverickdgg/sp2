@@ -22,6 +22,7 @@ Class to define platform while inheriting from GameChar
 Class Platform:
 \brief
 Class for Platform (Inheriting from GameChar)
+*/
 /******************************************************************************/
 class Platform :public GameChar
 {

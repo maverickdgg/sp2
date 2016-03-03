@@ -19,6 +19,7 @@ Class to define PinkKnight while inheriting from GameChar
 Class PinkKnight:
 \brief
 Class for PinkKnight (Inheriting from GameChar)
+*/
 /******************************************************************************/
 class PinkKnight : public GameChar
 {

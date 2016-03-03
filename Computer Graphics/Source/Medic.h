@@ -19,6 +19,7 @@ Class to define Medic NPC while inheriting from GameChar
 /*!
 Class Medic:
 \brief	Class for the medic NPC
+*/
 /******************************************************************************/
 class Medic : public GameChar
 {

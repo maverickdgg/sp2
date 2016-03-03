@@ -20,6 +20,7 @@ Class to define Weapon
 Class Weapon:
 \brief
 Class for the weapons inheriting from GameObject
+*/
 /******************************************************************************/
 class Weapon : public GameObject
 {

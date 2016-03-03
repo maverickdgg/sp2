@@ -20,6 +20,7 @@ Class to define Human type of NPCs
 Class Human:
 \brief
 Class for Human (Inheriting from GameChar)
+*/
 /******************************************************************************/
 class Human : public GameChar
 {

@@ -22,6 +22,7 @@ Structs to define the different types of vertex
 Struct Position:
 \brief
 Struct for the Position
+*/
 /******************************************************************************/
 struct Position
 {
@@ -38,6 +39,7 @@ struct Position
 Struct Color:
 \brief
 Struct for the colors
+*/
 /******************************************************************************/
 struct Color
 {
@@ -52,6 +54,7 @@ struct Color
 Struct TexCoord
 \brief
 Struct for the coordinates
+*/
 /******************************************************************************/
 struct TexCoord
 {
@@ -70,6 +73,7 @@ struct TexCoord
 Struct Vertex:
 \brief
 Struct for Vertex indicating the position, colors, normal as well as the coordinates
+*/
 /******************************************************************************/
 
 struct Vertex

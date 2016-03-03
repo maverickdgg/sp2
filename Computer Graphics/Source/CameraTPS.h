@@ -22,6 +22,7 @@ Class to define the third person camera
 Class CameraTPS:
 \brief
 Class for the third type of camera (Inheriting from Camera)
+*/
 /******************************************************************************/
 class CameraTPS : public Camera
 {

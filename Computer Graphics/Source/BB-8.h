@@ -21,6 +21,7 @@ Class to define a BB8 NPC inheriting from GameChar
 Class BB8:
 \brief	
 Class for the BB8 NPC ( Inherits from GameChar )
+*/
 /******************************************************************************/
 class BB8 :public GameChar
 {

@@ -21,6 +21,7 @@ Class to define Pingu NPC inheriting from GameChar
 Class BB8:
 \brief
 Class for the Pingu NPC ( Inherits from GameChar )
+*/
 /******************************************************************************/
 class Pingu :public GameChar
 {
