@@ -236,8 +236,8 @@ void Sp2_Scene3::Init()
     meshList[GEO_ROCKET] = MeshBuilder::GenerateOBJ("rocket", "OBJ//Rocket.obj");
     meshList[GEO_ROCKET]->textureID = LoadTGA("Image//Shuttle.tga");
 
-	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
-	meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
+	//meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
+	//meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
 	/**/
 
 	b_enabletps = false;
@@ -382,7 +382,6 @@ void Sp2_Scene3::Update(double dt)
 		if (frpc.b_isInVehicle == false)
 		{
 			player.movementUpdate(camera, dt, collisionVec);
-			player.gunUpdate(camera, dt);
 		}
 		if (frpc.b_isInVehicle == true)
 		{
@@ -1398,15 +1397,6 @@ void Sp2_Scene3::Renderfps()
 	//if (b_isWorn == false)
 	//RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE], Vector3(75, -15, -10), Vector3(250, 250, 250), Vector3(10, 110, 0));
 
-	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(it->pos.x, it->pos.y, it->pos.z);
-		modelStack.Rotate(it->angleY, 0, 1, 0);
-		modelStack.Rotate(it->angleX, 0, 0, 1);
-		RenderMesh(meshList[GEO_DART], true);
-		modelStack.PopMatrix();
-	}
 
 	RenderTeleporter(spaceStationTp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 }

@@ -17,8 +17,6 @@
 #include "SpaceVehicles.h"
 #include "Buildings.h"
 
-#include "Gun.h"
-
 #include "Human.h"
 #include "Alien.h"
 #include "AlienEnemy.h"
@@ -172,7 +170,6 @@ public:
 	float tpsTimer;
 	Vector3 oldPos;
 
-	Gun laserRifle;
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 	Buildings station;

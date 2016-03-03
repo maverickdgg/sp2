@@ -17,7 +17,6 @@
 #include "SpaceVehicles.h"
 #include "Buildings.h"
 
-#include "Gun.h"
 
 #include "Human.h"
 #include "Alien.h"

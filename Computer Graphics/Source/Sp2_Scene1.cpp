@@ -19,6 +19,7 @@ Sp2_Scene1::Sp2_Scene1()
 
 Sp2_Scene1::~Sp2_Scene1()
 {
+	player.questList.clear();
 }
 
 void Sp2_Scene1::Init()
@@ -191,12 +192,8 @@ void Sp2_Scene1::Init()
 	meshList[GEO_BB8B] = MeshBuilder::GenerateOBJ("bb8body", "OBJ//BB82B.obj");
 	meshList[GEO_BB8B]->textureID = LoadTGA("Image//BB82B.tga");
 
-	meshList[GEO_PINGUBODY] = MeshBuilder::GenerateOBJ("PinkKnightLeg1", "OBJ//PinguBody.obj");
-	meshList[GEO_PINGUBODY]->textureID = LoadTGA("Image//Pingu.tga");
-	meshList[GEO_PINGULH] = MeshBuilder::GenerateOBJ("PinkKnightLeg2", "OBJ//PinguLH.obj");
-	meshList[GEO_PINGULH]->textureID = LoadTGA("Image//Pingu.tga");
-	meshList[GEO_PINGURH] = MeshBuilder::GenerateOBJ("PinkKnightBody", "OBJ//PinguRH.obj");
-	meshList[GEO_PINGURH]->textureID = LoadTGA("Image//Pingu.tga");
+	meshList[GEO_ALIEN] = MeshBuilder::GenerateOBJ("AlienOne", "OBJ//AlienOne.obj");
+	meshList[GEO_ALIEN]->textureID = LoadTGA("Image//AlienOne.tga");
 
 	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("table", "OBJ//Table.obj");
 	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
@@ -208,11 +205,8 @@ void Sp2_Scene1::Init()
 	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
 
 
-	meshList[GEO_HELM] = MeshBuilder::GenerateOBJ("helmet", "OBJ//helmet.obj");
-	meshList[GEO_HELM]->textureID = LoadTGA("Image//helmet.tga");
+	meshList[GEO_DOOR] = MeshBuilder::GenerateCube("door",Color(1,1,1));
 	/*<---NPC--->*/
-	meshList[GEO_SUIT] = MeshBuilder::GenerateOBJ("npc1", "OBJ//astronautsuit.obj");
-	meshList[GEO_SUIT]->textureID = LoadTGA("Image//0001_npcmastronautworker_c.tg4d.tga");
 
 	meshList[GEO_HELMETUI] = MeshBuilder::GenerateQuad("helmetfps", Color(1, 1, 1), 1.f, 1.f);
 	meshList[GEO_HELMETUI]->textureID = LoadTGA("Image//HelmetInside.tga");
@@ -223,11 +217,10 @@ void Sp2_Scene1::Init()
 	b_enabletps = false;
 	b_tpsDebounce = false;
 	tpsTimer = 0;
+	gameComplete = false;
 
 	//player = Player(100);
 
-	laserRifle = Gun("laser rifle", 0, Vector3(camera.position.x, camera.position.y, camera.position.z));
-	player.assignGun(&laserRifle);
 
 	station = Buildings("spaceshuttle", 10, 0, Vector3(0, -110, 100));
 
@@ -244,9 +237,9 @@ void Sp2_Scene1::Init()
 	collisionVec.push_back(&table1);
 	chair1 = Buildings("chair1", 20, 0, Vector3(-300, -30, 150));
 	collisionVec.push_back(&chair1);
-	keycard1 = Buildings("keycard1", 0, 0, Vector3(-300, -5, 150));
-	suit = Human("spacesuit", 30, 180, Vector3(150, -30, 130));
-	spaceHelm = Human("spacehelm", 30, 30, camera.position);
+
+	door = Buildings("door", 0, 0, Vector3(0, 50, -400));
+
 	/*<---Set the position of the NPC--->*/
 	b_isWorn = false;
 	b_isDisplayUI = false;
@@ -256,32 +249,26 @@ void Sp2_Scene1::Init()
 	mike1 = Alien("mike1", 30, 0, Vector3(400, -30, 250));
 	collisionVec.push_back(&mike1);
 
-	mike2 = Alien("mike2", 30, -90, Vector3(-50, -30, 300));
-	mike2.ReadFromTxt("Image//mikechat.txt");
+	mike2 = Alien("mike2", 30, 90, Vector3(-50, -10, 300));
+	mike2.ReadFromTxt("text//SpaceRaceQuestInfo.txt");
 	collisionVec.push_back(&mike2);
 
-	mike3 = Alien("mike3", 30, -75, Vector3(175, -30, 300));
-	mike3.ReadFromTxt("Image//mikechat.txt");
+	mike3 = Alien("mike3", 30, 90, Vector3(175, -10, 300));
+	mike3.ReadFromTxt("text//PlatformerQuestInfo.txt");
 	collisionVec.push_back(&mike3);
 
 	BB8_ = BB8("BB8", 45, 0, Vector3(250, 10, 50));
 	collisionVec.push_back(&BB8_);
 
-
-	tasklist.push_back("find the key card in the room");
-	questPtr = new Quest(1, tasklist, "get keycard");
-	tasklist.clear();
+	player.setQuest();
 
 	whale = Human("NPCLEPUSMAG", 10, 0, Vector3(75, -20, -300));
 	whale.ReadFromTxt("text//keycardQuestDialogue.txt");
-	whale.assignQuest(questPtr);
 	collisionVec.push_back(&whale);
 
 	scene3Tp = Buildings("Scene 3 teleporter", 25, 0, Vector3(300, -30, -250));
 	raceTp = Buildings("Scene race teleporter", 25, 0, Vector3(-300, -30, -250));
-	//BB8_.quest = new Quest();
-	//BB8_.quest->ReadFromTxtQuest("Image//quest1.txt");
-	//BB8_.quest = new Quest(1, BB8_.quest->taskNames, BB8_.quest->questName);
+
 }
 void Sp2_Scene1::Update(double dt)
 
@@ -338,25 +325,32 @@ void Sp2_Scene1::Update(double dt)
 		}
 	}
 
-	//gun update
-
-	if (Application::IsKeyPressed('J'))
-	{
-		Application::playSound(0,false);
-	}
-
 	//npc chat updates
 	whale.chat_update(player.pos);
 	if (whale.b_dialogueEnd == true)
 	{
-		player.receiveQuest(whale);
+		if (player.completedMainQuest() == true)
+		{
+			if (door.pos.x < 150)
+			door.pos.x += 20 * dt;
+			else if (door.pos.x >= 150)
+			{
+				gameComplete = true;
+			}
+		}
+		else
+		{
+			door.pos.x = 0;
+		}
 	}
-	if (collision(player, keycard1.pos, 15) == true && Application::IsKeyPressed('E'))
-	{
-		player.taskComplete(whale.quest, 0);
-	}
+
 	mike2.chat_update(player.pos);
 
+	mike3.chat_update(player.pos);
+	if (mike3.b_dialogueEnd == true)
+	{
+		player.questList[1]->taskComplete(0);
+	}
 	
 	BB8_.moveCircles(dt);
 	//BB8_.rotateAbout(dt);
@@ -480,55 +474,12 @@ void Sp2_Scene1::RenderSkybox()
 	modelStack.PopMatrix();
 }
 
-void Sp2_Scene1::RenderSuit()
-{
-	//modelStack.PushMatrix();
-	//modelStack.Translate(suit.pos.x, suit.pos.y - 30, suit.pos.z);
-	//modelStack.Rotate(180, 0, 1, 0);
-	//modelStack.Scale(0.5, 0.5, 0.5);
-	//RenderMesh(meshList[GEO_SUIT], true);
-	//// Text for NPC Interaction
-	//modelStack.PopMatrix();
-	if (collision(suit.pos, camera.position, suit.boundary))
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(2, 6, 0);
-		//modelStack.Rotate(0, 1, 0, 0);
-		//modelStack.Scale(20, 20, 20);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'E' to wear HEV suit", Color(1, 1, 0), 3, 1, 8);
-		modelStack.PopMatrix();
-	}
-
-	if (b_isWorn == true)
-	{
-		//modelStack.PushMatrix();
-		//modelStack.Translate(camera.position.x, camera.position.y - 5, camera.position.z + 50);
-		//modelStack.Rotate(180, 0, 1, 0);
-		//modelStack.Scale(26, 26, 26);
-		////modelStack.PopMatrix();
-		//RenderMesh(meshList[GEO_HELM], true);
-		//modelStack.PopMatrix();
-		RenderMeshOnScreen(meshList[GEO_HELM], Vector3(37.5, 0, -10), Vector3(scaleHelm, scaleHelm, scaleHelm), Vector3(0, rotateHelm, 0));
-	}
-
-	if (b_isDisplayUI)
-	{
-		RenderMeshOnScreen(meshList[GEO_HELMETUI], Vector3(40, 30.5, -10), Vector3(30, 40, 10), Vector3(0, 0, 90));
-		RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
-	}
-}
-
 void Sp2_Scene1::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, smaller axis)
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
 	//modelStack.Rotate(x.viewAngle, 0, 1, 0);
-	if (axis == 1)
-		modelStack.Rotate(x.viewAngle, 1, 0, 0);
-	else if (axis == 2)
 		modelStack.Rotate(x.viewAngle, 0, 1, 0);
-	else if (axis == 0)
-		axis = 0;
 	//modelStack.Rotate(0, 0, 0, 0);
 	modelStack.Scale(scale.x, scale.y, scale.z);
 	RenderMesh(mesh, enableLight);
@@ -582,33 +533,6 @@ void Sp2_Scene1::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool h
 	}
 }
 
-
-void Sp2_Scene1::RenderPingu()
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(50, -30, -125);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_PINGUBODY], true);	// True false rfers to on/off light respectively
-
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(50, -30, -125);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_PINGULH], true);
-
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(50, -30, -125);
-	modelStack.Rotate(0, 1, 0, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_PINGURH], true);
-
-	modelStack.PopMatrix();
-}
 
 void Sp2_Scene1::RenderBB8(BB8 x)
 {
@@ -767,6 +691,8 @@ void Sp2_Scene1::Renderfps()
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(table1, meshList[GEO_TABLE], true, false, Vector3(30, 40, 30));
 	RenderGameObj(chair1, meshList[GEO_CHAIR], true, false, Vector3(10, 12, 10));
+
+	RenderGameObj(door, meshList[GEO_DOOR], true, false, Vector3(150,180,10));
 	/*<---NPC--->*/
 
 	//RenderPingu();
@@ -774,10 +700,32 @@ void Sp2_Scene1::Renderfps()
 
 	RenderGameChar(mike1, meshList[GEO_MIKE], true, true, Vector3(5, 5, 5));
 	RenderGameChar(whale, meshList[GEO_NPCLEPUSMAG], true, true, Vector3(10, 10, 10));
-	RenderGameChar(mike2, meshList[GEO_MIKE], true, true, Vector3(7, 4, 7));
-	RenderGameChar(mike3, meshList[GEO_MIKE], true, true, Vector3(4, 7, 4));
+	RenderGameChar(mike2, meshList[GEO_ALIEN], true, true, Vector3(12,24,12));
+	
+	modelStack.PushMatrix();
+	modelStack.Translate(mike2.pos.x-5, mike2.pos.y + 40, mike2.pos.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(3,3,3);
+	RenderText(meshList[GEO_TEXT],"Space Race quest info",Color(0,1,0));
+	modelStack.PopMatrix();
+
+	RenderGameChar(mike3, meshList[GEO_ALIEN], true, true, Vector3(10,24,10));
+
+	modelStack.PushMatrix();
+	modelStack.Translate(mike3.pos.x - 5, mike3.pos.y + 40, mike3.pos.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(3, 3, 3);
+	RenderText(meshList[GEO_TEXT], "Platformer quest info", Color(0, 1, 0));
+	modelStack.PopMatrix();
+
 	RenderTeleporter(scene3Tp, meshList[GEO_TELEPORTER], "To Scene 3", Vector3(15,10,15));
 	RenderTeleporter(raceTp, meshList[GEO_TELEPORTER], "To racing Scene", Vector3(15, 10, 15));
+
+	if (gameComplete == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Game Complete", Color(0, 1, 0), 3, 1, 10);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'R' to reset", Color(0, 1, 0), 3, 1, 9);
+	}
 
 	RenderMesh(meshList[GEO_AXES], false);
 	/*<---Weapons--->*/
