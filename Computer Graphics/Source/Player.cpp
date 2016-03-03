@@ -4,7 +4,12 @@
 #include <iomanip>
 
 vector<Quest*> Player::questList;
-
+/******************************************************************************/
+/*!
+\brief
+default constructor for player. initialise default values for player
+*/
+/******************************************************************************/
 Player::Player() : GameChar("Player", 15, 0, Vector3(0, 0, 0), 100)
 {
 	pos = Vector3(0, 0, 0);
@@ -23,6 +28,14 @@ Player::Player() : GameChar("Player", 15, 0, Vector3(0, 0, 0), 100)
 	oxygen = 100;
 }
 
+/******************************************************************************/
+/*!
+\brief
+Overloaded constructor for player
+\param pos
+initial position of the player
+*/
+/******************************************************************************/
 Player::Player(Vector3 pos)
 {
 	this->pos = pos;
@@ -39,12 +52,28 @@ Player::Player(Vector3 pos)
 	groundLevel = 0;
 	f_jumpDebounceTimer = 0;
 }
-
+/******************************************************************************/
+/*!
+\brief
+default destructor for player class
+*/
+/******************************************************************************/
 Player::~Player()
 {
 }
 
-
+/******************************************************************************/
+/*!
+\brief
+player's movement update.Updates player position and camera.
+\param cam
+the camera that follows the player
+\param dt
+delta time
+\param collisionVec
+a vector of gameobject pointer used for collision detection
+*/
+/******************************************************************************/
 void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec)
 {
 	float movSpeed;
@@ -56,14 +85,6 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 	{
 		movSpeed = f_walkSpeed;
 	}
-	cam.view = (cam.target - cam.position).Normalized();
-	cam.right = cam.view.Cross(cam.defaultUp);
-	cam.right.y = 0;
-	cam.right.Normalize();
-	cam.up = cam.right.Cross(cam.view).Normalized();
-
-	viewAngle = cam.cameraRotationY;
-
 	Vector3 tempPos = pos;
 	if (Application::IsKeyPressed('W') && !Application::IsKeyPressed('S'))
 	{
@@ -85,10 +106,6 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 		tempPos.x -= sin(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 		tempPos.z -= cos(Math::DegreeToRadian(viewAngle)) * f_walkSpeed * dt;
 	}
-	
-
-
-
 	if (Application::IsKeyPressed(VK_SPACE) && b_jumpDebounce == false && f_jumpDebounceTimer >= 0.5)
 	{
 		f_jumpDebounceTimer = 0;
@@ -169,10 +186,23 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 		pos.z = -cam.boundaryZ;
 	}
 
+	cam.view = (cam.target - cam.position).Normalized();
+	cam.right = cam.view.Cross(cam.defaultUp);
+	cam.right.y = 0;
+	cam.right.Normalize();
+	cam.up = cam.right.Cross(cam.view).Normalized();
+
 	cam.position = this->pos;
 	cam.updateRotation(0.3);
-}
 
+	viewAngle = cam.cameraRotationY;
+}
+/******************************************************************************/
+/*!
+\brief
+set the default quest of the player.
+*/
+/******************************************************************************/
 void Player::setQuest()
 {
 	Quest* questPtr;
@@ -186,7 +216,20 @@ void Player::setQuest()
 	questList.push_back(questPtr);
 }
 
-
+/******************************************************************************/
+/*!
+\brief
+an overloaded movement update that for scenes with text generated map
+\param cam
+the camera that follows the player
+\param dt
+delta time
+\param collisionVec
+a vector of gameobject pointer used for collision detection
+\param map
+a pointer to a map that should be generated in thhe scene init(used for collision detection)
+*/
+/******************************************************************************/
 void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec,PMAP map)
 {
 	float movSpeed;
@@ -351,7 +394,16 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 }
 
 
-
+/******************************************************************************/
+/*!
+\brief
+check if the quest is already in player's questlist.
+\param q
+quest pointer of the quest to check
+\return
+true if already inside questlist and false if it isn't
+*/
+/******************************************************************************/
 bool Player::haveAcceptedCheck(Quest* q)
 {
 	for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
@@ -363,6 +415,17 @@ bool Player::haveAcceptedCheck(Quest* q)
 	}
 	return false;
 }
+
+/******************************************************************************/
+/*!
+\brief
+receive quest and insert into the player quest list
+\param q
+pointer to the quest to insert
+\return
+return true if quest is properly inserted , return false if not inserted.
+*/
+/******************************************************************************/
 
 bool Player::receiveQuest(Quest* q)
 {
@@ -380,15 +443,46 @@ bool Player::receiveQuest(Quest* q)
 	return false;
 }
 
+/******************************************************************************/
+/*!
+\brief
+overloaded receive quest that specify which npc player receive from
+\param x
+a game character that have a quest assigned to him
+\return
+return true if properly inserted and return false if it is not inserted.
+*/
+/******************************************************************************/
+
 bool Player::receiveQuest(GameChar& x)
 {
 	return receiveQuest(x.quest);
 }
-
+/******************************************************************************/
+/*!
+\brief
+completes the task 
+\param questIIndex
+index of the quest in the questlist vector
+\param index
+index of the task within the quest.
+*/
+/******************************************************************************/
 void Player::taskComplete(int questIIndex, int index)
 {
 	questList[questIIndex]->taskComplete(index);
 }
+
+/******************************************************************************/
+/*!
+\brief
+check if a quest in the questlist is completed
+\param index
+index of the quest within the questlist vector
+\return 
+true if quest is completed.
+*/
+/******************************************************************************/
 
 bool Player::questCompleted(int index)
 {
@@ -398,7 +492,14 @@ bool Player::questCompleted(int index)
 	}
 	return false;
 }
-
+/******************************************************************************/
+/*!
+\brief
+check if the main quest that are set under setQuest function is completed
+\return
+true if ALL the main quest are completed.
+*/
+/******************************************************************************/
 bool Player::completedMainQuest()
 {
 	if (questCompleted(0) == true && questCompleted(1) == true)
@@ -410,7 +511,14 @@ bool Player::completedMainQuest()
 		return false;
 	}
 }
-
+/******************************************************************************/
+/*!
+\brief
+gets a string of the oxygen level
+\return
+string of oxygen level.
+*/
+/******************************************************************************/
 string Player::getOxygenString()
 {
 	string replace;
@@ -421,20 +529,7 @@ string Player::getOxygenString()
 	replace.push_back(((oxygen / 10) % 10) + '0');
 
 	replace.push_back((oxygen % 10) + '0');
-	//= std::to_string(oxygen);
-	//if (oxygen / 100 != 0)
-	//{
-	//	replace = (oxygen / 100) + '0';
-	//	replace += ((oxygen / 10) % 10) + '0';
-	//	replace += (oxygen % 10) + '0';
-	//}
-	//else if (oxygen / 100 == 0 && oxygen / 10 != 0)
-	//{
-	//	replace = (oxygen / 10) + '0';
-	//	replace += (oxygen % 10) + '0';
-	//}
-	//else
-	//	replace = oxygen + '0'; 
+
 
 	if (oxygen <= 0)
 		replace = '0';

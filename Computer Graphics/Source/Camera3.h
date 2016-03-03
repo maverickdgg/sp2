@@ -2,7 +2,7 @@
 /*!
 \file	Camera3.h
 \author Daniel Chua
-\par	Email: 152112Y@mymail.nyp.edu.sg
+\par	Email: 152112Y\@mymail.nyp.edu.sg
 \par	Admin Number: 152112Y
 \par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
 \par	Diploma: Game Development and Technology

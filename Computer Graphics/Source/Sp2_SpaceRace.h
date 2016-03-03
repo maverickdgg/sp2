@@ -147,6 +147,8 @@ public:
 	bool b_isWorn;
 	float tpsTimer;
 
+	string fps;
+
 	int racePosition;
 
 	bool b_raceBegin;

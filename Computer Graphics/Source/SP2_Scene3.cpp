@@ -2,7 +2,7 @@
 /*!
 \file SP2_Scene3.cpp
 \author Tan Hou Gim Samuel
-\par email: 153942B@mymail.nyp.edu.sg
+\par email: 153942B\@mymail.nyp.edu.sg
 \brief Scene class
 */
 /******************************************************************************/
@@ -102,7 +102,6 @@ void Sp2_Scene3::Init()
 	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
 	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
 
-
 	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
 	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
@@ -112,15 +111,15 @@ void Sp2_Scene3::Init()
 	glUseProgram(m_programID);
 
 	light[0].type = Light::LIGHT_DIRECTIONAL;
-	light[0].color.Set(1, 1.f, 1);
-	light[0].position.Set(0.f, 20.f, 0.f);
-	light[0].power = 1.f;
+	light[0].color.Set(1, 0.9f, 1);
+	light[0].position.Set(0.f, 200.f, 0.f);
+	light[0].power = 4.f;
 	light[0].kC = 1.f;
-	light[0].kL = 0.001f;
-	light[0].kQ = 0.0001f;
+	light[0].kL = 0.0001f;
+	light[0].kQ = 0.00001f;
 	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
 	light[0].cosInner = cos(Math::DegreeToRadian(10));
-	light[0].exponent = 3.f;
+	light[0].exponent = 1.f;
 	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
 
@@ -394,12 +393,9 @@ void Sp2_Scene3::Update(double dt)
 
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-
-		player.movementUpdate(camera, dt, collisionVec);
 		ShowCursor(FALSE);
 	}
-	light[0].position.Set(camera.position.x + (camera.view.x), camera.position.y, camera.position.z + (camera.view.z));
-	light[0].spotDirection.Set(camera.target.x, camera.target.y, camera.target.z);
+	player.movementUpdate(camera, dt, collisionVec);
 
 	if (Application::IsKeyPressed(VK_MENU))
 	{
@@ -1241,6 +1237,7 @@ void Sp2_Scene3::Renderfps()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+
 	}
 	else
 	{

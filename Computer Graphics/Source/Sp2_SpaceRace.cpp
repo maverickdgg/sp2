@@ -21,7 +21,12 @@ Sp2_SpaceRace::Sp2_SpaceRace()
 Sp2_SpaceRace::~Sp2_SpaceRace()
 {
 }
-
+/******************************************************************************/
+/*!
+\brief
+initialiser function of the scene
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::Init()
 {
 
@@ -215,10 +220,17 @@ void Sp2_SpaceRace::Init()
 
 	spaceStationtp = Buildings("Space station teleporter", 25, 0, indexToVector(toIndex(10,10)) + Vector3(0,-30,0));
 }
-
+/******************************************************************************/
+/*!
+\brief
+update the scene.
+\param dt
+delta time
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::Update(double dt)
 {
-
+	fps = std::to_string(1 / dt);
 	if (Application::IsKeyPressed('1'))
 	{
 		glEnable(GL_CULL_FACE);
@@ -491,7 +503,14 @@ void Sp2_SpaceRace::RenderMesh(Mesh* mesh, bool enableLight)
 	}
 }
 
-
+/******************************************************************************/
+/*!
+\brief
+rendering of the skybox
+\param camera
+the camera for the skybox to follow
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::RenderSkybox(Camera camera)
 {
 	modelStack.PushMatrix();
@@ -554,7 +573,24 @@ void Sp2_SpaceRace::RenderSkybox(Camera camera)
 	modelStack.PopMatrix();
 }
 
-
+/******************************************************************************/
+/*!
+\brief
+helper render function to render a game object in thhe scene
+\param
+the game object 
+\param mesh
+the mesh to be render relative to the position and rotation angle of the object
+\param enableLight
+light enabled or not
+\param hasIteractions
+whether the game object has interactions to it
+\param scale
+a vector that handles the scaling of the object rendered
+\rotate
+a vector that handles the rotation of the object rendered
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
 	modelStack.PushMatrix();
@@ -580,6 +616,20 @@ void Sp2_SpaceRace::RenderGameObj(GameObject x, Mesh* mesh, bool enableLight, bo
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief
+overloaded render gameobject functions
+\param mesh
+mesh to be rendered
+\param pos
+the translation for the game object
+\param scale
+to scale object
+\param rotate
+to rotate object
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::RenderGameObj(Mesh* mesh, Vector3 pos, Vector3 scale, Vector3 rotate)
 {
 	modelStack.PushMatrix();
@@ -593,7 +643,24 @@ void Sp2_SpaceRace::RenderGameObj(Mesh* mesh, Vector3 pos, Vector3 scale, Vector
 
 	modelStack.PopMatrix();
 }
-
+/******************************************************************************/
+/*!
+\brief
+to render game character and their lines of dialgue
+\param x
+game character
+\param mesh
+mesh to be rendered
+\param enableLight
+whether light is enabled
+\param hasIteractions
+whether the object has interactions
+\param scale
+to scale the object
+\param rotate
+to rotate the object
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool hasInteractions, Vector3 scale, Vector3 rotate)
 {
 	RenderGameObj(x, mesh, enableLight, hasInteractions, scale, rotate);
@@ -685,7 +752,20 @@ void Sp2_SpaceRace::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
 	glEnable(GL_DEPTH_TEST);
 }
 
-
+/******************************************************************************/
+/*!
+\brief
+rendering a mesh that is tied to the screen
+\param mesh
+mesh to be rendered
+\param translate
+translation on the screen
+\param scale
+to scale the object
+\param rotate
+to rotate the object
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 scale, Vector3 rotate)
 {
 	Mtx44 ortho;
@@ -709,7 +789,20 @@ void Sp2_SpaceRace::RenderMeshOnScreen(Mesh* mesh, Vector3 translate, Vector3 sc
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-
+/******************************************************************************/
+/*!
+\brief
+to render the teleporter as well as a text above it
+\param x
+the gameobject variable of the teleporter
+\param mesh
+mesh to be rendered
+\param text
+the text to be rendered above the teleporter
+\param scale
+to scale the object
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vector3 scale)
 {
 	RenderGameObj(x, mesh, true, false, scale);
@@ -728,7 +821,13 @@ void Sp2_SpaceRace::RenderTeleporter(GameObject x, Mesh* mesh, string text, Vect
 		modelStack.PopMatrix();
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+to reset variables of the scene
 
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::Reset()
 {
 
@@ -776,7 +875,12 @@ void Sp2_SpaceRace::Reset()
 
 	spaceStationtp = Buildings("Space station teleporter", 25, 0, indexToVector(toIndex(10, 10)) + Vector3(0, -30, 0));
 }
-
+/******************************************************************************/
+/*!
+\brief
+rendering of the scene in the first person view
+*/
+/******************************************************************************/
 void Sp2_SpaceRace::Renderfps()
 {
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
@@ -848,7 +952,8 @@ void Sp2_SpaceRace::Renderfps()
 		else if (racePosition == 2)
 			RenderTextOnScreen(meshList[GEO_TEXT], "2nd", Color(0, 1, 0), 3, 1, 17);
 	}
-	
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS:", Color(0, 1, 0), 3, 13, 18);
+	RenderTextOnScreen(meshList[GEO_TEXT], fps, Color(0, 1, 0), 3, 15, 18);
 
 	if (b_raceBegin == true && f_raceCountdown > 4)
 	{

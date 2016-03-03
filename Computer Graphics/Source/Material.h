@@ -3,7 +3,7 @@
 /*!
 \file	Material.h
 \author Lee Jian Lin
-\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Email: 150580X\@mymail.nyp.edu.sg
 \par	Admin Number: 150580X
 \par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
 \par	Diploma: Game Development and Technology

@@ -2,7 +2,7 @@
 /*!
 \file	MatrixStack.h
 \author Wen Sheng Tang
-\par	email: tang_wen_sheng\@nyp.edu.sg
+\par	email: tang_wen_sheng\\@nyp.edu.sg
 \brief
 Matrix Stack to replace openGL math function
 */

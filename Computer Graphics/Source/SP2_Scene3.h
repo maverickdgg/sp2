@@ -2,7 +2,7 @@
 /*!
 \file SP2_Scene3.h
 \author Tan Hou Gim Samuel
-\par email: 153942B@mymail.nyp.edu.sg
+\par email: 153942B\@mymail.nyp.edu.sg
 \brief Scene class
 */
 /******************************************************************************/

@@ -2,7 +2,7 @@
 /*!
 \file	Alien.h
 \author Wayne Aw
-\par	Email: 152558X@mymail.nyp.edu.sg
+\par	Email: 152558X\@mymail.nyp.edu.sg
 \par	Admin Number: 152558X
 \par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
 \par	Diploma: Game Development and Technology

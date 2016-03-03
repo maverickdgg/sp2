@@ -2,7 +2,7 @@
 /*!
 \file	Mtx44.h
 \author Wen Sheng Tang
-\par	email: tang_wen_sheng\@nyp.edu.sg
+\par	email: tang_wen_sheng\\@nyp.edu.sg
 \brief
 Matrix 4 by 4 use for affine transformation
 */

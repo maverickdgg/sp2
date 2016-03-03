@@ -85,10 +85,10 @@ void Sp2_Scene1::Init()
 	light[0].position.Set(0.f, 20.f, 0.f);
 	light[0].power = 1.f;
 	light[0].kC = 1.f;
-	light[0].kL = 0.01f;
-	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(30));
-	light[0].cosInner = cos(Math::DegreeToRadian(29));
+	light[0].kL = 0.0001f;
+	light[0].kQ = 0.00001f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
+	light[0].cosInner = cos(Math::DegreeToRadian(10));
 	light[0].exponent = 1.f;
 	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
@@ -266,8 +266,6 @@ void Sp2_Scene1::Update(double dt)
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
 		player.movementUpdate(camera, dt,collisionVec);
-		//light[0].position.Set(camera.position.x , camera.position.y, camera.position.z);
-		//light[0].spotDirection.Set(camera.target.x, camera.target.y, camera.target.z);
 		ShowCursor(FALSE);
 	}
 	
@@ -693,7 +691,7 @@ void Sp2_Scene1::Renderfps()
 	{
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
+		Vector3 spotDirection_cameraspace = viewStack.Top()* light[0].spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
 	else

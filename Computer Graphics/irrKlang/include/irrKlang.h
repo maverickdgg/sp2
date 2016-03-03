@@ -12,7 +12,7 @@
 /*!
 \file	irrKlang.h
 \author Daniel Chua
-\par	Email: 152112Y@mymail.nyp.edu.sg
+\par	Email: 152112Y\@mymail.nyp.edu.sg
 \par	Admin Number: 152112Y
 \par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
 \par	Diploma: Game Development and Technology
@@ -57,32 +57,32 @@ Library for music (got from online)
 
  * \section contents Contents
  * General:<br/>
- * @ref intro <br/>
- * @ref features <br/>
- * @ref links <br/>
- * @ref tipsandtricks <br/>
+ * \@ref intro <br/>
+ * \@ref features <br/>
+ * \@ref links <br/>
+ * \@ref tipsandtricks <br/>
  * <br/>
  * Programming irrKlang:<br/>
- * @ref concept <br/>
- * @ref playingSounds <br/>
- * @ref changingSounds <br/>
- * @ref soundSources <br/>
- * @ref sound3d <br/>
- * @ref removingSounds <br/>
- * @ref events <br/>
- * @ref memoryPlayback <br/>
- * @ref effects <br/>
- * @ref fileOverriding <br/>
- * @ref audioDecoders <br/>
- * @ref plugins <br/>
- * @ref staticLib <br/>
- * @ref enumeratingDevices <br/>
- * @ref recordingAudio <br/>
- * @ref unicode <br/>
+ * \@ref concept <br/>
+ * \@ref playingSounds <br/>
+ * \@ref changingSounds <br/>
+ * \@ref soundSources <br/>
+ * \@ref sound3d <br/>
+ * \@ref removingSounds <br/>
+ * \@ref events <br/>
+ * \@ref memoryPlayback <br/>
+ * \@ref effects <br/>
+ * \@ref fileOverriding <br/>
+ * \@ref audioDecoders <br/>
+ * \@ref plugins <br/>
+ * \@ref staticLib <br/>
+ * \@ref enumeratingDevices <br/>
+ * \@ref recordingAudio <br/>
+ * \@ref unicode <br/>
  * <br/>
  * Short full examples:<br/>
- * @ref quickstartexample <br/>
- * @ref quickstartexample2 <br/>
+ * \@ref quickstartexample <br/>
+ * \@ref quickstartexample2 <br/>
  * <br/>
  * <br/>
  *
@@ -184,8 +184,8 @@ Library for music (got from online)
  * \section concept Starting up the Engine
  *
  * irrKlang is designed so that it is very easy to achieve everything, its interface should
- * be very simple to use. The @ref quickstartexample shows how to play and mp3 file, and there
- * is another example, @ref quickstartexample2, showing some few more details.<br/>
+ * be very simple to use. The \@ref quickstartexample shows how to play and mp3 file, and there
+ * is another example, \@ref quickstartexample2, showing some few more details.<br/>
  * To start up the sound engine, you simply need to call createIrrKlangDevice(). To shut it down,
  * call IRefCounted::drop():
  *
@@ -216,7 +216,7 @@ Library for music (got from online)
  *
  * \section playingSounds Playing Sounds
  *
- * Once you have irrKlang running (like in @ref concept), you can start playing sounds:
+ * Once you have irrKlang running (like in \@ref concept), you can start playing sounds:
  *
  * \code
  * engine->play2D("someSoundFile.wav"); 
@@ -231,7 +231,7 @@ Library for music (got from online)
  * \endcode 
  *
  * To stop this looping sound again, use engine->\link irrklang::ISoundEngine::stopAllSounds stopAllSounds()\endlink to stop all sounds, or
- * irrklang::ISound::stop() if you only want to stop that single sound. @ref changingSounds
+ * irrklang::ISound::stop() if you only want to stop that single sound. \@ref changingSounds
  * shows how to get to that ISound interface.
  * <br/>
  * <br/>
@@ -338,7 +338,7 @@ Library for music (got from online)
  * But to make it sound realistic, you need to set a minimal sound
  * distance: If your sound is caused by a bee, it will usually have a smaller
  * sound radius than for example a jet engine. You can set default values using sound sources
- * (see @ref soundSources) or set these values after you have started the sound paused:
+ * (see \@ref soundSources) or set these values after you have started the sound paused:
  *
  * \code
  * irrklang::vec3df position(23,70,90);
@@ -430,7 +430,7 @@ Library for music (got from online)
  * The key to sound events is the method 
  * \link irrklang::ISound::setSoundStopEventReceiver setSoundStopEventReceiver \endlink
  * of the irrklang::ISound interface
- * (See @ref changingSounds on how to get the ISound interface):
+ * (See \@ref changingSounds on how to get the ISound interface):
  *
  * \code
  * irrklang::ISound* snd = engine->play2D("speech.mp3", false, false, true); 
@@ -477,7 +477,7 @@ Library for music (got from online)
  *
  * Using irrKlang, it is easily possible to play sounds directly from memory instead out of 
  * files. There is an example project showing this: In the SDK, in /examples/03.MemoryPlayback.
- * But in short, it simply works by adding the memory as sound source (See @ref soundSources for 
+ * But in short, it simply works by adding the memory as sound source (See \@ref soundSources for 
  * details about sound sources):
  *
  * \code
@@ -498,7 +498,7 @@ Library for music (got from online)
  * \endcode
  *
  * Note: It is also possible to overwrite the file access directly, don't use this Memory Playback
- * feature for this. See @ref fileOverriding for details.
+ * feature for this. See \@ref fileOverriding for details.
  * <br/>
  * <br/>
  * <br/>
@@ -641,7 +641,7 @@ Library for music (got from online)
  * \endcode
  *
  * In there, it is for example possible to extend irrKlang with new audio decoders,
- * see @ref audioDecoders for details. <br/>
+ * see \@ref audioDecoders for details. <br/>
  * 
  * There is an example plugin with full source in plugins/ikpMP3, which
  * adds MP3 audio decoding capabilities to irrKlang.
@@ -957,7 +957,7 @@ namespace irrklang
 	This can be used for example to set a specific ALSA output pcm device for output
 	("default" or "hw", for example). For most driver types, available deviceIDs can be 
 	enumerated using createSoundDeviceList().
-	See @ref enumeratingDevices for an example or ISoundDeviceList or details.
+	See \@ref enumeratingDevices for an example or ISoundDeviceList or details.
 	\param sdk_version_do_not_use Don't use or change this parameter. Always set it to
 	IRRKLANG_SDK_VERSION, which is done by default. This is needed for sdk version checks.
 	\return Returns pointer to the created irrKlang device or null if the
@@ -973,7 +973,7 @@ namespace irrklang
 
 	//! Creates a list of available sound devices for the driver type. 
 	/** The device IDs in this list can be used as parameter to createIrrKlangDevice() to
-	make irrKlang use a special sound device. See @ref enumeratingDevices for an example on how
+	make irrKlang use a special sound device. See \@ref enumeratingDevices for an example on how
 	to use this.
 	\param driver The sound output driver of which the list is generated. Set it irrklang::ESOD_AUTO_DETECT
 	to let this function use the same device as createIrrKlangDevice() would choose.
@@ -991,7 +991,7 @@ namespace irrklang
 	//! Creates an irrKlang audio recording device. The IAudioRecorder is the root object for recording audio.
 	/** If you want to play back recorded audio as well, create the ISoundEngine first using
 	createIrrKlangDevice() and then the IAudioRecorder using createIrrKlangAudioRecorder(), where
-	you set the ISoundEngine as first parameter. See @ref recordingAudio for an example on how to use this.
+	you set the ISoundEngine as first parameter. See \@ref recordingAudio for an example on how to use this.
 	Note: audio recording is a very new feature a still beta in irrKlang. It currently only works in Windows
 	and with DirectSound (subject to change).
 	\param irrKlangDeviceForPlayback A pointer to the already existing sound device used for playback
