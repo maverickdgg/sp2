@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="GameObject_8cpp" kind="file" language="C++">
+    <compoundname>GameObject.cpp</compoundname>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <incdepgraph>
+      <node id="7996">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7991" relation="include">
+        </childnode>
+        <childnode refid="7997" relation="include">
+        </childnode>
+      </node>
+      <node id="7992">
+        <label>cmath</label>
+      </node>
+      <node id="7988">
+        <label>string</label>
+      </node>
+      <node id="7991">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7992" relation="include">
+        </childnode>
+        <childnode refid="7993" relation="include">
+        </childnode>
+        <childnode refid="7994" relation="include">
+        </childnode>
+        <childnode refid="7995" relation="include">
+        </childnode>
+      </node>
+      <node id="7986">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="7987" relation="include">
+        </childnode>
+        <childnode refid="7988" relation="include">
+        </childnode>
+        <childnode refid="7989" relation="include">
+        </childnode>
+        <childnode refid="7990" relation="include">
+        </childnode>
+        <childnode refid="7991" relation="include">
+        </childnode>
+        <childnode refid="7996" relation="include">
+        </childnode>
+      </node>
+      <node id="7993">
+        <label>exception</label>
+      </node>
+      <node id="7990">
+        <label>fstream</label>
+      </node>
+      <node id="7994">
+        <label>ctime</label>
+      </node>
+      <node id="7989">
+        <label>vector</label>
+      </node>
+      <node id="7987">
+        <label>sstream</label>
+      </node>
+      <node id="7995">
+        <label>cstdlib</label>
+      </node>
+      <node id="7985">
+        <label>Computer Graphics/Source/GameObject.cpp</label>
+        <link refid="GameObject.cpp"/>
+        <childnode refid="7986" relation="include">
+        </childnode>
+      </node>
+      <node id="7997">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1ac706fae2a30cc6ae4233dc3c8f7f41be" kindref="member">GameObject::GO_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" refkind="member"><highlight class="normal"><ref refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" kindref="member">GameObject::GameObject</ref>()</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1ac706fae2a30cc6ae4233dc3c8f7f41be" kindref="member">GO_count</ref>++;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" refkind="member"><highlight class="normal"><ref refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" kindref="member">GameObject::GameObject</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>viewAngle,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;boundary<sp/>=<sp/><ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" kindref="member">name</ref><sp/>=<sp/>object_name;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;pos<sp/>=<sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;viewAngle<sp/>=<sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" refkind="member"><highlight class="normal"><ref refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" kindref="member">GameObject::~GameObject</ref>()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1ac706fae2a30cc6ae4233dc3c8f7f41be" kindref="member">GO_count</ref>--;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/GameObject.cpp"/>
+  </compounddef>
+</doxygen>

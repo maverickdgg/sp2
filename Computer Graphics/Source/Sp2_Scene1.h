@@ -1,3 +1,17 @@
+/******************************************************************************/
+/*!
+\file	Sp2_Scene1.h
+\author Lee Jian Lin
+\par	Email: 150580X@mymail.nyp.edu.sg
+\par	Admin Number: 150580X
+\par	School: Nanyang Polytechnic (School of Interactive and Digital Media)
+\par	Diploma: Game Development and Technology
+\par	Class: GD1503
+\par	Mobile Number: 9755 2038
+\brief
+Class to define Scene1 of the game
+*/
+/******************************************************************************/
 #ifndef SP2_SCENE1_H
 #define SP2_SCENE1_H
 
@@ -23,7 +37,12 @@
 #include "BB-8.h"
 #include "Pingu.h"
 #include "Quest.h"
-
+/******************************************************************************/
+/*!
+Class Sp2_Scene1:
+\brief
+Class for Scene 1 of the game inheriting from Scene
+/******************************************************************************/
 class Sp2_Scene1 : public Scene
 {
 public:

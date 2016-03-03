@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Weapon_8h" kind="file" language="C++">
+    <compoundname>Weapon.h</compoundname>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <includedby refid="Weapon_8cpp" local="yes">Computer Graphics/Source/Weapon.cpp</includedby>
+    <incdepgraph>
+      <node id="10046">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="10041" relation="include">
+        </childnode>
+        <childnode refid="10047" relation="include">
+        </childnode>
+      </node>
+      <node id="10042">
+        <label>cmath</label>
+      </node>
+      <node id="10038">
+        <label>string</label>
+      </node>
+      <node id="10041">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="10042" relation="include">
+        </childnode>
+        <childnode refid="10043" relation="include">
+        </childnode>
+        <childnode refid="10044" relation="include">
+        </childnode>
+        <childnode refid="10045" relation="include">
+        </childnode>
+      </node>
+      <node id="10036">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="10037" relation="include">
+        </childnode>
+        <childnode refid="10038" relation="include">
+        </childnode>
+        <childnode refid="10039" relation="include">
+        </childnode>
+        <childnode refid="10040" relation="include">
+        </childnode>
+        <childnode refid="10041" relation="include">
+        </childnode>
+        <childnode refid="10046" relation="include">
+        </childnode>
+      </node>
+      <node id="10043">
+        <label>exception</label>
+      </node>
+      <node id="10040">
+        <label>fstream</label>
+      </node>
+      <node id="10035">
+        <label>Computer Graphics/Source/Weapon.h</label>
+        <link refid="Weapon.h"/>
+        <childnode refid="10036" relation="include">
+        </childnode>
+      </node>
+      <node id="10044">
+        <label>ctime</label>
+      </node>
+      <node id="10039">
+        <label>vector</label>
+      </node>
+      <node id="10037">
+        <label>sstream</label>
+      </node>
+      <node id="10045">
+        <label>cstdlib</label>
+      </node>
+      <node id="10047">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="10049">
+        <label>Computer Graphics/Source/Weapon.cpp</label>
+        <link refid="Weapon_8cpp"/>
+      </node>
+      <node id="10048">
+        <label>Computer Graphics/Source/Weapon.h</label>
+        <link refid="Weapon.h"/>
+        <childnode refid="10049" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classWeapon" prot="public">Weapon</innerclass>
+    <briefdescription>
+<para>Class to define <ref refid="classWeapon" kindref="compound">Weapon</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>WEAPON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WEAPON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="24" refid="classWeapon" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classWeapon" kindref="compound">Weapon</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classGameObject" kindref="compound">GameObject</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classWeapon_1a420e7ba3d2017e6de3e93eb579cfd3fa" kindref="member">~Weapon</ref>();</highlight></codeline>
+<codeline lineno="28" refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classWeapon_1ad977cc9ed79f232f984181db01bde518" kindref="member">W_count</ref>;</highlight></codeline>
+<codeline lineno="29" refid="classWeapon_1af7f5d5ecbb3ac0e95350a6750be1fb28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classWeapon_1af7f5d5ecbb3ac0e95350a6750be1fb28" kindref="member">dmg</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="30" refid="classWeapon_1afb1de8f3da7a0adc6094a63944d9e5ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GameObject_8h_1a24ef3f5cfa3f7ef60fc06899a809e63e" kindref="member">smaller</ref><sp/><ref refid="classWeapon_1afb1de8f3da7a0adc6094a63944d9e5ca" kindref="member">attackSpeed</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="31" refid="classWeapon_1aab76bfeda3c2aecd2ada527edf0695ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classWeapon_1aab76bfeda3c2aecd2ada527edf0695ea" kindref="member">durability</ref><sp/>=<sp/>1.f;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" kindref="member">Weapon</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classWeapon_1a42dbc46dd70319a24763992c4ebbd396" kindref="member">Weapon</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>=<sp/>0,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref><sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Weapon.h"/>
+  </compounddef>
+</doxygen>

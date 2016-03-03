@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file SP2_Scene3.h
+\author Tan Hou Gim Samuel
+\par email: 153942B@mymail.nyp.edu.sg
+\brief Scene class
+*/
+/******************************************************************************/
+
 #ifndef SP2_SCENE3_H
 #define SP2_SCENE3_H
 
@@ -28,6 +37,13 @@
 #include "Sir.h"
 #include "Platform.h"
 #include "Medic.h"
+
+/******************************************************************************/
+/*!
+Class Sp2_Scene3:
+\brief Defines a game level with platforming elements and game objects, npc, enemies and platforms etc.
+*/
+/******************************************************************************/
 
 class Sp2_Scene3 : public Scene
 {
@@ -108,7 +124,9 @@ public:
 		GEO_TELEPORTER,
         GEO_ROCKET,
 		GEO_ARROW,
-
+        GEO_JERRYCAN,
+        GEO_SPACEVIEW,
+        GEO_EARTH,
 		/*<---Do not touch--->*/
 		NUM_GEOMETRY,
 	};
@@ -164,11 +182,14 @@ public:
     bool b_collectBox1;
     bool b_collectBox2;
     bool b_collectBox3;
+    bool b_isLand;
+    bool isFinished;
     float horiDist;
 	float verticalDistance;
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
+    int landDist;
 	Vector3 oldPos;
 
 	SpaceVehicles np;
@@ -213,7 +234,8 @@ public:
 	Buildings ladder3;
 	Buildings ladder4;
     Buildings rocket;
-
+    Buildings jerrycan;
+    Buildings earth;
 	Buildings spaceStationTp;
 
 	Buildings Arrow;

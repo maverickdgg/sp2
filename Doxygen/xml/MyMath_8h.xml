@@ -1,0 +1,800 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="MyMath_8h" kind="file" language="C++">
+    <compoundname>MyMath.h</compoundname>
+    <includes local="no">cmath</includes>
+    <includes local="no">exception</includes>
+    <includes local="no">ctime</includes>
+    <includes local="no">cstdlib</includes>
+    <includedby refid="Mtx44_8h" local="yes">Common Library/Source/Mtx44.h</includedby>
+    <includedby refid="Vector3_8h" local="yes">Common Library/Source/Vector3.h</includedby>
+    <includedby refid="GameObject_8h" local="yes">Computer Graphics/Source/GameObject.h</includedby>
+    <includedby refid="MeshBuilder_8h" local="no">Computer Graphics/Source/MeshBuilder.h</includedby>
+    <incdepgraph>
+      <node id="5099">
+        <label>cmath</label>
+      </node>
+      <node id="5098">
+        <label>Common Library/Source/MyMath.h</label>
+        <link refid="MyMath.h"/>
+        <childnode refid="5099" relation="include">
+        </childnode>
+        <childnode refid="5100" relation="include">
+        </childnode>
+        <childnode refid="5101" relation="include">
+        </childnode>
+        <childnode refid="5102" relation="include">
+        </childnode>
+      </node>
+      <node id="5100">
+        <label>exception</label>
+      </node>
+      <node id="5101">
+        <label>ctime</label>
+      </node>
+      <node id="5102">
+        <label>cstdlib</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5135">
+        <label>Computer Graphics/Source/Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="5133" relation="include">
+        </childnode>
+        <childnode refid="5136" relation="include">
+        </childnode>
+        <childnode refid="5138" relation="include">
+        </childnode>
+        <childnode refid="5140" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5138">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform_8h"/>
+        <childnode refid="5139" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+      </node>
+      <node id="5119">
+        <label>Common Library/Source/Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5104" relation="include">
+        </childnode>
+        <childnode refid="5120" relation="include">
+        </childnode>
+        <childnode refid="5121" relation="include">
+        </childnode>
+        <childnode refid="5161" relation="include">
+        </childnode>
+        <childnode refid="5164" relation="include">
+        </childnode>
+        <childnode refid="5171" relation="include">
+        </childnode>
+        <childnode refid="5173" relation="include">
+        </childnode>
+      </node>
+      <node id="5167">
+        <label>Computer Graphics/Source/Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5168" relation="include">
+        </childnode>
+        <childnode refid="5170" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5110">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="5156">
+        <label>Computer Graphics/Source/Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="5122" relation="include">
+        </childnode>
+        <childnode refid="5135" relation="include">
+        </childnode>
+        <childnode refid="5157" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5126">
+        <label>Computer Graphics/Source/AlienEnemy.cpp</label>
+        <link refid="AlienEnemy_8cpp"/>
+      </node>
+      <node id="5132">
+        <label>Computer Graphics/Source/BB-8_2.cpp</label>
+        <link refid="BB-8__2_8cpp"/>
+      </node>
+      <node id="5160">
+        <label>Computer Graphics/Source/Weapon.cpp</label>
+        <link refid="Weapon_8cpp"/>
+      </node>
+      <node id="5153">
+        <label>Computer Graphics/Source/CameraTPS.cpp</label>
+        <link refid="CameraTPS_8cpp"/>
+      </node>
+      <node id="5116">
+        <label>Computer Graphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5120">
+        <label>Common Library/Source/Vector3.cpp</label>
+        <link refid="Vector3_8cpp"/>
+      </node>
+      <node id="5141">
+        <label>Computer Graphics/Source/GameChar.cpp</label>
+        <link refid="GameChar_8cpp"/>
+      </node>
+      <node id="5129">
+        <label>Computer Graphics/Source/BB-8.h</label>
+        <link refid="BB-8_8h"/>
+        <childnode refid="5130" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5165">
+        <label>Computer Graphics/Source/Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="5166" relation="include">
+        </childnode>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5108">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="5131">
+        <label>Computer Graphics/Source/BB-8_2.h</label>
+        <link refid="BB-8__2_8h"/>
+        <childnode refid="5132" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+      </node>
+      <node id="5171">
+        <label>Computer Graphics/Source/LoadOBJ.h</label>
+        <link refid="LoadOBJ_8h"/>
+        <childnode refid="5168" relation="include">
+        </childnode>
+        <childnode refid="5172" relation="include">
+        </childnode>
+      </node>
+      <node id="5154">
+        <label>Computer Graphics/Source/Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="5155" relation="include">
+        </childnode>
+        <childnode refid="5122" relation="include">
+        </childnode>
+        <childnode refid="5135" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+      </node>
+      <node id="5142">
+        <label>Computer Graphics/Source/Human.h</label>
+        <link refid="Human_8h"/>
+        <childnode refid="5143" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5151">
+        <label>Computer Graphics/Source/Sir.cpp</label>
+        <link refid="Sir_8cpp"/>
+      </node>
+      <node id="5166">
+        <label>Computer Graphics/Source/Light.cpp</label>
+        <link refid="Light_8cpp"/>
+      </node>
+      <node id="5115">
+        <label>Common Library/Source/Mtx44.cpp</label>
+        <link refid="Mtx44_8cpp"/>
+      </node>
+      <node id="5113">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="5114" relation="include">
+        </childnode>
+      </node>
+      <node id="5103">
+        <label>Common Library/Source/MyMath.h</label>
+        <link refid="MyMath.h"/>
+        <childnode refid="5104" relation="include">
+        </childnode>
+        <childnode refid="5119" relation="include">
+        </childnode>
+        <childnode refid="5121" relation="include">
+        </childnode>
+        <childnode refid="5168" relation="include">
+        </childnode>
+      </node>
+      <node id="5144">
+        <label>Computer Graphics/Source/Medic.h</label>
+        <link refid="Medic_8h"/>
+        <childnode refid="5145" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+      </node>
+      <node id="5112">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="5168">
+        <label>Computer Graphics/Source/MeshBuilder.h</label>
+        <link refid="MeshBuilder_8h"/>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5169" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5130">
+        <label>Computer Graphics/Source/BB-8.cpp</label>
+        <link refid="BB-8_8cpp"/>
+      </node>
+      <node id="5121">
+        <label>Computer Graphics/Source/GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="5122" relation="include">
+        </childnode>
+        <childnode refid="5152" relation="include">
+        </childnode>
+        <childnode refid="5154" relation="include">
+        </childnode>
+        <childnode refid="5156" relation="include">
+        </childnode>
+        <childnode refid="5158" relation="include">
+        </childnode>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5136" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+        <childnode refid="5159" relation="include">
+        </childnode>
+      </node>
+      <node id="5174">
+        <label>Computer Graphics/Source/Map.cpp</label>
+        <link refid="Map_8cpp"/>
+      </node>
+      <node id="5164">
+        <label>Computer Graphics/Source/Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5165" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+        <childnode refid="5168" relation="include">
+        </childnode>
+        <childnode refid="5171" relation="include">
+        </childnode>
+        <childnode refid="5117" relation="include">
+        </childnode>
+      </node>
+      <node id="5146">
+        <label>Computer Graphics/Source/Pingu.h</label>
+        <link refid="Pingu_8h"/>
+        <childnode refid="5147" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5159">
+        <label>Computer Graphics/Source/Weapon.h</label>
+        <link refid="Weapon_8h"/>
+        <childnode refid="5160" relation="include">
+        </childnode>
+      </node>
+      <node id="5123">
+        <label>Computer Graphics/Source/Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="5124" relation="include">
+        </childnode>
+        <childnode refid="5125" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5133">
+        <label>Computer Graphics/Source/Buildings.h</label>
+        <link refid="Buildings_8h"/>
+        <childnode refid="5134" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5140">
+        <label>Computer Graphics/Source/Player.cpp</label>
+        <link refid="Player_8cpp"/>
+      </node>
+      <node id="5106">
+        <label>Common Library/Source/MatrixStack.cpp</label>
+        <link refid="MatrixStack_8cpp"/>
+      </node>
+      <node id="5111">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="5112" relation="include">
+        </childnode>
+      </node>
+      <node id="5173">
+        <label>Computer Graphics/Source/Map.h</label>
+        <link refid="Map_8h"/>
+        <childnode refid="5136" relation="include">
+        </childnode>
+        <childnode refid="5174" relation="include">
+        </childnode>
+        <childnode refid="5135" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5118">
+        <label>Computer Graphics/Source/Utility.cpp</label>
+        <link refid="Utility_8cpp"/>
+      </node>
+      <node id="5147">
+        <label>Computer Graphics/Source/Pingu.cpp</label>
+        <link refid="Pingu_8cpp"/>
+      </node>
+      <node id="5149">
+        <label>Computer Graphics/Source/PinkKnight.cpp</label>
+        <link refid="PinkKnight_8cpp"/>
+      </node>
+      <node id="5157">
+        <label>Computer Graphics/Source/Quest.cpp</label>
+        <link refid="Quest_8cpp"/>
+      </node>
+      <node id="5124">
+        <label>Computer Graphics/Source/Alien.cpp</label>
+        <link refid="Alien_8cpp"/>
+      </node>
+      <node id="5104">
+        <label>Common Library/Source/Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="5105" relation="include">
+        </childnode>
+        <childnode refid="5115" relation="include">
+        </childnode>
+        <childnode refid="5116" relation="include">
+        </childnode>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5117" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5109">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="5110" relation="include">
+        </childnode>
+      </node>
+      <node id="5150">
+        <label>Computer Graphics/Source/Sir.h</label>
+        <link refid="Sir_8h"/>
+        <childnode refid="5151" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+      </node>
+      <node id="5128">
+        <label>Computer Graphics/Source/ChestBurster.cpp</label>
+        <link refid="ChestBurster_8cpp"/>
+      </node>
+      <node id="5127">
+        <label>Computer Graphics/Source/ChestBurster.h</label>
+        <link refid="ChestBurster_8h"/>
+        <childnode refid="5128" relation="include">
+        </childnode>
+      </node>
+      <node id="5148">
+        <label>Computer Graphics/Source/PinkKnight.h</label>
+        <link refid="PinkKnight_8h"/>
+        <childnode refid="5149" relation="include">
+        </childnode>
+      </node>
+      <node id="5117">
+        <label>Computer Graphics/Source/Utility.h</label>
+        <link refid="Utility_8h"/>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+        <childnode refid="5118" relation="include">
+        </childnode>
+      </node>
+      <node id="5169">
+        <label>Computer Graphics/Source/MeshBuilder.cpp</label>
+        <link refid="MeshBuilder_8cpp"/>
+      </node>
+      <node id="5172">
+        <label>Computer Graphics/Source/LoadOBJ.cpp</label>
+        <link refid="LoadOBJ_8cpp"/>
+      </node>
+      <node id="5143">
+        <label>Computer Graphics/Source/Human.cpp</label>
+        <link refid="Human_8cpp"/>
+      </node>
+      <node id="5139">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform_8cpp"/>
+      </node>
+      <node id="5114">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="5158">
+        <label>Computer Graphics/Source/GameObject.cpp</label>
+        <link refid="GameObject_8cpp"/>
+      </node>
+      <node id="5125">
+        <label>Computer Graphics/Source/AlienEnemy.h</label>
+        <link refid="AlienEnemy_8h"/>
+        <childnode refid="5126" relation="include">
+        </childnode>
+        <childnode refid="5127" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5152">
+        <label>Computer Graphics/Source/CameraTPS.h</label>
+        <link refid="CameraTPS_8h"/>
+        <childnode refid="5153" relation="include">
+        </childnode>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5136">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles_8h"/>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+        <childnode refid="5137" relation="include">
+        </childnode>
+      </node>
+      <node id="5134">
+        <label>Computer Graphics/Source/Buildings.cpp</label>
+        <link refid="Buildings_8cpp"/>
+      </node>
+      <node id="5163">
+        <label>Computer Graphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5145">
+        <label>Computer Graphics/Source/Medic.cpp</label>
+        <link refid="Medic_8cpp"/>
+      </node>
+      <node id="5105">
+        <label>Common Library/Source/MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="5106" relation="include">
+        </childnode>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5107">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="5108" relation="include">
+        </childnode>
+      </node>
+      <node id="5162">
+        <label>Computer Graphics/Source/Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5135" relation="include">
+        </childnode>
+        <childnode refid="5116" relation="include">
+        </childnode>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5155">
+        <label>Computer Graphics/Source/Collision.cpp</label>
+        <link refid="Collision_8cpp"/>
+      </node>
+      <node id="5161">
+        <label>Computer Graphics/Source/Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5163" relation="include">
+        </childnode>
+        <childnode refid="5152" relation="include">
+        </childnode>
+      </node>
+      <node id="5122">
+        <label>Computer Graphics/Source/GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="5123" relation="include">
+        </childnode>
+        <childnode refid="5129" relation="include">
+        </childnode>
+        <childnode refid="5131" relation="include">
+        </childnode>
+        <childnode refid="5133" relation="include">
+        </childnode>
+        <childnode refid="5135" relation="include">
+        </childnode>
+        <childnode refid="5141" relation="include">
+        </childnode>
+        <childnode refid="5142" relation="include">
+        </childnode>
+        <childnode refid="5144" relation="include">
+        </childnode>
+        <childnode refid="5146" relation="include">
+        </childnode>
+        <childnode refid="5148" relation="include">
+        </childnode>
+        <childnode refid="5138" relation="include">
+        </childnode>
+        <childnode refid="5150" relation="include">
+        </childnode>
+      </node>
+      <node id="5170">
+        <label>Computer Graphics/Source/Mesh.cpp</label>
+        <link refid="Mesh_8cpp"/>
+      </node>
+      <node id="5137">
+        <label>Computer Graphics/Source/SpaceVehicles.cpp</label>
+        <link refid="SpaceVehicles_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDivideByZero" prot="public">DivideByZero</innerclass>
+    <innernamespace refid="namespaceMath">Math</innernamespace>
+    <briefdescription>
+<para>Header file for math helper functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Wen Sheng Tang </para></simplesect>
+<simplesect kind="par"><title>email: tang_wen_sheng@nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>MY_MATH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MY_MATH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;exception&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctime&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="namespaceMath" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceMath" kindref="compound">Math</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" kindref="member">EPSILON</ref><sp/><sp/><sp/><sp/>=<sp/>0.00001f;<sp/><sp/></highlight></codeline>
+<codeline lineno="28" refid="namespaceMath_1af8c064b6b688407b9999ee677efd715d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceMath_1af8c064b6b688407b9999ee677efd715d" kindref="member">PI</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3.1415926535897932384626433832795f;</highlight></codeline>
+<codeline lineno="29" refid="namespaceMath_1a52cf11c3d21a83ced7f3e73d73b438bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1a52cf11c3d21a83ced7f3e73d73b438bf" kindref="member">TWO_PI</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>PI<sp/>*<sp/>2.0f;</highlight></codeline>
+<codeline lineno="30" refid="namespaceMath_1a6475d0f7b5d131ca9bacd916606bf295" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1a6475d0f7b5d131ca9bacd916606bf295" kindref="member">HALF_PI</ref><sp/><sp/><sp/><sp/>=<sp/>PI<sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="31" refid="namespaceMath_1aceaa8f6fecb9720eb0e13330bf45d710" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1aceaa8f6fecb9720eb0e13330bf45d710" kindref="member">QUARTER_PI</ref><sp/>=<sp/>PI<sp/>/<sp/>4.0f;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="namespaceMath_1ac91173ab2efdf7313fe7aaeb6cb44cf6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1ac91173ab2efdf7313fe7aaeb6cb44cf6" kindref="member">FAbs</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(value<sp/>&lt;<sp/>0)<sp/>?<sp/>-value<sp/>:<sp/>value;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">DegreeToRadian</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>*<sp/>PI<sp/>/<sp/>180.0f;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="63"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="namespaceMath_1a1a1d364c850f9d66fda85cf71598bbe5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1a1a1d364c850f9d66fda85cf71598bbe5" kindref="member">RadianToDegree</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>*<sp/>180.0f<sp/>/<sp/><ref refid="namespaceMath_1af8c064b6b688407b9999ee677efd715d" kindref="member">PI</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="81"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="83" refid="namespaceMath_1a6cc12fd546c2f3dbebade9e4234b5f7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespaceMath_1a6cc12fd546c2f3dbebade9e4234b5f7c" kindref="member">Wrap</ref>(T<sp/>val,<sp/>T<sp/>minVal,<sp/>T<sp/>maxVal)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val<sp/>&lt;<sp/>minVal)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>maxVal;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val<sp/>&gt;<sp/>maxVal)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>minVal;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="109"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="111" refid="namespaceMath_1af8dc69787ee8df1ea409e97f53fce3cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespaceMath_1af8dc69787ee8df1ea409e97f53fce3cb" kindref="member">Clamp</ref>(T<sp/>val,<sp/>T<sp/>minVal,<sp/>T<sp/>maxVal)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val<sp/>&lt;<sp/>minVal)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>minVal;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val<sp/>&gt;<sp/>maxVal)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>maxVal;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="135"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="137" refid="namespaceMath_1af308aea473e7e8e6352e1bd452e11df9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespaceMath_1af308aea473e7e8e6352e1bd452e11df9" kindref="member">Min</ref>(T<sp/>x,<sp/>T<sp/>y)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y)<sp/>?<sp/>x<sp/>:<sp/>y;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="152"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="154" refid="namespaceMath_1af25f5d487204a1402974cb46444cfc74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespaceMath_1af25f5d487204a1402974cb46444cfc74" kindref="member">Max</ref>(T<sp/>x,<sp/>T<sp/>y)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y)<sp/>?<sp/>x<sp/>:<sp/>y;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="168"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="170" refid="namespaceMath_1ae3a0c56b76d652066a652f8285494761" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespaceMath_1ae3a0c56b76d652066a652f8285494761" kindref="member">Square</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>*<sp/>x;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="184" refid="namespaceMath_1a33d6cf633b5ddf82fff77d1d40140b85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1a33d6cf633b5ddf82fff77d1d40140b85" kindref="member">InitRNG</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>srand<sp/>(static_cast&lt;unsigned&gt;<sp/>(time(0)));</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="comment">//end<sp/>of<sp/>InitRNG<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="199" refid="namespaceMath_1a7ab621ad66eb2f61e2b9cff366fed0e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1a7ab621ad66eb2f61e2b9cff366fed0e0" kindref="member">RandInt</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rand();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="comment">//end<sp/>of<sp/>RandInt<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="215" refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">RandIntMinMax</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num<sp/>=<sp/>rand()<sp/>%<sp/>(max<sp/>-<sp/>min<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(num<sp/>+<sp/>min);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="comment">//end<sp/>of<sp/>RandIntMinMax<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="231" refid="namespaceMath_1a9b2e7be835afb6d9fe78f6c1efa26998" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1a9b2e7be835afb6d9fe78f6c1efa26998" kindref="member">RandFloat</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rand()<sp/>/<sp/>static_cast<sp/>&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&gt;<sp/>(RAND_MAX);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="comment">//end<sp/>of<sp/>RandFloat<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="247" refid="namespaceMath_1aa21138cd1585c3dab1e901c4ead9204d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1aa21138cd1585c3dab1e901c4ead9204d" kindref="member">RandFloatMinMax</ref><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>min,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>max)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>num<sp/>=<sp/>(max<sp/>-<sp/>min)<sp/>*<sp/><ref refid="namespaceMath_1a9b2e7be835afb6d9fe78f6c1efa26998" kindref="member">RandFloat</ref><sp/>();</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(num<sp/>+<sp/>min);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="comment">//end<sp/>of<sp/>RandFloatMinMax<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight><highlight class="comment">//end<sp/>namespace<sp/>Math</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="260"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="classDivideByZero" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDivideByZero" kindref="compound">DivideByZero</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="264" refid="classDivideByZero_1a4756aaefaf5e864c29a68ff24a8a8f10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classDivideByZero_1a4756aaefaf5e864c29a68ff24a8a8f10" kindref="member">what</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Divide<sp/>By<sp/>Zero&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="Common Library/Source/MyMath.h"/>
+  </compounddef>
+</doxygen>

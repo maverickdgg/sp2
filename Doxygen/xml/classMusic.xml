@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classMusic" kind="class" language="C++" prot="public">
+    <compoundname>Music</compoundname>
+    <includes refid="Music_8h" local="no">Music.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classMusic_1ab2a51561d3c251004e31d3cddde35b47" prot="public" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundEngine" kindref="compound">irrklang::ISoundEngine</ref> *</type>
+        <definition>irrklang::ISoundEngine* Music::engine</definition>
+        <argsstring></argsstring>
+        <name>engine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="45" column="1" bodyfile="Computer Graphics/Source/Music.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classMusic_1a8b63084b9964d4a587ac610f6ac00053" compoundref="Music_8cpp" startline="36" endline="50">Init</referencedby>
+        <referencedby refid="classMusic_1a3f78d938063364faad5374958191cabf" compoundref="Music_8cpp" startline="52" endline="55">OpeningMusic</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMusic_1a53c1e4ba945ef9f7491cf2b981e75bd6" prot="public" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classirrklang_1_1ISoundSource" kindref="compound">irrklang::ISoundSource</ref> * &gt;</type>
+        <definition>vector&lt;irrklang::ISoundSource*&gt; Music::sound</definition>
+        <argsstring></argsstring>
+        <name>sound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="46" column="1" bodyfile="Computer Graphics/Source/Music.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classMusic_1a8b63084b9964d4a587ac610f6ac00053" compoundref="Music_8cpp" startline="36" endline="50">Init</referencedby>
+        <referencedby refid="classMusic_1a3f78d938063364faad5374958191cabf" compoundref="Music_8cpp" startline="52" endline="55">OpeningMusic</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMusic_1a07f4919ac591765f088714ac8d09d662" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Music::musicVec</definition>
+        <argsstring></argsstring>
+        <name>musicVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="47" column="1" bodyfile="Computer Graphics/Source/Music.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classMusic_1a8b63084b9964d4a587ac610f6ac00053" compoundref="Music_8cpp" startline="36" endline="50">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMusic_1ab5143f67c021bc77894c8e91de2b916b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Music::Music</definition>
+        <argsstring>()</argsstring>
+        <name>Music</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="38" column="1" bodyfile="Computer Graphics/Source/Music.cpp" bodystart="3" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classMusic_1a0b4f3b9a018207e0c08003505f1f87fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Music::~Music</definition>
+        <argsstring>()</argsstring>
+        <name>~Music</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="39" column="1" bodyfile="Computer Graphics/Source/Music.cpp" bodystart="7" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classMusic_1a8b63084b9964d4a587ac610f6ac00053" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Music::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="41" column="1" bodyfile="Computer Graphics/Source/Music.cpp" bodystart="36" bodyend="50"/>
+        <references refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005">irrklang::ISoundEngine::addSoundSourceFromFile</references>
+        <references refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c">irrklang::createIrrKlangDevice</references>
+        <references refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" compoundref="Music_8h" startline="45">engine</references>
+        <references refid="classMusic_1a07f4919ac591765f088714ac8d09d662" compoundref="Music_8h" startline="47">musicVec</references>
+        <references refid="classMusic_1ab085cbc57d1ceb8151952e37953120c8" compoundref="Music_8cpp" startline="12" endline="34">readFromText</references>
+        <references refid="classMusic_1a53c1e4ba945ef9f7491cf2b981e75bd6" compoundref="Music_8h" startline="46">sound</references>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="138" endline="180">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMusic_1ab085cbc57d1ceb8151952e37953120c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt; string &gt; Music::readFromText</definition>
+        <argsstring>(string link)</argsstring>
+        <name>readFromText</name>
+        <param>
+          <type>string</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="42" column="1" bodyfile="Computer Graphics/Source/Music.cpp" bodystart="12" bodyend="34"/>
+        <referencedby refid="classMusic_1a8b63084b9964d4a587ac610f6ac00053" compoundref="Music_8cpp" startline="36" endline="50">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMusic_1a3f78d938063364faad5374958191cabf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Music::OpeningMusic</definition>
+        <argsstring>(int index, bool loop)</argsstring>
+        <name>OpeningMusic</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Music.h" line="43" column="1" bodyfile="Computer Graphics/Source/Music.cpp" bodystart="52" bodyend="55"/>
+        <references refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" compoundref="Music_8h" startline="45">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classMusic_1a53c1e4ba945ef9f7491cf2b981e75bd6" compoundref="Music_8h" startline="46">sound</references>
+        <referencedby refid="classApplication_1a109b65d784f90f3abe16eaa1b78964c6" compoundref="Application_8cpp" startline="133" endline="136">Application::playSound</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for the overall music in the game /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classMusic" kindref="compound">Music</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1118">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="1114">
+        <label>Music</label>
+        <link refid="classMusic"/>
+        <childnode refid="1115" relation="usage">
+          <edgelabel>engine</edgelabel>
+        </childnode>
+        <childnode refid="1118" relation="usage">
+          <edgelabel>musicVec</edgelabel>
+        </childnode>
+        <childnode refid="1119" relation="usage">
+          <edgelabel>sound</edgelabel>
+        </childnode>
+      </node>
+      <node id="1115">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="1116" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1119">
+        <label>vector&lt; irrklang::ISoundSource * &gt;</label>
+      </node>
+      <node id="1117">
+        <label>int</label>
+      </node>
+      <node id="1116">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="1117" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Music.h" line="36" column="1" bodyfile="Computer Graphics/Source/Music.h" bodystart="35" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" prot="public" virt="non-virtual"><scope>Music</scope><name>engine</name></member>
+      <member refid="classMusic_1a8b63084b9964d4a587ac610f6ac00053" prot="public" virt="non-virtual"><scope>Music</scope><name>Init</name></member>
+      <member refid="classMusic_1ab5143f67c021bc77894c8e91de2b916b" prot="public" virt="non-virtual"><scope>Music</scope><name>Music</name></member>
+      <member refid="classMusic_1a07f4919ac591765f088714ac8d09d662" prot="public" virt="non-virtual"><scope>Music</scope><name>musicVec</name></member>
+      <member refid="classMusic_1a3f78d938063364faad5374958191cabf" prot="public" virt="non-virtual"><scope>Music</scope><name>OpeningMusic</name></member>
+      <member refid="classMusic_1ab085cbc57d1ceb8151952e37953120c8" prot="public" virt="non-virtual"><scope>Music</scope><name>readFromText</name></member>
+      <member refid="classMusic_1a53c1e4ba945ef9f7491cf2b981e75bd6" prot="public" virt="non-virtual"><scope>Music</scope><name>sound</name></member>
+      <member refid="classMusic_1a0b4f3b9a018207e0c08003505f1f87fe" prot="public" virt="non-virtual"><scope>Music</scope><name>~Music</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

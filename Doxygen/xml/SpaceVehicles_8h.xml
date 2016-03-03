@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="SpaceVehicles_8h" kind="file" language="C++">
+    <compoundname>SpaceVehicles.h</compoundname>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <includes refid="Player_8h" local="yes">Player.h</includes>
+    <includes refid="Map_8h" local="yes">Map.h</includes>
+    <includes local="no">queue</includes>
+    <includedby refid="LoadingScene_8h" local="yes">Computer Graphics/Source/LoadingScene.h</includedby>
+    <includedby refid="Sp2__Scene1_8h" local="yes">Computer Graphics/Source/Sp2_Scene1.h</includedby>
+    <includedby refid="SP2__Scene3_8h" local="yes">Computer Graphics/Source/SP2_Scene3.h</includedby>
+    <includedby refid="Sp2__SpaceRace_8h" local="yes">Computer Graphics/Source/Sp2_SpaceRace.h</includedby>
+    <includedby refid="SpaceVehicles_8cpp" local="yes">Computer Graphics/Source/SpaceVehicles.cpp</includedby>
+    <incdepgraph>
+      <node id="9943">
+        <label>Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="9944" relation="include">
+        </childnode>
+        <childnode refid="9913" relation="include">
+        </childnode>
+        <childnode refid="9947" relation="include">
+        </childnode>
+        <childnode refid="9946" relation="include">
+        </childnode>
+        <childnode refid="9945" relation="include">
+        </childnode>
+        <childnode refid="9949" relation="include">
+        </childnode>
+        <childnode refid="9904" relation="include">
+        </childnode>
+      </node>
+      <node id="9911">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="9906" relation="include">
+        </childnode>
+        <childnode refid="9912" relation="include">
+        </childnode>
+      </node>
+      <node id="9937">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+        <childnode refid="9930" relation="include">
+        </childnode>
+      </node>
+      <node id="9935">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+      </node>
+      <node id="9940">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+        <childnode refid="9930" relation="include">
+        </childnode>
+      </node>
+      <node id="9950">
+        <label>queue</label>
+      </node>
+      <node id="9919">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="9904" relation="include">
+        </childnode>
+        <childnode refid="9903" relation="include">
+        </childnode>
+        <childnode refid="9905" relation="include">
+        </childnode>
+        <childnode refid="9912" relation="include">
+        </childnode>
+        <childnode refid="9920" relation="include">
+        </childnode>
+      </node>
+      <node id="9920">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="9921" relation="include">
+        </childnode>
+        <childnode refid="9923" relation="include">
+        </childnode>
+        <childnode refid="9925" relation="include">
+        </childnode>
+        <childnode refid="9926" relation="include">
+        </childnode>
+        <childnode refid="9927" relation="include">
+        </childnode>
+        <childnode refid="9928" relation="include">
+        </childnode>
+        <childnode refid="9929" relation="include">
+        </childnode>
+        <childnode refid="9930" relation="include">
+        </childnode>
+        <childnode refid="9931" relation="include">
+        </childnode>
+        <childnode refid="9932" relation="include">
+        </childnode>
+        <childnode refid="9933" relation="include">
+        </childnode>
+        <childnode refid="9937" relation="include">
+        </childnode>
+        <childnode refid="9938" relation="include">
+        </childnode>
+        <childnode refid="9934" relation="include">
+        </childnode>
+        <childnode refid="9940" relation="include">
+        </childnode>
+        <childnode refid="9935" relation="include">
+        </childnode>
+        <childnode refid="9939" relation="include">
+        </childnode>
+        <childnode refid="9941" relation="include">
+        </childnode>
+        <childnode refid="9942" relation="include">
+        </childnode>
+        <childnode refid="9936" relation="include">
+        </childnode>
+      </node>
+      <node id="9946">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="9904" relation="include">
+        </childnode>
+        <childnode refid="9903" relation="include">
+        </childnode>
+        <childnode refid="9901" relation="include">
+        </childnode>
+      </node>
+      <node id="9915">
+        <label>windows.h</label>
+      </node>
+      <node id="9945">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="9901" relation="include">
+        </childnode>
+      </node>
+      <node id="9921">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="9922" relation="include">
+        </childnode>
+      </node>
+      <node id="9925">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="9921" relation="include">
+        </childnode>
+      </node>
+      <node id="9907">
+        <label>cmath</label>
+      </node>
+      <node id="9903">
+        <label>string</label>
+      </node>
+      <node id="9906">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="9907" relation="include">
+        </childnode>
+        <childnode refid="9908" relation="include">
+        </childnode>
+        <childnode refid="9909" relation="include">
+        </childnode>
+        <childnode refid="9910" relation="include">
+        </childnode>
+      </node>
+      <node id="9916">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="9917">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="9901">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="9902" relation="include">
+        </childnode>
+        <childnode refid="9903" relation="include">
+        </childnode>
+        <childnode refid="9904" relation="include">
+        </childnode>
+        <childnode refid="9905" relation="include">
+        </childnode>
+        <childnode refid="9906" relation="include">
+        </childnode>
+        <childnode refid="9911" relation="include">
+        </childnode>
+      </node>
+      <node id="9942">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+        <childnode refid="9932" relation="include">
+        </childnode>
+      </node>
+      <node id="9908">
+        <label>exception</label>
+      </node>
+      <node id="9905">
+        <label>fstream</label>
+      </node>
+      <node id="9914">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="9915" relation="include">
+        </childnode>
+      </node>
+      <node id="9926">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="9921" relation="include">
+        </childnode>
+      </node>
+      <node id="9936">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+        <childnode refid="9930" relation="include">
+        </childnode>
+      </node>
+      <node id="9922">
+        <label>wchar.h</label>
+      </node>
+      <node id="9931">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+        <childnode refid="9923" relation="include">
+        </childnode>
+        <childnode refid="9932" relation="include">
+        </childnode>
+        <childnode refid="9933" relation="include">
+        </childnode>
+        <childnode refid="9929" relation="include">
+        </childnode>
+        <childnode refid="9935" relation="include">
+        </childnode>
+        <childnode refid="9936" relation="include">
+        </childnode>
+      </node>
+      <node id="9909">
+        <label>ctime</label>
+      </node>
+      <node id="9949">
+        <label>Map.h</label>
+        <link refid="Map_8h"/>
+        <childnode refid="9903" relation="include">
+        </childnode>
+        <childnode refid="9905" relation="include">
+        </childnode>
+        <childnode refid="9912" relation="include">
+        </childnode>
+        <childnode refid="9911" relation="include">
+        </childnode>
+      </node>
+      <node id="9904">
+        <label>vector</label>
+      </node>
+      <node id="9923">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="9924" relation="include">
+        </childnode>
+        <childnode refid="9921" relation="include">
+        </childnode>
+      </node>
+      <node id="9902">
+        <label>sstream</label>
+      </node>
+      <node id="9941">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+      </node>
+      <node id="9924">
+        <label>math.h</label>
+      </node>
+      <node id="9938">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+        <childnode refid="9939" relation="include">
+        </childnode>
+      </node>
+      <node id="9910">
+        <label>cstdlib</label>
+      </node>
+      <node id="9929">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="9912">
+        <label>iostream</label>
+      </node>
+      <node id="9918">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="9932">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="9926" relation="include">
+        </childnode>
+        <childnode refid="9923" relation="include">
+        </childnode>
+        <childnode refid="9929" relation="include">
+        </childnode>
+        <childnode refid="9930" relation="include">
+        </childnode>
+      </node>
+      <node id="9930">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+      </node>
+      <node id="9900">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles.h"/>
+        <childnode refid="9901" relation="include">
+        </childnode>
+        <childnode refid="9913" relation="include">
+        </childnode>
+        <childnode refid="9943" relation="include">
+        </childnode>
+        <childnode refid="9949" relation="include">
+        </childnode>
+        <childnode refid="9950" relation="include">
+        </childnode>
+      </node>
+      <node id="9933">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="9926" relation="include">
+        </childnode>
+        <childnode refid="9934" relation="include">
+        </childnode>
+        <childnode refid="9923" relation="include">
+        </childnode>
+      </node>
+      <node id="9927">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="9928">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="9934">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="9926" relation="include">
+        </childnode>
+        <childnode refid="9923" relation="include">
+        </childnode>
+      </node>
+      <node id="9913">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="9914" relation="include">
+        </childnode>
+        <childnode refid="9916" relation="include">
+        </childnode>
+        <childnode refid="9917" relation="include">
+        </childnode>
+        <childnode refid="9918" relation="include">
+        </childnode>
+        <childnode refid="9919" relation="include">
+        </childnode>
+      </node>
+      <node id="9939">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="9925" relation="include">
+        </childnode>
+      </node>
+      <node id="9947">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="9948" relation="include">
+        </childnode>
+      </node>
+      <node id="9948">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="9911" relation="include">
+        </childnode>
+        <childnode refid="9913" relation="include">
+        </childnode>
+      </node>
+      <node id="9944">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="9901" relation="include">
+        </childnode>
+        <childnode refid="9913" relation="include">
+        </childnode>
+        <childnode refid="9945" relation="include">
+        </childnode>
+        <childnode refid="9946" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9955">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="9953">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="9958">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="9959" relation="include">
+        </childnode>
+      </node>
+      <node id="9957">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="9956">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="9957" relation="include">
+        </childnode>
+      </node>
+      <node id="9954">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="9955" relation="include">
+        </childnode>
+      </node>
+      <node id="9959">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="9951">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles.h"/>
+        <childnode refid="9952" relation="include">
+        </childnode>
+        <childnode refid="9954" relation="include">
+        </childnode>
+        <childnode refid="9956" relation="include">
+        </childnode>
+        <childnode refid="9958" relation="include">
+        </childnode>
+        <childnode refid="9960" relation="include">
+        </childnode>
+      </node>
+      <node id="9952">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="9953" relation="include">
+        </childnode>
+      </node>
+      <node id="9960">
+        <label>Computer Graphics/Source/SpaceVehicles.cpp</label>
+        <link refid="SpaceVehicles_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classSpaceVehicles" prot="public">SpaceVehicles</innerclass>
+    <briefdescription>
+<para>Class to define Space Vehicles. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SPACE_VEHICLES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SPACE_VEHICLES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Player_8h" kindref="compound">Player.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Map_8h" kindref="compound">Map.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::queue;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="31" refid="classSpaceVehicles" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classSpaceVehicles" kindref="compound">SpaceVehicles</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classGameObject" kindref="compound">GameObject</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" kindref="member">SpaceVehicles</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSpaceVehicles_1ac9eca3b32ea60a9acf27a0914c3da2da" kindref="member">SpaceVehicles</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" kindref="member">boundary</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref>,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" kindref="member">pos</ref>,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" kindref="member">max_speed</ref><sp/>=<sp/>150);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSpaceVehicles_1aef46c3a2834d0ccf0af95420051b801f" kindref="member">~SpaceVehicles</ref>();</highlight></codeline>
+<codeline lineno="37" refid="classSpaceVehicles_1a1c19079da9c647e83bb6dbfa488006c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a1c19079da9c647e83bb6dbfa488006c7" kindref="member">SV_count</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1afd5687c2079f7074c536d284942bb8a9" kindref="member">speed</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classSpaceVehicles_1ad63bdf11991b7886b2cf6559036572d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1ad63bdf11991b7886b2cf6559036572d4" kindref="member">b_isInVehicle</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classSpaceVehicles_1a11d3fe594539e9c3ea18598bf581892b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a11d3fe594539e9c3ea18598bf581892b" kindref="member">b_vehDebounce</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a5ef1f404dee56cb95912b3a635857fc4" kindref="member">rotationZ</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a0234a48d14b30d3147f052f37cb68f84" kindref="member">lap</ref>;</highlight></codeline>
+<codeline lineno="44" refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a3acec920634b71ce14c7f45ef008b1fa" kindref="member">lapDebounce</ref>;</highlight></codeline>
+<codeline lineno="45" refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1ab7f9f34130a06339c22f5d49f7ad71a6" kindref="member">max_speed</ref>;</highlight></codeline>
+<codeline lineno="46" refid="classSpaceVehicles_1a9cb508afbfcc18ed511922c53ca77ad6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>queue&lt;int&gt;<sp/><ref refid="classSpaceVehicles_1a9cb508afbfcc18ed511922c53ca77ad6" kindref="member">racepath</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" kindref="member">updateVehicle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>deltaTime);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1ac9b59d2bd00fd58786be266e4e6fe237" kindref="member">updateVehicle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>deltaTime<sp/>,<sp/><ref refid="structsMap" kindref="compound">PMAP</ref><sp/>map,queue&lt;int&gt;&amp;<sp/>q);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" kindref="member">updateVehicle2</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>deltaTime,<sp/><ref refid="structsMap" kindref="compound">PMAP</ref><sp/>map,<sp/>queue&lt;int&gt;&amp;<sp/>q);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" kindref="member">enterVehicleUpdate</ref>(<ref refid="classPlayer" kindref="compound">Player</ref>&amp;<sp/>player);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" kindref="member">updateCPUVehicle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>deltaTime,<sp/><ref refid="structsMap" kindref="compound">PMAP</ref><sp/>map,<sp/>queue&lt;int&gt;&amp;<sp/>q);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a1f3c77da3c867f506dbc62dea84b53ef" kindref="member">getRacePosition</ref>(<ref refid="classSpaceVehicles" kindref="compound">SpaceVehicles</ref><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>startIndex);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a287f59990fa7612f7883a01555eea404" kindref="member">positionInQueue</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a63617a030d2fc668c5f55b787aebc265" kindref="member">distanceFromCheckpoint</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1a90aa24de034a915c50d5d932295aa704" kindref="member">acceleration</ref>;</highlight></codeline>
+<codeline lineno="61" refid="classSpaceVehicles_1aa070b3ae1bcad34cb3211c3d73d10d78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classSpaceVehicles_1aa070b3ae1bcad34cb3211c3d73d10d78" kindref="member">rotateAngle</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/SpaceVehicles.h"/>
+  </compounddef>
+</doxygen>

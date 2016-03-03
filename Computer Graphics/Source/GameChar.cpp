@@ -119,7 +119,6 @@ bool GameChar::isDead()
 	if (health <= 0)
 	{
 		return true;
-	// WOW YOU DIED SONG.
 	}
 	else
 	{

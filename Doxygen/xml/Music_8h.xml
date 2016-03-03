@@ -1,0 +1,687 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Music_8h" kind="file" language="C++">
+    <compoundname>Music.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="irrKlang_8h" local="yes">../irrKlang/include/irrKlang.h</includes>
+    <includedby refid="Application_8h" local="yes">Computer Graphics/Source/Application.h</includedby>
+    <includedby refid="Music_8cpp" local="yes">Computer Graphics/Source/Music.cpp</includedby>
+    <incdepgraph>
+      <node id="8700">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+        <childnode refid="8693" relation="include">
+        </childnode>
+      </node>
+      <node id="8698">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+      </node>
+      <node id="8703">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+        <childnode refid="8693" relation="include">
+        </childnode>
+      </node>
+      <node id="8678">
+        <label>Computer Graphics/Source/Music.h</label>
+        <link refid="Music.h"/>
+        <childnode refid="8679" relation="include">
+        </childnode>
+        <childnode refid="8680" relation="include">
+        </childnode>
+        <childnode refid="8681" relation="include">
+        </childnode>
+        <childnode refid="8682" relation="include">
+        </childnode>
+        <childnode refid="8683" relation="include">
+        </childnode>
+      </node>
+      <node id="8683">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="8684" relation="include">
+        </childnode>
+        <childnode refid="8686" relation="include">
+        </childnode>
+        <childnode refid="8688" relation="include">
+        </childnode>
+        <childnode refid="8689" relation="include">
+        </childnode>
+        <childnode refid="8690" relation="include">
+        </childnode>
+        <childnode refid="8691" relation="include">
+        </childnode>
+        <childnode refid="8692" relation="include">
+        </childnode>
+        <childnode refid="8693" relation="include">
+        </childnode>
+        <childnode refid="8694" relation="include">
+        </childnode>
+        <childnode refid="8695" relation="include">
+        </childnode>
+        <childnode refid="8696" relation="include">
+        </childnode>
+        <childnode refid="8700" relation="include">
+        </childnode>
+        <childnode refid="8701" relation="include">
+        </childnode>
+        <childnode refid="8697" relation="include">
+        </childnode>
+        <childnode refid="8703" relation="include">
+        </childnode>
+        <childnode refid="8698" relation="include">
+        </childnode>
+        <childnode refid="8702" relation="include">
+        </childnode>
+        <childnode refid="8704" relation="include">
+        </childnode>
+        <childnode refid="8705" relation="include">
+        </childnode>
+        <childnode refid="8699" relation="include">
+        </childnode>
+      </node>
+      <node id="8684">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="8685" relation="include">
+        </childnode>
+      </node>
+      <node id="8688">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="8684" relation="include">
+        </childnode>
+      </node>
+      <node id="8680">
+        <label>string</label>
+      </node>
+      <node id="8705">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+        <childnode refid="8695" relation="include">
+        </childnode>
+      </node>
+      <node id="8681">
+        <label>fstream</label>
+      </node>
+      <node id="8689">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="8684" relation="include">
+        </childnode>
+      </node>
+      <node id="8699">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+        <childnode refid="8693" relation="include">
+        </childnode>
+      </node>
+      <node id="8685">
+        <label>wchar.h</label>
+      </node>
+      <node id="8694">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+        <childnode refid="8686" relation="include">
+        </childnode>
+        <childnode refid="8695" relation="include">
+        </childnode>
+        <childnode refid="8696" relation="include">
+        </childnode>
+        <childnode refid="8692" relation="include">
+        </childnode>
+        <childnode refid="8698" relation="include">
+        </childnode>
+        <childnode refid="8699" relation="include">
+        </childnode>
+      </node>
+      <node id="8679">
+        <label>vector</label>
+      </node>
+      <node id="8686">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="8687" relation="include">
+        </childnode>
+        <childnode refid="8684" relation="include">
+        </childnode>
+      </node>
+      <node id="8704">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+      </node>
+      <node id="8687">
+        <label>math.h</label>
+      </node>
+      <node id="8701">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+        <childnode refid="8702" relation="include">
+        </childnode>
+      </node>
+      <node id="8692">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="8682">
+        <label>iostream</label>
+      </node>
+      <node id="8695">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="8689" relation="include">
+        </childnode>
+        <childnode refid="8686" relation="include">
+        </childnode>
+        <childnode refid="8692" relation="include">
+        </childnode>
+        <childnode refid="8693" relation="include">
+        </childnode>
+      </node>
+      <node id="8693">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+      </node>
+      <node id="8696">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="8689" relation="include">
+        </childnode>
+        <childnode refid="8697" relation="include">
+        </childnode>
+        <childnode refid="8686" relation="include">
+        </childnode>
+      </node>
+      <node id="8690">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="8691">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="8697">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="8689" relation="include">
+        </childnode>
+        <childnode refid="8686" relation="include">
+        </childnode>
+      </node>
+      <node id="8702">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="8688" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8709">
+        <label>Computer Graphics/Source/Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="8710" relation="include">
+        </childnode>
+        <childnode refid="8718" relation="include">
+        </childnode>
+        <childnode refid="8722" relation="include">
+        </childnode>
+        <childnode refid="8724" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8722">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform_8h"/>
+        <childnode refid="8723" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+      </node>
+      <node id="8706">
+        <label>Computer Graphics/Source/Music.h</label>
+        <link refid="Music.h"/>
+        <childnode refid="8707" relation="include">
+        </childnode>
+        <childnode refid="8754" relation="include">
+        </childnode>
+      </node>
+      <node id="8713">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="8708">
+        <label>Computer Graphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="8753">
+        <label>Computer Graphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="8735">
+        <label>Computer Graphics/Source/AlienEnemy.cpp</label>
+        <link refid="AlienEnemy_8cpp"/>
+      </node>
+      <node id="8741">
+        <label>Computer Graphics/Source/BB-8_2.cpp</label>
+        <link refid="BB-8__2_8cpp"/>
+      </node>
+      <node id="8730">
+        <label>Computer Graphics/Source/CameraTPS.cpp</label>
+        <link refid="CameraTPS_8cpp"/>
+      </node>
+      <node id="8727">
+        <label>Computer Graphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="8742">
+        <label>Computer Graphics/Source/GameChar.cpp</label>
+        <link refid="GameChar_8cpp"/>
+      </node>
+      <node id="8738">
+        <label>Computer Graphics/Source/BB-8.h</label>
+        <link refid="BB-8_8h"/>
+        <childnode refid="8739" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8720">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="8740">
+        <label>Computer Graphics/Source/BB-8_2.h</label>
+        <link refid="BB-8__2_8h"/>
+        <childnode refid="8741" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+      </node>
+      <node id="8743">
+        <label>Computer Graphics/Source/Human.h</label>
+        <link refid="Human_8h"/>
+        <childnode refid="8744" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8752">
+        <label>Computer Graphics/Source/Sir.cpp</label>
+        <link refid="Sir_8cpp"/>
+      </node>
+      <node id="8716">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="8717" relation="include">
+        </childnode>
+      </node>
+      <node id="8745">
+        <label>Computer Graphics/Source/Medic.h</label>
+        <link refid="Medic_8h"/>
+        <childnode refid="8746" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+      </node>
+      <node id="8715">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="8739">
+        <label>Computer Graphics/Source/BB-8.cpp</label>
+        <link refid="BB-8_8cpp"/>
+      </node>
+      <node id="8747">
+        <label>Computer Graphics/Source/Pingu.h</label>
+        <link refid="Pingu_8h"/>
+        <childnode refid="8748" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8732">
+        <label>Computer Graphics/Source/Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="8733" relation="include">
+        </childnode>
+        <childnode refid="8734" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8710">
+        <label>Computer Graphics/Source/Buildings.h</label>
+        <link refid="Buildings_8h"/>
+        <childnode refid="8711" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8724">
+        <label>Computer Graphics/Source/Player.cpp</label>
+        <link refid="Player_8cpp"/>
+      </node>
+      <node id="8714">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="8715" relation="include">
+        </childnode>
+      </node>
+      <node id="8748">
+        <label>Computer Graphics/Source/Pingu.cpp</label>
+        <link refid="Pingu_8cpp"/>
+      </node>
+      <node id="8750">
+        <label>Computer Graphics/Source/PinkKnight.cpp</label>
+        <link refid="PinkKnight_8cpp"/>
+      </node>
+      <node id="8733">
+        <label>Computer Graphics/Source/Alien.cpp</label>
+        <link refid="Alien_8cpp"/>
+      </node>
+      <node id="8712">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="8713" relation="include">
+        </childnode>
+      </node>
+      <node id="8751">
+        <label>Computer Graphics/Source/Sir.h</label>
+        <link refid="Sir_8h"/>
+        <childnode refid="8752" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+      </node>
+      <node id="8737">
+        <label>Computer Graphics/Source/ChestBurster.cpp</label>
+        <link refid="ChestBurster_8cpp"/>
+      </node>
+      <node id="8736">
+        <label>Computer Graphics/Source/ChestBurster.h</label>
+        <link refid="ChestBurster_8h"/>
+        <childnode refid="8737" relation="include">
+        </childnode>
+      </node>
+      <node id="8749">
+        <label>Computer Graphics/Source/PinkKnight.h</label>
+        <link refid="PinkKnight_8h"/>
+        <childnode refid="8750" relation="include">
+        </childnode>
+      </node>
+      <node id="8744">
+        <label>Computer Graphics/Source/Human.cpp</label>
+        <link refid="Human_8cpp"/>
+      </node>
+      <node id="8723">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform_8cpp"/>
+      </node>
+      <node id="8717">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="8734">
+        <label>Computer Graphics/Source/AlienEnemy.h</label>
+        <link refid="AlienEnemy_8h"/>
+        <childnode refid="8735" relation="include">
+        </childnode>
+        <childnode refid="8736" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8729">
+        <label>Computer Graphics/Source/CameraTPS.h</label>
+        <link refid="CameraTPS_8h"/>
+        <childnode refid="8730" relation="include">
+        </childnode>
+        <childnode refid="8719" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8718">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles_8h"/>
+        <childnode refid="8719" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+        <childnode refid="8721" relation="include">
+        </childnode>
+      </node>
+      <node id="8711">
+        <label>Computer Graphics/Source/Buildings.cpp</label>
+        <link refid="Buildings_8cpp"/>
+      </node>
+      <node id="8728">
+        <label>Computer Graphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="8746">
+        <label>Computer Graphics/Source/Medic.cpp</label>
+        <link refid="Medic_8cpp"/>
+      </node>
+      <node id="8754">
+        <label>Computer Graphics/Source/Music.cpp</label>
+        <link refid="Music_8cpp"/>
+      </node>
+      <node id="8707">
+        <label>Computer Graphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="8708" relation="include">
+        </childnode>
+        <childnode refid="8709" relation="include">
+        </childnode>
+        <childnode refid="8725" relation="include">
+        </childnode>
+        <childnode refid="8727" relation="include">
+        </childnode>
+        <childnode refid="8731" relation="include">
+        </childnode>
+        <childnode refid="8719" relation="include">
+        </childnode>
+        <childnode refid="8718" relation="include">
+        </childnode>
+        <childnode refid="8753" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8715" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8719">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="8720" relation="include">
+        </childnode>
+      </node>
+      <node id="8726">
+        <label>Computer Graphics/Source/Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="8709" relation="include">
+        </childnode>
+        <childnode refid="8727" relation="include">
+        </childnode>
+        <childnode refid="8719" relation="include">
+        </childnode>
+        <childnode refid="8712" relation="include">
+        </childnode>
+        <childnode refid="8714" relation="include">
+        </childnode>
+        <childnode refid="8716" relation="include">
+        </childnode>
+      </node>
+      <node id="8725">
+        <label>Computer Graphics/Source/Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="8726" relation="include">
+        </childnode>
+        <childnode refid="8728" relation="include">
+        </childnode>
+        <childnode refid="8729" relation="include">
+        </childnode>
+      </node>
+      <node id="8731">
+        <label>Computer Graphics/Source/GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="8732" relation="include">
+        </childnode>
+        <childnode refid="8738" relation="include">
+        </childnode>
+        <childnode refid="8740" relation="include">
+        </childnode>
+        <childnode refid="8710" relation="include">
+        </childnode>
+        <childnode refid="8709" relation="include">
+        </childnode>
+        <childnode refid="8742" relation="include">
+        </childnode>
+        <childnode refid="8743" relation="include">
+        </childnode>
+        <childnode refid="8745" relation="include">
+        </childnode>
+        <childnode refid="8747" relation="include">
+        </childnode>
+        <childnode refid="8749" relation="include">
+        </childnode>
+        <childnode refid="8722" relation="include">
+        </childnode>
+        <childnode refid="8751" relation="include">
+        </childnode>
+      </node>
+      <node id="8721">
+        <label>Computer Graphics/Source/SpaceVehicles.cpp</label>
+        <link refid="SpaceVehicles_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMusic" prot="public">Music</innerclass>
+    <briefdescription>
+<para>Class to define the music. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MUSIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MUSIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../irrKlang/include/irrKlang.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::ifstream;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="35" refid="classMusic" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMusic" kindref="compound">Music</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1ab5143f67c021bc77894c8e91de2b916b" kindref="member">Music</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1a0b4f3b9a018207e0c08003505f1f87fe" kindref="member">~Music</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMusic_1a8b63084b9964d4a587ac610f6ac00053" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classMusic_1ab085cbc57d1ceb8151952e37953120c8" kindref="member">readFromText</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>link);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMusic_1a3f78d938063364faad5374958191cabf" kindref="member">OpeningMusic</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>loop);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISoundEngine" kindref="compound">irrklang::ISoundEngine</ref>*<sp/><ref refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" kindref="member">engine</ref>;</highlight></codeline>
+<codeline lineno="46" refid="classMusic_1a53c1e4ba945ef9f7491cf2b981e75bd6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;irrklang::ISoundSource*&gt;<sp/><ref refid="classMusic_1a53c1e4ba945ef9f7491cf2b981e75bd6" kindref="member">sound</ref>;</highlight></codeline>
+<codeline lineno="47" refid="classMusic_1a07f4919ac591765f088714ac8d09d662" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classMusic_1a07f4919ac591765f088714ac8d09d662" kindref="member">musicVec</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Music.h"/>
+  </compounddef>
+</doxygen>

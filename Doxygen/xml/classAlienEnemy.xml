@@ -1,0 +1,531 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classAlienEnemy" kind="class" language="C++" prot="public">
+    <compoundname>AlienEnemy</compoundname>
+    <basecompoundref refid="classAlien" prot="public" virt="non-virtual">Alien</basecompoundref>
+    <derivedcompoundref refid="classChestBurster" prot="public" virt="non-virtual">ChestBurster</derivedcompoundref>
+    <includes refid="AlienEnemy_8h" local="no">AlienEnemy.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classAlienEnemy_1a0de5a3a9d681d6be700c485e21bd717f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AlienEnemy::isTurned</definition>
+        <argsstring></argsstring>
+        <name>isTurned</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="26" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" compoundref="AlienEnemy_8cpp" startline="36" endline="42">AlienEnemy</referencedby>
+        <referencedby refid="classAlienEnemy_1a9f081cfeff02a328bde683c947f0f7d8" compoundref="AlienEnemy_8cpp" startline="60" endline="78">translateWorm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1a9f171ba121b72b14b07e5aa9ec298164" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::turnSpeed</definition>
+        <argsstring></argsstring>
+        <name>turnSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="27" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" compoundref="AlienEnemy_8cpp" startline="36" endline="42">AlienEnemy</referencedby>
+        <referencedby refid="classAlienEnemy_1a9f081cfeff02a328bde683c947f0f7d8" compoundref="AlienEnemy_8cpp" startline="60" endline="78">translateWorm</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classAlienEnemy_1aaf14e8a716db50485913cfb498f357c0" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::wormtranslating</definition>
+        <argsstring></argsstring>
+        <name>wormtranslating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="34" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" compoundref="AlienEnemy_8cpp" startline="36" endline="42">AlienEnemy</referencedby>
+        <referencedby refid="classAlienEnemy_1a0d3273c668b95c89576b9fd06571d075" compoundref="AlienEnemy_8cpp" startline="86" endline="106">move</referencedby>
+        <referencedby refid="classSp2__Scene3_1aaf2c3e791d4ccba1e3b1e76d9df0d9bb" compoundref="SP2__Scene3_8cpp" startline="1251" endline="1267">Sp2_Scene3::RenderChestBurster</referencedby>
+        <referencedby refid="classSp2__Scene3_1aee8c1d7c9bd31063ba0f0a0f8c0eb10f" compoundref="SP2__Scene3_8cpp" startline="1269" endline="1285">Sp2_Scene3::RenderChestBurster1</referencedby>
+        <referencedby refid="classSp2__Scene3_1a485e611aa8f811d187cbf0f444ae8704" compoundref="SP2__Scene3_8cpp" startline="1287" endline="1302">Sp2_Scene3::RenderNecromancer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1a2ae75db580e2fdefa2345be34bc63e09" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::wormrotating</definition>
+        <argsstring></argsstring>
+        <name>wormrotating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="35" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" compoundref="AlienEnemy_8cpp" startline="36" endline="42">AlienEnemy</referencedby>
+        <referencedby refid="classAlienEnemy_1a0d3273c668b95c89576b9fd06571d075" compoundref="AlienEnemy_8cpp" startline="86" endline="106">move</referencedby>
+        <referencedby refid="classSp2__Scene3_1aaf2c3e791d4ccba1e3b1e76d9df0d9bb" compoundref="SP2__Scene3_8cpp" startline="1251" endline="1267">Sp2_Scene3::RenderChestBurster</referencedby>
+        <referencedby refid="classSp2__Scene3_1aee8c1d7c9bd31063ba0f0a0f8c0eb10f" compoundref="SP2__Scene3_8cpp" startline="1269" endline="1285">Sp2_Scene3::RenderChestBurster1</referencedby>
+        <referencedby refid="classSp2__Scene3_1a485e611aa8f811d187cbf0f444ae8704" compoundref="SP2__Scene3_8cpp" startline="1287" endline="1302">Sp2_Scene3::RenderNecromancer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1ad02ab67fb5af0e01fae8c61d78c01e7b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::wormtranslate</definition>
+        <argsstring></argsstring>
+        <name>wormtranslate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="36" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" compoundref="AlienEnemy_8cpp" startline="36" endline="42">AlienEnemy</referencedby>
+        <referencedby refid="classAlienEnemy_1a0d3273c668b95c89576b9fd06571d075" compoundref="AlienEnemy_8cpp" startline="86" endline="106">move</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1a239f3a8776309e9bf27995dc30424015" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::wormrotate</definition>
+        <argsstring></argsstring>
+        <name>wormrotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="37" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" compoundref="AlienEnemy_8cpp" startline="36" endline="42">AlienEnemy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1af8d8c9670b78ba9cbaf2322c036c2632" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::necroTranslating</definition>
+        <argsstring></argsstring>
+        <name>necroTranslating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="39" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1a81302de7a7e31a377a352b5c20665e39" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::necroRotating</definition>
+        <argsstring></argsstring>
+        <name>necroRotating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="40" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1af65b16e22a876bb64b1bc0931d12efcc" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::necroTranslate</definition>
+        <argsstring></argsstring>
+        <name>necroTranslate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="41" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAlienEnemy_1ad4920829a11d4bc90a4e3b12570fe36e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AlienEnemy::necroRotate</definition>
+        <argsstring></argsstring>
+        <name>necroRotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="42" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classAlienEnemy_1a3828b322341fedff782cc563cdb9a073" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AlienEnemy::AlienEnemy</definition>
+        <argsstring>()</argsstring>
+        <name>AlienEnemy</name>
+        <briefdescription>
+<para>default constructor for <ref refid="classAlienEnemy" kindref="compound">AlienEnemy</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="29" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AlienEnemy::AlienEnemy</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0))</argsstring>
+        <name>AlienEnemy</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <briefdescription>
+<para>Setting the speed and translation of up and down. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of alien </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boundary - boundary of the alien </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>float</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>viewAngle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="structVector3" kindref="compound">Vector3</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pos - Appoints the xyz position of the alien</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+/* </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="30" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.cpp" bodystart="36" bodyend="42"/>
+        <references refid="classAlienEnemy_1a0de5a3a9d681d6be700c485e21bd717f" compoundref="AlienEnemy_8h" startline="26">isTurned</references>
+        <references refid="classAlienEnemy_1a9f171ba121b72b14b07e5aa9ec298164" compoundref="AlienEnemy_8h" startline="27">turnSpeed</references>
+        <references refid="classAlienEnemy_1a239f3a8776309e9bf27995dc30424015" compoundref="AlienEnemy_8h" startline="37">wormrotate</references>
+        <references refid="classAlienEnemy_1a2ae75db580e2fdefa2345be34bc63e09" compoundref="AlienEnemy_8h" startline="35">wormrotating</references>
+        <references refid="classAlienEnemy_1ad02ab67fb5af0e01fae8c61d78c01e7b" compoundref="AlienEnemy_8h" startline="36">wormtranslate</references>
+        <references refid="classAlienEnemy_1aaf14e8a716db50485913cfb498f357c0" compoundref="AlienEnemy_8h" startline="34">wormtranslating</references>
+      </memberdef>
+      <memberdef kind="function" id="classAlienEnemy_1a051af8dbed413643a25995c9d2b436f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AlienEnemy::~AlienEnemy</definition>
+        <argsstring>()</argsstring>
+        <name>~AlienEnemy</name>
+        <briefdescription>
+<para><ref refid="classAlienEnemy" kindref="compound">AlienEnemy</ref>&apos;s default destructor decrements count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="31" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classAlienEnemy_1a9f081cfeff02a328bde683c947f0f7d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AlienEnemy::translateWorm</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>translateWorm</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>This makes the worm go up and down. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dt - To be put in update() </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="32" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.cpp" bodystart="60" bodyend="78"/>
+        <references refid="classAlienEnemy_1a0de5a3a9d681d6be700c485e21bd717f" compoundref="AlienEnemy_8h" startline="26">isTurned</references>
+        <references refid="classAlienEnemy_1a9f171ba121b72b14b07e5aa9ec298164" compoundref="AlienEnemy_8h" startline="27">turnSpeed</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classAlienEnemy_1a0d3273c668b95c89576b9fd06571d075" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AlienEnemy::move</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>move</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>This allows the worm to move forward to a specific location and then rotate 180 degrees to backtrack. (non - stop) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dt - To be put in update() </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/AlienEnemy.h" line="33" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.cpp" bodystart="86" bodyend="106"/>
+        <references refid="classAlienEnemy_1a2ae75db580e2fdefa2345be34bc63e09" compoundref="AlienEnemy_8h" startline="35">wormrotating</references>
+        <references refid="classAlienEnemy_1ad02ab67fb5af0e01fae8c61d78c01e7b" compoundref="AlienEnemy_8h" startline="36">wormtranslate</references>
+        <references refid="classAlienEnemy_1aaf14e8a716db50485913cfb498f357c0" compoundref="AlienEnemy_8h" startline="34">wormtranslating</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Allows AlienEnemies to move ( inherits from <ref refid="classAlien" kindref="compound">Alien</ref> ) /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classAlienEnemy" kindref="compound">AlienEnemy</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="728">
+        <label>ChestBurster</label>
+        <link refid="classChestBurster"/>
+        <childnode refid="724" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="725">
+        <label>Alien</label>
+        <link refid="classAlien"/>
+        <childnode refid="726" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="727">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="724">
+        <label>AlienEnemy</label>
+        <link refid="classAlienEnemy"/>
+        <childnode refid="725" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="726">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="727" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="737">
+        <label>static size_t</label>
+      </node>
+      <node id="738">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="736">
+        <label>string</label>
+      </node>
+      <node id="733">
+        <label>float</label>
+      </node>
+      <node id="735">
+        <label>int</label>
+      </node>
+      <node id="742">
+        <label>vector&lt; bool &gt;</label>
+      </node>
+      <node id="741">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="735" relation="usage">
+          <edgelabel>numTasks</edgelabel>
+        </childnode>
+        <childnode refid="736" relation="usage">
+          <edgelabel>questName</edgelabel>
+        </childnode>
+        <childnode refid="738" relation="usage">
+          <edgelabel>taskNames</edgelabel>
+        </childnode>
+        <childnode refid="742" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="730">
+        <label>Alien</label>
+        <link refid="classAlien"/>
+        <childnode refid="731" relation="public-inheritance">
+        </childnode>
+        <childnode refid="733" relation="usage">
+          <edgelabel>f_scaleBig</edgelabel>
+        </childnode>
+        <childnode refid="739" relation="usage">
+          <edgelabel>b_scaleUp</edgelabel>
+        </childnode>
+        <childnode refid="737" relation="usage">
+          <edgelabel>alien_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="740">
+        <label>unsigned</label>
+      </node>
+      <node id="732">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="733" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="734" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="735" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="736" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="737" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="739">
+        <label>bool</label>
+      </node>
+      <node id="729">
+        <label>AlienEnemy</label>
+        <link refid="classAlienEnemy"/>
+        <childnode refid="730" relation="public-inheritance">
+        </childnode>
+        <childnode refid="733" relation="usage">
+          <edgelabel>wormtranslate</edgelabel>
+          <edgelabel>wormrotate</edgelabel>
+          <edgelabel>necroTranslating</edgelabel>
+          <edgelabel>necroRotate</edgelabel>
+          <edgelabel>turnSpeed</edgelabel>
+          <edgelabel>necroTranslate</edgelabel>
+          <edgelabel>necroRotating</edgelabel>
+          <edgelabel>wormrotating</edgelabel>
+          <edgelabel>wormtranslating</edgelabel>
+        </childnode>
+        <childnode refid="739" relation="usage">
+          <edgelabel>isTurned</edgelabel>
+        </childnode>
+      </node>
+      <node id="731">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="732" relation="public-inheritance">
+        </childnode>
+        <childnode refid="735" relation="usage">
+          <edgelabel>dialogue_index</edgelabel>
+          <edgelabel>chat_boundary</edgelabel>
+        </childnode>
+        <childnode refid="738" relation="usage">
+          <edgelabel>vec_dialog</edgelabel>
+        </childnode>
+        <childnode refid="739" relation="usage">
+          <edgelabel>b_dialogueEnd</edgelabel>
+          <edgelabel>isPressed</edgelabel>
+          <edgelabel>b_indexDebounce</edgelabel>
+          <edgelabel>invulnerability</edgelabel>
+        </childnode>
+        <childnode refid="740" relation="usage">
+          <edgelabel>max_health</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="737" relation="usage">
+          <edgelabel>GC_count</edgelabel>
+        </childnode>
+        <childnode refid="741" relation="usage">
+          <edgelabel>quest</edgelabel>
+        </childnode>
+      </node>
+      <node id="734">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="733" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/AlienEnemy.h" line="25" column="1" bodyfile="Computer Graphics/Source/AlienEnemy.h" bodystart="24" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classAlien_1af4b2bc9e4071152d6aead3be07fa9690" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>Alien</name></member>
+      <member refid="classAlien_1a9550f2b1259cba8e462ec95a185a54d8" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>Alien</name></member>
+      <member refid="classAlien_1a8cf4f44c1a13d3f94aeb18979f20d3b0" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>alien_count</name></member>
+      <member refid="classAlienEnemy_1a3828b322341fedff782cc563cdb9a073" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>AlienEnemy</name></member>
+      <member refid="classAlienEnemy_1a3ebae690aa54dd3ababbcde58c267e66" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>AlienEnemy</name></member>
+      <member refid="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>assignQuest</name></member>
+      <member refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>b_dialogueEnd</name></member>
+      <member refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>b_indexDebounce</name></member>
+      <member refid="classAlien_1a6ada38d7d60bcb5f143c19b9d0e5c8b3" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>b_scaleUp</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>boundary</name></member>
+      <member refid="classGameChar_1a696bae70c00267e3e510330073aa2502" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>chat_boundary</name></member>
+      <member refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>chat_update</name></member>
+      <member refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>dialogue_index</name></member>
+      <member refid="classAlien_1ac1d11f58ce8f20cc9c76089b1da41a9a" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>f_scaleBig</name></member>
+      <member refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" prot="protected" virt="non-virtual"><scope>AlienEnemy</scope><name>GameChar</name></member>
+      <member refid="classGameChar_1ae15f329bb71a20fe4083b07702f73658" prot="protected" virt="non-virtual"><scope>AlienEnemy</scope><name>GameChar</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>AlienEnemy</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>AlienEnemy</scope><name>GameObject</name></member>
+      <member refid="classGameChar_1a64f572d829f790537947d7ec566035de" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>GC_count</name></member>
+      <member refid="classGameChar_1af269122fc55f796480526e528d7df914" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>getHealth</name></member>
+      <member refid="classGameChar_1a5d065602468049316d1108925cede374" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>getHealthString</name></member>
+      <member refid="classGameChar_1a3e719d888ab88c36961827985897f24c" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>isDead</name></member>
+      <member refid="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>isPressed</name></member>
+      <member refid="classAlienEnemy_1a0de5a3a9d681d6be700c485e21bd717f" prot="private" virt="non-virtual"><scope>AlienEnemy</scope><name>isTurned</name></member>
+      <member refid="classAlienEnemy_1a0d3273c668b95c89576b9fd06571d075" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>move</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>name</name></member>
+      <member refid="classAlienEnemy_1ad4920829a11d4bc90a4e3b12570fe36e" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>necroRotate</name></member>
+      <member refid="classAlienEnemy_1a81302de7a7e31a377a352b5c20665e39" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>necroRotating</name></member>
+      <member refid="classAlienEnemy_1af65b16e22a876bb64b1bc0931d12efcc" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>necroTranslate</name></member>
+      <member refid="classAlienEnemy_1af8d8c9670b78ba9cbaf2322c036c2632" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>necroTranslating</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>pos</name></member>
+      <member refid="classAlien_1acbc7782045dd10b74d0b1b455dfe76a7" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>pulsingUpdate</name></member>
+      <member refid="classGameChar_1a931f5a592835d5beb15617c1f461ad09" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>quest</name></member>
+      <member refid="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>ReadFromTxt</name></member>
+      <member refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>recieveHealthDamage</name></member>
+      <member refid="classGameChar_1a9acf18e780626b55712297ba5c07ad94" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>regainHealth</name></member>
+      <member refid="classAlienEnemy_1a9f081cfeff02a328bde683c947f0f7d8" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>translateWorm</name></member>
+      <member refid="classAlienEnemy_1a9f171ba121b72b14b07e5aa9ec298164" prot="private" virt="non-virtual"><scope>AlienEnemy</scope><name>turnSpeed</name></member>
+      <member refid="classGameChar_1aecf445b212b38680333591507fec1b9c" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>vec_dialog</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>viewAngle</name></member>
+      <member refid="classAlienEnemy_1a239f3a8776309e9bf27995dc30424015" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>wormrotate</name></member>
+      <member refid="classAlienEnemy_1a2ae75db580e2fdefa2345be34bc63e09" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>wormrotating</name></member>
+      <member refid="classAlienEnemy_1ad02ab67fb5af0e01fae8c61d78c01e7b" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>wormtranslate</name></member>
+      <member refid="classAlienEnemy_1aaf14e8a716db50485913cfb498f357c0" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>wormtranslating</name></member>
+      <member refid="classAlien_1a7cdfd79d84b51a18003bf41585aedd43" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>~Alien</name></member>
+      <member refid="classAlienEnemy_1a051af8dbed413643a25995c9d2b436f9" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>~AlienEnemy</name></member>
+      <member refid="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" prot="public" virt="non-virtual"><scope>AlienEnemy</scope><name>~GameChar</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>AlienEnemy</scope><name>~GameObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,26 @@
+digraph "irrklang::SAudioStreamFormat::getSampleSize"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="irrklang::SAudioStreamFormat\l::getSampleSize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="irrklang::SAudioStreamFormat\l::getFrameSize",height=0.2,width=0.4,color="black",URL="$structirrklang_1_1SAudioStreamFormat.html#adbd8ce7f570a0c252d8aa74a3c444adb",tooltip="returns the frame size of the stream data in bytes "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="irrklang::CIrrKlangAudio\lStreamMP3::decodeFrame",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#a0694b0e9c0ca306701236b660a11633d"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="irrklang::CIrrKlangAudio\lStreamMP3::CIrrKlangAudioStreamMP3",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#aa0525477376ae287275da88a17f4825d"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="irrklang::CIrrKlangAudio\lStreamMP3::readFrames",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#a85374ba5ed9178fa74dd256d59018ca0",tooltip="tells the audio stream to read n audio frames into the specified buffer "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="irrklang::CIrrKlangAudio\lStreamMP3::setPosition",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#ae615c171d074153463af08a11118ceaf",tooltip="sets the position of the audio stream. "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="irrklang::SAudioStreamFormat\l::getBytesPerSecond",height=0.2,width=0.4,color="black",URL="$structirrklang_1_1SAudioStreamFormat.html#a9c6e9369bb5e519600915fd13b00e116",tooltip="returns amount of bytes per second "];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="irrklang::SAudioStreamFormat\l::getSampleDataSize",height=0.2,width=0.4,color="black",URL="$structirrklang_1_1SAudioStreamFormat.html#aa673b99a0023bf949830b26fe79952cf",tooltip="returns the size of the sample data in bytes "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

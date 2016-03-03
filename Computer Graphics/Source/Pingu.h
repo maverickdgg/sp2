@@ -16,7 +16,12 @@ Class to define Pingu NPC inheriting from GameChar
 #define PINGU_H
 
 #include "GameChar.h"
-
+/******************************************************************************/
+/*!
+Class BB8:
+\brief
+Class for the Pingu NPC ( Inherits from GameChar )
+/******************************************************************************/
 class Pingu :public GameChar
 {
 public:

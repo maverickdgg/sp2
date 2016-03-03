@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classSir" kind="class" language="C++" prot="public">
+    <compoundname>Sir</compoundname>
+    <basecompoundref refid="classGameChar" prot="public" virt="non-virtual">GameChar</basecompoundref>
+    <includes refid="Sir_8h" local="no">Sir.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSir_1a1965f9a22df1a098f41f31f8559549df" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Sir::isTurned</definition>
+        <argsstring></argsstring>
+        <name>isTurned</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Sir.h" line="26" column="1" bodyfile="Computer Graphics/Source/Sir.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classSir_1afac5147d417fcd73dae1e03c5d0e0167" compoundref="Sir_8cpp" startline="57" endline="75">Salute</referencedby>
+        <referencedby refid="classSir_1a37eb84603c98f1685580f8d115f9faad" compoundref="Sir_8cpp" startline="34" endline="38">Sir</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSir_1a7dcf75c0fa46aca216fa2be598a57baa" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Sir::turnSpeed</definition>
+        <argsstring></argsstring>
+        <name>turnSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Sir.h" line="27" column="1" bodyfile="Computer Graphics/Source/Sir.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classSir_1afac5147d417fcd73dae1e03c5d0e0167" compoundref="Sir_8cpp" startline="57" endline="75">Salute</referencedby>
+        <referencedby refid="classSir_1a37eb84603c98f1685580f8d115f9faad" compoundref="Sir_8cpp" startline="34" endline="38">Sir</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSir_1a6af9b95a0410e5dbe22cefde2ef3d4a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sir::Sir</definition>
+        <argsstring>()</argsstring>
+        <name>Sir</name>
+        <briefdescription>
+<para><ref refid="classSir" kindref="compound">Sir</ref>&apos;s default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Sir.h" line="29" column="1" bodyfile="Computer Graphics/Source/Sir.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classSir_1a37eb84603c98f1685580f8d115f9faad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sir::Sir</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0))</argsstring>
+        <name>Sir</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classSir" kindref="compound">Sir</ref>&apos;s overloaded constructor with parameters as well as turning speed and boolen isTurned being set to false. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object_name, int boundary, flaot viewAngle, <ref refid="structVector3" kindref="compound">Vector3</ref> pos </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Sir.h" line="30" column="1" bodyfile="Computer Graphics/Source/Sir.cpp" bodystart="34" bodyend="38"/>
+        <references refid="classSir_1a1965f9a22df1a098f41f31f8559549df" compoundref="Sir_8h" startline="26">isTurned</references>
+        <references refid="classSir_1a7dcf75c0fa46aca216fa2be598a57baa" compoundref="Sir_8h" startline="27">turnSpeed</references>
+      </memberdef>
+      <memberdef kind="function" id="classSir_1a8a5b1a8129211265c3c0d23d034672ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sir::~Sir</definition>
+        <argsstring>()</argsstring>
+        <name>~Sir</name>
+        <briefdescription>
+<para><ref refid="classSir" kindref="compound">Sir</ref>&apos;s default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Sir.h" line="31" column="1" bodyfile="Computer Graphics/Source/Sir.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classSir_1afac5147d417fcd73dae1e03c5d0e0167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sir::Salute</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Salute</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classSir" kindref="compound">Sir</ref> NPC will rotate his arm from -90 degrees to 90 degress and repeat the cycle. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dt </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Sir.h" line="32" column="1" bodyfile="Computer Graphics/Source/Sir.cpp" bodystart="57" bodyend="75"/>
+        <references refid="classSir_1a1965f9a22df1a098f41f31f8559549df" compoundref="Sir_8h" startline="26">isTurned</references>
+        <references refid="classSir_1a7dcf75c0fa46aca216fa2be598a57baa" compoundref="Sir_8h" startline="27">turnSpeed</references>
+        <references refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" compoundref="GameObject_8h" startline="51">GameObject::viewAngle</references>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="classSir" kindref="compound">Sir</ref> NPC ( Inherits from <ref refid="classGameChar" kindref="compound">GameChar</ref> ) /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classBB8" kindref="compound">BB8</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1221">
+        <label>Sir</label>
+        <link refid="classSir"/>
+        <childnode refid="1222" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1223">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="1222">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="1223" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1231">
+        <label>static size_t</label>
+      </node>
+      <node id="1232">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="1230">
+        <label>string</label>
+      </node>
+      <node id="1227">
+        <label>float</label>
+      </node>
+      <node id="1229">
+        <label>int</label>
+      </node>
+      <node id="1236">
+        <label>vector&lt; bool &gt;</label>
+      </node>
+      <node id="1235">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="1229" relation="usage">
+          <edgelabel>numTasks</edgelabel>
+        </childnode>
+        <childnode refid="1230" relation="usage">
+          <edgelabel>questName</edgelabel>
+        </childnode>
+        <childnode refid="1232" relation="usage">
+          <edgelabel>taskNames</edgelabel>
+        </childnode>
+        <childnode refid="1236" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="1234">
+        <label>unsigned</label>
+      </node>
+      <node id="1224">
+        <label>Sir</label>
+        <link refid="classSir"/>
+        <childnode refid="1225" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1227" relation="usage">
+          <edgelabel>turnSpeed</edgelabel>
+        </childnode>
+        <childnode refid="1233" relation="usage">
+          <edgelabel>isTurned</edgelabel>
+        </childnode>
+      </node>
+      <node id="1226">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="1227" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="1228" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="1229" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="1230" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1231" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="1233">
+        <label>bool</label>
+      </node>
+      <node id="1225">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="1226" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1229" relation="usage">
+          <edgelabel>dialogue_index</edgelabel>
+          <edgelabel>chat_boundary</edgelabel>
+        </childnode>
+        <childnode refid="1232" relation="usage">
+          <edgelabel>vec_dialog</edgelabel>
+        </childnode>
+        <childnode refid="1233" relation="usage">
+          <edgelabel>b_dialogueEnd</edgelabel>
+          <edgelabel>isPressed</edgelabel>
+          <edgelabel>b_indexDebounce</edgelabel>
+          <edgelabel>invulnerability</edgelabel>
+        </childnode>
+        <childnode refid="1234" relation="usage">
+          <edgelabel>max_health</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="1231" relation="usage">
+          <edgelabel>GC_count</edgelabel>
+        </childnode>
+        <childnode refid="1235" relation="usage">
+          <edgelabel>quest</edgelabel>
+        </childnode>
+      </node>
+      <node id="1228">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1227" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Sir.h" line="25" column="1" bodyfile="Computer Graphics/Source/Sir.h" bodystart="24" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" prot="public" virt="non-virtual"><scope>Sir</scope><name>assignQuest</name></member>
+      <member refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" prot="public" virt="non-virtual"><scope>Sir</scope><name>b_dialogueEnd</name></member>
+      <member refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" prot="public" virt="non-virtual"><scope>Sir</scope><name>b_indexDebounce</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>Sir</scope><name>boundary</name></member>
+      <member refid="classGameChar_1a696bae70c00267e3e510330073aa2502" prot="public" virt="non-virtual"><scope>Sir</scope><name>chat_boundary</name></member>
+      <member refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" prot="public" virt="non-virtual"><scope>Sir</scope><name>chat_update</name></member>
+      <member refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" prot="public" virt="non-virtual"><scope>Sir</scope><name>dialogue_index</name></member>
+      <member refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" prot="protected" virt="non-virtual"><scope>Sir</scope><name>GameChar</name></member>
+      <member refid="classGameChar_1ae15f329bb71a20fe4083b07702f73658" prot="protected" virt="non-virtual"><scope>Sir</scope><name>GameChar</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>Sir</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>Sir</scope><name>GameObject</name></member>
+      <member refid="classGameChar_1a64f572d829f790537947d7ec566035de" prot="public" virt="non-virtual"><scope>Sir</scope><name>GC_count</name></member>
+      <member refid="classGameChar_1af269122fc55f796480526e528d7df914" prot="public" virt="non-virtual"><scope>Sir</scope><name>getHealth</name></member>
+      <member refid="classGameChar_1a5d065602468049316d1108925cede374" prot="public" virt="non-virtual"><scope>Sir</scope><name>getHealthString</name></member>
+      <member refid="classGameChar_1a3e719d888ab88c36961827985897f24c" prot="public" virt="non-virtual"><scope>Sir</scope><name>isDead</name></member>
+      <member refid="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" prot="public" virt="non-virtual"><scope>Sir</scope><name>isPressed</name></member>
+      <member refid="classSir_1a1965f9a22df1a098f41f31f8559549df" prot="private" virt="non-virtual"><scope>Sir</scope><name>isTurned</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>Sir</scope><name>name</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>Sir</scope><name>pos</name></member>
+      <member refid="classGameChar_1a931f5a592835d5beb15617c1f461ad09" prot="public" virt="non-virtual"><scope>Sir</scope><name>quest</name></member>
+      <member refid="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" prot="public" virt="non-virtual"><scope>Sir</scope><name>ReadFromTxt</name></member>
+      <member refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" prot="public" virt="non-virtual"><scope>Sir</scope><name>recieveHealthDamage</name></member>
+      <member refid="classGameChar_1a9acf18e780626b55712297ba5c07ad94" prot="public" virt="non-virtual"><scope>Sir</scope><name>regainHealth</name></member>
+      <member refid="classSir_1afac5147d417fcd73dae1e03c5d0e0167" prot="public" virt="non-virtual"><scope>Sir</scope><name>Salute</name></member>
+      <member refid="classSir_1a6af9b95a0410e5dbe22cefde2ef3d4a0" prot="public" virt="non-virtual"><scope>Sir</scope><name>Sir</name></member>
+      <member refid="classSir_1a37eb84603c98f1685580f8d115f9faad" prot="public" virt="non-virtual"><scope>Sir</scope><name>Sir</name></member>
+      <member refid="classSir_1a7dcf75c0fa46aca216fa2be598a57baa" prot="private" virt="non-virtual"><scope>Sir</scope><name>turnSpeed</name></member>
+      <member refid="classGameChar_1aecf445b212b38680333591507fec1b9c" prot="public" virt="non-virtual"><scope>Sir</scope><name>vec_dialog</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>Sir</scope><name>viewAngle</name></member>
+      <member refid="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" prot="public" virt="non-virtual"><scope>Sir</scope><name>~GameChar</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>Sir</scope><name>~GameObject</name></member>
+      <member refid="classSir_1a8a5b1a8129211265c3c0d23d034672ea" prot="public" virt="non-virtual"><scope>Sir</scope><name>~Sir</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

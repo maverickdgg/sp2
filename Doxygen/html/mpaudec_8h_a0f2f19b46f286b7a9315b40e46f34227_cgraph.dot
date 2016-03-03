@@ -1,0 +1,18 @@
+digraph "mpaudec_init"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="mpaudec_init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="init_vlc",height=0.2,width=0.4,color="black",URL="$bits_8c.html#a17ce557803d3a49257e6fb289d43dfee"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="build_table",height=0.2,width=0.4,color="black",URL="$bits_8c.html#a452b9ed664f9e1b5ca6e12292e184e32"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="alloc_table",height=0.2,width=0.4,color="black",URL="$bits_8c.html#a3d11308e2c23c39139ae637124c8dd9d"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="int_pow",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#ad19555572a4583ac8af52fcaf58a2c87"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="int_pow_init",height=0.2,width=0.4,color="black",URL="$mpaudec_8c.html#a23a825ca0fd958323342fced3275c436"];
+}

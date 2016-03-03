@@ -271,6 +271,7 @@ void Sp2_SpaceRace::Update(double dt)
 	{
 		player.pos = indexToVector(toIndex(12, 12));
 		Application::switchToScene1();
+		Application::playSound(2, false);
 	}
 	
 
@@ -872,7 +873,6 @@ void Sp2_SpaceRace::Renderfps()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "1", Color(0, 1, 0), 10, 3, 3);
 	}
-
 	if (b_raceEnd == true)
 	{
 		if (win == true)
@@ -880,7 +880,6 @@ void Sp2_SpaceRace::Renderfps()
 		else if (win == false)
 			RenderTextOnScreen(meshList[GEO_TEXT], "YOU LOSE! TRY AGAIN!", Color(0, 1, 0), 3, 1, 10);
 	}
-
 	if (b_raceEnd2 == true)
 	{
 		if (win == true)
@@ -949,7 +948,7 @@ void Sp2_SpaceRace::Rendertps()
 			RenderTextOnScreen(meshList[GEO_TEXT], "2nd", Color(0, 1, 0), 3, 1, 17);
 	}
 
-
+	
 	if (b_raceBegin2 == true && f_raceCountdown > 4)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "3", Color(0, 1, 0), 10, 3, 3);
@@ -962,7 +961,6 @@ void Sp2_SpaceRace::Rendertps()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "1", Color(0, 1, 0), 10, 3, 3);
 	}
-
 	if (b_raceEnd2 == true)
 	{
 		if (win == false)

@@ -1,0 +1,636 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Collision_8h" kind="file" language="C++">
+    <compoundname>Collision.h</compoundname>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <includedby refid="Collision_8cpp" local="yes">Computer Graphics/Source/Collision.cpp</includedby>
+    <includedby refid="GameChar_8h" local="yes">Computer Graphics/Source/GameChar.h</includedby>
+    <includedby refid="Player_8h" local="yes">Computer Graphics/Source/Player.h</includedby>
+    <includedby refid="SP2__Scene3_8cpp" local="yes">Computer Graphics/Source/SP2_Scene3.cpp</includedby>
+    <incdepgraph>
+      <node id="7812">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7807" relation="include">
+        </childnode>
+        <childnode refid="7813" relation="include">
+        </childnode>
+      </node>
+      <node id="7801">
+        <label>Computer Graphics/Source/Collision.h</label>
+        <link refid="Collision.h"/>
+        <childnode refid="7802" relation="include">
+        </childnode>
+      </node>
+      <node id="7808">
+        <label>cmath</label>
+      </node>
+      <node id="7804">
+        <label>string</label>
+      </node>
+      <node id="7807">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7808" relation="include">
+        </childnode>
+        <childnode refid="7809" relation="include">
+        </childnode>
+        <childnode refid="7810" relation="include">
+        </childnode>
+        <childnode refid="7811" relation="include">
+        </childnode>
+      </node>
+      <node id="7802">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="7803" relation="include">
+        </childnode>
+        <childnode refid="7804" relation="include">
+        </childnode>
+        <childnode refid="7805" relation="include">
+        </childnode>
+        <childnode refid="7806" relation="include">
+        </childnode>
+        <childnode refid="7807" relation="include">
+        </childnode>
+        <childnode refid="7812" relation="include">
+        </childnode>
+      </node>
+      <node id="7809">
+        <label>exception</label>
+      </node>
+      <node id="7806">
+        <label>fstream</label>
+      </node>
+      <node id="7810">
+        <label>ctime</label>
+      </node>
+      <node id="7805">
+        <label>vector</label>
+      </node>
+      <node id="7803">
+        <label>sstream</label>
+      </node>
+      <node id="7811">
+        <label>cstdlib</label>
+      </node>
+      <node id="7813">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7835">
+        <label>Computer Graphics/Source/Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="7833" relation="include">
+        </childnode>
+        <childnode refid="7836" relation="include">
+        </childnode>
+        <childnode refid="7840" relation="include">
+        </childnode>
+        <childnode refid="7842" relation="include">
+        </childnode>
+        <childnode refid="7827" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+      </node>
+      <node id="7840">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform_8h"/>
+        <childnode refid="7841" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+      </node>
+      <node id="7828">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="7820">
+        <label>Computer Graphics/Source/AlienEnemy.cpp</label>
+        <link refid="AlienEnemy_8cpp"/>
+      </node>
+      <node id="7832">
+        <label>Computer Graphics/Source/BB-8_2.cpp</label>
+        <link refid="BB-8__2_8cpp"/>
+      </node>
+      <node id="7843">
+        <label>Computer Graphics/Source/GameChar.cpp</label>
+        <link refid="GameChar_8cpp"/>
+      </node>
+      <node id="7829">
+        <label>Computer Graphics/Source/BB-8.h</label>
+        <link refid="BB-8_8h"/>
+        <childnode refid="7830" relation="include">
+        </childnode>
+        <childnode refid="7827" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+      </node>
+      <node id="7838">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="7831">
+        <label>Computer Graphics/Source/BB-8_2.h</label>
+        <link refid="BB-8__2_8h"/>
+        <childnode refid="7832" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+      </node>
+      <node id="7814">
+        <label>Computer Graphics/Source/Collision.h</label>
+        <link refid="Collision.h"/>
+        <childnode refid="7815" relation="include">
+        </childnode>
+        <childnode refid="7816" relation="include">
+        </childnode>
+        <childnode refid="7835" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+      </node>
+      <node id="7844">
+        <label>Computer Graphics/Source/Human.h</label>
+        <link refid="Human_8h"/>
+        <childnode refid="7845" relation="include">
+        </childnode>
+        <childnode refid="7827" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+      </node>
+      <node id="7853">
+        <label>Computer Graphics/Source/Sir.cpp</label>
+        <link refid="Sir_8cpp"/>
+      </node>
+      <node id="7825">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="7826" relation="include">
+        </childnode>
+      </node>
+      <node id="7846">
+        <label>Computer Graphics/Source/Medic.h</label>
+        <link refid="Medic_8h"/>
+        <childnode refid="7847" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+      </node>
+      <node id="7824">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="7830">
+        <label>Computer Graphics/Source/BB-8.cpp</label>
+        <link refid="BB-8_8cpp"/>
+      </node>
+      <node id="7848">
+        <label>Computer Graphics/Source/Pingu.h</label>
+        <link refid="Pingu_8h"/>
+        <childnode refid="7849" relation="include">
+        </childnode>
+        <childnode refid="7827" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+      </node>
+      <node id="7817">
+        <label>Computer Graphics/Source/Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="7818" relation="include">
+        </childnode>
+        <childnode refid="7819" relation="include">
+        </childnode>
+        <childnode refid="7827" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+      </node>
+      <node id="7833">
+        <label>Computer Graphics/Source/Buildings.h</label>
+        <link refid="Buildings_8h"/>
+        <childnode refid="7834" relation="include">
+        </childnode>
+        <childnode refid="7827" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+      </node>
+      <node id="7842">
+        <label>Computer Graphics/Source/Player.cpp</label>
+        <link refid="Player_8cpp"/>
+      </node>
+      <node id="7823">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="7824" relation="include">
+        </childnode>
+      </node>
+      <node id="7849">
+        <label>Computer Graphics/Source/Pingu.cpp</label>
+        <link refid="Pingu_8cpp"/>
+      </node>
+      <node id="7851">
+        <label>Computer Graphics/Source/PinkKnight.cpp</label>
+        <link refid="PinkKnight_8cpp"/>
+      </node>
+      <node id="7818">
+        <label>Computer Graphics/Source/Alien.cpp</label>
+        <link refid="Alien_8cpp"/>
+      </node>
+      <node id="7827">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="7828" relation="include">
+        </childnode>
+      </node>
+      <node id="7852">
+        <label>Computer Graphics/Source/Sir.h</label>
+        <link refid="Sir_8h"/>
+        <childnode refid="7853" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7824" relation="include">
+        </childnode>
+      </node>
+      <node id="7822">
+        <label>Computer Graphics/Source/ChestBurster.cpp</label>
+        <link refid="ChestBurster_8cpp"/>
+      </node>
+      <node id="7821">
+        <label>Computer Graphics/Source/ChestBurster.h</label>
+        <link refid="ChestBurster_8h"/>
+        <childnode refid="7822" relation="include">
+        </childnode>
+      </node>
+      <node id="7850">
+        <label>Computer Graphics/Source/PinkKnight.h</label>
+        <link refid="PinkKnight_8h"/>
+        <childnode refid="7851" relation="include">
+        </childnode>
+      </node>
+      <node id="7845">
+        <label>Computer Graphics/Source/Human.cpp</label>
+        <link refid="Human_8cpp"/>
+      </node>
+      <node id="7841">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform_8cpp"/>
+      </node>
+      <node id="7826">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="7819">
+        <label>Computer Graphics/Source/AlienEnemy.h</label>
+        <link refid="AlienEnemy_8h"/>
+        <childnode refid="7820" relation="include">
+        </childnode>
+        <childnode refid="7821" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+      </node>
+      <node id="7836">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles_8h"/>
+        <childnode refid="7837" relation="include">
+        </childnode>
+        <childnode refid="7827" relation="include">
+        </childnode>
+        <childnode refid="7823" relation="include">
+        </childnode>
+        <childnode refid="7825" relation="include">
+        </childnode>
+        <childnode refid="7839" relation="include">
+        </childnode>
+      </node>
+      <node id="7834">
+        <label>Computer Graphics/Source/Buildings.cpp</label>
+        <link refid="Buildings_8cpp"/>
+      </node>
+      <node id="7847">
+        <label>Computer Graphics/Source/Medic.cpp</label>
+        <link refid="Medic_8cpp"/>
+      </node>
+      <node id="7837">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="7838" relation="include">
+        </childnode>
+      </node>
+      <node id="7815">
+        <label>Computer Graphics/Source/Collision.cpp</label>
+        <link refid="Collision_8cpp"/>
+      </node>
+      <node id="7816">
+        <label>Computer Graphics/Source/GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="7817" relation="include">
+        </childnode>
+        <childnode refid="7829" relation="include">
+        </childnode>
+        <childnode refid="7831" relation="include">
+        </childnode>
+        <childnode refid="7833" relation="include">
+        </childnode>
+        <childnode refid="7835" relation="include">
+        </childnode>
+        <childnode refid="7843" relation="include">
+        </childnode>
+        <childnode refid="7844" relation="include">
+        </childnode>
+        <childnode refid="7846" relation="include">
+        </childnode>
+        <childnode refid="7848" relation="include">
+        </childnode>
+        <childnode refid="7850" relation="include">
+        </childnode>
+        <childnode refid="7840" relation="include">
+        </childnode>
+        <childnode refid="7852" relation="include">
+        </childnode>
+      </node>
+      <node id="7839">
+        <label>Computer Graphics/Source/SpaceVehicles.cpp</label>
+        <link refid="SpaceVehicles_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Collision_8h_1a4b9eee107300119860880f48b79da32f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(GameObject x, GameObject y)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.h" line="20" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="3" bodyend="35"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classPlatform_1aa071b4d0dce24b61d13efcaede5962de" compoundref="Platform_8cpp" startline="94" endline="105">Platform::changePlatform</referencedby>
+        <referencedby refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" compoundref="GameChar_8cpp" startline="57" endline="89">GameChar::chat_update</referencedby>
+        <referencedby refid="classBuildings_1a728402f8f61318eff08b8f7afc2c1224" compoundref="Buildings_8cpp" startline="20" endline="28">Buildings::climb</referencedby>
+        <referencedby refid="Collision_8h_1ab3e33aa7ab8454d3831711e35fa18d75" compoundref="Collision_8cpp" startline="37" endline="40">collision</referencedby>
+        <referencedby refid="Collision_8h_1a9eed1fd9a880ab57e22efb89aa7696de" compoundref="Collision_8cpp" startline="121" endline="135">collisionElimination</referencedby>
+        <referencedby refid="classSpaceVehicles_1aa9b6d39171aab9ce722d8e431455895d" compoundref="SpaceVehicles_8cpp" startline="356" endline="373">SpaceVehicles::enterVehicleUpdate</referencedby>
+        <referencedby refid="classPlayer_1a5b057a6cd421a056d2a0694ab00739e7" compoundref="Player_8cpp" startline="48" endline="174">Player::movementUpdate</referencedby>
+        <referencedby refid="classPlatform_1ad5c05ad8c26e14c5d39734f0585de917" compoundref="Platform_8cpp" startline="107" endline="113">Platform::noLadderPlatform</referencedby>
+        <referencedby refid="classSp2__Scene3_1ae73b4bf302e532be99afd20b64af68c9" compoundref="SP2__Scene3_8cpp" startline="919" endline="962">Sp2_Scene3::RenderBB8v2</referencedby>
+        <referencedby refid="classSp2__Scene1_1a4db02e66df630cdf2a7e9db5e22997dc" compoundref="Sp2__Scene1_8cpp" startline="519" endline="534">Sp2_Scene1::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a4f50c06883bb7b97cef7e9ed4f7e3e4c" compoundref="Sp2__SpaceRace_8cpp" startline="619" endline="630">Sp2_SpaceRace::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene3_1a49c6705570a9aff1c073485d0f9673bd" compoundref="SP2__Scene3_8cpp" startline="901" endline="916">Sp2_Scene3::RenderGameChar</referencedby>
+        <referencedby refid="classSp2__Scene1_1aeabebe615a8a759a67df19a5d622f666" compoundref="Sp2__Scene1_8cpp" startline="477" endline="498">Sp2_Scene1::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a21eaef4ef696d83ad357ee8c0ec4bb16" compoundref="Sp2__SpaceRace_8cpp" startline="580" endline="603">Sp2_SpaceRace::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1a57f6c020216c4093a312595a01d3e35e" compoundref="SP2__Scene3_8cpp" startline="873" endline="899">Sp2_Scene3::RenderGameObj</referencedby>
+        <referencedby refid="classSp2__Scene3_1af977943490d876a299b08644b5f0ebcd" compoundref="SP2__Scene3_8cpp" startline="1176" endline="1247">Sp2_Scene3::RenderMedic</referencedby>
+        <referencedby refid="classSp2__Scene3_1a001ac341d244cfd9b1c0acb45c973263" compoundref="SP2__Scene3_8cpp" startline="964" endline="1027">Sp2_Scene3::RenderSir</referencedby>
+        <referencedby refid="classSp2__Scene3_1ab8b8ee5ac95441f935c1b4d04c3a39c2" compoundref="SP2__Scene3_8cpp" startline="815" endline="871">Sp2_Scene3::RenderSuit</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSpaceVehicles_1a71e4baf5499200c69950e56e08068ae5" compoundref="SpaceVehicles_8cpp" startline="375" endline="438">SpaceVehicles::updateCPUVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1a394c47cbc186f14df93a8c20099f87d4" compoundref="SpaceVehicles_8cpp" startline="115" endline="233">SpaceVehicles::updateVehicle</referencedby>
+        <referencedby refid="classSpaceVehicles_1aacce2932520488a8850d6c5640960e50" compoundref="SpaceVehicles_8cpp" startline="236" endline="354">SpaceVehicles::updateVehicle2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8h_1a58ec323eed74a512976d2e7233e74306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(GameObject x, vector&lt; GameObject &gt; y)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> &gt;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.h" line="21" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="94" bodyend="104"/>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8h_1ab3e33aa7ab8454d3831711e35fa18d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(GameObject x, Vector3 y, int boundary)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.h" line="22" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="37" bodyend="40"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8h_1a5972be7aad62f35daa74b25a15fc27c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(Vector3 x, Vector3 y, int boundary)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.h" line="23" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="68" bodyend="92"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8h_1a5f723bdc4ef5a9b28ee40efb0dc2668f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collision</definition>
+        <argsstring>(Vector3 x, vector&lt; GameObject * &gt; y, float boundary)</argsstring>
+        <name>collision</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> * &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.h" line="24" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="106" bodyend="119"/>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8h_1a5ced462f9fcc3c9963cdf5e0da071631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool collisionXZ</definition>
+        <argsstring>(Vector3 x, GameObject y)</argsstring>
+        <name>collisionXZ</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.h" line="25" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="42" bodyend="66"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSp2__Scene3_1a346e1aa0ed86ad3745dabf77d8725567" compoundref="SP2__Scene3_8cpp" startline="790" endline="807">Sp2_Scene3::RenderInstructions</referencedby>
+        <referencedby refid="classSp2__Scene1_1a600d17005d897d460e53c972a7f82307" compoundref="Sp2__Scene1_8cpp" startline="500" endline="517">Sp2_Scene1::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a8dae59c02fa2996a5a7793fbea6b08e7" compoundref="Sp2__SpaceRace_8cpp" startline="735" endline="752">Sp2_SpaceRace::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__Scene3_1a52aad13df08c4bddb02bbc4469e0bab7" compoundref="SP2__Scene3_8cpp" startline="1425" endline="1442">Sp2_Scene3::RenderTeleporter</referencedby>
+        <referencedby refid="classSp2__Scene1_1a7a90c62382a446cff0906a7735cbf0e8" compoundref="Sp2__Scene1_8cpp" startline="273" endline="369">Sp2_Scene1::Update</referencedby>
+        <referencedby refid="classSp2__Scene3_1a14c1432b47104cfefa352b501a6330eb" compoundref="SP2__Scene3_8cpp" startline="412" endline="672">Sp2_Scene3::Update</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="Collision_8h_1a9eed1fd9a880ab57e22efb89aa7696de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> &gt;</type>
+        <definition>vector&lt;GameObject&gt; collisionElimination</definition>
+        <argsstring>(GameObject x, vector&lt; GameObject &gt; y)</argsstring>
+        <name>collisionElimination</name>
+        <param>
+          <type><ref refid="classGameObject" kindref="compound">GameObject</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classGameObject" kindref="compound">GameObject</ref> &gt;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Collision.h" line="26" column="1" bodyfile="Computer Graphics/Source/Collision.cpp" bodystart="121" bodyend="135"/>
+        <references refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" compoundref="GameObject_8h" startline="49">GameObject::boundary</references>
+        <references refid="Collision_8cpp_1a4b9eee107300119860880f48b79da32f" compoundref="Collision_8cpp" startline="3" endline="35">collision</references>
+        <references refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" compoundref="GameObject_8h" startline="50">GameObject::pos</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class to define the overall collision for the scenes. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Jian Lin </para></simplesect>
+<simplesect kind="par"><title>Email: 150580X.nyp.edu.sg</title><para></para></simplesect>
+<simplesect kind="par"><title>Admin Number: 150580X</title><para></para></simplesect>
+<simplesect kind="par"><title>School: Nanyang Polytechnic (School of Interactive and Digital Media)</title><para></para></simplesect>
+<simplesect kind="par"><title>Diploma: Game Development and Technology</title><para></para></simplesect>
+<simplesect kind="par"><title>Class: GD1503</title><para></para></simplesect>
+<simplesect kind="par"><title>Mobile Number: 9755 2038</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COLLISION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COLLISION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/><ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>y);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/>vector&lt;GameObject&gt;<sp/>y);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>x,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8h_1a4b9eee107300119860880f48b79da32f" kindref="member">collision</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>x,<sp/>vector&lt;GameObject*&gt;<sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>boundary);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Collision_8h_1a5ced462f9fcc3c9963cdf5e0da071631" kindref="member">collisionXZ</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>x,<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>y);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">vector&lt;GameObject&gt;<sp/><ref refid="Collision_8h_1a9eed1fd9a880ab57e22efb89aa7696de" kindref="member">collisionElimination</ref>(<ref refid="classGameObject" kindref="compound">GameObject</ref><sp/>x,<sp/>vector&lt;GameObject&gt;<sp/>y);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/Collision.h"/>
+  </compounddef>
+</doxygen>

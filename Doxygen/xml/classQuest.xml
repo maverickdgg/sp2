@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classQuest" kind="class" language="C++" prot="public">
+    <compoundname>Quest</compoundname>
+    <includes refid="Quest_8h" local="no">Quest.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classQuest_1a09907fd23c24ef7768e7a3b52014b92b" prot="public" static="no" mutable="no">
+        <type>vector&lt; bool &gt;</type>
+        <definition>vector&lt;bool&gt; Quest::task</definition>
+        <argsstring></argsstring>
+        <name>task</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="36" column="1" bodyfile="Computer Graphics/Source/Quest.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classQuest_1a3d75a6a749ec0e188bc29b3e99bb67d3" compoundref="Quest_8cpp" startline="7" endline="15">Quest</referencedby>
+        <referencedby refid="classQuest_1a320aa6e7dda5476e11e78a1922d82610" compoundref="Quest_8cpp" startline="33" endline="43">questComplete</referencedby>
+        <referencedby refid="classQuest_1ab405275000a3503bf3005a3eac3bc25d" compoundref="Quest_8cpp" startline="21" endline="31">taskComplete</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1ab07079367474067390a21a7d4dcdd8ae" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Quest::numTasks</definition>
+        <argsstring></argsstring>
+        <name>numTasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="37" column="1" bodyfile="Computer Graphics/Source/Quest.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a997e5366510a3a831cd6f8c33d8a8de8" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Quest::taskNames</definition>
+        <argsstring></argsstring>
+        <name>taskNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="38" column="1" bodyfile="Computer Graphics/Source/Quest.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classQuest_1a3d75a6a749ec0e188bc29b3e99bb67d3" compoundref="Quest_8cpp" startline="7" endline="15">Quest</referencedby>
+        <referencedby refid="classQuest_1a778b6edda12b7697ffcd33413ece73bb" compoundref="Quest_8cpp" startline="46" endline="78">ReadFromTxtQuest</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1abbc4b6ff7cce8ed82a2d50db7cc91c9d" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Quest::questName</definition>
+        <argsstring></argsstring>
+        <name>questName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="39" column="1" bodyfile="Computer Graphics/Source/Quest.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classQuest_1a3d75a6a749ec0e188bc29b3e99bb67d3" compoundref="Quest_8cpp" startline="7" endline="15">Quest</referencedby>
+        <referencedby refid="classQuest_1a778b6edda12b7697ffcd33413ece73bb" compoundref="Quest_8cpp" startline="46" endline="78">ReadFromTxtQuest</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuest_1a5cdd6f02fdceaa7b7b53407740a22cf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Quest::Quest</definition>
+        <argsstring>()</argsstring>
+        <name>Quest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="33" column="1" bodyfile="Computer Graphics/Source/Quest.cpp" bodystart="3" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a3d75a6a749ec0e188bc29b3e99bb67d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Quest::Quest</definition>
+        <argsstring>(int numOfTasks, vector&lt; string &gt; names, string questName)</argsstring>
+        <name>Quest</name>
+        <param>
+          <type>int</type>
+          <declname>numOfTasks</declname>
+        </param>
+        <param>
+          <type>vector&lt; string &gt;</type>
+          <declname>names</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>questName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="34" column="1" bodyfile="Computer Graphics/Source/Quest.cpp" bodystart="7" bodyend="15"/>
+        <references refid="classQuest_1abbc4b6ff7cce8ed82a2d50db7cc91c9d" compoundref="Quest_8h" startline="39">questName</references>
+        <references refid="classQuest_1a09907fd23c24ef7768e7a3b52014b92b" compoundref="Quest_8h" startline="36">task</references>
+        <references refid="classQuest_1a997e5366510a3a831cd6f8c33d8a8de8" compoundref="Quest_8h" startline="38">taskNames</references>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1ad4341309a8558845c6d93bc8ca0940f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Quest::~Quest</definition>
+        <argsstring>()</argsstring>
+        <name>~Quest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="35" column="1" bodyfile="Computer Graphics/Source/Quest.cpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1ab405275000a3503bf3005a3eac3bc25d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Quest::taskComplete</definition>
+        <argsstring>(int index)</argsstring>
+        <name>taskComplete</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="41" column="1" bodyfile="Computer Graphics/Source/Quest.cpp" bodystart="21" bodyend="31"/>
+        <references refid="classQuest_1a09907fd23c24ef7768e7a3b52014b92b" compoundref="Quest_8h" startline="36">task</references>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a320aa6e7dda5476e11e78a1922d82610" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Quest::questComplete</definition>
+        <argsstring>()</argsstring>
+        <name>questComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="42" column="1" bodyfile="Computer Graphics/Source/Quest.cpp" bodystart="33" bodyend="43"/>
+        <references refid="classQuest_1a09907fd23c24ef7768e7a3b52014b92b" compoundref="Quest_8h" startline="36">task</references>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a778b6edda12b7697ffcd33413ece73bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Quest::ReadFromTxtQuest</definition>
+        <argsstring>(string link)</argsstring>
+        <name>ReadFromTxtQuest</name>
+        <param>
+          <type>string</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Quest.h" line="44" column="1" bodyfile="Computer Graphics/Source/Quest.cpp" bodystart="46" bodyend="78"/>
+        <references refid="classQuest_1abbc4b6ff7cce8ed82a2d50db7cc91c9d" compoundref="Quest_8h" startline="39">questName</references>
+        <references refid="classQuest_1a997e5366510a3a831cd6f8c33d8a8de8" compoundref="Quest_8h" startline="38">taskNames</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for Quests /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classQuest" kindref="compound">Quest</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1198">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="1197">
+        <label>string</label>
+      </node>
+      <node id="1196">
+        <label>int</label>
+      </node>
+      <node id="1199">
+        <label>vector&lt; bool &gt;</label>
+      </node>
+      <node id="1195">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="1196" relation="usage">
+          <edgelabel>numTasks</edgelabel>
+        </childnode>
+        <childnode refid="1197" relation="usage">
+          <edgelabel>questName</edgelabel>
+        </childnode>
+        <childnode refid="1198" relation="usage">
+          <edgelabel>taskNames</edgelabel>
+        </childnode>
+        <childnode refid="1199" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Quest.h" line="31" column="1" bodyfile="Computer Graphics/Source/Quest.h" bodystart="30" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classQuest_1ab07079367474067390a21a7d4dcdd8ae" prot="public" virt="non-virtual"><scope>Quest</scope><name>numTasks</name></member>
+      <member refid="classQuest_1a5cdd6f02fdceaa7b7b53407740a22cf5" prot="public" virt="non-virtual"><scope>Quest</scope><name>Quest</name></member>
+      <member refid="classQuest_1a3d75a6a749ec0e188bc29b3e99bb67d3" prot="public" virt="non-virtual"><scope>Quest</scope><name>Quest</name></member>
+      <member refid="classQuest_1a320aa6e7dda5476e11e78a1922d82610" prot="public" virt="non-virtual"><scope>Quest</scope><name>questComplete</name></member>
+      <member refid="classQuest_1abbc4b6ff7cce8ed82a2d50db7cc91c9d" prot="public" virt="non-virtual"><scope>Quest</scope><name>questName</name></member>
+      <member refid="classQuest_1a778b6edda12b7697ffcd33413ece73bb" prot="public" virt="non-virtual"><scope>Quest</scope><name>ReadFromTxtQuest</name></member>
+      <member refid="classQuest_1a09907fd23c24ef7768e7a3b52014b92b" prot="public" virt="non-virtual"><scope>Quest</scope><name>task</name></member>
+      <member refid="classQuest_1ab405275000a3503bf3005a3eac3bc25d" prot="public" virt="non-virtual"><scope>Quest</scope><name>taskComplete</name></member>
+      <member refid="classQuest_1a997e5366510a3a831cd6f8c33d8a8de8" prot="public" virt="non-virtual"><scope>Quest</scope><name>taskNames</name></member>
+      <member refid="classQuest_1ad4341309a8558845c6d93bc8ca0940f4" prot="public" virt="non-virtual"><scope>Quest</scope><name>~Quest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

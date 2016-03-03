@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="ik__SAudioStreamFormat_8h" kind="file" language="C++">
+    <compoundname>ik_SAudioStreamFormat.h</compoundname>
+    <includes refid="ik__IRefCounted_8h" local="yes">ik_IRefCounted.h</includes>
+    <includedby refid="ik__ISoundSource_8h" local="yes">Computer Graphics/irrKlang/include/ik_ISoundSource.h</includedby>
+    <includedby refid="ik__IAudioStream_8h" local="yes">Computer Graphics/irrKlang/include/ik_IAudioStream.h</includedby>
+    <includedby refid="ik__ISoundMixedOutputReceiver_8h" local="yes">Computer Graphics/irrKlang/include/ik_ISoundMixedOutputReceiver.h</includedby>
+    <includedby refid="ik__ISoundStopEventReceiver_8h" local="yes">Computer Graphics/irrKlang/include/ik_ISoundStopEventReceiver.h</includedby>
+    <includedby refid="irrKlang_8h" local="yes">Computer Graphics/irrKlang/include/irrKlang.h</includedby>
+    <incdepgraph>
+      <node id="6410">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="6411" relation="include">
+        </childnode>
+      </node>
+      <node id="6409">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="6410" relation="include">
+        </childnode>
+      </node>
+      <node id="6411">
+        <label>wchar.h</label>
+      </node>
+      <node id="6408">
+        <label>Computer Graphics/irrKlang/include/ik_SAudioStreamFormat.h</label>
+        <link refid="ik_SAudioStreamFormat.h"/>
+        <childnode refid="6409" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6420">
+        <label>Computer Graphics/Source/Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="6421" relation="include">
+        </childnode>
+        <childnode refid="6429" relation="include">
+        </childnode>
+        <childnode refid="6433" relation="include">
+        </childnode>
+        <childnode refid="6435" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6433">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform_8h"/>
+        <childnode refid="6434" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+      </node>
+      <node id="6467">
+        <label>Computer Graphics/irrKlang/include/ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6468" relation="include">
+        </childnode>
+      </node>
+      <node id="6468">
+        <label>Computer Graphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamMP3.h</label>
+        <link refid="CIrrKlangAudioStreamMP3_8h"/>
+        <childnode refid="6469" relation="include">
+        </childnode>
+        <childnode refid="6470" relation="include">
+        </childnode>
+      </node>
+      <node id="6472">
+        <label>Computer Graphics/irrKlang/include/ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+      </node>
+      <node id="6417">
+        <label>Computer Graphics/Source/Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="6418" relation="include">
+        </childnode>
+        <childnode refid="6465" relation="include">
+        </childnode>
+      </node>
+      <node id="6424">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="6415">
+        <label>Computer Graphics/irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="6416" relation="include">
+        </childnode>
+        <childnode refid="6417" relation="include">
+        </childnode>
+      </node>
+      <node id="6419">
+        <label>Computer Graphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="6464">
+        <label>Computer Graphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="6446">
+        <label>Computer Graphics/Source/AlienEnemy.cpp</label>
+        <link refid="AlienEnemy_8cpp"/>
+      </node>
+      <node id="6452">
+        <label>Computer Graphics/Source/BB-8_2.cpp</label>
+        <link refid="BB-8__2_8cpp"/>
+      </node>
+      <node id="6441">
+        <label>Computer Graphics/Source/CameraTPS.cpp</label>
+        <link refid="CameraTPS_8cpp"/>
+      </node>
+      <node id="6438">
+        <label>Computer Graphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="6453">
+        <label>Computer Graphics/Source/GameChar.cpp</label>
+        <link refid="GameChar_8cpp"/>
+      </node>
+      <node id="6449">
+        <label>Computer Graphics/Source/BB-8.h</label>
+        <link refid="BB-8_8h"/>
+        <childnode refid="6450" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6431">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="6451">
+        <label>Computer Graphics/Source/BB-8_2.h</label>
+        <link refid="BB-8__2_8h"/>
+        <childnode refid="6452" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+      </node>
+      <node id="6454">
+        <label>Computer Graphics/Source/Human.h</label>
+        <link refid="Human_8h"/>
+        <childnode refid="6455" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6463">
+        <label>Computer Graphics/Source/Sir.cpp</label>
+        <link refid="Sir_8cpp"/>
+      </node>
+      <node id="6427">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="6428" relation="include">
+        </childnode>
+      </node>
+      <node id="6456">
+        <label>Computer Graphics/Source/Medic.h</label>
+        <link refid="Medic_8h"/>
+        <childnode refid="6457" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+      </node>
+      <node id="6426">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="6450">
+        <label>Computer Graphics/Source/BB-8.cpp</label>
+        <link refid="BB-8_8cpp"/>
+      </node>
+      <node id="6414">
+        <label>Computer Graphics/irrKlang/include/ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+      </node>
+      <node id="6458">
+        <label>Computer Graphics/Source/Pingu.h</label>
+        <link refid="Pingu_8h"/>
+        <childnode refid="6459" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6443">
+        <label>Computer Graphics/Source/Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="6444" relation="include">
+        </childnode>
+        <childnode refid="6445" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6421">
+        <label>Computer Graphics/Source/Buildings.h</label>
+        <link refid="Buildings_8h"/>
+        <childnode refid="6422" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6435">
+        <label>Computer Graphics/Source/Player.cpp</label>
+        <link refid="Player_8cpp"/>
+      </node>
+      <node id="6471">
+        <label>Computer Graphics/irrKlang/include/ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="6466" relation="include">
+        </childnode>
+        <childnode refid="6415" relation="include">
+        </childnode>
+      </node>
+      <node id="6466">
+        <label>Computer Graphics/irrKlang/include/ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+      </node>
+      <node id="6425">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="6426" relation="include">
+        </childnode>
+      </node>
+      <node id="6459">
+        <label>Computer Graphics/Source/Pingu.cpp</label>
+        <link refid="Pingu_8cpp"/>
+      </node>
+      <node id="6470">
+        <label>Computer Graphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamMP3.cpp</label>
+        <link refid="CIrrKlangAudioStreamMP3_8cpp"/>
+      </node>
+      <node id="6461">
+        <label>Computer Graphics/Source/PinkKnight.cpp</label>
+        <link refid="PinkKnight_8cpp"/>
+      </node>
+      <node id="6444">
+        <label>Computer Graphics/Source/Alien.cpp</label>
+        <link refid="Alien_8cpp"/>
+      </node>
+      <node id="6423">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="6424" relation="include">
+        </childnode>
+      </node>
+      <node id="6462">
+        <label>Computer Graphics/Source/Sir.h</label>
+        <link refid="Sir_8h"/>
+        <childnode refid="6463" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+      </node>
+      <node id="6448">
+        <label>Computer Graphics/Source/ChestBurster.cpp</label>
+        <link refid="ChestBurster_8cpp"/>
+      </node>
+      <node id="6447">
+        <label>Computer Graphics/Source/ChestBurster.h</label>
+        <link refid="ChestBurster_8h"/>
+        <childnode refid="6448" relation="include">
+        </childnode>
+      </node>
+      <node id="6460">
+        <label>Computer Graphics/Source/PinkKnight.h</label>
+        <link refid="PinkKnight_8h"/>
+        <childnode refid="6461" relation="include">
+        </childnode>
+      </node>
+      <node id="6469">
+        <label>Computer Graphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamLoaderMP3.cpp</label>
+        <link refid="CIrrKlangAudioStreamLoaderMP3_8cpp"/>
+      </node>
+      <node id="6455">
+        <label>Computer Graphics/Source/Human.cpp</label>
+        <link refid="Human_8cpp"/>
+      </node>
+      <node id="6434">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform_8cpp"/>
+      </node>
+      <node id="6428">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="6413">
+        <label>Computer Graphics/irrKlang/include/ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="6414" relation="include">
+        </childnode>
+        <childnode refid="6466" relation="include">
+        </childnode>
+        <childnode refid="6415" relation="include">
+        </childnode>
+      </node>
+      <node id="6416">
+        <label>Computer Graphics/irrKlang/plugins/ikpMP3/ikpMP3.cpp</label>
+        <link refid="ikpMP3_8cpp"/>
+      </node>
+      <node id="6412">
+        <label>Computer Graphics/irrKlang/include/ik_SAudioStreamFormat.h</label>
+        <link refid="ik_SAudioStreamFormat.h"/>
+        <childnode refid="6413" relation="include">
+        </childnode>
+        <childnode refid="6467" relation="include">
+        </childnode>
+        <childnode refid="6471" relation="include">
+        </childnode>
+        <childnode refid="6472" relation="include">
+        </childnode>
+        <childnode refid="6415" relation="include">
+        </childnode>
+      </node>
+      <node id="6445">
+        <label>Computer Graphics/Source/AlienEnemy.h</label>
+        <link refid="AlienEnemy_8h"/>
+        <childnode refid="6446" relation="include">
+        </childnode>
+        <childnode refid="6447" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6440">
+        <label>Computer Graphics/Source/CameraTPS.h</label>
+        <link refid="CameraTPS_8h"/>
+        <childnode refid="6441" relation="include">
+        </childnode>
+        <childnode refid="6430" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6429">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles_8h"/>
+        <childnode refid="6430" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+        <childnode refid="6432" relation="include">
+        </childnode>
+      </node>
+      <node id="6422">
+        <label>Computer Graphics/Source/Buildings.cpp</label>
+        <link refid="Buildings_8cpp"/>
+      </node>
+      <node id="6439">
+        <label>Computer Graphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="6457">
+        <label>Computer Graphics/Source/Medic.cpp</label>
+        <link refid="Medic_8cpp"/>
+      </node>
+      <node id="6465">
+        <label>Computer Graphics/Source/Music.cpp</label>
+        <link refid="Music_8cpp"/>
+      </node>
+      <node id="6418">
+        <label>Computer Graphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="6419" relation="include">
+        </childnode>
+        <childnode refid="6420" relation="include">
+        </childnode>
+        <childnode refid="6436" relation="include">
+        </childnode>
+        <childnode refid="6438" relation="include">
+        </childnode>
+        <childnode refid="6442" relation="include">
+        </childnode>
+        <childnode refid="6430" relation="include">
+        </childnode>
+        <childnode refid="6429" relation="include">
+        </childnode>
+        <childnode refid="6464" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6430">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="6431" relation="include">
+        </childnode>
+      </node>
+      <node id="6437">
+        <label>Computer Graphics/Source/Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="6420" relation="include">
+        </childnode>
+        <childnode refid="6438" relation="include">
+        </childnode>
+        <childnode refid="6430" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6436">
+        <label>Computer Graphics/Source/Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="6437" relation="include">
+        </childnode>
+        <childnode refid="6439" relation="include">
+        </childnode>
+        <childnode refid="6440" relation="include">
+        </childnode>
+      </node>
+      <node id="6442">
+        <label>Computer Graphics/Source/GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="6443" relation="include">
+        </childnode>
+        <childnode refid="6449" relation="include">
+        </childnode>
+        <childnode refid="6451" relation="include">
+        </childnode>
+        <childnode refid="6421" relation="include">
+        </childnode>
+        <childnode refid="6420" relation="include">
+        </childnode>
+        <childnode refid="6453" relation="include">
+        </childnode>
+        <childnode refid="6454" relation="include">
+        </childnode>
+        <childnode refid="6456" relation="include">
+        </childnode>
+        <childnode refid="6458" relation="include">
+        </childnode>
+        <childnode refid="6460" relation="include">
+        </childnode>
+        <childnode refid="6433" relation="include">
+        </childnode>
+        <childnode refid="6462" relation="include">
+        </childnode>
+      </node>
+      <node id="6432">
+        <label>Computer Graphics/Source/SpaceVehicles.cpp</label>
+        <link refid="SpaceVehicles_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structirrklang_1_1SAudioStreamFormat" prot="public">irrklang::SAudioStreamFormat</innerclass>
+    <innernamespace refid="namespaceirrklang">irrklang</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2002-2014<sp/>Nikolaus<sp/>Gebhardt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>&quot;irrKlang&quot;<sp/>library.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>copyright<sp/>notice<sp/>in<sp/>irrKlang.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__S_IRRKLANG_AUDIO_STREAM_FORMAT_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__S_IRRKLANG_AUDIO_STREAM_FORMAT_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ik__IRefCounted_8h" kindref="compound">ik_IRefCounted.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceirrklang" kindref="compound">irrklang</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80e" kindref="member">ESampleFormat</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18" refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80ea0de880c8a4d615e152bde20ec8444c44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80ea0de880c8a4d615e152bde20ec8444c44" kindref="member">ESF_U8</ref>,<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80eaa3dc63221ae7c396d6b32431da872104" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80eaa3dc63221ae7c396d6b32431da872104" kindref="member">ESF_S16</ref><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structirrklang_1_1SAudioStreamFormat" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structirrklang_1_1SAudioStreamFormat" kindref="compound">SAudioStreamFormat</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29" refid="structirrklang_1_1SAudioStreamFormat_1a4ff43d45603ce7e65c27a07a860b96f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1af8028b1c477e50d479270611ecb76e92" kindref="member">ik_s32</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1a4ff43d45603ce7e65c27a07a860b96f5" kindref="member">ChannelCount</ref>;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"></codeline>
+<codeline lineno="33" refid="structirrklang_1_1SAudioStreamFormat_1ab4f3d1b9df4e1adf53b128c0f14af313" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1af8028b1c477e50d479270611ecb76e92" kindref="member">ik_s32</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1ab4f3d1b9df4e1adf53b128c0f14af313" kindref="member">FrameCount</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="structirrklang_1_1SAudioStreamFormat_1adffd0aaf1d5e09b2832f6ad9b2589756" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1af8028b1c477e50d479270611ecb76e92" kindref="member">ik_s32</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1adffd0aaf1d5e09b2832f6ad9b2589756" kindref="member">SampleRate</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="structirrklang_1_1SAudioStreamFormat_1a6a3c4b7a3ac829555b0bcc7312e12c8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80e" kindref="member">ESampleFormat</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1a6a3c4b7a3ac829555b0bcc7312e12c8f" kindref="member">SampleFormat</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structirrklang_1_1SAudioStreamFormat_1a0285204b54e3c969ae01d7bbec2f39b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceirrklang_1af8028b1c477e50d479270611ecb76e92" kindref="member">ik_s32</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1a0285204b54e3c969ae01d7bbec2f39b8" kindref="member">getSampleSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="43"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(SampleFormat<sp/>==<sp/><ref refid="namespaceirrklang_1a2b85d1e9288cb552fceef8e8a726a80ea0de880c8a4d615e152bde20ec8444c44" kindref="member">ESF_U8</ref>)<sp/>?<sp/>1<sp/>:<sp/>2;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structirrklang_1_1SAudioStreamFormat_1adbd8ce7f570a0c252d8aa74a3c444adb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceirrklang_1af8028b1c477e50d479270611ecb76e92" kindref="member">ik_s32</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1adbd8ce7f570a0c252d8aa74a3c444adb" kindref="member">getFrameSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="49"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ChannelCount<sp/>*<sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1a0285204b54e3c969ae01d7bbec2f39b8" kindref="member">getSampleSize</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Returns<sp/>an<sp/>invalid<sp/>negative<sp/>value<sp/>when<sp/>the<sp/>stream<sp/>has<sp/>an<sp/>unknown<sp/>lenght<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="structirrklang_1_1SAudioStreamFormat_1aa673b99a0023bf949830b26fe79952cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceirrklang_1af8028b1c477e50d479270611ecb76e92" kindref="member">ik_s32</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1aa673b99a0023bf949830b26fe79952cf" kindref="member">getSampleDataSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="56"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1adbd8ce7f570a0c252d8aa74a3c444adb" kindref="member">getFrameSize</ref>()<sp/>*<sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1ab4f3d1b9df4e1adf53b128c0f14af313" kindref="member">FrameCount</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="structirrklang_1_1SAudioStreamFormat_1a9c6e9369bb5e519600915fd13b00e116" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceirrklang_1af8028b1c477e50d479270611ecb76e92" kindref="member">ik_s32</ref><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1a9c6e9369bb5e519600915fd13b00e116" kindref="member">getBytesPerSecond</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="62"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1adbd8ce7f570a0c252d8aa74a3c444adb" kindref="member">getFrameSize</ref>()<sp/>*<sp/><ref refid="structirrklang_1_1SAudioStreamFormat_1adffd0aaf1d5e09b2832f6ad9b2589756" kindref="member">SampleRate</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>irrklang</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/irrKlang/include/ik_SAudioStreamFormat.h"/>
+  </compounddef>
+</doxygen>

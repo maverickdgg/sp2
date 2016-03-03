@@ -1,0 +1,508 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="ik__ISoundStopEventReceiver_8h" kind="file" language="C++">
+    <compoundname>ik_ISoundStopEventReceiver.h</compoundname>
+    <includes refid="ik__IRefCounted_8h" local="yes">ik_IRefCounted.h</includes>
+    <includes refid="ik__SAudioStreamFormat_8h" local="yes">ik_SAudioStreamFormat.h</includes>
+    <includedby refid="irrKlang_8h" local="yes">Computer Graphics/irrKlang/include/irrKlang.h</includedby>
+    <incdepgraph>
+      <node id="6291">
+        <label>Computer Graphics/irrKlang/include/ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik_ISoundStopEventReceiver.h"/>
+        <childnode refid="6292" relation="include">
+        </childnode>
+        <childnode refid="6295" relation="include">
+        </childnode>
+      </node>
+      <node id="6293">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="6294" relation="include">
+        </childnode>
+      </node>
+      <node id="6292">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="6293" relation="include">
+        </childnode>
+      </node>
+      <node id="6294">
+        <label>wchar.h</label>
+      </node>
+      <node id="6295">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="6292" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6302">
+        <label>Computer Graphics/Source/Player.h</label>
+        <link refid="Player_8h"/>
+        <childnode refid="6303" relation="include">
+        </childnode>
+        <childnode refid="6311" relation="include">
+        </childnode>
+        <childnode refid="6315" relation="include">
+        </childnode>
+        <childnode refid="6317" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6315">
+        <label>Computer Graphics/Source/Platform.h</label>
+        <link refid="Platform_8h"/>
+        <childnode refid="6316" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6296">
+        <label>Computer Graphics/irrKlang/include/ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik_ISoundStopEventReceiver.h"/>
+        <childnode refid="6297" relation="include">
+        </childnode>
+      </node>
+      <node id="6299">
+        <label>Computer Graphics/Source/Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="6300" relation="include">
+        </childnode>
+        <childnode refid="6347" relation="include">
+        </childnode>
+      </node>
+      <node id="6306">
+        <label>Computer Graphics/Source/Sp2_Scene1.cpp</label>
+        <link refid="Sp2__Scene1_8cpp"/>
+      </node>
+      <node id="6297">
+        <label>Computer Graphics/irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="6298" relation="include">
+        </childnode>
+        <childnode refid="6299" relation="include">
+        </childnode>
+      </node>
+      <node id="6301">
+        <label>Computer Graphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="6346">
+        <label>Computer Graphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="6328">
+        <label>Computer Graphics/Source/AlienEnemy.cpp</label>
+        <link refid="AlienEnemy_8cpp"/>
+      </node>
+      <node id="6334">
+        <label>Computer Graphics/Source/BB-8_2.cpp</label>
+        <link refid="BB-8__2_8cpp"/>
+      </node>
+      <node id="6323">
+        <label>Computer Graphics/Source/CameraTPS.cpp</label>
+        <link refid="CameraTPS_8cpp"/>
+      </node>
+      <node id="6320">
+        <label>Computer Graphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="6335">
+        <label>Computer Graphics/Source/GameChar.cpp</label>
+        <link refid="GameChar_8cpp"/>
+      </node>
+      <node id="6331">
+        <label>Computer Graphics/Source/BB-8.h</label>
+        <link refid="BB-8_8h"/>
+        <childnode refid="6332" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6313">
+        <label>Computer Graphics/Source/LoadingScene.cpp</label>
+        <link refid="LoadingScene_8cpp"/>
+      </node>
+      <node id="6333">
+        <label>Computer Graphics/Source/BB-8_2.h</label>
+        <link refid="BB-8__2_8h"/>
+        <childnode refid="6334" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6336">
+        <label>Computer Graphics/Source/Human.h</label>
+        <link refid="Human_8h"/>
+        <childnode refid="6337" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6345">
+        <label>Computer Graphics/Source/Sir.cpp</label>
+        <link refid="Sir_8cpp"/>
+      </node>
+      <node id="6309">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.h</label>
+        <link refid="Sp2__SpaceRace_8h"/>
+        <childnode refid="6310" relation="include">
+        </childnode>
+      </node>
+      <node id="6338">
+        <label>Computer Graphics/Source/Medic.h</label>
+        <link refid="Medic_8h"/>
+        <childnode refid="6339" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+      </node>
+      <node id="6308">
+        <label>Computer Graphics/Source/SP2_Scene3.cpp</label>
+        <link refid="SP2__Scene3_8cpp"/>
+      </node>
+      <node id="6332">
+        <label>Computer Graphics/Source/BB-8.cpp</label>
+        <link refid="BB-8_8cpp"/>
+      </node>
+      <node id="6340">
+        <label>Computer Graphics/Source/Pingu.h</label>
+        <link refid="Pingu_8h"/>
+        <childnode refid="6341" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6325">
+        <label>Computer Graphics/Source/Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="6326" relation="include">
+        </childnode>
+        <childnode refid="6327" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6303">
+        <label>Computer Graphics/Source/Buildings.h</label>
+        <link refid="Buildings_8h"/>
+        <childnode refid="6304" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6317">
+        <label>Computer Graphics/Source/Player.cpp</label>
+        <link refid="Player_8cpp"/>
+      </node>
+      <node id="6307">
+        <label>Computer Graphics/Source/SP2_Scene3.h</label>
+        <link refid="SP2__Scene3_8h"/>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6341">
+        <label>Computer Graphics/Source/Pingu.cpp</label>
+        <link refid="Pingu_8cpp"/>
+      </node>
+      <node id="6343">
+        <label>Computer Graphics/Source/PinkKnight.cpp</label>
+        <link refid="PinkKnight_8cpp"/>
+      </node>
+      <node id="6326">
+        <label>Computer Graphics/Source/Alien.cpp</label>
+        <link refid="Alien_8cpp"/>
+      </node>
+      <node id="6305">
+        <label>Computer Graphics/Source/Sp2_Scene1.h</label>
+        <link refid="Sp2__Scene1_8h"/>
+        <childnode refid="6306" relation="include">
+        </childnode>
+      </node>
+      <node id="6344">
+        <label>Computer Graphics/Source/Sir.h</label>
+        <link refid="Sir_8h"/>
+        <childnode refid="6345" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6330">
+        <label>Computer Graphics/Source/ChestBurster.cpp</label>
+        <link refid="ChestBurster_8cpp"/>
+      </node>
+      <node id="6329">
+        <label>Computer Graphics/Source/ChestBurster.h</label>
+        <link refid="ChestBurster_8h"/>
+        <childnode refid="6330" relation="include">
+        </childnode>
+      </node>
+      <node id="6342">
+        <label>Computer Graphics/Source/PinkKnight.h</label>
+        <link refid="PinkKnight_8h"/>
+        <childnode refid="6343" relation="include">
+        </childnode>
+      </node>
+      <node id="6337">
+        <label>Computer Graphics/Source/Human.cpp</label>
+        <link refid="Human_8cpp"/>
+      </node>
+      <node id="6316">
+        <label>Computer Graphics/Source/Platform.cpp</label>
+        <link refid="Platform_8cpp"/>
+      </node>
+      <node id="6310">
+        <label>Computer Graphics/Source/Sp2_SpaceRace.cpp</label>
+        <link refid="Sp2__SpaceRace_8cpp"/>
+      </node>
+      <node id="6298">
+        <label>Computer Graphics/irrKlang/plugins/ikpMP3/ikpMP3.cpp</label>
+        <link refid="ikpMP3_8cpp"/>
+      </node>
+      <node id="6327">
+        <label>Computer Graphics/Source/AlienEnemy.h</label>
+        <link refid="AlienEnemy_8h"/>
+        <childnode refid="6328" relation="include">
+        </childnode>
+        <childnode refid="6329" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6322">
+        <label>Computer Graphics/Source/CameraTPS.h</label>
+        <link refid="CameraTPS_8h"/>
+        <childnode refid="6323" relation="include">
+        </childnode>
+        <childnode refid="6312" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6311">
+        <label>Computer Graphics/Source/SpaceVehicles.h</label>
+        <link refid="SpaceVehicles_8h"/>
+        <childnode refid="6312" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+        <childnode refid="6314" relation="include">
+        </childnode>
+      </node>
+      <node id="6304">
+        <label>Computer Graphics/Source/Buildings.cpp</label>
+        <link refid="Buildings_8cpp"/>
+      </node>
+      <node id="6321">
+        <label>Computer Graphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="6339">
+        <label>Computer Graphics/Source/Medic.cpp</label>
+        <link refid="Medic_8cpp"/>
+      </node>
+      <node id="6347">
+        <label>Computer Graphics/Source/Music.cpp</label>
+        <link refid="Music_8cpp"/>
+      </node>
+      <node id="6300">
+        <label>Computer Graphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="6301" relation="include">
+        </childnode>
+        <childnode refid="6302" relation="include">
+        </childnode>
+        <childnode refid="6318" relation="include">
+        </childnode>
+        <childnode refid="6320" relation="include">
+        </childnode>
+        <childnode refid="6324" relation="include">
+        </childnode>
+        <childnode refid="6312" relation="include">
+        </childnode>
+        <childnode refid="6311" relation="include">
+        </childnode>
+        <childnode refid="6346" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6312">
+        <label>Computer Graphics/Source/LoadingScene.h</label>
+        <link refid="LoadingScene_8h"/>
+        <childnode refid="6313" relation="include">
+        </childnode>
+      </node>
+      <node id="6319">
+        <label>Computer Graphics/Source/Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="6302" relation="include">
+        </childnode>
+        <childnode refid="6320" relation="include">
+        </childnode>
+        <childnode refid="6312" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+      <node id="6318">
+        <label>Computer Graphics/Source/Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="6319" relation="include">
+        </childnode>
+        <childnode refid="6321" relation="include">
+        </childnode>
+        <childnode refid="6322" relation="include">
+        </childnode>
+      </node>
+      <node id="6324">
+        <label>Computer Graphics/Source/GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="6325" relation="include">
+        </childnode>
+        <childnode refid="6331" relation="include">
+        </childnode>
+        <childnode refid="6333" relation="include">
+        </childnode>
+        <childnode refid="6303" relation="include">
+        </childnode>
+        <childnode refid="6302" relation="include">
+        </childnode>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6336" relation="include">
+        </childnode>
+        <childnode refid="6338" relation="include">
+        </childnode>
+        <childnode refid="6340" relation="include">
+        </childnode>
+        <childnode refid="6342" relation="include">
+        </childnode>
+        <childnode refid="6315" relation="include">
+        </childnode>
+        <childnode refid="6344" relation="include">
+        </childnode>
+      </node>
+      <node id="6314">
+        <label>Computer Graphics/Source/SpaceVehicles.cpp</label>
+        <link refid="SpaceVehicles_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classirrklang_1_1ISoundStopEventReceiver" prot="public">irrklang::ISoundStopEventReceiver</innerclass>
+    <innernamespace refid="namespaceirrklang">irrklang</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2002-2014<sp/>Nikolaus<sp/>Gebhardt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>&quot;irrKlang&quot;<sp/>library.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>copyright<sp/>notice<sp/>in<sp/>irrKlang.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__I_IRRKLANG_SOUND_STOP_EVENT_RECEIVER_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__I_IRRKLANG_SOUND_STOP_EVENT_RECEIVER_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ik__IRefCounted_8h" kindref="compound">ik_IRefCounted.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ik__SAudioStreamFormat_8h" kindref="compound">ik_SAudioStreamFormat.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceirrklang" kindref="compound">irrklang</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522" kindref="member">E_STOP_EVENT_CAUSE</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20" refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522ac77937ae9e225a3a42775bc086e93158" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522ac77937ae9e225a3a42775bc086e93158" kindref="member">ESEC_SOUND_FINISHED_PLAYING</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522a5d688aec69b83583382e370a332cdb45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522a5d688aec69b83583382e370a332cdb45" kindref="member">ESEC_SOUND_STOPPED_BY_USER</ref>,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522a1d582aee4156ea2b5952a314f03a78ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522a1d582aee4156ea2b5952a314f03a78ca" kindref="member">ESEC_SOUND_STOPPED_BY_SOURCE_REMOVAL</ref>,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522a3ebc8c5fc80207284388d61d2644bd31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522a3ebc8c5fc80207284388d61d2644bd31" kindref="member">ESEC_FORCE_32_BIT</ref><sp/>=<sp/>0x7fffffff</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"></codeline>
+<codeline lineno="41" refid="classirrklang_1_1ISoundStopEventReceiver" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classirrklang_1_1ISoundStopEventReceiver" kindref="compound">ISoundStopEventReceiver</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46" refid="classirrklang_1_1ISoundStopEventReceiver_1a26adc3eec345f11286e576e449e6647d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classirrklang_1_1ISoundStopEventReceiver_1a26adc3eec345f11286e576e449e6647d" kindref="member">~ISoundStopEventReceiver</ref>()<sp/>{};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classirrklang_1_1ISoundStopEventReceiver_1a8e975104683b71cd45436ae5f8bfaf9f" kindref="member">OnSoundStopped</ref>(<ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref>*<sp/>sound,<sp/><ref refid="namespaceirrklang_1a17ebb006afe78ab6502a1e3d18083522" kindref="member">E_STOP_EVENT_CAUSE</ref><sp/>reason,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userData)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>irrklang</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/irrKlang/include/ik_ISoundStopEventReceiver.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="ChestBurster_8cpp" kind="file" language="C++">
+    <compoundname>ChestBurster.cpp</compoundname>
+    <includes refid="ChestBurster_8h" local="yes">ChestBurster.h</includes>
+    <incdepgraph>
+      <node id="7701">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7696" relation="include">
+        </childnode>
+        <childnode refid="7702" relation="include">
+        </childnode>
+      </node>
+      <node id="7727">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+        <childnode refid="7720" relation="include">
+        </childnode>
+      </node>
+      <node id="7725">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+      </node>
+      <node id="7730">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+        <childnode refid="7720" relation="include">
+        </childnode>
+      </node>
+      <node id="7709">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="7694" relation="include">
+        </childnode>
+        <childnode refid="7693" relation="include">
+        </childnode>
+        <childnode refid="7695" relation="include">
+        </childnode>
+        <childnode refid="7702" relation="include">
+        </childnode>
+        <childnode refid="7710" relation="include">
+        </childnode>
+      </node>
+      <node id="7710">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="7711" relation="include">
+        </childnode>
+        <childnode refid="7713" relation="include">
+        </childnode>
+        <childnode refid="7715" relation="include">
+        </childnode>
+        <childnode refid="7716" relation="include">
+        </childnode>
+        <childnode refid="7717" relation="include">
+        </childnode>
+        <childnode refid="7718" relation="include">
+        </childnode>
+        <childnode refid="7719" relation="include">
+        </childnode>
+        <childnode refid="7720" relation="include">
+        </childnode>
+        <childnode refid="7721" relation="include">
+        </childnode>
+        <childnode refid="7722" relation="include">
+        </childnode>
+        <childnode refid="7723" relation="include">
+        </childnode>
+        <childnode refid="7727" relation="include">
+        </childnode>
+        <childnode refid="7728" relation="include">
+        </childnode>
+        <childnode refid="7724" relation="include">
+        </childnode>
+        <childnode refid="7730" relation="include">
+        </childnode>
+        <childnode refid="7725" relation="include">
+        </childnode>
+        <childnode refid="7729" relation="include">
+        </childnode>
+        <childnode refid="7731" relation="include">
+        </childnode>
+        <childnode refid="7732" relation="include">
+        </childnode>
+        <childnode refid="7726" relation="include">
+        </childnode>
+      </node>
+      <node id="7734">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="7694" relation="include">
+        </childnode>
+        <childnode refid="7693" relation="include">
+        </childnode>
+        <childnode refid="7691" relation="include">
+        </childnode>
+      </node>
+      <node id="7705">
+        <label>windows.h</label>
+      </node>
+      <node id="7733">
+        <label>Collision.h</label>
+        <link refid="Collision_8h"/>
+        <childnode refid="7691" relation="include">
+        </childnode>
+      </node>
+      <node id="7711">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="7712" relation="include">
+        </childnode>
+      </node>
+      <node id="7715">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="7711" relation="include">
+        </childnode>
+      </node>
+      <node id="7697">
+        <label>cmath</label>
+      </node>
+      <node id="7693">
+        <label>string</label>
+      </node>
+      <node id="7696">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7697" relation="include">
+        </childnode>
+        <childnode refid="7698" relation="include">
+        </childnode>
+        <childnode refid="7699" relation="include">
+        </childnode>
+        <childnode refid="7700" relation="include">
+        </childnode>
+      </node>
+      <node id="7706">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="7707">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="7691">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="7692" relation="include">
+        </childnode>
+        <childnode refid="7693" relation="include">
+        </childnode>
+        <childnode refid="7694" relation="include">
+        </childnode>
+        <childnode refid="7695" relation="include">
+        </childnode>
+        <childnode refid="7696" relation="include">
+        </childnode>
+        <childnode refid="7701" relation="include">
+        </childnode>
+      </node>
+      <node id="7732">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+        <childnode refid="7722" relation="include">
+        </childnode>
+      </node>
+      <node id="7698">
+        <label>exception</label>
+      </node>
+      <node id="7695">
+        <label>fstream</label>
+      </node>
+      <node id="7704">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="7705" relation="include">
+        </childnode>
+      </node>
+      <node id="7689">
+        <label>Alien.h</label>
+        <link refid="Alien_8h"/>
+        <childnode refid="7690" relation="include">
+        </childnode>
+      </node>
+      <node id="7716">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="7711" relation="include">
+        </childnode>
+      </node>
+      <node id="7726">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+        <childnode refid="7720" relation="include">
+        </childnode>
+      </node>
+      <node id="7712">
+        <label>wchar.h</label>
+      </node>
+      <node id="7721">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+        <childnode refid="7713" relation="include">
+        </childnode>
+        <childnode refid="7722" relation="include">
+        </childnode>
+        <childnode refid="7723" relation="include">
+        </childnode>
+        <childnode refid="7719" relation="include">
+        </childnode>
+        <childnode refid="7725" relation="include">
+        </childnode>
+        <childnode refid="7726" relation="include">
+        </childnode>
+      </node>
+      <node id="7699">
+        <label>ctime</label>
+      </node>
+      <node id="7694">
+        <label>vector</label>
+      </node>
+      <node id="7713">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="7714" relation="include">
+        </childnode>
+        <childnode refid="7711" relation="include">
+        </childnode>
+      </node>
+      <node id="7692">
+        <label>sstream</label>
+      </node>
+      <node id="7686">
+        <label>Computer Graphics/Source/ChestBurster.cpp</label>
+        <link refid="ChestBurster.cpp"/>
+        <childnode refid="7687" relation="include">
+        </childnode>
+      </node>
+      <node id="7687">
+        <label>ChestBurster.h</label>
+        <link refid="ChestBurster_8h"/>
+        <childnode refid="7688" relation="include">
+        </childnode>
+      </node>
+      <node id="7731">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+      </node>
+      <node id="7714">
+        <label>math.h</label>
+      </node>
+      <node id="7728">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+        <childnode refid="7729" relation="include">
+        </childnode>
+      </node>
+      <node id="7700">
+        <label>cstdlib</label>
+      </node>
+      <node id="7719">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="7702">
+        <label>iostream</label>
+      </node>
+      <node id="7708">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="7722">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="7716" relation="include">
+        </childnode>
+        <childnode refid="7713" relation="include">
+        </childnode>
+        <childnode refid="7719" relation="include">
+        </childnode>
+        <childnode refid="7720" relation="include">
+        </childnode>
+      </node>
+      <node id="7720">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+      </node>
+      <node id="7688">
+        <label>AlienEnemy.h</label>
+        <link refid="AlienEnemy_8h"/>
+        <childnode refid="7689" relation="include">
+        </childnode>
+      </node>
+      <node id="7723">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="7716" relation="include">
+        </childnode>
+        <childnode refid="7724" relation="include">
+        </childnode>
+        <childnode refid="7713" relation="include">
+        </childnode>
+      </node>
+      <node id="7717">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="7718">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="7724">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="7716" relation="include">
+        </childnode>
+        <childnode refid="7713" relation="include">
+        </childnode>
+      </node>
+      <node id="7703">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="7704" relation="include">
+        </childnode>
+        <childnode refid="7706" relation="include">
+        </childnode>
+        <childnode refid="7707" relation="include">
+        </childnode>
+        <childnode refid="7708" relation="include">
+        </childnode>
+        <childnode refid="7709" relation="include">
+        </childnode>
+      </node>
+      <node id="7729">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="7715" relation="include">
+        </childnode>
+      </node>
+      <node id="7690">
+        <label>GameChar.h</label>
+        <link refid="GameChar_8h"/>
+        <childnode refid="7691" relation="include">
+        </childnode>
+        <childnode refid="7703" relation="include">
+        </childnode>
+        <childnode refid="7733" relation="include">
+        </childnode>
+        <childnode refid="7734" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ChestBurster_8h" kindref="compound">ChestBurster.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classChestBurster_1a75d9625cfee4192b36818a8ffd8cccfd" kindref="member">ChestBurster::chestburster_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classChestBurster_1a792d0a8782a7f7406c466af26ed4a908" refkind="member"><highlight class="normal"><ref refid="classChestBurster_1a792d0a8782a7f7406c466af26ed4a908" kindref="member">ChestBurster::ChestBurster</ref>()</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a75d9625cfee4192b36818a8ffd8cccfd" kindref="member">chestburster_count</ref>++;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classChestBurster_1a3b1fb4ade0c89bf50c9eab115682c470" refkind="member"><highlight class="normal"><ref refid="classChestBurster_1a792d0a8782a7f7406c466af26ed4a908" kindref="member">ChestBurster::ChestBurster</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>object_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundary,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>viewAngle,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos)<sp/>:<sp/><ref refid="classAlienEnemy" kindref="compound">AlienEnemy</ref>(object_name,<sp/>boundary,<sp/>viewAngle,<sp/>pos)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a75d9625cfee4192b36818a8ffd8cccfd" kindref="member">chestburster_count</ref>++;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a06dbe1d7d72b2bee63333f8bcdb9b948" kindref="member">speed</ref><sp/>=<sp/>50;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a56d462fe12cf671191edf894ec7d2046" kindref="member">turnSpeed</ref><sp/>=<sp/>60;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1ab7b59e0fe54da67a9be4615229e1492b" kindref="member">lowerBodyRotate</ref><sp/>=<sp/>45;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a44dfb6793379509aed26d39ba2d5d667" kindref="member">isTurned</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classChestBurster_1ae9d263b94d4a7be61709b8eac594c078" refkind="member"><highlight class="normal"><ref refid="classChestBurster_1ae9d263b94d4a7be61709b8eac594c078" kindref="member">ChestBurster::~ChestBurster</ref>()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a75d9625cfee4192b36818a8ffd8cccfd" kindref="member">chestburster_count</ref>--;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classChestBurster_1a41f57dc1ecde2be7dfbac81586ed65c1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classChestBurster_1a41f57dc1ecde2be7dfbac81586ed65c1" kindref="member">ChestBurster::translateWorm</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*viewAngle<sp/>+=<sp/>turnSpeed<sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(viewAngle<sp/>&gt;<sp/>45)</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isTurned<sp/>=<sp/>true;</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(isTurned<sp/>==<sp/>true)</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classChestBurster_1a44dfb6793379509aed26d39ba2d5d667" kindref="member">isTurned</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>+=<sp/><ref refid="classChestBurster_1a56d462fe12cf671191edf894ec7d2046" kindref="member">turnSpeed</ref>*dt;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>&gt;<sp/>25)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a44dfb6793379509aed26d39ba2d5d667" kindref="member">isTurned</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classChestBurster_1a44dfb6793379509aed26d39ba2d5d667" kindref="member">isTurned</ref><sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>-=<sp/><ref refid="classChestBurster_1a56d462fe12cf671191edf894ec7d2046" kindref="member">turnSpeed</ref>*dt;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" kindref="member">viewAngle</ref><sp/>&lt;<sp/>-25)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classChestBurster_1a44dfb6793379509aed26d39ba2d5d667" kindref="member">isTurned</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Computer Graphics/Source/ChestBurster.cpp"/>
+  </compounddef>
+</doxygen>

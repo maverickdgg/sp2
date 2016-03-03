@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classAlien" kind="class" language="C++" prot="public">
+    <compoundname>Alien</compoundname>
+    <basecompoundref refid="classGameChar" prot="public" virt="non-virtual">GameChar</basecompoundref>
+    <derivedcompoundref refid="classAlienEnemy" prot="public" virt="non-virtual">AlienEnemy</derivedcompoundref>
+    <includes refid="Alien_8h" local="no">Alien.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classAlien_1a8cf4f44c1a13d3f94aeb18979f20d3b0" prot="public" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Alien::alien_count</definition>
+        <argsstring></argsstring>
+        <name>alien_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Alien.h" line="29" column="1" bodyfile="Computer Graphics/Source/Alien.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classAlien_1af4b2bc9e4071152d6aead3be07fa9690" compoundref="Alien_8cpp" startline="24" endline="27">Alien</referencedby>
+        <referencedby refid="classAlien_1a7cdfd79d84b51a18003bf41585aedd43" compoundref="Alien_8cpp" startline="52" endline="55">~Alien</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classAlien_1ac1d11f58ce8f20cc9c76089b1da41a9a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Alien::f_scaleBig</definition>
+        <argsstring></argsstring>
+        <name>f_scaleBig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Alien.h" line="30" column="1" bodyfile="Computer Graphics/Source/Alien.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classAlien_1a9550f2b1259cba8e462ec95a185a54d8" compoundref="Alien_8cpp" startline="39" endline="44">Alien</referencedby>
+        <referencedby refid="classAlien_1acbc7782045dd10b74d0b1b455dfe76a7" compoundref="Alien_8cpp" startline="64" endline="86">pulsingUpdate</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1afe1631510dcb1ed61a327ce0e3787745" compoundref="Sp2__SpaceRace_8cpp" startline="754" endline="857">Sp2_SpaceRace::Renderfps</referencedby>
+        <referencedby refid="classSp2__SpaceRace_1a862b9d074a5549aaa63c2f2e27425568" compoundref="Sp2__SpaceRace_8cpp" startline="859" endline="921">Sp2_SpaceRace::Rendertps</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAlien_1a6ada38d7d60bcb5f143c19b9d0e5c8b3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Alien::b_scaleUp</definition>
+        <argsstring></argsstring>
+        <name>b_scaleUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Alien.h" line="31" column="1" bodyfile="Computer Graphics/Source/Alien.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classAlien_1a9550f2b1259cba8e462ec95a185a54d8" compoundref="Alien_8cpp" startline="39" endline="44">Alien</referencedby>
+        <referencedby refid="classAlien_1acbc7782045dd10b74d0b1b455dfe76a7" compoundref="Alien_8cpp" startline="64" endline="86">pulsingUpdate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classAlien_1af4b2bc9e4071152d6aead3be07fa9690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Alien::Alien</definition>
+        <argsstring>()</argsstring>
+        <name>Alien</name>
+        <briefdescription>
+<para><ref refid="classAlien" kindref="compound">Alien</ref>&apos;s default constructor implements count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Alien.h" line="26" column="1" bodyfile="Computer Graphics/Source/Alien.cpp" bodystart="24" bodyend="27"/>
+        <references refid="classAlien_1a8cf4f44c1a13d3f94aeb18979f20d3b0" compoundref="Alien_8h" startline="29">alien_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classAlien_1a9550f2b1259cba8e462ec95a185a54d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Alien::Alien</definition>
+        <argsstring>(string object_name, int boundary, float viewAngle=0, Vector3 pos=Vector3(0, 0, 0))</argsstring>
+        <name>Alien</name>
+        <param>
+          <type>string</type>
+          <declname>object_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewAngle</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+          <defval><ref refid="structVector3" kindref="compound">Vector3</ref>(0, 0, 0)</defval>
+        </param>
+        <briefdescription>
+<para>Overloaded constructor with parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of alien </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boundary - boundary of the alien </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>float</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>viewAngle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="structVector3" kindref="compound">Vector3</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pos - Appoints the xyz position of the alien </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Alien.h" line="27" column="1" bodyfile="Computer Graphics/Source/Alien.cpp" bodystart="39" bodyend="44"/>
+        <references refid="classAlien_1a8cf4f44c1a13d3f94aeb18979f20d3b0" compoundref="Alien_8h" startline="29">alien_count</references>
+        <references refid="classAlien_1a6ada38d7d60bcb5f143c19b9d0e5c8b3" compoundref="Alien_8h" startline="31">b_scaleUp</references>
+        <references refid="classAlien_1ac1d11f58ce8f20cc9c76089b1da41a9a" compoundref="Alien_8h" startline="30">f_scaleBig</references>
+      </memberdef>
+      <memberdef kind="function" id="classAlien_1a7cdfd79d84b51a18003bf41585aedd43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Alien::~Alien</definition>
+        <argsstring>()</argsstring>
+        <name>~Alien</name>
+        <briefdescription>
+<para><ref refid="classAlien" kindref="compound">Alien</ref>&apos;s default destructor decrements count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Alien.h" line="28" column="1" bodyfile="Computer Graphics/Source/Alien.cpp" bodystart="52" bodyend="55"/>
+        <references refid="classAlien_1a8cf4f44c1a13d3f94aeb18979f20d3b0" compoundref="Alien_8h" startline="29">alien_count</references>
+      </memberdef>
+      <memberdef kind="function" id="classAlien_1acbc7782045dd10b74d0b1b455dfe76a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Alien::pulsingUpdate</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>pulsingUpdate</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Logic of the alien. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Computer Graphics/Source/Alien.h" line="34" column="1" bodyfile="Computer Graphics/Source/Alien.cpp" bodystart="64" bodyend="86"/>
+        <references refid="classAlien_1a6ada38d7d60bcb5f143c19b9d0e5c8b3" compoundref="Alien_8h" startline="31">b_scaleUp</references>
+        <references refid="classAlien_1ac1d11f58ce8f20cc9c76089b1da41a9a" compoundref="Alien_8h" startline="30">f_scaleBig</references>
+        <referencedby refid="classSp2__SpaceRace_1a60fa1a4bdef9cafbb6e6a5fac974ed5d" compoundref="Sp2__SpaceRace_8cpp" startline="242" endline="472">Sp2_SpaceRace::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Providing the AlienEnemies to move ( inherits from <ref refid="classAlien" kindref="compound">Alien</ref> ) /*. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classAlien" kindref="compound">Alien</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="710">
+        <label>ChestBurster</label>
+        <link refid="classChestBurster"/>
+        <childnode refid="709" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="706">
+        <label>Alien</label>
+        <link refid="classAlien"/>
+        <childnode refid="707" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="708">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="709">
+        <label>AlienEnemy</label>
+        <link refid="classAlienEnemy"/>
+        <childnode refid="706" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="707">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="708" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="718">
+        <label>static size_t</label>
+      </node>
+      <node id="719">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="717">
+        <label>string</label>
+      </node>
+      <node id="714">
+        <label>float</label>
+      </node>
+      <node id="716">
+        <label>int</label>
+      </node>
+      <node id="723">
+        <label>vector&lt; bool &gt;</label>
+      </node>
+      <node id="722">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="716" relation="usage">
+          <edgelabel>numTasks</edgelabel>
+        </childnode>
+        <childnode refid="717" relation="usage">
+          <edgelabel>questName</edgelabel>
+        </childnode>
+        <childnode refid="719" relation="usage">
+          <edgelabel>taskNames</edgelabel>
+        </childnode>
+        <childnode refid="723" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="711">
+        <label>Alien</label>
+        <link refid="classAlien"/>
+        <childnode refid="712" relation="public-inheritance">
+        </childnode>
+        <childnode refid="714" relation="usage">
+          <edgelabel>f_scaleBig</edgelabel>
+        </childnode>
+        <childnode refid="720" relation="usage">
+          <edgelabel>b_scaleUp</edgelabel>
+        </childnode>
+        <childnode refid="718" relation="usage">
+          <edgelabel>alien_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="721">
+        <label>unsigned</label>
+      </node>
+      <node id="713">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="714" relation="usage">
+          <edgelabel>viewAngle</edgelabel>
+        </childnode>
+        <childnode refid="715" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="716" relation="usage">
+          <edgelabel>boundary</edgelabel>
+        </childnode>
+        <childnode refid="717" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="718" relation="usage">
+          <edgelabel>GO_count</edgelabel>
+        </childnode>
+      </node>
+      <node id="720">
+        <label>bool</label>
+      </node>
+      <node id="712">
+        <label>GameChar</label>
+        <link refid="classGameChar"/>
+        <childnode refid="713" relation="public-inheritance">
+        </childnode>
+        <childnode refid="716" relation="usage">
+          <edgelabel>dialogue_index</edgelabel>
+          <edgelabel>chat_boundary</edgelabel>
+        </childnode>
+        <childnode refid="719" relation="usage">
+          <edgelabel>vec_dialog</edgelabel>
+        </childnode>
+        <childnode refid="720" relation="usage">
+          <edgelabel>b_dialogueEnd</edgelabel>
+          <edgelabel>isPressed</edgelabel>
+          <edgelabel>b_indexDebounce</edgelabel>
+          <edgelabel>invulnerability</edgelabel>
+        </childnode>
+        <childnode refid="721" relation="usage">
+          <edgelabel>max_health</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="718" relation="usage">
+          <edgelabel>GC_count</edgelabel>
+        </childnode>
+        <childnode refid="722" relation="usage">
+          <edgelabel>quest</edgelabel>
+        </childnode>
+      </node>
+      <node id="715">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="714" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Computer Graphics/Source/Alien.h" line="24" column="1" bodyfile="Computer Graphics/Source/Alien.h" bodystart="23" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classAlien_1af4b2bc9e4071152d6aead3be07fa9690" prot="public" virt="non-virtual"><scope>Alien</scope><name>Alien</name></member>
+      <member refid="classAlien_1a9550f2b1259cba8e462ec95a185a54d8" prot="public" virt="non-virtual"><scope>Alien</scope><name>Alien</name></member>
+      <member refid="classAlien_1a8cf4f44c1a13d3f94aeb18979f20d3b0" prot="public" virt="non-virtual"><scope>Alien</scope><name>alien_count</name></member>
+      <member refid="classGameChar_1ab308ab2df38995dd07e85af25b67c52b" prot="public" virt="non-virtual"><scope>Alien</scope><name>assignQuest</name></member>
+      <member refid="classGameChar_1a84b7a104ab43d84549bac6d21ab11613" prot="public" virt="non-virtual"><scope>Alien</scope><name>b_dialogueEnd</name></member>
+      <member refid="classGameChar_1a7a7d23d1c9074259d228d93b0b594372" prot="public" virt="non-virtual"><scope>Alien</scope><name>b_indexDebounce</name></member>
+      <member refid="classAlien_1a6ada38d7d60bcb5f143c19b9d0e5c8b3" prot="public" virt="non-virtual"><scope>Alien</scope><name>b_scaleUp</name></member>
+      <member refid="classGameObject_1a686c1c287c8aa1fa7d5fccae67f24d8a" prot="public" virt="non-virtual"><scope>Alien</scope><name>boundary</name></member>
+      <member refid="classGameChar_1a696bae70c00267e3e510330073aa2502" prot="public" virt="non-virtual"><scope>Alien</scope><name>chat_boundary</name></member>
+      <member refid="classGameChar_1ab8dc7e516ff8c6d29da6f3399f4815df" prot="public" virt="non-virtual"><scope>Alien</scope><name>chat_update</name></member>
+      <member refid="classGameChar_1a7107872fd67096fcd09554c4758d29f8" prot="public" virt="non-virtual"><scope>Alien</scope><name>dialogue_index</name></member>
+      <member refid="classAlien_1ac1d11f58ce8f20cc9c76089b1da41a9a" prot="public" virt="non-virtual"><scope>Alien</scope><name>f_scaleBig</name></member>
+      <member refid="classGameChar_1a60db1507d32c7466ee5c291b2c73aeb4" prot="protected" virt="non-virtual"><scope>Alien</scope><name>GameChar</name></member>
+      <member refid="classGameChar_1ae15f329bb71a20fe4083b07702f73658" prot="protected" virt="non-virtual"><scope>Alien</scope><name>GameChar</name></member>
+      <member refid="classGameObject_1a0348e3ee2e83d56eafca7a3547f432c4" prot="protected" virt="non-virtual"><scope>Alien</scope><name>GameObject</name></member>
+      <member refid="classGameObject_1aba45f37b5a325db434eba88d36175cb1" prot="protected" virt="non-virtual"><scope>Alien</scope><name>GameObject</name></member>
+      <member refid="classGameChar_1a64f572d829f790537947d7ec566035de" prot="public" virt="non-virtual"><scope>Alien</scope><name>GC_count</name></member>
+      <member refid="classGameChar_1af269122fc55f796480526e528d7df914" prot="public" virt="non-virtual"><scope>Alien</scope><name>getHealth</name></member>
+      <member refid="classGameChar_1a5d065602468049316d1108925cede374" prot="public" virt="non-virtual"><scope>Alien</scope><name>getHealthString</name></member>
+      <member refid="classGameChar_1a3e719d888ab88c36961827985897f24c" prot="public" virt="non-virtual"><scope>Alien</scope><name>isDead</name></member>
+      <member refid="classGameChar_1acb5f92b2960050b2d6c1b30023dfa7aa" prot="public" virt="non-virtual"><scope>Alien</scope><name>isPressed</name></member>
+      <member refid="classGameObject_1ae24b182e9f3d81cc9de06a5316d8d1b1" prot="public" virt="non-virtual"><scope>Alien</scope><name>name</name></member>
+      <member refid="classGameObject_1aa4a774e81e4d9e44012f8fcdb821b33c" prot="public" virt="non-virtual"><scope>Alien</scope><name>pos</name></member>
+      <member refid="classAlien_1acbc7782045dd10b74d0b1b455dfe76a7" prot="public" virt="non-virtual"><scope>Alien</scope><name>pulsingUpdate</name></member>
+      <member refid="classGameChar_1a931f5a592835d5beb15617c1f461ad09" prot="public" virt="non-virtual"><scope>Alien</scope><name>quest</name></member>
+      <member refid="classGameChar_1af15a501a44f0e774d407bcebe0d28ef9" prot="public" virt="non-virtual"><scope>Alien</scope><name>ReadFromTxt</name></member>
+      <member refid="classGameChar_1a6ef0dd3f7ac1208004f550863c3d20f4" prot="public" virt="non-virtual"><scope>Alien</scope><name>recieveHealthDamage</name></member>
+      <member refid="classGameChar_1a9acf18e780626b55712297ba5c07ad94" prot="public" virt="non-virtual"><scope>Alien</scope><name>regainHealth</name></member>
+      <member refid="classGameChar_1aecf445b212b38680333591507fec1b9c" prot="public" virt="non-virtual"><scope>Alien</scope><name>vec_dialog</name></member>
+      <member refid="classGameObject_1a0308c8376556b545c04e0e7112a4e8b6" prot="public" virt="non-virtual"><scope>Alien</scope><name>viewAngle</name></member>
+      <member refid="classAlien_1a7cdfd79d84b51a18003bf41585aedd43" prot="public" virt="non-virtual"><scope>Alien</scope><name>~Alien</name></member>
+      <member refid="classGameChar_1a42a24bde29ba2227c25986bb6acb6650" prot="public" virt="non-virtual"><scope>Alien</scope><name>~GameChar</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>Alien</scope><name>~GameObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
