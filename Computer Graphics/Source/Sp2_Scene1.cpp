@@ -15,6 +15,7 @@ extern GLFWwindow* m_window;
 
 Sp2_Scene1::Sp2_Scene1()
 {
+	
 }
 
 Sp2_Scene1::~Sp2_Scene1()
@@ -24,7 +25,7 @@ Sp2_Scene1::~Sp2_Scene1()
 
 void Sp2_Scene1::Init()
 {
-
+	Application::playSound(4, true);
 	ShowCursor(FALSE);
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -45,7 +46,6 @@ void Sp2_Scene1::Init()
 	glGenBuffers(NUM_GEOMETRY, &m_vertexBuffer[0]);
 	glGenBuffers(NUM_GEOMETRY, &m_indexBuffer[0]);
 	glGenBuffers(NUM_GEOMETRY, &m_colorBuffer[0]);
-
 
 	glfwGetWindowSize(m_window, &screenWidth, &screenHeight);
 
@@ -275,8 +275,6 @@ void Sp2_Scene1::Update(double dt)
 {
 	//camera.Update(dt);
 	//camera2.tpsUpdate(camera, dt);
-
-
 	if (Application::IsKeyPressed('1'))
 	{
 		glEnable(GL_CULL_FACE);

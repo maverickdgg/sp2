@@ -55,7 +55,6 @@ Sp2_Scene3::~Sp2_Scene3()
 
 void Sp2_Scene3::Init()
 {
-
 	ShowCursor(FALSE);
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -629,22 +628,25 @@ void Sp2_Scene3::Update(double dt)
 
     if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false) ///// BOX MUSIC
     {
+		Application::playSound(3, false);
         b_collectBox1 = true;
     }
     if (collision(box2.pos, player.pos, 17) && b_collectBox2 == false)
     {
+		Application::playSound(3, false);
         b_collectBox2 = true;
     }
     if (collision(jerrycan.pos, player.pos, 17) && b_collectBox3 == false)
     {
+		Application::playSound(3, false);
         b_collectBox3 = true;
     }
-    if (b_collectBox1 == true && b_collectBox2 == true && b_collectBox3 == true)
-        b_isLand = true;
-
+	if (b_collectBox1 == true && b_collectBox2 == true && b_collectBox3 == true)
+	{
+		b_isLand = true;
+	}
     if (b_isLand == true && landDist >= 100)
         landDist -= 2.5;
-
     rocket.pos.y = landDist;
 
     if (/*collision(rocket.pos, player.pos, 26)*/ b_collectBox3 && b_collectBox2 && b_collectBox1)
