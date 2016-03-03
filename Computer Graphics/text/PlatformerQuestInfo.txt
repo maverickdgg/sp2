@@ -1,0 +1,3 @@
+go to scene3.
+Talk to the NPC there.
+make it to the top of the platforms.

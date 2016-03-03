@@ -2,13 +2,15 @@
 #include <sstream>
 #include <iostream>
 #include <iomanip>
+
+vector<Quest*> Player::questList;
+
 Player::Player() : GameChar("Player", 15, 0, Vector3(0, 0, 0), 100)
 {
 	pos = Vector3(0, 0, 0);
 	viewAngle = 0;
 	boundary = 15;
 	name = "Player";
-	currGun = nullptr;
 	f_walkSpeed = 70;
 	f_sprintSpeed = 200;
 	b_jumpDebounce = false;
@@ -19,11 +21,6 @@ Player::Player() : GameChar("Player", 15, 0, Vector3(0, 0, 0), 100)
 	groundLevel = 0;
 	f_jumpDebounceTimer = 0;
 	oxygen = 100;
-
-	for (int i = 0; i < 5; ++i)
-	{
-		questList.push_back(nullptr);
-	}
 }
 
 Player::Player(Vector3 pos)
@@ -32,7 +29,6 @@ Player::Player(Vector3 pos)
 	viewAngle = 0;
 	boundary = 15;
 	name = "Player";
-	currGun = nullptr;
 	f_walkSpeed = 70;
 	f_sprintSpeed = 200;
 	b_jumpDebounce = false;
@@ -42,29 +38,12 @@ Player::Player(Vector3 pos)
 	f_initialJumpSpeed = 50;
 	groundLevel = 0;
 	f_jumpDebounceTimer = 0;
-
-	for (int i = 0; i < 5; ++i)
-	{
-		questList.push_back(nullptr);
-	}
 }
 
 Player::~Player()
 {
 }
 
-void Player::assignGun(Gun* newGun)
-{
-	if (currGun == nullptr)
-	{
-		currGun = newGun;
-	}
-	else
-	{
-		delete currGun;
-		currGun = newGun;
-	}
-}
 
 void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec)
 {
@@ -192,6 +171,19 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 
 	cam.position = this->pos;
 	cam.updateRotation(0.3);
+}
+
+void Player::setQuest()
+{
+	Quest* questPtr;
+	vector<string> tasklist;
+	tasklist.push_back("get first in space race");
+	questPtr = new Quest(1,tasklist,"spaceRace");
+	questList.push_back(questPtr);
+	tasklist.clear();
+	tasklist.push_back("get to the top platform");
+	questPtr = new Quest(1, tasklist, "Platformer");
+	questList.push_back(questPtr);
 }
 
 
@@ -358,23 +350,7 @@ void Player::movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisi
 	cam.updateRotation(0.3);
 }
 
-void Player::gunUpdate(Camera3 cam, double dt)
-{
-	if (currGun == nullptr)
-	{
-		return;
-	}
-	currGun->view = cam.view;
-	currGun->viewAngleX = cam.cameraRotationX;
-	currGun->viewAngle = cam.cameraRotationY;
-	currGun->pos = Vector3(cam.position.x, cam.position.y - 5, cam.position.z);
 
-	if (Application::IsKeyPressed(VK_LBUTTON) && currGun->currAmmo >0)
-	{
-		currGun->fire(dt);
-	}
-	currGun->updateBullet(dt);
-}
 
 bool Player::haveAcceptedCheck(Quest* q)
 {
@@ -409,40 +385,30 @@ bool Player::receiveQuest(GameChar& x)
 	return receiveQuest(x.quest);
 }
 
-bool Player::taskComplete(Quest* q, int index)
+void Player::taskComplete(int questIIndex, int index)
 {
-	if (index > q->numTasks || haveAcceptedCheck(q) == false)
+	questList[questIIndex]->taskComplete(index);
+}
+
+bool Player::questCompleted(int index)
+{
+	if (questList[index]->questComplete() == true)
 	{
-		return false;
+		return true;
+	}
+	return false;
+}
+
+bool Player::completedMainQuest()
+{
+	if (questCompleted(0) == true && questCompleted(1) == true)
+	{
+		return true;
 	}
 	else
 	{
-		for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
-		{
-			if (*it == q)
-			{
-				(*it)->task[index] = true;
-				questCompleted(q);
-				return true;
-			}
-		}
+		return false;
 	}
-}
-
-bool Player::questCompleted(Quest* q)
-{
-	if (q->questComplete() == true)
-	{
-		for (vector<Quest*>::iterator it = questList.begin(); it != questList.end(); ++it)
-		{
-			if (*it == q)
-			{
-				*it = nullptr;
-				return true;
-			}
-		}
-	}
-	return false;
 }
 
 string Player::getOxygenString()

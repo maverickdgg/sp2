@@ -17,7 +17,6 @@
 #include "SpaceVehicles.h"
 #include "Buildings.h"
 
-#include "Gun.h"
 
 #include "Human.h"
 #include "Alien.h"
@@ -64,8 +63,7 @@ public:
 		GEO_DART,
 		GEO_CROSSHAIR,
 		/*<---Humans--->*/
-		GEO_SUIT,
-		GEO_HELM,
+		GEO_DOOR,
 
 		/*<---NPC--->*/
 		GEO_MIKE,	// Default (Pure Interaction Codes, no NPC)	
@@ -76,9 +74,7 @@ public:
 		GEO_BB8B,	// BB-8 Body
 		GEO_PINGU,
 
-		GEO_PINGUBODY,
-		GEO_PINGULH,
-		GEO_PINGURH,
+		GEO_ALIEN,
 
 		GEO_BOX,
 		GEO_TABLE,
@@ -134,15 +130,14 @@ public:
 	float rotateHelm;
 	float scaleHelm;
 	float tpsTimer;
+	bool gameComplete;
 
-	Gun laserRifle;
 	SpaceVehicles np;
 	SpaceVehicles frpc;
 	Buildings station;
 	Alien mike1, mike2, mike3;
 	Human whale;
-	Human suit;
-	Human spaceHelm;
+	Buildings door;
 	BB8 BB8_;
 	Pingu Pingu_;
 	Quest raceQuest;
@@ -180,10 +175,8 @@ private:
 	void RenderSkybox();
 	void RenderSpaceVehicles(Camera3 camera);
 
-
-	void RenderPingu();
 	void RenderBB8(BB8 x);
-	void RenderSuit();
+
 
 	void RenderGameObj(GameObject x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1), smaller axis = 0);
 	void RenderGameChar(GameChar x, Mesh* mesh, bool enableLight = true, bool hasInteraction = false, Vector3 scale = Vector3(1, 1, 1));

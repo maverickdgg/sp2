@@ -6,9 +6,7 @@
 #include <stdlib.h>
 
 #include "SP2_scene1.h"
-
 #include "Sp2_SpaceRace.h"
-#include "Sp2_FightScene.h"
 #include "SP2_Scene3.h"
 
 
@@ -21,7 +19,7 @@ Scene* Application::scene;
 Scene* Application::scene1;
 Scene* Application::scene2;
 Scene* Application::scene3;
-Scene* Application::scene4;
+
 Music* Application::music;
 
 //Define an error callback
@@ -130,10 +128,7 @@ void Application::switchToScene3()
 	scene = scene3;
 }
 
-void Application::switchToScene4()
-{
-	scene = scene4;
-}
+
 
 void Application::playSound(int index, bool loop)
 {
@@ -153,14 +148,21 @@ void Application::Run()
 	scene2->Init();
 	scene3 = new Sp2_Scene3();
 	scene3->Init();
-	scene4 = new Sp2_FightScene();
-	scene4->Init();
 	scene = scene1;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
 	{
+		if (Application::IsKeyPressed('R'))
+		{
+			Player::questList.clear();
+			scene1->Init();
+
+			scene2->Init();
+			scene3->Init();
+			scene = scene1;
+		}
 
 		scene->Update(m_timer.getElapsedTime());
 		scene->Render();
@@ -172,7 +174,9 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 	scene->Exit();
-	delete scene;
+	delete scene1;
+	delete scene2;
+	delete scene3;
 }
 
 void Application::Exit()

@@ -72,12 +72,6 @@
     <ClCompile Include="Source\Collision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Bullet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Gun.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -126,10 +120,10 @@
     <ClCompile Include="Source\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Sp2_FightScene.cpp">
+    <ClCompile Include="Source\Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Music.cpp">
+    <ClCompile Include="Source\LoadingScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -197,12 +191,6 @@
     <ClInclude Include="Source\Collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Bullet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Gun.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -251,13 +239,13 @@
     <ClInclude Include="Source\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Sp2_FightScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="irrKlang\include\irrKlang.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Music.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LoadingScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

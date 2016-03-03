@@ -12,7 +12,8 @@ public:
 	float f_scaleBig;
 	bool b_scaleUp;
 
-
+	float hp;
+	float dmg;
 
 
 	void pulsingUpdate(double dt);
