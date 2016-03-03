@@ -842,7 +842,6 @@ void Sp2_SpaceRace::Renderfps()
 		else if (win == false)
 			RenderTextOnScreen(meshList[GEO_TEXT], "YOU LOSE! TRY AGAIN!", Color(0, 1, 0), 3, 1, 10);
 	}
-
 	if (b_raceEnd2 == true)
 	{
 		if (win == true)
