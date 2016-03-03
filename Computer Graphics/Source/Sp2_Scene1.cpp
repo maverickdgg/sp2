@@ -83,7 +83,7 @@ void Sp2_Scene1::Init()
 	light[0].type = Light::LIGHT_DIRECTIONAL;
 	light[0].color.Set(1, 0.9f, 1);
 	light[0].position.Set(0.f, 20.f, 0.f);
-	light[0].power = 2;
+	light[0].power = 1.f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -266,7 +266,8 @@ void Sp2_Scene1::Update(double dt)
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
 		player.movementUpdate(camera, dt,collisionVec);
-		//light[0].spotDirection.Set(-camera.view.x, -camera.view.y, -camera.view.z);
+		//light[0].position.Set(camera.position.x , camera.position.y, camera.position.z);
+		//light[0].spotDirection.Set(camera.target.x, camera.target.y, camera.target.z);
 		ShowCursor(FALSE);
 	}
 	
@@ -690,16 +691,17 @@ void Sp2_Scene1::Renderfps()
 	}
 	else if (light[0].type == Light::LIGHT_SPOT)
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
 	else
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+
 
 	RenderSkybox();
 

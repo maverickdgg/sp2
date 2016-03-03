@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "SP2_scene1.h"
+#include "SP2_Scene1.h"
 #include "Sp2_SpaceRace.h"
 #include "SP2_Scene3.h"
 
@@ -152,7 +152,7 @@ void Application::Run()
 	scene1 = new Sp2_Scene1();
 	scene1->Init();
 
-	scene = scene1;
+	scene = scene3;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))

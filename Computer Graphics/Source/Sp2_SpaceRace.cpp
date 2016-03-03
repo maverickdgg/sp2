@@ -82,16 +82,16 @@ void Sp2_SpaceRace::Init()
 	glUseProgram(m_programID);
 
 	light[0].type = Light::LIGHT_DIRECTIONAL;
-	light[0].color.Set(1, 0.9f, 1);
-	light[0].position.Set(0.f, 20.f, 0.f);
-	light[0].power = 2;
+	light[0].position.Set(0, 100.f, 0);
+	light[0].color.Set(1, 1, 1);
+	light[0].power = 3.f;
 	light[0].kC = 1.f;
-	light[0].kL = 0.007f;
-	light[0].kQ = 0.0007f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(30));
-	light[0].cosInner = cos(Math::DegreeToRadian(129));
+	light[0].kL = 0.01f;
+	light[0].kQ = 0.001f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
+	light[0].cosInner = cos(Math::DegreeToRadian(30));
 	light[0].exponent = 3.f;
-	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
+	light[0].spotDirection.Set(0.f, 1.f, 0.f);
 
 
 	// Pass information
@@ -787,17 +787,19 @@ void Sp2_SpaceRace::Renderfps()
 	}
 	else if (light[0].type == Light::LIGHT_SPOT)
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
 	else
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
+
+	
 	for (int i = 0; i < 2500; ++i)
 	{
 		if (racetrack->data[i] == '1')
@@ -904,16 +906,17 @@ void Sp2_SpaceRace::Rendertps()
 	}
 	else if (light[0].type == Light::LIGHT_SPOT)
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
 	else
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+
 
 
 	for (int i = 0; i < 2500; ++i)

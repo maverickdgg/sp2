@@ -16,7 +16,7 @@
 #include "Camera3.h"
 #include "CameraTPS.h"
 #include"Mesh.h"
-#include"MeshBuilder.h"
+#include "MeshBuilder.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include"Material.h"
@@ -203,7 +203,6 @@ public:
 	BB8v2 BB8v2_;
 	Medic Medic_;
 	Pingu Pingu_;
-	Quest raceQuest;
 	AlienEnemy ChestBurster;
 	AlienEnemy Necromancer;
 	AlienEnemy ChestBurster1;
@@ -254,7 +253,7 @@ private:
 	unsigned m_programID;
 	unsigned m_indexBuffer[NUM_GEOMETRY];
 
-	MS modelStack, viewStack, projectionStack, viewStack2;
+	MS modelStack, viewStack, projectionStack;
 	float f_rotateCube;
 	Mesh* meshList[NUM_GEOMETRY];
 	Light light[1];

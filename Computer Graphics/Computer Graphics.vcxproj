@@ -114,6 +114,7 @@
     <ClCompile Include="Source\Sp2_SpaceRace.cpp" />
     <ClCompile Include="Source\SP2_Scene3.cpp" />
     <ClCompile Include="Source\SpaceVehicles.cpp" />
+    <ClCompile Include="Source\Utility.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>

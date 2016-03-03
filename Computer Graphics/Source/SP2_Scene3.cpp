@@ -111,15 +111,15 @@ void Sp2_Scene3::Init()
 
 	glUseProgram(m_programID);
 
-	light[0].type = Light::LIGHT_SPOT;
-	light[0].color.Set(1, 0.9f, 1);
+	light[0].type = Light::LIGHT_DIRECTIONAL;
+	light[0].color.Set(1, 1.f, 1);
 	light[0].position.Set(0.f, 20.f, 0.f);
-	light[0].power = 2;
+	light[0].power = 1.f;
 	light[0].kC = 1.f;
-	light[0].kL = 0.007f;
-	light[0].kQ = 0.0007f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(20));
-	light[0].cosInner = cos(Math::DegreeToRadian(19));
+	light[0].kL = 0.001f;
+	light[0].kQ = 0.0001f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
+	light[0].cosInner = cos(Math::DegreeToRadian(10));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
@@ -139,10 +139,7 @@ void Sp2_Scene3::Init()
 
 
 	//geom init
-	/*frpc = SpaceVehicles("fourth", 5, 30, Vector3(55, 0, 60));
-	collisionVec.push_back(&frpc);*/
 	camera.Init(Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(0, 1, 0), 450, 300);
-	//camera2.Init(Vector3(50, 20, 50), Vector3(0, 1, 0), frpc.pos);
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("AXES", 1000, 1000, 1000);
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f, 1.f);
@@ -245,15 +242,6 @@ void Sp2_Scene3::Init()
     meshList[GEO_JERRYCAN] = MeshBuilder::GenerateOBJ("jerrycan", "OBJ//jerrycan.obj");
     meshList[GEO_JERRYCAN]->textureID = LoadTGA("Image//jerrycangreen.tga");
 
-    //meshList[GEO_SPACEVIEW] = MeshBuilder::GenerateQuad("endingView", Color(1, 1, 1), 1.f, 1.f);
-    //meshList[GEO_SPACEVIEW]->textureID = LoadTGA("Image//Shuttlewindow.tga");
-
-    //meshList[GEO_EARTH] = MeshBuilder::GenerateOBJ("Planet Earth", "OBJ//Earth.obj");
-    //meshList[GEO_EARTH]->textureID = LoadTGA("Image//EarthTexture.tga");
-
-	//meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
-	//meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
-	/**/
 
 	b_enabletps = false;
 	b_tpsDebounce = false;
@@ -387,9 +375,6 @@ void Sp2_Scene3::Init()
 
 void Sp2_Scene3::Update(double dt)
 {
-	//camera.Update(dt);
-	//camera2.tpsUpdate(camera, dt);
-
 	if (Application::IsKeyPressed('1'))
 	{
 		glEnable(GL_CULL_FACE);
@@ -409,17 +394,12 @@ void Sp2_Scene3::Update(double dt)
 
 	if (!Application::IsKeyPressed(VK_MENU))
 	{
-		if (frpc.b_isInVehicle == false)
-		{
-			player.movementUpdate(camera, dt, collisionVec);
-			light[0].spotDirection.Set(-camera.view.x, -camera.view.y, -camera.view.z);
-		}
-		if (frpc.b_isInVehicle == true)
-		{
-			//camera2.tpsUpdateVec(frpc.pos);
-		}
+
+		player.movementUpdate(camera, dt, collisionVec);
 		ShowCursor(FALSE);
 	}
+	light[0].position.Set(camera.position.x + (camera.view.x), camera.position.y, camera.position.z + (camera.view.z));
+	light[0].spotDirection.Set(camera.target.x, camera.target.y, camera.target.z);
 
 	if (Application::IsKeyPressed(VK_MENU))
 	{
@@ -793,13 +773,6 @@ void Sp2_Scene3::RenderSuit()
 
 	if (b_isWorn == true)
 	{
-		//modelStack.PushMatrix();
-		//modelStack.Translate(camera.position.x, camera.position.y - 5, camera.position.z + 50);
-		//modelStack.Rotate(180, 0, 1, 0);
-		//modelStack.Scale(26, 26, 26);
-		////modelStack.PopMatrix();
-		//RenderMesh(meshList[GEO_HELM], true);
-		//modelStack.PopMatrix();
 		RenderMeshOnScreen(meshList[GEO_HELM], Vector3(37.5, 0, -10), Vector3(scaleHelm, scaleHelm, scaleHelm), Vector3(0, rotateHelm, 0));
 	}
 
@@ -866,10 +839,6 @@ void Sp2_Scene3::RenderGameChar(GameChar x, Mesh* mesh, bool enableLight, bool h
 	{
 		if (collision(x.pos, player.pos, (x.boundary + player.boundary + x.chat_boundary)) && x.isPressed == true)
 		{
-			//if (x.dialogue_index == x.vec_dialog.size() - 1 && x.quest!=nullptr)
-			//{
-			//	player.receiveQuest(x);
-			//}
 			RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0, 1, 0), 2, 1, 20);
 		}
 	}
@@ -1012,127 +981,6 @@ void Sp2_Scene3::RenderPlatform(Platform p, bool isRotate)
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 200, p.pos.y-50, p.pos.z);
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 20);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 500, p.pos.y, p.pos.z);
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 60);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-	///**/
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 900, p.pos.y + 200, p.pos.z);		// 100
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 20);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-	///**/
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 100, p.pos.y + 200, p.pos.z);			// 100
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 30);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	///*<------->*/
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 500, p.pos.y + 200, p.pos.z);
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 20);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-	///*<------->*/
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x - 100, p.pos.y + 400, p.pos.z);			// 200
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 30);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 200, p.pos.y + 400, p.pos.z);		// 200
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 20);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 500, p.pos.y + 400, p.pos.z);		// 200
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 20);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 100, p.pos.y + 600, p.pos.z);		// 400
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 30);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 500, p.pos.y + 600, p.pos.z);		// 400
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 30);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(p.pos.x + 300, p.pos.y + 800, p.pos.z);		// 700
-	//modelStack.Rotate(p.viewAngle, 0, 0, 1);
-	//modelStack.Rotate(90, 0, 1, 0);
-	//modelStack.Scale(20, 20, 30);
-	//RenderMesh(meshList[GEO_PLATFORM], false);
-
-	//modelStack.PopMatrix();
-
-	//if (collision(n.pos, camera.position, (n.boundary + 30)))
-	//{
-	//	modelStack.PushMatrix();
-	//	modelStack.Translate(2, 6, 0);
-	//	RenderTextOnScreen(meshList[GEO_TEXT], "Click 'E' To Interact", Color(1, 0, 0), 3, 1, 8);
-	//	modelStack.PopMatrix();
-	//}
-
-	//if (n.vec_dialog.empty() == false)
-	//{
-	//	if (collision(n.pos, player.pos, (n.boundary + player.boundary + n.chat_boundary)) && n.isPressed == true)
-	//	{
-	//		//if (x.dialogue_index == x.vec_dialog.size() - 1 && x.quest!=nullptr)
-	//		//{
-	//		//	player.receiveQuest(x);
-	//		//}
-	//		RenderTextOnScreen(meshList[GEO_TEXT], n.vec_dialog[n.dialogue_index], Color(0, 1, 0), 2, 1, 20);
-	//	}
-	//}
 }
 
 void Sp2_Scene3::RenderMedic(Medic x)
@@ -1193,19 +1041,6 @@ void Sp2_Scene3::RenderMedic(Medic x)
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to heal", Color(1, 0, 0), 3, 1, 8);
 		modelStack.PopMatrix();
 	}
-	//if (x.vec_dialog.empty() == false)
-	//{
-	//	if (collision(x.pos, player.pos, (x.boundary + player.boundary + x.chat_boundary)) && x.isPressed == true)
-	//	{
-	//		//if (x.dialogue_index == x.vec_dialog.size() - 1 && x.quest!=nullptr)
-	//		//{
-	//		//	player.receiveQuest(x);
-	//		//}
-	//		RenderTextOnScreen(meshList[GEO_TEXT], x.vec_dialog[x.dialogue_index], Color(0, 1, 0), 2, 1, 20);
-	//	}
-	//}
-
-	/*<>*/
 }
 
 
@@ -1320,17 +1155,6 @@ void Sp2_Scene3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 	modelStack.Scale(size, size, size);
 	modelStack.Translate(x, y, 0);
 
-	//modelStack.PushMatrix();
-	//modelStack.Scale(50, 2, 1);
-	//RenderMesh(meshList[GEO_TEXTBACKGROUND], false);
-	//modelStack.PopMatrix();
-
-	//if (b_isDisplayUI == false || (mesh == meshList[GEO_TEXT]))
-	//{
-	//    modelStack.Scale(50, 2, 1);
-	//    RenderMesh(meshList[GEO_TEXTBACKGROUND], false);
-	//}
-
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
 	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
@@ -1413,17 +1237,16 @@ void Sp2_Scene3::Renderfps()
 	}
 	else if (light[0].type == Light::LIGHT_SPOT)
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
 	else
 	{
-		Vector3 lightPosition_cameraspace = viewStack.Top() * Vector3(light[0].position.x, light[0].position.y, light[0].position.z);
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
-
 	
 	RenderSkybox();
 

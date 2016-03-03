@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-#ifndef UTILITY_H
-#define UTILITY_H
-=======
+
 /******************************************************************************/
 /*!
 \file	Utility.h
@@ -18,7 +15,7 @@ Utility
 /******************************************************************************/
 #ifndef _UTILITU_H
 #define _UTILITY_H
->>>>>>> github/master
+
 
 #include "Vertex.h"
 #include "Mtx44.h"

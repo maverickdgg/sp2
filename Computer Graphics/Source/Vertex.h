@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-#ifndef VERTEX_H
-#define VERTEX_H
 
-#include "Vector3.h"
-
-struct TexCoord
-=======
 /******************************************************************************/
 /*!
 \file	Vertex.h
@@ -31,7 +24,36 @@ Struct Position:
 Struct for the Position
 /******************************************************************************/
 struct Position
->>>>>>> github/master
+{
+	float x, y, z;
+	void Set(float x, float y, float z) { this->x = x; this->y = y; this->z = z; }
+	Position(float x = 0, float y = 0, float z = 0) { Set(x, y, z); }
+	Position(Vector3 x){ this->Set(x.x, x.y, x.z); }
+
+};
+
+
+/******************************************************************************/
+/*!
+Struct Color:
+\brief
+Struct for the colors
+/******************************************************************************/
+struct Color
+{
+	float r, g, b;
+	Color(float r = 1, float g = 1, float b = 1) { Set(r, g, b); }
+	void Set(float r, float g, float b) { this->r = r; this->g = g; this->b = b; }
+	
+};
+
+/******************************************************************************/
+/*!
+Struct TexCoord
+\brief
+Struct for the coordinates
+/******************************************************************************/
+struct TexCoord
 {
 	float u, v;
 	TexCoord(float u = 0, float v = 0)
@@ -40,54 +62,16 @@ struct Position
 	}
 
 	void Set(float u, float v) { this->u = u; this->v = v; }
-
-};
-<<<<<<< HEAD
-
-struct Position
-=======
-/******************************************************************************/
-/*!
-Struct Color:
-\brief
-Struct for the colors
-/******************************************************************************/
-struct Color
->>>>>>> github/master
-{
-	float x, y, z;
-	void Set(float x, float y, float z) { this->x = x; this->y = y; this->z = z; }
-	Position(float x = 0, float y = 0, float z = 0) { Set(x, y, z); }
-	Position(Vector3 x){ this->Set(x.x, x.y, x.z); }
-	
-};
-<<<<<<< HEAD
-
-struct Color
-=======
-/******************************************************************************/
-/*!
-Struct TexCoord
-\brief
-Struct for the coordinates
-/******************************************************************************/
-struct TexCoord
->>>>>>> github/master
-{
-	float r, g, b;
-	Color(float r = 1, float g = 1, float b = 1) { Set(r, g, b); }
-	void Set(float r, float g, float b) { this->r = r; this->g = g; this->b = b; }
 };
 
-<<<<<<< HEAD
-=======
+
 /******************************************************************************/
 /*!
 Struct Vertex:
 \brief
 Struct for Vertex indicating the position, colors, normal as well as the coordinates
 /******************************************************************************/
->>>>>>> github/master
+
 struct Vertex
 {
 	Position pos;
