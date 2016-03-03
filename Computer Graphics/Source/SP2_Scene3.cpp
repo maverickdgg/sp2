@@ -236,8 +236,8 @@ void Sp2_Scene3::Init()
     meshList[GEO_ROCKET] = MeshBuilder::GenerateOBJ("rocket", "OBJ//Rocket.obj");
     meshList[GEO_ROCKET]->textureID = LoadTGA("Image//Shuttle.tga");
 
-	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
-	meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
+	//meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
+	//meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
 	/**/
 
 	b_enabletps = false;
