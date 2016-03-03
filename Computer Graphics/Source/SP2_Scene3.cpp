@@ -239,7 +239,7 @@ void Sp2_Scene3::Init()
 
 	meshList[GEO_MEDICARM1] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm1.obj");
 	meshList[GEO_MEDICARM1]->textureID = LoadTGA("Image//MedicBody.tga");
-
+  
 	meshList[GEO_MEDICARM2] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm2.obj");
 	meshList[GEO_MEDICARM2]->textureID = LoadTGA("Image//MedicBody.tga");
 
@@ -265,8 +265,6 @@ void Sp2_Scene3::Init()
     meshList[GEO_ROCKET] = MeshBuilder::GenerateOBJ("rocket", "OBJ//Rocket.obj");
     meshList[GEO_ROCKET]->textureID = LoadTGA("Image//Shuttle.tga");
 
-	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
-	meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
 
     meshList[GEO_JERRYCAN] = MeshBuilder::GenerateOBJ("jerrycan", "OBJ//jerrycan.obj");
     meshList[GEO_JERRYCAN]->textureID = LoadTGA("Image//jerrycangreen.tga");
@@ -276,6 +274,9 @@ void Sp2_Scene3::Init()
 
     //meshList[GEO_EARTH] = MeshBuilder::GenerateOBJ("Planet Earth", "OBJ//Earth.obj");
     //meshList[GEO_EARTH]->textureID = LoadTGA("Image//EarthTexture.tga");
+
+	//meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
+	//meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
 	/**/
 
 	b_enabletps = false;
@@ -435,7 +436,6 @@ void Sp2_Scene3::Update(double dt)
 		if (frpc.b_isInVehicle == false)
 		{
 			player.movementUpdate(camera, dt, collisionVec);
-			player.gunUpdate(camera, dt);
 		}
 		if (frpc.b_isInVehicle == true)
 		{
@@ -628,7 +628,7 @@ void Sp2_Scene3::Update(double dt)
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
 
-    if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false)
+    if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false) ///// BOX MUSIC
     {
         b_collectBox1 = true;
     }
@@ -789,21 +789,21 @@ void Sp2_Scene3::RenderSkybox()
 
 void Sp2_Scene3::RenderInstructions(GameObject x, Mesh* mesh, string text, Vector3 scale)
 {
-	RenderGameObj(x, mesh, true, false, scale);
-	modelStack.PushMatrix();
-	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
-	modelStack.Translate(-250, 10, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderText(meshList[GEO_TEXT], text, Color(0, 1, 1));
-	modelStack.PopMatrix();
+	//RenderGameObj(x, mesh, true, false, scale);
+	//modelStack.PushMatrix();
+	//modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	//modelStack.Translate(-250, 10, 0);
+	//modelStack.Scale(10, 10, 10);
+	//RenderText(meshList[GEO_TEXT], text, Color(0, 1, 1));
+	//modelStack.PopMatrix();
 
-	//if (collisionXZ(player.pos, x))
-	//{
-	//	modelStack.PushMatrix();
-	//	modelStack.Translate(2, 6, 0);
-	//	RenderText(meshList[GEO_TEXT], "Please talk to all of the NPCs before proceeding. ", Color(1, 0, 0));
-	//	modelStack.PopMatrix();
-	//}
+	if (collisionXZ(player.pos, x))
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(2, 6, 0);
+		RenderText(meshList[GEO_TEXT], "Please talk to all of the NPCs before proceeding. ", Color(1, 0, 0));
+		modelStack.PopMatrix();
+	}
 }
 
 /******************************************************************************/
@@ -849,7 +849,7 @@ void Sp2_Scene3::RenderSuit()
 		if (player.isDead() == false)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
-			RenderTextOnScreen(meshList[GEO_TEXT2], player.getOxygenString(), Color(0, 1, 0), 3, 12, 2.75);
+			RenderTextOnScreen(meshList[GEO_TEXT2], player.getOxygenString(), Color(0, 1, 0), 3, 16, 2.75);
 		}
         if (isFinished == false)
         {
@@ -1514,15 +1514,8 @@ void Sp2_Scene3::Renderfps()
 	//if (b_isWorn == false)
 	//RenderMeshOnScreen(meshList[GEO_SNIPERRIFLE], Vector3(75, -15, -10), Vector3(250, 250, 250), Vector3(10, 110, 0));
 
-	for (vector<Bullet>::iterator it = laserRifle.bulletVec.begin(); it != laserRifle.bulletVec.end(); ++it)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(it->pos.x, it->pos.y, it->pos.z);
-		modelStack.Rotate(it->angleY, 0, 1, 0);
-		modelStack.Rotate(it->angleX, 0, 0, 1);
-		RenderMesh(meshList[GEO_DART], true);
-		modelStack.PopMatrix();
-	}
+
+	RenderTeleporter(spaceStationTp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 }
 
 void Sp2_Scene3::Rendertps()

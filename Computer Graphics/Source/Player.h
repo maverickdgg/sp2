@@ -2,7 +2,6 @@
 #define PLAYER_H
 
 #include "GameChar.h"
-#include "Gun.h"
 #include "Application.h"
 #include "Camera3.h"
 #include "Quest.h"
@@ -16,7 +15,6 @@ using std::vector;
 class Player : public GameChar
 {
 public:
-	Gun* currGun;
 
 	Player();
 	Player(Vector3 pos);
@@ -33,17 +31,17 @@ public:
 	float groundLevel;
 	smaller oxygen;
 
-	vector<Quest*> questList;
+	static vector<Quest*> questList;
 
-	void assignGun(Gun* newGun);
 	void movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec);
 	void movementUpdate(Camera3& cam, double dt, vector<GameObject*> collisionVec,PMAP map);
-	void gunUpdate(Camera3 cam, double dt);
 	bool haveAcceptedCheck(Quest* q);
 	bool receiveQuest(Quest* q);
 	bool receiveQuest(GameChar& x);
-	bool taskComplete(Quest* q, int index);
-	bool questCompleted(Quest* q);
+	void taskComplete(int questIndex, int index);
+	bool questCompleted(int index);
+	void setQuest();
+	bool completedMainQuest();
 	string getOxygenString();
 };
 #endif

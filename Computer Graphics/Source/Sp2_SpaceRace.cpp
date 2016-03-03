@@ -295,8 +295,6 @@ void Sp2_SpaceRace::Update(double dt)
 		player.pos = indexToVector(toIndex(12, 12));
 		Application::switchToScene1();
 	}
-
-	
 	
 
 	if (frpc.b_isInVehicle == false)
@@ -388,6 +386,7 @@ void Sp2_SpaceRace::Update(double dt)
 		if (frpc.getRacePosition(frpc,toIndex(44,45)) == 1)
 		{
 			win = true;
+			player.questList[0]->taskComplete(0);
 		}
 		else{
 			win = false;
@@ -410,14 +409,14 @@ void Sp2_SpaceRace::Update(double dt)
 			frpc.lap = 0;
 			frpc2.lap = 0;
 			frpc.racepath = racePath;
-			frpc2.racepath = racePath;
+             frpc2.racepath = racePath;
 		}
 	}
 
 
 	//2P race boolean logic
 
-	if (b_raceBegin2 == true && f_raceCountdown > 0)
+   	if (b_raceBegin2 == true && f_raceCountdown > 0)
 	{
 		f_raceCountdown -= dt;
 		if (f_raceCountdown <= 0)
@@ -777,7 +776,24 @@ void Sp2_SpaceRace::Renderfps()
 
 
 	RenderGameChar(spaceRaceNpc, meshList[GEO_ALIEN], true, false, Vector3(12,24,12)+(Vector3(1,0.6,1) * spaceRaceNpc.f_scaleBig ));
+
+
+	modelStack.PushMatrix();
+	modelStack.Translate(spaceRaceNpc.pos.x - 5, spaceRaceNpc.pos.y + 40, spaceRaceNpc.pos.z);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(3, 3, 3);
+	RenderText(meshList[GEO_TEXT], "1 player space race", Color(0, 1, 0));
+	modelStack.PopMatrix();
+
 	RenderGameChar(race2PNpc, meshList[GEO_ALIEN], true, false, Vector3(12, 24, 12) + (Vector3(0.6,1,0.6) * spaceRaceNpc.f_scaleBig));
+	
+	modelStack.PushMatrix();
+	modelStack.Translate(race2PNpc.pos.x - 5, race2PNpc.pos.y + 40, race2PNpc.pos.z);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(3, 3, 3);
+	RenderText(meshList[GEO_TEXT], "2 player space race", Color(0, 1, 0));
+	modelStack.PopMatrix();
+
 	RenderTeleporter(spaceStationtp, meshList[GEO_TELEPORTER], "To Space Station", Vector3(15, 10, 15));
 
 	if (frpc.b_isInVehicle == true)

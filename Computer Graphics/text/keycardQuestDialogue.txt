@@ -1,3 +1,4 @@
-This door is shut
-you will need to find keycards
-in order to proceed to other maps
+Make sure that you have finished
+all the following quest:
+Space Race
+Platformer
