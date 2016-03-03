@@ -207,8 +207,6 @@ void Sp2_Scene1::Init()
 	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("boxes", "OBJ//Box.obj");
 	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
 
-	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("keycard", "OBJ//KeyCard.obj");
-	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
 
 	meshList[GEO_HELM] = MeshBuilder::GenerateOBJ("helmet", "OBJ//helmet.obj");
 	meshList[GEO_HELM]->textureID = LoadTGA("Image//helmet.tga");
@@ -769,9 +767,6 @@ void Sp2_Scene1::Renderfps()
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderGameObj(table1, meshList[GEO_TABLE], true, false, Vector3(30, 40, 30));
 	RenderGameObj(chair1, meshList[GEO_CHAIR], true, false, Vector3(10, 12, 10));
-	RenderGameObj(keycard1, meshList[GEO_KEYCARD], true, true, Vector3(2, 2, 2));
-	//RenderGameObj(frpc, meshList[GEO_FOURTH],true,true);  
-
 	/*<---NPC--->*/
 
 	//RenderPingu();

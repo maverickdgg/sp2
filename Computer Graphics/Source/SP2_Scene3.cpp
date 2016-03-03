@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file SP2_Scene3.cpp
+\author Tan Hou Gim Samuel
+\par email: 153942B@mymail.nyp.edu.sg
+\brief Scene class
+*/
+/******************************************************************************/
+
 #include "Sp2_Scene3.h"
 #include "Human.h"
 #include "Alien.h"
@@ -16,13 +25,33 @@
 
 extern GLFWwindow* m_window;
 
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/******************************************************************************/
+
 Sp2_Scene3::Sp2_Scene3()
 {
 }
 
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+*/
+/******************************************************************************/
+
 Sp2_Scene3::~Sp2_Scene3()
 {
 }
+
+/******************************************************************************/
+/*!
+\brief Init scene with game objects, light and camera positions, properties like light power. Loads OBJ and texture into scene.
+*/
+/******************************************************************************/
 
 void Sp2_Scene3::Init()
 {
@@ -235,6 +264,18 @@ void Sp2_Scene3::Init()
 
     meshList[GEO_ROCKET] = MeshBuilder::GenerateOBJ("rocket", "OBJ//Rocket.obj");
     meshList[GEO_ROCKET]->textureID = LoadTGA("Image//Shuttle.tga");
+
+	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//Arrow.obj");
+	meshList[GEO_ARROW]->textureID = LoadTGA("Image//Arrow.tga");
+
+    meshList[GEO_JERRYCAN] = MeshBuilder::GenerateOBJ("jerrycan", "OBJ//jerrycan.obj");
+    meshList[GEO_JERRYCAN]->textureID = LoadTGA("Image//jerrycangreen.tga");
+
+    //meshList[GEO_SPACEVIEW] = MeshBuilder::GenerateQuad("endingView", Color(1, 1, 1), 1.f, 1.f);
+    //meshList[GEO_SPACEVIEW]->textureID = LoadTGA("Image//Shuttlewindow.tga");
+
+    //meshList[GEO_EARTH] = MeshBuilder::GenerateOBJ("Planet Earth", "OBJ//Earth.obj");
+    //meshList[GEO_EARTH]->textureID = LoadTGA("Image//EarthTexture.tga");
 	/**/
 
 	b_enabletps = false;
@@ -287,10 +328,18 @@ void Sp2_Scene3::Init()
 	collisionVec.push_back(&Necromancer);
 
 	ChestBurster1 = AlienEnemy("ChestBurster1", 5, 0, Vector3(75, 251, -125));
+	collisionVec.push_back(&ChestBurster1);
 
     rocket = Buildings("rocket", 10, 180, Vector3(100, 500, -120));
+	collisionVec.push_back(&rocket);
 
-	collisionVec.push_back(&ChestBurster1);
+    jerrycan = Buildings("jerry can", 1, 0, Vector3(400, 0, 225));
+    collisionVec.push_back(&jerrycan);
+
+    earth = Buildings("Planet Earth", 1, 0, Vector3(1500, 1000, -120));
+
+	Arrow = Buildings("arrow", 10, 180, Vector3(70, 30, 30));
+	collisionVec.push_back(&Arrow);
 
 	Sir_ = Sir("Sir", 5, 0, Vector3(30, 0, 70));
 	Sir_.ReadFromTxt("text//sir.txt");
@@ -349,8 +398,16 @@ void Sp2_Scene3::Init()
     b_collectBox2 = false;
     b_collectBox3 = false;
     b_isLand = false;
+    isFinished = false;
     landDist = 1000;
 }
+
+/******************************************************************************/
+/*!
+\brief Updates health system, collision, platform, player, camera and enemy behaviours
+*/
+/******************************************************************************/
+
 void Sp2_Scene3::Update(double dt)
 {
 	//camera.Update(dt);
@@ -579,7 +636,7 @@ void Sp2_Scene3::Update(double dt)
     {
         b_collectBox2 = true;
     }
-    if (collision(box3.pos, player.pos, 17) && b_collectBox3 == false)
+    if (collision(jerrycan.pos, player.pos, 17) && b_collectBox3 == false)
     {
         b_collectBox3 = true;
     }
@@ -591,8 +648,15 @@ void Sp2_Scene3::Update(double dt)
 
     rocket.pos.y = landDist;
 
-    if (collision(rocket.pos, player.pos, 26))
-        b_isDisplayUI = false;
+    if (/*collision(rocket.pos, player.pos, 26)*/ b_collectBox3 && b_collectBox2 && b_collectBox1)
+        isFinished = true;
+    //if (isFinished == true)
+    //{
+    //    //b_isDisplayUI = false;
+    //    //player.pos = rocket.pos;
+    //    //player.pos.x += 200;
+    //    //camera.view = Vector3(0, 0, 0);
+    //}
 
 	if (b_switchDir == false)
 	if (collisionXZ(player.pos, spaceStationTp) == true && Application::IsKeyPressed('E'))
@@ -606,6 +670,16 @@ void Sp2_Scene3::Update(double dt)
 	}
 
 }
+
+/******************************************************************************/
+/*!
+\brief Render mesh such as basic primitive shapes and OBJs
+\param mesh
+    A pointer to the mesh that needs to be rendered
+\param enableLight
+    A boolean to toggle whether light has an effect on meshes or not
+*/
+/******************************************************************************/
 
 void Sp2_Scene3::RenderMesh(Mesh* mesh, bool enableLight)
 {
@@ -713,6 +787,31 @@ void Sp2_Scene3::RenderSkybox()
 	modelStack.PopMatrix();
 }
 
+void Sp2_Scene3::RenderInstructions(GameObject x, Mesh* mesh, string text, Vector3 scale)
+{
+	RenderGameObj(x, mesh, true, false, scale);
+	modelStack.PushMatrix();
+	modelStack.Translate(x.pos.x, x.pos.y, x.pos.z);
+	modelStack.Translate(-250, 10, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderText(meshList[GEO_TEXT], text, Color(0, 1, 1));
+	modelStack.PopMatrix();
+
+	//if (collisionXZ(player.pos, x))
+	//{
+	//	modelStack.PushMatrix();
+	//	modelStack.Translate(2, 6, 0);
+	//	RenderText(meshList[GEO_TEXT], "Please talk to all of the NPCs before proceeding. ", Color(1, 0, 0));
+	//	modelStack.PopMatrix();
+	//}
+}
+
+/******************************************************************************/
+/*!
+\brief Rendering of the in-game suit interface and positions
+*/
+/******************************************************************************/
+
 void Sp2_Scene3::RenderSuit()
 {
 	modelStack.PushMatrix();
@@ -752,19 +851,22 @@ void Sp2_Scene3::RenderSuit()
 			RenderTextOnScreen(meshList[GEO_TEXT2], player.getHealthString(), Color(1, 0, 0), 3, 4.8, 2.75);
 			RenderTextOnScreen(meshList[GEO_TEXT2], player.getOxygenString(), Color(0, 1, 0), 3, 12, 2.75);
 		}
-        RenderTextOnScreen(meshList[GEO_TEXT], "Collect spaceship parts", Color(1, 0, 1), 1.25, 10, 40);
-        if (b_collectBox1 == false)
-            RenderTextOnScreen(meshList[GEO_TEXT], "Engine: Uncollected", Color(1, 1, 0), 1.25, 10, 38);
-        else if (b_collectBox1 == true)
-            RenderTextOnScreen(meshList[GEO_TEXT], "Engine: collected", Color(1, 1, 0), 1.25, 10, 38);
-        if (b_collectBox2 == false)
-            RenderTextOnScreen(meshList[GEO_TEXT], "Exhaust: Uncollected", Color(1, 1, 0), 1.25, 10, 37);
-        else if (b_collectBox2 == true)
-            RenderTextOnScreen(meshList[GEO_TEXT], "Exhaust: collected", Color(1, 1, 0), 1.25, 10, 37);
-        if (b_collectBox3 == false)
-            RenderTextOnScreen(meshList[GEO_TEXT], "Tanks: Uncollected", Color(1, 1, 0), 1.25, 10, 36);
-        else if (b_collectBox3 == true)
-            RenderTextOnScreen(meshList[GEO_TEXT], "Tanks: collected", Color(1, 1, 0), 1.25, 10, 36);
+        if (isFinished == false)
+        {
+            RenderTextOnScreen(meshList[GEO_TEXT], "Collect spaceship parts", Color(1, 0, 1), 1.25, 10, 40);
+            if (b_collectBox1 == false)
+                RenderTextOnScreen(meshList[GEO_TEXT], "Engine: Uncollected", Color(1, 1, 0), 1.25, 10, 38);
+            else if (b_collectBox1 == true)
+                RenderTextOnScreen(meshList[GEO_TEXT], "Engine: collected", Color(1, 1, 0), 1.25, 10, 38);
+            if (b_collectBox2 == false)
+                RenderTextOnScreen(meshList[GEO_TEXT], "Exhaust: Uncollected", Color(1, 1, 0), 1.25, 10, 37);
+            else if (b_collectBox2 == true)
+                RenderTextOnScreen(meshList[GEO_TEXT], "Exhaust: collected", Color(1, 1, 0), 1.25, 10, 37);
+            if (b_collectBox3 == false)
+                RenderTextOnScreen(meshList[GEO_TEXT], "Fuel can: Uncollected", Color(1, 1, 0), 1.25, 10, 36);
+            else if (b_collectBox3 == true)
+                RenderTextOnScreen(meshList[GEO_TEXT], "Fuel can: collected", Color(1, 1, 0), 1.25, 10, 36);
+        }
 	}
 }
 
@@ -924,6 +1026,16 @@ void Sp2_Scene3::RenderSir(/*Sir n*/)
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief Renders all platforms
+\param p
+    Object of the Platform class with position attribute
+\param isRotate
+    Boolean to decide whether platform needs to be flipped
+*/
+/******************************************************************************/
+
 void Sp2_Scene3::RenderPlatform(Platform p, bool isRotate)
 {
 	modelStack.PushMatrix();
@@ -933,7 +1045,7 @@ void Sp2_Scene3::RenderPlatform(Platform p, bool isRotate)
 	if (isRotate == true)
 		modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Scale(20, 20, 5);
-	RenderMesh(meshList[GEO_PLATFORM], false);	// True false rfers to on/off light respectively
+	RenderMesh(meshList[GEO_PLATFORM], false);
 
 	modelStack.PopMatrix();
 
@@ -1349,7 +1461,7 @@ void Sp2_Scene3::Renderfps()
     if (b_collectBox2 == false)
 	    RenderGameObj(box2, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
     if (b_collectBox3 == false)
-	    RenderGameObj(box3, meshList[GEO_BOX], true, false, Vector3(5, 5, 5));
+	    RenderGameObj(jerrycan, meshList[GEO_JERRYCAN], true, false, Vector3(5, 5, 5));
 	RenderGameObj(box4, meshList[GEO_BOX], true, false, Vector3(20, 30, 20));
 	RenderChestBurster();
 	RenderChestBurster1();
@@ -1358,7 +1470,12 @@ void Sp2_Scene3::Renderfps()
     RenderGameObj(ladder3, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9));
 	RenderGameObj(ladder4, meshList[GEO_LADDER], true, false, Vector3(9, 9, 9), 2);
     RenderRocket();
-
+    if (isFinished == true)
+    {
+        //RenderMeshOnScreen(meshList[GEO_SPACEVIEW], Vector3(40, 30, -10), Vector3(30, 40, 10), Vector3(0, 0, 90));
+        //RenderGameObj(earth, meshList[GEO_EARTH], true, false, Vector3(10, 10, 10));
+        RenderTextOnScreen(meshList[GEO_TEXT], "Go to the teleporter", Color(1, 1, 0), 1.25, 10, 38);
+    }
 	/*<---NPC--->*/
 	//RenderPingu();
 	//RenderBB8(BB8_);
@@ -1366,6 +1483,7 @@ void Sp2_Scene3::Renderfps()
 	RenderBB8v2(BB8v2_);
 	RenderMedic(Medic_);
 	RenderNecromancer();
+	RenderInstructions(Arrow, meshList[GEO_ARROW], "Please talk to all of the NPCs before proceeding. ", Vector3(70, 70, 70));
 	/*<---Platform--->*/
 	RenderPlatform(Platform_, true);
 	RenderPlatform(Platform1, false);

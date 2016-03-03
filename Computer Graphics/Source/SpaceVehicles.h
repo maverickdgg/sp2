@@ -23,10 +23,12 @@ public:
 	float rotationZ;
 	int lap;
 	bool lapDebounce;
+	int max_speed;
 	queue<int> racepath;
 
     void updateVehicle(double deltaTime);
 	void updateVehicle(double deltaTime , PMAP map,queue<int>& q);
+	void updateVehicle2(double deltaTime, PMAP map, queue<int>& q);
 
 	void enterVehicleUpdate(Player& player);
 	void updateCPUVehicle(double deltaTime, PMAP map, queue<int>& q);
@@ -38,7 +40,7 @@ private:
 
     float acceleration;
     float rotateAngle;
-    int max_speed;
+    
 	
 
 };

@@ -118,7 +118,7 @@ public:
 	unsigned m_parameters[U_TOTAL];
 
 	Camera3 camera;
-	CameraTPS camera2;
+	CameraTPS camera2,camera3;
 
 	float LSPEED;
 	bool b_lightEnabled;
@@ -138,13 +138,18 @@ public:
 	float f_raceCountdown;
 	bool win;
 
+	bool b_raceBegin2;
+	bool b_raceStart2;
+	bool b_raceEnd2;
+	float f_endTimer2;
+
 	SpaceVehicles frpc,frpc2;
 
 	//player
 	Player player;
 
 	//npc
-	Alien spaceRaceNpc;
+	Alien spaceRaceNpc,race2PNpc;
 
 	//furniture
 	Buildings spaceStationtp;
@@ -155,7 +160,6 @@ public:
 
 	vector<GameObject*> collisionVec;
 
-	string speed;
 	PMAP racetrack;
 	queue<int> racePath;
 
