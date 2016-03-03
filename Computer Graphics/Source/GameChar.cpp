@@ -72,8 +72,6 @@ void GameChar::chat_update(Vector3 player_pos)
 			}
 			b_indexDebounce = true;
 			isPressed = true;
-
-
 		}
 		// NPC Text Reset
 		if ((!Application::IsKeyPressed('E') && b_indexDebounce == true) || collision(player_pos, pos, 15 + this->boundary + chat_boundary) == false)
@@ -121,6 +119,7 @@ bool GameChar::isDead()
 	if (health <= 0)
 	{
 		return true;
+	// WOW YOU DIED SONG.
 	}
 	else
 	{

@@ -210,7 +210,7 @@ void Sp2_Scene3::Init()
 
 	meshList[GEO_MEDICARM1] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm1.obj");
 	meshList[GEO_MEDICARM1]->textureID = LoadTGA("Image//MedicBody.tga");
-
+  
 	meshList[GEO_MEDICARM2] = MeshBuilder::GenerateOBJ("medic", "OBJ//MedicArm2.obj");
 	meshList[GEO_MEDICARM2]->textureID = LoadTGA("Image//MedicBody.tga");
 
@@ -573,7 +573,7 @@ void Sp2_Scene3::Update(double dt)
 	//Necromancer.pos.y = verticalDistance + 25;
 	/*<-------------------------------End---------------------------------------------------->*/
 
-    if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false)
+    if (collision(box1.pos, player.pos, 17) && b_collectBox1 == false) ///// BOX MUSIC
     {
         b_collectBox1 = true;
     }
